@@ -7,13 +7,81 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A14836CA1CDB75CA0043036B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836C91CDB75CA0043036B /* AppDelegate.swift */; };
-		A14836CC1CDB75CA0043036B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836CB1CDB75CA0043036B /* ViewController.swift */; };
-		A14836CF1CDB75CA0043036B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14836CD1CDB75CA0043036B /* Main.storyboard */; };
-		A14836D11CDB75CA0043036B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A14836D01CDB75CA0043036B /* Assets.xcassets */; };
-		A14836D41CDB75CA0043036B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14836D21CDB75CA0043036B /* LaunchScreen.storyboard */; };
+		03B63BAA787B0C729D4D2500 /* AlbumInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC5166CAE5AA7385216BC3 /* AlbumInteractorInput.swift */; };
+		129FA756C47BEC9FD974BDE6 /* PlaylistInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7263D29CD482D2EB08E63F67 /* PlaylistInteractorInput.swift */; };
+		231D32B48644E80A45CB19BB /* AlbumViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C284849C6BAE7A4773DB8 /* AlbumViewInput.swift */; };
+		2591E7680AD1C9C180423801 /* AlbumRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE571235D18896B492DF625B /* AlbumRouterInput.swift */; };
+		2D9A946C7A9A45B55DFD0972 /* Pods_AHMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC79167B04BFE68239C240B3 /* Pods_AHMusic.framework */; };
+		322473294F408B9E33F3A1E1 /* AlbumModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CD89EBCEEF50B119D3D39 /* AlbumModuleInput.swift */; };
+		337C7A9E35CBDAA5A7713916 /* CategoryInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00060104EB991F1EAB6485E /* CategoryInitializer.swift */; };
+		375DF2E87D69FD5FB6FE0ADB /* CategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66231FEA016CA40693CA0AE8 /* CategoryPresenter.swift */; };
+		39040AEE39D52C3E4D5BB6E4 /* StationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3631163A2A0DD48855A41D8 /* StationViewInput.swift */; };
+		396CBDCB83FF82803DF49C18 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1666030F2E4492C3F35F1 /* CategoryViewController.swift */; };
+		3BCE43A4CC09FBC47286A8E2 /* StationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3F23B930BCA539C9B3F42C /* StationPresenter.swift */; };
+		3C5AC7FDD4A9F23613985F5F /* StationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A239D0B142F7AB27069FE0E4 /* StationRouter.swift */; };
+		3CFB0CFC355FBDD3567F2795 /* AlbumConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9EDD44DCD7ACDDE181C568 /* AlbumConfigurator.swift */; };
+		4032752D3A96758556F9FB78 /* CategoryViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6CD6B65AA9B3EC5EB346B9 /* CategoryViewOutput.swift */; };
+		461FEB70A64561AEF247A84E /* CategoryModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BDDF45F81FFB340B13292 /* CategoryModuleInput.swift */; };
+		530D74DEAD372382B06B9988 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4555570FBB9D22A147C347 /* LandingViewController.swift */; };
+		5A40C2810E349D0934AA60E2 /* LandingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6438D34839EB6DA1DF43B62 /* LandingViewInput.swift */; };
+		5BA7DB6FB9D9AA11EEAEA0D5 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF388C1EF84857F6A39FDD6 /* StationViewController.swift */; };
+		5C6B61EE5C45FCFE4D0F83D8 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8187EA41ACFE03076BBAE /* AlbumViewController.swift */; };
+		61541B26563C3B2F1F5ECD16 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF78BCC2FDD0B01C646CE3B /* PlaylistViewController.swift */; };
+		6479FE0C570FB93DA157FA11 /* StationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33B3DAA4F988322E75173E /* StationInteractor.swift */; };
+		6F89410225E6837E99A41D49 /* LandingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB8BC5F8B7B64AE66EC45E /* LandingRouter.swift */; };
+		70D9930379E9B23927967504 /* StationInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC866393B56C2A0F6E0F613 /* StationInteractorInput.swift */; };
+		71196079D3EFC89E56D9F955 /* LandingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD407133762F1B15F0DB5EE /* LandingInteractor.swift */; };
+		72AD3F939A125F0EA90F49BB /* AlbumInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A3A3FE98B4CA5E8CD253D /* AlbumInitializer.swift */; };
+		72FF2D149EA43ABE1F1849CC /* PlaylistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D3059FCB6BFFE2255FD0B /* PlaylistPresenter.swift */; };
+		7E19E297A5D95F667128C2B2 /* StationInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06DC6A220894F69C77D4B5 /* StationInteractorOutput.swift */; };
+		8236734904D540E1AFD07950 /* LandingRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71DFBB0569C0B8C88D3C7DE /* LandingRouterInput.swift */; };
+		836B7CCF3E903C3AA0ABFCAF /* CategoryRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F283DE73CB49E85B884CEF /* CategoryRouterInput.swift */; };
+		88C292CDA2A871B236B88398 /* PlaylistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE554A6CDE150257334C4F /* PlaylistRouter.swift */; };
+		927CA5ECB9B43A8AAEEBFE34 /* LandingViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC7799CE1C2444E2F1AB91 /* LandingViewOutput.swift */; };
+		9680E0080AFA92DCFDC402AF /* LandingInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0C2C07736C59629202827 /* LandingInteractorInput.swift */; };
+		97CF4131D58BC5D8D30D0D1B /* AlbumRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB18890A41E63D2113761AA /* AlbumRouter.swift */; };
+		991894F4D7BAA4F85582A9F3 /* AlbumViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDA2DADFE18584AD3D06FC /* AlbumViewOutput.swift */; };
+		991EAF6BFB53605F8BC0CA52 /* CategoryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A28737C39CB55DF1E7A420 /* CategoryViewInput.swift */; };
+		A062782221D179BAF37E9088 /* CategoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0AFE459C5647005324902 /* CategoryRouter.swift */; };
+		A13865CD1CDC84C000350BC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865B81CDC84C000350BC2 /* AppDelegate.swift */; };
+		A13865CE1CDC84C000350BC2 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865B91CDC84C000350BC2 /* ApplicationAssembly.swift */; };
+		A13865CF1CDC84C000350BC2 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865BB1CDC84C000350BC2 /* APIHelper.swift */; };
+		A13865D01CDC84C000350BC2 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865BC1CDC84C000350BC2 /* DBHelper.swift */; };
+		A13865D11CDC84C000350BC2 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865BD1CDC84C000350BC2 /* LocationHelper.swift */; };
+		A13865D21CDC84C000350BC2 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865BE1CDC84C000350BC2 /* UIHelper.swift */; };
+		A13865D31CDC84C000350BC2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865BF1CDC84C000350BC2 /* Utils.swift */; };
+		A13865D41CDC84C000350BC2 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865C11CDC84C000350BC2 /* Events.swift */; };
+		A13865D61CDC84C000350BC2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865C41CDC84C000350BC2 /* Weather.swift */; };
+		A13865D81CDC84C000350BC2 /* UISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865C91CDC84C000350BC2 /* UISettings.swift */; };
+		A13865D91CDC84C000350BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13865CB1CDC84C000350BC2 /* Assets.xcassets */; };
+		A13865DA1CDC84C000350BC2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A13865CC1CDC84C000350BC2 /* Info.plist */; };
 		A14836DF1CDB75CA0043036B /* AHMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836DE1CDB75CA0043036B /* AHMusicTests.swift */; };
 		A14836EA1CDB75CA0043036B /* AHMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836E91CDB75CA0043036B /* AHMusicUITests.swift */; };
+		A307DE4BCF49929FBBD24B4E /* PlaylistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E058E5A9050C3584FD270 /* PlaylistConfigurator.swift */; };
+		A3A65C40B2743FD9EFB1945C /* StationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15F9614E862CE4F15D11E7 /* StationViewOutput.swift */; };
+		A4F57126B7E0C6DF6C03BC2C /* CategoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F108639522C3A3CE7584E /* CategoryInteractor.swift */; };
+		A9E5F9DC0B0B0644DBA98F1A /* PlaylistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DDA62843CDE8DE659BB18 /* PlaylistInteractor.swift */; };
+		AD12D91C5694DE8FA0439BBF /* PlaylistInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFECFF2DEE83C3B0143F41A /* PlaylistInitializer.swift */; };
+		AD25478A90D3FAA636BCCE9B /* AlbumInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE693C9A1D254ECE4D5838C1 /* AlbumInteractor.swift */; };
+		ADB451B9642E1562C2AF9F28 /* CategoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D827F6B628471F277CEF2645 /* CategoryConfigurator.swift */; };
+		ADC52ED0CFCD5DE406D59BC4 /* StationModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAC0CDBC19E3257E9C00A2 /* StationModuleInput.swift */; };
+		ADF4B3021975F20391FDD732 /* LandingModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD42C11536933625C73D8A /* LandingModuleInput.swift */; };
+		B0564C60327F0AE105768569 /* StationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94570D8E92AEB8DE0EE94A /* StationConfigurator.swift */; };
+		B242B9522EA7777F9EE8F4CD /* PlaylistRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FF5A5C1BFF3F501E4EF4C /* PlaylistRouterInput.swift */; };
+		B81C15FD9D8C2BDFA80FD540 /* PlaylistInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676F0413FD0A52E3D5C91C35 /* PlaylistInteractorOutput.swift */; };
+		BE145CD21F3DC2693DD2998E /* PlaylistViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F470E162F328C6EECA3B48 /* PlaylistViewOutput.swift */; };
+		C015AC1A91F7E9E97A1C43C5 /* StationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DD7DB3A10E2E8B7D74E9E5A /* StationRouterInput.swift */; };
+		C6CA7EB6893F809BB35C29A0 /* CategoryInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0114E5BEA398B9B87C6B6D /* CategoryInteractorInput.swift */; };
+		DDAFB820275E4A23BE41F399 /* LandingInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB077C6354715611B7F1EC85 /* LandingInitializer.swift */; };
+		E23814705FB6910D3D065E32 /* AlbumPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307FBB14E2DA4F209C27091 /* AlbumPresenter.swift */; };
+		E47806D15C25497BF015F360 /* PlaylistViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDC60130E7DFBB636E26596 /* PlaylistViewInput.swift */; };
+		E8F384867A453B728FEA8AA3 /* LandingInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD6BF0D4844E124229BD6A /* LandingInteractorOutput.swift */; };
+		ED9FAA669792B079A407B8FA /* PlaylistModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB7F1C5F2143192C6292C15 /* PlaylistModuleInput.swift */; };
+		EE7F75B737270F9C2DF78634 /* LandingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84255300D5893940DD95E69B /* LandingConfigurator.swift */; };
+		F40294EE25707FA26273C8BF /* StationInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91704E335A423AC9979C609F /* StationInitializer.swift */; };
+		F73ECFB7F77D45A2CE1704D3 /* AlbumInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532E08C7C9B743D9AFD3299 /* AlbumInteractorOutput.swift */; };
+		F8A58A851CFD123E023E987B /* CategoryInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302EC990D2359BD7102BAF52 /* CategoryInteractorOutput.swift */; };
+		FA11B5A41E536B6A6F909CA8 /* LandingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740898107B7649EC8ACE7B33 /* LandingPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +102,89 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A6CD6B65AA9B3EC5EB346B9 /* CategoryViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryViewOutput.swift; sourceTree = "<group>"; };
+		0A9EDD44DCD7ACDDE181C568 /* AlbumConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumConfigurator.swift; sourceTree = "<group>"; };
+		0AFECFF2DEE83C3B0143F41A /* PlaylistInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistInitializer.swift; sourceTree = "<group>"; };
+		0DD7DB3A10E2E8B7D74E9E5A /* StationRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationRouterInput.swift; sourceTree = "<group>"; };
+		1BE8187EA41ACFE03076BBAE /* AlbumViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		1FCDA2DADFE18584AD3D06FC /* AlbumViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewOutput.swift; sourceTree = "<group>"; };
+		2267ECF5F1F39946A1C7CAA3 /* Pods-AHMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic.debug.xcconfig"; sourceTree = "<group>"; };
+		226F108639522C3A3CE7584E /* CategoryInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryInteractor.swift; sourceTree = "<group>"; };
+		23CE554A6CDE150257334C4F /* PlaylistRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistRouter.swift; sourceTree = "<group>"; };
+		25F470E162F328C6EECA3B48 /* PlaylistViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistViewOutput.swift; sourceTree = "<group>"; };
+		2C15F9614E862CE4F15D11E7 /* StationViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationViewOutput.swift; sourceTree = "<group>"; };
+		2EB7F1C5F2143192C6292C15 /* PlaylistModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistModuleInput.swift; sourceTree = "<group>"; };
+		302EC990D2359BD7102BAF52 /* CategoryInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryInteractorOutput.swift; sourceTree = "<group>"; };
+		34E0C2C07736C59629202827 /* LandingInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingInteractorInput.swift; sourceTree = "<group>"; };
+		40F283DE73CB49E85B884CEF /* CategoryRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryRouterInput.swift; sourceTree = "<group>"; };
+		4307FBB14E2DA4F209C27091 /* AlbumPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumPresenter.swift; sourceTree = "<group>"; };
+		4CB18890A41E63D2113761AA /* AlbumRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumRouter.swift; sourceTree = "<group>"; };
+		4F3CD89EBCEEF50B119D3D39 /* AlbumModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumModuleInput.swift; sourceTree = "<group>"; };
+		4FD407133762F1B15F0DB5EE /* LandingInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingInteractor.swift; sourceTree = "<group>"; };
+		5AF78BCC2FDD0B01C646CE3B /* PlaylistViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
+		5BDC7799CE1C2444E2F1AB91 /* LandingViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingViewOutput.swift; sourceTree = "<group>"; };
+		5D1E058E5A9050C3584FD270 /* PlaylistConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistConfigurator.swift; sourceTree = "<group>"; };
+		5E94570D8E92AEB8DE0EE94A /* StationConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationConfigurator.swift; sourceTree = "<group>"; };
+		66231FEA016CA40693CA0AE8 /* CategoryPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryPresenter.swift; sourceTree = "<group>"; };
+		676F0413FD0A52E3D5C91C35 /* PlaylistInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistInteractorOutput.swift; sourceTree = "<group>"; };
+		6A4555570FBB9D22A147C347 /* LandingViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		7263D29CD482D2EB08E63F67 /* PlaylistInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistInteractorInput.swift; sourceTree = "<group>"; };
+		740898107B7649EC8ACE7B33 /* LandingPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingPresenter.swift; sourceTree = "<group>"; };
+		750FF5A5C1BFF3F501E4EF4C /* PlaylistRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistRouterInput.swift; sourceTree = "<group>"; };
+		84255300D5893940DD95E69B /* LandingConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingConfigurator.swift; sourceTree = "<group>"; };
+		89DD6BF0D4844E124229BD6A /* LandingInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingInteractorOutput.swift; sourceTree = "<group>"; };
+		8B9BDDF45F81FFB340B13292 /* CategoryModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryModuleInput.swift; sourceTree = "<group>"; };
+		91704E335A423AC9979C609F /* StationInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInitializer.swift; sourceTree = "<group>"; };
+		93EAC0CDBC19E3257E9C00A2 /* StationModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationModuleInput.swift; sourceTree = "<group>"; };
+		98A0AFE459C5647005324902 /* CategoryRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryRouter.swift; sourceTree = "<group>"; };
+		9CDC60130E7DFBB636E26596 /* PlaylistViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistViewInput.swift; sourceTree = "<group>"; };
+		9DC866393B56C2A0F6E0F613 /* StationInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInteractorInput.swift; sourceTree = "<group>"; };
+		A00060104EB991F1EAB6485E /* CategoryInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryInitializer.swift; sourceTree = "<group>"; };
+		A13865B81CDC84C000350BC2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A13865B91CDC84C000350BC2 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
+		A13865BB1CDC84C000350BC2 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		A13865BC1CDC84C000350BC2 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		A13865BD1CDC84C000350BC2 /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
+		A13865BE1CDC84C000350BC2 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		A13865BF1CDC84C000350BC2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A13865C11CDC84C000350BC2 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		A13865C41CDC84C000350BC2 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		A13865C81CDC84C000350BC2 /* AHMusic-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AHMusic-Bridging-Header.h"; sourceTree = "<group>"; };
+		A13865C91CDC84C000350BC2 /* UISettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISettings.swift; sourceTree = "<group>"; };
+		A13865CB1CDC84C000350BC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A13865CC1CDC84C000350BC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14836C61CDB75CA0043036B /* AHMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AHMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A14836C91CDB75CA0043036B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A14836CB1CDB75CA0043036B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A14836CE1CDB75CA0043036B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A14836D01CDB75CA0043036B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A14836D31CDB75CA0043036B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A14836D51CDB75CA0043036B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14836DA1CDB75CA0043036B /* AHMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AHMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14836DE1CDB75CA0043036B /* AHMusicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHMusicTests.swift; sourceTree = "<group>"; };
 		A14836E01CDB75CA0043036B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A14836E51CDB75CA0043036B /* AHMusicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AHMusicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14836E91CDB75CA0043036B /* AHMusicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHMusicUITests.swift; sourceTree = "<group>"; };
 		A14836EB1CDB75CA0043036B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A239D0B142F7AB27069FE0E4 /* StationRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationRouter.swift; sourceTree = "<group>"; };
+		A6438D34839EB6DA1DF43B62 /* LandingViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingViewInput.swift; sourceTree = "<group>"; };
+		A71DFBB0569C0B8C88D3C7DE /* LandingRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingRouterInput.swift; sourceTree = "<group>"; };
+		A7BC5B1A5FB496C4C4B278CC /* Pods-AHMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic.release.xcconfig"; sourceTree = "<group>"; };
+		AAFB8BC5F8B7B64AE66EC45E /* LandingRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingRouter.swift; sourceTree = "<group>"; };
+		AB2DDA62843CDE8DE659BB18 /* PlaylistInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistInteractor.swift; sourceTree = "<group>"; };
+		AC79167B04BFE68239C240B3 /* Pods_AHMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AHMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B31C284849C6BAE7A4773DB8 /* AlbumViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewInput.swift; sourceTree = "<group>"; };
+		B3631163A2A0DD48855A41D8 /* StationViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationViewInput.swift; sourceTree = "<group>"; };
+		B6A28737C39CB55DF1E7A420 /* CategoryViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryViewInput.swift; sourceTree = "<group>"; };
+		BB06DC6A220894F69C77D4B5 /* StationInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInteractorOutput.swift; sourceTree = "<group>"; };
+		BE571235D18896B492DF625B /* AlbumRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumRouterInput.swift; sourceTree = "<group>"; };
+		C03A3A3FE98B4CA5E8CD253D /* AlbumInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInitializer.swift; sourceTree = "<group>"; };
+		CB077C6354715611B7F1EC85 /* LandingInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingInitializer.swift; sourceTree = "<group>"; };
+		D532E08C7C9B743D9AFD3299 /* AlbumInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractorOutput.swift; sourceTree = "<group>"; };
+		D6C1666030F2E4492C3F35F1 /* CategoryViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		D827F6B628471F277CEF2645 /* CategoryConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryConfigurator.swift; sourceTree = "<group>"; };
+		DC3F23B930BCA539C9B3F42C /* StationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationPresenter.swift; sourceTree = "<group>"; };
+		DE33B3DAA4F988322E75173E /* StationInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInteractor.swift; sourceTree = "<group>"; };
+		E0AC5166CAE5AA7385216BC3 /* AlbumInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractorInput.swift; sourceTree = "<group>"; };
+		EE693C9A1D254ECE4D5838C1 /* AlbumInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractor.swift; sourceTree = "<group>"; };
+		F19D3059FCB6BFFE2255FD0B /* PlaylistPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistPresenter.swift; sourceTree = "<group>"; };
+		F5DD42C11536933625C73D8A /* LandingModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingModuleInput.swift; sourceTree = "<group>"; };
+		FBF388C1EF84857F6A39FDD6 /* StationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
+		FC0114E5BEA398B9B87C6B6D /* CategoryInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryInteractorInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D9A946C7A9A45B55DFD0972 /* Pods_AHMusic.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +213,265 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02EB42236F5D5C6F83C1B1A1 /* Station */ = {
+			isa = PBXGroup;
+			children = (
+				AB06B2C8190510A741F163D8 /* View */,
+				B143AB6D1AFA4FCD64E321EB /* Presenter */,
+				F1C4C8B52848606CCBEA485F /* Interactor */,
+				36C432764EC0B9433599FA28 /* Router */,
+				3F996330C328CE3322B7026F /* Configurator */,
+			);
+			path = Station;
+			sourceTree = "<group>";
+		};
+		0DB2CE300CAA5ECADB7ED53E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC79167B04BFE68239C240B3 /* Pods_AHMusic.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		15C744855817E888A61994AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2267ECF5F1F39946A1C7CAA3 /* Pods-AHMusic.debug.xcconfig */,
+				A7BC5B1A5FB496C4C4B278CC /* Pods-AHMusic.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		36C432764EC0B9433599FA28 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				0DD7DB3A10E2E8B7D74E9E5A /* StationRouterInput.swift */,
+				A239D0B142F7AB27069FE0E4 /* StationRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		36C6E707FFD51C312362B954 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				34E0C2C07736C59629202827 /* LandingInteractorInput.swift */,
+				89DD6BF0D4844E124229BD6A /* LandingInteractorOutput.swift */,
+				4FD407133762F1B15F0DB5EE /* LandingInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3950532F1EA5DB1FA4F0F585 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				7263D29CD482D2EB08E63F67 /* PlaylistInteractorInput.swift */,
+				676F0413FD0A52E3D5C91C35 /* PlaylistInteractorOutput.swift */,
+				AB2DDA62843CDE8DE659BB18 /* PlaylistInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3BDF37E68AD0F465957B2253 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				750FF5A5C1BFF3F501E4EF4C /* PlaylistRouterInput.swift */,
+				23CE554A6CDE150257334C4F /* PlaylistRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3D92A570152B568E7DAEE1D4 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				F6D1E41C089BC19D73BFC41C /* View */,
+				F7EA2B362AA44844CD56D67E /* Presenter */,
+				4C0391AC65F16408B8E39043 /* Interactor */,
+				7B2210FA470CF5B3CBFDC1BA /* Router */,
+				7D394B006DB65DD4627E330D /* Configurator */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		3F996330C328CE3322B7026F /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				5E94570D8E92AEB8DE0EE94A /* StationConfigurator.swift */,
+				91704E335A423AC9979C609F /* StationInitializer.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		428D6BC6BB599F47C5D3AE63 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B31C284849C6BAE7A4773DB8 /* AlbumViewInput.swift */,
+				1FCDA2DADFE18584AD3D06FC /* AlbumViewOutput.swift */,
+				1BE8187EA41ACFE03076BBAE /* AlbumViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		476FB07B1F99858F97081198 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				84255300D5893940DD95E69B /* LandingConfigurator.swift */,
+				CB077C6354715611B7F1EC85 /* LandingInitializer.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		4C0391AC65F16408B8E39043 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				FC0114E5BEA398B9B87C6B6D /* CategoryInteractorInput.swift */,
+				302EC990D2359BD7102BAF52 /* CategoryInteractorOutput.swift */,
+				226F108639522C3A3CE7584E /* CategoryInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5D707B3BCB8DBBB63CB40DFD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2EB7F1C5F2143192C6292C15 /* PlaylistModuleInput.swift */,
+				F19D3059FCB6BFFE2255FD0B /* PlaylistPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		6143907A8001456AB7072EF9 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				BE571235D18896B492DF625B /* AlbumRouterInput.swift */,
+				4CB18890A41E63D2113761AA /* AlbumRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		6336379DBA5BD1D98FE65ED7 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				5D1E058E5A9050C3584FD270 /* PlaylistConfigurator.swift */,
+				0AFECFF2DEE83C3B0143F41A /* PlaylistInitializer.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		70CEFDB5B3E1D953526EE587 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F5DD42C11536933625C73D8A /* LandingModuleInput.swift */,
+				740898107B7649EC8ACE7B33 /* LandingPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7B2210FA470CF5B3CBFDC1BA /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				40F283DE73CB49E85B884CEF /* CategoryRouterInput.swift */,
+				98A0AFE459C5647005324902 /* CategoryRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		7D394B006DB65DD4627E330D /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				D827F6B628471F277CEF2645 /* CategoryConfigurator.swift */,
+				A00060104EB991F1EAB6485E /* CategoryInitializer.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		8AF7DAA22B8D32331902B491 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				0A9EDD44DCD7ACDDE181C568 /* AlbumConfigurator.swift */,
+				C03A3A3FE98B4CA5E8CD253D /* AlbumInitializer.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		98963DDEABAA1F401B543200 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				428D6BC6BB599F47C5D3AE63 /* View */,
+				FEE9AAF1A873100A02DF02BF /* Presenter */,
+				FEDAEF7406618370D56BA623 /* Interactor */,
+				6143907A8001456AB7072EF9 /* Router */,
+				8AF7DAA22B8D32331902B491 /* Configurator */,
+			);
+			path = Album;
+			sourceTree = "<group>";
+		};
+		A13865B71CDC84C000350BC2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A13865B81CDC84C000350BC2 /* AppDelegate.swift */,
+				A13865B91CDC84C000350BC2 /* ApplicationAssembly.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A13865BA1CDC84C000350BC2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A13865BB1CDC84C000350BC2 /* APIHelper.swift */,
+				A13865BC1CDC84C000350BC2 /* DBHelper.swift */,
+				A13865BD1CDC84C000350BC2 /* LocationHelper.swift */,
+				A13865BE1CDC84C000350BC2 /* UIHelper.swift */,
+				A13865BF1CDC84C000350BC2 /* Utils.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A13865C01CDC84C000350BC2 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				A13865C11CDC84C000350BC2 /* Events.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		A13865C21CDC84C000350BC2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A13865C41CDC84C000350BC2 /* Weather.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A13865C61CDC84C000350BC2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E59493A351B5F2C84A10A2EA /* Landing */,
+				3D92A570152B568E7DAEE1D4 /* Category */,
+				98963DDEABAA1F401B543200 /* Album */,
+				C87E5E6EA37A1039ADD0AEC4 /* Playlist */,
+				02EB42236F5D5C6F83C1B1A1 /* Station */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A13865C71CDC84C000350BC2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A13865C81CDC84C000350BC2 /* AHMusic-Bridging-Header.h */,
+				A13865C91CDC84C000350BC2 /* UISettings.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A13865CA1CDC84C000350BC2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A13865CB1CDC84C000350BC2 /* Assets.xcassets */,
+				A13865CC1CDC84C000350BC2 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		A14836BD1CDB75CA0043036B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +479,8 @@
 				A14836DD1CDB75CA0043036B /* AHMusicTests */,
 				A14836E81CDB75CA0043036B /* AHMusicUITests */,
 				A14836C71CDB75CA0043036B /* Products */,
+				15C744855817E888A61994AD /* Pods */,
+				0DB2CE300CAA5ECADB7ED53E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +497,13 @@
 		A14836C81CDB75CA0043036B /* AHMusic */ = {
 			isa = PBXGroup;
 			children = (
-				A14836C91CDB75CA0043036B /* AppDelegate.swift */,
-				A14836CB1CDB75CA0043036B /* ViewController.swift */,
-				A14836CD1CDB75CA0043036B /* Main.storyboard */,
-				A14836D01CDB75CA0043036B /* Assets.xcassets */,
-				A14836D21CDB75CA0043036B /* LaunchScreen.storyboard */,
-				A14836D51CDB75CA0043036B /* Info.plist */,
+				A13865B71CDC84C000350BC2 /* Application */,
+				A13865BA1CDC84C000350BC2 /* Helpers */,
+				A13865C01CDC84C000350BC2 /* Messages */,
+				A13865C21CDC84C000350BC2 /* Models */,
+				A13865C61CDC84C000350BC2 /* Modules */,
+				A13865C71CDC84C000350BC2 /* Settings */,
+				A13865CA1CDC84C000350BC2 /* Supporting Files */,
 			);
 			path = AHMusic;
 			sourceTree = "<group>";
@@ -125,6 +526,126 @@
 			path = AHMusicUITests;
 			sourceTree = "<group>";
 		};
+		A2212768D912EFBEBE984D2F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A71DFBB0569C0B8C88D3C7DE /* LandingRouterInput.swift */,
+				AAFB8BC5F8B7B64AE66EC45E /* LandingRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		AB06B2C8190510A741F163D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3631163A2A0DD48855A41D8 /* StationViewInput.swift */,
+				2C15F9614E862CE4F15D11E7 /* StationViewOutput.swift */,
+				FBF388C1EF84857F6A39FDD6 /* StationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B143AB6D1AFA4FCD64E321EB /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				93EAC0CDBC19E3257E9C00A2 /* StationModuleInput.swift */,
+				DC3F23B930BCA539C9B3F42C /* StationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C87E5E6EA37A1039ADD0AEC4 /* Playlist */ = {
+			isa = PBXGroup;
+			children = (
+				FCD6359D11BF07DED263A8A4 /* View */,
+				5D707B3BCB8DBBB63CB40DFD /* Presenter */,
+				3950532F1EA5DB1FA4F0F585 /* Interactor */,
+				3BDF37E68AD0F465957B2253 /* Router */,
+				6336379DBA5BD1D98FE65ED7 /* Configurator */,
+			);
+			path = Playlist;
+			sourceTree = "<group>";
+		};
+		E59493A351B5F2C84A10A2EA /* Landing */ = {
+			isa = PBXGroup;
+			children = (
+				E61C595BD4DF9D1C0CC78C2A /* View */,
+				70CEFDB5B3E1D953526EE587 /* Presenter */,
+				36C6E707FFD51C312362B954 /* Interactor */,
+				A2212768D912EFBEBE984D2F /* Router */,
+				476FB07B1F99858F97081198 /* Configurator */,
+			);
+			path = Landing;
+			sourceTree = "<group>";
+		};
+		E61C595BD4DF9D1C0CC78C2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6438D34839EB6DA1DF43B62 /* LandingViewInput.swift */,
+				5BDC7799CE1C2444E2F1AB91 /* LandingViewOutput.swift */,
+				6A4555570FBB9D22A147C347 /* LandingViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F1C4C8B52848606CCBEA485F /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				9DC866393B56C2A0F6E0F613 /* StationInteractorInput.swift */,
+				BB06DC6A220894F69C77D4B5 /* StationInteractorOutput.swift */,
+				DE33B3DAA4F988322E75173E /* StationInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F6D1E41C089BC19D73BFC41C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B6A28737C39CB55DF1E7A420 /* CategoryViewInput.swift */,
+				0A6CD6B65AA9B3EC5EB346B9 /* CategoryViewOutput.swift */,
+				D6C1666030F2E4492C3F35F1 /* CategoryViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F7EA2B362AA44844CD56D67E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				8B9BDDF45F81FFB340B13292 /* CategoryModuleInput.swift */,
+				66231FEA016CA40693CA0AE8 /* CategoryPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FCD6359D11BF07DED263A8A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9CDC60130E7DFBB636E26596 /* PlaylistViewInput.swift */,
+				25F470E162F328C6EECA3B48 /* PlaylistViewOutput.swift */,
+				5AF78BCC2FDD0B01C646CE3B /* PlaylistViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FEDAEF7406618370D56BA623 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E0AC5166CAE5AA7385216BC3 /* AlbumInteractorInput.swift */,
+				D532E08C7C9B743D9AFD3299 /* AlbumInteractorOutput.swift */,
+				EE693C9A1D254ECE4D5838C1 /* AlbumInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		FEE9AAF1A873100A02DF02BF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4F3CD89EBCEEF50B119D3D39 /* AlbumModuleInput.swift */,
+				4307FBB14E2DA4F209C27091 /* AlbumPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +653,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A14836EE1CDB75CA0043036B /* Build configuration list for PBXNativeTarget "AHMusic" */;
 			buildPhases = (
+				3ACF1F5231D2BC9CB246ACD9 /* Check Pods Manifest.lock */,
 				A14836C21CDB75CA0043036B /* Sources */,
 				A14836C31CDB75CA0043036B /* Frameworks */,
 				A14836C41CDB75CA0043036B /* Resources */,
+				DE656FCD3E28693F2A0CBFBB /* Embed Pods Frameworks */,
+				70942FDC839482D78A6A106E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,9 +752,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14836D41CDB75CA0043036B /* LaunchScreen.storyboard in Resources */,
-				A14836D11CDB75CA0043036B /* Assets.xcassets in Resources */,
-				A14836CF1CDB75CA0043036B /* Main.storyboard in Resources */,
+				A13865DA1CDC84C000350BC2 /* Info.plist in Resources */,
+				A13865D91CDC84C000350BC2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,13 +773,129 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3ACF1F5231D2BC9CB246ACD9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		70942FDC839482D78A6A106E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE656FCD3E28693F2A0CBFBB /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A14836C21CDB75CA0043036B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A14836CC1CDB75CA0043036B /* ViewController.swift in Sources */,
-				A14836CA1CDB75CA0043036B /* AppDelegate.swift in Sources */,
+				A13865CF1CDC84C000350BC2 /* APIHelper.swift in Sources */,
+				A13865CE1CDC84C000350BC2 /* ApplicationAssembly.swift in Sources */,
+				A13865D81CDC84C000350BC2 /* UISettings.swift in Sources */,
+				A13865CD1CDC84C000350BC2 /* AppDelegate.swift in Sources */,
+				A13865D61CDC84C000350BC2 /* Weather.swift in Sources */,
+				A13865D31CDC84C000350BC2 /* Utils.swift in Sources */,
+				A13865D41CDC84C000350BC2 /* Events.swift in Sources */,
+				A13865D01CDC84C000350BC2 /* DBHelper.swift in Sources */,
+				A13865D11CDC84C000350BC2 /* LocationHelper.swift in Sources */,
+				A13865D21CDC84C000350BC2 /* UIHelper.swift in Sources */,
+				5A40C2810E349D0934AA60E2 /* LandingViewInput.swift in Sources */,
+				927CA5ECB9B43A8AAEEBFE34 /* LandingViewOutput.swift in Sources */,
+				530D74DEAD372382B06B9988 /* LandingViewController.swift in Sources */,
+				ADF4B3021975F20391FDD732 /* LandingModuleInput.swift in Sources */,
+				FA11B5A41E536B6A6F909CA8 /* LandingPresenter.swift in Sources */,
+				9680E0080AFA92DCFDC402AF /* LandingInteractorInput.swift in Sources */,
+				E8F384867A453B728FEA8AA3 /* LandingInteractorOutput.swift in Sources */,
+				71196079D3EFC89E56D9F955 /* LandingInteractor.swift in Sources */,
+				8236734904D540E1AFD07950 /* LandingRouterInput.swift in Sources */,
+				6F89410225E6837E99A41D49 /* LandingRouter.swift in Sources */,
+				EE7F75B737270F9C2DF78634 /* LandingConfigurator.swift in Sources */,
+				DDAFB820275E4A23BE41F399 /* LandingInitializer.swift in Sources */,
+				39040AEE39D52C3E4D5BB6E4 /* StationViewInput.swift in Sources */,
+				A3A65C40B2743FD9EFB1945C /* StationViewOutput.swift in Sources */,
+				5BA7DB6FB9D9AA11EEAEA0D5 /* StationViewController.swift in Sources */,
+				ADC52ED0CFCD5DE406D59BC4 /* StationModuleInput.swift in Sources */,
+				3BCE43A4CC09FBC47286A8E2 /* StationPresenter.swift in Sources */,
+				70D9930379E9B23927967504 /* StationInteractorInput.swift in Sources */,
+				7E19E297A5D95F667128C2B2 /* StationInteractorOutput.swift in Sources */,
+				6479FE0C570FB93DA157FA11 /* StationInteractor.swift in Sources */,
+				C015AC1A91F7E9E97A1C43C5 /* StationRouterInput.swift in Sources */,
+				3C5AC7FDD4A9F23613985F5F /* StationRouter.swift in Sources */,
+				B0564C60327F0AE105768569 /* StationConfigurator.swift in Sources */,
+				F40294EE25707FA26273C8BF /* StationInitializer.swift in Sources */,
+				E47806D15C25497BF015F360 /* PlaylistViewInput.swift in Sources */,
+				BE145CD21F3DC2693DD2998E /* PlaylistViewOutput.swift in Sources */,
+				61541B26563C3B2F1F5ECD16 /* PlaylistViewController.swift in Sources */,
+				ED9FAA669792B079A407B8FA /* PlaylistModuleInput.swift in Sources */,
+				72FF2D149EA43ABE1F1849CC /* PlaylistPresenter.swift in Sources */,
+				129FA756C47BEC9FD974BDE6 /* PlaylistInteractorInput.swift in Sources */,
+				B81C15FD9D8C2BDFA80FD540 /* PlaylistInteractorOutput.swift in Sources */,
+				A9E5F9DC0B0B0644DBA98F1A /* PlaylistInteractor.swift in Sources */,
+				B242B9522EA7777F9EE8F4CD /* PlaylistRouterInput.swift in Sources */,
+				88C292CDA2A871B236B88398 /* PlaylistRouter.swift in Sources */,
+				A307DE4BCF49929FBBD24B4E /* PlaylistConfigurator.swift in Sources */,
+				AD12D91C5694DE8FA0439BBF /* PlaylistInitializer.swift in Sources */,
+				231D32B48644E80A45CB19BB /* AlbumViewInput.swift in Sources */,
+				991894F4D7BAA4F85582A9F3 /* AlbumViewOutput.swift in Sources */,
+				5C6B61EE5C45FCFE4D0F83D8 /* AlbumViewController.swift in Sources */,
+				322473294F408B9E33F3A1E1 /* AlbumModuleInput.swift in Sources */,
+				E23814705FB6910D3D065E32 /* AlbumPresenter.swift in Sources */,
+				03B63BAA787B0C729D4D2500 /* AlbumInteractorInput.swift in Sources */,
+				F73ECFB7F77D45A2CE1704D3 /* AlbumInteractorOutput.swift in Sources */,
+				AD25478A90D3FAA636BCCE9B /* AlbumInteractor.swift in Sources */,
+				2591E7680AD1C9C180423801 /* AlbumRouterInput.swift in Sources */,
+				97CF4131D58BC5D8D30D0D1B /* AlbumRouter.swift in Sources */,
+				3CFB0CFC355FBDD3567F2795 /* AlbumConfigurator.swift in Sources */,
+				72AD3F939A125F0EA90F49BB /* AlbumInitializer.swift in Sources */,
+				991EAF6BFB53605F8BC0CA52 /* CategoryViewInput.swift in Sources */,
+				4032752D3A96758556F9FB78 /* CategoryViewOutput.swift in Sources */,
+				396CBDCB83FF82803DF49C18 /* CategoryViewController.swift in Sources */,
+				461FEB70A64561AEF247A84E /* CategoryModuleInput.swift in Sources */,
+				375DF2E87D69FD5FB6FE0ADB /* CategoryPresenter.swift in Sources */,
+				C6CA7EB6893F809BB35C29A0 /* CategoryInteractorInput.swift in Sources */,
+				F8A58A851CFD123E023E987B /* CategoryInteractorOutput.swift in Sources */,
+				A4F57126B7E0C6DF6C03BC2C /* CategoryInteractor.swift in Sources */,
+				836B7CCF3E903C3AA0ABFCAF /* CategoryRouterInput.swift in Sources */,
+				A062782221D179BAF37E9088 /* CategoryRouter.swift in Sources */,
+				ADB451B9642E1562C2AF9F28 /* CategoryConfigurator.swift in Sources */,
+				337C7A9E35CBDAA5A7713916 /* CategoryInitializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,25 +930,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		A14836CD1CDB75CA0043036B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A14836CE1CDB75CA0043036B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A14836D21CDB75CA0043036B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A14836D31CDB75CA0043036B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		A14836EC1CDB75CA0043036B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -328,6 +948,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -373,6 +994,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -396,23 +1018,27 @@
 		};
 		A14836EF1CDB75CA0043036B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2267ECF5F1F39946A1C7CAA3 /* Pods-AHMusic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = AHMusic/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AHMusic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = arohak.com.AHMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/AHMusic/Settings/AHMusic-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		A14836F01CDB75CA0043036B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7BC5B1A5FB496C4C4B278CC /* Pods-AHMusic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = AHMusic/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/AHMusic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = arohak.com.AHMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/AHMusic/Settings/AHMusic-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -483,6 +1109,7 @@
 				A14836F01CDB75CA0043036B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A14836F11CDB75CA0043036B /* Build configuration list for PBXNativeTarget "AHMusicTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +1118,7 @@
 				A14836F31CDB75CA0043036B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A14836F41CDB75CA0043036B /* Build configuration list for PBXNativeTarget "AHMusicUITests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +1127,7 @@
 				A14836F61CDB75CA0043036B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
