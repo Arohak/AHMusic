@@ -53,6 +53,7 @@ let XAKI                                = UIColor(red: 255/255,     green: 102/2
 let GRAY_164                            = UIColor(red: 164/255,     green: 164/255,     blue: 164/255,      alpha: 1)
 let GRAY_200                            = UIColor(red: 200/255,     green: 200/255,     blue: 200/255,      alpha: 1)
 let GRAY_119                            = UIColor(red: 119/255,     green: 119/255,     blue: 119/255,      alpha: 1)
+let BLUE                                = UIColor(red: 24/255,      green: 75/255,      blue: 152/255,      alpha: 1)
 let BLACK                               = UIColor.blackColor()
 let WHITE                               = UIColor.whiteColor()
 let GRAY                                = UIColor.grayColor()

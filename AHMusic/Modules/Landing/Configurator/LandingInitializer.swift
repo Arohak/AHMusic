@@ -14,4 +14,11 @@ class LandingModuleInitializer: NSObject {
         let configurator = LandingModuleConfigurator()
         configurator.configureModuleForPresenter(presentor)
     }
+    
+    init(controller: AnyObject) {
+        super.init()
+        
+        let configurator = LandingModuleConfigurator()
+        configurator.configureModuleForController(controller)
+    }
 }

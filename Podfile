@@ -14,6 +14,7 @@ target 'AHMusic' do
 #    pod 'SwiftyJSON'
 #    pod 'PKHUD'
     pod 'CarbonKit'
+    pod 'SlideMenuControllerSwift'
 end
 
 target 'AHMusicTests' do

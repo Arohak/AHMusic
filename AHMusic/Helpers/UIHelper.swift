@@ -9,18 +9,20 @@
 //import SwiftLoader
 //import PKHUD
 
-//class UIHelper {
-//    
-//    class func configurateApplicationApperance() {
-//        UIApplication.sharedApplication().statusBarHidden = false
-//        UIApplication.sharedApplication().statusBarStyle = .LightContent
-//        
-//        let navBarAppearance = UINavigationBar.appearance()
-//        navBarAppearance.barTintColor = GREEN
-//        navBarAppearance.tintColor = WHITE
-//        navBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: WHITE, NSFontAttributeName : TITLE_BTN_FONT]
-//    }
-//    
+struct UIHelper {
+    
+    static func configurateApplicationApperance() {
+        UIApplication.sharedApplication().statusBarHidden = false
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        let navBarAppearance = UINavigationBar.appearance()
+        navBarAppearance.translucent = false
+        navBarAppearance.barStyle = .BlackTranslucent
+        navBarAppearance.barTintColor = BLUE
+        navBarAppearance.tintColor = WHITE
+        navBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: WHITE, NSFontAttributeName : TITLE_BTN_FONT]
+    }
+//
 //    class func showProgressHUD() {
 //        var config = SwiftLoader.Config()
 //        config.size = 100
@@ -65,4 +67,4 @@
 //        shake.toValue = to_value
 //        view.layer.addAnimation(shake, forKey: "position")
 //    }
-//}
+}

@@ -10,21 +10,31 @@
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var rootPresenter: LandingPresenter!
+    var rootController: SlideViewController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         startApplication()
         
         return true
     }
     
     private func startApplication() {
+        UIHelper.configurateApplicationApperance()
+
+        //main
+        let category = CategoryPresenter()
+        _ = CategoryModuleInitializer(presentor: category)
+        let main = category.view as! UIViewController
         
-        rootPresenter = LandingPresenter()
-        _ = LandingModuleInitializer(presentor: rootPresenter)
-        let vc = rootPresenter.view as! UIViewController
-        let nav = UINavigationController(rootViewController: vc)
-        nav.setNavigationBarHidden(true, animated: true)
+        //left
+        let leftMenu = LeftMenuPresenter()
+        _ = LeftMenuModuleInitializer(presentor: leftMenu)
+        let left = leftMenu.view as! UIViewController
+
+        rootController = SlideViewController(mainViewController: main, leftMenuViewController: left)
+        _ = LandingModuleInitializer(controller: rootController)
+        let nav = UINavigationController(rootViewController: rootController)
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = nav

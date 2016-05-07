@@ -17,4 +17,5 @@
 //@import RxSwift;
 //@import Kingfisher;
 @import CarbonKit;
+@import SlideMenuControllerSwift;
 
