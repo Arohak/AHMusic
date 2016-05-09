@@ -43,7 +43,7 @@ class SlideViewController: SlideMenuController  {
         self.view.backgroundColor = WHITE
         SlideMenuOptions.leftViewWidth = 300
         SlideMenuOptions.hideStatusBar = false
-//        addLeftBarButtonWithImage(UIImage(named:"img_slide_menu")!)
+//        addLeftBarButtonWithImage(UIImage(named:"img_slide_menu")!) 
         delegate = self
     }
     
