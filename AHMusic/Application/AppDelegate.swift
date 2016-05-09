@@ -23,9 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIHelper.configurateApplicationApperance()
 
         //main
-        let category = CategoryPresenter()
-        _ = CategoryModuleInitializer(presentor: category)
-        let main = category.view as! UIViewController
+        let main = TabViewController()
         
         //left
         let leftMenu = LeftMenuPresenter()

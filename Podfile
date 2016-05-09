@@ -5,14 +5,14 @@
 
 target 'AHMusic' do
     pod 'Typhoon'
-#    pod 'RxAlamofire'
-#    pod 'RealmSwift'
+    pod 'RxAlamofire'
+    pod 'RealmSwift'
 #    pod 'EventCenter'
     pod 'PureLayout'
 #    pod 'SwiftLoader'
-#    pod 'Kingfisher'
-#    pod 'SwiftyJSON'
-#    pod 'PKHUD'
+    pod 'Kingfisher'
+    pod 'SwiftyJSON'
+    pod 'PKHUD'
     pod 'CarbonKit'
     pod 'SlideMenuControllerSwift'
 end

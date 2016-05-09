@@ -9,13 +9,13 @@
 @import Foundation;
 @import PureLayout;
 //@import EventCenter;
-//@import RealmSwift;
+@import RealmSwift;
 @import Typhoon;
-//@import SwiftyJSON;
+@import SwiftyJSON;
 //@import Alamofire;
 //@import RxAlamofire;
 //@import RxSwift;
-//@import Kingfisher;
+@import Kingfisher;
 @import CarbonKit;
 @import SlideMenuControllerSwift;
 

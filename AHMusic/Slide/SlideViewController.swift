@@ -8,6 +8,27 @@
 
 class SlideViewController: SlideMenuController  {
     
+    lazy var leftItem: UIBarButtonItem = {
+        let menuButton = AHButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        menuButton.setImage(UIImage(named:"img_slide_menu"), forState: .Normal)
+        menuButton.setImage(UIImage(named: "img_slide_back"), forState: .Selected)
+        menuButton.imageEdgeInsets = UIEdgeInsetsZero
+        menuButton.addTarget(self, action: #selector(SlideViewController.openMenu), forControlEvents: .TouchUpInside)
+        let item = UIBarButtonItem(customView: menuButton)
+        
+        return item
+    }()
+    
+    lazy var rightItem: UIBarButtonItem = {
+        let searchButton = AHButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+        searchButton.setImage(UIImage(named:"img_slide_search"), forState: .Normal)
+        searchButton.imageEdgeInsets = UIEdgeInsetsZero
+        searchButton.addTarget(self, action: #selector(SlideViewController.openSearch), forControlEvents: .TouchUpInside)
+        let item = UIBarButtonItem(customView: searchButton)
+        
+        return item
+    }()
+    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,37 +38,40 @@ class SlideViewController: SlideMenuController  {
 
     //MARK: -  Private Methods
     private func baseConfig() {
+        configureNavigationBar()
+        
+        self.view.backgroundColor = WHITE
         SlideMenuOptions.leftViewWidth = 300
         SlideMenuOptions.hideStatusBar = false
-        addLeftBarButtonWithImage(UIImage(named:"img_slide_menu")!)
+//        addLeftBarButtonWithImage(UIImage(named:"img_slide_menu")!)
         delegate = self
     }
     
     private func configureNavigationBar() {
-        let menuButton = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        menuButton.setImage(UIImage(named:"img_slide_menu"), forState: .Normal)
-        menuButton.setImage(UIImage(named: "img_slide_back"), forState: .Selected)
-        menuButton.imageEdgeInsets = UIEdgeInsetsZero
-        menuButton.addTarget(self, action: #selector(openMenu(_:)), forControlEvents: .TouchUpInside)
-        let leftMenuItem = UIBarButtonItem(customView: menuButton)
-        
-        self.navigationItem.setLeftBarButtonItem(leftMenuItem, animated: true)
+        navigationItem.title = "AHMusic"
+        navigationItem.setLeftBarButtonItem(leftItem, animated: false)
+        navigationItem.setRightBarButtonItem(rightItem, animated: false)
     }
     
     //MARK: -  Actions
-    func openMenu(sender: UIButton) {
-        sender.selected = !sender.selected
-        self.toggleLeft()
+    func openMenu() {
+        toggleLeft()
+    }
+    
+    func openSearch() {
+        
     }
 }
 
 extension SlideViewController: SlideMenuControllerDelegate {
 
     func leftWillOpen() {
-        print("Open")
+        let menuButton = navigationItem.leftBarButtonItem?.customView as! UIButton
+        menuButton.selected = true
     }
     
     func leftWillClose() {
-        print("Close")
+        let menuButton = navigationItem.leftBarButtonItem?.customView as! UIButton
+        menuButton.selected = false
     }
 }

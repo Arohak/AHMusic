@@ -9,17 +9,18 @@
 class CategoryViewController: UIViewController, CategoryViewInput {
 
     var output: CategoryViewOutput!
+    var categoryView = CategoryView()
 
-    // MARK: Life cycle
+    var items = Array<Category>()
+    let collectionCellIdentifire = "categoryCollectionCell"
+
+    // MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = GREEN
-  
         baseConfig()
         output.viewIsReady()
     }
-    
     
     // MARK: - LandingViewInput
     func setupInitialState() {
@@ -28,16 +29,46 @@ class CategoryViewController: UIViewController, CategoryViewInput {
     
     // MARK: - Private Method
     private func baseConfig() {
-        let tab = (output as! CategoryPresenter).tab
-        styleTab(tab)
+        self.view = categoryView
+        
+        categoryView.collection.dataSource = self
+        categoryView.collection.delegate = self
+        categoryView.collection.registerClass(CategoryCell.self, forCellWithReuseIdentifier: collectionCellIdentifire)
+    }
+}
+
+extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    //MARK: - UICollectionViewDataSource
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return items.count
     }
     
-    private func styleTab(tab: CarbonTabSwipeNavigation) {
-        tab.setIndicatorColor(BLUE)
-        tab.toolbar.translucent = false
-        tab.setTabExtraWidth(30)
-        tab.carbonSegmentedControl!.setWidth(200, forSegmentAtIndex: 0)
-        tab.setNormalColor(BLACK.colorWithAlphaComponent(0.6))
-        tab.setSelectedColor(BLUE, font: UIFont.boldSystemFontOfSize(14))
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(collectionCellIdentifire, forIndexPath: indexPath) as! CategoryCell
+        let item = self.items[indexPath.row]
+        cell.setValues(item)
+        
+        return cell
+    }
+    
+    //MARK: - UICollectionViewDelegate
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+    //MARK: - UICollectionViewDelegateFlowLayout
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        let size = CGSize(width: 200, height: 250)
+        
+        return size
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsetsZero
     }
 }

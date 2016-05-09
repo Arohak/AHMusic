@@ -8,7 +8,7 @@
 
 class AlbumPresenter: AlbumModuleInput, AlbumViewOutput, AlbumInteractorOutput{
 
-    weak var view: AlbumViewInput!
+    var view: AlbumViewInput!
     var interactor: AlbumInteractorInput!
     var router: AlbumRouterInput!
 

@@ -24,6 +24,10 @@
 		4032752D3A96758556F9FB78 /* CategoryViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6CD6B65AA9B3EC5EB346B9 /* CategoryViewOutput.swift */; };
 		461FEB70A64561AEF247A84E /* CategoryModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BDDF45F81FFB340B13292 /* CategoryModuleInput.swift */; };
 		526A4DAC1CDE93B50000CFC5 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DAB1CDE93B50000CFC5 /* SlideViewController.swift */; };
+		526A4DB01CDF2BCA0000CFC5 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DAE1CDF2BCA0000CFC5 /* BaseView.swift */; };
+		526A4DB11CDF2BCA0000CFC5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DAF1CDF2BCA0000CFC5 /* BaseViewController.swift */; };
+		526A4DB41CDF35A50000CFC5 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DB21CDF35A50000CFC5 /* CategoryView.swift */; };
+		526A4DB91CDFC8640000CFC5 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DB81CDFC8640000CFC5 /* TabViewController.swift */; };
 		530D74DEAD372382B06B9988 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4555570FBB9D22A147C347 /* LandingViewController.swift */; };
 		5A40C2810E349D0934AA60E2 /* LandingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6438D34839EB6DA1DF43B62 /* LandingViewInput.swift */; };
 		5BA7DB6FB9D9AA11EEAEA0D5 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF388C1EF84857F6A39FDD6 /* StationViewController.swift */; };
@@ -56,7 +60,7 @@
 		A13865D21CDC84C000350BC2 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865BE1CDC84C000350BC2 /* UIHelper.swift */; };
 		A13865D31CDC84C000350BC2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865BF1CDC84C000350BC2 /* Utils.swift */; };
 		A13865D41CDC84C000350BC2 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865C11CDC84C000350BC2 /* Events.swift */; };
-		A13865D61CDC84C000350BC2 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865C41CDC84C000350BC2 /* Weather.swift */; };
+		A13865D61CDC84C000350BC2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865C41CDC84C000350BC2 /* Category.swift */; };
 		A13865D81CDC84C000350BC2 /* UISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865C91CDC84C000350BC2 /* UISettings.swift */; };
 		A13865D91CDC84C000350BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13865CB1CDC84C000350BC2 /* Assets.xcassets */; };
 		A13865DA1CDC84C000350BC2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A13865CC1CDC84C000350BC2 /* Info.plist */; };
@@ -137,6 +141,10 @@
 		4F3CD89EBCEEF50B119D3D39 /* AlbumModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumModuleInput.swift; sourceTree = "<group>"; };
 		4FD407133762F1B15F0DB5EE /* LandingInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingInteractor.swift; sourceTree = "<group>"; };
 		526A4DAB1CDE93B50000CFC5 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
+		526A4DAE1CDF2BCA0000CFC5 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		526A4DAF1CDF2BCA0000CFC5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		526A4DB21CDF35A50000CFC5 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		526A4DB81CDFC8640000CFC5 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		5AF78BCC2FDD0B01C646CE3B /* PlaylistViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		5BDC7799CE1C2444E2F1AB91 /* LandingViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingViewOutput.swift; sourceTree = "<group>"; };
 		5D1E058E5A9050C3584FD270 /* PlaylistConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistConfigurator.swift; sourceTree = "<group>"; };
@@ -168,7 +176,7 @@
 		A13865BE1CDC84C000350BC2 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		A13865BF1CDC84C000350BC2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		A13865C11CDC84C000350BC2 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
-		A13865C41CDC84C000350BC2 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		A13865C41CDC84C000350BC2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		A13865C81CDC84C000350BC2 /* AHMusic-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AHMusic-Bridging-Header.h"; sourceTree = "<group>"; };
 		A13865C91CDC84C000350BC2 /* UISettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISettings.swift; sourceTree = "<group>"; };
 		A13865CB1CDC84C000350BC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -395,6 +403,31 @@
 			path = Slide;
 			sourceTree = "<group>";
 		};
+		526A4DAD1CDF2BCA0000CFC5 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				526A4DAE1CDF2BCA0000CFC5 /* BaseView.swift */,
+				526A4DAF1CDF2BCA0000CFC5 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		526A4DB61CDF35AD0000CFC5 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				526A4DB21CDF35A50000CFC5 /* CategoryView.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		526A4DB71CDFC8640000CFC5 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				526A4DB81CDFC8640000CFC5 /* TabViewController.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
 		5D707B3BCB8DBBB63CB40DFD /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -502,7 +535,7 @@
 		A13865C21CDC84C000350BC2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A13865C41CDC84C000350BC2 /* Weather.swift */,
+				A13865C41CDC84C000350BC2 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -564,7 +597,9 @@
 			isa = PBXGroup;
 			children = (
 				A13865B71CDC84C000350BC2 /* Application */,
+				526A4DAD1CDF2BCA0000CFC5 /* Base */,
 				526A4DAA1CDE93B50000CFC5 /* Slide */,
+				526A4DB71CDFC8640000CFC5 /* Tab */,
 				A13865C61CDC84C000350BC2 /* Modules */,
 				A13865C21CDC84C000350BC2 /* Models */,
 				A13865C01CDC84C000350BC2 /* Messages */,
@@ -699,6 +734,7 @@
 				B6A28737C39CB55DF1E7A420 /* CategoryViewInput.swift */,
 				0A6CD6B65AA9B3EC5EB346B9 /* CategoryViewOutput.swift */,
 				D6C1666030F2E4492C3F35F1 /* CategoryViewController.swift */,
+				526A4DB61CDF35AD0000CFC5 /* views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -925,7 +961,7 @@
 				A13865CE1CDC84C000350BC2 /* ApplicationAssembly.swift in Sources */,
 				A13865D81CDC84C000350BC2 /* UISettings.swift in Sources */,
 				A13865CD1CDC84C000350BC2 /* AppDelegate.swift in Sources */,
-				A13865D61CDC84C000350BC2 /* Weather.swift in Sources */,
+				A13865D61CDC84C000350BC2 /* Category.swift in Sources */,
 				A13865D31CDC84C000350BC2 /* Utils.swift in Sources */,
 				A13865D41CDC84C000350BC2 /* Events.swift in Sources */,
 				A13865D01CDC84C000350BC2 /* DBHelper.swift in Sources */,
@@ -945,6 +981,7 @@
 				DDAFB820275E4A23BE41F399 /* LandingInitializer.swift in Sources */,
 				39040AEE39D52C3E4D5BB6E4 /* StationViewInput.swift in Sources */,
 				A3A65C40B2743FD9EFB1945C /* StationViewOutput.swift in Sources */,
+				526A4DB91CDFC8640000CFC5 /* TabViewController.swift in Sources */,
 				5BA7DB6FB9D9AA11EEAEA0D5 /* StationViewController.swift in Sources */,
 				ADC52ED0CFCD5DE406D59BC4 /* StationModuleInput.swift in Sources */,
 				3BCE43A4CC09FBC47286A8E2 /* StationPresenter.swift in Sources */,
@@ -960,6 +997,7 @@
 				61541B26563C3B2F1F5ECD16 /* PlaylistViewController.swift in Sources */,
 				ED9FAA669792B079A407B8FA /* PlaylistModuleInput.swift in Sources */,
 				72FF2D149EA43ABE1F1849CC /* PlaylistPresenter.swift in Sources */,
+				526A4DB01CDF2BCA0000CFC5 /* BaseView.swift in Sources */,
 				129FA756C47BEC9FD974BDE6 /* PlaylistInteractorInput.swift in Sources */,
 				B81C15FD9D8C2BDFA80FD540 /* PlaylistInteractorOutput.swift in Sources */,
 				A9E5F9DC0B0B0644DBA98F1A /* PlaylistInteractor.swift in Sources */,
@@ -995,6 +1033,8 @@
 				B847B9A335E0A0A67C5B1171 /* LeftMenuViewInput.swift in Sources */,
 				B42B326339DC283106ED2730 /* LeftMenuViewOutput.swift in Sources */,
 				D3662F5995B56A32A52307A4 /* LeftMenuViewController.swift in Sources */,
+				526A4DB11CDF2BCA0000CFC5 /* BaseViewController.swift in Sources */,
+				526A4DB41CDF35A50000CFC5 /* CategoryView.swift in Sources */,
 				7E22D65C47B9D189D37B837E /* LeftMenuModuleInput.swift in Sources */,
 				6151BFE6DE91689B0EF80CB5 /* LeftMenuPresenter.swift in Sources */,
 				CFABE5749D72C2D44BF165B4 /* LeftMenuInteractorInput.swift in Sources */,
