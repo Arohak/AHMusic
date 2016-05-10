@@ -12,9 +12,9 @@
 @import RealmSwift;
 @import Typhoon;
 @import SwiftyJSON;
-//@import Alamofire;
-//@import RxAlamofire;
-//@import RxSwift;
+@import Alamofire;
+@import RxAlamofire;
+@import RxSwift;
 @import Kingfisher;
 @import CarbonKit;
 @import SlideMenuControllerSwift;

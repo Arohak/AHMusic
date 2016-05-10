@@ -9,5 +9,14 @@
 class CategoryInteractor: CategoryInteractorInput {
 
     weak var output: CategoryInteractorOutput!
-
+    
+    func getCategoryItems() {
+        let categories = ["Pop", "Rock", "Methal", "", "", "", "", ""]
+        var temp = Array<Category>()
+        for item in categories {
+            temp.append(Category(data: JSON(["name" : item, "image" : ""])))
+        }
+        
+        output.dataIsReady(temp)
+    }
 }

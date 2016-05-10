@@ -8,5 +8,5 @@
 
 protocol CategoryViewInput: class {
 
-    func setupInitialState()
+    func categoryDataIsReady(items: Array<Category>)
 }

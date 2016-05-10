@@ -19,11 +19,9 @@ class AlbumModuleConfigurator {
         
         let viewController = AlbumViewController()
         let interactor = AlbumInteractor()
-        let router = AlbumRouter()
         
         presenter.view = viewController
         presenter.interactor = interactor
-        presenter.router = router
         
         interactor.output = presenter
         viewController.output = presenter

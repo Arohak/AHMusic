@@ -19,11 +19,9 @@ class LeftMenuModuleConfigurator {
         
         let viewController = LeftMenuViewController()
         let interactor = LeftMenuInteractor()
-        let router = LeftMenuRouter()
         
         presenter.view = viewController
         presenter.interactor = interactor
-        presenter.router = router
         
         interactor.output = presenter
         viewController.output = presenter

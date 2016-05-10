@@ -19,11 +19,9 @@ class CategoryModuleConfigurator {
         
         let viewController = CategoryViewController()
         let interactor = CategoryInteractor()
-        let router = CategoryRouter()
         
         presenter.view = viewController
         presenter.interactor = interactor
-        presenter.router = router
         
         interactor.output = presenter
         viewController.output = presenter

@@ -9,7 +9,7 @@ target 'AHMusic' do
     pod 'RealmSwift'
 #    pod 'EventCenter'
     pod 'PureLayout'
-#    pod 'SwiftLoader'
+    pod 'SwiftLoader'
     pod 'Kingfisher'
     pod 'SwiftyJSON'
     pod 'PKHUD'

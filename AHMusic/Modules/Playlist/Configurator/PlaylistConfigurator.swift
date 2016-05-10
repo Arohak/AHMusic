@@ -19,11 +19,9 @@ class PlaylistModuleConfigurator {
         
         let viewController = PlaylistViewController()
         let interactor = PlaylistInteractor()
-        let router = PlaylistRouter()
         
         presenter.view = viewController
         presenter.interactor = interactor
-        presenter.router = router
         
         interactor.output = presenter
         viewController.output = presenter

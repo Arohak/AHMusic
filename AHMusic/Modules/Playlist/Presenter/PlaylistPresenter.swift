@@ -10,7 +10,6 @@ class PlaylistPresenter: PlaylistModuleInput, PlaylistViewOutput, PlaylistIntera
 
     var view: PlaylistViewInput!
     var interactor: PlaylistInteractorInput!
-    var router: PlaylistRouterInput!
 
     func viewIsReady() {
 

@@ -10,9 +10,22 @@ class CategoryPresenter: CategoryModuleInput, CategoryViewOutput, CategoryIntera
 
     var view: CategoryViewInput!
     var interactor: CategoryInteractorInput!
-    var router: CategoryRouterInput!
 
+    //MARK: - CategoryViewOutput
     func viewIsReady() {
+        interactor.getCategoryItems()
+    }
+    
+    func viewIsSelectItem(item: Category) {
+//        let detailPresenter = DetailPresenter(city: item.name)
+//        _ = DetailModuleInitializer(presentor: detailPresenter)
         
+        let nav = appDelegate.window?.rootViewController as! UINavigationController
+//        view.push(nav, toVC: detailPresenter.view as! UIViewController)
+    }
+    
+    //MARK: - CategoryInteractorOutput
+    func dataIsReady(items: Array<Category>) {
+        view.categoryDataIsReady(items)
     }
 }

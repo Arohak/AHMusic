@@ -10,7 +10,6 @@ class AlbumPresenter: AlbumModuleInput, AlbumViewOutput, AlbumInteractorOutput{
 
     var view: AlbumViewInput!
     var interactor: AlbumInteractorInput!
-    var router: AlbumRouterInput!
 
     func viewIsReady() {
 

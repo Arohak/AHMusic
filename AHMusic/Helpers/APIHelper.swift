@@ -6,75 +6,80 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//let apiHelper = APIHelper.sharedInstance
-//
-//class APIHelper {
-//    
-//    static let sharedInstance = APIHelper()
-//    let manager = Manager.sharedInstance
-//    
-//    //MARK: - API Routers
-//    private struct ROUTERS
-//    {
-//        static let GET_WEATHER              = "http://api.apixu.com/v1/current.json?key=6c0d9ec402854c01a6c120751160203&q=%@"
-//        static let GET_WEATHER_FORECAST     = "http://api.apixu.com/v1/forecast.json?key=6c0d9ec402854c01a6c120751160203&q=%@&days=%@"
-//        static let GEOCODE_ADDRESS          = "https://maps.googleapis.com/maps/api/geocode/json?address=%@"
-//        static let GET_DIRECTIONS           = "https://maps.googleapis.com/maps/api/directions/json?origin=%@&destination=%@"
-////        static let GET_WEATHER = "http://api.openweathermap.org/data/2.5/weather?q=London&APPID=848c6f714deb2219816b686306bc766d"
-//    }
-//    
-//    private func rx_Request(method: Alamofire.Method,
-//                            url: String,
-//                            parameters: [String: AnyObject]? = nil,
-//                            showProgress: Bool = true)
-//                            -> Observable<JSON>
-//    {
-//        return Observable.create { observer in
-//            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-//            if showProgress { UIHelper.showProgressHUD() }
-//            let URL = url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-//            
-//            _ = self.manager.rx_request(method, URL, parameters: parameters, encoding: .URL)
-//                .observeOn(MainScheduler.instance)
-//                .flatMap {
-//                    $0.rx_JSON()
-//                }
-//                .subscribe(
-//                    onNext: {
-//                        observer.onNext(JSON($0))
-//                    },
-//                    onError: {
-//                        observer.onError($0)
-//                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-//                        if showProgress { UIHelper.hideProgressHUD() }
-//                    },
-//                    onCompleted: {
-//                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-//                        if showProgress { UIHelper.hideProgressHUD() }
-//                        observer.onCompleted()
-//                    })
-//            
-//            return AnonymousDisposable { }
-//        }
-//    }
-//    
-//    func rx_GetWeather(cityName: String) -> Observable<JSON> {
-//        let url = String(format: ROUTERS.GET_WEATHER, cityName)
-//        return rx_Request(.GET, url: url)
-//    }
-//    
-//    func rx_GetWeatherForecast(cityName: String, days: String) -> Observable<JSON> {
-//        let url = String(format: ROUTERS.GET_WEATHER_FORECAST, cityName, days)
-//        return rx_Request(.GET, url: url)
-//    }
-//    
-//    func rx_GeocodeAddress(cityName: String) -> Observable<JSON> {
-//        let url = String(format: ROUTERS.GEOCODE_ADDRESS, cityName)
-//        return rx_Request(.GET, url: url)
-//    }
-//    
-//    func rx_GetDirections(origin: String, destination: String) -> Observable<JSON> {
-//        let url = String(format: ROUTERS.GET_DIRECTIONS, origin, destination)
-//        return rx_Request(.GET, url: url)
-//    }
-//}
+let apiHelper = APIHelper.sharedInstance
+
+class APIHelper {
+    
+    static let sharedInstance = APIHelper()
+    let manager = Manager.sharedInstance
+    
+    //MARK: - API Routers
+    private struct ROUTERS
+    {
+        //http://www.last.fm/api
+//        static let ROOT_URL                = "http://ws.audioscrobbler.com/2.0/"
+//        static let API_VALUE               = "5c1a64ac9d59273b95165bd369b15fdb"
+//        static let GET_TOP_TAGS            = "chart.getTopTags"
+//        static let GET_TOP_ALBUMS          = "artist.getTopAlbums"
+//        static let GET_TOP_ARTISTS         = "tag.getTopArtists"
+//        static let GET_TRACKS              = "album.getInfo"
+        
+        //https://market.mashape.com/deezerdevs/deezer#-search
+        static let ROOT_URL                 = "https://deezerdevs-deezer.p.mashape.com/"
+        static let headers                  = ["X-Mashape-Key": "4LayNni55YmshxhVWWnUNiryZGFPp1ULxlEjsnxLhL7PonxZ1M", "Accept": "text/plain"]
+        static let SEARCH                   = "search?q=%@"
+        static let GET_ALBUM                = "album/"
+        static let GET_ARTIST               = "artists/"
+        static let GET_PLAYLIST             = "playlist/"
+        static let GET_TRACK                = "track/"
+    }
+    
+    private func rx_Request(method: Alamofire.Method,
+                            url: String,
+                            parameters: [String: AnyObject]? = nil,
+                            showProgress: Bool = true,
+                            isHeader: Bool = false)
+                            -> Observable<JSON>
+    {
+        return Observable.create { observer in
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            if showProgress { UIHelper.showProgressHUD() }
+            
+            let URL = url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+//            URL = URL + "&api_key=\(ROUTERS.API_VALUE)&format=json"
+            let header = isHeader ? ROUTERS.headers : [:]
+            _ = self.manager.rx_request(method, URL, parameters: parameters, encoding: .URL, headers: header)
+                .observeOn(MainScheduler.instance)
+                .flatMap {
+                    $0.rx_JSON()
+                }
+                .subscribe(
+                    onNext: {
+                        observer.onNext(JSON($0))
+                    },
+                    onError: {
+                        observer.onError($0)
+                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                        if showProgress { UIHelper.hideProgressHUD() }
+//                        UIHelper.showHUD("")
+                    },
+                    onCompleted: {
+                        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+                        if showProgress { UIHelper.hideProgressHUD() }
+                        observer.onCompleted()
+                    })
+            
+            return AnonymousDisposable { }
+        }
+    }
+
+    func rx_Search(artistName: String) -> Observable<JSON> {
+        let url = ROUTERS.ROOT_URL + String(format: ROUTERS.SEARCH, artistName)
+        return rx_Request(.GET, url: url, isHeader: true)
+    }
+    
+    func rx_GetAlbum(id: String) -> Observable<JSON> {
+        let url = ROUTERS.ROOT_URL + ROUTERS.GET_ALBUM + id
+        return rx_Request(.GET, url: url, isHeader: true)
+    }
+}

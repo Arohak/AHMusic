@@ -23,8 +23,10 @@ class CategoryViewController: UIViewController, CategoryViewInput {
     }
     
     // MARK: - LandingViewInput
-    func setupInitialState() {
+    func categoryDataIsReady(items: Array<Category>) {
+        self.items = items
         
+        categoryView.collection.reloadData()
     }
     
     // MARK: - Private Method
@@ -46,7 +48,6 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(collectionCellIdentifire, forIndexPath: indexPath) as! CategoryCell
         let item = self.items[indexPath.row]
         cell.setValues(item)
@@ -61,7 +62,6 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
     
     //MARK: - UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        
         let size = CGSize(width: 200, height: 250)
         
         return size

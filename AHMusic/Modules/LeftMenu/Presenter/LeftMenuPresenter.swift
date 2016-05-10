@@ -10,7 +10,6 @@ class LeftMenuPresenter: LeftMenuModuleInput, LeftMenuViewOutput, LeftMenuIntera
 
     var view: LeftMenuViewInput!
     var interactor: LeftMenuInteractorInput!
-    var router: LeftMenuRouterInput!
 
     func viewIsReady() {
 

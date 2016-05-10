@@ -19,11 +19,9 @@ class StationModuleConfigurator {
         
         let viewController = StationViewController()
         let interactor = StationInteractor()
-        let router = StationRouter()
         
         presenter.view = viewController
         presenter.interactor = interactor
-        presenter.router = router
         
         interactor.output = presenter
         viewController.output = presenter

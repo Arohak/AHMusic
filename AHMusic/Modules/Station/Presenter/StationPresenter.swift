@@ -10,7 +10,6 @@ class StationPresenter: StationModuleInput, StationViewOutput, StationInteractor
 
     var view: StationViewInput!
     var interactor: StationInteractorInput!
-    var router: StationRouterInput!
 
     func viewIsReady() {
 
