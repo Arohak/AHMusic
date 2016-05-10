@@ -28,26 +28,20 @@
 		526A4DB11CDF2BCA0000CFC5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DAF1CDF2BCA0000CFC5 /* BaseViewController.swift */; };
 		526A4DB41CDF35A50000CFC5 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DB21CDF35A50000CFC5 /* CategoryView.swift */; };
 		526A4DB91CDFC8640000CFC5 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DB81CDFC8640000CFC5 /* TabViewController.swift */; };
-		530D74DEAD372382B06B9988 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4555570FBB9D22A147C347 /* LandingViewController.swift */; };
-		5A40C2810E349D0934AA60E2 /* LandingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6438D34839EB6DA1DF43B62 /* LandingViewInput.swift */; };
 		5BA7DB6FB9D9AA11EEAEA0D5 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF388C1EF84857F6A39FDD6 /* StationViewController.swift */; };
 		5C6B61EE5C45FCFE4D0F83D8 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8187EA41ACFE03076BBAE /* AlbumViewController.swift */; };
 		6151BFE6DE91689B0EF80CB5 /* LeftMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AEDE424228056BDF092D89 /* LeftMenuPresenter.swift */; };
 		61541B26563C3B2F1F5ECD16 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF78BCC2FDD0B01C646CE3B /* PlaylistViewController.swift */; };
 		6479FE0C570FB93DA157FA11 /* StationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33B3DAA4F988322E75173E /* StationInteractor.swift */; };
 		64EB17EF5778949915512986 /* LeftMenuInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E3AC0A3793100334D1940 /* LeftMenuInitializer.swift */; };
-		6F89410225E6837E99A41D49 /* LandingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFB8BC5F8B7B64AE66EC45E /* LandingRouter.swift */; };
 		70D9930379E9B23927967504 /* StationInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC866393B56C2A0F6E0F613 /* StationInteractorInput.swift */; };
-		71196079D3EFC89E56D9F955 /* LandingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD407133762F1B15F0DB5EE /* LandingInteractor.swift */; };
 		72AD3F939A125F0EA90F49BB /* AlbumInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A3A3FE98B4CA5E8CD253D /* AlbumInitializer.swift */; };
 		72FF2D149EA43ABE1F1849CC /* PlaylistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D3059FCB6BFFE2255FD0B /* PlaylistPresenter.swift */; };
+		772D4AE2EF9CEF224BD8E5CD /* Pods_AHMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAE2358404452FDCC25542C /* Pods_AHMusicTests.framework */; };
 		7E19E297A5D95F667128C2B2 /* StationInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06DC6A220894F69C77D4B5 /* StationInteractorOutput.swift */; };
 		7E22D65C47B9D189D37B837E /* LeftMenuModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7B910B1C44F40FA02CC9C /* LeftMenuModuleInput.swift */; };
-		8236734904D540E1AFD07950 /* LandingRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71DFBB0569C0B8C88D3C7DE /* LandingRouterInput.swift */; };
 		836B7CCF3E903C3AA0ABFCAF /* CategoryRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F283DE73CB49E85B884CEF /* CategoryRouterInput.swift */; };
 		88C292CDA2A871B236B88398 /* PlaylistRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23CE554A6CDE150257334C4F /* PlaylistRouter.swift */; };
-		927CA5ECB9B43A8AAEEBFE34 /* LandingViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDC7799CE1C2444E2F1AB91 /* LandingViewOutput.swift */; };
-		9680E0080AFA92DCFDC402AF /* LandingInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E0C2C07736C59629202827 /* LandingInteractorInput.swift */; };
 		97CF4131D58BC5D8D30D0D1B /* AlbumRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB18890A41E63D2113761AA /* AlbumRouter.swift */; };
 		991894F4D7BAA4F85582A9F3 /* AlbumViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDA2DADFE18584AD3D06FC /* AlbumViewOutput.swift */; };
 		991EAF6BFB53605F8BC0CA52 /* CategoryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A28737C39CB55DF1E7A420 /* CategoryViewInput.swift */; };
@@ -63,7 +57,6 @@
 		A13865D61CDC84C000350BC2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865C41CDC84C000350BC2 /* Category.swift */; };
 		A13865D81CDC84C000350BC2 /* UISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865C91CDC84C000350BC2 /* UISettings.swift */; };
 		A13865D91CDC84C000350BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13865CB1CDC84C000350BC2 /* Assets.xcassets */; };
-		A13865DA1CDC84C000350BC2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A13865CC1CDC84C000350BC2 /* Info.plist */; };
 		A14836DF1CDB75CA0043036B /* AHMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836DE1CDB75CA0043036B /* AHMusicTests.swift */; };
 		A14836EA1CDB75CA0043036B /* AHMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836E91CDB75CA0043036B /* AHMusicUITests.swift */; };
 		A307DE4BCF49929FBBD24B4E /* PlaylistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E058E5A9050C3584FD270 /* PlaylistConfigurator.swift */; };
@@ -75,7 +68,6 @@
 		AD25478A90D3FAA636BCCE9B /* AlbumInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE693C9A1D254ECE4D5838C1 /* AlbumInteractor.swift */; };
 		ADB451B9642E1562C2AF9F28 /* CategoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D827F6B628471F277CEF2645 /* CategoryConfigurator.swift */; };
 		ADC52ED0CFCD5DE406D59BC4 /* StationModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAC0CDBC19E3257E9C00A2 /* StationModuleInput.swift */; };
-		ADF4B3021975F20391FDD732 /* LandingModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD42C11536933625C73D8A /* LandingModuleInput.swift */; };
 		AE5672356BA76DD8914EE21B /* LeftMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141EC01A838C8BDF25885EE8 /* LeftMenuInteractor.swift */; };
 		B0564C60327F0AE105768569 /* StationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94570D8E92AEB8DE0EE94A /* StationConfigurator.swift */; };
 		B242B9522EA7777F9EE8F4CD /* PlaylistRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750FF5A5C1BFF3F501E4EF4C /* PlaylistRouterInput.swift */; };
@@ -88,16 +80,12 @@
 		CFABE5749D72C2D44BF165B4 /* LeftMenuInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EF571E3CA77FE90203D7 /* LeftMenuInteractorInput.swift */; };
 		D3662F5995B56A32A52307A4 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E3D1F31F3B731866DD96 /* LeftMenuViewController.swift */; };
 		D98F69B59BF2E18D8BCBC90B /* LeftMenuConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AE59CF5AA198001336C8A9 /* LeftMenuConfigurator.swift */; };
-		DDAFB820275E4A23BE41F399 /* LandingInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB077C6354715611B7F1EC85 /* LandingInitializer.swift */; };
 		E23814705FB6910D3D065E32 /* AlbumPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307FBB14E2DA4F209C27091 /* AlbumPresenter.swift */; };
 		E47806D15C25497BF015F360 /* PlaylistViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDC60130E7DFBB636E26596 /* PlaylistViewInput.swift */; };
-		E8F384867A453B728FEA8AA3 /* LandingInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DD6BF0D4844E124229BD6A /* LandingInteractorOutput.swift */; };
 		ED9FAA669792B079A407B8FA /* PlaylistModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB7F1C5F2143192C6292C15 /* PlaylistModuleInput.swift */; };
-		EE7F75B737270F9C2DF78634 /* LandingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84255300D5893940DD95E69B /* LandingConfigurator.swift */; };
 		F40294EE25707FA26273C8BF /* StationInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91704E335A423AC9979C609F /* StationInitializer.swift */; };
 		F73ECFB7F77D45A2CE1704D3 /* AlbumInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532E08C7C9B743D9AFD3299 /* AlbumInteractorOutput.swift */; };
 		F8A58A851CFD123E023E987B /* CategoryInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302EC990D2359BD7102BAF52 /* CategoryInteractorOutput.swift */; };
-		FA11B5A41E536B6A6F909CA8 /* LandingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740898107B7649EC8ACE7B33 /* LandingPresenter.swift */; };
 		FB363D7ED4605330EC5DF3A5 /* LeftMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ECCC420D8935869FF203F37 /* LeftMenuRouter.swift */; };
 /* End PBXBuildFile section */
 
@@ -134,31 +122,25 @@
 		2C15F9614E862CE4F15D11E7 /* StationViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationViewOutput.swift; sourceTree = "<group>"; };
 		2EB7F1C5F2143192C6292C15 /* PlaylistModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistModuleInput.swift; sourceTree = "<group>"; };
 		302EC990D2359BD7102BAF52 /* CategoryInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryInteractorOutput.swift; sourceTree = "<group>"; };
-		34E0C2C07736C59629202827 /* LandingInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingInteractorInput.swift; sourceTree = "<group>"; };
 		40F283DE73CB49E85B884CEF /* CategoryRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryRouterInput.swift; sourceTree = "<group>"; };
 		4307FBB14E2DA4F209C27091 /* AlbumPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumPresenter.swift; sourceTree = "<group>"; };
 		4CB18890A41E63D2113761AA /* AlbumRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumRouter.swift; sourceTree = "<group>"; };
 		4F3CD89EBCEEF50B119D3D39 /* AlbumModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumModuleInput.swift; sourceTree = "<group>"; };
-		4FD407133762F1B15F0DB5EE /* LandingInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingInteractor.swift; sourceTree = "<group>"; };
 		526A4DAB1CDE93B50000CFC5 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		526A4DAE1CDF2BCA0000CFC5 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		526A4DAF1CDF2BCA0000CFC5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		526A4DB21CDF35A50000CFC5 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		526A4DB81CDFC8640000CFC5 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		5AF78BCC2FDD0B01C646CE3B /* PlaylistViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
-		5BDC7799CE1C2444E2F1AB91 /* LandingViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingViewOutput.swift; sourceTree = "<group>"; };
 		5D1E058E5A9050C3584FD270 /* PlaylistConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistConfigurator.swift; sourceTree = "<group>"; };
 		5E94570D8E92AEB8DE0EE94A /* StationConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationConfigurator.swift; sourceTree = "<group>"; };
 		66231FEA016CA40693CA0AE8 /* CategoryPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryPresenter.swift; sourceTree = "<group>"; };
 		676F0413FD0A52E3D5C91C35 /* PlaylistInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistInteractorOutput.swift; sourceTree = "<group>"; };
-		6A4555570FBB9D22A147C347 /* LandingViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
+		69267D2B6C9683DEF7073F77 /* Pods-AHMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests.release.xcconfig"; sourceTree = "<group>"; };
 		7263D29CD482D2EB08E63F67 /* PlaylistInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistInteractorInput.swift; sourceTree = "<group>"; };
 		731E6BBC17334F558DBF1011 /* LeftMenuRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuRouterInput.swift; sourceTree = "<group>"; };
-		740898107B7649EC8ACE7B33 /* LandingPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingPresenter.swift; sourceTree = "<group>"; };
 		750FF5A5C1BFF3F501E4EF4C /* PlaylistRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistRouterInput.swift; sourceTree = "<group>"; };
 		8073E3D1F31F3B731866DD96 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
-		84255300D5893940DD95E69B /* LandingConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingConfigurator.swift; sourceTree = "<group>"; };
-		89DD6BF0D4844E124229BD6A /* LandingInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingInteractorOutput.swift; sourceTree = "<group>"; };
 		8B9BDDF45F81FFB340B13292 /* CategoryModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryModuleInput.swift; sourceTree = "<group>"; };
 		91704E335A423AC9979C609F /* StationInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInitializer.swift; sourceTree = "<group>"; };
 		922E3797FDFDC1BBE894A589 /* LeftMenuViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuViewInput.swift; sourceTree = "<group>"; };
@@ -190,11 +172,8 @@
 		A14836EB1CDB75CA0043036B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A239D0B142F7AB27069FE0E4 /* StationRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationRouter.swift; sourceTree = "<group>"; };
 		A5C7B988329045600F77C3D9 /* LeftMenuInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuInteractorOutput.swift; sourceTree = "<group>"; };
-		A6438D34839EB6DA1DF43B62 /* LandingViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingViewInput.swift; sourceTree = "<group>"; };
-		A71DFBB0569C0B8C88D3C7DE /* LandingRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingRouterInput.swift; sourceTree = "<group>"; };
 		A7BC5B1A5FB496C4C4B278CC /* Pods-AHMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic.release.xcconfig"; sourceTree = "<group>"; };
 		A86E3AC0A3793100334D1940 /* LeftMenuInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuInitializer.swift; sourceTree = "<group>"; };
-		AAFB8BC5F8B7B64AE66EC45E /* LandingRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingRouter.swift; sourceTree = "<group>"; };
 		AB2DDA62843CDE8DE659BB18 /* PlaylistInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistInteractor.swift; sourceTree = "<group>"; };
 		AC79167B04BFE68239C240B3 /* Pods_AHMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AHMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B31C284849C6BAE7A4773DB8 /* AlbumViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewInput.swift; sourceTree = "<group>"; };
@@ -203,22 +182,22 @@
 		BB06DC6A220894F69C77D4B5 /* StationInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInteractorOutput.swift; sourceTree = "<group>"; };
 		BE571235D18896B492DF625B /* AlbumRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumRouterInput.swift; sourceTree = "<group>"; };
 		C03A3A3FE98B4CA5E8CD253D /* AlbumInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInitializer.swift; sourceTree = "<group>"; };
-		CB077C6354715611B7F1EC85 /* LandingInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingInitializer.swift; sourceTree = "<group>"; };
 		D532E08C7C9B743D9AFD3299 /* AlbumInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractorOutput.swift; sourceTree = "<group>"; };
 		D6C1666030F2E4492C3F35F1 /* CategoryViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		D827F6B628471F277CEF2645 /* CategoryConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryConfigurator.swift; sourceTree = "<group>"; };
 		DC3F23B930BCA539C9B3F42C /* StationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationPresenter.swift; sourceTree = "<group>"; };
 		DE33B3DAA4F988322E75173E /* StationInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInteractor.swift; sourceTree = "<group>"; };
 		E0AC5166CAE5AA7385216BC3 /* AlbumInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractorInput.swift; sourceTree = "<group>"; };
+		E71C000EB432D6B53AD5EDE9 /* Pods-AHMusicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7527D155F374DBC98B4CB32 /* LeftMenuViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuViewOutput.swift; sourceTree = "<group>"; };
 		EE693C9A1D254ECE4D5838C1 /* AlbumInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractor.swift; sourceTree = "<group>"; };
 		F131EF571E3CA77FE90203D7 /* LeftMenuInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuInteractorInput.swift; sourceTree = "<group>"; };
 		F19D3059FCB6BFFE2255FD0B /* PlaylistPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistPresenter.swift; sourceTree = "<group>"; };
-		F5DD42C11536933625C73D8A /* LandingModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LandingModuleInput.swift; sourceTree = "<group>"; };
 		F6AE59CF5AA198001336C8A9 /* LeftMenuConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuConfigurator.swift; sourceTree = "<group>"; };
 		FBB7B910B1C44F40FA02CC9C /* LeftMenuModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuModuleInput.swift; sourceTree = "<group>"; };
 		FBF388C1EF84857F6A39FDD6 /* StationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
 		FC0114E5BEA398B9B87C6B6D /* CategoryInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryInteractorInput.swift; sourceTree = "<group>"; };
+		FCAE2358404452FDCC25542C /* Pods_AHMusicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AHMusicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +213,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				772D4AE2EF9CEF224BD8E5CD /* Pods_AHMusicTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				AC79167B04BFE68239C240B3 /* Pods_AHMusic.framework */,
+				FCAE2358404452FDCC25542C /* Pods_AHMusicTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -272,6 +253,8 @@
 			children = (
 				2267ECF5F1F39946A1C7CAA3 /* Pods-AHMusic.debug.xcconfig */,
 				A7BC5B1A5FB496C4C4B278CC /* Pods-AHMusic.release.xcconfig */,
+				E71C000EB432D6B53AD5EDE9 /* Pods-AHMusicTests.debug.xcconfig */,
+				69267D2B6C9683DEF7073F77 /* Pods-AHMusicTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -305,16 +288,6 @@
 				A239D0B142F7AB27069FE0E4 /* StationRouter.swift */,
 			);
 			path = Router;
-			sourceTree = "<group>";
-		};
-		36C6E707FFD51C312362B954 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				34E0C2C07736C59629202827 /* LandingInteractorInput.swift */,
-				89DD6BF0D4844E124229BD6A /* LandingInteractorOutput.swift */,
-				4FD407133762F1B15F0DB5EE /* LandingInteractor.swift */,
-			);
-			path = Interactor;
 			sourceTree = "<group>";
 		};
 		3950532F1EA5DB1FA4F0F585 /* Interactor */ = {
@@ -365,15 +338,6 @@
 				1BE8187EA41ACFE03076BBAE /* AlbumViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		476FB07B1F99858F97081198 /* Configurator */ = {
-			isa = PBXGroup;
-			children = (
-				84255300D5893940DD95E69B /* LandingConfigurator.swift */,
-				CB077C6354715611B7F1EC85 /* LandingInitializer.swift */,
-			);
-			path = Configurator;
 			sourceTree = "<group>";
 		};
 		4C0391AC65F16408B8E39043 /* Interactor */ = {
@@ -455,15 +419,6 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
-		70CEFDB5B3E1D953526EE587 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				F5DD42C11536933625C73D8A /* LandingModuleInput.swift */,
-				740898107B7649EC8ACE7B33 /* LandingPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		7B2210FA470CF5B3CBFDC1BA /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,7 +498,6 @@
 		A13865C61CDC84C000350BC2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				E59493A351B5F2C84A10A2EA /* Landing */,
 				2FFA3638AD1002347ACBA246 /* LeftMenu */,
 				3D92A570152B568E7DAEE1D4 /* Category */,
 				98963DDEABAA1F401B543200 /* Album */,
@@ -628,15 +582,6 @@
 			path = AHMusicUITests;
 			sourceTree = "<group>";
 		};
-		A2212768D912EFBEBE984D2F /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				A71DFBB0569C0B8C88D3C7DE /* LandingRouterInput.swift */,
-				AAFB8BC5F8B7B64AE66EC45E /* LandingRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		AB06B2C8190510A741F163D8 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -694,28 +639,6 @@
 				07AEDE424228056BDF092D89 /* LeftMenuPresenter.swift */,
 			);
 			path = Presenter;
-			sourceTree = "<group>";
-		};
-		E59493A351B5F2C84A10A2EA /* Landing */ = {
-			isa = PBXGroup;
-			children = (
-				E61C595BD4DF9D1C0CC78C2A /* View */,
-				70CEFDB5B3E1D953526EE587 /* Presenter */,
-				36C6E707FFD51C312362B954 /* Interactor */,
-				A2212768D912EFBEBE984D2F /* Router */,
-				476FB07B1F99858F97081198 /* Configurator */,
-			);
-			path = Landing;
-			sourceTree = "<group>";
-		};
-		E61C595BD4DF9D1C0CC78C2A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A6438D34839EB6DA1DF43B62 /* LandingViewInput.swift */,
-				5BDC7799CE1C2444E2F1AB91 /* LandingViewOutput.swift */,
-				6A4555570FBB9D22A147C347 /* LandingViewController.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		F1C4C8B52848606CCBEA485F /* Interactor */ = {
@@ -784,12 +707,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A14836EE1CDB75CA0043036B /* Build configuration list for PBXNativeTarget "AHMusic" */;
 			buildPhases = (
-				3ACF1F5231D2BC9CB246ACD9 /* Check Pods Manifest.lock */,
+				3ACF1F5231D2BC9CB246ACD9 /* 📦 Check Pods Manifest.lock */,
 				A14836C21CDB75CA0043036B /* Sources */,
 				A14836C31CDB75CA0043036B /* Frameworks */,
 				A14836C41CDB75CA0043036B /* Resources */,
-				DE656FCD3E28693F2A0CBFBB /* Embed Pods Frameworks */,
-				70942FDC839482D78A6A106E /* Copy Pods Resources */,
+				DE656FCD3E28693F2A0CBFBB /* 📦 Embed Pods Frameworks */,
+				70942FDC839482D78A6A106E /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -804,9 +727,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A14836F11CDB75CA0043036B /* Build configuration list for PBXNativeTarget "AHMusicTests" */;
 			buildPhases = (
+				7FE31AFBE34C191FFD95A89B /* 📦 Check Pods Manifest.lock */,
 				A14836D61CDB75CA0043036B /* Sources */,
 				A14836D71CDB75CA0043036B /* Frameworks */,
 				A14836D81CDB75CA0043036B /* Resources */,
+				2677AB38642F01EEBEA2CB29 /* 📦 Embed Pods Frameworks */,
+				4F72088F30DB97711D3015CE /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -842,7 +768,7 @@
 		A14836BE1CDB75CA0043036B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "AroHak LLC";
 				TargetAttributes = {
 					A14836C51CDB75CA0043036B = {
@@ -883,7 +809,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A13865DA1CDC84C000350BC2 /* Info.plist in Resources */,
 				A13865D91CDC84C000350BC2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -905,14 +830,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3ACF1F5231D2BC9CB246ACD9 /* Check Pods Manifest.lock */ = {
+		2677AB38642F01EEBEA2CB29 /* 📦 Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3ACF1F5231D2BC9CB246ACD9 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -920,14 +860,29 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		70942FDC839482D78A6A106E /* Copy Pods Resources */ = {
+		4F72088F30DB97711D3015CE /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70942FDC839482D78A6A106E /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -935,14 +890,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		DE656FCD3E28693F2A0CBFBB /* Embed Pods Frameworks */ = {
+		7FE31AFBE34C191FFD95A89B /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DE656FCD3E28693F2A0CBFBB /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -967,18 +937,6 @@
 				A13865D01CDC84C000350BC2 /* DBHelper.swift in Sources */,
 				A13865D11CDC84C000350BC2 /* LocationHelper.swift in Sources */,
 				A13865D21CDC84C000350BC2 /* UIHelper.swift in Sources */,
-				5A40C2810E349D0934AA60E2 /* LandingViewInput.swift in Sources */,
-				927CA5ECB9B43A8AAEEBFE34 /* LandingViewOutput.swift in Sources */,
-				530D74DEAD372382B06B9988 /* LandingViewController.swift in Sources */,
-				ADF4B3021975F20391FDD732 /* LandingModuleInput.swift in Sources */,
-				FA11B5A41E536B6A6F909CA8 /* LandingPresenter.swift in Sources */,
-				9680E0080AFA92DCFDC402AF /* LandingInteractorInput.swift in Sources */,
-				E8F384867A453B728FEA8AA3 /* LandingInteractorOutput.swift in Sources */,
-				71196079D3EFC89E56D9F955 /* LandingInteractor.swift in Sources */,
-				8236734904D540E1AFD07950 /* LandingRouterInput.swift in Sources */,
-				6F89410225E6837E99A41D49 /* LandingRouter.swift in Sources */,
-				EE7F75B737270F9C2DF78634 /* LandingConfigurator.swift in Sources */,
-				DDAFB820275E4A23BE41F399 /* LandingInitializer.swift in Sources */,
 				39040AEE39D52C3E4D5BB6E4 /* StationViewInput.swift in Sources */,
 				A3A65C40B2743FD9EFB1945C /* StationViewOutput.swift in Sources */,
 				526A4DB91CDFC8640000CFC5 /* TabViewController.swift in Sources */,
@@ -1169,10 +1127,13 @@
 			baseConfigurationReference = 2267ECF5F1F39946A1C7CAA3 /* Pods-AHMusic.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/AHMusic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = arohak.com.AHMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/AHMusic/Settings/AHMusic-Bridging-Header.h";
 			};
 			name = Debug;
@@ -1182,16 +1143,20 @@
 			baseConfigurationReference = A7BC5B1A5FB496C4C4B278CC /* Pods-AHMusic.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/AHMusic/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = arohak.com.AHMusic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/AHMusic/Settings/AHMusic-Bridging-Header.h";
 			};
 			name = Release;
 		};
 		A14836F21CDB75CA0043036B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E71C000EB432D6B53AD5EDE9 /* Pods-AHMusicTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AHMusicTests/Info.plist;
@@ -1204,6 +1169,7 @@
 		};
 		A14836F31CDB75CA0043036B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69267D2B6C9683DEF7073F77 /* Pods-AHMusicTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AHMusicTests/Info.plist;

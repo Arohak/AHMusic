@@ -10,10 +10,8 @@
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var rootController: SlideViewController!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
         startApplication()
         
         return true
@@ -30,8 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = LeftMenuModuleInitializer(presentor: leftMenu)
         let left = leftMenu.view as! UIViewController
 
-        rootController = SlideViewController(mainViewController: main, leftMenuViewController: left)
-        _ = LandingModuleInitializer(controller: rootController)
+        let rootController = SlideViewController(mainViewController: main, leftMenuViewController: left)
         let nav = UINavigationController(rootViewController: rootController)
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
