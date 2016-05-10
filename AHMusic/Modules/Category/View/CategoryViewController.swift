@@ -62,13 +62,13 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
     
     //MARK: - UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let size = CGSize(width: 200, height: 250)
+        let size = CGSize(width: CA_CELL_WIDTH, height: CA_CELL_WIDTH*1.2)
         
         return size
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsetsZero
+        return UIEdgeInsets(top: CA_INSET, left: CA_INSET, bottom: CA_INSET, right: CA_INSET)
     }
 }

@@ -11,7 +11,7 @@ class CategoryView: UIView {
     
     lazy var collection: UICollectionView = {
         let view = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
-        view.backgroundColor = BLUE_LIGHT
+        view.backgroundColor = WHITE
         
         return view
     }()
@@ -20,7 +20,6 @@ class CategoryView: UIView {
     init() {
         super.init(frame: CGRectZero)
         
-        backgroundColor = WHITE
         addAllUIElements()
     }
     
@@ -55,7 +54,7 @@ class CategoryCell: UICollectionViewCell {
     }
     
     func setValues(item: Category) {
-        cellContentView.imageView.kf_setImageWithURL(NSURL(string: "http:" + item.image)!)
+        cellContentView.imageView.image = UIImage(named: item.image)
         cellContentView.nameLabel.text = item.name
     }
     
@@ -77,7 +76,7 @@ class CategoryCellContentView: UIView {
     lazy var iconImageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         view.image = UIImage(named: "img_ca_icon")
-        view.layer.cornerRadius = LA_ICON_SIZE/2
+        view.layer.cornerRadius = CA_ICON_SIZE/2
         view.layer.borderWidth = 2
         view.layer.borderColor = BLUE.CGColor
         
@@ -86,8 +85,8 @@ class CategoryCellContentView: UIView {
     
     lazy var nameLabel: AHLabel = {
         let view = AHLabel.newAutoLayoutView()
-        view.font = DE_NAME_FONT
-        view.text = "Name Pop"
+        view.font = CA_TITLE_FONT
+        view.textColor = BLUE
         
         return view
     }()
@@ -96,7 +95,6 @@ class CategoryCellContentView: UIView {
     init() {
         super.init(frame: CGRectZero)
         
-        backgroundColor = GREEN
         addAllUIElements()
     }
     
@@ -107,7 +105,7 @@ class CategoryCellContentView: UIView {
     //MARK: - Privat Methods
     func addAllUIElements() {
         addSubview(imageView)
-        addSubview(iconImageView)
+        imageView.addSubview(iconImageView)
         addSubview(nameLabel)
         
         setConstraints()
@@ -115,12 +113,12 @@ class CategoryCellContentView: UIView {
     
     //MARK: - Constraints
     func setConstraints() {
-        imageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: LA_INSET)
+        imageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: CA_OFFSET*1.5)
         imageView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), excludingEdge: .Bottom)
         
-        iconImageView.autoPinEdgeToSuperviewEdge(.Left, withInset: LA_INSET)
-        iconImageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: LA_INSET*2)
-        iconImageView.autoSetDimensionsToSize(CGSize(width: LA_ICON_SIZE, height: LA_ICON_SIZE))
+        iconImageView.autoPinEdgeToSuperviewEdge(.Left, withInset: CA_OFFSET)
+        iconImageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: CA_OFFSET)
+        iconImageView.autoSetDimensionsToSize(CGSize(width: CA_ICON_SIZE, height: CA_ICON_SIZE))
         
         nameLabel.autoPinEdgeToSuperviewEdge(.Bottom)
         nameLabel.autoAlignAxisToSuperviewAxis(.Vertical)
