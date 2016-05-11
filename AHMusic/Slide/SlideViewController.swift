@@ -6,8 +6,9 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 
 
-class SlideViewController: SlideMenuController  {
+class SlideViewController: SlideMenuController {
     
+    var output: CategoryViewOutput!
     var isAnimation = true
     
     lazy var textField: AHTextField = {
@@ -63,10 +64,13 @@ class SlideViewController: SlideMenuController  {
         configureNavigationBar()
         
         self.view.backgroundColor = WHITE
-        SlideMenuOptions.leftViewWidth = 300
+        SlideMenuOptions.leftViewWidth = ScreenSize.WIDTH*0.75
         SlideMenuOptions.hideStatusBar = false
 //        addLeftBarButtonWithImage(UIImage(named:"img_slide_menu")!) 
         delegate = self
+        
+        let main = mainViewController as! CategoryViewController
+        self.output = main.output as! CategoryPresenter
     }
     
     private func configureNavigationBar() {
@@ -124,6 +128,9 @@ extension SlideViewController: SlideMenuControllerDelegate, UITextFieldDelegate 
     //MARK: -  UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textFieldAnimation()
+        
+        let item = Category(data: JSON(["name" : textField.text!]))
+        output.viewIsSelectItem(item)
         
         return true
     }

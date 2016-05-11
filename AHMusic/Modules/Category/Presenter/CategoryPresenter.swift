@@ -26,7 +26,9 @@ class CategoryPresenter: CategoryModuleInput, CategoryViewOutput, CategoryIntera
     }
     
     func searchDataIsReady(items: Array<Category>) {
-        let vc = view as! UIViewController
-        vc.slideMenuController()!.changeMainViewController(TabViewController(),  close: true)
+        let root = appDelegate.window?.rootViewController as! UINavigationController
+        if let firstVC = root.viewControllers[0] as? SlideViewController {
+            firstVC.slideMenuController()!.changeMainViewController(TabViewController(),  close: true)
+        }
     }
 }
