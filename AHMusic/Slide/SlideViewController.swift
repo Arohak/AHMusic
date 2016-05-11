@@ -86,21 +86,22 @@ class SlideViewController: SlideMenuController  {
     
     func textFieldAnimation() {
         if isAnimation {
-            UIView.animateWithDuration(0.6, animations: {
+            UIView.animateWithDuration(0.5, animations: {
                 self.navigationItem.titleView = self.textField
+                self.textField.becomeFirstResponder()
                 self.textField.alpha = 1
                 
                 
                 }, completion: { state in
-                    self.textField.becomeFirstResponder()
                     self.isAnimation = !self.isAnimation
             })
         } else {
-            UIView.animateWithDuration(0.3, animations: {
-                self.navigationItem.titleView = nil
-                
+            UIView.animateWithDuration(0.5, animations: {
+                self.textField.resignFirstResponder()
+                self.textField.alpha = 0
+
                 }, completion: { state in
-                    self.textField.alpha = 0
+                    self.navigationItem.titleView = nil
                     self.isAnimation = !self.isAnimation
             })
         }
@@ -123,7 +124,6 @@ extension SlideViewController: SlideMenuControllerDelegate, UITextFieldDelegate 
     //MARK: -  UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textFieldAnimation()
-        textField.resignFirstResponder()
         
         return true
     }
