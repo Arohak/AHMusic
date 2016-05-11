@@ -17,15 +17,16 @@ class CategoryPresenter: CategoryModuleInput, CategoryViewOutput, CategoryIntera
     }
     
     func viewIsSelectItem(item: Category) {
-//        let detailPresenter = DetailPresenter(city: item.name)
-//        _ = DetailModuleInitializer(presentor: detailPresenter)
-        
-        let nav = appDelegate.window?.rootViewController as! UINavigationController
-//        view.push(nav, toVC: detailPresenter.view as! UIViewController)
+        interactor.searchItems(item.name)
     }
     
     //MARK: - CategoryInteractorOutput
     func dataIsReady(items: Array<Category>) {
         view.categoryDataIsReady(items)
+    }
+    
+    func searchDataIsReady(items: Array<Category>) {
+        let vc = view as! UIViewController
+        vc.slideMenuController()!.changeMainViewController(TabViewController(),  close: true)
     }
 }

@@ -12,26 +12,26 @@
 class AUTHTextField: UITextField {
     
     //MARK: - Initialize
-//    override init(frame : CGRect) {
-//        super.init(frame: frame)
-//        
-//        self.backgroundColor = WHITE
-//        self.font = SI_FIELD_FONT
-//        self.textAlignment = .Center
-//        self.layer.cornerRadius = SI_RADIUS
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//    
-//    override func textRectForBounds(bounds: CGRect) -> CGRect {
-//        return CGRectInset(bounds, 10, 10)
-//    }
-//    
-//    override func editingRectForBounds(bounds: CGRect) -> CGRect {
-//        return CGRectInset(bounds, 10, 10)
-//    }
+    override init(frame : CGRect) {
+        super.init(frame: frame)
+        
+        self.backgroundColor = WHITE
+        self.font = TITLE_BTN_FONT
+        self.textAlignment = .Center
+        self.layer.cornerRadius = 4
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func textRectForBounds(bounds: CGRect) -> CGRect {
+        return CGRectInset(bounds, 10, 10)
+    }
+    
+    override func editingRectForBounds(bounds: CGRect) -> CGRect {
+        return CGRectInset(bounds, 10, 10)
+    }
 }
 
 //MARK: - AHLabel
@@ -56,30 +56,27 @@ class AHTextField: UITextField {
     var indexPath = NSIndexPath(forRow: 0, inSection: 0)
 
     //MARK: - Initialize
-//    init() {
-//        super.init(frame: CGRectZero)
-//        
-//        keyboardType = .NumbersAndPunctuation
-////        keyboardAppearance = .Dark
-//        
-//        font = TS_LBL_FONT
-//        textColor = WHITE
-//        backgroundColor = WHITE_COLOR
-//        textAlignment = .Right
-//        tintColor = WHITE
-//    }
-//    
-//    override func textRectForBounds(bounds: CGRect) -> CGRect {
-//        return CGRectInset(bounds, 3, 3)
-//    }
-//    
-//    override func editingRectForBounds(bounds: CGRect) -> CGRect {
-//        return CGRectInset(bounds, 3, 3)
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    override init(frame : CGRect) {
+        super.init(frame: frame)
+        
+        layer.cornerRadius = 4
+        keyboardAppearance = .Dark
+        font = TITLE_BTN_FONT
+        textColor = BLUE
+        tintColor = BLUE
+    }
+    
+    override func textRectForBounds(bounds: CGRect) -> CGRect {
+        return CGRectInset(bounds, 3, 3)
+    }
+    
+    override func editingRectForBounds(bounds: CGRect) -> CGRect {
+        return CGRectInset(bounds, 3, 3)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 //MARK: - AHButton

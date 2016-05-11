@@ -49,7 +49,7 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(collectionCellIdentifire, forIndexPath: indexPath) as! CategoryCell
-        let item = self.items[indexPath.row]
+        let item = items[indexPath.row]
         cell.setValues(item)
         
         return cell
@@ -57,7 +57,8 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
     
     //MARK: - UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        let item = items[indexPath.row]
+       output.viewIsSelectItem(item)
     }
     
     //MARK: - UICollectionViewDelegateFlowLayout

@@ -19,7 +19,7 @@ class TabViewController: UIViewController  {
 
     //MARK: -  Private Methods
     private func baseConfig() {
-        let items = ["Categories", "Albums", "Playlists", "Stations"]
+        let items = ["Tracks", "Artist", "Albums", "Playlist", "Stations"]
         tabNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
         tabNavigation.insertIntoRootViewController(self)
         
@@ -30,7 +30,7 @@ class TabViewController: UIViewController  {
         tabNavigation.setIndicatorColor(BLUE)
         tabNavigation.toolbar.translucent = false
         tabNavigation.setTabExtraWidth(30)
-        tabNavigation.carbonSegmentedControl!.setWidth(200, forSegmentAtIndex: 0)
+//        tabNavigation.carbonSegmentedControl!.setWidth(200, forSegmentAtIndex: 0)
         tabNavigation.setNormalColor(BLACK.colorWithAlphaComponent(0.6))
         tabNavigation.setSelectedColor(BLUE, font: UIFont.boldSystemFontOfSize(14))
     }
@@ -41,21 +41,26 @@ extension TabViewController: CarbonTabSwipeNavigationDelegate {
     func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAtIndex index: UInt) -> UIViewController {
         switch index {
         case 0:
-            let category = CategoryPresenter()
-            _ = CategoryModuleInitializer(presentor: category)
+            let album = AlbumPresenter()
+            _ = AlbumModuleInitializer(presentor: album)
             
-            return category.view as! UIViewController
+            return album.view as! UIViewController
         case 1:
             let album = AlbumPresenter()
             _ = AlbumModuleInitializer(presentor: album)
             
             return album.view as! UIViewController
         case 2:
+            let album = AlbumPresenter()
+            _ = AlbumModuleInitializer(presentor: album)
+            
+            return album.view as! UIViewController
+        case 3:
             let playlist = PlaylistPresenter()
             _ = PlaylistModuleInitializer(presentor: playlist)
             
             return playlist.view as! UIViewController
-        case 3:
+        case 4:
             let station = StationPresenter()
             _ = StationModuleInitializer(presentor: station)
             

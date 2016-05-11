@@ -61,7 +61,7 @@ class APIHelper {
                         observer.onError($0)
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                         if showProgress { UIHelper.hideProgressHUD() }
-//                        UIHelper.showHUD("")
+                        UIHelper.showHUD("error")
                     },
                     onCompleted: {
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -73,8 +73,8 @@ class APIHelper {
         }
     }
 
-    func rx_Search(artistName: String) -> Observable<JSON> {
-        let url = ROUTERS.ROOT_URL + String(format: ROUTERS.SEARCH, artistName)
+    func rx_Search(name: String) -> Observable<JSON> {
+        let url = ROUTERS.ROOT_URL + String(format: ROUTERS.SEARCH, name)
         return rx_Request(.GET, url: url, isHeader: true)
     }
     

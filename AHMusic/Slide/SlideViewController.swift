@@ -8,6 +8,27 @@
 
 class SlideViewController: SlideMenuController  {
     
+    var isAnimation = true
+    
+    lazy var textField: AHTextField = {
+        let view = AHTextField(frame: CGRect(x: 0, y: 0, width: ScreenSize.WIDTH - 2*CA_ICON_SIZE, height: 25))
+        view.backgroundColor = WHITE
+        view.returnKeyType = .Search
+        view.alpha = 0
+        view.delegate = self
+        
+        return view
+    }()
+    
+    lazy var searchBar: UISearchBar = {
+        let view = UISearchBar(frame: CGRectZero)
+        view.backgroundColor = WHITE
+        view.hidden = true
+        view.alpha = 0
+        
+        return view
+    }()
+    
     lazy var leftItem: UIBarButtonItem = {
         let menuButton = AHButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         menuButton.setImage(UIImage(named:"img_slide_menu"), forState: .Normal)
@@ -28,6 +49,7 @@ class SlideViewController: SlideMenuController  {
         
         return item
     }()
+
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -59,12 +81,35 @@ class SlideViewController: SlideMenuController  {
     }
     
     func openSearch() {
-        
+        textFieldAnimation()
+    }
+    
+    func textFieldAnimation() {
+        if isAnimation {
+            UIView.animateWithDuration(0.6, animations: {
+                self.navigationItem.titleView = self.textField
+                self.textField.alpha = 1
+                
+                
+                }, completion: { state in
+                    self.textField.becomeFirstResponder()
+                    self.isAnimation = !self.isAnimation
+            })
+        } else {
+            UIView.animateWithDuration(0.3, animations: {
+                self.navigationItem.titleView = nil
+                
+                }, completion: { state in
+                    self.textField.alpha = 0
+                    self.isAnimation = !self.isAnimation
+            })
+        }
     }
 }
 
-extension SlideViewController: SlideMenuControllerDelegate {
+extension SlideViewController: SlideMenuControllerDelegate, UITextFieldDelegate {
 
+    //MARK: -  SlideMenuControllerDelegate
     func leftWillOpen() {
         let menuButton = navigationItem.leftBarButtonItem?.customView as! UIButton
         menuButton.selected = true
@@ -74,4 +119,13 @@ extension SlideViewController: SlideMenuControllerDelegate {
         let menuButton = navigationItem.leftBarButtonItem?.customView as! UIButton
         menuButton.selected = false
     }
+    
+    //MARK: -  UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textFieldAnimation()
+        textField.resignFirstResponder()
+        
+        return true
+    }
+
 }

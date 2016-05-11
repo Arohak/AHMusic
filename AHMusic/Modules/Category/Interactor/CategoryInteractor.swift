@@ -24,4 +24,12 @@ class CategoryInteractor: CategoryInteractorInput {
         
         output.dataIsReady(temp)
     }
+    
+    func searchItems(name: String) {
+        _ = apiHelper.rx_Search(name)
+        .subscribeNext({ data in
+            var temp = Array<Category>()
+            self.output.searchDataIsReady(temp)
+        })
+    }
 }
