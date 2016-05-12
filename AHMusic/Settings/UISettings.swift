@@ -7,6 +7,7 @@
 //
 
 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+let rootVC = appDelegate.window?.rootViewController as! UINavigationController
 
 //MARK: - ScreenSize
 

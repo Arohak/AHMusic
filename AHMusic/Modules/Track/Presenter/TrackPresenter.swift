@@ -48,7 +48,8 @@ extension TrackPresenter: TrackViewOutput {
     }
     
     func openLink(track: Track) {
-        
+        let vc = WebViewController(resourceName: track.title, url: NSURL(string: track.link)!)
+        rootVC.presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
 }
 

@@ -39,6 +39,7 @@
 		526A4DB11CDF2BCA0000CFC5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DAF1CDF2BCA0000CFC5 /* BaseViewController.swift */; };
 		526A4DB41CDF35A50000CFC5 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DB21CDF35A50000CFC5 /* CategoryView.swift */; };
 		526A4DB91CDFC8640000CFC5 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DB81CDFC8640000CFC5 /* TabViewController.swift */; };
+		52A420341CE50F7A00109005 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A420331CE50F7A00109005 /* WebViewController.swift */; };
 		5699A88D911CBA84F16EBBD8 /* LeftMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168DCB078DD75643B2F74A76 /* LeftMenuPresenter.swift */; };
 		5A693EF500798E76DAE3911E /* PlaylistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB8ECF0B7D95A3B409925B /* PlaylistConfigurator.swift */; };
 		5B0391A1627752D0BB4674F6 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B86ADB3B298467E44A32A8 /* TrackViewController.swift */; };
@@ -152,6 +153,7 @@
 		526A4DAF1CDF2BCA0000CFC5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		526A4DB21CDF35A50000CFC5 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		526A4DB81CDFC8640000CFC5 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		52A420331CE50F7A00109005 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		583099A3F8D57969AD0F26C2 /* TrackInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrackInteractorInput.swift; sourceTree = "<group>"; };
 		5BD51CB1FA52900F2D029826 /* ArtistViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		5DD1C533E468EA59D9136D3C /* LeftMenuInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuInitializer.swift; sourceTree = "<group>"; };
@@ -430,6 +432,14 @@
 			path = Tab;
 			sourceTree = "<group>";
 		};
+		52A420321CE50F7A00109005 /* WebBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				52A420331CE50F7A00109005 /* WebViewController.swift */,
+			);
+			path = WebBrowser;
+			sourceTree = "<group>";
+		};
 		5405846EAA9E8CCD2FEB380A /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
@@ -627,6 +637,7 @@
 				526A4DAD1CDF2BCA0000CFC5 /* Base */,
 				526A4DAA1CDE93B50000CFC5 /* Slide */,
 				526A4DB71CDFC8640000CFC5 /* Tab */,
+				52A420321CE50F7A00109005 /* WebBrowser */,
 				A13865C61CDC84C000350BC2 /* Modules */,
 				A13865C21CDC84C000350BC2 /* Models */,
 				A13865C01CDC84C000350BC2 /* Messages */,
@@ -1130,6 +1141,7 @@
 				129D097B579F8303B0D3D551 /* StationViewInput.swift in Sources */,
 				31EF0AA084358309FBCB2319 /* StationViewOutput.swift in Sources */,
 				07B721EA47B1BCB5BED5AD41 /* StationViewController.swift in Sources */,
+				52A420341CE50F7A00109005 /* WebViewController.swift in Sources */,
 				942A31E1857D8A5145A79DB4 /* StationModuleInput.swift in Sources */,
 				C45CA050F343855A03F0CD89 /* StationPresenter.swift in Sources */,
 				F41D992CB1DE101BD63BFF66 /* StationInteractorInput.swift in Sources */,

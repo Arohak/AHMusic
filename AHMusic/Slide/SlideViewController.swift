@@ -50,7 +50,6 @@ class SlideViewController: SlideMenuController {
         
         return item
     }()
-
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
