@@ -2,25 +2,27 @@
 //  LeftMenuViewController.swift
 //  AHMusic
 //
-//  Created by AroHak on 08/05/2016.
+//  Created by Ara Hakobyan on 12/05/2016.
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class LeftMenuViewController: UIViewController, LeftMenuViewInput {
+//MARK: - class LeftMenuViewController
+class LeftMenuViewController: UIViewController {
 
     var output: LeftMenuViewOutput!
 
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = GRAY
-        
+
         output.viewIsReady()
     }
+}
 
-
-    // MARK: LeftMenuViewInput
+//MARK: - extension for LeftMenuViewInput
+extension LeftMenuViewController: LeftMenuViewInput {
+    
     func setupInitialState() {
+
     }
 }

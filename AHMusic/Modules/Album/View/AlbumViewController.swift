@@ -2,22 +2,27 @@
 //  AlbumViewController.swift
 //  AHMusic
 //
-//  Created by Ara Hakobyan on 06/05/2016.
+//  Created by Ara Hakobyan on 12/05/2016.
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class AlbumViewController: UIViewController, AlbumViewInput {
+//MARK: - class AlbumViewController
+class AlbumViewController: UIViewController {
 
     var output: AlbumViewOutput!
 
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
         output.viewIsReady()
     }
+}
 
-
-    // MARK: AlbumViewInput
+//MARK: - extension for AlbumViewInput
+extension AlbumViewController: AlbumViewInput {
+    
     func setupInitialState() {
+
     }
 }

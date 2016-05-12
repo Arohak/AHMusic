@@ -2,22 +2,27 @@
 //  PlaylistViewController.swift
 //  AHMusic
 //
-//  Created by Ara Hakobyan on 06/05/2016.
+//  Created by Ara Hakobyan on 12/05/2016.
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class PlaylistViewController: UIViewController, PlaylistViewInput {
+//MARK: - class PlaylistViewController
+class PlaylistViewController: UIViewController {
 
     var output: PlaylistViewOutput!
 
     // MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
         output.viewIsReady()
     }
+}
 
-
-    // MARK: PlaylistViewInput
+//MARK: - extension for PlaylistViewInput
+extension PlaylistViewController: PlaylistViewInput {
+    
     func setupInitialState() {
+
     }
 }

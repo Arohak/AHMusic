@@ -5,7 +5,7 @@
 //  Created by Ara Hakobyan on 06/05/2016.
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 
-
+//MARK: - class TabViewController
 class TabViewController: UIViewController  {
     
     var tabNavigation: CarbonTabSwipeNavigation!
@@ -19,7 +19,7 @@ class TabViewController: UIViewController  {
 
     //MARK: -  Private Methods
     private func baseConfig() {
-        let items = ["Tracks", "Artist", "Albums", "Playlist", "Stations"]
+        let items = ["Tracks", "Artists", "Albums", "Playlists", "Stations"]
         tabNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
         tabNavigation.insertIntoRootViewController(self)
         
@@ -36,20 +36,21 @@ class TabViewController: UIViewController  {
     }
 }
 
+//MARK: - extension for CarbonTabSwipeNavigationDelegate
 extension TabViewController: CarbonTabSwipeNavigationDelegate {
     
     func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAtIndex index: UInt) -> UIViewController {
         switch index {
         case 0:
-            let album = AlbumPresenter()
-            _ = AlbumModuleInitializer(presentor: album)
+            let track = TrackPresenter()
+            _ = TrackModuleInitializer(presentor: track)
             
-            return album.view as! UIViewController
+            return track.view as! UIViewController
         case 1:
-            let album = AlbumPresenter()
-            _ = AlbumModuleInitializer(presentor: album)
+            let artist = ArtistPresenter()
+            _ = ArtistModuleInitializer(presentor: artist)
             
-            return album.view as! UIViewController
+            return artist.view as! UIViewController
         case 2:
             let album = AlbumPresenter()
             _ = AlbumModuleInitializer(presentor: album)

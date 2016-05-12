@@ -6,12 +6,21 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class CategoryPresenter: CategoryModuleInput, CategoryViewOutput, CategoryInteractorOutput {
+//MARK: - class CategoryPresenter
+class CategoryPresenter  {
 
     var view: CategoryViewInput!
     var interactor: CategoryInteractorInput!
+}
 
-    //MARK: - CategoryViewOutput
+//MARK: - extension for CategoryModuleInput
+extension CategoryPresenter: CategoryModuleInput {
+
+}
+
+//MARK: - extension for CategoryViewOutput
+extension CategoryPresenter: CategoryViewOutput {
+    
     func viewIsReady() {
         interactor.getCategoryItems()
     }
@@ -19,8 +28,11 @@ class CategoryPresenter: CategoryModuleInput, CategoryViewOutput, CategoryIntera
     func viewIsSelectItem(item: Category) {
         interactor.searchItems(item.name)
     }
-    
-    //MARK: - CategoryInteractorOutput
+}
+
+//MARK: - extension for CategoryInteractorOutput
+extension CategoryPresenter: CategoryInteractorOutput {
+ 
     func dataIsReady(items: Array<Category>) {
         view.categoryDataIsReady(items)
     }

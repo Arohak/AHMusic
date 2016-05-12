@@ -1,1197 +1,3800 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		03B63BAA787B0C729D4D2500 /* AlbumInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0AC5166CAE5AA7385216BC3 /* AlbumInteractorInput.swift */; };
-		129FA756C47BEC9FD974BDE6 /* PlaylistInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7263D29CD482D2EB08E63F67 /* PlaylistInteractorInput.swift */; };
-		231D32B48644E80A45CB19BB /* AlbumViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B31C284849C6BAE7A4773DB8 /* AlbumViewInput.swift */; };
-		270F631726B12C62F8A57DD2 /* LeftMenuInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C7B988329045600F77C3D9 /* LeftMenuInteractorOutput.swift */; };
-		2D9A946C7A9A45B55DFD0972 /* Pods_AHMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC79167B04BFE68239C240B3 /* Pods_AHMusic.framework */; };
-		322473294F408B9E33F3A1E1 /* AlbumModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3CD89EBCEEF50B119D3D39 /* AlbumModuleInput.swift */; };
-		337C7A9E35CBDAA5A7713916 /* CategoryInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00060104EB991F1EAB6485E /* CategoryInitializer.swift */; };
-		375DF2E87D69FD5FB6FE0ADB /* CategoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66231FEA016CA40693CA0AE8 /* CategoryPresenter.swift */; };
-		39040AEE39D52C3E4D5BB6E4 /* StationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3631163A2A0DD48855A41D8 /* StationViewInput.swift */; };
-		396CBDCB83FF82803DF49C18 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C1666030F2E4492C3F35F1 /* CategoryViewController.swift */; };
-		3BCE43A4CC09FBC47286A8E2 /* StationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3F23B930BCA539C9B3F42C /* StationPresenter.swift */; };
-		3CFB0CFC355FBDD3567F2795 /* AlbumConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9EDD44DCD7ACDDE181C568 /* AlbumConfigurator.swift */; };
-		4032752D3A96758556F9FB78 /* CategoryViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6CD6B65AA9B3EC5EB346B9 /* CategoryViewOutput.swift */; };
-		461FEB70A64561AEF247A84E /* CategoryModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B9BDDF45F81FFB340B13292 /* CategoryModuleInput.swift */; };
-		526A4DAC1CDE93B50000CFC5 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DAB1CDE93B50000CFC5 /* SlideViewController.swift */; };
-		526A4DB01CDF2BCA0000CFC5 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DAE1CDF2BCA0000CFC5 /* BaseView.swift */; };
-		526A4DB11CDF2BCA0000CFC5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DAF1CDF2BCA0000CFC5 /* BaseViewController.swift */; };
-		526A4DB41CDF35A50000CFC5 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DB21CDF35A50000CFC5 /* CategoryView.swift */; };
-		526A4DB91CDFC8640000CFC5 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DB81CDFC8640000CFC5 /* TabViewController.swift */; };
-		5BA7DB6FB9D9AA11EEAEA0D5 /* StationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBF388C1EF84857F6A39FDD6 /* StationViewController.swift */; };
-		5C6B61EE5C45FCFE4D0F83D8 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE8187EA41ACFE03076BBAE /* AlbumViewController.swift */; };
-		6151BFE6DE91689B0EF80CB5 /* LeftMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AEDE424228056BDF092D89 /* LeftMenuPresenter.swift */; };
-		61541B26563C3B2F1F5ECD16 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF78BCC2FDD0B01C646CE3B /* PlaylistViewController.swift */; };
-		6479FE0C570FB93DA157FA11 /* StationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33B3DAA4F988322E75173E /* StationInteractor.swift */; };
-		64EB17EF5778949915512986 /* LeftMenuInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86E3AC0A3793100334D1940 /* LeftMenuInitializer.swift */; };
-		70D9930379E9B23927967504 /* StationInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC866393B56C2A0F6E0F613 /* StationInteractorInput.swift */; };
-		72AD3F939A125F0EA90F49BB /* AlbumInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03A3A3FE98B4CA5E8CD253D /* AlbumInitializer.swift */; };
-		72FF2D149EA43ABE1F1849CC /* PlaylistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19D3059FCB6BFFE2255FD0B /* PlaylistPresenter.swift */; };
-		772D4AE2EF9CEF224BD8E5CD /* Pods_AHMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAE2358404452FDCC25542C /* Pods_AHMusicTests.framework */; };
-		7E19E297A5D95F667128C2B2 /* StationInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB06DC6A220894F69C77D4B5 /* StationInteractorOutput.swift */; };
-		7E22D65C47B9D189D37B837E /* LeftMenuModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBB7B910B1C44F40FA02CC9C /* LeftMenuModuleInput.swift */; };
-		991894F4D7BAA4F85582A9F3 /* AlbumViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCDA2DADFE18584AD3D06FC /* AlbumViewOutput.swift */; };
-		991EAF6BFB53605F8BC0CA52 /* CategoryViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A28737C39CB55DF1E7A420 /* CategoryViewInput.swift */; };
-		A13865CD1CDC84C000350BC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865B81CDC84C000350BC2 /* AppDelegate.swift */; };
-		A13865CE1CDC84C000350BC2 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865B91CDC84C000350BC2 /* ApplicationAssembly.swift */; };
-		A13865CF1CDC84C000350BC2 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865BB1CDC84C000350BC2 /* APIHelper.swift */; };
-		A13865D01CDC84C000350BC2 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865BC1CDC84C000350BC2 /* DBHelper.swift */; };
-		A13865D11CDC84C000350BC2 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865BD1CDC84C000350BC2 /* LocationHelper.swift */; };
-		A13865D21CDC84C000350BC2 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865BE1CDC84C000350BC2 /* UIHelper.swift */; };
-		A13865D31CDC84C000350BC2 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865BF1CDC84C000350BC2 /* Utils.swift */; };
-		A13865D41CDC84C000350BC2 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865C11CDC84C000350BC2 /* Events.swift */; };
-		A13865D61CDC84C000350BC2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865C41CDC84C000350BC2 /* Category.swift */; };
-		A13865D81CDC84C000350BC2 /* UISettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13865C91CDC84C000350BC2 /* UISettings.swift */; };
-		A13865D91CDC84C000350BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13865CB1CDC84C000350BC2 /* Assets.xcassets */; };
-		A14836DF1CDB75CA0043036B /* AHMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836DE1CDB75CA0043036B /* AHMusicTests.swift */; };
-		A14836EA1CDB75CA0043036B /* AHMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836E91CDB75CA0043036B /* AHMusicUITests.swift */; };
-		A16412B41CE35242005FD643 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16412B01CE35242005FD643 /* Album.swift */; };
-		A16412B51CE35242005FD643 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16412B11CE35242005FD643 /* Artist.swift */; };
-		A16412B71CE35242005FD643 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16412B31CE35242005FD643 /* Track.swift */; };
-		A307DE4BCF49929FBBD24B4E /* PlaylistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1E058E5A9050C3584FD270 /* PlaylistConfigurator.swift */; };
-		A3A65C40B2743FD9EFB1945C /* StationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C15F9614E862CE4F15D11E7 /* StationViewOutput.swift */; };
-		A4F57126B7E0C6DF6C03BC2C /* CategoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 226F108639522C3A3CE7584E /* CategoryInteractor.swift */; };
-		A9E5F9DC0B0B0644DBA98F1A /* PlaylistInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2DDA62843CDE8DE659BB18 /* PlaylistInteractor.swift */; };
-		AD12D91C5694DE8FA0439BBF /* PlaylistInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AFECFF2DEE83C3B0143F41A /* PlaylistInitializer.swift */; };
-		AD25478A90D3FAA636BCCE9B /* AlbumInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE693C9A1D254ECE4D5838C1 /* AlbumInteractor.swift */; };
-		ADB451B9642E1562C2AF9F28 /* CategoryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D827F6B628471F277CEF2645 /* CategoryConfigurator.swift */; };
-		ADC52ED0CFCD5DE406D59BC4 /* StationModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EAC0CDBC19E3257E9C00A2 /* StationModuleInput.swift */; };
-		AE5672356BA76DD8914EE21B /* LeftMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 141EC01A838C8BDF25885EE8 /* LeftMenuInteractor.swift */; };
-		B0564C60327F0AE105768569 /* StationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94570D8E92AEB8DE0EE94A /* StationConfigurator.swift */; };
-		B42B326339DC283106ED2730 /* LeftMenuViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7527D155F374DBC98B4CB32 /* LeftMenuViewOutput.swift */; };
-		B81C15FD9D8C2BDFA80FD540 /* PlaylistInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676F0413FD0A52E3D5C91C35 /* PlaylistInteractorOutput.swift */; };
-		B847B9A335E0A0A67C5B1171 /* LeftMenuViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 922E3797FDFDC1BBE894A589 /* LeftMenuViewInput.swift */; };
-		BE145CD21F3DC2693DD2998E /* PlaylistViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25F470E162F328C6EECA3B48 /* PlaylistViewOutput.swift */; };
-		C6CA7EB6893F809BB35C29A0 /* CategoryInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0114E5BEA398B9B87C6B6D /* CategoryInteractorInput.swift */; };
-		CFABE5749D72C2D44BF165B4 /* LeftMenuInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F131EF571E3CA77FE90203D7 /* LeftMenuInteractorInput.swift */; };
-		D3662F5995B56A32A52307A4 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8073E3D1F31F3B731866DD96 /* LeftMenuViewController.swift */; };
-		D98F69B59BF2E18D8BCBC90B /* LeftMenuConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AE59CF5AA198001336C8A9 /* LeftMenuConfigurator.swift */; };
-		E23814705FB6910D3D065E32 /* AlbumPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4307FBB14E2DA4F209C27091 /* AlbumPresenter.swift */; };
-		E47806D15C25497BF015F360 /* PlaylistViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDC60130E7DFBB636E26596 /* PlaylistViewInput.swift */; };
-		ED9FAA669792B079A407B8FA /* PlaylistModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB7F1C5F2143192C6292C15 /* PlaylistModuleInput.swift */; };
-		F40294EE25707FA26273C8BF /* StationInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91704E335A423AC9979C609F /* StationInitializer.swift */; };
-		F73ECFB7F77D45A2CE1704D3 /* AlbumInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D532E08C7C9B743D9AFD3299 /* AlbumInteractorOutput.swift */; };
-		F8A58A851CFD123E023E987B /* CategoryInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302EC990D2359BD7102BAF52 /* CategoryInteractorOutput.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A14836DB1CDB75CA0043036B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A14836BE1CDB75CA0043036B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A14836C51CDB75CA0043036B;
-			remoteInfo = AHMusic;
-		};
-		A14836E61CDB75CA0043036B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A14836BE1CDB75CA0043036B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A14836C51CDB75CA0043036B;
-			remoteInfo = AHMusic;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		07AEDE424228056BDF092D89 /* LeftMenuPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuPresenter.swift; sourceTree = "<group>"; };
-		0A6CD6B65AA9B3EC5EB346B9 /* CategoryViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryViewOutput.swift; sourceTree = "<group>"; };
-		0A9EDD44DCD7ACDDE181C568 /* AlbumConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumConfigurator.swift; sourceTree = "<group>"; };
-		0AFECFF2DEE83C3B0143F41A /* PlaylistInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistInitializer.swift; sourceTree = "<group>"; };
-		141EC01A838C8BDF25885EE8 /* LeftMenuInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuInteractor.swift; sourceTree = "<group>"; };
-		1BE8187EA41ACFE03076BBAE /* AlbumViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
-		1FCDA2DADFE18584AD3D06FC /* AlbumViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewOutput.swift; sourceTree = "<group>"; };
-		2267ECF5F1F39946A1C7CAA3 /* Pods-AHMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic.debug.xcconfig"; sourceTree = "<group>"; };
-		226F108639522C3A3CE7584E /* CategoryInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryInteractor.swift; sourceTree = "<group>"; };
-		25F470E162F328C6EECA3B48 /* PlaylistViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistViewOutput.swift; sourceTree = "<group>"; };
-		2C15F9614E862CE4F15D11E7 /* StationViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationViewOutput.swift; sourceTree = "<group>"; };
-		2EB7F1C5F2143192C6292C15 /* PlaylistModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistModuleInput.swift; sourceTree = "<group>"; };
-		302EC990D2359BD7102BAF52 /* CategoryInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryInteractorOutput.swift; sourceTree = "<group>"; };
-		4307FBB14E2DA4F209C27091 /* AlbumPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumPresenter.swift; sourceTree = "<group>"; };
-		4F3CD89EBCEEF50B119D3D39 /* AlbumModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumModuleInput.swift; sourceTree = "<group>"; };
-		526A4DAB1CDE93B50000CFC5 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
-		526A4DAE1CDF2BCA0000CFC5 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		526A4DAF1CDF2BCA0000CFC5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		526A4DB21CDF35A50000CFC5 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
-		526A4DB81CDFC8640000CFC5 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		5AF78BCC2FDD0B01C646CE3B /* PlaylistViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
-		5D1E058E5A9050C3584FD270 /* PlaylistConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistConfigurator.swift; sourceTree = "<group>"; };
-		5E94570D8E92AEB8DE0EE94A /* StationConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationConfigurator.swift; sourceTree = "<group>"; };
-		66231FEA016CA40693CA0AE8 /* CategoryPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryPresenter.swift; sourceTree = "<group>"; };
-		676F0413FD0A52E3D5C91C35 /* PlaylistInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistInteractorOutput.swift; sourceTree = "<group>"; };
-		69267D2B6C9683DEF7073F77 /* Pods-AHMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests.release.xcconfig"; sourceTree = "<group>"; };
-		7263D29CD482D2EB08E63F67 /* PlaylistInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistInteractorInput.swift; sourceTree = "<group>"; };
-		8073E3D1F31F3B731866DD96 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
-		8B9BDDF45F81FFB340B13292 /* CategoryModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryModuleInput.swift; sourceTree = "<group>"; };
-		91704E335A423AC9979C609F /* StationInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInitializer.swift; sourceTree = "<group>"; };
-		922E3797FDFDC1BBE894A589 /* LeftMenuViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuViewInput.swift; sourceTree = "<group>"; };
-		93EAC0CDBC19E3257E9C00A2 /* StationModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationModuleInput.swift; sourceTree = "<group>"; };
-		9CDC60130E7DFBB636E26596 /* PlaylistViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistViewInput.swift; sourceTree = "<group>"; };
-		9DC866393B56C2A0F6E0F613 /* StationInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInteractorInput.swift; sourceTree = "<group>"; };
-		A00060104EB991F1EAB6485E /* CategoryInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryInitializer.swift; sourceTree = "<group>"; };
-		A13865B81CDC84C000350BC2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A13865B91CDC84C000350BC2 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
-		A13865BB1CDC84C000350BC2 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
-		A13865BC1CDC84C000350BC2 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
-		A13865BD1CDC84C000350BC2 /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
-		A13865BE1CDC84C000350BC2 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
-		A13865BF1CDC84C000350BC2 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		A13865C11CDC84C000350BC2 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
-		A13865C41CDC84C000350BC2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		A13865C81CDC84C000350BC2 /* AHMusic-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AHMusic-Bridging-Header.h"; sourceTree = "<group>"; };
-		A13865C91CDC84C000350BC2 /* UISettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISettings.swift; sourceTree = "<group>"; };
-		A13865CB1CDC84C000350BC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A13865CC1CDC84C000350BC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A14836C61CDB75CA0043036B /* AHMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AHMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A14836DA1CDB75CA0043036B /* AHMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AHMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A14836DE1CDB75CA0043036B /* AHMusicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHMusicTests.swift; sourceTree = "<group>"; };
-		A14836E01CDB75CA0043036B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A14836E51CDB75CA0043036B /* AHMusicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AHMusicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A14836E91CDB75CA0043036B /* AHMusicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHMusicUITests.swift; sourceTree = "<group>"; };
-		A14836EB1CDB75CA0043036B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A16412B01CE35242005FD643 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
-		A16412B11CE35242005FD643 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
-		A16412B31CE35242005FD643 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
-		A5C7B988329045600F77C3D9 /* LeftMenuInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuInteractorOutput.swift; sourceTree = "<group>"; };
-		A7BC5B1A5FB496C4C4B278CC /* Pods-AHMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic.release.xcconfig"; sourceTree = "<group>"; };
-		A86E3AC0A3793100334D1940 /* LeftMenuInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuInitializer.swift; sourceTree = "<group>"; };
-		AB2DDA62843CDE8DE659BB18 /* PlaylistInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistInteractor.swift; sourceTree = "<group>"; };
-		AC79167B04BFE68239C240B3 /* Pods_AHMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AHMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B31C284849C6BAE7A4773DB8 /* AlbumViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumViewInput.swift; sourceTree = "<group>"; };
-		B3631163A2A0DD48855A41D8 /* StationViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationViewInput.swift; sourceTree = "<group>"; };
-		B6A28737C39CB55DF1E7A420 /* CategoryViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryViewInput.swift; sourceTree = "<group>"; };
-		BB06DC6A220894F69C77D4B5 /* StationInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInteractorOutput.swift; sourceTree = "<group>"; };
-		C03A3A3FE98B4CA5E8CD253D /* AlbumInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInitializer.swift; sourceTree = "<group>"; };
-		D532E08C7C9B743D9AFD3299 /* AlbumInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractorOutput.swift; sourceTree = "<group>"; };
-		D6C1666030F2E4492C3F35F1 /* CategoryViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		D827F6B628471F277CEF2645 /* CategoryConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryConfigurator.swift; sourceTree = "<group>"; };
-		DC3F23B930BCA539C9B3F42C /* StationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationPresenter.swift; sourceTree = "<group>"; };
-		DE33B3DAA4F988322E75173E /* StationInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationInteractor.swift; sourceTree = "<group>"; };
-		E0AC5166CAE5AA7385216BC3 /* AlbumInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractorInput.swift; sourceTree = "<group>"; };
-		E71C000EB432D6B53AD5EDE9 /* Pods-AHMusicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests.debug.xcconfig"; sourceTree = "<group>"; };
-		E7527D155F374DBC98B4CB32 /* LeftMenuViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuViewOutput.swift; sourceTree = "<group>"; };
-		EE693C9A1D254ECE4D5838C1 /* AlbumInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlbumInteractor.swift; sourceTree = "<group>"; };
-		F131EF571E3CA77FE90203D7 /* LeftMenuInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuInteractorInput.swift; sourceTree = "<group>"; };
-		F19D3059FCB6BFFE2255FD0B /* PlaylistPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistPresenter.swift; sourceTree = "<group>"; };
-		F6AE59CF5AA198001336C8A9 /* LeftMenuConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuConfigurator.swift; sourceTree = "<group>"; };
-		FBB7B910B1C44F40FA02CC9C /* LeftMenuModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuModuleInput.swift; sourceTree = "<group>"; };
-		FBF388C1EF84857F6A39FDD6 /* StationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationViewController.swift; sourceTree = "<group>"; };
-		FC0114E5BEA398B9B87C6B6D /* CategoryInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CategoryInteractorInput.swift; sourceTree = "<group>"; };
-		FCAE2358404452FDCC25542C /* Pods_AHMusicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AHMusicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		A14836C31CDB75CA0043036B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2D9A946C7A9A45B55DFD0972 /* Pods_AHMusic.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A14836D71CDB75CA0043036B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				772D4AE2EF9CEF224BD8E5CD /* Pods_AHMusicTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A14836E21CDB75CA0043036B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		02EB42236F5D5C6F83C1B1A1 /* Station */ = {
-			isa = PBXGroup;
-			children = (
-				AB06B2C8190510A741F163D8 /* View */,
-				B143AB6D1AFA4FCD64E321EB /* Presenter */,
-				F1C4C8B52848606CCBEA485F /* Interactor */,
-				3F996330C328CE3322B7026F /* Configurator */,
-			);
-			path = Station;
-			sourceTree = "<group>";
-		};
-		0DB2CE300CAA5ECADB7ED53E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AC79167B04BFE68239C240B3 /* Pods_AHMusic.framework */,
-				FCAE2358404452FDCC25542C /* Pods_AHMusicTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		15C744855817E888A61994AD /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2267ECF5F1F39946A1C7CAA3 /* Pods-AHMusic.debug.xcconfig */,
-				A7BC5B1A5FB496C4C4B278CC /* Pods-AHMusic.release.xcconfig */,
-				E71C000EB432D6B53AD5EDE9 /* Pods-AHMusicTests.debug.xcconfig */,
-				69267D2B6C9683DEF7073F77 /* Pods-AHMusicTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		2FFA3638AD1002347ACBA246 /* LeftMenu */ = {
-			isa = PBXGroup;
-			children = (
-				3009ECD257B299A00D16A6E5 /* View */,
-				E0DEDCEF86616217C0DFAAC2 /* Presenter */,
-				E011687AD01700ACBC692D54 /* Interactor */,
-				4D5570CA84E1D955DAB3CEAE /* Configurator */,
-			);
-			path = LeftMenu;
-			sourceTree = "<group>";
-		};
-		3009ECD257B299A00D16A6E5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				922E3797FDFDC1BBE894A589 /* LeftMenuViewInput.swift */,
-				E7527D155F374DBC98B4CB32 /* LeftMenuViewOutput.swift */,
-				8073E3D1F31F3B731866DD96 /* LeftMenuViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		3950532F1EA5DB1FA4F0F585 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				7263D29CD482D2EB08E63F67 /* PlaylistInteractorInput.swift */,
-				676F0413FD0A52E3D5C91C35 /* PlaylistInteractorOutput.swift */,
-				AB2DDA62843CDE8DE659BB18 /* PlaylistInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		3D92A570152B568E7DAEE1D4 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				F6D1E41C089BC19D73BFC41C /* View */,
-				F7EA2B362AA44844CD56D67E /* Presenter */,
-				4C0391AC65F16408B8E39043 /* Interactor */,
-				7D394B006DB65DD4627E330D /* Configurator */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		3F996330C328CE3322B7026F /* Configurator */ = {
-			isa = PBXGroup;
-			children = (
-				5E94570D8E92AEB8DE0EE94A /* StationConfigurator.swift */,
-				91704E335A423AC9979C609F /* StationInitializer.swift */,
-			);
-			path = Configurator;
-			sourceTree = "<group>";
-		};
-		428D6BC6BB599F47C5D3AE63 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B31C284849C6BAE7A4773DB8 /* AlbumViewInput.swift */,
-				1FCDA2DADFE18584AD3D06FC /* AlbumViewOutput.swift */,
-				1BE8187EA41ACFE03076BBAE /* AlbumViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		4C0391AC65F16408B8E39043 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				FC0114E5BEA398B9B87C6B6D /* CategoryInteractorInput.swift */,
-				302EC990D2359BD7102BAF52 /* CategoryInteractorOutput.swift */,
-				226F108639522C3A3CE7584E /* CategoryInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		4D5570CA84E1D955DAB3CEAE /* Configurator */ = {
-			isa = PBXGroup;
-			children = (
-				F6AE59CF5AA198001336C8A9 /* LeftMenuConfigurator.swift */,
-				A86E3AC0A3793100334D1940 /* LeftMenuInitializer.swift */,
-			);
-			path = Configurator;
-			sourceTree = "<group>";
-		};
-		526A4DAA1CDE93B50000CFC5 /* Slide */ = {
-			isa = PBXGroup;
-			children = (
-				526A4DAB1CDE93B50000CFC5 /* SlideViewController.swift */,
-			);
-			path = Slide;
-			sourceTree = "<group>";
-		};
-		526A4DAD1CDF2BCA0000CFC5 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				526A4DAE1CDF2BCA0000CFC5 /* BaseView.swift */,
-				526A4DAF1CDF2BCA0000CFC5 /* BaseViewController.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		526A4DB61CDF35AD0000CFC5 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				526A4DB21CDF35A50000CFC5 /* CategoryView.swift */,
-			);
-			name = views;
-			sourceTree = "<group>";
-		};
-		526A4DB71CDFC8640000CFC5 /* Tab */ = {
-			isa = PBXGroup;
-			children = (
-				526A4DB81CDFC8640000CFC5 /* TabViewController.swift */,
-			);
-			path = Tab;
-			sourceTree = "<group>";
-		};
-		5D707B3BCB8DBBB63CB40DFD /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				2EB7F1C5F2143192C6292C15 /* PlaylistModuleInput.swift */,
-				F19D3059FCB6BFFE2255FD0B /* PlaylistPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		6336379DBA5BD1D98FE65ED7 /* Configurator */ = {
-			isa = PBXGroup;
-			children = (
-				5D1E058E5A9050C3584FD270 /* PlaylistConfigurator.swift */,
-				0AFECFF2DEE83C3B0143F41A /* PlaylistInitializer.swift */,
-			);
-			path = Configurator;
-			sourceTree = "<group>";
-		};
-		7D394B006DB65DD4627E330D /* Configurator */ = {
-			isa = PBXGroup;
-			children = (
-				D827F6B628471F277CEF2645 /* CategoryConfigurator.swift */,
-				A00060104EB991F1EAB6485E /* CategoryInitializer.swift */,
-			);
-			path = Configurator;
-			sourceTree = "<group>";
-		};
-		8AF7DAA22B8D32331902B491 /* Configurator */ = {
-			isa = PBXGroup;
-			children = (
-				0A9EDD44DCD7ACDDE181C568 /* AlbumConfigurator.swift */,
-				C03A3A3FE98B4CA5E8CD253D /* AlbumInitializer.swift */,
-			);
-			path = Configurator;
-			sourceTree = "<group>";
-		};
-		98963DDEABAA1F401B543200 /* Album */ = {
-			isa = PBXGroup;
-			children = (
-				428D6BC6BB599F47C5D3AE63 /* View */,
-				FEE9AAF1A873100A02DF02BF /* Presenter */,
-				FEDAEF7406618370D56BA623 /* Interactor */,
-				8AF7DAA22B8D32331902B491 /* Configurator */,
-			);
-			path = Album;
-			sourceTree = "<group>";
-		};
-		A13865B71CDC84C000350BC2 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-				A13865B81CDC84C000350BC2 /* AppDelegate.swift */,
-				A13865B91CDC84C000350BC2 /* ApplicationAssembly.swift */,
-			);
-			path = Application;
-			sourceTree = "<group>";
-		};
-		A13865BA1CDC84C000350BC2 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				A13865BB1CDC84C000350BC2 /* APIHelper.swift */,
-				A13865BC1CDC84C000350BC2 /* DBHelper.swift */,
-				A13865BD1CDC84C000350BC2 /* LocationHelper.swift */,
-				A13865BE1CDC84C000350BC2 /* UIHelper.swift */,
-				A13865BF1CDC84C000350BC2 /* Utils.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		A13865C01CDC84C000350BC2 /* Messages */ = {
-			isa = PBXGroup;
-			children = (
-				A13865C11CDC84C000350BC2 /* Events.swift */,
-			);
-			path = Messages;
-			sourceTree = "<group>";
-		};
-		A13865C21CDC84C000350BC2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A13865C41CDC84C000350BC2 /* Category.swift */,
-				A16412B31CE35242005FD643 /* Track.swift */,
-				A16412B11CE35242005FD643 /* Artist.swift */,
-				A16412B01CE35242005FD643 /* Album.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		A13865C61CDC84C000350BC2 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				2FFA3638AD1002347ACBA246 /* LeftMenu */,
-				3D92A570152B568E7DAEE1D4 /* Category */,
-				98963DDEABAA1F401B543200 /* Album */,
-				C87E5E6EA37A1039ADD0AEC4 /* Playlist */,
-				02EB42236F5D5C6F83C1B1A1 /* Station */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		A13865C71CDC84C000350BC2 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				A13865C81CDC84C000350BC2 /* AHMusic-Bridging-Header.h */,
-				A13865C91CDC84C000350BC2 /* UISettings.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		A13865CA1CDC84C000350BC2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				A13865CB1CDC84C000350BC2 /* Assets.xcassets */,
-				A13865CC1CDC84C000350BC2 /* Info.plist */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		A14836BD1CDB75CA0043036B = {
-			isa = PBXGroup;
-			children = (
-				A14836C81CDB75CA0043036B /* AHMusic */,
-				A14836DD1CDB75CA0043036B /* AHMusicTests */,
-				A14836E81CDB75CA0043036B /* AHMusicUITests */,
-				A14836C71CDB75CA0043036B /* Products */,
-				15C744855817E888A61994AD /* Pods */,
-				0DB2CE300CAA5ECADB7ED53E /* Frameworks */,
-			);
-			sourceTree = "<group>";
-		};
-		A14836C71CDB75CA0043036B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A14836C61CDB75CA0043036B /* AHMusic.app */,
-				A14836DA1CDB75CA0043036B /* AHMusicTests.xctest */,
-				A14836E51CDB75CA0043036B /* AHMusicUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A14836C81CDB75CA0043036B /* AHMusic */ = {
-			isa = PBXGroup;
-			children = (
-				A13865B71CDC84C000350BC2 /* Application */,
-				526A4DAD1CDF2BCA0000CFC5 /* Base */,
-				526A4DAA1CDE93B50000CFC5 /* Slide */,
-				526A4DB71CDFC8640000CFC5 /* Tab */,
-				A13865C61CDC84C000350BC2 /* Modules */,
-				A13865C21CDC84C000350BC2 /* Models */,
-				A13865C01CDC84C000350BC2 /* Messages */,
-				A13865BA1CDC84C000350BC2 /* Helpers */,
-				A13865C71CDC84C000350BC2 /* Settings */,
-				A13865CA1CDC84C000350BC2 /* Supporting Files */,
-			);
-			path = AHMusic;
-			sourceTree = "<group>";
-		};
-		A14836DD1CDB75CA0043036B /* AHMusicTests */ = {
-			isa = PBXGroup;
-			children = (
-				A14836DE1CDB75CA0043036B /* AHMusicTests.swift */,
-				A14836E01CDB75CA0043036B /* Info.plist */,
-			);
-			path = AHMusicTests;
-			sourceTree = "<group>";
-		};
-		A14836E81CDB75CA0043036B /* AHMusicUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A14836E91CDB75CA0043036B /* AHMusicUITests.swift */,
-				A14836EB1CDB75CA0043036B /* Info.plist */,
-			);
-			path = AHMusicUITests;
-			sourceTree = "<group>";
-		};
-		AB06B2C8190510A741F163D8 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B3631163A2A0DD48855A41D8 /* StationViewInput.swift */,
-				2C15F9614E862CE4F15D11E7 /* StationViewOutput.swift */,
-				FBF388C1EF84857F6A39FDD6 /* StationViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B143AB6D1AFA4FCD64E321EB /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				93EAC0CDBC19E3257E9C00A2 /* StationModuleInput.swift */,
-				DC3F23B930BCA539C9B3F42C /* StationPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		C87E5E6EA37A1039ADD0AEC4 /* Playlist */ = {
-			isa = PBXGroup;
-			children = (
-				FCD6359D11BF07DED263A8A4 /* View */,
-				5D707B3BCB8DBBB63CB40DFD /* Presenter */,
-				3950532F1EA5DB1FA4F0F585 /* Interactor */,
-				6336379DBA5BD1D98FE65ED7 /* Configurator */,
-			);
-			path = Playlist;
-			sourceTree = "<group>";
-		};
-		E011687AD01700ACBC692D54 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				F131EF571E3CA77FE90203D7 /* LeftMenuInteractorInput.swift */,
-				A5C7B988329045600F77C3D9 /* LeftMenuInteractorOutput.swift */,
-				141EC01A838C8BDF25885EE8 /* LeftMenuInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		E0DEDCEF86616217C0DFAAC2 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				FBB7B910B1C44F40FA02CC9C /* LeftMenuModuleInput.swift */,
-				07AEDE424228056BDF092D89 /* LeftMenuPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		F1C4C8B52848606CCBEA485F /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				9DC866393B56C2A0F6E0F613 /* StationInteractorInput.swift */,
-				BB06DC6A220894F69C77D4B5 /* StationInteractorOutput.swift */,
-				DE33B3DAA4F988322E75173E /* StationInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		F6D1E41C089BC19D73BFC41C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B6A28737C39CB55DF1E7A420 /* CategoryViewInput.swift */,
-				0A6CD6B65AA9B3EC5EB346B9 /* CategoryViewOutput.swift */,
-				D6C1666030F2E4492C3F35F1 /* CategoryViewController.swift */,
-				526A4DB61CDF35AD0000CFC5 /* views */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F7EA2B362AA44844CD56D67E /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				8B9BDDF45F81FFB340B13292 /* CategoryModuleInput.swift */,
-				66231FEA016CA40693CA0AE8 /* CategoryPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		FCD6359D11BF07DED263A8A4 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9CDC60130E7DFBB636E26596 /* PlaylistViewInput.swift */,
-				25F470E162F328C6EECA3B48 /* PlaylistViewOutput.swift */,
-				5AF78BCC2FDD0B01C646CE3B /* PlaylistViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		FEDAEF7406618370D56BA623 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				E0AC5166CAE5AA7385216BC3 /* AlbumInteractorInput.swift */,
-				D532E08C7C9B743D9AFD3299 /* AlbumInteractorOutput.swift */,
-				EE693C9A1D254ECE4D5838C1 /* AlbumInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		FEE9AAF1A873100A02DF02BF /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				4F3CD89EBCEEF50B119D3D39 /* AlbumModuleInput.swift */,
-				4307FBB14E2DA4F209C27091 /* AlbumPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		A14836C51CDB75CA0043036B /* AHMusic */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A14836EE1CDB75CA0043036B /* Build configuration list for PBXNativeTarget "AHMusic" */;
-			buildPhases = (
-				3ACF1F5231D2BC9CB246ACD9 /* 📦 Check Pods Manifest.lock */,
-				A14836C21CDB75CA0043036B /* Sources */,
-				A14836C31CDB75CA0043036B /* Frameworks */,
-				A14836C41CDB75CA0043036B /* Resources */,
-				DE656FCD3E28693F2A0CBFBB /* 📦 Embed Pods Frameworks */,
-				70942FDC839482D78A6A106E /* 📦 Copy Pods Resources */,
-				DEF7A63E8C2719DDBB7F5967 /* Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = AHMusic;
-			productName = AHMusic;
-			productReference = A14836C61CDB75CA0043036B /* AHMusic.app */;
-			productType = "com.apple.product-type.application";
-		};
-		A14836D91CDB75CA0043036B /* AHMusicTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A14836F11CDB75CA0043036B /* Build configuration list for PBXNativeTarget "AHMusicTests" */;
-			buildPhases = (
-				7FE31AFBE34C191FFD95A89B /* 📦 Check Pods Manifest.lock */,
-				A14836D61CDB75CA0043036B /* Sources */,
-				A14836D71CDB75CA0043036B /* Frameworks */,
-				A14836D81CDB75CA0043036B /* Resources */,
-				2677AB38642F01EEBEA2CB29 /* 📦 Embed Pods Frameworks */,
-				4F72088F30DB97711D3015CE /* 📦 Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A14836DC1CDB75CA0043036B /* PBXTargetDependency */,
-			);
-			name = AHMusicTests;
-			productName = AHMusicTests;
-			productReference = A14836DA1CDB75CA0043036B /* AHMusicTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		A14836E41CDB75CA0043036B /* AHMusicUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A14836F41CDB75CA0043036B /* Build configuration list for PBXNativeTarget "AHMusicUITests" */;
-			buildPhases = (
-				A14836E11CDB75CA0043036B /* Sources */,
-				A14836E21CDB75CA0043036B /* Frameworks */,
-				A14836E31CDB75CA0043036B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A14836E71CDB75CA0043036B /* PBXTargetDependency */,
-			);
-			name = AHMusicUITests;
-			productName = AHMusicUITests;
-			productReference = A14836E51CDB75CA0043036B /* AHMusicUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		A14836BE1CDB75CA0043036B /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "AroHak LLC";
-				TargetAttributes = {
-					A14836C51CDB75CA0043036B = {
-						CreatedOnToolsVersion = 7.0.1;
-					};
-					A14836D91CDB75CA0043036B = {
-						CreatedOnToolsVersion = 7.0.1;
-						TestTargetID = A14836C51CDB75CA0043036B;
-					};
-					A14836E41CDB75CA0043036B = {
-						CreatedOnToolsVersion = 7.0.1;
-						TestTargetID = A14836C51CDB75CA0043036B;
-					};
-				};
-			};
-			buildConfigurationList = A14836C11CDB75CA0043036B /* Build configuration list for PBXProject "AHMusic" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = A14836BD1CDB75CA0043036B;
-			productRefGroup = A14836C71CDB75CA0043036B /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				A14836C51CDB75CA0043036B /* AHMusic */,
-				A14836D91CDB75CA0043036B /* AHMusicTests */,
-				A14836E41CDB75CA0043036B /* AHMusicUITests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		A14836C41CDB75CA0043036B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A13865D91CDC84C000350BC2 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A14836D81CDB75CA0043036B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A14836E31CDB75CA0043036B /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2677AB38642F01EEBEA2CB29 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		3ACF1F5231D2BC9CB246ACD9 /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		4F72088F30DB97711D3015CE /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		70942FDC839482D78A6A106E /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7FE31AFBE34C191FFD95A89B /* 📦 Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		DE656FCD3E28693F2A0CBFBB /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DEF7A63E8C2719DDBB7F5967 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		A14836C21CDB75CA0043036B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A13865CF1CDC84C000350BC2 /* APIHelper.swift in Sources */,
-				A13865CE1CDC84C000350BC2 /* ApplicationAssembly.swift in Sources */,
-				A13865D81CDC84C000350BC2 /* UISettings.swift in Sources */,
-				A13865CD1CDC84C000350BC2 /* AppDelegate.swift in Sources */,
-				A13865D61CDC84C000350BC2 /* Category.swift in Sources */,
-				A16412B71CE35242005FD643 /* Track.swift in Sources */,
-				A13865D31CDC84C000350BC2 /* Utils.swift in Sources */,
-				A13865D41CDC84C000350BC2 /* Events.swift in Sources */,
-				A13865D01CDC84C000350BC2 /* DBHelper.swift in Sources */,
-				A13865D11CDC84C000350BC2 /* LocationHelper.swift in Sources */,
-				A13865D21CDC84C000350BC2 /* UIHelper.swift in Sources */,
-				39040AEE39D52C3E4D5BB6E4 /* StationViewInput.swift in Sources */,
-				A3A65C40B2743FD9EFB1945C /* StationViewOutput.swift in Sources */,
-				526A4DB91CDFC8640000CFC5 /* TabViewController.swift in Sources */,
-				5BA7DB6FB9D9AA11EEAEA0D5 /* StationViewController.swift in Sources */,
-				ADC52ED0CFCD5DE406D59BC4 /* StationModuleInput.swift in Sources */,
-				3BCE43A4CC09FBC47286A8E2 /* StationPresenter.swift in Sources */,
-				70D9930379E9B23927967504 /* StationInteractorInput.swift in Sources */,
-				7E19E297A5D95F667128C2B2 /* StationInteractorOutput.swift in Sources */,
-				6479FE0C570FB93DA157FA11 /* StationInteractor.swift in Sources */,
-				B0564C60327F0AE105768569 /* StationConfigurator.swift in Sources */,
-				F40294EE25707FA26273C8BF /* StationInitializer.swift in Sources */,
-				E47806D15C25497BF015F360 /* PlaylistViewInput.swift in Sources */,
-				BE145CD21F3DC2693DD2998E /* PlaylistViewOutput.swift in Sources */,
-				61541B26563C3B2F1F5ECD16 /* PlaylistViewController.swift in Sources */,
-				ED9FAA669792B079A407B8FA /* PlaylistModuleInput.swift in Sources */,
-				72FF2D149EA43ABE1F1849CC /* PlaylistPresenter.swift in Sources */,
-				526A4DB01CDF2BCA0000CFC5 /* BaseView.swift in Sources */,
-				129FA756C47BEC9FD974BDE6 /* PlaylistInteractorInput.swift in Sources */,
-				B81C15FD9D8C2BDFA80FD540 /* PlaylistInteractorOutput.swift in Sources */,
-				A9E5F9DC0B0B0644DBA98F1A /* PlaylistInteractor.swift in Sources */,
-				A307DE4BCF49929FBBD24B4E /* PlaylistConfigurator.swift in Sources */,
-				AD12D91C5694DE8FA0439BBF /* PlaylistInitializer.swift in Sources */,
-				231D32B48644E80A45CB19BB /* AlbumViewInput.swift in Sources */,
-				991894F4D7BAA4F85582A9F3 /* AlbumViewOutput.swift in Sources */,
-				5C6B61EE5C45FCFE4D0F83D8 /* AlbumViewController.swift in Sources */,
-				322473294F408B9E33F3A1E1 /* AlbumModuleInput.swift in Sources */,
-				E23814705FB6910D3D065E32 /* AlbumPresenter.swift in Sources */,
-				03B63BAA787B0C729D4D2500 /* AlbumInteractorInput.swift in Sources */,
-				F73ECFB7F77D45A2CE1704D3 /* AlbumInteractorOutput.swift in Sources */,
-				AD25478A90D3FAA636BCCE9B /* AlbumInteractor.swift in Sources */,
-				526A4DAC1CDE93B50000CFC5 /* SlideViewController.swift in Sources */,
-				A16412B41CE35242005FD643 /* Album.swift in Sources */,
-				3CFB0CFC355FBDD3567F2795 /* AlbumConfigurator.swift in Sources */,
-				72AD3F939A125F0EA90F49BB /* AlbumInitializer.swift in Sources */,
-				991EAF6BFB53605F8BC0CA52 /* CategoryViewInput.swift in Sources */,
-				4032752D3A96758556F9FB78 /* CategoryViewOutput.swift in Sources */,
-				396CBDCB83FF82803DF49C18 /* CategoryViewController.swift in Sources */,
-				461FEB70A64561AEF247A84E /* CategoryModuleInput.swift in Sources */,
-				375DF2E87D69FD5FB6FE0ADB /* CategoryPresenter.swift in Sources */,
-				C6CA7EB6893F809BB35C29A0 /* CategoryInteractorInput.swift in Sources */,
-				F8A58A851CFD123E023E987B /* CategoryInteractorOutput.swift in Sources */,
-				A4F57126B7E0C6DF6C03BC2C /* CategoryInteractor.swift in Sources */,
-				ADB451B9642E1562C2AF9F28 /* CategoryConfigurator.swift in Sources */,
-				337C7A9E35CBDAA5A7713916 /* CategoryInitializer.swift in Sources */,
-				B847B9A335E0A0A67C5B1171 /* LeftMenuViewInput.swift in Sources */,
-				B42B326339DC283106ED2730 /* LeftMenuViewOutput.swift in Sources */,
-				D3662F5995B56A32A52307A4 /* LeftMenuViewController.swift in Sources */,
-				A16412B51CE35242005FD643 /* Artist.swift in Sources */,
-				526A4DB11CDF2BCA0000CFC5 /* BaseViewController.swift in Sources */,
-				526A4DB41CDF35A50000CFC5 /* CategoryView.swift in Sources */,
-				7E22D65C47B9D189D37B837E /* LeftMenuModuleInput.swift in Sources */,
-				6151BFE6DE91689B0EF80CB5 /* LeftMenuPresenter.swift in Sources */,
-				CFABE5749D72C2D44BF165B4 /* LeftMenuInteractorInput.swift in Sources */,
-				270F631726B12C62F8A57DD2 /* LeftMenuInteractorOutput.swift in Sources */,
-				AE5672356BA76DD8914EE21B /* LeftMenuInteractor.swift in Sources */,
-				D98F69B59BF2E18D8BCBC90B /* LeftMenuConfigurator.swift in Sources */,
-				64EB17EF5778949915512986 /* LeftMenuInitializer.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A14836D61CDB75CA0043036B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A14836DF1CDB75CA0043036B /* AHMusicTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A14836E11CDB75CA0043036B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A14836EA1CDB75CA0043036B /* AHMusicUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A14836DC1CDB75CA0043036B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A14836C51CDB75CA0043036B /* AHMusic */;
-			targetProxy = A14836DB1CDB75CA0043036B /* PBXContainerItemProxy */;
-		};
-		A14836E71CDB75CA0043036B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A14836C51CDB75CA0043036B /* AHMusic */;
-			targetProxy = A14836E61CDB75CA0043036B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		A14836EC1CDB75CA0043036B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A14836ED1CDB75CA0043036B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		A14836EF1CDB75CA0043036B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2267ECF5F1F39946A1C7CAA3 /* Pods-AHMusic.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "$(SRCROOT)/AHMusic/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = arohak.com.AHMusic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/AHMusic/Settings/AHMusic-Bridging-Header.h";
-			};
-			name = Debug;
-		};
-		A14836F01CDB75CA0043036B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7BC5B1A5FB496C4C4B278CC /* Pods-AHMusic.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "$(SRCROOT)/AHMusic/Supporting Files/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = arohak.com.AHMusic;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/AHMusic/Settings/AHMusic-Bridging-Header.h";
-			};
-			name = Release;
-		};
-		A14836F21CDB75CA0043036B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E71C000EB432D6B53AD5EDE9 /* Pods-AHMusicTests.debug.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = AHMusicTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = arohak.com.AHMusicTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AHMusic.app/AHMusic";
-			};
-			name = Debug;
-		};
-		A14836F31CDB75CA0043036B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69267D2B6C9683DEF7073F77 /* Pods-AHMusicTests.release.xcconfig */;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = AHMusicTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = arohak.com.AHMusicTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AHMusic.app/AHMusic";
-			};
-			name = Release;
-		};
-		A14836F51CDB75CA0043036B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = AHMusicUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = arohak.com.AHMusicUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = AHMusic;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		A14836F61CDB75CA0043036B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = AHMusicUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = arohak.com.AHMusicUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = AHMusic;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		A14836C11CDB75CA0043036B /* Build configuration list for PBXProject "AHMusic" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A14836EC1CDB75CA0043036B /* Debug */,
-				A14836ED1CDB75CA0043036B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A14836EE1CDB75CA0043036B /* Build configuration list for PBXNativeTarget "AHMusic" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A14836EF1CDB75CA0043036B /* Debug */,
-				A14836F01CDB75CA0043036B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A14836F11CDB75CA0043036B /* Build configuration list for PBXNativeTarget "AHMusicTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A14836F21CDB75CA0043036B /* Debug */,
-				A14836F31CDB75CA0043036B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A14836F41CDB75CA0043036B /* Build configuration list for PBXNativeTarget "AHMusicUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A14836F51CDB75CA0043036B /* Debug */,
-				A14836F61CDB75CA0043036B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = A14836BE1CDB75CA0043036B /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>0003C00B2EDF5B1CE7DA5A4D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7DA64847EF4B4953E6D12B11</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>00A05D1A5CD4EE30BAB1360A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AlbumInteractor.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>071B308AC94A1615BF67B0D0</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>214CFB31040304A74D58E75B</string>
+				<string>12CC953EFFB760C0D9405EB2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Presenter</string>
+			<key>path</key>
+			<string>Presenter</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>07B721EA47B1BCB5BED5AD41</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DA5F1D2669F2DED09E8FBF8B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>09A847CA02CE5CE823BFBE62</key>
+		<dict>
+			<key>fileRef</key>
+			<string>214CFB31040304A74D58E75B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0A6CD6B65AA9B3EC5EB346B9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CategoryViewOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0C4A632681BAD8F27A758A59</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AlbumConfigurator.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0DB2CE300CAA5ECADB7ED53E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>AC79167B04BFE68239C240B3</string>
+				<string>FCAE2358404452FDCC25542C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>10852E2D7825C1BBD12D9BCF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>69208890CDEC48E491718D8B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1100CC07D2F95E78F6EE76DF</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>17627B1B24A29A5A82A4E5C4</string>
+				<string>ECDF5A70182F47B00873F7B1</string>
+				<string>A43C26DBD74861B4D6793538</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Interactor</string>
+			<key>path</key>
+			<string>Interactor</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1105F26B47433953DE29DA16</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B2B2BE792E7DD3C35AD9A88B</string>
+				<string>A1AA8E18503A3062F32B3B74</string>
+				<string>D7D4492DBFF35B0417486002</string>
+				<string>1FF08B343449E096DA8BBD65</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>LeftMenu</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1160970279559F70C6E02CAE</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C29D53D30D9D58785ECCFA37</string>
+				<string>40A90BB1CB5560D7F34F1804</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Presenter</string>
+			<key>path</key>
+			<string>Presenter</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>129D097B579F8303B0D3D551</key>
+		<dict>
+			<key>fileRef</key>
+			<string>43F0C33F351F8E278A207CBE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>12CC953EFFB760C0D9405EB2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PlaylistPresenter.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>13BF2852561501E312B5EFA8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AlbumInitializer.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>14FB48828C442C7C41E0969A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>74D4D264F45DA747D2F3405E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>15575411CDBED5E947761125</key>
+		<dict>
+			<key>fileRef</key>
+			<string>73820987C78CDE222193BA9C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>15C744855817E888A61994AD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>2267ECF5F1F39946A1C7CAA3</string>
+				<string>A7BC5B1A5FB496C4C4B278CC</string>
+				<string>E71C000EB432D6B53AD5EDE9</string>
+				<string>69267D2B6C9683DEF7073F77</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>168DCB078DD75643B2F74A76</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LeftMenuPresenter.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1700B07D7AD22B25F8601F8C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>StationPresenter.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>17627B1B24A29A5A82A4E5C4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>StationInteractorInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>183997B2124272556A676EF5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4EECD7E3DBC0AD0E405199BC</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1C09489D045F6C9E15189AFA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C6201A0E6577F530C46F9EA0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1FC89CCED6A087CC686B78F3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AF69B44795D01BE0E96A4DB1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1FF08B343449E096DA8BBD65</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>74D4D264F45DA747D2F3405E</string>
+				<string>5DD1C533E468EA59D9136D3C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Configurator</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>214CFB31040304A74D58E75B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PlaylistModuleInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>21D980C5458CE1E1C0DFBB2F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>0C4A632681BAD8F27A758A59</string>
+				<string>13BF2852561501E312B5EFA8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Configurator</string>
+			<key>path</key>
+			<string>Configurator</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2267ECF5F1F39946A1C7CAA3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-AHMusic.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>226F108639522C3A3CE7584E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CategoryInteractor.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2677AB38642F01EEBEA2CB29</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>&#128230; Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>26AF0F188C709210600F9CA4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C3F199D2A2515804306CD4FD</string>
+				<string>1160970279559F70C6E02CAE</string>
+				<string>A21F3E60F34E045A4FFA8698</string>
+				<string>C25F5B93A9FFED4E2610F866</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Artist</string>
+			<key>path</key>
+			<string>Artist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2A19BEF216F71E0515E8C4ED</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0C4A632681BAD8F27A758A59</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2D9A946C7A9A45B55DFD0972</key>
+		<dict>
+			<key>fileRef</key>
+			<string>AC79167B04BFE68239C240B3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2FFBB925FA653654E2B0388A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3A0EBEF4A5D02DF2BF6B320B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>302EC990D2359BD7102BAF52</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CategoryInteractorOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>303D6509CB9A60A21AD6C5ED</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PlaylistViewInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3116F86AF1BE132D10FF1D35</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TrackInteractor.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>31EF0AA084358309FBCB2319</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C63D722674C06F8769AE24ED</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>32D9D5ABBABA3D3BC654D124</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PlaylistInteractor.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3367422E074CA961B58D7D01</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AlbumModuleInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>337C7A9E35CBDAA5A7713916</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A00060104EB991F1EAB6485E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>33F02B6C6BC7E3C54C5B5DF3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>StationModuleInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>375DF2E87D69FD5FB6FE0ADB</key>
+		<dict>
+			<key>fileRef</key>
+			<string>66231FEA016CA40693CA0AE8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3829EAB9E7C735C2277A23FA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>615CA59729D954DBA6D4CF7C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>396CBDCB83FF82803DF49C18</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D6C1666030F2E4492C3F35F1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3A0EBEF4A5D02DF2BF6B320B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>StationConfigurator.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3ACF1F5231D2BC9CB246ACD9</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>&#128230; Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>3D1FCC3B689EF866C9C3CA1D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A4A99F3EC8892B76BAE4B00F</string>
+				<string>C87DB8234C7C0E46EDBBBCE1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Configurator</string>
+			<key>path</key>
+			<string>Configurator</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3D27774FAE22C3216F3D9C8C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E238A4FB6EE699D6FD6EDA88</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3D7E688EB20ED40E3A071BC1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A5627E14A554C90592A800E3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3D92A570152B568E7DAEE1D4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>F6D1E41C089BC19D73BFC41C</string>
+				<string>F7EA2B362AA44844CD56D67E</string>
+				<string>4C0391AC65F16408B8E39043</string>
+				<string>7D394B006DB65DD4627E330D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Category</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3FDACC8683FCB43C62B4DA36</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArtistViewInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4032752D3A96758556F9FB78</key>
+		<dict>
+			<key>fileRef</key>
+			<string>0A6CD6B65AA9B3EC5EB346B9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>40A90BB1CB5560D7F34F1804</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArtistPresenter.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>40B7C218EC9140CCD87375C4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LeftMenuInteractorInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>43F0C33F351F8E278A207CBE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>StationViewInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>449FCC781F271B5670F76DCF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>90EB52EBA870DD2DFF0B41DB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>461FEB70A64561AEF247A84E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8B9BDDF45F81FFB340B13292</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>473121E1F3ED22D6F179A8AC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>303D6509CB9A60A21AD6C5ED</string>
+				<string>4ED242A40D3C9FF15892547E</string>
+				<string>A5627E14A554C90592A800E3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>View</string>
+			<key>path</key>
+			<string>View</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>497FC8F269EFFE19131A20C6</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>43F0C33F351F8E278A207CBE</string>
+				<string>C63D722674C06F8769AE24ED</string>
+				<string>DA5F1D2669F2DED09E8FBF8B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>View</string>
+			<key>path</key>
+			<string>View</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4A7075A88C6B784F947C0578</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A4A99F3EC8892B76BAE4B00F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4B5B2440659BBA6438771906</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F34612B1DF9E5B9EE1A94271</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4C0391AC65F16408B8E39043</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>FC0114E5BEA398B9B87C6B6D</string>
+				<string>302EC990D2359BD7102BAF52</string>
+				<string>226F108639522C3A3CE7584E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Interactor</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4C3C4A0CD9E668E0C66B861C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5BD51CB1FA52900F2D029826</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4CD6A06F0F8F0C938EBBFA4A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>12CC953EFFB760C0D9405EB2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4ED242A40D3C9FF15892547E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PlaylistViewOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4EECD7E3DBC0AD0E405199BC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LeftMenuModuleInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4F72088F30DB97711D3015CE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>&#128230; Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>526A4DAA1CDE93B50000CFC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>526A4DAB1CDE93B50000CFC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Slide</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>526A4DAB1CDE93B50000CFC5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>SlideViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>526A4DAC1CDE93B50000CFC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>526A4DAB1CDE93B50000CFC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>526A4DAD1CDF2BCA0000CFC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>526A4DAE1CDF2BCA0000CFC5</string>
+				<string>526A4DAF1CDF2BCA0000CFC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Base</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>526A4DAE1CDF2BCA0000CFC5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BaseView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>526A4DAF1CDF2BCA0000CFC5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>BaseViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>526A4DB01CDF2BCA0000CFC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>526A4DAE1CDF2BCA0000CFC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>526A4DB11CDF2BCA0000CFC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>526A4DAF1CDF2BCA0000CFC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>526A4DB21CDF35A50000CFC5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CategoryView.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>526A4DB41CDF35A50000CFC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>526A4DB21CDF35A50000CFC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>526A4DB61CDF35AD0000CFC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>526A4DB21CDF35A50000CFC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>views</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>526A4DB71CDFC8640000CFC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>526A4DB81CDFC8640000CFC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Tab</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>526A4DB81CDFC8640000CFC5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TabViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>526A4DB91CDFC8640000CFC5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>526A4DB81CDFC8640000CFC5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5405846EAA9E8CCD2FEB380A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3A0EBEF4A5D02DF2BF6B320B</string>
+				<string>9F6D4DE68FF1D9C6E5A8973F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Configurator</string>
+			<key>path</key>
+			<string>Configurator</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5699A88D911CBA84F16EBBD8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>168DCB078DD75643B2F74A76</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>57AC37591B548E24A9093792</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CCCB8ECF0B7D95A3B409925B</string>
+				<string>66E766D6276263FDA5725AF6</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Configurator</string>
+			<key>path</key>
+			<string>Configurator</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>583099A3F8D57969AD0F26C2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TrackInteractorInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5A693EF500798E76DAE3911E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CCCB8ECF0B7D95A3B409925B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5B0391A1627752D0BB4674F6</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B6B86ADB3B298467E44A32A8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5B9EED3215AEDA7DA664E383</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ECDF5A70182F47B00873F7B1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>5BD51CB1FA52900F2D029826</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArtistViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5C3FF71E746FEF883EB998ED</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>90EB52EBA870DD2DFF0B41DB</string>
+				<string>AF69B44795D01BE0E96A4DB1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Presenter</string>
+			<key>path</key>
+			<string>Presenter</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5DD1C533E468EA59D9136D3C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LeftMenuInitializer.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5EDFB29F1DE4020712E886E2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5DD1C533E468EA59D9136D3C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>611EFB6F5F5EE7E949CFFD42</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArtistConfigurator.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>615CA59729D954DBA6D4CF7C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PlaylistInteractorInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>644A6D59232F337985950485</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LeftMenuInteractor.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>66231FEA016CA40693CA0AE8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CategoryPresenter.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>66E766D6276263FDA5725AF6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PlaylistInitializer.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>69208890CDEC48E491718D8B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArtistInteractorInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>69267D2B6C9683DEF7073F77</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-AHMusicTests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6EB4183265058329090851D9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>98D0A512F0244613A5AA62C0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>6FDAB1870C54CA91E78DB8D8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BF60FE44E4304F2008B3C417</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>70942FDC839482D78A6A106E</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>&#128230; Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>71D6531BCD2EB4453ECD0421</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArtistInteractor.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>733A70FEA117A53E77B79092</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3367422E074CA961B58D7D01</string>
+				<string>899E206662C5A785B074CD64</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Presenter</string>
+			<key>path</key>
+			<string>Presenter</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>734C76F3FA3AB921D38A5EF5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>615CA59729D954DBA6D4CF7C</string>
+				<string>F34612B1DF9E5B9EE1A94271</string>
+				<string>32D9D5ABBABA3D3BC654D124</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Interactor</string>
+			<key>path</key>
+			<string>Interactor</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>73820987C78CDE222193BA9C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArtistInteractorOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>74D4D264F45DA747D2F3405E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LeftMenuConfigurator.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>74F0E68389B1044DD523BC2B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AlbumViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>772D4AE2EF9CEF224BD8E5CD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FCAE2358404452FDCC25542C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7C748E619C971F2A49A00F13</key>
+		<dict>
+			<key>fileRef</key>
+			<string>71D6531BCD2EB4453ECD0421</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7D394B006DB65DD4627E330D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D827F6B628471F277CEF2645</string>
+				<string>A00060104EB991F1EAB6485E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Configurator</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7DA64847EF4B4953E6D12B11</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AlbumViewInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7FE31AFBE34C191FFD95A89B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>&#128230; Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>866463B4CDDDA458D982553E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TrackInteractorOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>86751432E8217884A6FEB4A1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>40A90BB1CB5560D7F34F1804</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>88F11796CA3ADCF0EC2B2D65</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E59449D51EAD5D4FFD23791D</string>
+				<string>BC335FC942B14F4C71EF2BE1</string>
+				<string>B6B86ADB3B298467E44A32A8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>View</string>
+			<key>path</key>
+			<string>View</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>899E206662C5A785B074CD64</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AlbumPresenter.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8B9BDDF45F81FFB340B13292</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CategoryModuleInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8C54AB692D9DED2599003445</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4ED242A40D3C9FF15892547E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>90EB52EBA870DD2DFF0B41DB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TrackModuleInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>942A31E1857D8A5145A79DB4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>33F02B6C6BC7E3C54C5B5DF3</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>95804C657C531125C6CF1576</key>
+		<dict>
+			<key>fileRef</key>
+			<string>66E766D6276263FDA5725AF6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9815B8958B4F02CC1B1CCC32</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E59449D51EAD5D4FFD23791D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>98D0A512F0244613A5AA62C0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArtistViewOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>991EAF6BFB53605F8BC0CA52</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B6A28737C39CB55DF1E7A420</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>99A62811C9A332FD4D8ECEC5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>7DA64847EF4B4953E6D12B11</string>
+				<string>B4C9943B48006AC3C76B10D1</string>
+				<string>74F0E68389B1044DD523BC2B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>View</string>
+			<key>path</key>
+			<string>View</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9D36BABEFA0D22EA0830F9C2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>583099A3F8D57969AD0F26C2</string>
+				<string>866463B4CDDDA458D982553E</string>
+				<string>3116F86AF1BE132D10FF1D35</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Interactor</string>
+			<key>path</key>
+			<string>Interactor</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9E3DF1165440F14D0B855201</key>
+		<dict>
+			<key>fileRef</key>
+			<string>BC335FC942B14F4C71EF2BE1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9F6D4DE68FF1D9C6E5A8973F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>StationInitializer.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9FC61D5279AAB5417D8578CE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AlbumInteractorInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A00060104EB991F1EAB6485E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CategoryInitializer.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A096F130A20F31EF5AD0707C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>33F02B6C6BC7E3C54C5B5DF3</string>
+				<string>1700B07D7AD22B25F8601F8C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Presenter</string>
+			<key>path</key>
+			<string>Presenter</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865B71CDC84C000350BC2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A13865B81CDC84C000350BC2</string>
+				<string>A13865B91CDC84C000350BC2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Application</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865B81CDC84C000350BC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865B91CDC84C000350BC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ApplicationAssembly.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865BA1CDC84C000350BC2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A13865BB1CDC84C000350BC2</string>
+				<string>A13865BC1CDC84C000350BC2</string>
+				<string>A13865BD1CDC84C000350BC2</string>
+				<string>A13865BE1CDC84C000350BC2</string>
+				<string>A13865BF1CDC84C000350BC2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Helpers</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865BB1CDC84C000350BC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>APIHelper.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865BC1CDC84C000350BC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>DBHelper.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865BD1CDC84C000350BC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LocationHelper.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865BE1CDC84C000350BC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UIHelper.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865BF1CDC84C000350BC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Utils.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865C01CDC84C000350BC2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A13865C11CDC84C000350BC2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Messages</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865C11CDC84C000350BC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Events.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865C21CDC84C000350BC2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A13865C41CDC84C000350BC2</string>
+				<string>A16412B31CE35242005FD643</string>
+				<string>A16412B11CE35242005FD643</string>
+				<string>A16412B01CE35242005FD643</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Models</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865C41CDC84C000350BC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Category.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865C61CDC84C000350BC2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>1105F26B47433953DE29DA16</string>
+				<string>3D92A570152B568E7DAEE1D4</string>
+				<string>A3923185B0B5B79244CB8A8B</string>
+				<string>26AF0F188C709210600F9CA4</string>
+				<string>F29003D576615B0B01BD777A</string>
+				<string>FD34C95A65F7D776D4E03CE2</string>
+				<string>D722BD2F17CB62B0B721C4D7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Modules</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865C71CDC84C000350BC2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A13865C81CDC84C000350BC2</string>
+				<string>A13865C91CDC84C000350BC2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Settings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865C81CDC84C000350BC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AHMusic-Bridging-Header.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865C91CDC84C000350BC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>UISettings.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865CA1CDC84C000350BC2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A13865CB1CDC84C000350BC2</string>
+				<string>A13865CC1CDC84C000350BC2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865CB1CDC84C000350BC2</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Assets.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865CC1CDC84C000350BC2</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A13865CD1CDC84C000350BC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A13865B81CDC84C000350BC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A13865CE1CDC84C000350BC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A13865B91CDC84C000350BC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A13865CF1CDC84C000350BC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A13865BB1CDC84C000350BC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A13865D01CDC84C000350BC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A13865BC1CDC84C000350BC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A13865D11CDC84C000350BC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A13865BD1CDC84C000350BC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A13865D21CDC84C000350BC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A13865BE1CDC84C000350BC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A13865D31CDC84C000350BC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A13865BF1CDC84C000350BC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A13865D41CDC84C000350BC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A13865C11CDC84C000350BC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A13865D61CDC84C000350BC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A13865C41CDC84C000350BC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A13865D81CDC84C000350BC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A13865C91CDC84C000350BC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A13865D91CDC84C000350BC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A13865CB1CDC84C000350BC2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A14836BD1CDB75CA0043036B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A14836C81CDB75CA0043036B</string>
+				<string>A14836DD1CDB75CA0043036B</string>
+				<string>A14836E81CDB75CA0043036B</string>
+				<string>A14836C71CDB75CA0043036B</string>
+				<string>15C744855817E888A61994AD</string>
+				<string>0DB2CE300CAA5ECADB7ED53E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A14836BE1CDB75CA0043036B</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0730</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>AroHak LLC</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>A14836C51CDB75CA0043036B</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.0.1</string>
+					</dict>
+					<key>A14836D91CDB75CA0043036B</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.0.1</string>
+						<key>TestTargetID</key>
+						<string>A14836C51CDB75CA0043036B</string>
+					</dict>
+					<key>A14836E41CDB75CA0043036B</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>7.0.1</string>
+						<key>TestTargetID</key>
+						<string>A14836C51CDB75CA0043036B</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>A14836C11CDB75CA0043036B</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>A14836BD1CDB75CA0043036B</string>
+			<key>productRefGroup</key>
+			<string>A14836C71CDB75CA0043036B</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>A14836C51CDB75CA0043036B</string>
+				<string>A14836D91CDB75CA0043036B</string>
+				<string>A14836E41CDB75CA0043036B</string>
+			</array>
+		</dict>
+		<key>A14836C11CDB75CA0043036B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>A14836EC1CDB75CA0043036B</string>
+				<string>A14836ED1CDB75CA0043036B</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>A14836C21CDB75CA0043036B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>A13865CF1CDC84C000350BC2</string>
+				<string>A13865CE1CDC84C000350BC2</string>
+				<string>A13865D81CDC84C000350BC2</string>
+				<string>A13865CD1CDC84C000350BC2</string>
+				<string>A13865D61CDC84C000350BC2</string>
+				<string>A16412B71CE35242005FD643</string>
+				<string>A13865D31CDC84C000350BC2</string>
+				<string>A13865D41CDC84C000350BC2</string>
+				<string>A13865D01CDC84C000350BC2</string>
+				<string>A13865D11CDC84C000350BC2</string>
+				<string>A13865D21CDC84C000350BC2</string>
+				<string>526A4DB91CDFC8640000CFC5</string>
+				<string>526A4DB01CDF2BCA0000CFC5</string>
+				<string>526A4DAC1CDE93B50000CFC5</string>
+				<string>A16412B41CE35242005FD643</string>
+				<string>991EAF6BFB53605F8BC0CA52</string>
+				<string>4032752D3A96758556F9FB78</string>
+				<string>396CBDCB83FF82803DF49C18</string>
+				<string>461FEB70A64561AEF247A84E</string>
+				<string>375DF2E87D69FD5FB6FE0ADB</string>
+				<string>C6CA7EB6893F809BB35C29A0</string>
+				<string>F8A58A851CFD123E023E987B</string>
+				<string>A4F57126B7E0C6DF6C03BC2C</string>
+				<string>ADB451B9642E1562C2AF9F28</string>
+				<string>337C7A9E35CBDAA5A7713916</string>
+				<string>A16412B51CE35242005FD643</string>
+				<string>526A4DB11CDF2BCA0000CFC5</string>
+				<string>526A4DB41CDF35A50000CFC5</string>
+				<string>3D27774FAE22C3216F3D9C8C</string>
+				<string>A51B52B69D062282DBC15996</string>
+				<string>CCDF9D1E105B37265713D3FD</string>
+				<string>183997B2124272556A676EF5</string>
+				<string>5699A88D911CBA84F16EBBD8</string>
+				<string>D06F24C3498A5B5E5879DC26</string>
+				<string>1C09489D045F6C9E15189AFA</string>
+				<string>DA18B435DC80AC27B06992F8</string>
+				<string>14FB48828C442C7C41E0969A</string>
+				<string>5EDFB29F1DE4020712E886E2</string>
+				<string>9815B8958B4F02CC1B1CCC32</string>
+				<string>9E3DF1165440F14D0B855201</string>
+				<string>5B0391A1627752D0BB4674F6</string>
+				<string>449FCC781F271B5670F76DCF</string>
+				<string>1FC89CCED6A087CC686B78F3</string>
+				<string>B526D39FC9B9598F753CB26B</string>
+				<string>CCACE5446117BD4017320716</string>
+				<string>F88B688EE90CE1AB91817E96</string>
+				<string>4A7075A88C6B784F947C0578</string>
+				<string>B916AC518BC6CE5F13D1F0F9</string>
+				<string>D709DDD91A22FABB8CA29230</string>
+				<string>6EB4183265058329090851D9</string>
+				<string>4C3C4A0CD9E668E0C66B861C</string>
+				<string>A39DD42E06CE468DF84F7260</string>
+				<string>86751432E8217884A6FEB4A1</string>
+				<string>10852E2D7825C1BBD12D9BCF</string>
+				<string>15575411CDBED5E947761125</string>
+				<string>7C748E619C971F2A49A00F13</string>
+				<string>ED35BAFDD2354055E863D177</string>
+				<string>6FDAB1870C54CA91E78DB8D8</string>
+				<string>0003C00B2EDF5B1CE7DA5A4D</string>
+				<string>DA6FFF8788269FED27D642F3</string>
+				<string>E6A052351A0100271A04E944</string>
+				<string>D8F2E50D1461944E54E80BF4</string>
+				<string>FB6B148FF751DF4C5C341BB1</string>
+				<string>CC25BC7FC958AE4EEACF0A02</string>
+				<string>C9D53E2140045C7081F663F3</string>
+				<string>A8BC23EECD4868289ADE5B72</string>
+				<string>2A19BEF216F71E0515E8C4ED</string>
+				<string>BA3093576FC71E4AE68350E1</string>
+				<string>C670CB0AA111A9A1948D6C12</string>
+				<string>8C54AB692D9DED2599003445</string>
+				<string>3D7E688EB20ED40E3A071BC1</string>
+				<string>09A847CA02CE5CE823BFBE62</string>
+				<string>4CD6A06F0F8F0C938EBBFA4A</string>
+				<string>3829EAB9E7C735C2277A23FA</string>
+				<string>4B5B2440659BBA6438771906</string>
+				<string>EBF79891C98A76987855EA45</string>
+				<string>5A693EF500798E76DAE3911E</string>
+				<string>95804C657C531125C6CF1576</string>
+				<string>129D097B579F8303B0D3D551</string>
+				<string>31EF0AA084358309FBCB2319</string>
+				<string>07B721EA47B1BCB5BED5AD41</string>
+				<string>942A31E1857D8A5145A79DB4</string>
+				<string>C45CA050F343855A03F0CD89</string>
+				<string>F41D992CB1DE101BD63BFF66</string>
+				<string>5B9EED3215AEDA7DA664E383</string>
+				<string>E5F0BB87244B26D5981D2DA1</string>
+				<string>2FFBB925FA653654E2B0388A</string>
+				<string>A9BFDE022391802A229BD1AF</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A14836C31CDB75CA0043036B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>2D9A946C7A9A45B55DFD0972</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A14836C41CDB75CA0043036B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>A13865D91CDC84C000350BC2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A14836C51CDB75CA0043036B</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>A14836EE1CDB75CA0043036B</string>
+			<key>buildPhases</key>
+			<array>
+				<string>3ACF1F5231D2BC9CB246ACD9</string>
+				<string>A14836C21CDB75CA0043036B</string>
+				<string>A14836C31CDB75CA0043036B</string>
+				<string>A14836C41CDB75CA0043036B</string>
+				<string>DE656FCD3E28693F2A0CBFBB</string>
+				<string>70942FDC839482D78A6A106E</string>
+				<string>DEF7A63E8C2719DDBB7F5967</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>AHMusic</string>
+			<key>productName</key>
+			<string>AHMusic</string>
+			<key>productReference</key>
+			<string>A14836C61CDB75CA0043036B</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>A14836C61CDB75CA0043036B</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>AHMusic.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A14836C71CDB75CA0043036B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A14836C61CDB75CA0043036B</string>
+				<string>A14836DA1CDB75CA0043036B</string>
+				<string>A14836E51CDB75CA0043036B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A14836C81CDB75CA0043036B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A13865B71CDC84C000350BC2</string>
+				<string>526A4DAD1CDF2BCA0000CFC5</string>
+				<string>526A4DAA1CDE93B50000CFC5</string>
+				<string>526A4DB71CDFC8640000CFC5</string>
+				<string>A13865C61CDC84C000350BC2</string>
+				<string>A13865C21CDC84C000350BC2</string>
+				<string>A13865C01CDC84C000350BC2</string>
+				<string>A13865BA1CDC84C000350BC2</string>
+				<string>A13865C71CDC84C000350BC2</string>
+				<string>A13865CA1CDC84C000350BC2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>AHMusic</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A14836D61CDB75CA0043036B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>A14836DF1CDB75CA0043036B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A14836D71CDB75CA0043036B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>772D4AE2EF9CEF224BD8E5CD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A14836D81CDB75CA0043036B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A14836D91CDB75CA0043036B</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>A14836F11CDB75CA0043036B</string>
+			<key>buildPhases</key>
+			<array>
+				<string>7FE31AFBE34C191FFD95A89B</string>
+				<string>A14836D61CDB75CA0043036B</string>
+				<string>A14836D71CDB75CA0043036B</string>
+				<string>A14836D81CDB75CA0043036B</string>
+				<string>2677AB38642F01EEBEA2CB29</string>
+				<string>4F72088F30DB97711D3015CE</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>A14836DC1CDB75CA0043036B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>AHMusicTests</string>
+			<key>productName</key>
+			<string>AHMusicTests</string>
+			<key>productReference</key>
+			<string>A14836DA1CDB75CA0043036B</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>A14836DA1CDB75CA0043036B</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>AHMusicTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A14836DB1CDB75CA0043036B</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>A14836BE1CDB75CA0043036B</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>A14836C51CDB75CA0043036B</string>
+			<key>remoteInfo</key>
+			<string>AHMusic</string>
+		</dict>
+		<key>A14836DC1CDB75CA0043036B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>A14836C51CDB75CA0043036B</string>
+			<key>targetProxy</key>
+			<string>A14836DB1CDB75CA0043036B</string>
+		</dict>
+		<key>A14836DD1CDB75CA0043036B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A14836DE1CDB75CA0043036B</string>
+				<string>A14836E01CDB75CA0043036B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>AHMusicTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A14836DE1CDB75CA0043036B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AHMusicTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A14836DF1CDB75CA0043036B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A14836DE1CDB75CA0043036B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A14836E01CDB75CA0043036B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A14836E11CDB75CA0043036B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>A14836EA1CDB75CA0043036B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A14836E21CDB75CA0043036B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A14836E31CDB75CA0043036B</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A14836E41CDB75CA0043036B</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>A14836F41CDB75CA0043036B</string>
+			<key>buildPhases</key>
+			<array>
+				<string>A14836E11CDB75CA0043036B</string>
+				<string>A14836E21CDB75CA0043036B</string>
+				<string>A14836E31CDB75CA0043036B</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>A14836E71CDB75CA0043036B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>AHMusicUITests</string>
+			<key>productName</key>
+			<string>AHMusicUITests</string>
+			<key>productReference</key>
+			<string>A14836E51CDB75CA0043036B</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.ui-testing</string>
+		</dict>
+		<key>A14836E51CDB75CA0043036B</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>AHMusicUITests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A14836E61CDB75CA0043036B</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>A14836BE1CDB75CA0043036B</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>A14836C51CDB75CA0043036B</string>
+			<key>remoteInfo</key>
+			<string>AHMusic</string>
+		</dict>
+		<key>A14836E71CDB75CA0043036B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>A14836C51CDB75CA0043036B</string>
+			<key>targetProxy</key>
+			<string>A14836E61CDB75CA0043036B</string>
+		</dict>
+		<key>A14836E81CDB75CA0043036B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A14836E91CDB75CA0043036B</string>
+				<string>A14836EB1CDB75CA0043036B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>AHMusicUITests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A14836E91CDB75CA0043036B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AHMusicUITests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A14836EA1CDB75CA0043036B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A14836E91CDB75CA0043036B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A14836EB1CDB75CA0043036B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A14836EC1CDB75CA0043036B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>ENABLE_TESTABILITY</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>A14836ED1CDB75CA0043036B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>DEBUG_INFORMATION_FORMAT</key>
+				<string>dwarf-with-dsym</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_NO_COMMON_BLOCKS</key>
+				<string>YES</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>9.0</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>A14836EE1CDB75CA0043036B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>A14836EF1CDB75CA0043036B</string>
+				<string>A14836F01CDB75CA0043036B</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>A14836EF1CDB75CA0043036B</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>2267ECF5F1F39946A1C7CAA3</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>INFOPLIST_FILE</key>
+				<string>$(SRCROOT)/AHMusic/Supporting Files/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>arohak.com.AHMusic</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PROVISIONING_PROFILE</key>
+				<string></string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>$(SRCROOT)/AHMusic/Settings/AHMusic-Bridging-Header.h</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>A14836F01CDB75CA0043036B</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A7BC5B1A5FB496C4C4B278CC</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>iPhone Developer</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>INFOPLIST_FILE</key>
+				<string>$(SRCROOT)/AHMusic/Supporting Files/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>arohak.com.AHMusic</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>PROVISIONING_PROFILE</key>
+				<string></string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>$(SRCROOT)/AHMusic/Settings/AHMusic-Bridging-Header.h</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>A14836F11CDB75CA0043036B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>A14836F21CDB75CA0043036B</string>
+				<string>A14836F31CDB75CA0043036B</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>A14836F21CDB75CA0043036B</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E71C000EB432D6B53AD5EDE9</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>AHMusicTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>arohak.com.AHMusicTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/AHMusic.app/AHMusic</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>A14836F31CDB75CA0043036B</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>69267D2B6C9683DEF7073F77</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>INFOPLIST_FILE</key>
+				<string>AHMusicTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>arohak.com.AHMusicTests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/AHMusic.app/AHMusic</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>A14836F41CDB75CA0043036B</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>A14836F51CDB75CA0043036B</string>
+				<string>A14836F61CDB75CA0043036B</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>A14836F51CDB75CA0043036B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>AHMusicUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>arohak.com.AHMusicUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>AHMusic</string>
+				<key>USES_XCTRUNNER</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>A14836F61CDB75CA0043036B</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>INFOPLIST_FILE</key>
+				<string>AHMusicUITests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
+				<string>arohak.com.AHMusicUITests</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_TARGET_NAME</key>
+				<string>AHMusic</string>
+				<key>USES_XCTRUNNER</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>A16412B01CE35242005FD643</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Album.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A16412B11CE35242005FD643</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Artist.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A16412B31CE35242005FD643</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Track.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A16412B41CE35242005FD643</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A16412B01CE35242005FD643</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A16412B51CE35242005FD643</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A16412B11CE35242005FD643</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A16412B71CE35242005FD643</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A16412B31CE35242005FD643</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A1AA8E18503A3062F32B3B74</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>4EECD7E3DBC0AD0E405199BC</string>
+				<string>168DCB078DD75643B2F74A76</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Presenter</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A21F3E60F34E045A4FFA8698</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>69208890CDEC48E491718D8B</string>
+				<string>73820987C78CDE222193BA9C</string>
+				<string>71D6531BCD2EB4453ECD0421</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Interactor</string>
+			<key>path</key>
+			<string>Interactor</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A3923185B0B5B79244CB8A8B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>88F11796CA3ADCF0EC2B2D65</string>
+				<string>5C3FF71E746FEF883EB998ED</string>
+				<string>9D36BABEFA0D22EA0830F9C2</string>
+				<string>3D1FCC3B689EF866C9C3CA1D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Track</string>
+			<key>path</key>
+			<string>Track</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A39DD42E06CE468DF84F7260</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C29D53D30D9D58785ECCFA37</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A43C26DBD74861B4D6793538</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>StationInteractor.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A4A99F3EC8892B76BAE4B00F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TrackConfigurator.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A4F57126B7E0C6DF6C03BC2C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>226F108639522C3A3CE7584E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A51B52B69D062282DBC15996</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F1C40FB3D88D569CFF6B1DB8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A5627E14A554C90592A800E3</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PlaylistViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A7BC5B1A5FB496C4C4B278CC</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-AHMusic.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A8BC23EECD4868289ADE5B72</key>
+		<dict>
+			<key>fileRef</key>
+			<string>00A05D1A5CD4EE30BAB1360A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A9BFDE022391802A229BD1AF</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9F6D4DE68FF1D9C6E5A8973F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AC79167B04BFE68239C240B3</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_AHMusic.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>ADB451B9642E1562C2AF9F28</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D827F6B628471F277CEF2645</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>AF69B44795D01BE0E96A4DB1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TrackPresenter.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B2B2BE792E7DD3C35AD9A88B</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>E238A4FB6EE699D6FD6EDA88</string>
+				<string>F1C40FB3D88D569CFF6B1DB8</string>
+				<string>CD4C631C2D364A878CE67394</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>View</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B4C9943B48006AC3C76B10D1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AlbumViewOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B526D39FC9B9598F753CB26B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>583099A3F8D57969AD0F26C2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B6A28737C39CB55DF1E7A420</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CategoryViewInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B6B86ADB3B298467E44A32A8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TrackViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B916AC518BC6CE5F13D1F0F9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C87DB8234C7C0E46EDBBBCE1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BA3093576FC71E4AE68350E1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>13BF2852561501E312B5EFA8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BC335FC942B14F4C71EF2BE1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TrackViewOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BF60FE44E4304F2008B3C417</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArtistInitializer.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C25F5B93A9FFED4E2610F866</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>611EFB6F5F5EE7E949CFFD42</string>
+				<string>BF60FE44E4304F2008B3C417</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Configurator</string>
+			<key>path</key>
+			<string>Configurator</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C29D53D30D9D58785ECCFA37</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ArtistModuleInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C3F199D2A2515804306CD4FD</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3FDACC8683FCB43C62B4DA36</string>
+				<string>98D0A512F0244613A5AA62C0</string>
+				<string>5BD51CB1FA52900F2D029826</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>View</string>
+			<key>path</key>
+			<string>View</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C45CA050F343855A03F0CD89</key>
+		<dict>
+			<key>fileRef</key>
+			<string>1700B07D7AD22B25F8601F8C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C6201A0E6577F530C46F9EA0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LeftMenuInteractorOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C63D722674C06F8769AE24ED</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>StationViewOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C670CB0AA111A9A1948D6C12</key>
+		<dict>
+			<key>fileRef</key>
+			<string>303D6509CB9A60A21AD6C5ED</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C6CA7EB6893F809BB35C29A0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FC0114E5BEA398B9B87C6B6D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C87DB8234C7C0E46EDBBBCE1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TrackInitializer.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C9D53E2140045C7081F663F3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EDD1BFA58E404CC88A23F2D4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CC25BC7FC958AE4EEACF0A02</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9FC61D5279AAB5417D8578CE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CCACE5446117BD4017320716</key>
+		<dict>
+			<key>fileRef</key>
+			<string>866463B4CDDDA458D982553E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CCCB8ECF0B7D95A3B409925B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PlaylistConfigurator.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CCDF9D1E105B37265713D3FD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>CD4C631C2D364A878CE67394</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>CD4C631C2D364A878CE67394</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LeftMenuViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D06F24C3498A5B5E5879DC26</key>
+		<dict>
+			<key>fileRef</key>
+			<string>40B7C218EC9140CCD87375C4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D6C1666030F2E4492C3F35F1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CategoryViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D709DDD91A22FABB8CA29230</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3FDACC8683FCB43C62B4DA36</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D722BD2F17CB62B0B721C4D7</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>497FC8F269EFFE19131A20C6</string>
+				<string>A096F130A20F31EF5AD0707C</string>
+				<string>1100CC07D2F95E78F6EE76DF</string>
+				<string>5405846EAA9E8CCD2FEB380A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Station</string>
+			<key>path</key>
+			<string>Station</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D7D4492DBFF35B0417486002</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>40B7C218EC9140CCD87375C4</string>
+				<string>C6201A0E6577F530C46F9EA0</string>
+				<string>644A6D59232F337985950485</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Interactor</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D827F6B628471F277CEF2645</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CategoryConfigurator.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D8F2E50D1461944E54E80BF4</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3367422E074CA961B58D7D01</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DA18B435DC80AC27B06992F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>644A6D59232F337985950485</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DA5F1D2669F2DED09E8FBF8B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>StationViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DA6FFF8788269FED27D642F3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>B4C9943B48006AC3C76B10D1</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DB44B05DD9ED2A5ECCA6F961</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9FC61D5279AAB5417D8578CE</string>
+				<string>EDD1BFA58E404CC88A23F2D4</string>
+				<string>00A05D1A5CD4EE30BAB1360A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Interactor</string>
+			<key>path</key>
+			<string>Interactor</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DE656FCD3E28693F2A0CBFBB</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>&#128230; Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>DEF7A63E8C2719DDBB7F5967</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>E238A4FB6EE699D6FD6EDA88</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LeftMenuViewInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E59449D51EAD5D4FFD23791D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>TrackViewInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E5F0BB87244B26D5981D2DA1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A43C26DBD74861B4D6793538</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E6A052351A0100271A04E944</key>
+		<dict>
+			<key>fileRef</key>
+			<string>74F0E68389B1044DD523BC2B</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E71C000EB432D6B53AD5EDE9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-AHMusicTests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EBF79891C98A76987855EA45</key>
+		<dict>
+			<key>fileRef</key>
+			<string>32D9D5ABBABA3D3BC654D124</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>ECDF5A70182F47B00873F7B1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>StationInteractorOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>ED35BAFDD2354055E863D177</key>
+		<dict>
+			<key>fileRef</key>
+			<string>611EFB6F5F5EE7E949CFFD42</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>EDD1BFA58E404CC88A23F2D4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AlbumInteractorOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F1C40FB3D88D569CFF6B1DB8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>LeftMenuViewOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F29003D576615B0B01BD777A</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>99A62811C9A332FD4D8ECEC5</string>
+				<string>733A70FEA117A53E77B79092</string>
+				<string>DB44B05DD9ED2A5ECCA6F961</string>
+				<string>21D980C5458CE1E1C0DFBB2F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Album</string>
+			<key>path</key>
+			<string>Album</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F34612B1DF9E5B9EE1A94271</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>PlaylistInteractorOutput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F41D992CB1DE101BD63BFF66</key>
+		<dict>
+			<key>fileRef</key>
+			<string>17627B1B24A29A5A82A4E5C4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F6D1E41C089BC19D73BFC41C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>B6A28737C39CB55DF1E7A420</string>
+				<string>0A6CD6B65AA9B3EC5EB346B9</string>
+				<string>D6C1666030F2E4492C3F35F1</string>
+				<string>526A4DB61CDF35AD0000CFC5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>View</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F7EA2B362AA44844CD56D67E</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>8B9BDDF45F81FFB340B13292</string>
+				<string>66231FEA016CA40693CA0AE8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>Presenter</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F88B688EE90CE1AB91817E96</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3116F86AF1BE132D10FF1D35</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>F8A58A851CFD123E023E987B</key>
+		<dict>
+			<key>fileRef</key>
+			<string>302EC990D2359BD7102BAF52</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FB6B148FF751DF4C5C341BB1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>899E206662C5A785B074CD64</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FC0114E5BEA398B9B87C6B6D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>CategoryInteractorInput.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FCAE2358404452FDCC25542C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_AHMusicTests.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>FD34C95A65F7D776D4E03CE2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>473121E1F3ED22D6F179A8AC</string>
+				<string>071B308AC94A1615BF67B0D0</string>
+				<string>734C76F3FA3AB921D38A5EF5</string>
+				<string>57AC37591B548E24A9093792</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Playlist</string>
+			<key>path</key>
+			<string>Playlist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>A14836BE1CDB75CA0043036B</string>
+</dict>
+</plist>

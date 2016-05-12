@@ -6,7 +6,8 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class CategoryViewController: UIViewController, CategoryViewInput {
+//MARK: - class CategoryViewController
+class CategoryViewController: UIViewController {
 
     var output: CategoryViewOutput!
     var categoryView = CategoryView()
@@ -22,13 +23,6 @@ class CategoryViewController: UIViewController, CategoryViewInput {
         output.viewIsReady()
     }
     
-    // MARK: - LandingViewInput
-    func categoryDataIsReady(items: Array<Category>) {
-        self.items = items
-        
-        categoryView.collection.reloadData()
-    }
-    
     // MARK: - Private Method
     private func baseConfig() {
         self.view = categoryView
@@ -39,9 +33,19 @@ class CategoryViewController: UIViewController, CategoryViewInput {
     }
 }
 
+//MARK: - extension for CategoryViewInput
+extension CategoryViewController: CategoryViewInput {
+    
+    func categoryDataIsReady(items: Array<Category>) {
+        self.items = items
+        
+        categoryView.collection.reloadData()
+    }
+}
+
+//MARK: - extension for UICollectionView
 extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    //MARK: - UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return items.count
@@ -55,13 +59,11 @@ extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDe
         return cell
     }
     
-    //MARK: - UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let item = items[indexPath.row]
        output.viewIsSelectItem(item)
     }
     
-    //MARK: - UICollectionViewDelegateFlowLayout
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         let size = CGSize(width: CA_CELL_WIDTH, height: CA_CELL_WIDTH*1.2)
         

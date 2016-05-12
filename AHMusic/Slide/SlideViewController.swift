@@ -5,7 +5,7 @@
 //  Created by Ara Hakobyan on 06/05/2016.
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 
-
+//MARK: - class SlideViewController
 class SlideViewController: SlideMenuController {
     
     var output: CategoryViewOutput!
@@ -88,6 +88,7 @@ class SlideViewController: SlideMenuController {
         textFieldAnimation()
     }
     
+    //MARK: -  Animation
     func textFieldAnimation() {
         if isAnimation {
             UIView.animateWithDuration(0.5, animations: {
@@ -112,9 +113,9 @@ class SlideViewController: SlideMenuController {
     }
 }
 
-extension SlideViewController: SlideMenuControllerDelegate, UITextFieldDelegate {
+//MARK: - extension for SlideMenuControllerDelegate
+extension SlideViewController: SlideMenuControllerDelegate {
 
-    //MARK: -  SlideMenuControllerDelegate
     func leftWillOpen() {
         let menuButton = navigationItem.leftBarButtonItem?.customView as! UIButton
         menuButton.selected = true
@@ -124,8 +125,11 @@ extension SlideViewController: SlideMenuControllerDelegate, UITextFieldDelegate 
         let menuButton = navigationItem.leftBarButtonItem?.customView as! UIButton
         menuButton.selected = false
     }
+}
+
+//MARK: - extension for UITextFieldDelegate
+extension SlideViewController: UITextFieldDelegate {
     
-    //MARK: -  UITextFieldDelegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textFieldAnimation()
         
@@ -134,5 +138,5 @@ extension SlideViewController: SlideMenuControllerDelegate, UITextFieldDelegate 
         
         return true
     }
-
+    
 }
