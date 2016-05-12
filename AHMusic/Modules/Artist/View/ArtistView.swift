@@ -107,7 +107,7 @@ class ArtistCellContentView: UIView {
     //MARK: - Privat Methods
     func addAllUIElements() {
         addSubview(imageView)
-        imageView.addSubview(iconImageView)
+//        imageView.addSubview(iconImageView)
         addSubview(nameLabel)
         
         setConstraints()
@@ -118,9 +118,9 @@ class ArtistCellContentView: UIView {
         imageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: AR_OFFSET*1.5)
         imageView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), excludingEdge: .Bottom)
         
-        iconImageView.autoPinEdgeToSuperviewEdge(.Left, withInset: AR_OFFSET)
-        iconImageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: AR_OFFSET)
-        iconImageView.autoSetDimensionsToSize(CGSize(width: AR_ICON_SIZE, height: AR_ICON_SIZE))
+//        iconImageView.autoPinEdgeToSuperviewEdge(.Left, withInset: AR_OFFSET)
+//        iconImageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: AR_OFFSET)
+//        iconImageView.autoSetDimensionsToSize(CGSize(width: AR_ICON_SIZE, height: AR_ICON_SIZE))
         
         nameLabel.autoPinEdgeToSuperviewEdge(.Bottom)
         nameLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: AR_INSET)

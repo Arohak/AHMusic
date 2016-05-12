@@ -51,8 +51,15 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(collectionCellIdentifire) as! TrackCell
+        
         cell.cellContentView.playButton.addTarget(self, action: #selector(TrackViewController.playSound(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.playButton.indexPath = indexPath
+        
+        cell.cellContentView.linkButton.addTarget(self, action: #selector(TrackViewController.openLink(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.linkButton.indexPath = indexPath
+        
+        cell.cellContentView.imageView.image = UIImage(named: "img_tr_cover" + "\(indexPath.row%8)")
+        
         let track = items[indexPath.row]
         cell.setValues(track)
         
@@ -79,5 +86,10 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
         } else {
             output.pauseSound()
         }
+    }
+    
+    func openLink(sender: AHButton) {
+        let track = items[sender.indexPath.row]
+        output.openLink(track)
     }
 }

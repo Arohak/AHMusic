@@ -46,6 +46,10 @@ extension TrackPresenter: TrackViewOutput {
     func pauseSound() {
         player.pause()
     }
+    
+    func openLink(track: Track) {
+        
+    }
 }
 
 //MARK: - extension for TrackInteractorOutput

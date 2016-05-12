@@ -9,6 +9,9 @@
 protocol TrackViewOutput {
 
     func viewIsReady()
+    
     func playSound(track: Track)
     func pauseSound()
+    
+    func openLink(track: Track)
 }

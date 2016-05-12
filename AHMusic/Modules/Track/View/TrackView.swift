@@ -55,9 +55,8 @@ class TrackCell: UITableViewCell {
     }
     
     func setValues(item: Track) {
-        cellContentView.imageView.image = UIImage(named: "")
         cellContentView.titleLabel.text = item.title
-        cellContentView.descLabel.text = item.link
+        cellContentView.linkButton.setTitle(item.link, forState: .Normal)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -93,10 +92,13 @@ class TrackCellContentView: UIView {
         return view
     }()
     
-    lazy var descLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
-        view.font = TR_DESC_FONT
-        view.textColor = GRAY
+    lazy var linkButton: AHButton = {
+        let view = AHButton.newAutoLayoutView()
+        view.setTitleColor(GRAY, forState: .Normal)
+        view.setTitleColor(BLUE, forState: .Highlighted)
+        view.titleLabel!.font = TR_DESC_FONT
+        view.contentHorizontalAlignment = .Left
+        view.titleLabel!.lineBreakMode = .ByTruncatingTail
         
         return view
     }()
@@ -117,7 +119,7 @@ class TrackCellContentView: UIView {
         addSubview(imageView)
         imageView.addSubview(playButton)
         addSubview(titleLabel)
-        addSubview(descLabel)
+        addSubview(linkButton)
 
         setConstraints()
     }
@@ -136,9 +138,9 @@ class TrackCellContentView: UIView {
         titleLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
         titleLabel.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -TR_OFFSET)
         
-        descLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: titleLabel, withOffset: TR_INSET)
-        descLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
-        descLabel.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -TR_OFFSET)
+        linkButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: titleLabel, withOffset: 0)
+        linkButton.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
+        linkButton.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -TR_OFFSET)
     }
 }
 
