@@ -9,7 +9,28 @@
 class TabViewController: UIViewController  {
     
     var tabNavigation: CarbonTabSwipeNavigation!
+    
+    var tracks = Array<Track>()
+    var artists = Array<Artist>()
+    var albums = Array<Album>()
+    var playlists = Array<String>()
+    var stations = Array<String>()
 
+    //MARK: - Initilize
+    init(data: Array<Result>) {
+        super.init(nibName: nil, bundle: nil)
+        
+        for item in data {
+            tracks.append(item.track)
+            artists.append(item.artist)
+            albums.append(item.album)
+        }
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +63,7 @@ extension TabViewController: CarbonTabSwipeNavigationDelegate {
     func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAtIndex index: UInt) -> UIViewController {
         switch index {
         case 0:
-            let track = TrackPresenter()
+            let track = TrackPresenter(items: tracks)
             _ = TrackModuleInitializer(presentor: track)
             
             return track.view as! UIViewController

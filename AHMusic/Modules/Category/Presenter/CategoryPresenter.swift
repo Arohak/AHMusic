@@ -37,10 +37,10 @@ extension CategoryPresenter: CategoryInteractorOutput {
         view.categoryDataIsReady(items)
     }
     
-    func searchDataIsReady(items: Array<Category>) {
+    func searchDataIsReady(items: Array<Result>) {
         let root = appDelegate.window?.rootViewController as! UINavigationController
         if let firstVC = root.viewControllers[0] as? SlideViewController {
-            firstVC.slideMenuController()!.changeMainViewController(TabViewController(),  close: true)
+            firstVC.slideMenuController()!.changeMainViewController(TabViewController(data: items),  close: true)
         }
     }
 }

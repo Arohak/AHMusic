@@ -8,5 +8,5 @@
 
 protocol TrackViewInput: class {
 
-    func setupInitialState()
+    func setupInitialState(items: Array<Track>)
 }

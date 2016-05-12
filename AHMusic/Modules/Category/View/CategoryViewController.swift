@@ -10,8 +10,8 @@
 class CategoryViewController: UIViewController {
 
     var output: CategoryViewOutput!
+    
     var categoryView = CategoryView()
-
     var items = Array<Category>()
     let collectionCellIdentifire = "categoryCollectionCell"
 

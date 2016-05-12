@@ -33,8 +33,13 @@ extension CategoryInteractor: CategoryInteractorInput {
     
     func searchItems(name: String) {
         _ = apiHelper.rx_Search(name)
-            .subscribeNext({ data in
-                var temp = Array<Category>()
+            .subscribeNext({ result in
+                var temp = Array<Result>()
+                for item in result["data"].arrayValue {
+                    let result = Result(data: item)
+                    temp.append(result)
+                }
+                
                 self.output.searchDataIsReady(temp)
             })
     }

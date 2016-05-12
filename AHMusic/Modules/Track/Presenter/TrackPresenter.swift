@@ -7,10 +7,19 @@
 //
 
 //MARK: - class TrackPresenter
-class TrackPresenter {
+class TrackPresenter: NSObject {
 
     var view: TrackViewInput!
     var interactor: TrackInteractorInput!
+    
+    var items = Array<Track>()
+    
+    //MARK: - Initilize
+    init(items: Array<Track>) {
+        super.init()
+        
+        self.items = items
+    }
 }
 
 //MARK: - extension for TrackModuleInput
@@ -22,7 +31,7 @@ extension TrackPresenter: TrackModuleInput {
 extension TrackPresenter: TrackViewOutput {
     
     func viewIsReady() {
-
+        view.setupInitialState(self.items)
     }
 }
 
