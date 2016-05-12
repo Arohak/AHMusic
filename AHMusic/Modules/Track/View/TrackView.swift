@@ -49,6 +49,7 @@ class TrackCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        selectionStyle = .None
         contentView.addSubview(cellContentView)
         cellContentView.autoPinEdgesToSuperviewEdges()
     }
@@ -71,14 +72,16 @@ class TrackCellContentView: UIView {
     lazy var imageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         view.backgroundColor = BLUE_LIGHT
-        
+        view.userInteractionEnabled = true
+
         return view
     }()
     
-    lazy var playButton: UIButton = {
-        let view = UIButton.newAutoLayoutView()
+    lazy var playButton: AHButton = {
+        let view = AHButton.newAutoLayoutView()
         view.setBackgroundImage(UIImage(named: "img_tr_play"), forState: .Normal)
-        
+        view.setBackgroundImage(UIImage(named: "img_tr_pause"), forState: .Selected)
+
         return view
     }()
     

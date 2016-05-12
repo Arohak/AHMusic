@@ -51,6 +51,8 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(collectionCellIdentifire) as! TrackCell
+        cell.cellContentView.playButton.addTarget(self, action: #selector(TrackViewController.playSound(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.playButton.indexPath = indexPath
         let track = items[indexPath.row]
         cell.setValues(track)
         
@@ -65,5 +67,17 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let track = items[indexPath.row]
 
+    }
+    
+    // MARK: - Actions
+    func playSound(sender: AHButton) {
+        let track = items[sender.indexPath.row]
+        
+        sender.selected = !sender.selected
+        if sender.selected {
+            output.playSound(track)
+        } else {
+            output.pauseSound()
+        }
     }
 }

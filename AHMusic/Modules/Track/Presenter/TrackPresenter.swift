@@ -6,6 +6,8 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
+import AVFoundation
+
 //MARK: - class TrackPresenter
 class TrackPresenter: NSObject {
 
@@ -13,6 +15,7 @@ class TrackPresenter: NSObject {
     var interactor: TrackInteractorInput!
     
     var items = Array<Track>()
+    var player: AVPlayer!
     
     //MARK: - Initilize
     init(items: Array<Track>) {
@@ -31,7 +34,17 @@ extension TrackPresenter: TrackModuleInput {
 extension TrackPresenter: TrackViewOutput {
     
     func viewIsReady() {
-        view.setupInitialState(self.items)
+        view.setupInitialState(items)
+    }
+    
+    func playSound(track: Track) {
+        let url = NSURL(string: track.preview)!
+        player = AVPlayer(URL: url)
+        player.play()
+    }
+    
+    func pauseSound() {
+        player.pause()
     }
 }
 
