@@ -7,10 +7,19 @@
 //
 
 //MARK: - class ArtistPresenter
-class ArtistPresenter {
+class ArtistPresenter: NSObject {
 
     var view: ArtistViewInput!
     var interactor: ArtistInteractorInput!
+    
+    var items = Array<Artist>()
+    
+    //MARK: - Initilize
+    init(items: Array<Artist>) {
+        super.init()
+        
+        self.items = items
+    }
 }
 
 //MARK: - extension for ArtistModuleInput
@@ -22,7 +31,7 @@ extension ArtistPresenter: ArtistModuleInput {
 extension ArtistPresenter: ArtistViewOutput {
     
     func viewIsReady() {
-
+        view.setupInitialState(items)
     }
 }
 

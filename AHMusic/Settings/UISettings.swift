@@ -61,7 +61,6 @@ let CLEAR                               = UIColor.clearColor()
 
 //MARK: - All Pages
 
-//typealias block                         = (value: Weather) -> Void
 typealias blockUpdate                   = (city: String) -> Void
 
 let FONT_NAVBAR                         = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 25 : 18)
@@ -92,4 +91,13 @@ let TR_IMG_WIDTH : CGFloat              = ScreenSize.WIDTH*0.3
 
 let TR_TITLE_FONT                       = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 25     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 25     : DeviceType.IS_IPHONE_6 ? 25   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE)
 let TR_DESC_FONT                        = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 18     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 18     : DeviceType.IS_IPHONE_6 ? 18   * IPHONE_6_SCALE : 16   * IPHONE_5_SCALE)
+
+//MARK: - Artist Constants
+
+let AR_INSET : CGFloat                  = DeviceType.IS_IPAD ? 10     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 10     : DeviceType.IS_IPHONE_6 ? 10   * IPHONE_6_SCALE : 10   * IPHONE_5_SCALE
+let AR_OFFSET : CGFloat                 = DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE
+let AR_ICON_SIZE : CGFloat              = DeviceType.IS_IPAD ? 40     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 40     : DeviceType.IS_IPHONE_6 ? 40   * IPHONE_6_SCALE : 40   * IPHONE_5_SCALE
+let AR_CELL_WIDTH : CGFloat             = (ScreenSize.WIDTH - 6*AR_INSET)/3
+
+let AR_TITLE_FONT                       = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 16   * IPHONE_5_SCALE)
 

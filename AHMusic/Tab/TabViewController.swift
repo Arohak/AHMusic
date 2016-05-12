@@ -22,8 +22,12 @@ class TabViewController: UIViewController  {
         
         for item in data {
             tracks.append(item.track)
-            artists.append(item.artist)
-            albums.append(item.album)
+            
+            let inExistArtist = artists.filter() {$0.id == item.artist.id}.first
+            if inExistArtist == nil { artists.append(item.artist) }
+            
+            let inExistAlbum = albums.filter() {$0.id == item.album.id}.first
+            if inExistAlbum == nil { albums.append(item.album) }
         }
     }
     
@@ -68,7 +72,7 @@ extension TabViewController: CarbonTabSwipeNavigationDelegate {
             
             return track.view as! UIViewController
         case 1:
-            let artist = ArtistPresenter()
+            let artist = ArtistPresenter(items: artists)
             _ = ArtistModuleInitializer(presentor: artist)
             
             return artist.view as! UIViewController

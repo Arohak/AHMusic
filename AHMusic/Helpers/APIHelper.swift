@@ -28,10 +28,13 @@ class APIHelper {
         static let ROOT_URL                 = "https://deezerdevs-deezer.p.mashape.com/"
         static let headers                  = ["X-Mashape-Key": "4LayNni55YmshxhVWWnUNiryZGFPp1ULxlEjsnxLhL7PonxZ1M", "Accept": "text/plain"]
         static let SEARCH                   = "search?q=%@"
-        static let GET_ALBUM                = "album/"
-        static let GET_ARTIST               = "artists/"
-        static let GET_PLAYLIST             = "playlist/"
-        static let GET_TRACK                = "track/"
+        static let GET_ALBUM                = "album/%@"
+        static let GET_ARTIST               = "artists/%@"
+        static let GET_PLAYLIST             = "playlist/%@"
+        static let GET_TRACK                = "track/%@"
+        
+        static let GET_ARTIST_TRACKS        = "artist/%@/top?limit=%@"
+        static let GET_ALBUM_TRACKS         = "album/%@/tracks"
     }
     
     private func rx_Request(method: Alamofire.Method,
@@ -78,8 +81,14 @@ class APIHelper {
         return rx_Request(.GET, url: url, isHeader: true)
     }
     
-    func rx_GetAlbum(id: String) -> Observable<JSON> {
-        let url = ROUTERS.ROOT_URL + ROUTERS.GET_ALBUM + id
+    func rx_GetArtistTracks(id: String, limit: String) -> Observable<JSON> {
+        let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_ARTIST_TRACKS, id, limit)
         return rx_Request(.GET, url: url, isHeader: true)
     }
+    
+    func rx_GetAlbumTracks(id: String) -> Observable<JSON> {
+        let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_ALBUM_TRACKS, id)
+        return rx_Request(.GET, url: url, isHeader: true)
+    }
+
 }

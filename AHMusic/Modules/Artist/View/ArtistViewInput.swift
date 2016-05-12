@@ -8,5 +8,5 @@
 
 protocol ArtistViewInput: class {
 
-    func setupInitialState()
+    func setupInitialState(items: Array<Artist>)
 }
