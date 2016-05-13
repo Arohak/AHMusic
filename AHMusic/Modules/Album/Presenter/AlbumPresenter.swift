@@ -37,6 +37,11 @@ extension AlbumPresenter: AlbumViewOutput {
     func viewIsReady() {
         interactor.searchAlbum(keyword)
     }
+    
+    func openLink(album: Album) {
+        let vc = WebViewController(resourceName: album.title, url: NSURL(string: album.link)!)
+        rootVC.presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+    }
 }
 
 //MARK: - extension for AlbumInteractorOutput

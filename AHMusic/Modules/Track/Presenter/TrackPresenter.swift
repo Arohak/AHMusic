@@ -16,10 +16,21 @@ class TrackPresenter: NSObject {
     
     var items = Array<Track>()
     var player: AVPlayer!
+    var keyword: String!
     
     //MARK: - Initilize
-    init(items: Array<Track>) {
+    override init() {
         super.init()
+    }
+    
+    convenience init(name: String) {
+        self.init()
+        
+        self.keyword = name
+    }
+    
+    convenience init(items: Array<Track>) {
+        self.init()
         
         self.items = items
     }
@@ -34,7 +45,7 @@ extension TrackPresenter: TrackModuleInput {
 extension TrackPresenter: TrackViewOutput {
     
     func viewIsReady() {
-        view.setupInitialState(items)
+        interactor.searchTrack(keyword)
     }
     
     func playSound(track: Track) {
@@ -56,4 +67,7 @@ extension TrackPresenter: TrackViewOutput {
 //MARK: - extension for TrackInteractorOutput
 extension TrackPresenter: TrackInteractorOutput {
  
+    func searchResultIsReady(items: Array<Track>) {
+        view.setupInitialState(items)
+    }
 }

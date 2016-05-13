@@ -25,7 +25,8 @@ class APIHelper {
 //        static let GET_TRACKS              = "album.getInfo"
         
         //https://market.mashape.com/deezerdevs/deezer#-search
-        static let ROOT_URL                 = "https://deezerdevs-deezer.p.mashape.com/"
+//        static let ROOT_URL                 = "https://deezerdevs-deezer.p.mashape.com/"
+        static let ROOT_URL                 = "http://api.deezer.com/"
         static let headers                  = ["X-Mashape-Key": "4LayNni55YmshxhVWWnUNiryZGFPp1ULxlEjsnxLhL7PonxZ1M", "Accept": "text/plain"]
         static let GET_GENRE                = "genre"
         static let GET_ALBUM                = "album/%@"

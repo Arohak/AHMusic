@@ -37,6 +37,11 @@ extension PlaylistPresenter: PlaylistViewOutput {
     func viewIsReady() {
         interactor.searchPlaylist(keyword)
     }
+    
+    func openLink(playlist: Playlist) {
+        let vc = WebViewController(resourceName: playlist.title, url: NSURL(string: playlist.link)!)
+        rootVC.presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+    }
 }
 
 //MARK: - extension for PlaylistInteractorOutput

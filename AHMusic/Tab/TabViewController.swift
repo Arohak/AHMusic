@@ -94,7 +94,7 @@ extension TabViewController: CarbonTabSwipeNavigationDelegate {
             
             return playlist.view as! UIViewController
         case 3:
-            let track = TrackPresenter(items: tracks)
+            let track = TrackPresenter(name: keyword)
             _ = TrackModuleInitializer(presentor: track)
             
             return track.view as! UIViewController

@@ -25,7 +25,7 @@ class Playlist : Object {
     dynamic var creationDate = ""
     dynamic var type = ""
 
-    var tracks = List<Track>()
+    var tracks: List<Track>!
 
     convenience init(data: JSON) {
         self.init()
@@ -47,8 +47,12 @@ class Playlist : Object {
         self.creationDate = data["creation_date"].stringValue
         self.type = data["type"].stringValue
         
-        for item in data["tracks"]["data"].arrayValue {
-            tracks.append(Track(data: item))
+        let tr = data["tracks"]["data"].arrayValue
+        if tr.isEmpty {
+            self.tracks = List<Track>()
+            for item in data["tracks"]["data"].arrayValue {
+                self.tracks.append(Track(data: item))
+            }
         }
 }
     

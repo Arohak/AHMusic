@@ -54,6 +54,9 @@ extension AlbumViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire) as! AlbumCell
         
+        cell.cellContentView.linkButton.addTarget(self, action: #selector(AlbumViewController.openLink(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.linkButton.indexPath = indexPath
+        
         let album = items[indexPath.row]
         cell.setValues(album)
         
@@ -66,6 +69,13 @@ extension AlbumViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let track = items[indexPath.row]
+        let album = items[indexPath.row]
+
+    }
+    
+    // MARK: - Actions
+    func openLink(sender: AHButton) {
+        let album = items[sender.indexPath.row]
+        output.openLink(album)
     }
 }

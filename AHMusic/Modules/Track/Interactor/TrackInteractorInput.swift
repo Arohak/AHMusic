@@ -8,4 +8,5 @@
 
 protocol TrackInteractorInput {
 
+    func searchTrack(name: String)
 }

@@ -75,7 +75,7 @@ extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Actions
     func openLink(sender: AHButton) {
-        let track = items[sender.indexPath.row]
-//        output.openLink(track)
+        let playlist = items[sender.indexPath.row]
+        output.openLink(playlist)
     }
 }

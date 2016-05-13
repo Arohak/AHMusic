@@ -38,6 +38,8 @@ extension TrackViewController: TrackViewInput {
     
     func setupInitialState(items: Array<Track>) {
         self.items = items
+        
+        trackView.tableView.reloadData()
     }
 }
 
@@ -57,8 +59,6 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.cellContentView.linkButton.addTarget(self, action: #selector(TrackViewController.openLink(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.linkButton.indexPath = indexPath
-        
-        cell.cellContentView.imageView.image = UIImage(named: "img_tr_cover" + "\(indexPath.row%8)")
         
         let track = items[indexPath.row]
         cell.setValues(track)

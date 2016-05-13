@@ -60,7 +60,7 @@ extension ArtistViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let item = items[indexPath.row]
+        let artist = items[indexPath.row]
 
     }
     

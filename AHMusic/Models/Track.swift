@@ -25,6 +25,9 @@ class Track : Object {
     dynamic var preview = ""
     dynamic var bpm = 0
     dynamic var gain = 0.0
+    
+    dynamic var album: Album!
+    dynamic var artist: Artist!
 
     convenience init(data: JSON) {
         self.init()
@@ -46,6 +49,9 @@ class Track : Object {
         self.preview = data["preview"].stringValue
         self.bpm = data["bpm"].intValue
         self.gain = data["gain"].doubleValue
+        
+        self.album = Album(data: data["album"])
+        self.artist = Artist(data: data["artist"])
 }
     
     override static func primaryKey() -> String {

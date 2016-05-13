@@ -8,4 +8,5 @@
 
 protocol TrackInteractorOutput: class {
 
+    func searchResultIsReady(items: Array<Track>)
 }
