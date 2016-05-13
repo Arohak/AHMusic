@@ -1,13 +1,13 @@
 //
-//  TrackView.swift
+//  PlaylistView.swift
 //  AHMusic
 //
 //  Created by Ara Hakobyan on 06/05/2016.
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - TrackView
-class TrackView: UIView {
+//MARK: - PlaylistView
+class PlaylistView: UIView {
     
     lazy var tableView: UITableView = {
         let view = UITableView.newAutoLayoutView()
@@ -40,11 +40,11 @@ class TrackView: UIView {
     }
 }
 
-//MARK: - TrackCell
-class TrackCell: UITableViewCell {
+//MARK: - PlaylistCell
+class PlaylistCell: UITableViewCell {
     
     //MARK: - Create UIElements
-    var cellContentView = TrackCellContentView()
+    var cellContentView = PlaylistCellContentView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -54,8 +54,10 @@ class TrackCell: UITableViewCell {
         cellContentView.autoPinEdgesToSuperviewEdges()
     }
     
-    func setValues(item: Track) {
+    func setValues(item: Playlist) {
+        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.picture)!)
         cellContentView.titleLabel.text = item.title
+        cellContentView.creationDateLabel.text = item.creationDate
         cellContentView.linkButton.setTitle(item.link, forState: .Normal)
     }
     
@@ -64,29 +66,30 @@ class TrackCell: UITableViewCell {
     }
 }
 
-//MARK: - TrackCellContentView
-class TrackCellContentView: UIView {
+//MARK: - PlaylistCellContentView
+class PlaylistCellContentView: UIView {
     
     //MARK: - Create UIElements
     lazy var imageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
-        view.backgroundColor = BLUE_LIGHT
-        view.userInteractionEnabled = true
-
-        return view
-    }()
-    
-    lazy var playButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_tr_play"), forState: .Normal)
-        view.setBackgroundImage(UIImage(named: "img_tr_pause"), forState: .Selected)
-
+        view.layer.cornerRadius = PL_CELL_HEIGHT*0.95/2
+        view.clipsToBounds = true
+        
         return view
     }()
     
     lazy var titleLabel: AHLabel = {
         let view = AHLabel.newAutoLayoutView()
-        view.font = CA_TITLE_FONT
+        view.font = PL_TITLE_FONT
+        view.textColor = BLUE
+        view.numberOfLines = 0
+
+        return view
+    }()
+    
+    lazy var creationDateLabel: AHLabel = {
+        let view = AHLabel.newAutoLayoutView()
+        view.font = LINK_FONT
         view.textColor = BLUE
         
         return view
@@ -117,29 +120,29 @@ class TrackCellContentView: UIView {
     //MARK: - Privat Methods
     func addAllUIElements() {
         addSubview(imageView)
-        imageView.addSubview(playButton)
         addSubview(titleLabel)
+        addSubview(creationDateLabel)
         addSubview(linkButton)
-
+        
         setConstraints()
     }
     
     //MARK: - Constraints
     func setConstraints() {
-        imageView.autoPinEdgeToSuperviewEdge(.Right, withInset: TR_OFFSET)
+        imageView.autoPinEdgeToSuperviewEdge(.Right, withInset: PL_OFFSET)
         imageView.autoPinEdgeToSuperviewEdge(.Top, withInset: 2)
-        imageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 2)
-        imageView.autoSetDimension(.Width, toSize: TR_IMG_WIDTH)
+        imageView.autoSetDimensionsToSize(CGSize(width: PL_CELL_HEIGHT*0.95, height: PL_CELL_HEIGHT*0.95))
         
-        playButton.autoCenterInSuperview()
-        playButton.autoSetDimensionsToSize(CGSize(width: TR_ICON_SIZE, height: TR_ICON_SIZE))
+        titleLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: PL_OFFSET)
+        titleLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: PL_OFFSET)
+        titleLabel.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -PL_OFFSET)
         
-        titleLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: TR_OFFSET)
-        titleLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
-        titleLabel.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -TR_OFFSET)
+        creationDateLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: titleLabel, withOffset: 0)
+        creationDateLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: PL_OFFSET)
+        creationDateLabel.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -PL_OFFSET)
         
-        linkButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: titleLabel, withOffset: 0)
-        linkButton.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
+        linkButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 0)
+        linkButton.autoPinEdgeToSuperviewEdge(.Left, withInset: PL_OFFSET)
         linkButton.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -TR_OFFSET)
     }
 }

@@ -8,4 +8,5 @@
 
 protocol PlaylistInteractorInput {
 
+    func searchPlaylist(name: String)
 }

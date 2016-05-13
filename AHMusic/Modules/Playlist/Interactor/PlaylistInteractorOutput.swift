@@ -7,5 +7,6 @@
 //
 
 protocol PlaylistInteractorOutput: class {
-
+    
+    func searchResultIsReady(items: Array<Playlist>)
 }

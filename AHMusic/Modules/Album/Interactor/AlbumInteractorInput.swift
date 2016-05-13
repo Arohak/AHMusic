@@ -8,4 +8,5 @@
 
 protocol AlbumInteractorInput {
 
+    func searchAlbum(name: String)
 }

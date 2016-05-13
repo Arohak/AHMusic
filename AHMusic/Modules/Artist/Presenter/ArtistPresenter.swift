@@ -12,11 +12,22 @@ class ArtistPresenter: NSObject {
     var view: ArtistViewInput!
     var interactor: ArtistInteractorInput!
     
+    var keyword: String!
     var items = Array<Artist>()
-    
+
     //MARK: - Initilize
-    init(items: Array<Artist>) {
+    override init() {
         super.init()
+    }
+    
+    convenience init(name: String) {
+        self.init()
+        
+        self.keyword = name
+    }
+    
+    convenience init(items: Array<Artist>) {
+        self.init()
         
         self.items = items
     }
@@ -31,11 +42,14 @@ extension ArtistPresenter: ArtistModuleInput {
 extension ArtistPresenter: ArtistViewOutput {
     
     func viewIsReady() {
-        view.setupInitialState(items)
+        interactor.searchArtist(keyword)
     }
 }
 
 //MARK: - extension for ArtistInteractorOutput
 extension ArtistPresenter: ArtistInteractorOutput {
  
+    func searchResultIsReady(items: Array<Artist>) {
+        view.setupInitialState(items)
+    }
 }

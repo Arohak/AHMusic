@@ -1,12 +1,12 @@
 //
-//  Result.swift
+//  Results.swift
 //  AHMusic
 //
 //  Created by Ara Hakobyan on 3/2/16.
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class Result : Object {
+class Results : Object {
 
     dynamic var id = 0
     dynamic var readable = true

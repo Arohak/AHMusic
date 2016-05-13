@@ -7,10 +7,23 @@
 //
 
 //MARK: - class PlaylistPresenter
-class PlaylistPresenter {
+class PlaylistPresenter: NSObject {
 
     var view: PlaylistViewInput!
     var interactor: PlaylistInteractorInput!
+    
+    var keyword: String!
+    
+    //MARK: - Initilize
+    override init() {
+        super.init()
+    }
+    
+    convenience init(name: String) {
+        self.init()
+        
+        self.keyword = name
+    }
 }
 
 //MARK: - extension for PlaylistModuleInput
@@ -22,11 +35,14 @@ extension PlaylistPresenter: PlaylistModuleInput {
 extension PlaylistPresenter: PlaylistViewOutput {
     
     func viewIsReady() {
-
+        interactor.searchPlaylist(keyword)
     }
 }
 
 //MARK: - extension for PlaylistInteractorOutput
 extension PlaylistPresenter: PlaylistInteractorOutput {
  
+    func searchResultIsReady(items: Array<Playlist>) {
+        view.setupInitialState(items)
+    }
 }

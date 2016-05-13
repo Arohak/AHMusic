@@ -54,7 +54,6 @@ class ArtistCell: UICollectionViewCell {
     }
     
     func setValues(item: Artist) {
-//        cellContentView.imageView.image = UIImage(named: item.picture)
         cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.picture)!)
         cellContentView.nameLabel.text = item.name
     }
@@ -74,21 +73,11 @@ class ArtistCellContentView: UIView {
         return view
     }()
     
-    lazy var iconImageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
-        view.image = UIImage(named: "img_ca_icon")
-        view.layer.cornerRadius = AR_ICON_SIZE/2
-        view.layer.borderWidth = 2
-        view.layer.borderColor = BLUE.CGColor
-        
-        return view
-    }()
-    
     lazy var nameLabel: AHLabel = {
         let view = AHLabel.newAutoLayoutView()
         view.font = AR_TITLE_FONT
         view.textColor = BLUE
-//        view.numberOfLines = 0
+        view.numberOfLines = 2
         
         return view
     }()
@@ -107,7 +96,6 @@ class ArtistCellContentView: UIView {
     //MARK: - Privat Methods
     func addAllUIElements() {
         addSubview(imageView)
-//        imageView.addSubview(iconImageView)
         addSubview(nameLabel)
         
         setConstraints()
@@ -115,12 +103,8 @@ class ArtistCellContentView: UIView {
     
     //MARK: - Constraints
     func setConstraints() {
-        imageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: AR_OFFSET*1.5)
+        imageView.autoPinEdge(.Bottom, toEdge: .Top, ofView: nameLabel)
         imageView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), excludingEdge: .Bottom)
-        
-//        iconImageView.autoPinEdgeToSuperviewEdge(.Left, withInset: AR_OFFSET)
-//        iconImageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: AR_OFFSET)
-//        iconImageView.autoSetDimensionsToSize(CGSize(width: AR_ICON_SIZE, height: AR_ICON_SIZE))
         
         nameLabel.autoPinEdgeToSuperviewEdge(.Bottom)
         nameLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: AR_INSET)

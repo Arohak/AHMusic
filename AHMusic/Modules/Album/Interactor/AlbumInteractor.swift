@@ -15,4 +15,16 @@ class AlbumInteractor {
 //MARK: - extension for AlbumInteractorInput
 extension AlbumInteractor: AlbumInteractorInput {
     
+    func searchAlbum(name: String) {
+        _ = apiHelper.rx_SearchAlbum(name)
+        .subscribeNext({ result in
+            var temp = Array<Album>()
+            for item in result["data"].arrayValue {
+                let album = Album(data: item)
+                temp.append(album)
+            }
+            
+            self.output.searchResultIsReady(temp)
+        })
+    }
 }

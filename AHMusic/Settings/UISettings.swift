@@ -66,6 +66,7 @@ typealias blockUpdate                   = (city: String) -> Void
 
 let FONT_NAVBAR                         = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 25 : 18)
 let TOP_INSET : CGFloat                 = DeviceType.IS_IPAD ? 35     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 35     : DeviceType.IS_IPHONE_6 ? 35   * IPHONE_6_SCALE : 35   * IPHONE_5_SCALE
+let LINK_FONT                           = UIFont.systemFontOfSize(DeviceType.IS_IPAD ? 14         * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 14     : DeviceType.IS_IPHONE_6 ? 14   * IPHONE_6_SCALE : 14   * IPHONE_5_SCALE)
 
 //MARK: - Base Constants
 
@@ -82,16 +83,13 @@ let CA_CELL_WIDTH : CGFloat             = (ScreenSize.WIDTH - 4*CA_INSET)/2
 
 let CA_TITLE_FONT                       = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 25     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 25     : DeviceType.IS_IPHONE_6 ? 25   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE)
 
-//MARK: - Track Constants
+//MARK: - Album Constants
 
-let TR_INSET : CGFloat                  = DeviceType.IS_IPAD ? 10     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 10     : DeviceType.IS_IPHONE_6 ? 10   * IPHONE_6_SCALE : 10   * IPHONE_5_SCALE
-let TR_OFFSET : CGFloat                 = DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE
-let TR_ICON_SIZE : CGFloat              = DeviceType.IS_IPAD ? 40     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 40     : DeviceType.IS_IPHONE_6 ? 40   * IPHONE_6_SCALE : 40   * IPHONE_5_SCALE
-let TR_CELL_HEIGHT : CGFloat            = DeviceType.IS_IPAD ? 100    * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 100    : DeviceType.IS_IPHONE_6 ? 100  * IPHONE_6_SCALE : 100  * IPHONE_5_SCALE
-let TR_IMG_WIDTH : CGFloat              = ScreenSize.WIDTH*0.3
+let AL_INSET : CGFloat                  = DeviceType.IS_IPAD ? 10     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 10     : DeviceType.IS_IPHONE_6 ? 10   * IPHONE_6_SCALE : 10   * IPHONE_5_SCALE
+let AL_OFFSET : CGFloat                 = DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE
+let AL_CELL_HEIGHT : CGFloat            = DeviceType.IS_IPAD ? 180    * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 180    : DeviceType.IS_IPHONE_6 ? 180  * IPHONE_6_SCALE : 180  * IPHONE_5_SCALE
 
-let TR_TITLE_FONT                       = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 25     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 25     : DeviceType.IS_IPHONE_6 ? 25   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE)
-let TR_DESC_FONT                        = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 18     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 18     : DeviceType.IS_IPHONE_6 ? 18   * IPHONE_6_SCALE : 16   * IPHONE_5_SCALE)
+let AL_TITLE_FONT                       = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 16   * IPHONE_5_SCALE)
 
 //MARK: - Artist Constants
 
@@ -101,4 +99,25 @@ let AR_ICON_SIZE : CGFloat              = DeviceType.IS_IPAD ? 40     * IPAD_SCA
 let AR_CELL_WIDTH : CGFloat             = (ScreenSize.WIDTH - 6*AR_INSET)/3
 
 let AR_TITLE_FONT                       = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 16   * IPHONE_5_SCALE)
+
+//MARK: - Playlist Constants
+
+let PL_INSET : CGFloat                  = DeviceType.IS_IPAD ? 10     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 10     : DeviceType.IS_IPHONE_6 ? 10   * IPHONE_6_SCALE : 10   * IPHONE_5_SCALE
+let PL_OFFSET : CGFloat                 = DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE
+let PL_ICON_SIZE : CGFloat              = DeviceType.IS_IPAD ? 40     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 40     : DeviceType.IS_IPHONE_6 ? 40   * IPHONE_6_SCALE : 40   * IPHONE_5_SCALE
+let PL_CELL_HEIGHT : CGFloat            = DeviceType.IS_IPAD ? 120    * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 120    : DeviceType.IS_IPHONE_6 ? 120  * IPHONE_6_SCALE : 120  * IPHONE_5_SCALE
+
+let PL_TITLE_FONT                       = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 18     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 18     : DeviceType.IS_IPHONE_6 ? 18   * IPHONE_6_SCALE : 18   * IPHONE_5_SCALE)
+let PL_DATE_FONT                        = UIFont.systemFontOfSize(DeviceType.IS_IPAD ? 16     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 16     : DeviceType.IS_IPHONE_6 ? 16   * IPHONE_6_SCALE : 16   * IPHONE_5_SCALE)
+
+//MARK: - Track Constants
+
+let TR_INSET : CGFloat                  = DeviceType.IS_IPAD ? 10     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 10     : DeviceType.IS_IPHONE_6 ? 10   * IPHONE_6_SCALE : 10   * IPHONE_5_SCALE
+let TR_OFFSET : CGFloat                 = DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE
+let TR_ICON_SIZE : CGFloat              = DeviceType.IS_IPAD ? 40     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 40     : DeviceType.IS_IPHONE_6 ? 40   * IPHONE_6_SCALE : 40   * IPHONE_5_SCALE
+let TR_CELL_HEIGHT : CGFloat            = DeviceType.IS_IPAD ? 100    * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 100    : DeviceType.IS_IPHONE_6 ? 100  * IPHONE_6_SCALE : 100  * IPHONE_5_SCALE
+let TR_IMG_WIDTH : CGFloat              = ScreenSize.WIDTH*0.3
+
+let TR_TITLE_FONT                       = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 25     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 25     : DeviceType.IS_IPHONE_6 ? 25   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE)
+
 

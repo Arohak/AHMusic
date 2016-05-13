@@ -11,6 +11,8 @@ class CategoryPresenter  {
 
     var view: CategoryViewInput!
     var interactor: CategoryInteractorInput!
+    
+    var keyword: String!
 }
 
 //MARK: - extension for CategoryModuleInput
@@ -26,6 +28,7 @@ extension CategoryPresenter: CategoryViewOutput {
     }
     
     func viewIsSelectItem(item: Category) {
+        keyword = item.name
         interactor.searchItems(item.name)
     }
 }
@@ -37,9 +40,10 @@ extension CategoryPresenter: CategoryInteractorOutput {
         view.categoryDataIsReady(items)
     }
     
-    func searchDataIsReady(items: Array<Result>) {
+    func searchDataIsReady(items: Array<Results>) {
         if let firstVC = rootVC.viewControllers[0] as? SlideViewController {
-            firstVC.slideMenuController()!.changeMainViewController(TabViewController(data: items),  close: true)
+//            firstVC.slideMenuController()!.changeMainViewController(TabViewController(data: items),  close: true)
+            firstVC.slideMenuController()!.changeMainViewController(TabViewController(keyword: keyword),  close: true)
         }
     }
 }

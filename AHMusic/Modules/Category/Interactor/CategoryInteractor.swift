@@ -17,26 +17,24 @@ class CategoryInteractor {
 extension CategoryInteractor: CategoryInteractorInput {
     
     func getCategoryItems() {
-        let items: Array<(String, String)> = [("Rock", "img_ca_rock"),
-                                              ("Blue", "img_ca_blue"),
-                                              ("Classic Rock", "img_ca_classic"),
-                                              ("Jazz", "img_ca_jazz"),
-                                              ("Soul", "img_ca_soul"),
-                                              ("Pop", "img_ca_pop")]
-        var temp = Array<Category>()
-        for item in items {
-            temp.append(Category(data: JSON(["name" : item.0, "image" : item.1])))
-        }
-        
-        output.dataIsReady(temp)
+        _ = apiHelper.rx_GetCategories()
+            .subscribeNext({ result in
+                var temp = Array<Category>()
+                for item in result["data"].arrayValue {
+                    let result = Category(data: item)
+                    temp.append(result)
+                }
+                
+                self.output.dataIsReady(temp)
+            })
     }
     
     func searchItems(name: String) {
         _ = apiHelper.rx_Search(name)
             .subscribeNext({ result in
-                var temp = Array<Result>()
+                var temp = Array<Results>()
                 for item in result["data"].arrayValue {
-                    let result = Result(data: item)
+                    let result = Results(data: item)
                     temp.append(result)
                 }
                 

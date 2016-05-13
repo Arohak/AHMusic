@@ -38,6 +38,8 @@ extension ArtistViewController: ArtistViewInput {
     
     func setupInitialState(items: Array<Artist>) {
         self.items = items
+        
+        artistView.collection.reloadData()
     }
 }
 

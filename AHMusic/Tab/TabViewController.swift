@@ -15,10 +15,22 @@ class TabViewController: UIViewController  {
     var albums = Array<Album>()
     var playlists = Array<String>()
     var stations = Array<String>()
+    
+    var keyword: String!
 
     //MARK: - Initilize
-    init(data: Array<Result>) {
-        super.init(nibName: nil, bundle: nil)
+    init() {
+        super.init(nibName: nil, bundle:nil)
+    }
+    
+    convenience init(keyword: String) {
+        self.init()
+        
+        self.keyword = keyword
+    }
+    
+    convenience init(data: Array<Results>) {
+        self.init()
         
         for item in data {
             tracks.append(item.track)
@@ -44,7 +56,7 @@ class TabViewController: UIViewController  {
 
     //MARK: -  Private Methods
     private func baseConfig() {
-        let items = ["Tracks", "Artists", "Albums", "Playlists", "Stations"]
+        let items = ["Albums", "Artists", "Playlists", "Tracks", "Stations"]
         tabNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
         tabNavigation.insertIntoRootViewController(self)
         
@@ -67,25 +79,25 @@ extension TabViewController: CarbonTabSwipeNavigationDelegate {
     func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAtIndex index: UInt) -> UIViewController {
         switch index {
         case 0:
-            let track = TrackPresenter(items: tracks)
-            _ = TrackModuleInitializer(presentor: track)
+            let album = AlbumPresenter(name: keyword)
+            _ = AlbumModuleInitializer(presentor: album)
             
-            return track.view as! UIViewController
+            return album.view as! UIViewController
         case 1:
-            let artist = ArtistPresenter(items: artists)
+            let artist = ArtistPresenter(name: keyword)
             _ = ArtistModuleInitializer(presentor: artist)
             
             return artist.view as! UIViewController
         case 2:
-            let album = AlbumPresenter()
-            _ = AlbumModuleInitializer(presentor: album)
-            
-            return album.view as! UIViewController
-        case 3:
-            let playlist = PlaylistPresenter()
+            let playlist = PlaylistPresenter(name: keyword)
             _ = PlaylistModuleInitializer(presentor: playlist)
             
             return playlist.view as! UIViewController
+        case 3:
+            let track = TrackPresenter(items: tracks)
+            _ = TrackModuleInitializer(presentor: track)
+            
+            return track.view as! UIViewController
         case 4:
             let station = StationPresenter()
             _ = StationModuleInitializer(presentor: station)

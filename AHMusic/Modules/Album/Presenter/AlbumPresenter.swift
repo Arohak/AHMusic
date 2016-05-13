@@ -7,10 +7,23 @@
 //
 
 //MARK: - class AlbumPresenter
-class AlbumPresenter {
+class AlbumPresenter: NSObject {
 
     var view: AlbumViewInput!
     var interactor: AlbumInteractorInput!
+    
+    var keyword: String!
+    
+    //MARK: - Initilize
+    override init() {
+        super.init()
+    }
+    
+    convenience init(name: String) {
+        self.init()
+        
+        self.keyword = name
+    }
 }
 
 //MARK: - extension for AlbumModuleInput
@@ -22,11 +35,14 @@ extension AlbumPresenter: AlbumModuleInput {
 extension AlbumPresenter: AlbumViewOutput {
     
     func viewIsReady() {
-
+        interactor.searchAlbum(keyword)
     }
 }
 
 //MARK: - extension for AlbumInteractorOutput
 extension AlbumPresenter: AlbumInteractorOutput {
  
+    func searchResultIsReady(items: Array<Album>) {
+        view.setupInitialState(items)
+    }
 }

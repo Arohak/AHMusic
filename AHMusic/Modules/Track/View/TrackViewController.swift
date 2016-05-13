@@ -13,7 +13,7 @@ class TrackViewController: UIViewController {
     
     let trackView = TrackView()
     var items = Array<Track>()
-    let collectionCellIdentifire = "trackCell"
+    let cellIdentifire = "trackCell"
 
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -29,7 +29,7 @@ class TrackViewController: UIViewController {
         
         trackView.tableView.dataSource = self
         trackView.tableView.delegate = self
-        trackView.tableView.registerClass(TrackCell.self, forCellReuseIdentifier: collectionCellIdentifire)
+        trackView.tableView.registerClass(TrackCell.self, forCellReuseIdentifier: cellIdentifire)
     }
 }
 
@@ -50,7 +50,7 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(collectionCellIdentifire) as! TrackCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire) as! TrackCell
         
         cell.cellContentView.playButton.addTarget(self, action: #selector(TrackViewController.playSound(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.playButton.indexPath = indexPath

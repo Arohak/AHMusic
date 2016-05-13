@@ -8,4 +8,5 @@
 
 protocol ArtistInteractorOutput: class {
 
+    func searchResultIsReady(items: Array<Artist>)
 }

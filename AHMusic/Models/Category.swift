@@ -8,17 +8,21 @@
 
 class Category : Object {
     
+    dynamic var id = 0
     dynamic var name = ""
-    dynamic var image = ""
-    
+    dynamic var picture = ""
+    dynamic var type = ""
+
     convenience init(data: JSON) {
         self.init()
         
+        self.id = data["id"].intValue
         self.name = data["name"].stringValue
-        self.image = data["image"].stringValue
+        self.picture = data["picture"].stringValue
+        self.type = data["type"].stringValue
     }
     
     override static func primaryKey() -> String {
-        return "name"
+        return "id"
     }
 }
