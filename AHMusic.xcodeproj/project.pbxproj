@@ -39,6 +39,9 @@
 		526A4DB11CDF2BCA0000CFC5 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DAF1CDF2BCA0000CFC5 /* BaseViewController.swift */; };
 		526A4DB41CDF35A50000CFC5 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DB21CDF35A50000CFC5 /* CategoryView.swift */; };
 		526A4DB91CDFC8640000CFC5 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DB81CDFC8640000CFC5 /* TabViewController.swift */; };
+		5288FEE71CE71720009A58B6 /* ParallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288FEE51CE71720009A58B6 /* ParallaxView.swift */; };
+		5288FEE81CE71720009A58B6 /* ParallaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288FEE61CE71720009A58B6 /* ParallaxViewController.swift */; };
+		5288FEEA1CE7C073009A58B6 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288FEE91CE7C073009A58B6 /* UIImageEffects.swift */; };
 		52A420341CE50F7A00109005 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A420331CE50F7A00109005 /* WebViewController.swift */; };
 		5699A88D911CBA84F16EBBD8 /* LeftMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168DCB078DD75643B2F74A76 /* LeftMenuPresenter.swift */; };
 		5A693EF500798E76DAE3911E /* PlaylistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB8ECF0B7D95A3B409925B /* PlaylistConfigurator.swift */; };
@@ -156,6 +159,9 @@
 		526A4DAF1CDF2BCA0000CFC5 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		526A4DB21CDF35A50000CFC5 /* CategoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		526A4DB81CDFC8640000CFC5 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		5288FEE51CE71720009A58B6 /* ParallaxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxView.swift; sourceTree = "<group>"; };
+		5288FEE61CE71720009A58B6 /* ParallaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxViewController.swift; sourceTree = "<group>"; };
+		5288FEE91CE7C073009A58B6 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
 		52A420331CE50F7A00109005 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		583099A3F8D57969AD0F26C2 /* TrackInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrackInteractorInput.swift; sourceTree = "<group>"; };
 		5BD51CB1FA52900F2D029826 /* ArtistViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
@@ -439,6 +445,16 @@
 			path = Tab;
 			sourceTree = "<group>";
 		};
+		5288FEE41CE71720009A58B6 /* Parallax */ = {
+			isa = PBXGroup;
+			children = (
+				5288FEE61CE71720009A58B6 /* ParallaxViewController.swift */,
+				5288FEE51CE71720009A58B6 /* ParallaxView.swift */,
+				5288FEE91CE7C073009A58B6 /* UIImageEffects.swift */,
+			);
+			path = Parallax;
+			sourceTree = "<group>";
+		};
 		52A420321CE50F7A00109005 /* WebBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -647,6 +663,7 @@
 				526A4DAA1CDE93B50000CFC5 /* Slide */,
 				526A4DB71CDFC8640000CFC5 /* Tab */,
 				52A420321CE50F7A00109005 /* WebBrowser */,
+				5288FEE41CE71720009A58B6 /* Parallax */,
 				A13865C61CDC84C000350BC2 /* Modules */,
 				A13865C21CDC84C000350BC2 /* Models */,
 				A13865C01CDC84C000350BC2 /* Messages */,
@@ -1089,6 +1106,7 @@
 				A13865CD1CDC84C000350BC2 /* AppDelegate.swift in Sources */,
 				A13865D61CDC84C000350BC2 /* Category.swift in Sources */,
 				A16412B71CE35242005FD643 /* Track.swift in Sources */,
+				5288FEE81CE71720009A58B6 /* ParallaxViewController.swift in Sources */,
 				A13865D31CDC84C000350BC2 /* Utils.swift in Sources */,
 				A13865D41CDC84C000350BC2 /* Events.swift in Sources */,
 				A13865D01CDC84C000350BC2 /* DBHelper.swift in Sources */,
@@ -1116,6 +1134,7 @@
 				3D27774FAE22C3216F3D9C8C /* LeftMenuViewInput.swift in Sources */,
 				A51B52B69D062282DBC15996 /* LeftMenuViewOutput.swift in Sources */,
 				CCDF9D1E105B37265713D3FD /* LeftMenuViewController.swift in Sources */,
+				5288FEEA1CE7C073009A58B6 /* UIImageEffects.swift in Sources */,
 				183997B2124272556A676EF5 /* LeftMenuModuleInput.swift in Sources */,
 				5699A88D911CBA84F16EBBD8 /* LeftMenuPresenter.swift in Sources */,
 				A16412B91CE478CA005FD643 /* Results.swift in Sources */,
@@ -1144,6 +1163,7 @@
 				7C748E619C971F2A49A00F13 /* ArtistInteractor.swift in Sources */,
 				ED35BAFDD2354055E863D177 /* ArtistConfigurator.swift in Sources */,
 				6FDAB1870C54CA91E78DB8D8 /* ArtistInitializer.swift in Sources */,
+				5288FEE71CE71720009A58B6 /* ParallaxView.swift in Sources */,
 				0003C00B2EDF5B1CE7DA5A4D /* AlbumViewInput.swift in Sources */,
 				DA6FFF8788269FED27D642F3 /* AlbumViewOutput.swift in Sources */,
 				E6A052351A0100271A04E944 /* AlbumViewController.swift in Sources */,

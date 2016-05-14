@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let rootController = SlideViewController(mainViewController: main, leftMenuViewController: left)
         let nav = UINavigationController(rootViewController: rootController)
+//        let nav = UINavigationController(rootViewController: ParallaxViewController())
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = nav
