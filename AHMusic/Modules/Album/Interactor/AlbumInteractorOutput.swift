@@ -9,4 +9,5 @@
 protocol AlbumInteractorOutput: class {
 
     func searchResultIsReady(items: Array<Album>)
+    func getResultIsReady(album: Album)
 }

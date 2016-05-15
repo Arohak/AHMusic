@@ -6,11 +6,9 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class LeftMenuModuleInitializer: NSObject {
+class LeftMenuModuleInitializer {
 
-    init(presentor: AnyObject) {
-        super.init()
-        
+    init(presentor: AnyObject) {        
         let configurator = LeftMenuModuleConfigurator()
         configurator.configureModuleForPresenter(presentor)
     }

@@ -55,7 +55,7 @@ class TrackCell: UITableViewCell {
     }
     
     func setValues(item: Track) {
-        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.album.cover)!)
+        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.album.cover)!, placeholderImage: Image(named: "img_placeholder"))
         cellContentView.titleLabel.text = item.title
         cellContentView.albumButton.setTitle("Album:  " + item.album.title, forState: .Normal)
         cellContentView.artistButton.setTitle("Artist:  " + item.artist.name, forState: .Normal)

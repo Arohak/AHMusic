@@ -27,4 +27,13 @@ extension AlbumInteractor: AlbumInteractorInput {
             self.output.searchResultIsReady(temp)
         })
     }
+    
+    func getAlbum(id: String) {
+        _ = apiHelper.rx_GetAlbum(id)
+            .subscribeNext({ result in
+                let album = Album(data: result)
+                
+                self.output.getResultIsReady(album)
+            })
+    }
 }

@@ -33,7 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let rootController = SlideViewController(mainViewController: main, leftMenuViewController: left)
         let nav = UINavigationController(rootViewController: rootController)
-//        let nav = UINavigationController(rootViewController: ParallaxViewController())
+        
+//        let vc = ParallaxViewController(items: ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L"], title: "Test", imageStr: "img_ca_rock")
+//        let nav = UINavigationController(rootViewController: vc)
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = nav

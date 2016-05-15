@@ -6,11 +6,9 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class PlaylistModuleInitializer: NSObject {
+class PlaylistModuleInitializer {
 
     init(presentor: AnyObject) {
-        super.init()
-        
         let configurator = PlaylistModuleConfigurator()
         configurator.configureModuleForPresenter(presentor)
     }

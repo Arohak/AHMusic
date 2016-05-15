@@ -10,4 +10,5 @@ protocol AlbumViewOutput {
 
     func viewIsReady()
     func openLink(album: Album)
+    func openDetail(album: Album)
 }

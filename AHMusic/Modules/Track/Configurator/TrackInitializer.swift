@@ -6,11 +6,9 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class TrackModuleInitializer: NSObject {
+class TrackModuleInitializer {
 
-    init(presentor: AnyObject) {
-        super.init()
-        
+    init(presentor: AnyObject) {        
         let configurator = TrackModuleConfigurator()
         configurator.configureModuleForPresenter(presentor)
     }

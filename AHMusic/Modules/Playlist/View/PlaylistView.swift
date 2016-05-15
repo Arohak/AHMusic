@@ -55,7 +55,7 @@ class PlaylistCell: UITableViewCell {
     }
     
     func setValues(item: Playlist) {
-        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.picture)!)
+        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.picture)!, placeholderImage: Image(named: "img_placeholder"))
         cellContentView.titleLabel.text = item.title
         cellContentView.creationDateLabel.text = item.creationDate
         cellContentView.linkButton.setTitle(item.link, forState: .Normal)

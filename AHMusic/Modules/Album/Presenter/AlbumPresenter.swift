@@ -7,7 +7,7 @@
 //
 
 //MARK: - class AlbumPresenter
-class AlbumPresenter: NSObject {
+class AlbumPresenter {
 
     var view: AlbumViewInput!
     var interactor: AlbumInteractorInput!
@@ -15,13 +15,7 @@ class AlbumPresenter: NSObject {
     var keyword: String!
     
     //MARK: - Initilize
-    override init() {
-        super.init()
-    }
-    
-    convenience init(name: String) {
-        self.init()
-        
+    init(name: String) {
         self.keyword = name
     }
 }
@@ -42,6 +36,10 @@ extension AlbumPresenter: AlbumViewOutput {
         let vc = WebViewController(resourceName: album.title, url: NSURL(string: album.link)!)
         rootVC.presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
+    
+    func openDetail(album: Album) {
+        interactor.getAlbum("\(album.id)")
+    }
 }
 
 //MARK: - extension for AlbumInteractorOutput
@@ -49,5 +47,15 @@ extension AlbumPresenter: AlbumInteractorOutput {
  
     func searchResultIsReady(items: Array<Album>) {
         view.setupInitialState(items)
+    }
+    
+    func getResultIsReady(album: Album) {
+        let json = JSON(["imageURL" : album.coverBig, "tracks" : Array(album.tracks),
+            "info" : "Name: \(album.title)\nNumberTracks:\(album.nbTracks)\nFans:\(album.fans)\nRating:\(album.rating)"])
+        let detail = Detail(data: json)
+        
+        let vc = DetailViewController(title: "Album", detail: detail)
+        _ = DetailModuleInitializer(vc: vc)
+        rootVC.pushViewController(vc, animated: true)
     }
 }

@@ -7,28 +7,20 @@
 //
 
 //MARK: - class ArtistPresenter
-class ArtistPresenter: NSObject {
+class ArtistPresenter {
 
     var view: ArtistViewInput!
     var interactor: ArtistInteractorInput!
     
     var keyword: String!
     var items = Array<Artist>()
-
-    //MARK: - Initilize
-    override init() {
-        super.init()
-    }
     
-    convenience init(name: String) {
-        self.init()
-        
+    //MARK: - Initilize
+    init(name: String) {
         self.keyword = name
     }
     
-    convenience init(items: Array<Artist>) {
-        self.init()
-        
+    init(items: Array<Artist>) {        
         self.items = items
     }
 }

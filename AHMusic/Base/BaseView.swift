@@ -38,16 +38,16 @@ class AUTHTextField: UITextField {
 class AHLabel: UILabel {
     
     //MARK: - Initialize
-//    init() {
-//        super.init(frame: CGRectZero)
-//        
-//        font = TS_LBL_FONT
-//        textColor = BG_COLOR
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    init() {
+        super.init(frame: CGRectZero)
+        
+        font = TITLE_BTN_FONT
+        textColor = WHITE
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }
 
 //MARK: - AHTextField
@@ -85,13 +85,13 @@ class AHButton: UIButton {
     var indexPath = NSIndexPath(forRow: 0, inSection: 0)
 
     //MARK: - Initialize
-//    override init(frame : CGRect) {
-//        super.init(frame: frame)
-//        
-//        self.exclusiveTouch = true
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
+    override init(frame : CGRect) {
+        super.init(frame: frame)
+        
+        self.exclusiveTouch = true
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

@@ -43,16 +43,16 @@ class Album : Object {
         
         self.artist = Artist(data: data["artist"])
         
-        let tr = data["tracks"]["data"].arrayValue
-        if tr.isEmpty {
+        let array = data["tracks"]["data"].arrayValue
+        if !array.isEmpty {
             self.tracks = List<Track>()
-            for item in tr {
+            for item in array {
                 self.tracks.append(Track(data: item))
             }
         }
         
         let genres = data["genres"]["data"].arrayValue
-        if genres.isEmpty {
+        if !genres.isEmpty {
             self.categories = List<Category>()
             for item in genres {
                 self.categories.append(Category(data: item))

@@ -55,7 +55,7 @@ class AlbumCell: UITableViewCell {
     }
     
     func setValues(item: Album) {
-        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.cover)!)
+        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.cover)!, placeholderImage: Image(named: "img_placeholder"))
         cellContentView.titleLabel.text = item.title
         cellContentView.linkButton.setTitle(item.link, forState: .Normal)
     }

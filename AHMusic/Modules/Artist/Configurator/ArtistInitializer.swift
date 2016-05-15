@@ -6,11 +6,9 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class ArtistModuleInitializer: NSObject {
+class ArtistModuleInitializer {
 
-    init(presentor: AnyObject) {
-        super.init()
-        
+    init(presentor: AnyObject) {        
         let configurator = ArtistModuleConfigurator()
         configurator.configureModuleForPresenter(presentor)
     }

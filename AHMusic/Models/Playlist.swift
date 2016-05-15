@@ -47,10 +47,10 @@ class Playlist : Object {
         self.creationDate = data["creation_date"].stringValue
         self.type = data["type"].stringValue
         
-        let tr = data["tracks"]["data"].arrayValue
-        if tr.isEmpty {
+        let array = data["tracks"]["data"].arrayValue
+        if !array.isEmpty {
             self.tracks = List<Track>()
-            for item in data["tracks"]["data"].arrayValue {
+            for item in array {
                 self.tracks.append(Track(data: item))
             }
         }

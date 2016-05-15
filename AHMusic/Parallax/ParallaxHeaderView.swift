@@ -1,55 +1,16 @@
 //
-//  ParallaxView.swift
+//  ParallaxHeaderView.swift
 //  AHMusic
 //
 //  Created by Ara Hakobyan on 06/05/2016.
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - ParallaxView
-class ParallaxView: UIView {
-    
-    lazy var headerView: ParallaxHeaderView = {
-        let view = ParallaxHeaderView(image: UIImage(named: "img_ca_blue")!, frame: CGRect(x: 0, y: 0, width: ScreenSize.WIDTH, height: 300))
-        
-        return view
-    }()
-    
-    lazy var tableView: UITableView = {
-        let view = UITableView.newAutoLayoutView()
-        view.backgroundColor = WHITE
-        view.tableHeaderView = self.headerView
-        
-        return view
-    }()
-    
-    //MARK: - Initialize
-    init() {
-        super.init(frame: CGRectZero)
-        
-        addAllUIElements()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    //MARK: - Privat Methods
-    func addAllUIElements() {
-        addSubview(tableView)
-        
-        setConstraints()
-    }
-    
-    //MARK: - Constraints
-    func setConstraints() {
-        tableView.autoPinEdgesToSuperviewEdges()
-    }
-}
-
 //MARK: - ParallaxHeaderView
 class ParallaxHeaderView: UIView {
     
+    var imageStr: String?
+    var imageURL: String?
     var kFrame: CGRect!
     var topHeaderConstraints: NSLayoutConstraint!
     var heightHeaderConstraints: NSLayoutConstraint!
@@ -66,6 +27,14 @@ class ParallaxHeaderView: UIView {
     lazy var imageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         view.contentMode = .ScaleAspectFill
+        
+        if let imageStr = self.imageStr {
+            view.image = UIImage(named: imageStr)
+        }
+        
+        if let url = self.imageURL {
+            view.kf_setImageWithURL(NSURL(string: url)!, placeholderImage: Image(named: "img_placeholder"))
+        }
         
         return view
     }()
@@ -90,10 +59,17 @@ class ParallaxHeaderView: UIView {
         kFrame = frame
     }
     
-    convenience init(image: UIImage, frame : CGRect) {
+    convenience init(imageStr: String?, frame : CGRect) {
         self.init(frame: frame)
         
-        imageView.image = image
+        self.imageStr = imageStr
+        addDefaultUIElements()
+    }
+    
+    convenience init(imageURL: String?, frame : CGRect) {
+        self.init(frame: frame)
+        
+        self.imageURL = imageURL
         addDefaultUIElements()
     }
     
@@ -172,7 +148,7 @@ class ParallaxHeaderView: UIView {
     
     func headerViewForScrollViewOffset(offset: CGPoint) {
         if offset.y > 0 {
-            let Y = max(offset.y * 0.5, 0)
+            let Y = max(offset.y * 0.3, 0)
             topHeaderConstraints.constant = Y
             bluredImageView.alpha = 1 / kFrame.size.height * offset.y * 2
             clipsToBounds = true
@@ -182,6 +158,7 @@ class ParallaxHeaderView: UIView {
             topHeaderConstraints.constant = -delta
             heightHeaderConstraints.constant = delta
             heightImageConstraints.constant = delta
+            bluredImageView.alpha =   0
             clipsToBounds = false
         }
     }

@@ -54,7 +54,7 @@ class CategoryCell: UICollectionViewCell {
     }
     
     func setValues(item: Category) {
-        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.picture)!)
+        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.picture)!, placeholderImage: Image(named: "img_placeholder"))
         cellContentView.nameLabel.text = item.name
     }
     

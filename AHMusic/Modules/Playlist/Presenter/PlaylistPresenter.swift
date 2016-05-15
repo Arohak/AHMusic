@@ -7,21 +7,15 @@
 //
 
 //MARK: - class PlaylistPresenter
-class PlaylistPresenter: NSObject {
+class PlaylistPresenter {
 
     var view: PlaylistViewInput!
     var interactor: PlaylistInteractorInput!
     
     var keyword: String!
-    
+
     //MARK: - Initilize
-    override init() {
-        super.init()
-    }
-    
-    convenience init(name: String) {
-        self.init()
-        
+    init(name: String) {
         self.keyword = name
     }
 }

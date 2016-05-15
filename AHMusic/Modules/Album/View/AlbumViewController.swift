@@ -70,7 +70,7 @@ extension AlbumViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let album = items[indexPath.row]
-
+        output.openDetail(album)
     }
     
     // MARK: - Actions

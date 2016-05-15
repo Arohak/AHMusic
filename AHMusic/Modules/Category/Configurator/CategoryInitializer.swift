@@ -6,11 +6,9 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class CategoryModuleInitializer: NSObject {
+class CategoryModuleInitializer {
 
-    init(presentor: AnyObject) {
-        super.init()
-        
+    init(presentor: AnyObject) {        
         let configurator = CategoryModuleConfigurator()
         configurator.configureModuleForPresenter(presentor)
     }

@@ -9,4 +9,5 @@
 protocol AlbumInteractorInput {
 
     func searchAlbum(name: String)
+    func getAlbum(id: String)
 }

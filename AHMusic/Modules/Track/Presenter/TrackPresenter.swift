@@ -9,7 +9,7 @@
 import AVFoundation
 
 //MARK: - class TrackPresenter
-class TrackPresenter: NSObject {
+class TrackPresenter {
 
     var view: TrackViewInput!
     var interactor: TrackInteractorInput!
@@ -19,19 +19,11 @@ class TrackPresenter: NSObject {
     var keyword: String!
     
     //MARK: - Initilize
-    override init() {
-        super.init()
-    }
-    
-    convenience init(name: String) {
-        self.init()
-        
+    init(name: String) {        
         self.keyword = name
     }
     
-    convenience init(items: Array<Track>) {
-        self.init()
-        
+    init(items: Array<Track>) {
         self.items = items
     }
 }
