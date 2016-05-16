@@ -7,16 +7,14 @@
 //
 
 //MARK: - class AlbumPresenter
-class AlbumPresenter {
+class AlbumPresenter: BasePresenter {
 
     var view: AlbumViewInput!
     var interactor: AlbumInteractorInput!
     
-    var keyword: String!
-    
     //MARK: - Initilize
-    init(name: String) {
-        self.keyword = name
+    override init(name: String) {
+        super.init(name: name)
     }
 }
 

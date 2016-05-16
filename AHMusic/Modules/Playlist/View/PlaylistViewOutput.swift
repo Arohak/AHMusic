@@ -6,9 +6,8 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol PlaylistViewOutput {
+protocol PlaylistViewOutput: BaseViewOutput {
 
-    func viewIsReady()
     func openLink(playlist: Playlist)
     func openDetail(playlist: Playlist)
 }

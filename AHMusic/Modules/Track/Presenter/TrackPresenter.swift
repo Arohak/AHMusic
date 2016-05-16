@@ -9,22 +9,16 @@
 import AVFoundation
 
 //MARK: - class TrackPresenter
-class TrackPresenter {
+class TrackPresenter: BasePresenter {
 
     var view: TrackViewInput!
     var interactor: TrackInteractorInput!
     
-    var items = Array<Track>()
     var player: AVPlayer!
-    var keyword: String!
     
     //MARK: - Initilize
-    init(name: String) {        
-        self.keyword = name
-    }
-    
-    init(items: Array<Track>) {
-        self.items = items
+    override init(name: String) {
+        super.init(name: name)
     }
 }
 

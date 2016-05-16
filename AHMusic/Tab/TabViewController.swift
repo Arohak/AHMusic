@@ -10,12 +10,8 @@ class TabViewController: UIViewController  {
     
     var tabNavigation: CarbonTabSwipeNavigation!
     
-    var tracks = Array<Track>()
-    var artists = Array<Artist>()
-    var albums = Array<Album>()
-    var playlists = Array<String>()
-    var stations = Array<String>()
-    
+    var presenters = Array<BasePresenter>()
+    var selectedPresenter: BasePresenter!
     var keyword: String!
 
     //MARK: - Initilize
@@ -27,20 +23,6 @@ class TabViewController: UIViewController  {
         self.init()
         
         self.keyword = keyword
-    }
-    
-    convenience init(data: Array<Results>) {
-        self.init()
-        
-        for item in data {
-            tracks.append(item.track)
-            
-            let inExistArtist = artists.filter() {$0.id == item.artist.id}.first
-            if inExistArtist == nil { artists.append(item.artist) }
-            
-            let inExistAlbum = albums.filter() {$0.id == item.album.id}.first
-            if inExistAlbum == nil { albums.append(item.album) }
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -56,6 +38,8 @@ class TabViewController: UIViewController  {
 
     //MARK: -  Private Methods
     private func baseConfig() {
+        addPresenters()
+
         let items = ["Albums", "Artists", "Playlists", "Tracks", "Stations"]
         tabNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
         tabNavigation.insertIntoRootViewController(self)
@@ -71,6 +55,28 @@ class TabViewController: UIViewController  {
         tabNavigation.setNormalColor(BLACK.colorWithAlphaComponent(0.6))
         tabNavigation.setSelectedColor(BLUE, font: UIFont.boldSystemFontOfSize(14))
     }
+    
+    private func addPresenters() {
+        let album = AlbumPresenter(name: keyword)
+        _ = AlbumModuleInitializer(presentor: album)
+        presenters.append(album)
+        
+        let artist = ArtistPresenter(name: keyword)
+        _ = ArtistModuleInitializer(presentor: artist)
+        presenters.append(artist)
+        
+        let playlist = PlaylistPresenter(name: keyword)
+        _ = PlaylistModuleInitializer(presentor: playlist)
+        presenters.append(playlist)
+        
+        let track = TrackPresenter(name: keyword)
+        _ = TrackModuleInitializer(presentor: track)
+        presenters.append(track)
+        
+        let station = StationPresenter(name: "")
+        _ = StationModuleInitializer(presentor: station)
+        presenters.append(station)
+    }
 }
 
 //MARK: - extension for CarbonTabSwipeNavigationDelegate
@@ -79,29 +85,24 @@ extension TabViewController: CarbonTabSwipeNavigationDelegate {
     func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAtIndex index: UInt) -> UIViewController {
         switch index {
         case 0:
-            let album = AlbumPresenter(name: keyword)
-            _ = AlbumModuleInitializer(presentor: album)
+            let album = presenters[0] as! AlbumPresenter
             
             return album.view as! UIViewController
         case 1:
-            let artist = ArtistPresenter(name: keyword)
-            _ = ArtistModuleInitializer(presentor: artist)
-            
+            let artist = presenters[1] as! ArtistPresenter
+
             return artist.view as! UIViewController
         case 2:
-            let playlist = PlaylistPresenter(name: keyword)
-            _ = PlaylistModuleInitializer(presentor: playlist)
-            
+            let playlist = presenters[2] as! PlaylistPresenter
+
             return playlist.view as! UIViewController
         case 3:
-            let track = TrackPresenter(name: keyword)
-            _ = TrackModuleInitializer(presentor: track)
-            
+            let track = presenters[3] as! TrackPresenter
+
             return track.view as! UIViewController
         case 4:
-            let station = StationPresenter()
-            _ = StationModuleInitializer(presentor: station)
-            
+            let station = presenters[4] as! StationPresenter
+
             return station.view as! UIViewController
         default:
             return UIViewController()
@@ -109,6 +110,6 @@ extension TabViewController: CarbonTabSwipeNavigationDelegate {
     }
     
     func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, didMoveAtIndex index: UInt) {
-        NSLog("Did move at index: %ld", index)
+        selectedPresenter = presenters[Int(index)]
     }
 }

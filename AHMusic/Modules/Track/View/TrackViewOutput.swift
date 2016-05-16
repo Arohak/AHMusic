@@ -6,10 +6,8 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol TrackViewOutput {
-
-    func viewIsReady()
-    
+protocol TrackViewOutput: BaseViewOutput {
+   
     func playSound(track: Track)
     func pauseSound()
     

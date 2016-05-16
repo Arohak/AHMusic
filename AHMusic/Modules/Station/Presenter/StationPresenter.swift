@@ -7,7 +7,7 @@
 //
 
 //MARK: - class StationPresenter
-class StationPresenter {
+class StationPresenter: BasePresenter {
 
     var view: StationViewInput!
     var interactor: StationInteractorInput!

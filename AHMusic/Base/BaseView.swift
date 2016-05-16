@@ -6,7 +6,20 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//import MarqueeLabel
+//MARK: - BasePresenter
+class BasePresenter {
+    
+    var keyword: String!
+    
+    init(name: String) {
+        self.keyword = name
+    }
+}
+
+protocol BaseViewOutput {
+    
+    func viewIsReady()
+}
 
 //MARK: - AUTHTextField
 class AUTHTextField: UITextField {

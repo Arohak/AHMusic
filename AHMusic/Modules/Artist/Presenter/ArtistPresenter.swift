@@ -7,21 +7,14 @@
 //
 
 //MARK: - class ArtistPresenter
-class ArtistPresenter {
+class ArtistPresenter: BasePresenter {
 
     var view: ArtistViewInput!
     var interactor: ArtistInteractorInput!
     
-    var keyword: String!
-    var items = Array<Artist>()
-    
     //MARK: - Initilize
-    init(name: String) {
-        self.keyword = name
-    }
-    
-    init(items: Array<Artist>) {        
-        self.items = items
+    override init(name: String) {
+        super.init(name: name)
     }
 }
 

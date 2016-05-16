@@ -9,6 +9,7 @@
 class SlideViewController: SlideMenuController {
     
     var output: CategoryViewOutput!
+    var tab: TabViewController!
     var isAnimation = true
     
     lazy var textField: AHTextField = {
@@ -130,10 +131,21 @@ extension SlideViewController: SlideMenuControllerDelegate {
 extension SlideViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textFieldAnimation()
         
-        let item = Category(data: JSON(["name" : textField.text!]))
-        output.viewIsSelectItem(item)
+        if textField.text!.characters.count < 3 {
+            UIHelper.showHUD("search text min 3 simbol")
+        } else {
+            if let tab = tab {
+                let presenter = tab.selectedPresenter as BasePresenter
+                presenter.keyword = textField.text!
+                let output = tab.selectedPresenter as! BaseViewOutput
+                output.viewIsReady()
+            } else {
+                let item = Category(data: JSON(["name" : textField.text!]))
+                output.viewIsSelectItem(item)
+            }
+            textFieldAnimation()
+        }
         
         return true
     }

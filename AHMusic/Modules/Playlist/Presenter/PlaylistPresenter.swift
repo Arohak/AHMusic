@@ -7,16 +7,14 @@
 //
 
 //MARK: - class PlaylistPresenter
-class PlaylistPresenter {
+class PlaylistPresenter: BasePresenter {
 
     var view: PlaylistViewInput!
     var interactor: PlaylistInteractorInput!
     
-    var keyword: String!
-
     //MARK: - Initilize
-    init(name: String) {
-        self.keyword = name
+    override init(name: String) {
+        super.init(name: name)
     }
 }
 

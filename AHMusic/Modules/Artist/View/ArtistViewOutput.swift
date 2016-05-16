@@ -6,8 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol ArtistViewOutput {
+protocol ArtistViewOutput: BaseViewOutput {
 
-    func viewIsReady()
     func openDetail(artist: Artist)
 }
