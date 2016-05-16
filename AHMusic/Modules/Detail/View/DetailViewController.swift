@@ -102,7 +102,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let track = items[indexPath.row]
-        
+
     }
     
     // MARK: - Actions
@@ -119,7 +119,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func openLink(sender: AHButton) {
         let track = items[sender.indexPath.row]
-//        output.openLink(track)
+        output.openLink(track)
     }
 }
 

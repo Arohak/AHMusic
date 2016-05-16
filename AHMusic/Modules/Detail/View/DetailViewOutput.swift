@@ -9,4 +9,5 @@
 protocol DetailViewOutput {
 
     func viewIsReady()
+    func openLink(track: Track)
 }

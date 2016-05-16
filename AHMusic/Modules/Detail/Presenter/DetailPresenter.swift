@@ -24,6 +24,11 @@ extension DetailPresenter: DetailViewOutput {
     func viewIsReady() {
         
     }
+    
+    func openLink(track: Track) {
+        let vc = WebViewController(resourceName: track.title, url: NSURL(string: track.link)!)
+        rootVC.presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+    }
 }
 
 //MARK: - extension for DetailInteractorOutput

@@ -9,4 +9,6 @@
 protocol TrackInteractorOutput: class {
 
     func searchResultIsReady(items: Array<Track>)
+    func getAlbumResultIsReady(album: Album)
+    func getArtistResultIsReady(artist: Artist, tracks: Array<Track>)
 }

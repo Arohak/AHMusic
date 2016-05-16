@@ -48,8 +48,7 @@ extension AlbumPresenter: AlbumInteractorOutput {
     }
     
     func getResultIsReady(album: Album) {
-        let json = JSON(["imageURL" : album.coverBig, "tracks" : Array(album.tracks),
-            "info" : "Name:\t\(album.title)\nTracks:\t\(album.nbTracks)\nFans:\t\(album.fans)\nRatings:\t\(album.rating)"])
+        let json = JSON(["imageURL" : album.coverBig, "tracks" : Array(album.tracks), "info" : "Name:\t\(album.title)\nTracks:\t\(album.nbTracks)\nFans:\t\(album.fans)"])
         let detail = Detail(data: json)
         
         let vc = DetailViewController(title: "Album", detail: detail)

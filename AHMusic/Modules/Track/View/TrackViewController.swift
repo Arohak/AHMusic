@@ -60,6 +60,12 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
         cell.cellContentView.linkButton.addTarget(self, action: #selector(TrackViewController.openLink(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.linkButton.indexPath = indexPath
         
+        cell.cellContentView.albumButton.addTarget(self, action: #selector(TrackViewController.openDeatilFromAlbum(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.albumButton.indexPath = indexPath
+        
+        cell.cellContentView.artistButton.addTarget(self, action: #selector(TrackViewController.opendetailFromArtist(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.artistButton.indexPath = indexPath
+        
         let track = items[indexPath.row]
         cell.setValues(track)
         
@@ -91,5 +97,15 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
     func openLink(sender: AHButton) {
         let track = items[sender.indexPath.row]
         output.openLink(track)
+    }
+    
+    func openDeatilFromAlbum(sender: AHButton) {
+        let track = items[sender.indexPath.row]
+        output.openDetail(track.album)
+    }
+    
+    func opendetailFromArtist(sender: AHButton) {
+        let track = items[sender.indexPath.row]
+        output.openDetail(track.artist)
     }
 }

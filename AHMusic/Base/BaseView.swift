@@ -6,21 +6,6 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - BasePresenter
-class BasePresenter {
-    
-    var keyword: String!
-    
-    init(name: String) {
-        self.keyword = name
-    }
-}
-
-protocol BaseViewOutput {
-    
-    func viewIsReady()
-}
-
 //MARK: - AUTHTextField
 class AUTHTextField: UITextField {
     

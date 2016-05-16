@@ -110,6 +110,7 @@ extension TabViewController: CarbonTabSwipeNavigationDelegate {
     }
     
     func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, didMoveAtIndex index: UInt) {
+        
         selectedPresenter = presenters[Int(index)]
     }
 }

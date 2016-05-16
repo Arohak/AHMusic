@@ -43,8 +43,7 @@ extension ArtistPresenter: ArtistInteractorOutput {
     }
     
     func getResultIsReady(artist: Artist, tracks: Array<Track>) {
-        let json = JSON(["imageURL" : artist.pictureBig, "tracks" : tracks,
-            "info" : "Name:\t\(artist.name)\nAlbums:\t\(artist.nbAlbum)\nFans:\t\(artist.nbFan)"])
+        let json = JSON(["imageURL" : artist.pictureBig, "tracks" : tracks, "info" : "Name:\t\(artist.name)\nAlbums:\t\(artist.nbAlbum)\nFans:\t\(artist.nbFan)"])
         let detail = Detail(data: json)
         
         let vc = DetailViewController(title: "Artist", detail: detail)

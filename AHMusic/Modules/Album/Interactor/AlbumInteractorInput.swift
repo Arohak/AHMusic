@@ -6,8 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol AlbumInteractorInput {
+protocol AlbumInteractorInput: GetAlbumProtocol {
 
     func searchAlbum(name: String)
-    func getAlbum(id: String)
 }

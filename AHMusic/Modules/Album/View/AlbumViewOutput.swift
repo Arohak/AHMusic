@@ -6,8 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol AlbumViewOutput: BaseViewOutput {
+protocol AlbumViewOutput: BaseViewOutput, OpenDetailFromAlbumProtocol {
 
     func openLink(album: Album)
-    func openDetail(album: Album)
 }

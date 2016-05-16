@@ -66,7 +66,6 @@ class SlideViewController: SlideMenuController {
         self.view.backgroundColor = WHITE
         SlideMenuOptions.leftViewWidth = ScreenSize.WIDTH*0.75
         SlideMenuOptions.hideStatusBar = false
-//        addLeftBarButtonWithImage(UIImage(named:"img_slide_menu")!) 
         delegate = self
         
         let main = mainViewController as! CategoryViewController
@@ -136,7 +135,7 @@ extension SlideViewController: UITextFieldDelegate {
             UIHelper.showHUD("search text min 3 simbol")
         } else {
             if let tab = tab {
-                let presenter = tab.selectedPresenter as BasePresenter
+                let presenter = tab.selectedPresenter
                 presenter.keyword = textField.text!
                 let output = tab.selectedPresenter as! BaseViewOutput
                 output.viewIsReady()
@@ -144,10 +143,10 @@ extension SlideViewController: UITextFieldDelegate {
                 let item = Category(data: JSON(["name" : textField.text!]))
                 output.viewIsSelectItem(item)
             }
+            
             textFieldAnimation()
         }
         
         return true
     }
-    
 }

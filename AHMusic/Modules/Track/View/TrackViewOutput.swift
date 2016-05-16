@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol TrackViewOutput: BaseViewOutput {
+protocol TrackViewOutput: BaseViewOutput, OpenDetailFromAlbumProtocol, OpenDetailFromArtistProtocol {
    
     func playSound(track: Track)
     func pauseSound()

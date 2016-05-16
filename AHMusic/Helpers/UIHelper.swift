@@ -20,7 +20,7 @@ struct UIHelper {
         navBarAppearance.barStyle = .BlackTranslucent
         navBarAppearance.barTintColor = BLUE
         navBarAppearance.tintColor = WHITE
-        navBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: WHITE, NSFontAttributeName : TITLE_LBL_FONT]
+        navBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: WHITE, NSFontAttributeName : FONT_NAVBAR]
     }
 
     static func showProgressHUD() {

@@ -6,8 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol ArtistInteractorInput {
+protocol ArtistInteractorInput: GetArtistProtocol {
 
     func searchArtist(name: String)
-    func getArtist(id: String)
 }
