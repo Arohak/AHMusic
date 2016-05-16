@@ -9,4 +9,5 @@
 protocol ArtistInteractorOutput: class {
 
     func searchResultIsReady(items: Array<Artist>)
+    func getResultIsReady(artist: Artist, tracks: Array<Track>)
 }

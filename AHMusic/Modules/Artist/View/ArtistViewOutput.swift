@@ -9,4 +9,5 @@
 protocol ArtistViewOutput {
 
     func viewIsReady()
+    func openDetail(artist: Artist)
 }

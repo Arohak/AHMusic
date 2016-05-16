@@ -126,6 +126,6 @@ let TR_DESC_FONT                        = UIFont.boldSystemFontOfSize(DeviceType
 let DE_CELL_HEIGHT : CGFloat            = DeviceType.IS_IPAD ? 60     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 60     : DeviceType.IS_IPHONE_6 ? 60   * IPHONE_6_SCALE : 60   * IPHONE_5_SCALE
 let DE_HEADER_HEIGHT : CGFloat          = ScreenSize.HEIGHT*0.6
 
-let DE_INFO_FONT                        = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 18     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 18     : DeviceType.IS_IPHONE_6 ? 18   * IPHONE_6_SCALE : 18   * IPHONE_5_SCALE)
+let DE_INFO_FONT                        = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 16     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 16     : DeviceType.IS_IPHONE_6 ? 16   * IPHONE_6_SCALE : 16   * IPHONE_5_SCALE)
 
 

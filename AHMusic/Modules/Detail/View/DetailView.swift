@@ -57,12 +57,13 @@ class DetailView: UIView {
             headerView.addSubview(bgView)
             headerView.addSubview(infoLabel)
             
-            infoLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: 20)
-            infoLabel.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 20)
-            bgView.autoPinEdge(.Top, toEdge: .Top, ofView: infoLabel, withOffset: -5)
-            bgView.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: infoLabel, withOffset: 5)
-            bgView.autoPinEdge(.Left, toEdge: .Left, ofView: infoLabel, withOffset: -5)
-            bgView.autoPinEdge(.Right, toEdge: .Right, ofView: infoLabel, withOffset: 5)
+            infoLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
+//            infoLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: TR_OFFSET)
+            infoLabel.autoPinEdgeToSuperviewEdge(.Bottom, withInset: TR_OFFSET)
+            bgView.autoPinEdge(.Top, toEdge: .Top, ofView: infoLabel, withOffset: -TR_OFFSET/2)
+            bgView.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: infoLabel, withOffset: TR_OFFSET/2)
+            bgView.autoPinEdge(.Left, toEdge: .Left, ofView: infoLabel, withOffset: -TR_OFFSET/2)
+            bgView.autoPinEdge(.Right, toEdge: .Right, ofView: infoLabel, withOffset: TR_OFFSET/2)
         }
     }
 }

@@ -10,4 +10,5 @@ protocol PlaylistViewOutput {
 
     func viewIsReady()
     func openLink(playlist: Playlist)
+    func openDetail(playlist: Playlist)
 }

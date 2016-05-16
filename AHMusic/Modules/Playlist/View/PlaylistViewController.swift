@@ -70,7 +70,7 @@ extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let playlist = items[indexPath.row]
-        
+        output.openDetail(playlist)
     }
     
     // MARK: - Actions

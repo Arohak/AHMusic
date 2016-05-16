@@ -9,4 +9,5 @@
 protocol ArtistInteractorInput {
 
     func searchArtist(name: String)
+    func getArtist(id: String)
 }

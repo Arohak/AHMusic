@@ -9,4 +9,5 @@
 protocol PlaylistInteractorOutput: class {
     
     func searchResultIsReady(items: Array<Playlist>)
+    func getResultIsReady(playlist: Playlist)
 }

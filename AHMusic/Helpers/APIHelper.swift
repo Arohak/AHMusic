@@ -120,8 +120,18 @@ class APIHelper {
         return rx_Request(.GET, url: url, isHeader: true)
     }
     
+    func rx_GetArtist(id: String) -> Observable<JSON> {
+        let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_ARTIST, id)
+        return rx_Request(.GET, url: url, isHeader: true)
+    }
+    
     func rx_GetArtistTracks(id: String, limit: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_ARTIST_TRACKS, id, limit)
+        return rx_Request(.GET, url: url, isHeader: true)
+    }
+    
+    func rx_GetPlaylist(id: String) -> Observable<JSON> {
+        let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_PLAYLIST, id)
         return rx_Request(.GET, url: url, isHeader: true)
     }
     

@@ -27,4 +27,13 @@ extension PlaylistInteractor: PlaylistInteractorInput {
             self.output.searchResultIsReady(temp)
         })
     }
+    
+    func getPlaylist(id: String) {
+        _ = apiHelper.rx_GetPlaylist(id)
+        .subscribeNext({ result in
+            let playlist = Playlist(data: result)
+            
+            self.output.getResultIsReady(playlist)
+        })
+    }
 }

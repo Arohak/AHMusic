@@ -9,4 +9,5 @@
 protocol PlaylistInteractorInput {
 
     func searchPlaylist(name: String)
+    func getPlaylist(id: String)
 }

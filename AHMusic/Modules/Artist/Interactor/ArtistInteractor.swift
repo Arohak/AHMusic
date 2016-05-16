@@ -27,4 +27,22 @@ extension ArtistInteractor: ArtistInteractorInput {
                 self.output.searchResultIsReady(temp)
             })
     }
+    
+    func getArtist(id: String) {
+        _ = apiHelper.rx_GetArtist(id)
+            .subscribeNext({ result in
+                let artist = Artist(data: result)
+                
+                _ = apiHelper.rx_GetArtistTracks(id, limit: "20")
+                    .subscribeNext({ result in
+                        var tracks = Array<Track>()
+                        for item in result["data"].arrayValue {
+                            let track = Track(data: item)
+                            tracks.append(track)
+                        }
+                        
+                        self.output.getResultIsReady(artist, tracks: tracks)
+                    })
+            })
+    }
 }

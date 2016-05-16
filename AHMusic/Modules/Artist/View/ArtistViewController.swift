@@ -61,7 +61,7 @@ extension ArtistViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let artist = items[indexPath.row]
-
+        output.openDetail(artist)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
