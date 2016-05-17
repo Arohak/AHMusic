@@ -15,6 +15,9 @@ target 'AHMusic' do
     pod 'PKHUD'
     pod 'CarbonKit'
     pod 'SlideMenuControllerSwift'
+    pod 'SwiftGifOrigin'
+    pod 'Jukebox'
+    
 end
 
 target 'AHMusicTests' do

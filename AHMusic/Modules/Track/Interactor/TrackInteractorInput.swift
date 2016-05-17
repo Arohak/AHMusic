@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol TrackInteractorInput: GetAlbumProtocol, GetArtistProtocol {
+protocol TrackInteractorInput: GetAlbumProtocol, GetArtistProtocol, GetTrackProtocol {
 
     func searchTrack(name: String)
 }

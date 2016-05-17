@@ -134,7 +134,7 @@ extension SlideViewController: UITextFieldDelegate {
         if textField.text!.characters.count < 3 {
             UIHelper.showHUD("search text min 3 simbol")
         } else {
-            if let tab = tab {
+            if let tab = tab where !(tab.selectedPresenter is StationPresenter) {
                 let presenter = tab.selectedPresenter
                 presenter.keyword = textField.text!
                 let output = tab.selectedPresenter as! BaseViewOutput

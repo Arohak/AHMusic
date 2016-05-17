@@ -17,5 +17,4 @@ class DetailModuleInitializer {
         let configurator = DetailModuleConfigurator()
         configurator.configureModuleForViewController(vc)
     }
-
 }

@@ -56,6 +56,10 @@ extension TrackPresenter: TrackViewOutput {
     func openDetail(artist: Artist) {
         interactor.getArtist("\(artist.id)")
     }
+    
+    func openTrackDetail(track: Track, items: Array<Track>) {
+        interactor.getTrack("\(track.id)", tracks: items)
+    }
 }
 
 //MARK: - extension for TrackInteractorOutput
@@ -80,6 +84,13 @@ extension TrackPresenter: TrackInteractorOutput {
         
         let vc = DetailViewController(title: "Artist", detail: detail)
         _ = DetailModuleInitializer(vc: vc)
+        rootVC.pushViewController(vc, animated: true)
+    }
+    
+    func getTrackResultIsReady(track: Track, tracks: Array<Track>) {
+
+        let vc = TrackDetailViewController(title: "Track", track: track, tracks: tracks)
+        _ = TrackDetailModuleInitializer(vc: vc)
         rootVC.pushViewController(vc, animated: true)
     }
 }

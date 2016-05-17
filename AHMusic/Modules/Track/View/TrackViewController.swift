@@ -79,7 +79,7 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let track = items[indexPath.row]
-
+        output.openTrackDetail(track, items: items)
     }
     
     // MARK: - Actions

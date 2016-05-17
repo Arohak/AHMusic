@@ -135,9 +135,8 @@ class APIHelper {
         return rx_Request(.GET, url: url, isHeader: true)
     }
     
-    func rx_GetAlbumTracks(id: String) -> Observable<JSON> {
-        let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_ALBUM_TRACKS, id)
+    func rx_GetTrack(id: String) -> Observable<JSON> {
+        let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_TRACK, id)
         return rx_Request(.GET, url: url, isHeader: true)
     }
-
 }

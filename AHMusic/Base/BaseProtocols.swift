@@ -30,3 +30,13 @@ protocol GetArtistProtocol {
     
     func getArtist(id: String)
 }
+
+protocol OpenTrackDetailProtocol {
+    
+    func openTrackDetail(track: Track, items: Array<Track>)
+}
+
+protocol GetTrackProtocol {
+    
+    func getTrack(id: String, tracks: Array<Track>)
+}
