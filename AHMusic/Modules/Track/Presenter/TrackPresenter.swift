@@ -34,14 +34,19 @@ extension TrackPresenter: TrackViewOutput {
         interactor.searchTrack(keyword)
     }
     
-    func playSound(track: Track) {
-        let url = NSURL(string: track.preview)!
-        player = AVPlayer(URL: url)
-        player.play()
-    }
-    
-    func pauseSound() {
-        player.pause()
+    func playTrack(tracks: Array<Track>) {
+        let vc = MiniPlayerViewController(items: tracks, sBlock:
+            { track in
+            self.view.stopPlayer(track)
+
+            }) { track in
+                self.view.changeTrack(track)
+        }
+        
+        vc.modalPresentationStyle = .OverCurrentContext
+        vc.modalTransitionStyle = .CrossDissolve
+        
+        rootVC.presentViewController(vc, animated: true, completion: nil)
     }
     
     func openLink(track: Track) {

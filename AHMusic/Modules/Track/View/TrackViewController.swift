@@ -41,6 +41,16 @@ extension TrackViewController: TrackViewInput {
         
         trackView.tableView.reloadData()
     }
+    
+    func stopPlayer(track: Track) {
+//        let cell = trackView.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as! TrackCell
+//        cell.cellContentView.playButton.selected = false
+    }
+    
+    func changeTrack(track: Track) {
+//        let cell = trackView.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as! TrackCell
+//        cell.cellContentView.playButton.selected = !cell.cellContentView.playButton.selected
+    }
 }
 
 //MARK: - extension for UITableView
@@ -87,11 +97,8 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
         let track = items[sender.indexPath.row]
         
         sender.selected = !sender.selected
-        if sender.selected {
-            output.playSound(track)
-        } else {
-            output.pauseSound()
-        }
+        
+        output.playTrack(items)
     }
     
     func openLink(sender: AHButton) {

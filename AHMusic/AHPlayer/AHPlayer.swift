@@ -11,7 +11,7 @@ class AHPlayer {
     
     var jukebox : Jukebox!
     var playerOutput: PlayerOutputProtocol!
-    var items: Array<Track>!
+    var tracks: Array<Track>!
     
     //MARK: - Initilize -
     init() {
@@ -19,14 +19,27 @@ class AHPlayer {
     }
     
     init(items: Array<Track>, playerOutput: PlayerOutputProtocol) {
-        self.items = items
         self.playerOutput = playerOutput
+        self.tracks = items
         
-        var jukeboxItems = Array<JukeboxItem>()
-        for item in items {
-            jukeboxItems.append(JukeboxItem(URL: NSURL(string: item.preview)!))
+        self.setTrackers(items)
+    }
+    
+    //MARK: - Public Method -
+    func setTrackers(items: Array<Track>) {
+        if let jukebox = jukebox {
+            jukebox.removeAllItems()
+            
+            for item in items {
+                jukebox.appendItem(JukeboxItem(URL: NSURL(string: item.preview)!), loadingAssets: true)
+            }
+        } else {
+            var jukeboxItems = Array<JukeboxItem>()
+            for item in items {
+                jukeboxItems.append(JukeboxItem(URL: NSURL(string: item.preview)!))
+            }
+            self.jukebox = Jukebox(delegate: self, items: jukeboxItems)
         }
-        self.jukebox = Jukebox(delegate: self, items: jukeboxItems)
     }
 }
 
