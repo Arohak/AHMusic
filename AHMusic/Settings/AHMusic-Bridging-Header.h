@@ -18,4 +18,5 @@
 @import Kingfisher;
 @import CarbonKit;
 @import SlideMenuControllerSwift;
-
+@import MediaPlayer;
+@import Jukebox;

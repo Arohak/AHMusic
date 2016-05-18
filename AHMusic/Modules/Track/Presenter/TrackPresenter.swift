@@ -88,8 +88,7 @@ extension TrackPresenter: TrackInteractorOutput {
     }
     
     func getTrackResultIsReady(track: Track, tracks: Array<Track>) {
-
-        let vc = TrackDetailViewController(title: "Track", track: track, tracks: tracks)
+        let vc = TrackDetailViewController(title: "Track", items: tracks, track: track)
         _ = TrackDetailModuleInitializer(vc: vc)
         rootVC.pushViewController(vc, animated: true)
     }

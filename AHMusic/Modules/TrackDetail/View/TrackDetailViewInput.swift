@@ -6,7 +6,6 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol TrackDetailViewInput: class {
+protocol TrackDetailViewInput: PlayerOutputProtocol {
 
-    func setupInitialState()
 }

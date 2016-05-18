@@ -88,6 +88,8 @@
 		A13865D91CDC84C000350BC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A13865CB1CDC84C000350BC2 /* Assets.xcassets */; };
 		A14836DF1CDB75CA0043036B /* AHMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836DE1CDB75CA0043036B /* AHMusicTests.swift */; };
 		A14836EA1CDB75CA0043036B /* AHMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836E91CDB75CA0043036B /* AHMusicUITests.swift */; };
+		A15534D61CEC7EB5004DAE89 /* AHPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15534D51CEC7EB5004DAE89 /* AHPlayer.swift */; };
+		A15534D81CEC7F02004DAE89 /* AHPlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15534D71CEC7F02004DAE89 /* AHPlayerProtocol.swift */; };
 		A16412B41CE35242005FD643 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16412B01CE35242005FD643 /* Album.swift */; };
 		A16412B51CE35242005FD643 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16412B11CE35242005FD643 /* Artist.swift */; };
 		A16412B71CE35242005FD643 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16412B31CE35242005FD643 /* Track.swift */; };
@@ -251,6 +253,8 @@
 		A14836E51CDB75CA0043036B /* AHMusicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AHMusicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14836E91CDB75CA0043036B /* AHMusicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHMusicUITests.swift; sourceTree = "<group>"; };
 		A14836EB1CDB75CA0043036B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A15534D51CEC7EB5004DAE89 /* AHPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHPlayer.swift; sourceTree = "<group>"; };
+		A15534D71CEC7F02004DAE89 /* AHPlayerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHPlayerProtocol.swift; sourceTree = "<group>"; };
 		A16412B01CE35242005FD643 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		A16412B11CE35242005FD643 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		A16412B31CE35242005FD643 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
@@ -821,6 +825,7 @@
 				526A4DB71CDFC8640000CFC5 /* Tab */,
 				52A420321CE50F7A00109005 /* WebBrowser */,
 				5288FEE41CE71720009A58B6 /* Parallax */,
+				A15534D41CEC7E86004DAE89 /* AHPlayer */,
 				A13865C61CDC84C000350BC2 /* Modules */,
 				A13865C21CDC84C000350BC2 /* Models */,
 				A13865C01CDC84C000350BC2 /* Messages */,
@@ -847,6 +852,15 @@
 				A14836EB1CDB75CA0043036B /* Info.plist */,
 			);
 			path = AHMusicUITests;
+			sourceTree = "<group>";
+		};
+		A15534D41CEC7E86004DAE89 /* AHPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A15534D51CEC7EB5004DAE89 /* AHPlayer.swift */,
+				A15534D71CEC7F02004DAE89 /* AHPlayerProtocol.swift */,
+			);
+			name = AHPlayer;
 			sourceTree = "<group>";
 		};
 		A16412BA1CE47E14005FD643 /* views */ = {
@@ -1326,6 +1340,7 @@
 				5288FEEA1CE7C073009A58B6 /* UIImageEffects.swift in Sources */,
 				183997B2124272556A676EF5 /* LeftMenuModuleInput.swift in Sources */,
 				5699A88D911CBA84F16EBBD8 /* LeftMenuPresenter.swift in Sources */,
+				A15534D61CEC7EB5004DAE89 /* AHPlayer.swift in Sources */,
 				A16412B91CE478CA005FD643 /* Results.swift in Sources */,
 				D06F24C3498A5B5E5879DC26 /* LeftMenuInteractorInput.swift in Sources */,
 				1C09489D045F6C9E15189AFA /* LeftMenuInteractorOutput.swift in Sources */,
@@ -1344,6 +1359,7 @@
 				F88B688EE90CE1AB91817E96 /* TrackInteractor.swift in Sources */,
 				4A7075A88C6B784F947C0578 /* TrackConfigurator.swift in Sources */,
 				B916AC518BC6CE5F13D1F0F9 /* TrackInitializer.swift in Sources */,
+				A15534D81CEC7F02004DAE89 /* AHPlayerProtocol.swift in Sources */,
 				D709DDD91A22FABB8CA29230 /* ArtistViewInput.swift in Sources */,
 				6EB4183265058329090851D9 /* ArtistViewOutput.swift in Sources */,
 				4C3C4A0CD9E668E0C66B861C /* ArtistViewController.swift in Sources */,

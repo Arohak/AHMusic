@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - BasePresenter
+//MARK: - BasePresenter -
 class BasePresenter {
     
     var keyword: String!
@@ -15,3 +15,4 @@ class BasePresenter {
         self.keyword = name
     }
 }
+

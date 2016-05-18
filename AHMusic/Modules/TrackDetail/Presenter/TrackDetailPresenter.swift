@@ -11,6 +11,8 @@ class TrackDetailPresenter {
 
     var view: TrackDetailViewInput!
     var interactor: TrackDetailInteractorInput!
+
+    var player: AHPlayer!
 }
 
 //MARK: - extension for TrackDetailModuleInput
@@ -21,8 +23,8 @@ extension TrackDetailPresenter: TrackDetailModuleInput {
 //MARK: - extension for TrackDetailViewOutput
 extension TrackDetailPresenter: TrackDetailViewOutput {
     
-    func viewIsReady() {
-
+    func viewIsReady(items: Array<Track>) {
+        player = AHPlayer(items: items, playerOutput: view)
     }
 }
 

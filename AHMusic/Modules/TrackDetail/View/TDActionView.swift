@@ -128,10 +128,12 @@ class TDActionView: UIView {
 
         currentTimeLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: slider)
         currentTimeLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: TD_OFFSET)
+        currentTimeLabel.autoSetDimension(.Width, toSize: TD_OFFSET*2)
         
         durationLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: slider)
         durationLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: TD_OFFSET)
-        
+        durationLabel.autoSetDimension(.Width, toSize: TD_OFFSET*2)
+
         trackListButton.autoAlignAxis(.Horizontal, toSameAxisOfView: volumeSlider)
         trackListButton.autoPinEdgeToSuperviewEdge(.Right, withInset: TD_OFFSET)
         trackListButton.autoSetDimensionsToSize(CGSize(width: TD_BBTN_SIZE, height: TD_BBTN_SIZE))
@@ -147,7 +149,7 @@ class TDActionView: UIView {
             }
         }
         
-        items.first!.autoPinEdge(.Left, toEdge: .Right, ofView: currentTimeLabel, withOffset: TD_OFFSET)
+        items.first!.autoPinEdge(.Left, toEdge: .Left, ofView: slider)
         items.first!.autoAlignAxisToSuperviewAxis(.Horizontal)
         for  (index, item) in items.enumerate() {
             if index != 0 {

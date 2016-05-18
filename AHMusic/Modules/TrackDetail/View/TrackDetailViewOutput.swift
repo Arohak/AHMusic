@@ -8,5 +8,5 @@
 
 protocol TrackDetailViewOutput {
 
-    func viewIsReady()
+    func viewIsReady(items: Array<Track>)
 }
