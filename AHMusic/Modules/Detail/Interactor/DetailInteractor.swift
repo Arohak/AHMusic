@@ -6,13 +6,13 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class DetailInteractor
+//MARK: - class DetailInteractor -
 class DetailInteractor {
 
     weak var output: DetailInteractorOutput!
 }
 
-//MARK: - extension for DetailInteractorInput
+//MARK: - extension for DetailInteractorInput -
 extension DetailInteractor: DetailInteractorInput {
     
 }

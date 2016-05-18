@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - DetailView
+//MARK: - DetailView -
 class DetailView: UIView {
     
     var headerView: ParallaxHeaderView!
@@ -19,7 +19,7 @@ class DetailView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
     }
@@ -36,7 +36,7 @@ class DetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Private Methods
+    //MARK: - Private Methods -
     private func addAllUIElements() {
         addSubview(tableView)
         tableView.autoPinEdgesToSuperviewEdges()
@@ -68,10 +68,10 @@ class DetailView: UIView {
     }
 }
 
-//MARK: - TrackShortCell
+//MARK: - TrackShortCell -
 class TrackShortCell: UITableViewCell {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     var cellContentView = TrackShortCellContentView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -92,7 +92,7 @@ class TrackShortCell: UITableViewCell {
     }
 }
 
-//MARK: - TrackShortCellContentView
+//MARK: - TrackShortCellContentView -
 class TrackShortCellContentView: UIView {
     
     //MARK: - Create UIElements
@@ -123,7 +123,7 @@ class TrackShortCellContentView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -134,7 +134,7 @@ class TrackShortCellContentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(playButton)
         addSubview(titleLabel)
@@ -143,7 +143,7 @@ class TrackShortCellContentView: UIView {
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         playButton.autoAlignAxisToSuperviewAxis(.Horizontal)
         playButton.autoPinEdgeToSuperviewEdge(.Right, withInset: TR_OFFSET)

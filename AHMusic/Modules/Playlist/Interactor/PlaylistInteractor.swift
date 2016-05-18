@@ -6,13 +6,13 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class PlaylistInteractor
+//MARK: - class PlaylistInteractor -
 class PlaylistInteractor {
 
     weak var output: PlaylistInteractorOutput!
 }
 
-//MARK: - extension for PlaylistInteractorInput
+//MARK: - extension for PlaylistInteractorInput -
 extension PlaylistInteractor: PlaylistInteractorInput {
     
     func searchPlaylist(name: String) {

@@ -10,7 +10,7 @@ import SwiftGifOrigin
 
 class TDHeaderView: UIView {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     lazy var gifImageView: UIImageView = {
         let gif = UIImage.gifWithName("gif_sound1")
         let view = UIImageView(image: gif)
@@ -24,7 +24,7 @@ class TDHeaderView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -35,7 +35,7 @@ class TDHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(gifImageView)
         addSubview(imageView)
@@ -43,7 +43,7 @@ class TDHeaderView: UIView {
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         gifImageView.autoPinEdgeToSuperviewEdge(.Top)
         gifImageView.autoPinEdgeToSuperviewEdge(.Left)

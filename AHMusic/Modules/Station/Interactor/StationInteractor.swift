@@ -6,13 +6,13 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class StationInteractor
+//MARK: - class StationInteractor -
 class StationInteractor {
 
     weak var output: StationInteractorOutput!
 }
 
-//MARK: - extension for StationInteractorInput
+//MARK: - extension for StationInteractorInput -
 extension StationInteractor: StationInteractorInput {
     
 }

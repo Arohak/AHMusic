@@ -6,19 +6,19 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class StationPresenter
+//MARK: - class StationPresenter -
 class StationPresenter: BasePresenter {
 
     var view: StationViewInput!
     var interactor: StationInteractorInput!
 }
 
-//MARK: - extension for StationModuleInput
+//MARK: - extension for StationModuleInput -
 extension StationPresenter: StationModuleInput {
 
 }
 
-//MARK: - extension for StationViewOutput
+//MARK: - extension for StationViewOutput -
 extension StationPresenter: StationViewOutput {
     
     func viewIsReady() {
@@ -26,7 +26,7 @@ extension StationPresenter: StationViewOutput {
     }
 }
 
-//MARK: - extension for StationInteractorOutput
+//MARK: - extension for StationInteractorOutput -
 extension StationPresenter: StationInteractorOutput {
  
 }

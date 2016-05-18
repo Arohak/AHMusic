@@ -6,26 +6,24 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-import AVFoundation
-
-//MARK: - class TrackPresenter
+//MARK: - class TrackPresenter -
 class TrackPresenter: BasePresenter {
 
     var view: TrackViewInput!
     var interactor: TrackInteractorInput!
         
-    //MARK: - Initilize
+    //MARK: - Initilize -
     override init(name: String) {
         super.init(name: name)
     }
 }
 
-//MARK: - extension for TrackModuleInput
+//MARK: - extension for TrackModuleInput -
 extension TrackPresenter: TrackModuleInput {
 
 }
 
-//MARK: - extension for TrackViewOutput
+//MARK: - extension for TrackViewOutput -
 extension TrackPresenter: TrackViewOutput {
     
     func viewIsReady() {
@@ -59,7 +57,7 @@ extension TrackPresenter: TrackViewOutput {
     }
 }
 
-//MARK: - extension for TrackInteractorOutput
+//MARK: - extension for TrackInteractorOutput -
 extension TrackPresenter: TrackInteractorOutput {
  
     func searchResultIsReady(items: Array<Track>) {

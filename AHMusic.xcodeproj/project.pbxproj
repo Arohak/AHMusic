@@ -53,6 +53,7 @@
 		5288FEE81CE71720009A58B6 /* ParallaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288FEE61CE71720009A58B6 /* ParallaxViewController.swift */; };
 		5288FEEA1CE7C073009A58B6 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5288FEE91CE7C073009A58B6 /* UIImageEffects.swift */; };
 		52A420341CE50F7A00109005 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A420331CE50F7A00109005 /* WebViewController.swift */; };
+		52C848931CED225F0051BF2F /* MiniPlayerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C848921CED225F0051BF2F /* MiniPlayerProtocol.swift */; };
 		5699A88D911CBA84F16EBBD8 /* LeftMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168DCB078DD75643B2F74A76 /* LeftMenuPresenter.swift */; };
 		5A693EF500798E76DAE3911E /* PlaylistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB8ECF0B7D95A3B409925B /* PlaylistConfigurator.swift */; };
 		5B0391A1627752D0BB4674F6 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B86ADB3B298467E44A32A8 /* TrackViewController.swift */; };
@@ -206,6 +207,7 @@
 		5288FEE61CE71720009A58B6 /* ParallaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxViewController.swift; sourceTree = "<group>"; };
 		5288FEE91CE7C073009A58B6 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
 		52A420331CE50F7A00109005 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		52C848921CED225F0051BF2F /* MiniPlayerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayerProtocol.swift; sourceTree = "<group>"; };
 		583099A3F8D57969AD0F26C2 /* TrackInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrackInteractorInput.swift; sourceTree = "<group>"; };
 		5BD51CB1FA52900F2D029826 /* ArtistViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		5DD1C533E468EA59D9136D3C /* LeftMenuInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuInitializer.swift; sourceTree = "<group>"; };
@@ -864,6 +866,7 @@
 			children = (
 				A15534E11CEC98B3004DAE89 /* MiniPlayerViewController.swift */,
 				A15534DA1CEC928B004DAE89 /* MiniPlayerView.swift */,
+				52C848921CED225F0051BF2F /* MiniPlayerProtocol.swift */,
 			);
 			path = MiniPlayer;
 			sourceTree = "<group>";
@@ -1374,6 +1377,7 @@
 				B916AC518BC6CE5F13D1F0F9 /* TrackInitializer.swift in Sources */,
 				D709DDD91A22FABB8CA29230 /* ArtistViewInput.swift in Sources */,
 				6EB4183265058329090851D9 /* ArtistViewOutput.swift in Sources */,
+				52C848931CED225F0051BF2F /* MiniPlayerProtocol.swift in Sources */,
 				4C3C4A0CD9E668E0C66B861C /* ArtistViewController.swift in Sources */,
 				A39DD42E06CE468DF84F7260 /* ArtistModuleInput.swift in Sources */,
 				86751432E8217884A6FEB4A1 /* ArtistPresenter.swift in Sources */,

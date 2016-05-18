@@ -8,7 +8,7 @@
 
 class TrackDetailView: UIView {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     lazy var headerView: TDHeaderView = {
         let view = TDHeaderView.newAutoLayoutView()
         
@@ -27,7 +27,7 @@ class TrackDetailView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -38,7 +38,7 @@ class TrackDetailView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(headerView)
         addSubview(infoView)
@@ -47,7 +47,7 @@ class TrackDetailView: UIView {
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         headerView.autoPinEdgeToSuperviewEdge(.Top)
         headerView.autoPinEdgeToSuperviewEdge(.Left)

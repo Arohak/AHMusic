@@ -6,10 +6,10 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - AUTHTextField
+//MARK: - AUTHTextField -
 class AUTHTextField: UITextField {
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     override init(frame : CGRect) {
         super.init(frame: frame)
         
@@ -32,10 +32,10 @@ class AUTHTextField: UITextField {
     }
 }
 
-//MARK: - AHLabel
+//MARK: - AHLabel -
 class AHLabel: UILabel {
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -48,12 +48,12 @@ class AHLabel: UILabel {
     }
 }
 
-//MARK: - AHTextField
+//MARK: - AHTextField -
 class AHTextField: UITextField {
     
     var indexPath = NSIndexPath(forRow: 0, inSection: 0)
 
-    //MARK: - Initialize
+    //MARK: - Initialize -
     override init(frame : CGRect) {
         super.init(frame: frame)
         
@@ -77,12 +77,12 @@ class AHTextField: UITextField {
     }
 }
 
-//MARK: - AHButton
+//MARK: - AHButton -
 class AHButton: UIButton {
     
     var indexPath = NSIndexPath(forRow: 0, inSection: 0)
 
-    //MARK: - Initialize
+    //MARK: - Initialize -
     override init(frame : CGRect) {
         super.init(frame: frame)
         

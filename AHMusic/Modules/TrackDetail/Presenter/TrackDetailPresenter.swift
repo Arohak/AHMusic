@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class TrackDetailPresenter
+//MARK: - class TrackDetailPresenter -
 class TrackDetailPresenter {
 
     var view: TrackDetailViewInput!
@@ -15,12 +15,12 @@ class TrackDetailPresenter {
     var player: AHPlayer!
 }
 
-//MARK: - extension for TrackDetailModuleInput
+//MARK: - extension for TrackDetailModuleInput -
 extension TrackDetailPresenter: TrackDetailModuleInput {
 
 }
 
-//MARK: - extension for TrackDetailViewOutput
+//MARK: - extension for TrackDetailViewOutput -
 extension TrackDetailPresenter: TrackDetailViewOutput {
     
     func viewIsReady(items: Array<Track>) {
@@ -28,7 +28,7 @@ extension TrackDetailPresenter: TrackDetailViewOutput {
     }
 }
 
-//MARK: - extension for TrackDetailInteractorOutput
+//MARK: - extension for TrackDetailInteractorOutput -
 extension TrackDetailPresenter: TrackDetailInteractorOutput {
  
 }

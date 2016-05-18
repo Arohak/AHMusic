@@ -8,7 +8,7 @@
 
 class TDActionView: UIView {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     lazy var bgImageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         view.backgroundColor = BLACK
@@ -86,7 +86,7 @@ class TDActionView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -97,7 +97,7 @@ class TDActionView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(bgImageView)
         addSubview(slider)
@@ -114,7 +114,7 @@ class TDActionView: UIView {
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         bgImageView.autoPinEdgesToSuperviewEdges()
         

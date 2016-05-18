@@ -12,7 +12,7 @@ class TrackInteractor {
     weak var output: TrackInteractorOutput!
 }
 
-//MARK: - extension for TrackInteractorInput
+//MARK: - extension for TrackInteractorInput -
 extension TrackInteractor: TrackInteractorInput {
     
     func searchTrack(name: String) {

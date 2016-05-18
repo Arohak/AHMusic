@@ -96,7 +96,7 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire) as! TrackCell
         
-        cell.cellContentView.playButton.addTarget(self, action: #selector(TrackViewController.playSound(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.playButton.addTarget(self, action: #selector(TrackViewController.playTrack(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.playButton.indexPath = indexPath
         
         cell.cellContentView.linkButton.addTarget(self, action: #selector(TrackViewController.openLink(_:)), forControlEvents: .TouchUpInside)
@@ -125,8 +125,7 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     // MARK: - Actions -
-    func playSound(sender: AHButton) {
-        sender.selected = !sender.selected
+    func playTrack(sender: AHButton) {
         output.playTrack(sender.indexPath.row, tracks: items)
     }
     

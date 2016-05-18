@@ -14,14 +14,14 @@ class MiniPlayerViewController: UIViewController {
     var miniPlayerView = MiniPlayerView()
     var index: Int!
     
-    var output: TrackViewInput!
+    var output: MiniPlayerProtocol!
 
-    //MARK: - Initilize
+    //MARK: - Initilize -
     init() {
         super.init(nibName: nil, bundle:nil)
     }
 
-    convenience init(index: Int, items: Array<Track>, output: TrackViewInput) {
+    convenience init(index: Int, items: Array<Track>, output: MiniPlayerProtocol) {
         self.init()
         
         self.index = index
@@ -35,12 +35,14 @@ class MiniPlayerViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Life cycle
+    // MARK: - Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         
         baseConfig()
+        
         player.playPauseAtIndex(index)
+        output.playPauseTrack(index)
     }
     
     private func baseConfig() {
@@ -102,6 +104,7 @@ extension MiniPlayerViewController: PlayerOutputProtocol {
         
         let index = player.jukebox.playIndex
         if index != 0 { output.nextTrack(index) }
+        
         miniPlayerView.player.titleLabel.text = items[index].title
     }
     

@@ -6,11 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol TrackViewInput: class {
+protocol TrackViewInput: MiniPlayerProtocol {
 
     func setupInitialState(items: Array<Track>)
-    func stopPlayer(index: Int)
-    func playPauseTrack(index: Int)
-    func nextTrack(index: Int)
-    func prevTrack(index: Int)
 }

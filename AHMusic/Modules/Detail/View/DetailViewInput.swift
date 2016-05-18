@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol DetailViewInput: class {
+protocol DetailViewInput: MiniPlayerProtocol {
 
     func setupInitialState()
 }

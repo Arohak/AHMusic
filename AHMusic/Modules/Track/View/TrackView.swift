@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - TrackView
+//MARK: - TrackView -
 class TrackView: UIView {
     
     lazy var tableView: UITableView = {
@@ -16,7 +16,7 @@ class TrackView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -27,23 +27,23 @@ class TrackView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(tableView)
 
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         tableView.autoPinEdgesToSuperviewEdges()
     }
 }
 
-//MARK: - TrackCell
+//MARK: - TrackCell -
 class TrackCell: UITableViewCell {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     var cellContentView = TrackCellContentView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -67,10 +67,10 @@ class TrackCell: UITableViewCell {
     }
 }
 
-//MARK: - TrackCellContentView
+//MARK: - TrackCellContentView -
 class TrackCellContentView: UIView {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     lazy var imageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         view.userInteractionEnabled = true
@@ -127,7 +127,7 @@ class TrackCellContentView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -138,7 +138,7 @@ class TrackCellContentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(imageView)
         imageView.addSubview(playButton)
@@ -150,7 +150,7 @@ class TrackCellContentView: UIView {
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         imageView.autoPinEdgeToSuperviewEdge(.Right, withInset: TR_OFFSET)
         imageView.autoPinEdgeToSuperviewEdge(.Top, withInset: 2)

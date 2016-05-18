@@ -6,24 +6,24 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class PlaylistPresenter
+//MARK: - class PlaylistPresenter -
 class PlaylistPresenter: BasePresenter {
 
     var view: PlaylistViewInput!
     var interactor: PlaylistInteractorInput!
     
-    //MARK: - Initilize
+    //MARK: - Initilize -
     override init(name: String) {
         super.init(name: name)
     }
 }
 
-//MARK: - extension for PlaylistModuleInput
+//MARK: - extension for PlaylistModuleInput -
 extension PlaylistPresenter: PlaylistModuleInput {
 
 }
 
-//MARK: - extension for PlaylistViewOutput
+//MARK: - extension for PlaylistViewOutput -
 extension PlaylistPresenter: PlaylistViewOutput {
     
     func viewIsReady() {
@@ -40,7 +40,7 @@ extension PlaylistPresenter: PlaylistViewOutput {
     }
 }
 
-//MARK: - extension for PlaylistInteractorOutput
+//MARK: - extension for PlaylistInteractorOutput -
 extension PlaylistPresenter: PlaylistInteractorOutput {
  
     func searchResultIsReady(items: Array<Playlist>) {

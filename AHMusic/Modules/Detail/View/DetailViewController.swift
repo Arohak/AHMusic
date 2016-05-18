@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class DetailViewController
+//MARK: - class DetailViewController -
 class DetailViewController: UIViewController {
 
     var output: DetailViewOutput!
@@ -26,7 +26,7 @@ class DetailViewController: UIViewController {
         return view
     }()
     
-    //MARK: - Initilize
+    //MARK: - Initilize -
     init() {
         super.init(nibName: nil, bundle: nil)
     }
@@ -44,7 +44,7 @@ class DetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: Life cycle
+    // MARK: - Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,21 +59,63 @@ class DetailViewController: UIViewController {
         headerView.refreshBlurViewForNewImage()
     }
     
-    // MARK: - Private Method
+    // MARK: - Private Method -
     private func baseConfig() {
         self.view = detailView
     }
 }
 
-//MARK: - extension for DetailViewInput
+//MARK: - extension for DetailViewInput -
 extension DetailViewController: DetailViewInput {
     
     func setupInitialState() {
         
     }
+    
+    func stopPlayer(index: Int) {
+        let indexPath = NSIndexPath(forRow: index, inSection: 0)
+        let cell = detailView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
+        cell.cellContentView.playButton.selected = false
+    }
+    
+    func playPauseTrack(index: Int) {
+        let indexPath = NSIndexPath(forRow: index, inSection: 0)
+        let cell = detailView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
+        cell.cellContentView.playButton.selected = !cell.cellContentView.playButton.selected
+    }
+    
+    func nextTrack(index: Int) {
+        let indexPath = NSIndexPath(forRow: index - 1, inSection: 0)
+        let indexPathNext = NSIndexPath(forRow: index, inSection: 0)
+        
+        changeButtonState(indexPath, indexPathTwo: indexPathNext)
+    }
+    
+    func prevTrack(index: Int) {
+        let indexPath = NSIndexPath(forRow: index + 1, inSection: 0)
+        let indexPathPrev = NSIndexPath(forRow: index, inSection: 0)
+        
+        changeButtonState(indexPath, indexPathTwo: indexPathPrev)
+    }
+    
+    // MARK: - Private Method -
+    private func changeButtonState(indexPathOne: NSIndexPath, indexPathTwo: NSIndexPath) {
+        let cellOne = detailView.tableView.cellForRowAtIndexPath(indexPathOne) as? TrackShortCell
+        let cellTwo = detailView.tableView.cellForRowAtIndexPath(indexPathTwo) as? TrackShortCell
+        if let _ = cellTwo {
+            cellOne!.cellContentView.playButton.selected = false
+            cellTwo!.cellContentView.playButton.selected = true
+        } else {
+            detailView.tableView.scrollToRowAtIndexPath(indexPathTwo, atScrollPosition: .Middle, animated: false)
+            let cOne = detailView.tableView.cellForRowAtIndexPath(indexPathOne) as! TrackShortCell
+            let cTwo = detailView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackShortCell
+            cOne.cellContentView.playButton.selected = false
+            cTwo.cellContentView.playButton.selected = true
+        }
+    }
 }
 
-//MARK: - extension for UITableView
+//MARK: - extension for UITableView -
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,7 +125,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire) as! TrackShortCell
-        cell.cellContentView.playButton.addTarget(self, action: #selector(DetailViewController.playSound(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.playButton.addTarget(self, action: #selector(DetailViewController.playTrack(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.playButton.indexPath = indexPath
         
         cell.cellContentView.linkButton.addTarget(self, action: #selector(DetailViewController.openLink(_:)), forControlEvents: .TouchUpInside)
@@ -105,10 +147,9 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
 
     }
     
-    // MARK: - Actions
-    func playSound(sender: AHButton) {
-        let track = items[sender.indexPath.row]
-
+    // MARK: - Actions -
+    func playTrack(sender: AHButton) {
+        output.playTrack(sender.indexPath.row, tracks: items)
     }
     
     func openLink(sender: AHButton) {
@@ -117,7 +158,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-//MARK: - extension for UIScrollView
+//MARK: - extension for UIScrollView -
 extension DetailViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView) {

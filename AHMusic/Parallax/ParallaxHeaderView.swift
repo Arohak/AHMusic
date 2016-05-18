@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - ParallaxHeaderView
+//MARK: - ParallaxHeaderView -
 class ParallaxHeaderView: UIView {
     
     var imageStr: String?
@@ -17,7 +17,7 @@ class ParallaxHeaderView: UIView {
     var heightImageConstraints: NSLayoutConstraint!
     var heightBluredImageConstraints: NSLayoutConstraint!
 
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView.newAutoLayoutView()
         
@@ -52,7 +52,7 @@ class ParallaxHeaderView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     override init(frame : CGRect) {
         super.init(frame: frame)
         
@@ -83,7 +83,7 @@ class ParallaxHeaderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Private Methods
+    //MARK: - Private Methods -
     private func addDefaultUIElements() {
         self.addSubview(scrollView)
         scrollView.addSubview(imageView)
@@ -139,7 +139,7 @@ class ParallaxHeaderView: UIView {
         return image
     }
     
-    //MARK: - Public Methods
+    //MARK: - Public Methods -
     func refreshBlurViewForNewImage() {
         var screenShot = screenShotOfView()
         screenShot = screenShot.applyBlurWithRadius(5, tintColor: UIColor(white: 0.6, alpha: 0.2), saturationDeltaFactor: 1.0)!

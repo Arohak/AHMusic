@@ -6,10 +6,10 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-
+//MARK: - MiniPlayerView -
 class MiniPlayerView: UIView {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     lazy var bgView: UIView = {
         let view = UIView.newAutoLayoutView()
         view.backgroundColor = BLACK
@@ -24,7 +24,7 @@ class MiniPlayerView: UIView {
         return view
     }()
 
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -35,7 +35,7 @@ class MiniPlayerView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(bgView)
         addSubview(player)
@@ -43,7 +43,7 @@ class MiniPlayerView: UIView {
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         bgView.autoPinEdgesToSuperviewEdges()
         
@@ -54,9 +54,10 @@ class MiniPlayerView: UIView {
     }
 }
 
+//MARK: - PlayerView -
 class PlayerView: UIView {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     lazy var bgImageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         view.backgroundColor = BLACK
@@ -101,7 +102,7 @@ class PlayerView: UIView {
     }()
 
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
 
@@ -112,7 +113,7 @@ class PlayerView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     private func addAllUIElements() {
         addSubview(bgImageView)
         addSubview(slider)
@@ -124,7 +125,7 @@ class PlayerView: UIView {
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         bgImageView.autoPinEdgesToSuperviewEdges()
         

@@ -6,12 +6,12 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class StationViewController
+//MARK: - class StationViewController -
 class StationViewController: UIViewController {
 
     var output: StationViewOutput!
 
-    // MARK: Life cycle
+    // MARK: - Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +19,7 @@ class StationViewController: UIViewController {
     }
 }
 
-//MARK: - extension for StationViewInput
+//MARK: - extension for StationViewInput -
 extension StationViewController: StationViewInput {
     
     func setupInitialState() {

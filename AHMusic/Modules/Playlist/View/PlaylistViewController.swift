@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class PlaylistViewController
+//MARK: - class PlaylistViewController -
 class PlaylistViewController: UIViewController {
 
     var output: PlaylistViewOutput!
@@ -15,7 +15,7 @@ class PlaylistViewController: UIViewController {
     var items = Array<Playlist>()
     let cellIdentifire = "playlistCell"
     
-    // MARK: Life cycle
+    // MARK: - Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +23,7 @@ class PlaylistViewController: UIViewController {
         output.viewIsReady()
     }
     
-    // MARK: - Private Method
+    // MARK: - Private Method -
     private func baseConfig() {
         self.view = playlistView
         
@@ -33,7 +33,7 @@ class PlaylistViewController: UIViewController {
     }
 }
 
-//MARK: - extension for PlaylistViewInput
+//MARK: - extension for PlaylistViewInput -
 extension PlaylistViewController: PlaylistViewInput {
     
     func setupInitialState(items: Array<Playlist>) {
@@ -43,7 +43,7 @@ extension PlaylistViewController: PlaylistViewInput {
     }
 }
 
-//MARK: - extension for UITableView
+//MARK: - extension for UITableView -
 extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -73,7 +73,7 @@ extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
         output.openDetail(playlist)
     }
     
-    // MARK: - Actions
+    // MARK: - Actions -
     func openLink(sender: AHButton) {
         let playlist = items[sender.indexPath.row]
         output.openLink(playlist)

@@ -5,7 +5,7 @@
 //  Created by Ara Hakobyan on 06/05/2016.
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 
-//MARK: - class TabViewController
+//MARK: - class TabViewController -
 class TabViewController: UIViewController  {
     
     var tabNavigation: CarbonTabSwipeNavigation!
@@ -14,7 +14,7 @@ class TabViewController: UIViewController  {
     var selectedPresenter: BasePresenter!
     var keyword: String!
 
-    //MARK: - Initilize
+    //MARK: - Initilize -
     init() {
         super.init(nibName: nil, bundle:nil)
     }
@@ -29,14 +29,14 @@ class TabViewController: UIViewController  {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Life Cycle
+    //MARK: - Life Cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         
         baseConfig()
     }
 
-    //MARK: -  Private Methods
+    //MARK: -  Private Methods -
     private func baseConfig() {
         addPresenters()
 
@@ -79,7 +79,7 @@ class TabViewController: UIViewController  {
     }
 }
 
-//MARK: - extension for CarbonTabSwipeNavigationDelegate
+//MARK: - extension for CarbonTabSwipeNavigationDelegate -
 extension TabViewController: CarbonTabSwipeNavigationDelegate {
     
     func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAtIndex index: UInt) -> UIViewController {

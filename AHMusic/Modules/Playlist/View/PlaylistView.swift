@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - PlaylistView
+//MARK: - PlaylistView -
 class PlaylistView: UIView {
     
     lazy var tableView: UITableView = {
@@ -16,7 +16,7 @@ class PlaylistView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -27,23 +27,23 @@ class PlaylistView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(tableView)
 
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         tableView.autoPinEdgesToSuperviewEdges()
     }
 }
 
-//MARK: - PlaylistCell
+//MARK: - PlaylistCell -
 class PlaylistCell: UITableViewCell {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     var cellContentView = PlaylistCellContentView()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -66,10 +66,10 @@ class PlaylistCell: UITableViewCell {
     }
 }
 
-//MARK: - PlaylistCellContentView
+//MARK: - PlaylistCellContentView -
 class PlaylistCellContentView: UIView {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     lazy var imageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         view.layer.cornerRadius = PL_CELL_HEIGHT*0.95/2
@@ -106,7 +106,7 @@ class PlaylistCellContentView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -117,7 +117,7 @@ class PlaylistCellContentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(imageView)
         addSubview(titleLabel)
@@ -127,7 +127,7 @@ class PlaylistCellContentView: UIView {
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         imageView.autoPinEdgeToSuperviewEdge(.Right, withInset: PL_OFFSET)
         imageView.autoPinEdgeToSuperviewEdge(.Top, withInset: 2)

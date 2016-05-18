@@ -8,7 +8,7 @@
 
 class TDInfoView: UIView {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     lazy var bgImageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         view.backgroundColor = BLUE_LIGHT
@@ -52,7 +52,7 @@ class TDInfoView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -63,7 +63,7 @@ class TDInfoView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(bgImageView)
         addSubview(titleLabel)
@@ -75,7 +75,7 @@ class TDInfoView: UIView {
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         bgImageView.autoPinEdgesToSuperviewEdges()
         

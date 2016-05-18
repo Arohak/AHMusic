@@ -5,7 +5,7 @@
 //  Created by Ara Hakobyan on 06/05/2016.
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 
-//MARK: - class WebViewController
+//MARK: - class WebViewController -
 class WebViewController: UIViewController {
     
     var resourceName: String!
@@ -18,7 +18,7 @@ class WebViewController: UIViewController {
         return view
     }()
     
-    //MARK: - Initilize
+    //MARK: - Initilize -
     init() {
         super.init(nibName: nil, bundle:nil)
     }
@@ -34,7 +34,7 @@ class WebViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    //MARK: - Life Cycle
+    //MARK: - Life Cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,13 +46,13 @@ class WebViewController: UIViewController {
         browser.loadRequest(NSURLRequest(URL: url))
     }
     
-    //MARK: - Actions
+    //MARK: - Actions -
     func close() {
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
-//MARK: - extension for UIWebViewDelegate
+//MARK: - extension for UIWebViewDelegate -
 extension WebViewController: UIWebViewDelegate {
     
 }

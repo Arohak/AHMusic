@@ -10,4 +10,5 @@ protocol DetailViewOutput {
 
     func viewIsReady()
     func openLink(track: Track)
+    func playTrack(index: Int, tracks: Array<Track>)
 }
