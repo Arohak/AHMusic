@@ -12,21 +12,21 @@ class MiniPlayerViewController: UIViewController {
     var player: AHPlayer!
     
     var miniPlayerView = MiniPlayerView()
-    var sBlock: stopPlayer!
-    var cBlock: changeTrack!
+    var index: Int!
+    
+    var output: TrackViewInput!
 
     //MARK: - Initilize
     init() {
         super.init(nibName: nil, bundle:nil)
     }
 
-    convenience init(items: Array<Track>, sBlock: stopPlayer, cBlock: changeTrack) {
+    convenience init(index: Int, items: Array<Track>, output: TrackViewInput) {
         self.init()
         
+        self.index = index
         self.items = items
-        
-        self.sBlock = sBlock
-        self.cBlock = cBlock
+        self.output = output
 
         self.player = AHPlayer(items: self.items, playerOutput: self)
     }
@@ -40,11 +40,13 @@ class MiniPlayerViewController: UIViewController {
         super.viewDidLoad()
         
         baseConfig()
-        player.playPause()
+        player.playPauseAtIndex(index)
     }
     
     private func baseConfig() {
         self.view = miniPlayerView
+        
+        miniPlayerView.player.titleLabel.text = items[index].title
         
         miniPlayerView.player.slider.addTarget(self, action: #selector(MiniPlayerViewController.progressSliderValueChanged(_:)), forControlEvents: .ValueChanged)
         miniPlayerView.player.playPauseButton.addTarget(self, action: #selector(MiniPlayerViewController.playPauseAction), forControlEvents: .TouchUpInside)
@@ -61,22 +63,29 @@ class MiniPlayerViewController: UIViewController {
     
     func prevAction() {
         player.prev()
+        
+        index = player.jukebox.playIndex
+        output.prevTrack(index)
     }
     
     func nextAction() {
         player.next()
-        self.cBlock(track: self.items[self.player.jukebox.playIndex])
+        
+        index = player.jukebox.playIndex
+        output.nextTrack(index)
     }
     
     func playPauseAction() {
         player.playPause()
-        self.cBlock(track: self.items[self.player.jukebox.playIndex])
+        
+        index = player.jukebox.playIndex
+        output.playPauseTrack(index)
     }
     
     func close() {
-        self.dismissViewControllerAnimated(true) { 
+        self.dismissViewControllerAnimated(true) {
+            self.output.stopPlayer(self.index)
             self.player.stop()
-            self.sBlock(track: self.items[self.player.jukebox.playIndex])
         }
     }
 }
@@ -90,6 +99,10 @@ extension MiniPlayerViewController: PlayerOutputProtocol {
     
     func didLoadItem(jukebox: Jukebox, item: JukeboxItem) {
         print("Jukebox did load: \(item.URL.lastPathComponent)")
+        
+        let index = player.jukebox.playIndex
+        if index != 0 { output.nextTrack(index) }
+        miniPlayerView.player.titleLabel.text = items[index].title
     }
     
     func playback(currentTime: Double, duration: Double) {

@@ -8,6 +8,6 @@
 
 protocol TrackViewOutput: BaseViewOutput, OpenDetailFromAlbumProtocol, OpenDetailFromArtistProtocol, OpenTrackDetailProtocol {
    
-    func playTrack(tracks: Array<Track>)
+    func playTrack(index: Int, tracks: Array<Track>)
     func openLink(track: Track)
 }

@@ -71,6 +71,19 @@ extension AHPlayer: PlayerActionProtocol {
         }
     }
     
+    func playPauseAtIndex(index: Int) {
+        switch self.jukebox.state {
+        case .Ready :
+            self.jukebox.playAtIndex(index)
+        case .Playing :
+            self.jukebox.pause()
+        case .Paused :
+            self.jukebox.play()
+        default:
+            self.jukebox.stop()
+        }
+    }
+    
     func prev() {
         if self.jukebox.currentItem?.currentTime > 5 || self.jukebox.playIndex == 0 {
             self.jukebox.replayCurrentItem()

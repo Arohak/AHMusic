@@ -9,6 +9,8 @@
 protocol TrackViewInput: class {
 
     func setupInitialState(items: Array<Track>)
-    func stopPlayer(track: Track)
-    func changeTrack(track: Track)
+    func stopPlayer(index: Int)
+    func playPauseTrack(index: Int)
+    func nextTrack(index: Int)
+    func prevTrack(index: Int)
 }

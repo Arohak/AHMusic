@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class TrackViewController
+//MARK: - class TrackViewController -
 class TrackViewController: UIViewController {
 
     var output: TrackViewOutput!
@@ -15,7 +15,7 @@ class TrackViewController: UIViewController {
     var items = Array<Track>()
     let cellIdentifire = "trackCell"
 
-    // MARK: Life cycle
+    // MARK: - Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +23,7 @@ class TrackViewController: UIViewController {
         output.viewIsReady()
     }
     
-    // MARK: - Private Method
+    // MARK: - Private Method -
     private func baseConfig() {
         self.view = trackView
         
@@ -33,7 +33,7 @@ class TrackViewController: UIViewController {
     }
 }
 
-//MARK: - extension for TrackViewInput
+//MARK: - extension for TrackViewInput -
 extension TrackViewController: TrackViewInput {
     
     func setupInitialState(items: Array<Track>) {
@@ -42,18 +42,50 @@ extension TrackViewController: TrackViewInput {
         trackView.tableView.reloadData()
     }
     
-    func stopPlayer(track: Track) {
-//        let cell = trackView.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as! TrackCell
-//        cell.cellContentView.playButton.selected = false
+    func stopPlayer(index: Int) {
+        let indexPath = NSIndexPath(forRow: index, inSection: 0)
+        let cell = trackView.tableView.cellForRowAtIndexPath(indexPath) as! TrackCell
+        cell.cellContentView.playButton.selected = false
     }
     
-    func changeTrack(track: Track) {
-//        let cell = trackView.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0)) as! TrackCell
-//        cell.cellContentView.playButton.selected = !cell.cellContentView.playButton.selected
+    func playPauseTrack(index: Int) {
+        let indexPath = NSIndexPath(forRow: index, inSection: 0)
+        let cell = trackView.tableView.cellForRowAtIndexPath(indexPath) as! TrackCell
+        cell.cellContentView.playButton.selected = !cell.cellContentView.playButton.selected
+    }
+    
+    func nextTrack(index: Int) {
+        let indexPath = NSIndexPath(forRow: index - 1, inSection: 0)
+        let indexPathNext = NSIndexPath(forRow: index, inSection: 0)
+        
+        changeButtonState(indexPath, indexPathTwo: indexPathNext)
+    }
+    
+    func prevTrack(index: Int) {
+        let indexPath = NSIndexPath(forRow: index + 1, inSection: 0)
+        let indexPathPrev = NSIndexPath(forRow: index, inSection: 0)
+
+        changeButtonState(indexPath, indexPathTwo: indexPathPrev)
+    }
+    
+    // MARK: - Private Method -
+    private func changeButtonState(indexPathOne: NSIndexPath, indexPathTwo: NSIndexPath) {
+        let cellOne = trackView.tableView.cellForRowAtIndexPath(indexPathOne) as? TrackCell
+        let cellTwo = trackView.tableView.cellForRowAtIndexPath(indexPathTwo) as? TrackCell
+        if let _ = cellTwo {
+            cellOne!.cellContentView.playButton.selected = false
+            cellTwo!.cellContentView.playButton.selected = true
+        } else {
+            trackView.tableView.scrollToRowAtIndexPath(indexPathTwo, atScrollPosition: .Middle, animated: false)
+            let cOne = trackView.tableView.cellForRowAtIndexPath(indexPathOne) as! TrackCell
+            let cTwo = trackView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackCell
+            cOne.cellContentView.playButton.selected = false
+            cTwo.cellContentView.playButton.selected = true
+        }
     }
 }
 
-//MARK: - extension for UITableView
+//MARK: - extension for UITableView -
 extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,13 +124,10 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
         output.openTrackDetail(track, items: items)
     }
     
-    // MARK: - Actions
+    // MARK: - Actions -
     func playSound(sender: AHButton) {
-        let track = items[sender.indexPath.row]
-        
         sender.selected = !sender.selected
-        
-        output.playTrack(items)
+        output.playTrack(sender.indexPath.row, tracks: items)
     }
     
     func openLink(sender: AHButton) {

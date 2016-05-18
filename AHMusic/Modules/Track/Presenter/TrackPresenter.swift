@@ -13,9 +13,7 @@ class TrackPresenter: BasePresenter {
 
     var view: TrackViewInput!
     var interactor: TrackInteractorInput!
-    
-    var player: AVPlayer!
-    
+        
     //MARK: - Initilize
     override init(name: String) {
         super.init(name: name)
@@ -34,14 +32,8 @@ extension TrackPresenter: TrackViewOutput {
         interactor.searchTrack(keyword)
     }
     
-    func playTrack(tracks: Array<Track>) {
-        let vc = MiniPlayerViewController(items: tracks, sBlock:
-            { track in
-            self.view.stopPlayer(track)
-
-            }) { track in
-                self.view.changeTrack(track)
-        }
+    func playTrack(index: Int, tracks: Array<Track>) {
+        let vc = MiniPlayerViewController(index: index, items: tracks, output: view)
         
         vc.modalPresentationStyle = .OverCurrentContext
         vc.modalTransitionStyle = .CrossDissolve

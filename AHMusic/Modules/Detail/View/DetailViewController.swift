@@ -108,13 +108,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     // MARK: - Actions
     func playSound(sender: AHButton) {
         let track = items[sender.indexPath.row]
-        
-//        sender.selected = !sender.selected
-//        if sender.selected {
-//            output.playSound(track)
-//        } else {
-//            output.pauseSound()
-//        }
+
     }
     
     func openLink(sender: AHButton) {

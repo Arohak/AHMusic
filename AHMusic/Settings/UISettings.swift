@@ -63,8 +63,9 @@ let CLEAR                               = UIColor.clearColor()
 //MARK: - All Pages
 
 typealias blockUpdate                   = (city: String) -> Void
-typealias stopPlayer                    = (track: Track) -> Void
-typealias changeTrack                   = (track: Track) -> Void
+typealias stopPlayer                    = (index: Int) -> Void
+typealias nextTrack                     = (index: Int) -> Void
+typealias prevTrack                     = (index: Int) -> Void
 
 let FONT_NAVBAR                         = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 25 : 18)
 let TOP_INSET : CGFloat                 = DeviceType.IS_IPAD ? 35     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 35     : DeviceType.IS_IPHONE_6 ? 35   * IPHONE_6_SCALE : 35   * IPHONE_5_SCALE
