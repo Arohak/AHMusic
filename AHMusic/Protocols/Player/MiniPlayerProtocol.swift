@@ -12,4 +12,5 @@ protocol MiniPlayerProtocol {
     func playPauseTrack(index: Int)
     func nextTrack(index: Int)
     func prevTrack(index: Int)
+    func changeTrack(index: Int)
 }

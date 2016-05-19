@@ -32,10 +32,8 @@ extension TrackPresenter: TrackViewOutput {
     
     func playTrack(index: Int, tracks: Array<Track>) {
         let vc = MiniPlayerViewController(index: index, items: tracks, output: view)
-        
         vc.modalPresentationStyle = .OverCurrentContext
         vc.modalTransitionStyle = .CrossDissolve
-        
         rootVC.presentViewController(vc, animated: true, completion: nil)
     }
     

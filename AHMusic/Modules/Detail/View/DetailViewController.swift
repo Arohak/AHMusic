@@ -98,6 +98,21 @@ extension DetailViewController: DetailViewInput {
         changeButtonState(indexPath, indexPathTwo: indexPathPrev)
     }
     
+    func changeTrack(index: Int) {
+        switch index {
+        case 0:
+            prevTrack(index)
+        case items.count - 1:
+            nextTrack(index)
+        default:
+            let indexPath = NSIndexPath(forRow: index, inSection: 0)
+            let indexPathNext = NSIndexPath(forRow: index + 1, inSection: 0)
+            let indexPathPrev = NSIndexPath(forRow: index - 1, inSection: 0)
+            
+            changeButtonState(indexPath, indexPathNext: indexPathNext, indexPathPrev: indexPathPrev)
+        }
+    }
+    
     // MARK: - Private Method -
     private func changeButtonState(indexPathOne: NSIndexPath, indexPathTwo: NSIndexPath) {
         let cellOne = detailView.tableView.cellForRowAtIndexPath(indexPathOne) as? TrackShortCell
@@ -111,6 +126,34 @@ extension DetailViewController: DetailViewInput {
             let cTwo = detailView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackShortCell
             cOne.cellContentView.playButton.selected = false
             cTwo.cellContentView.playButton.selected = true
+        }
+    }
+    
+    private func changeButtonState(indexPath: NSIndexPath, indexPathNext: NSIndexPath, indexPathPrev: NSIndexPath) {
+        let cell = detailView.tableView.cellForRowAtIndexPath(indexPath) as? TrackShortCell
+        let cellNext = detailView.tableView.cellForRowAtIndexPath(indexPathNext) as? TrackShortCell
+        let cellPrev = detailView.tableView.cellForRowAtIndexPath(indexPathPrev) as? TrackShortCell
+        
+        if cellNext != nil && cellPrev != nil {
+            cell!.cellContentView.playButton.selected = true
+            cellNext!.cellContentView.playButton.selected = false
+            cellPrev!.cellContentView.playButton.selected = false
+        } else if cellNext != nil {
+            detailView.tableView.scrollToRowAtIndexPath(indexPathNext, atScrollPosition: .Middle, animated: false)
+            let c = detailView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
+            let cNext = detailView.tableView.cellForRowAtIndexPath(indexPathNext) as! TrackShortCell
+            let cPrev = detailView.tableView.cellForRowAtIndexPath(indexPathPrev) as! TrackShortCell
+            c.cellContentView.playButton.selected = true
+            cNext.cellContentView.playButton.selected = false
+            cPrev.cellContentView.playButton.selected = false
+        } else if cellPrev != nil {
+            detailView.tableView.scrollToRowAtIndexPath(indexPathPrev, atScrollPosition: .Middle, animated: false)
+            let c = detailView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
+            let cNext = detailView.tableView.cellForRowAtIndexPath(indexPathNext) as! TrackShortCell
+            let cPrev = detailView.tableView.cellForRowAtIndexPath(indexPathPrev) as! TrackShortCell
+            c.cellContentView.playButton.selected = true
+            cNext.cellContentView.playButton.selected = false
+            cPrev.cellContentView.playButton.selected = false
         }
     }
 }

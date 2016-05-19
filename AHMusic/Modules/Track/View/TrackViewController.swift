@@ -68,6 +68,21 @@ extension TrackViewController: TrackViewInput {
         changeButtonState(indexPath, indexPathTwo: indexPathPrev)
     }
     
+    func changeTrack(index: Int) {
+        switch index {
+        case 0:
+            prevTrack(index)
+        case items.count - 1:
+            nextTrack(index)
+        default:
+            let indexPath = NSIndexPath(forRow: index, inSection: 0)
+            let indexPathNext = NSIndexPath(forRow: index + 1, inSection: 0)
+            let indexPathPrev = NSIndexPath(forRow: index - 1, inSection: 0)
+            
+            changeButtonState(indexPath, indexPathNext: indexPathNext, indexPathPrev: indexPathPrev)
+        }
+    }
+    
     // MARK: - Private Method -
     private func changeButtonState(indexPathOne: NSIndexPath, indexPathTwo: NSIndexPath) {
         let cellOne = trackView.tableView.cellForRowAtIndexPath(indexPathOne) as? TrackCell
@@ -81,6 +96,34 @@ extension TrackViewController: TrackViewInput {
             let cTwo = trackView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackCell
             cOne.cellContentView.playButton.selected = false
             cTwo.cellContentView.playButton.selected = true
+        }
+    }
+    
+    private func changeButtonState(indexPath: NSIndexPath, indexPathNext: NSIndexPath, indexPathPrev: NSIndexPath) {
+        let cell = trackView.tableView.cellForRowAtIndexPath(indexPath) as? TrackCell
+        let cellNext = trackView.tableView.cellForRowAtIndexPath(indexPathNext) as? TrackCell
+        let cellPrev = trackView.tableView.cellForRowAtIndexPath(indexPathPrev) as? TrackCell
+        
+        if cellNext != nil && cellPrev != nil {
+            cell!.cellContentView.playButton.selected = true
+            cellNext!.cellContentView.playButton.selected = false
+            cellPrev!.cellContentView.playButton.selected = false
+        } else if cellNext != nil {
+            trackView.tableView.scrollToRowAtIndexPath(indexPathNext, atScrollPosition: .Middle, animated: false)
+            let c = trackView.tableView.cellForRowAtIndexPath(indexPath) as! TrackCell
+            let cNext = trackView.tableView.cellForRowAtIndexPath(indexPathNext) as! TrackCell
+            let cPrev = trackView.tableView.cellForRowAtIndexPath(indexPathPrev) as! TrackCell
+            c.cellContentView.playButton.selected = true
+            cNext.cellContentView.playButton.selected = false
+            cPrev.cellContentView.playButton.selected = false
+        } else if cellPrev != nil {
+            trackView.tableView.scrollToRowAtIndexPath(indexPathPrev, atScrollPosition: .Middle, animated: false)
+            let c = trackView.tableView.cellForRowAtIndexPath(indexPath) as! TrackCell
+            let cNext = trackView.tableView.cellForRowAtIndexPath(indexPathNext) as! TrackCell
+            let cPrev = trackView.tableView.cellForRowAtIndexPath(indexPathPrev) as! TrackCell
+            c.cellContentView.playButton.selected = true
+            cNext.cellContentView.playButton.selected = false
+            cPrev.cellContentView.playButton.selected = false
         }
     }
 }

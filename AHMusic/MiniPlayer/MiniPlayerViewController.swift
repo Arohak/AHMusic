@@ -65,16 +65,10 @@ class MiniPlayerViewController: UIViewController {
     
     func prevAction() {
         player.prev()
-        
-        index = player.jukebox.playIndex
-        output.prevTrack(index)
     }
     
     func nextAction() {
         player.next()
-        
-        index = player.jukebox.playIndex
-        output.nextTrack(index)
     }
     
     func playPauseAction() {
@@ -100,10 +94,10 @@ extension MiniPlayerViewController: PlayerOutputProtocol {
     }
     
     func didLoadItem(jukebox: Jukebox, item: JukeboxItem) {
-        print("Jukebox did load: \(item.URL.lastPathComponent)")
-        
-        let index = player.jukebox.playIndex
-        if index != 0 { output.nextTrack(index) }
+//        print("Jukebox did load: \(item.URL.lastPathComponent)")
+
+        index = player.jukebox.playIndex
+        output.changeTrack(index)
         
         miniPlayerView.player.titleLabel.text = items[index].title
     }
@@ -127,6 +121,6 @@ extension MiniPlayerViewController: PlayerOutputProtocol {
             miniPlayerView.player.playPauseButton.setImage(UIImage(named: jukebox.state == .Paused ? "playBtn" : "pauseBtn"), forState: .Normal)
         }
         
-        print("Jukebox state changed to \(jukebox.state)")
+//        print("Jukebox state changed to \(jukebox.state)")
     }
 }
