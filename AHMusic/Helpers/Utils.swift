@@ -16,7 +16,11 @@ struct Utils {
         let date = dateFormatter.dateFromString(dateString as String)
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        return dateFormatter.stringFromDate(date!)
+        if let date = date {
+            return dateFormatter.stringFromDate(date)
+        } else {
+            return ""
+        }
     }
     
     static func getWeekString(dateString: String) -> String {

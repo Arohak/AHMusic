@@ -69,12 +69,11 @@ extension TrackViewController: TrackViewInput {
     }
     
     func changeTrack(index: Int) {
-        switch index {
-        case 0:
+        if index == 0 {
             prevTrack(index)
-        case items.count - 1:
+        } else if index == items.count - 1 {
             nextTrack(index)
-        default:
+        } else {
             let indexPath = NSIndexPath(forRow: index, inSection: 0)
             let indexPathNext = NSIndexPath(forRow: index + 1, inSection: 0)
             let indexPathPrev = NSIndexPath(forRow: index - 1, inSection: 0)
@@ -87,15 +86,17 @@ extension TrackViewController: TrackViewInput {
     private func changeButtonState(indexPathOne: NSIndexPath, indexPathTwo: NSIndexPath) {
         let cellOne = trackView.tableView.cellForRowAtIndexPath(indexPathOne) as? TrackCell
         let cellTwo = trackView.tableView.cellForRowAtIndexPath(indexPathTwo) as? TrackCell
-        if let _ = cellTwo {
-            cellOne!.cellContentView.playButton.selected = false
-            cellTwo!.cellContentView.playButton.selected = true
-        } else {
-            trackView.tableView.scrollToRowAtIndexPath(indexPathTwo, atScrollPosition: .Middle, animated: false)
-            let cOne = trackView.tableView.cellForRowAtIndexPath(indexPathOne) as! TrackCell
-            let cTwo = trackView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackCell
-            cOne.cellContentView.playButton.selected = false
-            cTwo.cellContentView.playButton.selected = true
+        if items.count > 1 {
+            if let _ = cellTwo {
+                cellOne!.cellContentView.playButton.selected = false
+                cellTwo!.cellContentView.playButton.selected = true
+            } else {
+                trackView.tableView.scrollToRowAtIndexPath(indexPathTwo, atScrollPosition: .Middle, animated: false)
+                let cOne = trackView.tableView.cellForRowAtIndexPath(indexPathOne) as! TrackCell
+                let cTwo = trackView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackCell
+                cOne.cellContentView.playButton.selected = false
+                cTwo.cellContentView.playButton.selected = true
+            }
         }
     }
     

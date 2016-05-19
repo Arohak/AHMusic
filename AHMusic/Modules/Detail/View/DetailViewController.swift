@@ -99,12 +99,11 @@ extension DetailViewController: DetailViewInput {
     }
     
     func changeTrack(index: Int) {
-        switch index {
-        case 0:
+        if index == 0 {
             prevTrack(index)
-        case items.count - 1:
+        } else if index == items.count - 1 {
             nextTrack(index)
-        default:
+        } else {
             let indexPath = NSIndexPath(forRow: index, inSection: 0)
             let indexPathNext = NSIndexPath(forRow: index + 1, inSection: 0)
             let indexPathPrev = NSIndexPath(forRow: index - 1, inSection: 0)
@@ -117,15 +116,17 @@ extension DetailViewController: DetailViewInput {
     private func changeButtonState(indexPathOne: NSIndexPath, indexPathTwo: NSIndexPath) {
         let cellOne = detailView.tableView.cellForRowAtIndexPath(indexPathOne) as? TrackShortCell
         let cellTwo = detailView.tableView.cellForRowAtIndexPath(indexPathTwo) as? TrackShortCell
-        if let _ = cellTwo {
-            cellOne!.cellContentView.playButton.selected = false
-            cellTwo!.cellContentView.playButton.selected = true
-        } else {
-            detailView.tableView.scrollToRowAtIndexPath(indexPathTwo, atScrollPosition: .Middle, animated: false)
-            let cOne = detailView.tableView.cellForRowAtIndexPath(indexPathOne) as! TrackShortCell
-            let cTwo = detailView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackShortCell
-            cOne.cellContentView.playButton.selected = false
-            cTwo.cellContentView.playButton.selected = true
+        if items.count > 1 {
+            if let _ = cellTwo {
+                cellOne!.cellContentView.playButton.selected = false
+                cellTwo!.cellContentView.playButton.selected = true
+            } else {
+                detailView.tableView.scrollToRowAtIndexPath(indexPathTwo, atScrollPosition: .Middle, animated: false)
+                let cOne = detailView.tableView.cellForRowAtIndexPath(indexPathOne) as! TrackShortCell
+                let cTwo = detailView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackShortCell
+                cOne.cellContentView.playButton.selected = false
+                cTwo.cellContentView.playButton.selected = true
+            }
         }
     }
     

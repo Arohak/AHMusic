@@ -8,4 +8,5 @@
 
 protocol DetailInteractorOutput: class {
 
+    func getTrackResultIsReady(track: Track, tracks: Array<Track>)
 }

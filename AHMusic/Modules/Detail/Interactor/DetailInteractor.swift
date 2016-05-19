@@ -15,4 +15,12 @@ class DetailInteractor {
 //MARK: - extension for DetailInteractorInput -
 extension DetailInteractor: DetailInteractorInput {
     
+    func getTrack(id: String, tracks: Array<Track>) {
+        _ = apiHelper.rx_GetTrack(id)
+            .subscribeNext({ result in
+                let track = Track(data: result)
+                
+                self.output.getTrackResultIsReady(track, tracks: tracks)
+            })
+    }
 }

@@ -136,9 +136,9 @@ class TrackShortCellContentView: UIView {
     
     //MARK: - Private Methods -
     private func addAllUIElements() {
-        addSubview(playButton)
         addSubview(titleLabel)
         addSubview(linkButton)
+        addSubview(playButton)
         
         setConstraints()
     }
@@ -155,6 +155,5 @@ class TrackShortCellContentView: UIView {
         
         linkButton.autoPinEdgeToSuperviewEdge(.Bottom)
         linkButton.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
-        linkButton.autoPinEdge(.Right, toEdge: .Left, ofView: playButton, withOffset: -TR_OFFSET)
     }
 }

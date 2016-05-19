@@ -31,7 +31,7 @@ extension DetailPresenter: DetailViewOutput {
     }
     
     func openTrackDetail(track: Track, items: Array<Track>) {
-        
+        interactor.getTrack("\(track.id)", tracks: items)
     }
     
     func playTrack(index: Int, tracks: Array<Track>) {        
@@ -45,4 +45,9 @@ extension DetailPresenter: DetailViewOutput {
 //MARK: - extension for DetailInteractorOutput -
 extension DetailPresenter: DetailInteractorOutput {
  
+    func getTrackResultIsReady(track: Track, tracks: Array<Track>) {
+        let vc = TrackDetailViewController(title: "Track", items: tracks, track: track)
+        _ = TrackDetailModuleInitializer(vc: vc)
+        rootVC.pushViewController(vc, animated: true)
+    }
 }
