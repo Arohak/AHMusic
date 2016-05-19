@@ -80,7 +80,15 @@ extension TrackDetailPresenter: TrackDetailViewOutput {
     }
     
     func openActionSheet(tracks: Array<Track>) {
+        var temp = Array<String>()
+        for item in tracks { temp.append(item.title) }
+        let vc = ActionSheetPickerViewController(values: temp) { value in
+            let index = tracks.indexOf {$0.title == value }
+            self.player.jukebox.playAtIndex(index!)
+        }
+        vc.pickerView.selectRow(player.jukebox.playIndex, inComponent: 0, animated: true)
         
+        rootVC.presentViewController(vc, animated: true, completion: nil)
     }
 }
 
