@@ -30,6 +30,12 @@ class PlaylistViewController: UIViewController {
         playlistView.tableView.dataSource = self
         playlistView.tableView.delegate = self
         playlistView.tableView.registerClass(PlaylistCell.self, forCellReuseIdentifier: cellIdentifire)
+        playlistView.refresh.addTarget(self, action: #selector(PlaylistViewController.refresh), forControlEvents: .ValueChanged)
+    }
+    
+    // MARK: - Actions -
+    func refresh() {
+        output.viewIsReady()
     }
 }
 
@@ -39,6 +45,8 @@ extension PlaylistViewController: PlaylistViewInput {
     func setupInitialState(items: Array<Playlist>) {
         self.items = items
         
+        playlistView.refresh.endRefreshing()
+
         playlistView.tableView.reloadData()
     }
 }

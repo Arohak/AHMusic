@@ -55,6 +55,7 @@
 		52A420341CE50F7A00109005 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A420331CE50F7A00109005 /* WebViewController.swift */; };
 		52C848961CEE4DB60051BF2F /* AHPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C848951CEE4DB60051BF2F /* AHPickerView.swift */; };
 		52C848981CEE4EA80051BF2F /* ActionSheetPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C848971CEE4EA80051BF2F /* ActionSheetPickerViewController.swift */; };
+		52C8489A1CEE5F9E0051BF2F /* BaseViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C848991CEE5F9E0051BF2F /* BaseViewInput.swift */; };
 		5699A88D911CBA84F16EBBD8 /* LeftMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168DCB078DD75643B2F74A76 /* LeftMenuPresenter.swift */; };
 		5A693EF500798E76DAE3911E /* PlaylistConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCB8ECF0B7D95A3B409925B /* PlaylistConfigurator.swift */; };
 		5B0391A1627752D0BB4674F6 /* TrackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B86ADB3B298467E44A32A8 /* TrackViewController.swift */; };
@@ -220,6 +221,7 @@
 		52A420331CE50F7A00109005 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		52C848951CEE4DB60051BF2F /* AHPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHPickerView.swift; sourceTree = "<group>"; };
 		52C848971CEE4EA80051BF2F /* ActionSheetPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionSheetPickerViewController.swift; sourceTree = "<group>"; };
+		52C848991CEE5F9E0051BF2F /* BaseViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewInput.swift; sourceTree = "<group>"; };
 		583099A3F8D57969AD0F26C2 /* TrackInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TrackInteractorInput.swift; sourceTree = "<group>"; };
 		5BD51CB1FA52900F2D029826 /* ArtistViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		5DD1C533E468EA59D9136D3C /* LeftMenuInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuInitializer.swift; sourceTree = "<group>"; };
@@ -981,6 +983,7 @@
 			isa = PBXGroup;
 			children = (
 				A155350D1CEDA37D004DAE89 /* BaseViewOutput.swift */,
+				52C848991CEE5F9E0051BF2F /* BaseViewInput.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -1509,6 +1512,7 @@
 				A15534E21CEC98B3004DAE89 /* MiniPlayerViewController.swift in Sources */,
 				5288FEE71CE71720009A58B6 /* ParallaxHeaderView.swift in Sources */,
 				0003C00B2EDF5B1CE7DA5A4D /* AlbumViewInput.swift in Sources */,
+				52C8489A1CEE5F9E0051BF2F /* BaseViewInput.swift in Sources */,
 				A15535091CEDA1DF004DAE89 /* RemoteControlReceivedProtocol.swift in Sources */,
 				DA6FFF8788269FED27D642F3 /* AlbumViewOutput.swift in Sources */,
 				E6A052351A0100271A04E944 /* AlbumViewController.swift in Sources */,

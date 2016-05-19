@@ -30,6 +30,10 @@ extension ArtistPresenter: ArtistViewOutput {
         interactor.searchArtist(keyword)
     }
     
+    func pullToRefresh() {
+        interactor.searchArtist(keyword)
+    }
+    
     func openDetail(artist: Artist) {
         interactor.getArtist("\(artist.id)")
     }

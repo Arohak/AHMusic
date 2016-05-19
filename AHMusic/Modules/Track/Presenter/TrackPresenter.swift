@@ -30,6 +30,10 @@ extension TrackPresenter: TrackViewOutput {
         interactor.searchTrack(keyword)
     }
     
+    func pullToRefresh() {
+        interactor.searchTrack(keyword)
+    }
+    
     func playTrack(index: Int, tracks: Array<Track>) {
         let vc = MiniPlayerViewController(index: index, items: tracks, output: view)
         vc.modalPresentationStyle = .OverCurrentContext

@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol ArtistViewInput: class {
+protocol ArtistViewInput: BaseViewInput {
 
     func setupInitialState(items: Array<Artist>)
 }

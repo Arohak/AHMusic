@@ -16,6 +16,13 @@ class ArtistView: UIView {
         return view
     }()
     
+    lazy var refresh: CarbonSwipeRefresh = {
+        let view = CarbonSwipeRefresh(scrollView: self.collection)
+        view.colors = RCOLORS
+        
+        return view
+    }()
+    
     //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
@@ -30,6 +37,7 @@ class ArtistView: UIView {
     //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(collection)
+        addSubview(refresh)
 
         setConstraints()
     }
@@ -37,6 +45,7 @@ class ArtistView: UIView {
     //MARK: - Constraints -
     func setConstraints() {
         collection.autoPinEdgesToSuperviewEdges()
+        refresh.setMarginTop(0)
     }
 }
 

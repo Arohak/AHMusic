@@ -30,6 +30,12 @@ class TrackViewController: UIViewController {
         trackView.tableView.dataSource = self
         trackView.tableView.delegate = self
         trackView.tableView.registerClass(TrackCell.self, forCellReuseIdentifier: cellIdentifire)
+        trackView.refresh.addTarget(self, action: #selector(TrackViewController.refresh), forControlEvents: .ValueChanged)
+    }
+    
+    // MARK: - Actions -
+    func refresh() {
+        output.viewIsReady()
     }
 }
 
@@ -39,6 +45,8 @@ extension TrackViewController: TrackViewInput {
     func setupInitialState(items: Array<Track>) {
         self.items = items
         
+        trackView.refresh.endRefreshing()
+
         trackView.tableView.reloadData()
     }
     

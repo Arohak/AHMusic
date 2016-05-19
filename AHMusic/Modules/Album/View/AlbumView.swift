@@ -16,6 +16,13 @@ class AlbumView: UIView {
         return view
     }()
     
+    lazy var refresh: CarbonSwipeRefresh = {
+        let view = CarbonSwipeRefresh(scrollView: self.tableView)
+        view.colors = RCOLORS
+        
+        return view
+    }()
+    
     //MARK: - Initialize
     init() {
         super.init(frame: CGRectZero)
@@ -30,6 +37,7 @@ class AlbumView: UIView {
     //MARK: - Private Methods -
     private func addAllUIElements() {
         addSubview(tableView)
+        addSubview(refresh)
 
         setConstraints()
     }
@@ -37,6 +45,7 @@ class AlbumView: UIView {
     //MARK: - Constraints -
     func setConstraints() {
         tableView.autoPinEdgesToSuperviewEdges()
+        refresh.setMarginTop(0)
     }
 }
 

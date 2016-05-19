@@ -30,6 +30,12 @@ class AlbumViewController: UIViewController {
         albumView.tableView.dataSource = self
         albumView.tableView.delegate = self
         albumView.tableView.registerClass(AlbumCell.self, forCellReuseIdentifier: cellIdentifire)
+        albumView.refresh.addTarget(self, action: #selector(AlbumViewController.refresh), forControlEvents: .ValueChanged)
+    }
+    
+    // MARK: - Actions -
+    func refresh() {
+        output.viewIsReady()
     }
 }
 
@@ -39,6 +45,8 @@ extension AlbumViewController: AlbumViewInput {
     func setupInitialState(items: Array<Album>) {
         self.items = items
         
+        albumView.refresh.endRefreshing()
+
         albumView.tableView.reloadData()
     }
 }
@@ -73,7 +81,7 @@ extension AlbumViewController: UITableViewDataSource, UITableViewDelegate {
         output.openDetail(album)
     }
     
-    // MARK: - Actions
+    // MARK: - Actions -
     func openLink(sender: AHButton) {
         let album = items[sender.indexPath.row]
         output.openLink(album)

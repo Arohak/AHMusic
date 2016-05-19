@@ -59,6 +59,7 @@ let BLACK                               = UIColor.blackColor()
 let WHITE                               = UIColor.whiteColor()
 let GRAY                                = UIColor.grayColor()
 let CLEAR                               = UIColor.clearColor()
+let RCOLORS                             = [UIColor.blueColor(), UIColor.redColor(), UIColor.orangeColor(), UIColor.greenColor()]
 
 //MARK: - All Pages
 

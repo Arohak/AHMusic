@@ -30,6 +30,12 @@ class ArtistViewController: UIViewController {
         artistView.collection.dataSource = self
         artistView.collection.delegate = self
         artistView.collection.registerClass(ArtistCell.self, forCellWithReuseIdentifier: collectionCellIdentifire)
+        artistView.refresh.addTarget(self, action: #selector(ArtistViewController.refresh), forControlEvents: .ValueChanged)
+    }
+    
+    // MARK: - Actions -
+    func refresh() {
+        output.viewIsReady()
     }
 }
 
@@ -39,7 +45,12 @@ extension ArtistViewController: ArtistViewInput {
     func setupInitialState(items: Array<Artist>) {
         self.items = items
         
+        artistView.refresh.endRefreshing()
+
         artistView.collection.reloadData()
+    }
+    
+    func pullToRefreshReady() {
     }
 }
 

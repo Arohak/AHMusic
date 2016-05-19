@@ -30,6 +30,10 @@ extension AlbumPresenter: AlbumViewOutput {
         interactor.searchAlbum(keyword)
     }
     
+    func pullToRefresh() {
+        interactor.searchAlbum(keyword)
+    }
+    
     func openLink(album: Album) {
         let vc = WebViewController(resourceName: album.title, url: NSURL(string: album.link)!)
         rootVC.presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
