@@ -17,6 +17,7 @@ target 'AHMusic' do
     pod 'SlideMenuControllerSwift'
     pod 'SwiftGifOrigin'
     pod 'Jukebox'
+    pod 'ALThreeCircleSpinner'
     
 end
 

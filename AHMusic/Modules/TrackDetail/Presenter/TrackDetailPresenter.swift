@@ -78,6 +78,10 @@ extension TrackDetailPresenter: TrackDetailViewOutput {
     func stop() {
        player.stop()
     }
+    
+    func openActionSheet(tracks: Array<Track>) {
+        
+    }
 }
 
 //MARK: - extension for TrackDetailInteractorOutput -

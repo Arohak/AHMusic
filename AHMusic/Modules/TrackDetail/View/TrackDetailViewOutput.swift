@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol TrackDetailViewOutput: PlayerActionProtocol, RemoteControlReceivedProtocol {
+protocol TrackDetailViewOutput: PlayerActionProtocol, RemoteControlReceivedProtocol, OpenActionSheetProtocol {
 
     func viewIsReady(items: Array<Track>)
 }

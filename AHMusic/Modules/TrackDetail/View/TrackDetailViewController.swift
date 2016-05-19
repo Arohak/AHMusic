@@ -71,6 +71,7 @@ class TrackDetailViewController: UIViewController {
         trackDetailView.actionView.prevButton.addTarget(self, action: #selector(TrackDetailViewController.prevAction), forControlEvents: .TouchUpInside)
         trackDetailView.actionView.nextButton.addTarget(self, action: #selector(TrackDetailViewController.nextAction), forControlEvents: .TouchUpInside)
         trackDetailView.actionView.replayButton.addTarget(self, action: #selector(TrackDetailViewController.replayAction), forControlEvents: .TouchUpInside)
+        trackDetailView.actionView.trackListButton.addTarget(self, action: #selector(TrackDetailViewController.openActionSheet), forControlEvents: .TouchUpInside)
     }
     
     private func playTrackInStart() {
@@ -109,6 +110,10 @@ class TrackDetailViewController: UIViewController {
     func stopAction() {
         output.stop()
     }
+    
+    func openActionSheet() {
+        output.openActionSheet(tracks)
+    }
 }
 
 //MARK: - extension for TrackDetailViewInput -
@@ -119,7 +124,9 @@ extension TrackDetailViewController: TrackDetailViewInput {
     }
     
     func didLoadItem(jukebox: Jukebox, item: JukeboxItem) {
-        print("Jukebox did load: \(item.URL.lastPathComponent)")
+//        print("Jukebox did load: \(item.URL.lastPathComponent)")
+        
+        updateUIFromChangeTrack(tracks[jukebox.playIndex])
     }
     
     func playback(currentTime: Double, duration: Double) {
@@ -159,5 +166,13 @@ extension TrackDetailViewController: TrackDetailViewInput {
         trackDetailView.actionView.durationLabel.text = "00:00"
         trackDetailView.actionView.currentTimeLabel.text = "00:00"
         trackDetailView.actionView.slider.value = 0
+    }
+    
+    private func updateUIFromChangeTrack(track: Track) {
+        if !track.artist.pictureBig.isEmpty {
+            trackDetailView.headerView.imageView.kf_setImageWithURL(NSURL(string: track.artist.pictureBig)!, placeholderImage: Image(named: "img_placeholder"))
+        }
+        trackDetailView.infoView.titleLabel.text = track.title
+        trackDetailView.infoView.dateLabel.text = track.releaseDate
     }
 }

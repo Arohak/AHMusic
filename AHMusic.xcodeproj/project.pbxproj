@@ -102,6 +102,7 @@
 		A155350A1CEDA1DF004DAE89 /* GetTrackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15534FF1CEDA1DF004DAE89 /* GetTrackProtocol.swift */; };
 		A155350B1CEDA1DF004DAE89 /* OpenTrackDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15535011CEDA1DF004DAE89 /* OpenTrackDetailProtocol.swift */; };
 		A155350E1CEDA37D004DAE89 /* BaseViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A155350D1CEDA37D004DAE89 /* BaseViewOutput.swift */; };
+		A15535111CEDFC01004DAE89 /* OpenActionSheetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15535101CEDFC01004DAE89 /* OpenActionSheetProtocol.swift */; };
 		A16412B41CE35242005FD643 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16412B01CE35242005FD643 /* Album.swift */; };
 		A16412B51CE35242005FD643 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16412B11CE35242005FD643 /* Artist.swift */; };
 		A16412B71CE35242005FD643 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16412B31CE35242005FD643 /* Track.swift */; };
@@ -278,6 +279,7 @@
 		A15534FF1CEDA1DF004DAE89 /* GetTrackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTrackProtocol.swift; sourceTree = "<group>"; };
 		A15535011CEDA1DF004DAE89 /* OpenTrackDetailProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTrackDetailProtocol.swift; sourceTree = "<group>"; };
 		A155350D1CEDA37D004DAE89 /* BaseViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewOutput.swift; sourceTree = "<group>"; };
+		A15535101CEDFC01004DAE89 /* OpenActionSheetProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenActionSheetProtocol.swift; sourceTree = "<group>"; };
 		A16412B01CE35242005FD643 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		A16412B11CE35242005FD643 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		A16412B31CE35242005FD643 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
@@ -904,6 +906,7 @@
 				A15534F61CEDA1DF004DAE89 /* Detail */,
 				A15535001CEDA1DF004DAE89 /* TrackDetail */,
 				A15534F91CEDA1DF004DAE89 /* Player */,
+				A155350F1CEDFC01004DAE89 /* ActionSheet */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -966,6 +969,14 @@
 				A155350D1CEDA37D004DAE89 /* BaseViewOutput.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		A155350F1CEDFC01004DAE89 /* ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				A15535101CEDFC01004DAE89 /* OpenActionSheetProtocol.swift */,
+			);
+			path = ActionSheet;
 			sourceTree = "<group>";
 		};
 		A16412BA1CE47E14005FD643 /* views */ = {
@@ -1514,6 +1525,7 @@
 				A15534DF1CEC9299004DAE89 /* AHPlayer.swift in Sources */,
 				07B721EA47B1BCB5BED5AD41 /* StationViewController.swift in Sources */,
 				52A420341CE50F7A00109005 /* WebViewController.swift in Sources */,
+				A15535111CEDFC01004DAE89 /* OpenActionSheetProtocol.swift in Sources */,
 				A15535021CEDA1DF004DAE89 /* GetAlbumProtocol.swift in Sources */,
 				A16412C21CE5CA68005FD643 /* AlbumView.swift in Sources */,
 				942A31E1857D8A5145A79DB4 /* StationModuleInput.swift in Sources */,

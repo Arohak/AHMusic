@@ -136,7 +136,8 @@ let TD_INSET : CGFloat                  = DeviceType.IS_IPAD ? 10     * IPAD_SCA
 let TD_OFFSET : CGFloat                 = DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE
 let TD_BTN_SIZE : CGFloat               = DeviceType.IS_IPAD ? 30     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 30     : DeviceType.IS_IPHONE_6 ? 30   * IPHONE_6_SCALE : 30   * IPHONE_5_SCALE
 let TD_BBTN_SIZE : CGFloat              = DeviceType.IS_IPAD ? 45     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 45     : DeviceType.IS_IPHONE_6 ? 45   * IPHONE_6_SCALE : 45   * IPHONE_5_SCALE
-let TD_HEIGHT : CGFloat                 = ScreenSize.HEIGHT*0.3
+let TD_HEIGHT : CGFloat                 = TD_BBTN_SIZE*4.5
+//let TD_HEIGHT : CGFloat                 = ScreenSize.HEIGHT*0.3
 
 let TD_DATE_FONT                        = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 14      * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 14     : DeviceType.IS_IPHONE_6 ? 14   * IPHONE_6_SCALE : 14   * IPHONE_5_SCALE)
 let TD_TIME_FONT                        = UIFont.systemFontOfSize(DeviceType.IS_IPAD ? 14          * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 14     : DeviceType.IS_IPHONE_6 ? 14   * IPHONE_6_SCALE : 14   * IPHONE_5_SCALE)
