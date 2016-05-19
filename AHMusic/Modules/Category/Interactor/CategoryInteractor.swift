@@ -6,14 +6,14 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class CategoryInteractor
+//MARK: - class CategoryInteractor -
 class CategoryInteractor {
 
     weak var output: CategoryInteractorOutput!
     
 }
 
-//MARK: - extension for CategoryInteractorInput
+//MARK: - extension for CategoryInteractorInput -
 extension CategoryInteractor: CategoryInteractorInput {
     
     func getCategoryItems() {

@@ -59,7 +59,7 @@ class DetailViewController: UIViewController {
         headerView.refreshBlurViewForNewImage()
     }
     
-    // MARK: - Private Method -
+    // MARK: - Private Methods -
     private func baseConfig() {
         self.view = detailView
     }
@@ -144,7 +144,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let track = items[indexPath.row]
-
+        output.openTrackDetail(track, items: items)
     }
     
     // MARK: - Actions -

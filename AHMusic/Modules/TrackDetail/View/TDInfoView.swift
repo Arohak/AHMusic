@@ -63,8 +63,8 @@ class TDInfoView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods -
-    func addAllUIElements() {
+    //MARK: - Private Methods -
+    private func addAllUIElements() {
         addSubview(bgImageView)
         addSubview(titleLabel)
         addSubview(shareButton)

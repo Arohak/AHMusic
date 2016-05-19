@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class CategoryPresenter
+//MARK: - class CategoryPresenter -
 class CategoryPresenter  {
 
     var view: CategoryViewInput!
@@ -15,12 +15,12 @@ class CategoryPresenter  {
     var keyword: String!
 }
 
-//MARK: - extension for CategoryModuleInput
+//MARK: - extension for CategoryModuleInput -
 extension CategoryPresenter: CategoryModuleInput {
 
 }
 
-//MARK: - extension for CategoryViewOutput
+//MARK: - extension for CategoryViewOutput -
 extension CategoryPresenter: CategoryViewOutput {
     
     func viewIsReady() {
@@ -33,7 +33,7 @@ extension CategoryPresenter: CategoryViewOutput {
     }
 }
 
-//MARK: - extension for CategoryInteractorOutput
+//MARK: - extension for CategoryInteractorOutput -
 extension CategoryPresenter: CategoryInteractorOutput {
  
     func dataIsReady(items: Array<Category>) {

@@ -6,12 +6,12 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class LeftMenuViewController
+//MARK: - class LeftMenuViewController -
 class LeftMenuViewController: UIViewController {
 
     var output: LeftMenuViewOutput!
 
-    // MARK: Life cycle
+    // MARK: Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,7 +19,7 @@ class LeftMenuViewController: UIViewController {
     }
 }
 
-//MARK: - extension for LeftMenuViewInput
+//MARK: - extension for LeftMenuViewInput -
 extension LeftMenuViewController: LeftMenuViewInput {
     
     func setupInitialState() {

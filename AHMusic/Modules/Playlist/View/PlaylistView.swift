@@ -27,8 +27,8 @@ class PlaylistView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods -
-    func addAllUIElements() {
+    //MARK: - Private Methods -
+    private func addAllUIElements() {
         addSubview(tableView)
 
         setConstraints()
@@ -117,8 +117,8 @@ class PlaylistCellContentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods -
-    func addAllUIElements() {
+    //MARK: - Private Methods -
+    private func addAllUIElements() {
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(creationDateLabel)

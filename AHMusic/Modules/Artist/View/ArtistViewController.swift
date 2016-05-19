@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class ArtistViewController
+//MARK: - class ArtistViewController -
 class ArtistViewController: UIViewController {
 
     var output: ArtistViewOutput!
@@ -15,7 +15,7 @@ class ArtistViewController: UIViewController {
     var items = Array<Artist>()
     let collectionCellIdentifire = "artistCollectionCell"
 
-    // MARK: - Life cycle
+    // MARK: - Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +23,7 @@ class ArtistViewController: UIViewController {
         output.viewIsReady()
     }
     
-    // MARK: - Private Method
+    // MARK: - Private Method -
     private func baseConfig() {
         self.view = artistView
         
@@ -33,7 +33,7 @@ class ArtistViewController: UIViewController {
     }
 }
 
-//MARK: - extension for ArtistViewInput
+//MARK: - extension for ArtistViewInput -
 extension ArtistViewController: ArtistViewInput {
     
     func setupInitialState(items: Array<Artist>) {
@@ -43,7 +43,7 @@ extension ArtistViewController: ArtistViewInput {
     }
 }
 
-//MARK: - extension for UICollectionView
+//MARK: - extension for UICollectionView -
 extension ArtistViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

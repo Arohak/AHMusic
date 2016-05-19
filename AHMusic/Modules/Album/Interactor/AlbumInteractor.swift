@@ -6,13 +6,13 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class AlbumInteractor
+//MARK: - class AlbumInteractor -
 class AlbumInteractor {
 
     weak var output: AlbumInteractorOutput!
 }
 
-//MARK: - extension for AlbumInteractorInput
+//MARK: - extension for AlbumInteractorInput -
 extension AlbumInteractor: AlbumInteractorInput {
     
     func searchAlbum(name: String) {

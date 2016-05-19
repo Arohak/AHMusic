@@ -35,8 +35,8 @@ class MiniPlayerView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods -
-    func addAllUIElements() {
+    //MARK: - Private Methods -
+    private func addAllUIElements() {
         addSubview(bgView)
         addSubview(player)
         
@@ -113,7 +113,7 @@ class PlayerView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods -
+    //MARK: - Private Methods -
     private func addAllUIElements() {
         addSubview(bgImageView)
         addSubview(slider)

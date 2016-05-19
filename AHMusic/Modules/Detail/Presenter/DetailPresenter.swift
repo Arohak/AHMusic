@@ -30,12 +30,14 @@ extension DetailPresenter: DetailViewOutput {
         rootVC.presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
     
+    func openTrackDetail(track: Track, items: Array<Track>) {
+        
+    }
+    
     func playTrack(index: Int, tracks: Array<Track>) {        
         let vc = MiniPlayerViewController(index: index, items: tracks, output: view)
-        
         vc.modalPresentationStyle = .OverCurrentContext
         vc.modalTransitionStyle = .CrossDissolve
-        
         rootVC.presentViewController(vc, animated: true, completion: nil)
     }
 }

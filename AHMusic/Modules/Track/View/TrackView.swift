@@ -27,8 +27,8 @@ class TrackView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods -
-    func addAllUIElements() {
+    //MARK: - Private Methods -
+    private func addAllUIElements() {
         addSubview(tableView)
 
         setConstraints()
@@ -138,8 +138,8 @@ class TrackCellContentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods -
-    func addAllUIElements() {
+    //MARK: - Private Methods -
+    private func addAllUIElements() {
         addSubview(imageView)
         imageView.addSubview(playButton)
         addSubview(titleLabel)

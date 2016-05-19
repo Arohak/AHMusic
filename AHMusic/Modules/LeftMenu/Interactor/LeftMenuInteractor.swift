@@ -6,13 +6,13 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class LeftMenuInteractor
+//MARK: - class LeftMenuInteractor -
 class LeftMenuInteractor {
 
     weak var output: LeftMenuInteractorOutput!
 }
 
-//MARK: - extension for LeftMenuInteractorInput
+//MARK: - extension for LeftMenuInteractorInput -
 extension LeftMenuInteractor: LeftMenuInteractorInput {
     
 }

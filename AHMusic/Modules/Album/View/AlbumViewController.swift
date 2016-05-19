@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class AlbumViewController
+//MARK: - class AlbumViewController -
 class AlbumViewController: UIViewController {
 
     var output: AlbumViewOutput!
@@ -15,7 +15,7 @@ class AlbumViewController: UIViewController {
     var items = Array<Album>()
     let cellIdentifire = "albumCell"
     
-    // MARK: Life cycle
+    // MARK: - Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +23,7 @@ class AlbumViewController: UIViewController {
         output.viewIsReady()
     }
     
-    // MARK: - Private Method
+    // MARK: - Private Method -
     private func baseConfig() {
         self.view = albumView
         
@@ -33,7 +33,7 @@ class AlbumViewController: UIViewController {
     }
 }
 
-//MARK: - extension for AlbumViewInput
+//MARK: - extension for AlbumViewInput -
 extension AlbumViewController: AlbumViewInput {
     
     func setupInitialState(items: Array<Album>) {
@@ -43,7 +43,7 @@ extension AlbumViewController: AlbumViewInput {
     }
 }
 
-//MARK: - extension for UITableView
+//MARK: - extension for UITableView -
 extension AlbumViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

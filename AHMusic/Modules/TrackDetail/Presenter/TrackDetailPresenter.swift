@@ -26,6 +26,58 @@ extension TrackDetailPresenter: TrackDetailViewOutput {
     func viewIsReady(items: Array<Track>) {
         player = AHPlayer(items: items, playerOutput: view)
     }
+    
+    func remoteControlReceivedWithEvent(event: UIEvent?) {
+        let jukebox = player.jukebox
+        if event?.type == .RemoteControl {
+            switch event!.subtype {
+            case .RemoteControlPlay :
+                jukebox.play()
+            case .RemoteControlPause :
+                jukebox.pause()
+            case .RemoteControlNextTrack :
+                jukebox.playNext()
+            case .RemoteControlPreviousTrack:
+                jukebox.playPrevious()
+            default:
+                break
+            }
+        } else {
+            print("NO EVENT!!!")
+        }
+    }
+    
+    func volumeSliderValue(value: Float) {
+        player.volumeSliderValue(value)
+    }
+    
+    func progressSliderValue(value: Float) {
+        player.progressSliderValue(value)
+    }
+    
+    func playPauseAtIndex(index: Int) {
+        player.playPauseAtIndex(index)
+    }
+    
+    func playPause() {
+        player.playPause()
+    }
+    
+    func prev() {
+        player.prev()
+    }
+    
+    func next() {
+        player.next()
+    }
+    
+    func replay() {
+        player.replay()
+    }
+    
+    func stop() {
+       player.stop()
+    }
 }
 
 //MARK: - extension for TrackDetailInteractorOutput -

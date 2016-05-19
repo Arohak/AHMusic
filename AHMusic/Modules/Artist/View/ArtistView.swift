@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - ArtistView
+//MARK: - ArtistView -
 class ArtistView: UIView {
     
     lazy var collection: UICollectionView = {
@@ -16,7 +16,7 @@ class ArtistView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -27,23 +27,23 @@ class ArtistView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(collection)
 
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         collection.autoPinEdgesToSuperviewEdges()
     }
 }
 
-//MARK: - ArtistCell
+//MARK: - ArtistCell -
 class ArtistCell: UICollectionViewCell {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     var cellContentView = ArtistCellContentView()
     
     override init(frame: CGRect) {
@@ -63,10 +63,10 @@ class ArtistCell: UICollectionViewCell {
     }
 }
 
-//MARK: - ArtistCellContentView
+//MARK: - ArtistCellContentView -
 class ArtistCellContentView: UIView {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     lazy var imageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         
@@ -82,7 +82,7 @@ class ArtistCellContentView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -93,7 +93,7 @@ class ArtistCellContentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
+    //MARK: - Privat Methods -
     func addAllUIElements() {
         addSubview(imageView)
         addSubview(nameLabel)

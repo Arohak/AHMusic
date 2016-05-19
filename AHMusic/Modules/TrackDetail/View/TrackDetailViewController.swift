@@ -12,17 +12,11 @@ import Jukebox
 //MARK: - class TrackDetailViewController -
 class TrackDetailViewController: UIViewController {
 
+    var trackDetailView = TrackDetailView()
+
     var output: TrackDetailViewOutput!
-    
-    var player: AHPlayer!
     var tracks: Array<Track>!
     var track: Track!
-
-    lazy var trackDetailView: TrackDetailView = {
-        let view = TrackDetailView()
-
-        return view
-    }()
     
     //MARK: - Initilize -
     init() {
@@ -45,22 +39,24 @@ class TrackDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        output.viewIsReady(self.tracks)
+        output.viewIsReady(tracks)
         baseConfig()
-        player.playPause()
+        playTrackInStart()
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        player.stop()
+        output.stop()
+    }
+    
+    override func remoteControlReceivedWithEvent(event: UIEvent?) {
+        output.remoteControlReceivedWithEvent(event)
     }
     
     // MARK: - Private Method -
     private func baseConfig() {
         self.view = trackDetailView
-        
-        player = (output as! TrackDetailPresenter).player
         
         resetUI()
         
@@ -77,54 +73,41 @@ class TrackDetailViewController: UIViewController {
         trackDetailView.actionView.replayButton.addTarget(self, action: #selector(TrackDetailViewController.replayAction), forControlEvents: .TouchUpInside)
     }
     
+    private func playTrackInStart() {
+        let index = tracks.indexOf {$0.id == track.id}
+        if let index = index {
+            output.playPauseAtIndex(index)
+        }
+    }
+    
     // MARK:- Actions -
     func volumeSliderValueChanged(sender: UISlider) {
-        player.volumeSliderValue(sender.value)
+        output.volumeSliderValue(sender.value)
     }
     
     func progressSliderValueChanged(sender: UISlider) {
-        player.progressSliderValue(sender.value)
+        output.progressSliderValue(sender.value)
     }
     
     func prevAction() {
-        player.prev()
+        output.prev()
     }
     
     func nextAction() {
-        player.next()
+        output.next()
     }
     
     func playPauseAction() {
-        player.playPause()
+        output.playPause()
     }
     
     func replayAction() {
-        player.replay()
+        output.replay()
         
     }
     
     func stopAction() {
-        player.stop()
-    }
-    
-    override func remoteControlReceivedWithEvent(event: UIEvent?) {
-        let jukebox = player.jukebox
-        if event?.type == .RemoteControl {
-            switch event!.subtype {
-            case .RemoteControlPlay :
-                jukebox.play()
-            case .RemoteControlPause :
-                jukebox.pause()
-            case .RemoteControlNextTrack :
-                jukebox.playNext()
-            case .RemoteControlPreviousTrack:
-                jukebox.playPrevious()
-            default:
-                break
-            }
-        } else {
-            print("NO EVENT!!!")
-        }
+        output.stop()
     }
 }
 

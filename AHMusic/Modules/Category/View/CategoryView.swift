@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - CategoryView
+//MARK: - CategoryView -
 class CategoryView: UIView {
     
     lazy var collection: UICollectionView = {
@@ -16,7 +16,7 @@ class CategoryView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -27,23 +27,23 @@ class CategoryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
-    func addAllUIElements() {
+    //MARK: - Private Methods -
+    private func addAllUIElements() {
         addSubview(collection)
 
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         collection.autoPinEdgesToSuperviewEdges()
     }
 }
 
-//MARK: - CategoryCell
+//MARK: - CategoryCell -
 class CategoryCell: UICollectionViewCell {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     var cellContentView = CategoryCellContentView()
     
     override init(frame: CGRect) {
@@ -63,10 +63,10 @@ class CategoryCell: UICollectionViewCell {
     }
 }
 
-//MARK: - CategoryCellContentView
+//MARK: - CategoryCellContentView -
 class CategoryCellContentView: UIView {
     
-    //MARK: - Create UIElements
+    //MARK: - Create UIElements -
     lazy var imageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         
@@ -91,7 +91,7 @@ class CategoryCellContentView: UIView {
         return view
     }()
     
-    //MARK: - Initialize
+    //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
@@ -102,8 +102,8 @@ class CategoryCellContentView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - Privat Methods
-    func addAllUIElements() {
+    //MARK: - Private Methods -
+    private func addAllUIElements() {
         addSubview(imageView)
         imageView.addSubview(iconImageView)
         addSubview(nameLabel)
@@ -111,7 +111,7 @@ class CategoryCellContentView: UIView {
         setConstraints()
     }
     
-    //MARK: - Constraints
+    //MARK: - Constraints -
     func setConstraints() {
         imageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: CA_OFFSET*1.5)
         imageView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), excludingEdge: .Bottom)

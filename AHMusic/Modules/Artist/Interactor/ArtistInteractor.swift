@@ -6,13 +6,13 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class ArtistInteractor
+//MARK: - class ArtistInteractor -
 class ArtistInteractor {
 
     weak var output: ArtistInteractorOutput!
 }
 
-//MARK: - extension for ArtistInteractorInput
+//MARK: - extension for ArtistInteractorInput -
 extension ArtistInteractor: ArtistInteractorInput {
     
     func searchArtist(name: String) {

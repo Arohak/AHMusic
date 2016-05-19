@@ -6,24 +6,24 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class ArtistPresenter
+//MARK: - class ArtistPresenter -
 class ArtistPresenter: BasePresenter {
 
     var view: ArtistViewInput!
     var interactor: ArtistInteractorInput!
     
-    //MARK: - Initilize
+    //MARK: - Initilize -
     override init(name: String) {
         super.init(name: name)
     }
 }
 
-//MARK: - extension for ArtistModuleInput
+//MARK: - extension for ArtistModuleInput -
 extension ArtistPresenter: ArtistModuleInput {
 
 }
 
-//MARK: - extension for ArtistViewOutput
+//MARK: - extension for ArtistViewOutput -
 extension ArtistPresenter: ArtistViewOutput {
     
     func viewIsReady() {
@@ -35,7 +35,7 @@ extension ArtistPresenter: ArtistViewOutput {
     }
 }
 
-//MARK: - extension for ArtistInteractorOutput
+//MARK: - extension for ArtistInteractorOutput -
 extension ArtistPresenter: ArtistInteractorOutput {
  
     func searchResultIsReady(items: Array<Artist>) {

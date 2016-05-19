@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class CategoryViewController
+//MARK: - class CategoryViewController -
 class CategoryViewController: UIViewController {
 
     var output: CategoryViewOutput!
@@ -15,7 +15,7 @@ class CategoryViewController: UIViewController {
     var items = Array<Category>()
     let collectionCellIdentifire = "categoryCollectionCell"
 
-    // MARK: - Life cycle
+    // MARK: - Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +23,7 @@ class CategoryViewController: UIViewController {
         output.viewIsReady()
     }
     
-    // MARK: - Private Method
+    // MARK: - Private Methods -
     private func baseConfig() {
         self.view = categoryView
         
@@ -33,7 +33,7 @@ class CategoryViewController: UIViewController {
     }
 }
 
-//MARK: - extension for CategoryViewInput
+//MARK: - extension for CategoryViewInput -
 extension CategoryViewController: CategoryViewInput {
     
     func categoryDataIsReady(items: Array<Category>) {
@@ -43,7 +43,7 @@ extension CategoryViewController: CategoryViewInput {
     }
 }
 
-//MARK: - extension for UICollectionView
+//MARK: - extension for UICollectionView -
 extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

@@ -6,24 +6,24 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-//MARK: - class AlbumPresenter
+//MARK: - class AlbumPresenter -
 class AlbumPresenter: BasePresenter {
 
     var view: AlbumViewInput!
     var interactor: AlbumInteractorInput!
     
-    //MARK: - Initilize
+    //MARK: - Initilize -
     override init(name: String) {
         super.init(name: name)
     }
 }
 
-//MARK: - extension for AlbumModuleInput
+//MARK: - extension for AlbumModuleInput -
 extension AlbumPresenter: AlbumModuleInput {
 
 }
 
-//MARK: - extension for AlbumViewOutput
+//MARK: - extension for AlbumViewOutput -
 extension AlbumPresenter: AlbumViewOutput {
     
     func viewIsReady() {
@@ -40,7 +40,7 @@ extension AlbumPresenter: AlbumViewOutput {
     }
 }
 
-//MARK: - extension for AlbumInteractorOutput
+//MARK: - extension for AlbumInteractorOutput -
 extension AlbumPresenter: AlbumInteractorOutput {
  
     func searchResultIsReady(items: Array<Album>) {
