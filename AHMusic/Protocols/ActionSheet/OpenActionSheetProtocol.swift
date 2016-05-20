@@ -8,5 +8,5 @@
 
 protocol OpenActionSheetProtocol {
     
-    func openActionSheet(tracks: Array<Track>)
+    func openActionSheet(items: Array<Track>)
 }

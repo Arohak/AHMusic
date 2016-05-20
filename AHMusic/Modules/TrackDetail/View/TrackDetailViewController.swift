@@ -72,6 +72,8 @@ class TrackDetailViewController: UIViewController {
         trackDetailView.actionView.nextButton.addTarget(self, action: #selector(TrackDetailViewController.nextAction), forControlEvents: .TouchUpInside)
         trackDetailView.actionView.replayButton.addTarget(self, action: #selector(TrackDetailViewController.replayAction), forControlEvents: .TouchUpInside)
         trackDetailView.actionView.trackListButton.addTarget(self, action: #selector(TrackDetailViewController.openActionSheet), forControlEvents: .TouchUpInside)
+
+        trackDetailView.infoView.shareButton.addTarget(self, action: #selector(TrackDetailViewController.shareTrack(_:)), forControlEvents: .TouchUpInside)
     }
     
     private func playTrackInStart() {
@@ -113,6 +115,10 @@ class TrackDetailViewController: UIViewController {
     
     func openActionSheet() {
         output.openActionSheet(tracks)
+    }
+    
+    func shareTrack(sender: AHButton) {
+        output.shareTrack(sender, items: tracks)
     }
 }
 

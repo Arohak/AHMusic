@@ -9,4 +9,5 @@
 protocol TrackDetailViewOutput: PlayerActionProtocol, RemoteControlReceivedProtocol, OpenActionSheetProtocol {
 
     func viewIsReady(items: Array<Track>)
+    func shareTrack(sourceView: UIView, items: Array<Track>)
 }

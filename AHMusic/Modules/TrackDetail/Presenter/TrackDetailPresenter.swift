@@ -79,16 +79,29 @@ extension TrackDetailPresenter: TrackDetailViewOutput {
        player.stop()
     }
     
-    func openActionSheet(tracks: Array<Track>) {
+    func openActionSheet(items: Array<Track>) {
         var temp = Array<String>()
-        for item in tracks { temp.append(item.title) }
+        for item in items { temp.append(item.title) }
         let vc = ActionSheetPickerViewController(values: temp) { value in
-            let index = tracks.indexOf {$0.title == value }
+            let index = items.indexOf {$0.title == value }
             self.player.jukebox.playAtIndex(index!)
         }
         vc.pickerView.selectRow(player.jukebox.playIndex, inComponent: 0, animated: true)
         
         rootVC.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func shareTrack(sourceView: UIView, items: Array<Track>) {
+        let track = items[player.jukebox.playIndex]
+        let textToShare = track.title
+        let myWebsite = NSURL(string: track.share)!
+        let objectsToShare = [textToShare, myWebsite]
+        
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
+        activityVC.popoverPresentationController?.sourceView = sourceView
+        
+        rootVC.presentViewController(activityVC, animated: true, completion: nil)
     }
 }
 
