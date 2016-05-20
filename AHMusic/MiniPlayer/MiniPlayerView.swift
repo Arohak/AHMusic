@@ -61,33 +61,36 @@ class PlayerView: UIView {
     lazy var bgImageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         view.backgroundColor = BLACK
+        view.alpha = 0.7
 
         return view
     }()
 
     lazy var slider: UISlider = {
         let view = UISlider.newAutoLayoutView()
+        view.minimumTrackTintColor = BLUE_LIGHT
+        view.setThumbImage(UIImage(named: "img_pl_slider")!, forState: .Normal)
         
         return view
     }()
     
     lazy var playPauseButton: AHButton = {
         let view = AHButton.newAutoLayoutView()
-        view.backgroundColor = WHITE
+        view.setBackgroundImage(UIImage(named: "img_pl_playpause1"), forState: .Normal)
 
         return view
     }()
     
     lazy var prevButton: AHButton = {
         let view = AHButton.newAutoLayoutView()
-        view.backgroundColor = WHITE
+        view.setBackgroundImage(UIImage(named: "img_pl_prev"), forState: .Normal)
 
         return view
     }()
     
     lazy var nextButton: AHButton = {
         let view = AHButton.newAutoLayoutView()
-        view.backgroundColor = WHITE
+        view.setBackgroundImage(UIImage(named: "img_pl_next"), forState: .Normal)
 
         return view
     }()
@@ -129,7 +132,7 @@ class PlayerView: UIView {
     func setConstraints() {
         bgImageView.autoPinEdgesToSuperviewEdges()
         
-        slider.autoPinEdgeToSuperviewEdge(.Top, withInset: 0)
+        slider.autoPinEdgeToSuperviewEdge(.Top, withInset: TD_INSET)
         slider.autoPinEdgeToSuperviewEdge(.Left, withInset: TD_OFFSET)
         slider.autoPinEdgeToSuperviewEdge(.Right, withInset: TD_OFFSET)
         
