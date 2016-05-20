@@ -64,7 +64,7 @@ class SlideViewController: SlideMenuController {
         configureNavigationBar()
         
         self.view.backgroundColor = WHITE
-        SlideMenuOptions.leftViewWidth = ScreenSize.WIDTH*0.75
+        SlideMenuOptions.leftViewWidth = WIDTH
         SlideMenuOptions.hideStatusBar = false
         delegate = self
         

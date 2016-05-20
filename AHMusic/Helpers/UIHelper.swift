@@ -19,7 +19,7 @@ struct UIHelper {
         let navBarAppearance = UINavigationBar.appearance()
         navBarAppearance.translucent = false
         navBarAppearance.barStyle = .BlackTranslucent
-        navBarAppearance.barTintColor = BLUE
+        navBarAppearance.barTintColor = BLACK_59
         navBarAppearance.tintColor = WHITE
         navBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: WHITE, NSFontAttributeName : FONT_NAVBAR]
     }

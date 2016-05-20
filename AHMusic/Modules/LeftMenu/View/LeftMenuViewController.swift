@@ -10,12 +10,19 @@
 class LeftMenuViewController: UIViewController {
 
     var output: LeftMenuViewOutput!
-
-    // MARK: Life cycle -
+    var leftMenuView = LeftMenuView()
+    
+    // MARK: - Life cycle -
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        baseConfig()
         output.viewIsReady()
+    }
+    
+    // MARK: - Private Methods -
+    private func baseConfig() {
+        self.view = leftMenuView
     }
 }
 

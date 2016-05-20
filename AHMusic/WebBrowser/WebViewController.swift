@@ -64,4 +64,8 @@ extension WebViewController: UIWebViewDelegate {
     func webViewDidFinishLoad(webView: UIWebView) {
        UIHelper.hideSpinner()
     }
+    
+    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+        UIHelper.hideSpinner()
+    }
 }

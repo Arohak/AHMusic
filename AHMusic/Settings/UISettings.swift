@@ -54,6 +54,7 @@ let XAKI                                = UIColor(red: 255/255,     green: 102/2
 let GRAY_164                            = UIColor(red: 164/255,     green: 164/255,     blue: 164/255,      alpha: 1)
 let GRAY_200                            = UIColor(red: 200/255,     green: 200/255,     blue: 200/255,      alpha: 1)
 let GRAY_119                            = UIColor(red: 119/255,     green: 119/255,     blue: 119/255,      alpha: 1)
+let BLACK_59                            = UIColor(red: 59/255,      green: 59/255,      blue: 59/255,       alpha: 1)
 let BLUE                                = UIColor(red: 24/255,      green: 75/255,      blue: 152/255,      alpha: 1)
 let BLACK                               = UIColor.blackColor()
 let WHITE                               = UIColor.whiteColor()
@@ -73,6 +74,17 @@ let LINK_FONT                           = UIFont.systemFontOfSize(DeviceType.IS_
 
 let BA_INSET : CGFloat                  = DeviceType.IS_IPAD ? 10     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 10     : DeviceType.IS_IPHONE_6 ? 10   * IPHONE_6_SCALE : 10   * IPHONE_5_SCALE
 let TITLE_BTN_FONT                      = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 16     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 16     : DeviceType.IS_IPHONE_6 ? 16   * IPHONE_6_SCALE : 16   * IPHONE_5_SCALE)
+
+//MARK: - Slide Constants
+
+let WIDTH : CGFloat                     = DeviceType.IS_IPAD ? 80     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 80     : DeviceType.IS_IPHONE_6 ? 80   * IPHONE_6_SCALE : 80   * IPHONE_5_SCALE
+
+
+//MARK: - LeftMenu Constants
+
+let LM_INSET : CGFloat                  = DeviceType.IS_IPAD ? 30     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 30     : DeviceType.IS_IPHONE_6 ? 30   * IPHONE_6_SCALE : 30   * IPHONE_5_SCALE
+let LM_OFFSET : CGFloat                 = DeviceType.IS_IPAD ? 4      * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 4      : DeviceType.IS_IPHONE_6 ? 4    * IPHONE_6_SCALE : 4    * IPHONE_5_SCALE
+let LM_LBL_FONT                         = UIFont.systemFontOfSize(DeviceType.IS_IPAD ? 12         * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 12     : DeviceType.IS_IPHONE_6 ? 12   * IPHONE_6_SCALE : 12   * IPHONE_5_SCALE)
 
 //MARK: - Category Constants
 

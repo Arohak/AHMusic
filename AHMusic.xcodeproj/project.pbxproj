@@ -42,6 +42,8 @@
 		4C3C4A0CD9E668E0C66B861C /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD51CB1FA52900F2D029826 /* ArtistViewController.swift */; };
 		4CD6A06F0F8F0C938EBBFA4A /* PlaylistPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12CC953EFFB760C0D9405EB2 /* PlaylistPresenter.swift */; };
 		4DD80FDC7BE73FBF1DC2BCE3 /* TrackDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEF748000EA47E63FFB773A /* TrackDetailConfigurator.swift */; };
+		5219E2C61CEFAD97006216A9 /* LeftMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219E2C51CEFAD97006216A9 /* LeftMenuView.swift */; };
+		5219E2C81CEFAE05006216A9 /* LMGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5219E2C71CEFAE05006216A9 /* LMGroupView.swift */; };
 		522373EF1CE87BFA00CA05FC /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522373EE1CE87BFA00CA05FC /* Detail.swift */; };
 		522373F21CE89A9700CA05FC /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522373F11CE89A9700CA05FC /* DetailView.swift */; };
 		526A4DAC1CDE93B50000CFC5 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A4DAB1CDE93B50000CFC5 /* SlideViewController.swift */; };
@@ -208,6 +210,8 @@
 		43F0C33F351F8E278A207CBE /* StationViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StationViewInput.swift; sourceTree = "<group>"; };
 		4ED242A40D3C9FF15892547E /* PlaylistViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlaylistViewOutput.swift; sourceTree = "<group>"; };
 		4EECD7E3DBC0AD0E405199BC /* LeftMenuModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LeftMenuModuleInput.swift; sourceTree = "<group>"; };
+		5219E2C51CEFAD97006216A9 /* LeftMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuView.swift; sourceTree = "<group>"; };
+		5219E2C71CEFAE05006216A9 /* LMGroupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMGroupView.swift; sourceTree = "<group>"; };
 		522373EE1CE87BFA00CA05FC /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		522373F11CE89A9700CA05FC /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		526A4DAB1CDE93B50000CFC5 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
@@ -536,6 +540,15 @@
 				226F108639522C3A3CE7584E /* CategoryInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		5219E2C41CEFAD2D006216A9 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				5219E2C51CEFAD97006216A9 /* LeftMenuView.swift */,
+				5219E2C71CEFAE05006216A9 /* LMGroupView.swift */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 		522373F01CE89A6A00CA05FC /* views */ = {
@@ -1097,6 +1110,7 @@
 				E238A4FB6EE699D6FD6EDA88 /* LeftMenuViewInput.swift */,
 				F1C40FB3D88D569CFF6B1DB8 /* LeftMenuViewOutput.swift */,
 				CD4C631C2D364A878CE67394 /* LeftMenuViewController.swift */,
+				5219E2C41CEFAD2D006216A9 /* views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1516,6 +1530,7 @@
 				5B0391A1627752D0BB4674F6 /* TrackViewController.swift in Sources */,
 				449FCC781F271B5670F76DCF /* TrackModuleInput.swift in Sources */,
 				1FC89CCED6A087CC686B78F3 /* TrackPresenter.swift in Sources */,
+				5219E2C81CEFAE05006216A9 /* LMGroupView.swift in Sources */,
 				B526D39FC9B9598F753CB26B /* TrackInteractorInput.swift in Sources */,
 				CCACE5446117BD4017320716 /* TrackInteractorOutput.swift in Sources */,
 				F88B688EE90CE1AB91817E96 /* TrackInteractor.swift in Sources */,
@@ -1579,6 +1594,7 @@
 				A16412BF1CE4BB7F005FD643 /* ArtistView.swift in Sources */,
 				5B9EED3215AEDA7DA664E383 /* StationInteractorOutput.swift in Sources */,
 				E5F0BB87244B26D5981D2DA1 /* StationInteractor.swift in Sources */,
+				5219E2C61CEFAD97006216A9 /* LeftMenuView.swift in Sources */,
 				A155350A1CEDA1DF004DAE89 /* GetTrackProtocol.swift in Sources */,
 				2FFBB925FA653654E2B0388A /* StationConfigurator.swift in Sources */,
 				A9BFDE022391802A229BD1AF /* StationInitializer.swift in Sources */,
