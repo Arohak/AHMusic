@@ -51,6 +51,15 @@ struct UIHelper {
         let vc = appDelegate.window!.rootViewController
         vc!.presentViewController(alertController, animated: true, completion: nil)
     }
+    
+    static func showSpinner() {
+        ALThreeCircleSpinner.config()
+        ALThreeCircleSpinner.show()
+    }
+    
+    static func hideSpinner() {
+        ALThreeCircleSpinner.hide()
+    }
 //
 //    class func shakeWithView(view: UIView) {
 //        let shake = CABasicAnimation(keyPath: "position")

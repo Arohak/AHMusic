@@ -27,7 +27,7 @@ class APIHelper {
         //https://market.mashape.com/deezerdevs/deezer#-search
 //        static let ROOT_URL                 = "https://deezerdevs-deezer.p.mashape.com/"
         static let ROOT_URL                 = "http://api.deezer.com/"
-        static let headers                  = ["X-Mashape-Key": "4LayNni55YmshxhVWWnUNiryZGFPp1ULxlEjsnxLhL7PonxZ1M", "Accept": "text/plain"]
+        static let HEADER                   = ["X-Mashape-Key": "4LayNni55YmshxhVWWnUNiryZGFPp1ULxlEjsnxLhL7PonxZ1M", "Accept": "text/plain"]
         static let GET_GENRE                = "genre"
         static let GET_ALBUM                = "album/%@"
         static let GET_ARTIST               = "artist/%@"
@@ -48,15 +48,16 @@ class APIHelper {
                             url: String,
                             parameters: [String: AnyObject]? = nil,
                             showProgress: Bool = true,
-                            isHeader: Bool = false)
+                            isHeader: Bool = true)
                             -> Observable<JSON>
     {
         return Observable.create { observer in
             UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-            if showProgress { UIHelper.showProgressHUD() }
-            
+//            if showProgress { UIHelper.showProgressHUD() }
+            if showProgress { UIHelper.showSpinner() }
+
             let URL = url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-            let header = isHeader ? ROUTERS.headers : [:]
+            let header = isHeader ? ROUTERS.HEADER : [:]
             _ = self.manager.rx_request(method, URL, parameters: parameters, encoding: .URL, headers: header)
                 .observeOn(MainScheduler.instance)
                 .flatMap {
@@ -69,12 +70,14 @@ class APIHelper {
                     onError: {
                         observer.onError($0)
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        if showProgress { UIHelper.hideProgressHUD() }
+//                        if showProgress { UIHelper.hideProgressHUD() }
+                        if showProgress { UIHelper.hideSpinner() }
                         UIHelper.showHUD("error")
                     },
                     onCompleted: {
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-                        if showProgress { UIHelper.hideProgressHUD() }
+//                        if showProgress { UIHelper.hideProgressHUD() }
+                        if showProgress { UIHelper.hideSpinner() }
                         observer.onCompleted()
                     })
             
@@ -85,58 +88,58 @@ class APIHelper {
     //MARK: - Categories
     func rx_GetCategories() -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + ROUTERS.GET_GENRE
-        return rx_Request(.GET, url: url, isHeader: true)
+        return rx_Request(.GET, url: url)
     }
     
     //MARK: - Search for Name
     func rx_SearchAlbum(name: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.SEARCH_ALBUM, name)
-        return rx_Request(.GET, url: url, isHeader: true)
+        return rx_Request(.GET, url: url)
     }
     
     func rx_SearchArtist(name: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.SEARCH_ARTIST, name)
-        return rx_Request(.GET, url: url, isHeader: true)
+        return rx_Request(.GET, url: url)
     }
     
     func rx_SearchpPlaylist(name: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.SEARCH_PLAYLIST, name)
-        return rx_Request(.GET, url: url, isHeader: true)
+        return rx_Request(.GET, url: url)
     }
     
     func rx_SearchpTrack(name: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.SEARCH_TRACK, name)
-        return rx_Request(.GET, url: url, isHeader: true)
+        return rx_Request(.GET, url: url)
     }
 
     func rx_Search(name: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.SEARCH, name)
-        return rx_Request(.GET, url: url, isHeader: true)
+        return rx_Request(.GET, url: url)
     }
     
     //MARK: - GET for ID
     func rx_GetAlbum(id: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_ALBUM, id)
-        return rx_Request(.GET, url: url, isHeader: true)
+        return rx_Request(.GET, url: url)
     }
     
     func rx_GetArtist(id: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_ARTIST, id)
-        return rx_Request(.GET, url: url, isHeader: true)
+        return rx_Request(.GET, url: url)
     }
     
     func rx_GetArtistTracks(id: String, limit: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_ARTIST_TRACKS, id, limit)
-        return rx_Request(.GET, url: url, isHeader: true)
+        return rx_Request(.GET, url: url)
     }
     
     func rx_GetPlaylist(id: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_PLAYLIST, id)
-        return rx_Request(.GET, url: url, isHeader: true)
+        return rx_Request(.GET, url: url)
     }
     
     func rx_GetTrack(id: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_TRACK, id)
-        return rx_Request(.GET, url: url, isHeader: true)
+        return rx_Request(.GET, url: url)
     }
 }

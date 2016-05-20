@@ -55,4 +55,13 @@ class WebViewController: UIViewController {
 //MARK: - extension for UIWebViewDelegate -
 extension WebViewController: UIWebViewDelegate {
     
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        UIHelper.showSpinner()
+        
+        return true
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+       UIHelper.hideSpinner()
+    }
 }
