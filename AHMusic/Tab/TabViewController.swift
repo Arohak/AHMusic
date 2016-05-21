@@ -48,12 +48,12 @@ class TabViewController: UIViewController  {
     }
     
     private func styleTab() {
-        tabNavigation.setIndicatorColor(BLUE)
+        tabNavigation.setIndicatorColor(RED)
         tabNavigation.toolbar.translucent = false
-        tabNavigation.setTabExtraWidth(30)
+        tabNavigation.setTabExtraWidth(40)
 //        tabNavigation.carbonSegmentedControl!.setWidth(200, forSegmentAtIndex: 0)
         tabNavigation.setNormalColor(BLACK.colorWithAlphaComponent(0.6))
-        tabNavigation.setSelectedColor(BLUE, font: UIFont.boldSystemFontOfSize(14))
+        tabNavigation.setSelectedColor(RED, font: UIFont.boldSystemFontOfSize(14))
     }
     
     private func addPresenters() {

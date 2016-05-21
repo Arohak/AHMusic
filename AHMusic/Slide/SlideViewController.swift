@@ -63,7 +63,7 @@ class SlideViewController: SlideMenuController {
     private func baseConfig() {
         configureNavigationBar()
         
-        self.view.backgroundColor = WHITE
+        self.view.backgroundColor = BLACK_59
         SlideMenuOptions.leftViewWidth = WIDTH
         SlideMenuOptions.hideStatusBar = false
         delegate = self

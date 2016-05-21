@@ -7,11 +7,10 @@
 //
 
 //MARK: - AlbumView -
-class AlbumView: UIView {
+class AlbumView: BaseView {
     
-    lazy var tableView: UITableView = {
-        let view = UITableView.newAutoLayoutView()
-        view.backgroundColor = WHITE
+    lazy var tableView: BaseTableView = {
+        let view = BaseTableView.newAutoLayoutView()
         
         return view
     }()
@@ -24,8 +23,8 @@ class AlbumView: UIView {
     }()
     
     //MARK: - Initialize
-    init() {
-        super.init(frame: CGRectZero)
+    override init() {
+        super.init()
         
         addAllUIElements()
     }
@@ -50,7 +49,7 @@ class AlbumView: UIView {
 }
 
 //MARK: - AlbumCell
-class AlbumCell: UITableViewCell {
+class AlbumCell: BaseTableViewCell {
     
     //MARK: - Create UIElements
     var cellContentView = AlbumCellContentView()
@@ -58,7 +57,6 @@ class AlbumCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectionStyle = .None
         contentView.addSubview(cellContentView)
         cellContentView.autoPinEdgesToSuperviewEdges()
     }
@@ -89,19 +87,14 @@ class AlbumCellContentView: UIView {
     lazy var titleLabel: AHLabel = {
         let view = AHLabel.newAutoLayoutView()
         view.font = AL_TITLE_FONT
-        view.textColor = BLUE
         view.numberOfLines = 0
         
         return view
     }()
     
-    lazy var linkButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setTitleColor(GRAY, forState: .Normal)
-        view.setTitleColor(BLUE, forState: .Highlighted)
-        view.titleLabel!.font = LINK_FONT
-        view.contentHorizontalAlignment = .Left
-        view.titleLabel!.lineBreakMode = .ByTruncatingTail
+    lazy var linkButton: LinkButton = {
+        let view = LinkButton.newAutoLayoutView()
+
         
         return view
     }()
@@ -132,7 +125,7 @@ class AlbumCellContentView: UIView {
         imageView.autoPinEdgeToSuperviewEdge(.Left, withInset: AL_OFFSET)
         imageView.autoSetDimensionsToSize(CGSize(width: AL_CELL_HEIGHT*0.8, height: AL_CELL_HEIGHT*0.8))
         
-        titleLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: AL_OFFSET)
+        titleLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: imageView)
         titleLabel.autoPinEdge(.Left, toEdge: .Right, ofView: imageView, withOffset: AL_OFFSET)
         titleLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: AL_OFFSET)
         

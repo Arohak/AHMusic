@@ -120,12 +120,19 @@ extension DetailViewController: DetailViewInput {
             if let _ = cellTwo {
                 cellOne!.cellContentView.playButton.selected = false
                 cellTwo!.cellContentView.playButton.selected = true
+                
+                cellOne!.cellContentView.backgroundColor = CLEAR
+                cellTwo!.cellContentView.backgroundColor = BLUE_LIGHT1
+                
             } else {
                 detailView.tableView.scrollToRowAtIndexPath(indexPathTwo, atScrollPosition: .Middle, animated: false)
                 let cOne = detailView.tableView.cellForRowAtIndexPath(indexPathOne) as! TrackShortCell
                 let cTwo = detailView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackShortCell
                 cOne.cellContentView.playButton.selected = false
                 cTwo.cellContentView.playButton.selected = true
+                
+                cOne.cellContentView.backgroundColor = CLEAR
+                cTwo.cellContentView.backgroundColor = BLUE_LIGHT1
             }
         }
     }
@@ -139,6 +146,11 @@ extension DetailViewController: DetailViewInput {
             cell!.cellContentView.playButton.selected = true
             cellNext!.cellContentView.playButton.selected = false
             cellPrev!.cellContentView.playButton.selected = false
+            
+            cell!.cellContentView.backgroundColor = BLUE_LIGHT1
+            cellNext!.cellContentView.backgroundColor = CLEAR
+            cellPrev!.cellContentView.backgroundColor = CLEAR
+            
         } else if cellNext != nil {
             detailView.tableView.scrollToRowAtIndexPath(indexPathNext, atScrollPosition: .Middle, animated: false)
             let c = detailView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
@@ -147,6 +159,10 @@ extension DetailViewController: DetailViewInput {
             c.cellContentView.playButton.selected = true
             cNext.cellContentView.playButton.selected = false
             cPrev.cellContentView.playButton.selected = false
+            
+            c.cellContentView.backgroundColor = BLUE_LIGHT1
+            cNext.cellContentView.backgroundColor = CLEAR
+            cPrev.cellContentView.backgroundColor = CLEAR
         } else if cellPrev != nil {
             detailView.tableView.scrollToRowAtIndexPath(indexPathPrev, atScrollPosition: .Middle, animated: false)
             let c = detailView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
@@ -155,6 +171,10 @@ extension DetailViewController: DetailViewInput {
             c.cellContentView.playButton.selected = true
             cNext.cellContentView.playButton.selected = false
             cPrev.cellContentView.playButton.selected = false
+            
+            c.cellContentView.backgroundColor = BLUE_LIGHT1
+            cNext.cellContentView.backgroundColor = CLEAR
+            cPrev.cellContentView.backgroundColor = CLEAR
         }
     }
 }

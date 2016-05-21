@@ -7,11 +7,10 @@
 //
 
 //MARK: - TrackView -
-class TrackView: UIView {
+class TrackView: BaseView {
     
-    lazy var tableView: UITableView = {
-        let view = UITableView.newAutoLayoutView()
-        view.backgroundColor = WHITE
+    lazy var tableView: BaseTableView = {
+        let view = BaseTableView.newAutoLayoutView()
         
         return view
     }()
@@ -24,8 +23,8 @@ class TrackView: UIView {
     }()
     
     //MARK: - Initialize -
-    init() {
-        super.init(frame: CGRectZero)
+    override init() {
+        super.init()
         
         addAllUIElements()
     }
@@ -50,7 +49,7 @@ class TrackView: UIView {
 }
 
 //MARK: - TrackCell -
-class TrackCell: UITableViewCell {
+class TrackCell: BaseTableViewCell {
     
     //MARK: - Create UIElements -
     var cellContentView = TrackCellContentView()
@@ -58,7 +57,6 @@ class TrackCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectionStyle = .None
         contentView.addSubview(cellContentView)
         cellContentView.autoPinEdgesToSuperviewEdges()
     }
@@ -83,6 +81,8 @@ class TrackCellContentView: UIView {
     lazy var imageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         view.userInteractionEnabled = true
+        view.layer.cornerRadius = TR_INSET
+        view.clipsToBounds = true
 
         return view
     }()
@@ -98,40 +98,26 @@ class TrackCellContentView: UIView {
     lazy var titleLabel: AHLabel = {
         let view = AHLabel.newAutoLayoutView()
         view.font = TR_TITLE_FONT
-        view.textColor = BLUE
         
         return view
     }()
     
-    lazy var albumButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setTitleColor(GRAY, forState: .Normal)
-        view.setTitleColor(BLUE, forState: .Highlighted)
+    lazy var albumButton: LinkButton = {
+        let view = LinkButton.newAutoLayoutView()
         view.titleLabel!.font = TR_DESC_FONT
-        view.contentHorizontalAlignment = .Left
-        view.titleLabel!.lineBreakMode = .ByTruncatingTail
         
         return view
     }()
     
-    lazy var artistButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setTitleColor(GRAY, forState: .Normal)
-        view.setTitleColor(BLUE, forState: .Highlighted)
+    lazy var artistButton: LinkButton = {
+        let view = LinkButton.newAutoLayoutView()
         view.titleLabel!.font = TR_DESC_FONT
-        view.contentHorizontalAlignment = .Left
-        view.titleLabel!.lineBreakMode = .ByTruncatingTail
         
         return view
     }()
     
-    lazy var linkButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setTitleColor(GRAY, forState: .Normal)
-        view.setTitleColor(BLUE, forState: .Highlighted)
-        view.titleLabel!.font = LINK_FONT
-        view.contentHorizontalAlignment = .Left
-        view.titleLabel!.lineBreakMode = .ByTruncatingTail
+    lazy var linkButton: LinkButton = {
+        let view = LinkButton.newAutoLayoutView()
         
         return view
     }()

@@ -50,11 +50,14 @@ let IPAD_SCALE : CGFloat                = 1024 / 736
 
 let GREEN                               = UIColor(red: 137/255,     green: 212/255,     blue: 57/255,       alpha: 1)
 let BLUE_LIGHT                          = UIColor(red: 51/255,      green: 204/255,     blue: 255/255,      alpha: 1)
+let BLUE_LIGHT1                         = CLEAR // UIColor(red: 210/255,     green: 220/255,     blue: 240/255,      alpha: 1)
 let XAKI                                = UIColor(red: 255/255,     green: 102/255,     blue: 51/255,       alpha: 1)
 let GRAY_164                            = UIColor(red: 164/255,     green: 164/255,     blue: 164/255,      alpha: 1)
 let GRAY_200                            = UIColor(red: 200/255,     green: 200/255,     blue: 200/255,      alpha: 1)
 let GRAY_119                            = UIColor(red: 119/255,     green: 119/255,     blue: 119/255,      alpha: 1)
 let BLACK_59                            = UIColor(red: 59/255,      green: 59/255,      blue: 59/255,       alpha: 1)
+let RED                                 = UIColor(red: 240/255,     green: 30/255,      blue: 30/255,       alpha: 1)
+let RED_LIGHT                           = UIColor(red: 232/255,     green: 114/255,     blue: 114/255,      alpha: 1)
 let BLUE                                = UIColor(red: 24/255,      green: 75/255,      blue: 152/255,      alpha: 1)
 let BLACK                               = UIColor.blackColor()
 let WHITE                               = UIColor.whiteColor()
@@ -90,7 +93,7 @@ let LM_LBL_FONT                         = UIFont.systemFontOfSize(DeviceType.IS_
 
 let CA_INSET : CGFloat                  = DeviceType.IS_IPAD ? 10     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 10     : DeviceType.IS_IPHONE_6 ? 10   * IPHONE_6_SCALE : 10   * IPHONE_5_SCALE
 let CA_OFFSET : CGFloat                 = DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE
-let CA_ICON_SIZE : CGFloat              = DeviceType.IS_IPAD ? 40     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 40     : DeviceType.IS_IPHONE_6 ? 40   * IPHONE_6_SCALE : 40   * IPHONE_5_SCALE
+let CA_ICON_SIZE : CGFloat              = DeviceType.IS_IPAD ? 60     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 60     : DeviceType.IS_IPHONE_6 ? 60   * IPHONE_6_SCALE : 60   * IPHONE_5_SCALE
 let CA_CELL_WIDTH : CGFloat             = (ScreenSize.WIDTH - 4*CA_INSET)/2
 
 let CA_TITLE_FONT                       = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 25     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 25     : DeviceType.IS_IPHONE_6 ? 25   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE)
@@ -126,16 +129,16 @@ let PL_DATE_FONT                        = UIFont.systemFontOfSize(DeviceType.IS_
 
 let TR_INSET : CGFloat                  = DeviceType.IS_IPAD ? 10     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 10     : DeviceType.IS_IPHONE_6 ? 10   * IPHONE_6_SCALE : 10   * IPHONE_5_SCALE
 let TR_OFFSET : CGFloat                 = DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE
-let TR_ICON_SIZE : CGFloat              = DeviceType.IS_IPAD ? 40     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 40     : DeviceType.IS_IPHONE_6 ? 40   * IPHONE_6_SCALE : 40   * IPHONE_5_SCALE
+let TR_ICON_SIZE : CGFloat              = DeviceType.IS_IPAD ? 60     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 60     : DeviceType.IS_IPHONE_6 ? 60   * IPHONE_6_SCALE : 60   * IPHONE_5_SCALE
 let TR_CELL_HEIGHT : CGFloat            = DeviceType.IS_IPAD ? 150    * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 150    : DeviceType.IS_IPHONE_6 ? 150  * IPHONE_6_SCALE : 150  * IPHONE_5_SCALE
 let TR_IMG_WIDTH : CGFloat              = ScreenSize.WIDTH*0.35
 
-let TR_TITLE_FONT                       = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE)
+let TR_TITLE_FONT                       = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 18     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 18     : DeviceType.IS_IPHONE_6 ? 18   * IPHONE_6_SCALE : 18   * IPHONE_5_SCALE)
 let TR_DESC_FONT                        = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 16     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 16     : DeviceType.IS_IPHONE_6 ? 16   * IPHONE_6_SCALE : 16   * IPHONE_5_SCALE)
 
 //MARK: - Detail Constants
 
-let DE_CELL_HEIGHT : CGFloat            = DeviceType.IS_IPAD ? 60     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 60     : DeviceType.IS_IPHONE_6 ? 60   * IPHONE_6_SCALE : 60   * IPHONE_5_SCALE
+let DE_CELL_HEIGHT : CGFloat            = DeviceType.IS_IPAD ? 80     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 80     : DeviceType.IS_IPHONE_6 ? 80   * IPHONE_6_SCALE : 80   * IPHONE_5_SCALE
 let DE_HEADER_HEIGHT : CGFloat          = ScreenSize.HEIGHT*0.6
 
 let DE_INFO_FONT                        = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 16     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 16     : DeviceType.IS_IPHONE_6 ? 16   * IPHONE_6_SCALE : 16   * IPHONE_5_SCALE)
@@ -144,9 +147,9 @@ let DE_INFO_FONT                        = UIFont.boldSystemFontOfSize(DeviceType
 
 let TD_INSET : CGFloat                  = DeviceType.IS_IPAD ? 10     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 10     : DeviceType.IS_IPHONE_6 ? 10   * IPHONE_6_SCALE : 10   * IPHONE_5_SCALE
 let TD_OFFSET : CGFloat                 = DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE
-let TD_BTN_SIZE : CGFloat               = DeviceType.IS_IPAD ? 30     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 30     : DeviceType.IS_IPHONE_6 ? 30   * IPHONE_6_SCALE : 30   * IPHONE_5_SCALE
-let TD_BBTN_SIZE : CGFloat              = DeviceType.IS_IPAD ? 45     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 45     : DeviceType.IS_IPHONE_6 ? 45   * IPHONE_6_SCALE : 45   * IPHONE_5_SCALE
-let TD_HEIGHT : CGFloat                 = TD_BBTN_SIZE*4.5
+let TD_BTN_SIZE : CGFloat               = DeviceType.IS_IPAD ? 40     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 40     : DeviceType.IS_IPHONE_6 ? 40   * IPHONE_6_SCALE : 40   * IPHONE_5_SCALE
+let TD_BBTN_SIZE : CGFloat              = DeviceType.IS_IPAD ? 70     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 70     : DeviceType.IS_IPHONE_6 ? 70   * IPHONE_6_SCALE : 70   * IPHONE_5_SCALE
+let TD_HEIGHT : CGFloat                 = TD_BBTN_SIZE*3
 //let TD_HEIGHT : CGFloat                 = ScreenSize.HEIGHT*0.3
 
 let TD_DATE_FONT                        = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 14      * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 14     : DeviceType.IS_IPHONE_6 ? 14   * IPHONE_6_SCALE : 14   * IPHONE_5_SCALE)

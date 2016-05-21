@@ -7,19 +7,19 @@
 //
 
 //MARK: - CategoryView -
-class CategoryView: UIView {
+class CategoryView: BaseView {
     
-    lazy var collection: UICollectionView = {
-        let view = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
-        view.backgroundColor = WHITE
+    lazy var collection: BaseCollectionView = {
+        let view = BaseCollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
         
         return view
     }()
     
     //MARK: - Initialize -
-    init() {
-        super.init(frame: CGRectZero)
+    override init() {
+        super.init()
         
+        bgImageView.image = UIImage(named: "bg_1")
         addAllUIElements()
     }
     
@@ -69,16 +69,15 @@ class CategoryCellContentView: UIView {
     //MARK: - Create UIElements -
     lazy var imageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
+        view.layer.cornerRadius = CA_INSET
+        view.clipsToBounds = true
         
         return view
     }()
     
     lazy var iconImageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
-        view.image = UIImage(named: "img_ca_icon")
-        view.layer.cornerRadius = CA_ICON_SIZE/2
-        view.layer.borderWidth = 2
-        view.layer.borderColor = BLUE.CGColor
+        view.image = UIImage(named: "img_ca_sound")
         
         return view
     }()
@@ -86,7 +85,7 @@ class CategoryCellContentView: UIView {
     lazy var nameLabel: AHLabel = {
         let view = AHLabel.newAutoLayoutView()
         view.font = CA_TITLE_FONT
-        view.textColor = BLUE
+        view.textColor = WHITE
         
         return view
     }()
@@ -116,8 +115,8 @@ class CategoryCellContentView: UIView {
         imageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: CA_OFFSET*1.5)
         imageView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), excludingEdge: .Bottom)
         
-        iconImageView.autoPinEdgeToSuperviewEdge(.Left, withInset: CA_OFFSET)
-        iconImageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: CA_OFFSET)
+        iconImageView.autoPinEdgeToSuperviewEdge(.Left, withInset: 0)
+        iconImageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 0)
         iconImageView.autoSetDimensionsToSize(CGSize(width: CA_ICON_SIZE, height: CA_ICON_SIZE))
         
         nameLabel.autoPinEdgeToSuperviewEdge(.Bottom)

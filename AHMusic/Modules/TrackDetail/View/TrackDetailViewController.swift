@@ -18,6 +18,15 @@ class TrackDetailViewController: UIViewController {
     var tracks: Array<Track>!
     var track: Track!
     
+    lazy var rightItem: UIBarButtonItem = {
+        let shareButton = AHButton(frame: CGRect(x: 0, y: 0, width: 22, height: 30))
+        shareButton.setBackgroundImage(UIImage(named:"img_share"), forState: .Normal)
+        shareButton.addTarget(self, action: #selector(TrackDetailViewController.shareTrack(_:)), forControlEvents: .TouchUpInside)
+        let item = UIBarButtonItem(customView: shareButton)
+        
+        return item
+    }()
+    
     //MARK: - Initilize -
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -58,11 +67,12 @@ class TrackDetailViewController: UIViewController {
     private func baseConfig() {
         self.view = trackDetailView
         
+        configureNavigationBar()
+        
         resetUI()
         
         trackDetailView.headerView.imageView.kf_setImageWithURL(NSURL(string: self.track.album.coverBig)!, placeholderImage: Image(named: "img_placeholder"))
-        trackDetailView.infoView.titleLabel.text = self.track.title
-        trackDetailView.infoView.dateLabel.text = self.track.releaseDate
+        trackDetailView.headerView.titleLabel.text = self.track.title
     
         trackDetailView.actionView.volumeSlider.addTarget(self, action: #selector(TrackDetailViewController.volumeSliderValueChanged(_:)), forControlEvents: .ValueChanged)
         trackDetailView.actionView.slider.addTarget(self, action: #selector(TrackDetailViewController.progressSliderValueChanged(_:)), forControlEvents: .ValueChanged)
@@ -73,9 +83,12 @@ class TrackDetailViewController: UIViewController {
         trackDetailView.actionView.replayButton.addTarget(self, action: #selector(TrackDetailViewController.replayAction), forControlEvents: .TouchUpInside)
         trackDetailView.actionView.trackListButton.addTarget(self, action: #selector(TrackDetailViewController.openActionSheet), forControlEvents: .TouchUpInside)
 
-        trackDetailView.infoView.shareButton.addTarget(self, action: #selector(TrackDetailViewController.shareTrack(_:)), forControlEvents: .TouchUpInside)
+}
+
+    private func configureNavigationBar() {
+        navigationItem.setRightBarButtonItem(rightItem, animated: false)
     }
-    
+
     private func playTrackInStart() {
         let index = tracks.indexOf {$0.id == track.id}
         if let index = index {
@@ -144,17 +157,17 @@ extension TrackDetailViewController: TrackDetailViewInput {
     
     func stateDidChange(jukebox: Jukebox) {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.trackDetailView.actionView.playPauseButton.alpha = jukebox.state == .Loading ? 0 : 1
+//            self.trackDetailView.actionView.playPauseButton.alpha = jukebox.state == .Loading ? 0 : 1
             self.trackDetailView.actionView.playPauseButton.enabled = jukebox.state == .Loading ? false : true
         })
         
         if jukebox.state == .Ready {
-            trackDetailView.actionView.playPauseButton.setImage(UIImage(named: "playBtn"), forState: .Normal)
+            trackDetailView.actionView.playPauseButton.setBackgroundImage(UIImage(named: "img_max_pl_play"), forState: .Normal)
         } else if jukebox.state == .Loading  {
-            trackDetailView.actionView.playPauseButton.setImage(UIImage(named: "pauseBtn"), forState: .Normal)
+            trackDetailView.actionView.playPauseButton.setBackgroundImage(UIImage(named: "img_max_pl_pause"), forState: .Normal)
         } else {
             trackDetailView.actionView.volumeSlider.value = jukebox.volume
-            trackDetailView.actionView.playPauseButton.setImage(UIImage(named: jukebox.state == .Paused ? "playBtn" : "pauseBtn"), forState: .Normal)
+            trackDetailView.actionView.playPauseButton.setBackgroundImage(UIImage(named: jukebox.state == .Paused ? "img_max_pl_play" : "img_max_pl_pause"), forState: .Normal)
         }
         
         print("Jukebox state changed to \(jukebox.state)")
@@ -177,8 +190,10 @@ extension TrackDetailViewController: TrackDetailViewInput {
     private func updateUIFromChangeTrack(track: Track) {
         if !track.artist.pictureBig.isEmpty {
             trackDetailView.headerView.imageView.kf_setImageWithURL(NSURL(string: track.artist.pictureBig)!, placeholderImage: Image(named: "img_placeholder"))
+            trackDetailView.headerView.titleLabel.text = track.title + "\nby " + track.artist.name
+
+        } else {
+            trackDetailView.headerView.titleLabel.text = track.title
         }
-        trackDetailView.infoView.titleLabel.text = track.title
-        trackDetailView.infoView.dateLabel.text = track.releaseDate
     }
 }

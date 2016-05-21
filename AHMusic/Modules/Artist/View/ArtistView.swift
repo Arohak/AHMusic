@@ -7,11 +7,10 @@
 //
 
 //MARK: - ArtistView -
-class ArtistView: UIView {
+class ArtistView: BaseView {
     
-    lazy var collection: UICollectionView = {
-        let view = UICollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
-        view.backgroundColor = WHITE
+    lazy var collection: BaseCollectionView = {
+        let view = BaseCollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
         
         return view
     }()
@@ -24,8 +23,8 @@ class ArtistView: UIView {
     }()
     
     //MARK: - Initialize -
-    init() {
-        super.init(frame: CGRectZero)
+    override init() {
+        super.init()
         
         addAllUIElements()
     }
@@ -85,8 +84,8 @@ class ArtistCellContentView: UIView {
     lazy var nameLabel: AHLabel = {
         let view = AHLabel.newAutoLayoutView()
         view.font = AR_TITLE_FONT
-        view.textColor = BLUE
         view.numberOfLines = 2
+        view.textAlignment = .Center
         
         return view
     }()

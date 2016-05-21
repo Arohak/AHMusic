@@ -109,16 +109,16 @@ extension MiniPlayerViewController: PlayerOutputProtocol {
     
     func stateDidChange(jukebox: Jukebox) {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.miniPlayerView.player.playPauseButton.alpha = jukebox.state == .Loading ? 0 : 1
+//            self.miniPlayerView.player.playPauseButton.alpha = jukebox.state == .Loading ? 0 : 1
             self.miniPlayerView.player.playPauseButton.enabled = jukebox.state == .Loading ? false : true
         })
         
         if jukebox.state == .Ready {
-            miniPlayerView.player.playPauseButton.setImage(UIImage(named: "playBtn"), forState: .Normal)
+            miniPlayerView.player.playPauseButton.setBackgroundImage(UIImage(named: "img_pl_play"), forState: .Normal)
         } else if jukebox.state == .Loading  {
-            miniPlayerView.player.playPauseButton.setImage(UIImage(named: "pauseBtn"), forState: .Normal)
+            miniPlayerView.player.playPauseButton.setBackgroundImage(UIImage(named: "img_pl_pause"), forState: .Normal)
         } else {
-            miniPlayerView.player.playPauseButton.setImage(UIImage(named: jukebox.state == .Paused ? "playBtn" : "pauseBtn"), forState: .Normal)
+            miniPlayerView.player.playPauseButton.setBackgroundImage(UIImage(named: jukebox.state == .Paused ? "img_pl_play" : "img_pl_pause"), forState: .Normal)
         }
         
 //        print("Jukebox state changed to \(jukebox.state)")

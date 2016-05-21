@@ -6,17 +6,11 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class TrackDetailView: UIView {
+class TrackDetailView: BaseView {
     
     //MARK: - Create UIElements -
     lazy var headerView: TDHeaderView = {
         let view = TDHeaderView.newAutoLayoutView()
-        
-        return view
-    }()
-    
-    lazy var infoView: TDInfoView = {
-        let view = TDInfoView.newAutoLayoutView()
         
         return view
     }()
@@ -28,9 +22,10 @@ class TrackDetailView: UIView {
     }()
     
     //MARK: - Initialize -
-    init() {
-        super.init(frame: CGRectZero)
+    override init() {
+        super.init()
         
+        bgImageView.image = UIImage(named: "bg_2")
         addAllUIElements()
     }
     
@@ -41,7 +36,6 @@ class TrackDetailView: UIView {
     //MARK: - Private Methods -
     private func addAllUIElements() {
         addSubview(headerView)
-        addSubview(infoView)
         addSubview(actionView)
         
         setConstraints()
@@ -52,12 +46,7 @@ class TrackDetailView: UIView {
         headerView.autoPinEdgeToSuperviewEdge(.Top)
         headerView.autoPinEdgeToSuperviewEdge(.Left)
         headerView.autoPinEdgeToSuperviewEdge(.Right)
-        headerView.autoPinEdge(.Bottom, toEdge: .Top, ofView: infoView)
-        
-        infoView.autoPinEdge(.Bottom, toEdge: .Top, ofView: actionView)
-        infoView.autoPinEdgeToSuperviewEdge(.Left)
-        infoView.autoPinEdgeToSuperviewEdge(.Right)
-        infoView.autoSetDimension(.Height, toSize: TD_HEIGHT*0.4)
+        headerView.autoPinEdge(.Bottom, toEdge: .Top, ofView: actionView)
         
         actionView.autoPinEdgeToSuperviewEdge(.Bottom)
         actionView.autoPinEdgeToSuperviewEdge(.Left)

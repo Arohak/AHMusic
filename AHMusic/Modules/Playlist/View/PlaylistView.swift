@@ -7,11 +7,10 @@
 //
 
 //MARK: - PlaylistView -
-class PlaylistView: UIView {
+class PlaylistView: BaseView {
     
-    lazy var tableView: UITableView = {
-        let view = UITableView.newAutoLayoutView()
-        view.backgroundColor = WHITE
+    lazy var tableView: BaseTableView = {
+        let view = BaseTableView.newAutoLayoutView()
         
         return view
     }()
@@ -24,8 +23,8 @@ class PlaylistView: UIView {
     }()
     
     //MARK: - Initialize -
-    init() {
-        super.init(frame: CGRectZero)
+    override init() {
+        super.init()
         
         addAllUIElements()
     }
@@ -50,7 +49,7 @@ class PlaylistView: UIView {
 }
 
 //MARK: - PlaylistCell -
-class PlaylistCell: UITableViewCell {
+class PlaylistCell: BaseTableViewCell {
     
     //MARK: - Create UIElements -
     var cellContentView = PlaylistCellContentView()
@@ -58,7 +57,6 @@ class PlaylistCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        selectionStyle = .None
         contentView.addSubview(cellContentView)
         cellContentView.autoPinEdgesToSuperviewEdges()
     }
@@ -90,8 +88,7 @@ class PlaylistCellContentView: UIView {
     lazy var titleLabel: AHLabel = {
         let view = AHLabel.newAutoLayoutView()
         view.font = PL_TITLE_FONT
-        view.textColor = BLUE
-        view.numberOfLines = 0
+        view.numberOfLines = 2
 
         return view
     }()
@@ -99,18 +96,12 @@ class PlaylistCellContentView: UIView {
     lazy var creationDateLabel: AHLabel = {
         let view = AHLabel.newAutoLayoutView()
         view.font = LINK_FONT
-        view.textColor = BLUE
         
         return view
     }()
     
-    lazy var linkButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setTitleColor(GRAY, forState: .Normal)
-        view.setTitleColor(BLUE, forState: .Highlighted)
-        view.titleLabel!.font = LINK_FONT
-        view.contentHorizontalAlignment = .Left
-        view.titleLabel!.lineBreakMode = .ByTruncatingTail
+    lazy var linkButton: LinkButton = {
+        let view = LinkButton.newAutoLayoutView()
         
         return view
     }()
