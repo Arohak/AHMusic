@@ -219,6 +219,20 @@
 		527022121CF1BD8F00E81763 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527021701CF1BD8F00E81763 /* SettingsViewController.swift */; };
 		527022131CF1BD8F00E81763 /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527021711CF1BD8F00E81763 /* SettingsViewInput.swift */; };
 		527022141CF1BD8F00E81763 /* SettingsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527021721CF1BD8F00E81763 /* SettingsViewOutput.swift */; };
+		52FAA7141CF1C04A0003D92A /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7131CF1C04A0003D92A /* SignInView.swift */; };
+		52FAA7161CF1C8DC0003D92A /* SIHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7151CF1C8DC0003D92A /* SIHeaderView.swift */; };
+		52FAA7181CF1C8F40003D92A /* SIFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7171CF1C8F40003D92A /* SIFooterView.swift */; };
+		52FAA7291CF24BBF0003D92A /* WelcomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA71B1CF24BBF0003D92A /* WelcomeConfigurator.swift */; };
+		52FAA72A1CF24BBF0003D92A /* WelcomeInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA71C1CF24BBF0003D92A /* WelcomeInitializer.swift */; };
+		52FAA72B1CF24BBF0003D92A /* WelcomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA71E1CF24BBF0003D92A /* WelcomeInteractor.swift */; };
+		52FAA72C1CF24BBF0003D92A /* WelcomeInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA71F1CF24BBF0003D92A /* WelcomeInteractorInput.swift */; };
+		52FAA72D1CF24BBF0003D92A /* WelcomeInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7201CF24BBF0003D92A /* WelcomeInteractorOutput.swift */; };
+		52FAA72E1CF24BBF0003D92A /* WelcomeModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7221CF24BBF0003D92A /* WelcomeModuleInput.swift */; };
+		52FAA72F1CF24BBF0003D92A /* WelcomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7231CF24BBF0003D92A /* WelcomePresenter.swift */; };
+		52FAA7301CF24BBF0003D92A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7261CF24BBF0003D92A /* WelcomeViewController.swift */; };
+		52FAA7311CF24BBF0003D92A /* WelcomeViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7271CF24BBF0003D92A /* WelcomeViewInput.swift */; };
+		52FAA7321CF24BBF0003D92A /* WelcomeViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7281CF24BBF0003D92A /* WelcomeViewOutput.swift */; };
+		52FAA7341CF24BFC0003D92A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7331CF24BFC0003D92A /* WelcomeView.swift */; };
 		772D4AE2EF9CEF224BD8E5CD /* Pods_AHMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAE2358404452FDCC25542C /* Pods_AHMusicTests.framework */; };
 		A14836DF1CDB75CA0043036B /* AHMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836DE1CDB75CA0043036B /* AHMusicTests.swift */; };
 		A14836EA1CDB75CA0043036B /* AHMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836E91CDB75CA0043036B /* AHMusicUITests.swift */; };
@@ -455,6 +469,20 @@
 		527021701CF1BD8F00E81763 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		527021711CF1BD8F00E81763 /* SettingsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
 		527021721CF1BD8F00E81763 /* SettingsViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewOutput.swift; sourceTree = "<group>"; };
+		52FAA7131CF1C04A0003D92A /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		52FAA7151CF1C8DC0003D92A /* SIHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIHeaderView.swift; sourceTree = "<group>"; };
+		52FAA7171CF1C8F40003D92A /* SIFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFooterView.swift; sourceTree = "<group>"; };
+		52FAA71B1CF24BBF0003D92A /* WelcomeConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeConfigurator.swift; sourceTree = "<group>"; };
+		52FAA71C1CF24BBF0003D92A /* WelcomeInitializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeInitializer.swift; sourceTree = "<group>"; };
+		52FAA71E1CF24BBF0003D92A /* WelcomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeInteractor.swift; sourceTree = "<group>"; };
+		52FAA71F1CF24BBF0003D92A /* WelcomeInteractorInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeInteractorInput.swift; sourceTree = "<group>"; };
+		52FAA7201CF24BBF0003D92A /* WelcomeInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeInteractorOutput.swift; sourceTree = "<group>"; };
+		52FAA7221CF24BBF0003D92A /* WelcomeModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeModuleInput.swift; sourceTree = "<group>"; };
+		52FAA7231CF24BBF0003D92A /* WelcomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomePresenter.swift; sourceTree = "<group>"; };
+		52FAA7261CF24BBF0003D92A /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		52FAA7271CF24BBF0003D92A /* WelcomeViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewInput.swift; sourceTree = "<group>"; };
+		52FAA7281CF24BBF0003D92A /* WelcomeViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewOutput.swift; sourceTree = "<group>"; };
+		52FAA7331CF24BFC0003D92A /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		69267D2B6C9683DEF7073F77 /* Pods-AHMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests.release.xcconfig"; sourceTree = "<group>"; };
 		A14836C61CDB75CA0043036B /* AHMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AHMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14836DA1CDB75CA0043036B /* AHMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AHMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -816,6 +844,7 @@
 		527020771CF1BD8F00E81763 /* Autorization */ = {
 			isa = PBXGroup;
 			children = (
+				52FAA7191CF24BBF0003D92A /* Welcome */,
 				527020781CF1BD8F00E81763 /* SignIn */,
 				527020881CF1BD8F00E81763 /* SignUp */,
 			);
@@ -875,6 +904,9 @@
 		527020871CF1BD8F00E81763 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				52FAA7131CF1C04A0003D92A /* SignInView.swift */,
+				52FAA7151CF1C8DC0003D92A /* SIHeaderView.swift */,
+				52FAA7171CF1C8F40003D92A /* SIFooterView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1053,13 +1085,13 @@
 		527020B81CF1BD8F00E81763 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				527020DB1CF1BD8F00E81763 /* Category */,
 				527020B91CF1BD8F00E81763 /* Album */,
 				527020CA1CF1BD8F00E81763 /* Artist */,
-				527020DB1CF1BD8F00E81763 /* Category */,
-				527020EC1CF1BD8F00E81763 /* Detail */,
 				527020FD1CF1BD8F00E81763 /* Playlist */,
 				5270210E1CF1BD8F00E81763 /* Station */,
 				5270211E1CF1BD8F00E81763 /* Track */,
+				527020EC1CF1BD8F00E81763 /* Detail */,
 				5270212F1CF1BD8F00E81763 /* TrackDetail */,
 			);
 			path = Home;
@@ -1703,6 +1735,64 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		52FAA7191CF24BBF0003D92A /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				52FAA71A1CF24BBF0003D92A /* Configurator */,
+				52FAA71D1CF24BBF0003D92A /* Interactor */,
+				52FAA7211CF24BBF0003D92A /* Presenter */,
+				52FAA7241CF24BBF0003D92A /* View */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		52FAA71A1CF24BBF0003D92A /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				52FAA71B1CF24BBF0003D92A /* WelcomeConfigurator.swift */,
+				52FAA71C1CF24BBF0003D92A /* WelcomeInitializer.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		52FAA71D1CF24BBF0003D92A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				52FAA71E1CF24BBF0003D92A /* WelcomeInteractor.swift */,
+				52FAA71F1CF24BBF0003D92A /* WelcomeInteractorInput.swift */,
+				52FAA7201CF24BBF0003D92A /* WelcomeInteractorOutput.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		52FAA7211CF24BBF0003D92A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				52FAA7221CF24BBF0003D92A /* WelcomeModuleInput.swift */,
+				52FAA7231CF24BBF0003D92A /* WelcomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		52FAA7241CF24BBF0003D92A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52FAA7261CF24BBF0003D92A /* WelcomeViewController.swift */,
+				52FAA7271CF24BBF0003D92A /* WelcomeViewInput.swift */,
+				52FAA7281CF24BBF0003D92A /* WelcomeViewOutput.swift */,
+				52FAA7251CF24BBF0003D92A /* views */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52FAA7251CF24BBF0003D92A /* views */ = {
+			isa = PBXGroup;
+			children = (
+				52FAA7331CF24BFC0003D92A /* WelcomeView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		A14836BD1CDB75CA0043036B = {
 			isa = PBXGroup;
 			children = (
@@ -2001,11 +2091,15 @@
 				52701E821CF1B90600E81763 /* OpenTrackDetailProtocol.swift in Sources */,
 				527022081CF1BD8F00E81763 /* ProfileViewController.swift in Sources */,
 				527021B21CF1BD8F00E81763 /* CategoryConfigurator.swift in Sources */,
+				52FAA72F1CF24BBF0003D92A /* WelcomePresenter.swift in Sources */,
+				52FAA72B1CF24BBF0003D92A /* WelcomeInteractor.swift in Sources */,
 				527021ED1CF1BD8F00E81763 /* TrackDetailModuleInput.swift in Sources */,
 				52701E811CF1B90600E81763 /* GetTrackProtocol.swift in Sources */,
 				527021B01CF1BD8F00E81763 /* ArtistViewOutput.swift in Sources */,
 				527021A21CF1BD8F00E81763 /* AlbumPresenter.swift in Sources */,
 				52701E721CF1B90600E81763 /* ApplicationAssembly.swift in Sources */,
+				52FAA7301CF24BBF0003D92A /* WelcomeViewController.swift in Sources */,
+				52FAA7341CF24BFC0003D92A /* WelcomeView.swift in Sources */,
 				527021CC1CF1BD8F00E81763 /* PlaylistInteractorOutput.swift in Sources */,
 				527021F31CF1BD8F00E81763 /* TDHeaderView.swift in Sources */,
 				527021FC1CF1BD8F00E81763 /* LeftMenuViewController.swift in Sources */,
@@ -2046,6 +2140,7 @@
 				527021A61CF1BD8F00E81763 /* AlbumView.swift in Sources */,
 				527022011CF1BD8F00E81763 /* ProfileConfigurator.swift in Sources */,
 				52701E8C1CF1B90600E81763 /* TabViewController.swift in Sources */,
+				52FAA7141CF1C04A0003D92A /* SignInView.swift in Sources */,
 				527021CF1CF1BD8F00E81763 /* PlaylistViewController.swift in Sources */,
 				527021841CF1BD8F00E81763 /* SignUpPresenter.swift in Sources */,
 				5270217D1CF1BD8F00E81763 /* SignInViewOutput.swift in Sources */,
@@ -2056,6 +2151,7 @@
 				527021DC1CF1BD8F00E81763 /* StationViewOutput.swift in Sources */,
 				527021AA1CF1BD8F00E81763 /* ArtistInteractorInput.swift in Sources */,
 				527021961CF1BD8F00E81763 /* FavoriteInteractorOutput.swift in Sources */,
+				52FAA7181CF1C8F40003D92A /* SIFooterView.swift in Sources */,
 				527021C01CF1BD8F00E81763 /* DetailInteractorInput.swift in Sources */,
 				52701E841CF1B90600E81763 /* MiniPlayerView.swift in Sources */,
 				527021E51CF1BD8F00E81763 /* TrackViewInput.swift in Sources */,
@@ -2070,6 +2166,7 @@
 				527022041CF1BD8F00E81763 /* ProfileInteractorInput.swift in Sources */,
 				527021891CF1BD8F00E81763 /* DownloadInitializer.swift in Sources */,
 				527022091CF1BD8F00E81763 /* ProfileViewInput.swift in Sources */,
+				52FAA7161CF1C8DC0003D92A /* SIHeaderView.swift in Sources */,
 				527021F01CF1BD8F00E81763 /* TrackDetailViewInput.swift in Sources */,
 				5270219A1CF1BD8F00E81763 /* FavoriteViewInput.swift in Sources */,
 				52701E981CF1B90600E81763 /* Playlist.swift in Sources */,
@@ -2078,6 +2175,7 @@
 				527021801CF1BD8F00E81763 /* SignUpInteractor.swift in Sources */,
 				527021D61CF1BD8F00E81763 /* StationInteractorInput.swift in Sources */,
 				527021741CF1BD8F00E81763 /* SignInConfigurator.swift in Sources */,
+				52FAA72C1CF24BBF0003D92A /* WelcomeInteractorInput.swift in Sources */,
 				527021FB1CF1BD8F00E81763 /* LeftMenuPresenter.swift in Sources */,
 				527021C81CF1BD8F00E81763 /* PlaylistConfigurator.swift in Sources */,
 				527021D01CF1BD8F00E81763 /* PlaylistViewInput.swift in Sources */,
@@ -2091,6 +2189,7 @@
 				52701E8E1CF1B90600E81763 /* APIHelper.swift in Sources */,
 				527022031CF1BD8F00E81763 /* ProfileInteractor.swift in Sources */,
 				527021D71CF1BD8F00E81763 /* StationInteractorOutput.swift in Sources */,
+				52FAA72E1CF24BBF0003D92A /* WelcomeModuleInput.swift in Sources */,
 				527021B81CF1BD8F00E81763 /* CategoryPresenter.swift in Sources */,
 				527021E11CF1BD8F00E81763 /* TrackInteractorOutput.swift in Sources */,
 				5270220F1CF1BD8F00E81763 /* SettingsInteractorOutput.swift in Sources */,
@@ -2099,6 +2198,7 @@
 				527022051CF1BD8F00E81763 /* ProfileInteractorOutput.swift in Sources */,
 				527021B31CF1BD8F00E81763 /* CategoryInitializer.swift in Sources */,
 				527021D81CF1BD8F00E81763 /* StationModuleInput.swift in Sources */,
+				52FAA72D1CF24BBF0003D92A /* WelcomeInteractorOutput.swift in Sources */,
 				527021DA1CF1BD8F00E81763 /* StationViewController.swift in Sources */,
 				5270217C1CF1BD8F00E81763 /* SignInViewInput.swift in Sources */,
 				52701E961CF1B90600E81763 /* Category.swift in Sources */,
@@ -2127,6 +2227,7 @@
 				52701E7D1CF1B90600E81763 /* MiniPlayerProtocol.swift in Sources */,
 				527021821CF1BD8F00E81763 /* SignUpInteractorOutput.swift in Sources */,
 				527021E61CF1BD8F00E81763 /* TrackViewOutput.swift in Sources */,
+				52FAA7311CF24BBF0003D92A /* WelcomeViewInput.swift in Sources */,
 				527021871CF1BD8F00E81763 /* SignUpViewOutput.swift in Sources */,
 				527021811CF1BD8F00E81763 /* SignUpInteractorInput.swift in Sources */,
 				52701E891CF1B90600E81763 /* ActionSheetPickerViewController.swift in Sources */,
@@ -2147,14 +2248,17 @@
 				527021F81CF1BD8F00E81763 /* LeftMenuInteractorInput.swift in Sources */,
 				527021D31CF1BD8F00E81763 /* StationConfigurator.swift in Sources */,
 				527021CA1CF1BD8F00E81763 /* PlaylistInteractor.swift in Sources */,
+				52FAA7321CF24BBF0003D92A /* WelcomeViewOutput.swift in Sources */,
 				5270218E1CF1BD8F00E81763 /* DownloadPresenter.swift in Sources */,
 				527021A51CF1BD8F00E81763 /* AlbumViewOutput.swift in Sources */,
 				5270217B1CF1BD8F00E81763 /* SignInViewController.swift in Sources */,
 				527021EB1CF1BD8F00E81763 /* TrackDetailInteractorInput.swift in Sources */,
 				5270217E1CF1BD8F00E81763 /* SignUpConfigurator.swift in Sources */,
+				52FAA7291CF24BBF0003D92A /* WelcomeConfigurator.swift in Sources */,
 				5270220E1CF1BD8F00E81763 /* SettingsInteractorInput.swift in Sources */,
 				527021BD1CF1BD8F00E81763 /* DetailConfigurator.swift in Sources */,
 				527021971CF1BD8F00E81763 /* FavoriteModuleInput.swift in Sources */,
+				52FAA72A1CF24BBF0003D92A /* WelcomeInitializer.swift in Sources */,
 				527021A81CF1BD8F00E81763 /* ArtistInitializer.swift in Sources */,
 				527021B71CF1BD8F00E81763 /* CategoryModuleInput.swift in Sources */,
 				527021A11CF1BD8F00E81763 /* AlbumModuleInput.swift in Sources */,

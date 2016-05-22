@@ -82,6 +82,13 @@ let TITLE_BTN_FONT                      = UIFont.boldSystemFontOfSize(DeviceType
 
 let WIDTH : CGFloat                     = DeviceType.IS_IPAD ? 80     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 80     : DeviceType.IS_IPHONE_6 ? 80   * IPHONE_6_SCALE : 80   * IPHONE_5_SCALE
 
+//MARK: - Welcome Constants
+
+let WE_INSET : CGFloat                  = DeviceType.IS_IPAD ? 50     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 50     : DeviceType.IS_IPHONE_6 ? 50   * IPHONE_6_SCALE : 50   * IPHONE_5_SCALE
+let WE_OFFSET : CGFloat                 = DeviceType.IS_IPAD ? 20     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 20     : DeviceType.IS_IPHONE_6 ? 20   * IPHONE_6_SCALE : 20   * IPHONE_5_SCALE
+let WE_LOGO_SIZE : CGFloat              = DeviceType.IS_IPAD ? 200    * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 200    : DeviceType.IS_IPHONE_6 ? 200  * IPHONE_6_SCALE : 200  * IPHONE_5_SCALE
+let WE_BTN_HEIGHT : CGFloat             = DeviceType.IS_IPAD ? 50     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 50     : DeviceType.IS_IPHONE_6 ? 50   * IPHONE_6_SCALE : 50   * IPHONE_5_SCALE
+let WE_BTN_FONT                         = UIFont.boldSystemFontOfSize(DeviceType.IS_IPAD ? 18     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 18     : DeviceType.IS_IPHONE_6 ? 18   * IPHONE_6_SCALE : 18   * IPHONE_5_SCALE)
 
 //MARK: - LeftMenu Constants
 

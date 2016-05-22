@@ -37,6 +37,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let vc = ParallaxViewController(items: ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L"], title: "Test", imageStr: "img_ca_rock")
 //        let nav = UINavigationController(rootViewController: vc)
         
+//        let signIn = SignInPresenter()
+//        _ = SignInModuleInitializer(presentor: signIn)
+//        let nav = signIn.view as! UIViewController
+//        let nav = UINavigationController(rootViewController: vc)
+
+//        let welcome = WelcomePresenter()
+//        _ = WelcomeModuleInitializer(presentor: welcome)
+//        let vc = welcome.view as! UIViewController
+//        let nav = UINavigationController(rootViewController: vc)
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

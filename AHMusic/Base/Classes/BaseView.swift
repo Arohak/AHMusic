@@ -48,8 +48,15 @@ class BaseCollectionView: UICollectionView {
 class BaseTableView: UITableView {
     
     //MARK: - Initialize -
-    init() {
-        super.init(frame: CGRectZero, style: .Plain)
+    override init(frame: CGRect, style: UITableViewStyle) {
+        super.init(frame: frame, style: style)
+        
+        separatorStyle = .None
+        backgroundColor = CLEAR
+    }
+    
+    convenience init() {
+        self.init(frame: CGRectZero, style: .Plain)
         
         separatorStyle = .None
         backgroundColor = CLEAR

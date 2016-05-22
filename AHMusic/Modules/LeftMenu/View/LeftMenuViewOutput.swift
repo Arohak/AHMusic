@@ -9,4 +9,10 @@
 protocol LeftMenuViewOutput {
 
     func viewIsReady()
+    
+    func home()
+    func favorite()
+    func download()
+    func settings()
+    func logout()
 }

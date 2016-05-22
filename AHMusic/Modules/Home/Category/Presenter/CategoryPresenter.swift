@@ -41,10 +41,10 @@ extension CategoryPresenter: CategoryInteractorOutput {
     }
     
     func searchDataIsReady(items: Array<Results>) {
-        if let firstVC = rootVC.viewControllers[0] as? SlideViewController {
+        if let slide = rootVC.viewControllers[0] as? SlideViewController {
             let tab = TabViewController(keyword: keyword)
-            firstVC.slideMenuController()!.changeMainViewController(tab,  close: true)
-            (firstVC.slideMenuController() as! SlideViewController).tab = tab
+            slide.slideMenuController()!.changeMainViewController(tab,  close: true)
+            slide.tab = tab
         }
     }
 }

@@ -24,6 +24,33 @@ extension LeftMenuPresenter: LeftMenuViewOutput {
     func viewIsReady() {
 
     }
+    
+    func home() {
+        
+    }
+    
+    func favorite() {
+        
+    }
+    
+    func download() {
+        
+    }
+    
+    func settings() {
+        
+    }
+    
+    func logout() {
+        let welcome = WelcomePresenter()
+        _ = WelcomeModuleInitializer(presentor: welcome)
+        let vc = welcome.view as! UIViewController
+        let nav = UINavigationController(rootViewController: vc)
+        
+        UIView.transitionWithView(appDelegate.window!, duration: 0.5, options: .TransitionFlipFromRight, animations: { _ in
+            appDelegate.window!.rootViewController! = nav
+            }, completion: nil)
+    }
 }
 
 //MARK: - extension for LeftMenuInteractorOutput -
