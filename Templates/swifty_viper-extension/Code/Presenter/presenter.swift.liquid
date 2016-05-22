@@ -6,19 +6,19 @@
 //  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
 //
 
-//MARK: - class {{ module_info.name }}Presenter
+//MARK: - class {{ module_info.name }}Presenter -
 class {{ module_info.name }}Presenter {
 
     var view: {{ module_info.name }}ViewInput!
     var interactor: {{ module_info.name }}InteractorInput!
 }
 
-//MARK: - extension for {{ module_info.name }}ModuleInput
+//MARK: - extension for {{ module_info.name }}ModuleInput -
 extension {{ module_info.name }}Presenter: {{ module_info.name }}ModuleInput {
 
 }
 
-//MARK: - extension for {{ module_info.name }}ViewOutput
+//MARK: - extension for {{ module_info.name }}ViewOutput -
 extension {{ module_info.name }}Presenter: {{ module_info.name }}ViewOutput {
     
     func viewIsReady() {
@@ -26,7 +26,7 @@ extension {{ module_info.name }}Presenter: {{ module_info.name }}ViewOutput {
     }
 }
 
-//MARK: - extension for {{ module_info.name }}InteractorOutput
+//MARK: - extension for {{ module_info.name }}InteractorOutput -
 extension {{ module_info.name }}Presenter: {{ module_info.name }}InteractorOutput {
  
 }
