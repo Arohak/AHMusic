@@ -36,7 +36,7 @@ extension PlaylistPresenter: PlaylistViewOutput {
     
     func openLink(playlist: Playlist) {
         let vc = WebViewController(resourceName: playlist.title, url: NSURL(string: playlist.link)!)
-        rootVC.presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+        UIHelper.root().presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
     
     func openDetail(playlist: Playlist) {
@@ -58,6 +58,7 @@ extension PlaylistPresenter: PlaylistInteractorOutput {
         
         let vc = DetailViewController(title: "Playlist", detail: detail)
         _ = DetailModuleInitializer(vc: vc)
-        rootVC.pushViewController(vc, animated: true)
+        
+        UIHelper.root().pushViewController(vc, animated: true)
     }
 }

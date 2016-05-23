@@ -30,7 +30,7 @@ extension WelcomePresenter: WelcomeViewOutput {
         _ = SignInModuleInitializer(presentor: signIn)
         let vc = signIn.view as! UIViewController
         
-        rootVC.pushViewController(vc, animated: true)
+        UIHelper.root().pushViewController(vc, animated: true)
     }
     
     func signUp() {
@@ -38,7 +38,7 @@ extension WelcomePresenter: WelcomeViewOutput {
         _ = SignUpModuleInitializer(presentor: signUp)
         let vc = signUp.view as! UIViewController
         
-        rootVC.pushViewController(vc, animated: true)
+        UIHelper.root().pushViewController(vc, animated: true)
     }
     
     func guest() {

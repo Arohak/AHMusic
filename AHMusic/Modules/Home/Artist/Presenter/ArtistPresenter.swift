@@ -52,6 +52,6 @@ extension ArtistPresenter: ArtistInteractorOutput {
         
         let vc = DetailViewController(title: "Artist", detail: detail)
         _ = DetailModuleInitializer(vc: vc)
-        rootVC.pushViewController(vc, animated: true)
+        UIHelper.root().pushViewController(vc, animated: true)
     }
 }

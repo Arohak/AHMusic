@@ -36,7 +36,7 @@ extension AlbumPresenter: AlbumViewOutput {
     
     func openLink(album: Album) {
         let vc = WebViewController(resourceName: album.title, url: NSURL(string: album.link)!)
-        rootVC.presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+        UIHelper.root().presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
     
     func openDetail(album: Album) {
@@ -57,6 +57,6 @@ extension AlbumPresenter: AlbumInteractorOutput {
         
         let vc = DetailViewController(title: "Album", detail: detail)
         _ = DetailModuleInitializer(vc: vc)
-        rootVC.pushViewController(vc, animated: true)
+        UIHelper.root().pushViewController(vc, animated: true)
     }
 }

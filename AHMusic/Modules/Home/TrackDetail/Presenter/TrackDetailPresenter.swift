@@ -88,7 +88,7 @@ extension TrackDetailPresenter: TrackDetailViewOutput {
         }
         vc.pickerView.selectRow(player.jukebox.playIndex, inComponent: 0, animated: true)
         
-        rootVC.presentViewController(vc, animated: true, completion: nil)
+        UIHelper.root().presentViewController(vc, animated: true, completion: nil)
     }
     
     func shareTrack(sourceView: UIView, items: Array<Track>) {
@@ -101,7 +101,7 @@ extension TrackDetailPresenter: TrackDetailViewOutput {
         activityVC.excludedActivityTypes = [UIActivityTypeAirDrop, UIActivityTypeAddToReadingList]
         activityVC.popoverPresentationController?.sourceView = sourceView
         
-        rootVC.presentViewController(activityVC, animated: true, completion: nil)
+        UIHelper.root().presentViewController(activityVC, animated: true, completion: nil)
     }
 }
 

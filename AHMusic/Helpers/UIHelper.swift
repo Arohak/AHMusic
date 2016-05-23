@@ -60,6 +60,11 @@ struct UIHelper {
     static func hideSpinner() {
         ALThreeCircleSpinner.hide()
     }
+    
+    static func root() -> UINavigationController {
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        return appDelegate.window!.rootViewController as! UINavigationController
+    }
 //
 //    class func shakeWithView(view: UIView) {
 //        let shake = CABasicAnimation(keyPath: "position")

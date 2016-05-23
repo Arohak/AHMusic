@@ -41,7 +41,9 @@ extension CategoryPresenter: CategoryInteractorOutput {
     }
     
     func searchDataIsReady(items: Array<Results>) {
-        if let slide = rootVC.viewControllers[0] as? SlideViewController {
+        let root = (appDelegate.window!.rootViewController as! UINavigationController)
+
+        if let slide = root.viewControllers[0] as? SlideViewController {
             let tab = TabViewController(keyword: keyword)
             slide.slideMenuController()!.changeMainViewController(tab,  close: true)
             slide.tab = tab

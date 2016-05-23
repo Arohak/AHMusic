@@ -9,7 +9,7 @@
 class LeftMenuView: UIView {
     
     let maxWidth = WIDTH*0.8
-    let minWidth = WIDTH*0.5
+    let minWidth = WIDTH*0.4
     
     //MARK: - Create UIElements -
     lazy var profile: LMGroupView = {

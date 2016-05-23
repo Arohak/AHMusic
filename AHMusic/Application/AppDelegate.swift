@@ -31,8 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = LeftMenuModuleInitializer(presentor: leftMenu)
         let left = leftMenu.view as! UIViewController
 
-        let rootController = SlideViewController(mainViewController: main, leftMenuViewController: left)
-        let nav = UINavigationController(rootViewController: rootController)
+//        let rootController = SlideViewController(mainViewController: main, leftMenuViewController: left)
+//        let nav = UINavigationController(rootViewController: rootController)
         
 //        let vc = ParallaxViewController(items: ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L"], title: "Test", imageStr: "img_ca_rock")
 //        let nav = UINavigationController(rootViewController: vc)
@@ -42,10 +42,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let nav = signIn.view as! UIViewController
 //        let nav = UINavigationController(rootViewController: vc)
 
-//        let welcome = WelcomePresenter()
-//        _ = WelcomeModuleInitializer(presentor: welcome)
-//        let vc = welcome.view as! UIViewController
-//        let nav = UINavigationController(rootViewController: vc)
+        let welcome = WelcomePresenter()
+        _ = WelcomeModuleInitializer(presentor: welcome)
+        let vc = welcome.view as! UIViewController
+        let nav = UINavigationController(rootViewController: vc)
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = nav

@@ -38,12 +38,12 @@ extension TrackPresenter: TrackViewOutput {
         let vc = MiniPlayerViewController(index: index, items: tracks, output: view)
         vc.modalPresentationStyle = .OverCurrentContext
         vc.modalTransitionStyle = .CrossDissolve
-        rootVC.presentViewController(vc, animated: true, completion: nil)
+        UIHelper.root().presentViewController(vc, animated: true, completion: nil)
     }
     
     func openLink(track: Track) {
         let vc = WebViewController(resourceName: track.title, url: NSURL(string: track.link)!)
-        rootVC.presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+        UIHelper.root().presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
     
     func openDetail(album: Album) {
@@ -72,7 +72,7 @@ extension TrackPresenter: TrackInteractorOutput {
         
         let vc = DetailViewController(title: "Album", detail: detail)
         _ = DetailModuleInitializer(vc: vc)
-        rootVC.pushViewController(vc, animated: true)
+        UIHelper.root().pushViewController(vc, animated: true)
     }
     
     func getArtistResultIsReady(artist: Artist, tracks: Array<Track>) {
@@ -81,12 +81,12 @@ extension TrackPresenter: TrackInteractorOutput {
         
         let vc = DetailViewController(title: "Artist", detail: detail)
         _ = DetailModuleInitializer(vc: vc)
-        rootVC.pushViewController(vc, animated: true)
+        UIHelper.root().pushViewController(vc, animated: true)
     }
     
     func getTrackResultIsReady(track: Track, tracks: Array<Track>) {
         let vc = TrackDetailViewController(title: "Track", items: tracks, track: track)
         _ = TrackDetailModuleInitializer(vc: vc)
-        rootVC.pushViewController(vc, animated: true)
+        UIHelper.root().pushViewController(vc, animated: true)
     }
 }

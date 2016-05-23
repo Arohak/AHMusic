@@ -27,7 +27,7 @@ extension DetailPresenter: DetailViewOutput {
     
     func openLink(track: Track) {
         let vc = WebViewController(resourceName: track.title, url: NSURL(string: track.link)!)
-        rootVC.presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+        UIHelper.root().presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
     
     func openTrackDetail(track: Track, items: Array<Track>) {
@@ -38,7 +38,7 @@ extension DetailPresenter: DetailViewOutput {
         let vc = MiniPlayerViewController(index: index, items: tracks, output: view)
         vc.modalPresentationStyle = .OverCurrentContext
         vc.modalTransitionStyle = .CrossDissolve
-        rootVC.presentViewController(vc, animated: true, completion: nil)
+        UIHelper.root().presentViewController(vc, animated: true, completion: nil)
     }
 }
 
@@ -48,6 +48,6 @@ extension DetailPresenter: DetailInteractorOutput {
     func getTrackResultIsReady(track: Track, tracks: Array<Track>) {
         let vc = TrackDetailViewController(title: "Track", items: tracks, track: track)
         _ = TrackDetailModuleInitializer(vc: vc)
-        rootVC.pushViewController(vc, animated: true)
+        UIHelper.root().pushViewController(vc, animated: true)
     }
 }

@@ -748,11 +748,11 @@
 			isa = PBXGroup;
 			children = (
 				52701D931CF1B90600E81763 /* APIHelper.swift */,
+				52701D971CF1B90600E81763 /* UIHelper.swift */,
 				52701D941CF1B90600E81763 /* DBHelper.swift */,
+				52701D981CF1B90600E81763 /* Utils.swift */,
 				52701D951CF1B90600E81763 /* Events.swift */,
 				52701D961CF1B90600E81763 /* LocationHelper.swift */,
-				52701D971CF1B90600E81763 /* UIHelper.swift */,
-				52701D981CF1B90600E81763 /* Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
