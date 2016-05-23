@@ -6,6 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol FavoriteInteractorOutput: class {
+protocol FavoriteInteractorOutput: BaseInteratosOutput {
 
+    func getDBResultIsReady(items: Array<Track>)
 }

@@ -6,10 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol TrackInteractorOutput: class {
+protocol TrackInteractorOutput: BaseInteratosOutput {
 
     func searchResultIsReady(items: Array<Track>)
-    func getAlbumResultIsReady(album: Album)
-    func getArtistResultIsReady(artist: Artist, tracks: Array<Track>)
-    func getTrackResultIsReady(track: Track, tracks: Array<Track>)
 }

@@ -195,6 +195,12 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         cell.cellContentView.linkButton.addTarget(self, action: #selector(DetailViewController.openLink(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.linkButton.indexPath = indexPath
         
+        cell.cellContentView.favoriteButton.addTarget(self, action: #selector(DetailViewController.favoriteAction(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.favoriteButton.indexPath = indexPath
+        
+        cell.cellContentView.downloadButton.addTarget(self, action: #selector(DetailViewController.downloadAction(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.downloadButton.indexPath = indexPath
+        
         let track = items[indexPath.row]
         cell.setValues(track)
         
@@ -219,6 +225,20 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     func openLink(sender: AHButton) {
         let track = items[sender.indexPath.row]
         output.openLink(track)
+    }
+    
+    func favoriteAction(sender: AHButton) {
+        sender.selected = !sender.selected
+        
+        let track = items[sender.indexPath.row]
+        output.favoriteTrack(sender.selected, track: track)
+    }
+    
+    func downloadAction(sender: AHButton) {
+        sender.selected = !sender.selected
+
+        let track = items[sender.indexPath.row]
+        output.downloadTrack(sender.selected, track: track)
     }
 }
 

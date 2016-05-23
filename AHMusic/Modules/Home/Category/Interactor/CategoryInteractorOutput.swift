@@ -9,5 +9,5 @@
 protocol CategoryInteractorOutput: class {
 
     func dataIsReady(items: Array<Category>)
-    func searchDataIsReady(items: Array<Results>)
+    func searchDataIsReady(items: Array<Result>)
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol FavoriteViewInput: class {
+protocol FavoriteViewInput: MiniPlayerProtocol {
 
-    func setupInitialState()
+    func setupInitialState(items: Array<Track>)
 }

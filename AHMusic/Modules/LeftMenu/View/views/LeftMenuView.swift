@@ -26,6 +26,7 @@ class LeftMenuView: UIView {
         view.widthConstraints.constant = self.minWidth
         view.button.setBackgroundImage(UIImage(named: "img_lm_home"), forState: .Normal)
         view.button.setBackgroundImage(UIImage(named: "img_lm_home_select"), forState: .Selected)
+        view.button.selected = true
         view.label.text = "Home"
         
         return view

@@ -11,6 +11,10 @@ class BasePresenter {
     
     var keyword: String!
     
+    init() {
+        self.keyword = ""
+    }
+    
     init(name: String) {
         self.keyword = name
     }

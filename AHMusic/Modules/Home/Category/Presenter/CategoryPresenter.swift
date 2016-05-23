@@ -40,7 +40,7 @@ extension CategoryPresenter: CategoryInteractorOutput {
         view.categoryDataIsReady(items)
     }
     
-    func searchDataIsReady(items: Array<Results>) {
+    func searchDataIsReady(items: Array<Result>) {
         if let slide = UIHelper.root().viewControllers[0] as? SlideViewController {
             let tab = TabViewController(keyword: keyword)
             slide.changeMainViewController(tab,  close: true)

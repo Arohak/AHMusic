@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class Results : Object {
+class Result : Object {
 
     dynamic var id = 0
     dynamic var readable = true

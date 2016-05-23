@@ -28,6 +28,8 @@ class Track : Object {
     
     dynamic var album: Album!
     dynamic var artist: Artist!
+    
+    dynamic var favorite = false
 
     convenience init(data: JSON) {
         self.init()

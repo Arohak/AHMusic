@@ -11,6 +11,8 @@ class LeftMenuViewController: UIViewController {
 
     var output: LeftMenuViewOutput!
     var leftMenuView = LeftMenuView()
+    var buttons: Array<AHButton>!
+    
     
     // MARK: - Life cycle -
     override func viewDidLoad() {
@@ -24,6 +26,8 @@ class LeftMenuViewController: UIViewController {
     private func baseConfig() {
         self.view = leftMenuView
         
+        buttons  = [leftMenuView.home.button, leftMenuView.favorite.button, leftMenuView.download.button, leftMenuView.settings.button]
+        
         leftMenuView.home.button.addTarget(self, action: #selector(LeftMenuViewController.homeAction(_:)), forControlEvents: .TouchUpInside)
         leftMenuView.favorite.button.addTarget(self, action: #selector(LeftMenuViewController.favoriteAction(_:)), forControlEvents: .TouchUpInside)
         leftMenuView.download.button.addTarget(self, action: #selector(LeftMenuViewController.downloadAction(_:)), forControlEvents: .TouchUpInside)
@@ -33,27 +37,27 @@ class LeftMenuViewController: UIViewController {
     
     // MARK: - Actions -
     func homeAction(sender: AHButton) {
-        sender.selected = !sender.selected
-        
-        output.home()
+        if selectCorrectButton(sender) {
+            output.home()
+        }
     }
     
     func favoriteAction(sender: AHButton) {
-        sender.selected = !sender.selected
-
-        output.favorite()
+        if selectCorrectButton(sender) {
+            output.favorite()
+        }
     }
     
     func downloadAction(sender: AHButton) {
-        sender.selected = !sender.selected
-
-        output.download()
+        if selectCorrectButton(sender) {
+            output.download()
+        }
     }
     
     func settingsAction(sender: AHButton) {
-        sender.selected = !sender.selected
-
-        output.settings()
+        if selectCorrectButton(sender) {
+            output.settings()
+        }
     }
     
     func logoutAction() {
@@ -61,8 +65,21 @@ class LeftMenuViewController: UIViewController {
     }
     
     // MARK: - Private Actions -
-    private func selectCorrectButton() {
+    private func selectCorrectButton(sender: AHButton) -> Bool {
+        let state = sender.selected
 
+        if !state {
+            for button in buttons {
+                if state {
+                    button.selected = true
+                } else {
+                    button.selected = false
+                }
+            }
+            sender.selected = !sender.selected
+        }
+        
+        return !state
     }
 }
 

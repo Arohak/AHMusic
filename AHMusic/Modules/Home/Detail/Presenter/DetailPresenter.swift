@@ -40,6 +40,15 @@ extension DetailPresenter: DetailViewOutput {
         vc.modalTransitionStyle = .CrossDissolve
         UIHelper.root().presentViewController(vc, animated: true, completion: nil)
     }
+    
+    func favoriteTrack(state: Bool, track: Track) {
+        track.favorite = state
+        dbHelper.storeTrack(track)
+    }
+    
+    func downloadTrack(state: Bool, track: Track) {
+        
+    }
 }
 
 //MARK: - extension for DetailInteractorOutput -

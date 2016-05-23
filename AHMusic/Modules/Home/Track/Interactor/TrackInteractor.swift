@@ -9,7 +9,7 @@
 //MARK: - class TrackInteractor
 class TrackInteractor {
 
-    weak var output: TrackInteractorOutput!
+    var output: TrackInteractorOutput!
 }
 
 //MARK: - extension for TrackInteractorInput -
