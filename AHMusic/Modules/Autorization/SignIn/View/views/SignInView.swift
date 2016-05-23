@@ -21,6 +21,7 @@ class SignInView : BaseView {
     override init() {
         super.init()
         
+        bgImageView.image = UIImage(named: "bg_2")
         addAllUIElements()
     }
     
@@ -39,12 +40,12 @@ class SignInView : BaseView {
         tableView.autoPinEdgeToSuperviewEdge(.Top)
         tableView.autoPinEdgeToSuperviewEdge(.Left)
         tableView.autoPinEdgeToSuperviewEdge(.Right)
-        heighTBLConstraint = tableView.autoSetDimension(.Height, toSize: ScreenSize.HEIGHT)
+        heighTBLConstraint = tableView.autoSetDimension(.Height, toSize: ScreenSize.HEIGHT - NAV_HEIGHT)
     }
 }
 
 //MARK: - SignInCell -
-class SignInCell : BaseTableViewCell {
+class FieldCell : BaseTableViewCell {
     
     let cellContentView = SICellContentView()
     
@@ -91,6 +92,6 @@ class SICellContentView: UIView {
     func setConstraints() {
         authTextField.autoPinEdgeToSuperviewEdge(.Top)
         authTextField.autoAlignAxisToSuperviewAxis(.Vertical)
-        authTextField.autoSetDimensionsToSize(CGSize(width: 300, height: 40))
+        authTextField.autoSetDimensionsToSize(CGSize(width: AU_FIELD_WIDTH, height: AU_FIELD_HEIGHT))
     }
 }

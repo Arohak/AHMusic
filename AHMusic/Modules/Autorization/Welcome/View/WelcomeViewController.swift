@@ -24,6 +24,7 @@ class WelcomeViewController: UIViewController {
     private func baseConfig() {
         self.view = welcomeView
         
+        self.title = "Welcome"
         welcomeView.signInButton.addTarget(self, action: #selector(WelcomeViewController.signInAction), forControlEvents: .TouchUpInside)
         welcomeView.signUpButton.addTarget(self, action: #selector(WelcomeViewController.signUpAction), forControlEvents: .TouchUpInside)
         welcomeView.guestButton.addTarget(self, action: #selector(WelcomeViewController.guestAction), forControlEvents: .TouchUpInside)

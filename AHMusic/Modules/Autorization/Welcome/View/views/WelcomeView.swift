@@ -17,7 +17,7 @@ class WelcomeView: BaseView {
     lazy var signInButton: AHButton = {
         let view = AHButton.newAutoLayoutView()
         view.setTitle("Sign In", forState: .Normal)
-        view.titleLabel?.font = WE_BTN_FONT
+        view.titleLabel?.font = AU_BTN_FONT
         view.layer.cornerRadius = WE_INSET/3
         view.layer.borderColor = WHITE.CGColor
         view.layer.borderWidth = 1
@@ -28,7 +28,7 @@ class WelcomeView: BaseView {
     lazy var signUpButton: AHButton = {
         let view = AHButton.newAutoLayoutView()
         view.setTitle("Sign Up", forState: .Normal)
-        view.titleLabel?.font = WE_BTN_FONT
+        view.titleLabel?.font = AU_BTN_FONT
         view.layer.cornerRadius = WE_INSET/3
         view.layer.borderColor = WHITE.CGColor
         view.layer.borderWidth = 1
@@ -39,7 +39,7 @@ class WelcomeView: BaseView {
     lazy var guestButton: AHButton = {
         let view = AHButton.newAutoLayoutView()
         view.setTitle("Guest", forState: .Normal)
-        view.titleLabel?.font = WE_BTN_FONT
+        view.titleLabel?.font = AU_BTN_FONT
         view.layer.cornerRadius = WE_INSET/3
         view.layer.borderColor = WHITE.CGColor
         view.layer.borderWidth = 1
@@ -77,14 +77,14 @@ class WelcomeView: BaseView {
         
         signInButton.autoPinEdge(.Bottom, toEdge: .Top, ofView: signUpButton, withOffset: -WE_OFFSET)
         signInButton.autoAlignAxisToSuperviewAxis(.Vertical)
-        signInButton.autoSetDimensionsToSize(CGSize(width: WE_LOGO_SIZE*1.5, height: WE_BTN_HEIGHT))
+        signInButton.autoSetDimensionsToSize(CGSize(width: WE_LOGO_SIZE*1.5, height: AU_BTN_HEIGHT))
         
         signUpButton.autoPinEdge(.Bottom, toEdge: .Top, ofView: guestButton, withOffset: -WE_OFFSET)
         signUpButton.autoAlignAxisToSuperviewAxis(.Vertical)
-        signUpButton.autoSetDimensionsToSize(CGSize(width: WE_LOGO_SIZE*1.5, height: WE_BTN_HEIGHT))
+        signUpButton.autoSetDimensionsToSize(CGSize(width: WE_LOGO_SIZE*1.5, height: AU_BTN_HEIGHT))
         
         guestButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: WE_INSET)
         guestButton.autoAlignAxisToSuperviewAxis(.Vertical)
-        guestButton.autoSetDimensionsToSize(CGSize(width: WE_LOGO_SIZE*1.5, height: WE_BTN_HEIGHT))
+        guestButton.autoSetDimensionsToSize(CGSize(width: WE_LOGO_SIZE*1.5, height: AU_BTN_HEIGHT))
     }
 }

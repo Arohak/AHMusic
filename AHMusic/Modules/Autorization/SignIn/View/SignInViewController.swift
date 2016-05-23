@@ -10,8 +10,7 @@
 class SignInViewController: UIViewController {
     
     var output: SignInViewOutput!
-    
-    var cells = Array<SignInCell>()
+    var cells = Array<FieldCell>()
     
     //MARK: - Create UIElements -
     lazy var signInView: SignInView = {
@@ -48,13 +47,14 @@ class SignInViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    //MARK: - Private Methods
+    //MARK: - Private Methods -
     private func baseConfig() {
         self.view = signInView
         
+        self.title = "Sign In"
         configurateTableViewCells()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardWillChangeFrame(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignInViewController.keyboardWillChangeFrame(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
     }
     
     private func configurateTableViewCells() {
@@ -65,7 +65,7 @@ class SignInViewController: UIViewController {
         let secureTextEntrys = [false, true]
         
         for i in 0..<placeholders.count {
-            let signInCell = SignInCell()
+            let signInCell = FieldCell()
             signInCell.selectionStyle = .None
             signInCell.cellContentView.authTextField.autocapitalizationType = capitalizationTypes[i]
             signInCell.cellContentView.authTextField.secureTextEntry = secureTextEntrys[i]
@@ -91,25 +91,22 @@ class SignInViewController: UIViewController {
         return isValid
     }
     
-    //MARK: - Actions
+    //MARK: - Actions -
     func signIn() {
-        //        let username = cells[0].cellContentView.authTextField.text
-        //        let password = cells[1].cellContentView.authTextField.text
-        let username = "vtgsoftware"
-        let password = "vtgsoftware123"
-        let mandate  = "cascade"
-        
-        cells[0].cellContentView.authTextField.text = username
-        cells[1].cellContentView.authTextField.text = password
-        
-        let params = ["userName" : username, "password" : password, "mandate" : mandate]
-        
-        if isValidInputParams() {
-
-        }
+//        let username = cells[0].cellContentView.authTextField.text
+//        let password = cells[1].cellContentView.authTextField.text
+//        
+//        cells[0].cellContentView.authTextField.text = username
+//        cells[1].cellContentView.authTextField.text = password
+//        
+//        let params = ["userName" : username, "password" : password, "mandate" : mandate]
+//        
+//        if isValidInputParams() {
+//
+//        }
     }
     
-    //MARK: - Keyboard notifications
+    //MARK: - Keyboard notifications -
     func keyboardWillChangeFrame(notification: NSNotification) {
         if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() {
             let animationDuration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber) as! NSTimeInterval
@@ -117,12 +114,11 @@ class SignInViewController: UIViewController {
             
             self.view.layoutIfNeeded()
             UIView.animateWithDuration(animationDuration, animations: { _ in
-                self.signInView.heighTBLConstraint.constant = height
+                self.signInView.heighTBLConstraint.constant = height - NAV_HEIGHT
                 self.view.layoutIfNeeded()
             })
         }
     }
-    
 }
 
 //MARK: - extension for SignInViewInput -
@@ -133,8 +129,8 @@ extension SignInViewController: SignInViewInput {
     }
 }
 
-//MARK: - extension for SignInViewInput -
-extension SignInViewController: UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+//MARK: - extension for UITableView -
+extension SignInViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -148,17 +144,17 @@ extension SignInViewController: UITableViewDataSource, UITableViewDelegate, UITe
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return 50
+        return AU_CELL_HEIGHT
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 300
+        return SI_LOGO_SIZE*1.5
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        return 100
+        return AU_BTN_HEIGHT*1.5
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -171,6 +167,10 @@ extension SignInViewController: UITableViewDataSource, UITableViewDelegate, UITe
         
         return footerView
     }
+}
+
+//MARK: - extension for UITextField -
+extension SignInViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField.tag == 0 {
@@ -182,5 +182,4 @@ extension SignInViewController: UITableViewDataSource, UITableViewDelegate, UITe
         }
         return true
     }
-    
 }

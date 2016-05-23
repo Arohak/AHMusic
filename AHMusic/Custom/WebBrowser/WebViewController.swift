@@ -48,6 +48,7 @@ class WebViewController: UIViewController {
     
     //MARK: - Actions -
     func close() {
+        UIHelper.hideSpinner()
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
 }

@@ -1,5 +1,5 @@
 //
-//  SIHeaderView.swift
+//  SUHeaderView.swift
 //  AHMusic
 //
 //  Created by Ara Hakobyan on 5/22/16.
@@ -7,7 +7,7 @@
 //
 
 
-class SIHeaderView: UIView {
+class SUHeaderView: UIView {
     
     //MARK: - Create UIElements -
     let logoImageView: UIImageView = {
@@ -19,7 +19,7 @@ class SIHeaderView: UIView {
     
     let titleLabel: AHLabel = {
         let view = AHLabel.newAutoLayoutView()
-        view.text = "AAA BBB CCC"
+        view.text = "AAA BBB CCC DDD FFF"
         view.textAlignment = .Center
         
         return view

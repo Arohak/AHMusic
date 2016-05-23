@@ -234,6 +234,9 @@
 		52FAA7321CF24BBF0003D92A /* WelcomeViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7281CF24BBF0003D92A /* WelcomeViewOutput.swift */; };
 		52FAA7341CF24BFC0003D92A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7331CF24BFC0003D92A /* WelcomeView.swift */; };
 		772D4AE2EF9CEF224BD8E5CD /* Pods_AHMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAE2358404452FDCC25542C /* Pods_AHMusicTests.framework */; };
+		A11ABB151CF33DCD000BC69F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11ABB121CF33DCD000BC69F /* SignUpView.swift */; };
+		A11ABB161CF33DCD000BC69F /* SUFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11ABB131CF33DCD000BC69F /* SUFooterView.swift */; };
+		A11ABB171CF33DCD000BC69F /* SUHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11ABB141CF33DCD000BC69F /* SUHeaderView.swift */; };
 		A14836DF1CDB75CA0043036B /* AHMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836DE1CDB75CA0043036B /* AHMusicTests.swift */; };
 		A14836EA1CDB75CA0043036B /* AHMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836E91CDB75CA0043036B /* AHMusicUITests.swift */; };
 /* End PBXBuildFile section */
@@ -484,6 +487,9 @@
 		52FAA7281CF24BBF0003D92A /* WelcomeViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewOutput.swift; sourceTree = "<group>"; };
 		52FAA7331CF24BFC0003D92A /* WelcomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		69267D2B6C9683DEF7073F77 /* Pods-AHMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests.release.xcconfig"; sourceTree = "<group>"; };
+		A11ABB121CF33DCD000BC69F /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A11ABB131CF33DCD000BC69F /* SUFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUFooterView.swift; sourceTree = "<group>"; };
+		A11ABB141CF33DCD000BC69F /* SUHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUHeaderView.swift; sourceTree = "<group>"; };
 		A14836C61CDB75CA0043036B /* AHMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AHMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14836DA1CDB75CA0043036B /* AHMusicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AHMusicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14836DE1CDB75CA0043036B /* AHMusicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHMusicTests.swift; sourceTree = "<group>"; };
@@ -904,9 +910,9 @@
 		527020871CF1BD8F00E81763 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				52FAA7131CF1C04A0003D92A /* SignInView.swift */,
 				52FAA7151CF1C8DC0003D92A /* SIHeaderView.swift */,
 				52FAA7171CF1C8F40003D92A /* SIFooterView.swift */,
+				52FAA7131CF1C04A0003D92A /* SignInView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -956,16 +962,9 @@
 				527020941CF1BD8F00E81763 /* SignUpViewController.swift */,
 				527020951CF1BD8F00E81763 /* SignUpViewInput.swift */,
 				527020961CF1BD8F00E81763 /* SignUpViewOutput.swift */,
-				527020971CF1BD8F00E81763 /* views */,
+				A11ABB111CF33DCD000BC69F /* views */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		527020971CF1BD8F00E81763 /* views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = views;
 			sourceTree = "<group>";
 		};
 		527020981CF1BD8F00E81763 /* Download */ = {
@@ -1793,6 +1792,16 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		A11ABB111CF33DCD000BC69F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				A11ABB141CF33DCD000BC69F /* SUHeaderView.swift */,
+				A11ABB131CF33DCD000BC69F /* SUFooterView.swift */,
+				A11ABB121CF33DCD000BC69F /* SignUpView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		A14836BD1CDB75CA0043036B = {
 			isa = PBXGroup;
 			children = (
@@ -2187,6 +2196,7 @@
 				527021BE1CF1BD8F00E81763 /* DetailInitializer.swift in Sources */,
 				527021D91CF1BD8F00E81763 /* StationPresenter.swift in Sources */,
 				52701E8E1CF1B90600E81763 /* APIHelper.swift in Sources */,
+				A11ABB171CF33DCD000BC69F /* SUHeaderView.swift in Sources */,
 				527022031CF1BD8F00E81763 /* ProfileInteractor.swift in Sources */,
 				527021D71CF1BD8F00E81763 /* StationInteractorOutput.swift in Sources */,
 				52FAA72E1CF24BBF0003D92A /* WelcomeModuleInput.swift in Sources */,
@@ -2197,6 +2207,7 @@
 				527021C31CF1BD8F00E81763 /* DetailPresenter.swift in Sources */,
 				527022051CF1BD8F00E81763 /* ProfileInteractorOutput.swift in Sources */,
 				527021B31CF1BD8F00E81763 /* CategoryInitializer.swift in Sources */,
+				A11ABB161CF33DCD000BC69F /* SUFooterView.swift in Sources */,
 				527021D81CF1BD8F00E81763 /* StationModuleInput.swift in Sources */,
 				52FAA72D1CF24BBF0003D92A /* WelcomeInteractorOutput.swift in Sources */,
 				527021DA1CF1BD8F00E81763 /* StationViewController.swift in Sources */,
@@ -2242,6 +2253,7 @@
 				527021C21CF1BD8F00E81763 /* DetailModuleInput.swift in Sources */,
 				52701E761CF1B90600E81763 /* OpenActionSheetProtocol.swift in Sources */,
 				5270219B1CF1BD8F00E81763 /* FavoriteViewOutput.swift in Sources */,
+				A11ABB151CF33DCD000BC69F /* SignUpView.swift in Sources */,
 				527022071CF1BD8F00E81763 /* ProfilePresenter.swift in Sources */,
 				5270218F1CF1BD8F00E81763 /* DownloadViewController.swift in Sources */,
 				52701E8F1CF1B90600E81763 /* DBHelper.swift in Sources */,

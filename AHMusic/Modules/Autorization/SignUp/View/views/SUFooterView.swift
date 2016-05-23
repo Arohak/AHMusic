@@ -1,5 +1,5 @@
 //
-//  SIFooterView.swift
+//  SUFooterView.swift
 //  AHMusic
 //
 //  Created by Ara Hakobyan on 5/22/16.
@@ -7,16 +7,15 @@
 //
 
 
-class SIFooterView: UIView {
+class SUFooterView: UIView {
     
     //MARK: - Create UIElements -
     let button: AHButton = {
         let view = AHButton.newAutoLayoutView()
         view.backgroundColor = RED_LIGHT
-        view.setTitle("Sign In", forState: .Normal)
+        view.setTitle("Sign Up", forState: .Normal)
         view.setTitleColor(WHITE, forState: .Normal)
-        view.layer.cornerRadius = SI_OFFSET
-
+        
         return view
     }()
     
@@ -42,6 +41,6 @@ class SIFooterView: UIView {
     func setConstraints() {
         button.autoPinEdgeToSuperviewEdge(.Bottom)
         button.autoAlignAxisToSuperviewAxis(.Vertical)
-        button.autoSetDimensionsToSize(CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
+        button.autoSetDimensionsToSize(CGSize(width: 200, height: 40))
     }
 }

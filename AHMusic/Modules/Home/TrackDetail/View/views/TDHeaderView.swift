@@ -23,6 +23,7 @@ class TDHeaderView: UIView {
         view.userInteractionEnabled = true
         view.layer.cornerRadius = TD_INSET
         view.clipsToBounds = true
+        view.contentMode = .ScaleAspectFill
 
         return view
     }()
