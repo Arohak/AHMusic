@@ -24,32 +24,45 @@ class LeftMenuViewController: UIViewController {
     private func baseConfig() {
         self.view = leftMenuView
         
-        leftMenuView.home.button.addTarget(self, action: #selector(LeftMenuViewController.homeAction), forControlEvents: .TouchUpInside)
-        leftMenuView.favorite.button.addTarget(self, action: #selector(LeftMenuViewController.favoriteAction), forControlEvents: .TouchUpInside)
-        leftMenuView.download.button.addTarget(self, action: #selector(LeftMenuViewController.downloadAction), forControlEvents: .TouchUpInside)
-        leftMenuView.settings.button.addTarget(self, action: #selector(LeftMenuViewController.settingsAction), forControlEvents: .TouchUpInside)
+        leftMenuView.home.button.addTarget(self, action: #selector(LeftMenuViewController.homeAction(_:)), forControlEvents: .TouchUpInside)
+        leftMenuView.favorite.button.addTarget(self, action: #selector(LeftMenuViewController.favoriteAction(_:)), forControlEvents: .TouchUpInside)
+        leftMenuView.download.button.addTarget(self, action: #selector(LeftMenuViewController.downloadAction(_:)), forControlEvents: .TouchUpInside)
+        leftMenuView.settings.button.addTarget(self, action: #selector(LeftMenuViewController.settingsAction(_:)), forControlEvents: .TouchUpInside)
         leftMenuView.logout.button.addTarget(self, action: #selector(LeftMenuViewController.logoutAction), forControlEvents: .TouchUpInside)
     }
     
     // MARK: - Actions -
-    func homeAction() {
+    func homeAction(sender: AHButton) {
+        sender.selected = !sender.selected
+        
         output.home()
     }
     
-    func favoriteAction() {
+    func favoriteAction(sender: AHButton) {
+        sender.selected = !sender.selected
+
         output.favorite()
     }
     
-    func downloadAction() {
+    func downloadAction(sender: AHButton) {
+        sender.selected = !sender.selected
+
         output.download()
     }
     
-    func settingsAction() {
+    func settingsAction(sender: AHButton) {
+        sender.selected = !sender.selected
+
         output.settings()
     }
     
     func logoutAction() {
         output.logout()
+    }
+    
+    // MARK: - Private Actions -
+    private func selectCorrectButton() {
+
     }
 }
 

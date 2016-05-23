@@ -10,13 +10,33 @@
 class SIFooterView: UIView {
     
     //MARK: - Create UIElements -
-    let button: AHButton = {
+    let signInButton: AHButton = {
         let view = AHButton.newAutoLayoutView()
         view.backgroundColor = RED_LIGHT
         view.setTitle("Sign In", forState: .Normal)
         view.setTitleColor(WHITE, forState: .Normal)
         view.layer.cornerRadius = SI_OFFSET
 
+        return view
+    }()
+    
+    let facebookButton: AHButton = {
+        let view = AHButton.newAutoLayoutView()
+        view.backgroundColor = BLUE
+        view.setTitle("Facebook", forState: .Normal)
+        view.setTitleColor(WHITE, forState: .Normal)
+        view.layer.cornerRadius = SI_OFFSET
+        
+        return view
+    }()
+    
+    let googleButton: AHButton = {
+        let view = AHButton.newAutoLayoutView()
+        view.backgroundColor = RED
+        view.setTitle("Google +", forState: .Normal)
+        view.setTitleColor(WHITE, forState: .Normal)
+        view.layer.cornerRadius = SI_OFFSET
+        
         return view
     }()
     
@@ -33,15 +53,25 @@ class SIFooterView: UIView {
     
     //MARK: - Private Methods -
     private func addAllUIElements() {
-        addSubview(button)
-        
+        addSubview(signInButton)
+        addSubview(facebookButton)
+        addSubview(googleButton)
+
         setConstraints()
     }
     
     //MARK: - Set Constraints -
     func setConstraints() {
-        button.autoPinEdgeToSuperviewEdge(.Bottom)
-        button.autoAlignAxisToSuperviewAxis(.Vertical)
-        button.autoSetDimensionsToSize(CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
+        signInButton.autoPinEdge(.Bottom, toEdge: .Top, ofView: facebookButton, withOffset: -SI_OFFSET)
+        signInButton.autoAlignAxisToSuperviewAxis(.Vertical)
+        signInButton.autoSetDimensionsToSize(CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
+        
+        facebookButton.autoPinEdge(.Bottom, toEdge: .Top, ofView: googleButton, withOffset: -SI_OFFSET)
+        facebookButton.autoAlignAxisToSuperviewAxis(.Vertical)
+        facebookButton.autoSetDimensionsToSize(CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
+        
+        googleButton.autoPinEdgeToSuperviewEdge(.Bottom)
+        googleButton.autoAlignAxisToSuperviewAxis(.Vertical)
+        googleButton.autoSetDimensionsToSize(CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
     }
 }

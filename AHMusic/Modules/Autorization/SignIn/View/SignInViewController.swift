@@ -154,7 +154,7 @@ extension SignInViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
-        return AU_BTN_HEIGHT*1.5
+        return (AU_BTN_HEIGHT + SI_OFFSET)*3 + SI_OFFSET*2
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -163,8 +163,10 @@ extension SignInViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        footerView.button.addTarget(self, action: #selector(signIn), forControlEvents: UIControlEvents.TouchUpInside)
-        
+        footerView.signInButton.addTarget(self, action: #selector(SignInViewController.signIn), forControlEvents: UIControlEvents.TouchUpInside)
+        footerView.facebookButton.addTarget(self, action: #selector(SignInViewController.signIn), forControlEvents: UIControlEvents.TouchUpInside)
+        footerView.googleButton.addTarget(self, action: #selector(SignInViewController.signIn), forControlEvents: UIControlEvents.TouchUpInside)
+
         return footerView
     }
 }

@@ -26,11 +26,23 @@ extension LeftMenuPresenter: LeftMenuViewOutput {
     }
     
     func home() {
+        let category = CategoryPresenter()
+        _ = CategoryModuleInitializer(presentor: category)
+        let vc = category.view as! UIViewController
         
+        if let slide = UIHelper.root().viewControllers[0] as? SlideViewController {
+            slide.changeMainViewController(vc,  close: true)
+        }
     }
     
     func favorite() {
+        let favorite = FavoritePresenter()
+        _ = FavoriteModuleInitializer(presentor: favorite)
+        let vc = favorite.view as! UIViewController
         
+        if let slide = UIHelper.root().viewControllers[0] as? SlideViewController {
+            slide.changeMainViewController(vc,  close: true)
+        }
     }
     
     func download() {

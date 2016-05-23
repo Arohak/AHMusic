@@ -156,9 +156,10 @@ extension SignUpViewController: UITableViewDataSource, UITableViewDelegate {
 extension SignUpViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if textField.tag == 0 {
-            cells[1].cellContentView.authTextField.becomeFirstResponder()
-            signUpView.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0), atScrollPosition: .None, animated: true)
+        if textField.tag != cells.count - 1 {
+            let indexNext = textField.tag + 1
+            cells[indexNext].cellContentView.authTextField.becomeFirstResponder()
+            signUpView.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: indexNext, inSection: 0), atScrollPosition: .None, animated: true)
         } else {
             textField.resignFirstResponder()
             signUp()

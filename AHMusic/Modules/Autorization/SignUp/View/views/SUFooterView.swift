@@ -15,7 +15,8 @@ class SUFooterView: UIView {
         view.backgroundColor = RED_LIGHT
         view.setTitle("Sign Up", forState: .Normal)
         view.setTitleColor(WHITE, forState: .Normal)
-        
+        view.layer.cornerRadius = SI_OFFSET
+
         return view
     }()
     
@@ -41,6 +42,6 @@ class SUFooterView: UIView {
     func setConstraints() {
         button.autoPinEdgeToSuperviewEdge(.Bottom)
         button.autoAlignAxisToSuperviewAxis(.Vertical)
-        button.autoSetDimensionsToSize(CGSize(width: 200, height: 40))
+        button.autoSetDimensionsToSize(CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
     }
 }
