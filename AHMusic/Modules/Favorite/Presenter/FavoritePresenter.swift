@@ -24,13 +24,6 @@ extension FavoritePresenter: FavoriteViewOutput {
     func viewIsReady() {
         interactor.getTrackDB()
     }
-
-    func playTrack(index: Int, tracks: Array<Track>) {
-        let vc = MiniPlayerViewController(index: index, items: tracks, output: view)
-        vc.modalPresentationStyle = .OverCurrentContext
-        vc.modalTransitionStyle = .CrossDissolve
-        UIHelper.root().presentViewController(vc, animated: true, completion: nil)
-    }
     
     func openLink(track: Track) {
         let vc = WebViewController(resourceName: track.title, url: NSURL(string: track.link)!)
@@ -39,6 +32,10 @@ extension FavoritePresenter: FavoriteViewOutput {
     
     func openTrackDetail(track: Track, items: Array<Track>) {
         interactor.getTrack("\(track.id)", tracks: items)
+    }
+    
+    func playTrack(index: Int, tracks: Array<Track>) {
+        UIHelper.showMiniPlayer(index, tracks: tracks)
     }
     
     func favoriteTrack(state: Bool, track: Track) {

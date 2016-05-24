@@ -65,6 +65,21 @@ struct UIHelper {
 //        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.window!.rootViewController as! UINavigationController
     }
+    
+    static func showMiniPlayer(index: Int, tracks: Array<Track>) {
+        if let miniPlayerView = appDelegate.miniPlayerView {
+            miniPlayerView.setTrackers(index, items: tracks)
+        } else {
+            let view = MiniPlayerViewRoot(index: index, items: tracks)
+            appDelegate.miniPlayerView = view
+            
+            appDelegate.window!.addSubview(view)
+            view.autoPinEdgeToSuperviewEdge(.Left)
+            view.autoPinEdgeToSuperviewEdge(.Right)
+            view.autoPinEdgeToSuperviewEdge(.Bottom)
+            view.autoSetDimension(.Height, toSize: TD_BTN_SIZE*1.5)
+        }
+    }
 //
 //    class func shakeWithView(view: UIView) {
 //        let shake = CABasicAnimation(keyPath: "position")

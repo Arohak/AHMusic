@@ -32,7 +32,7 @@ class AHPlayer {
             
             for item in items {
                 jukebox.appendItem(JukeboxItem(URL: NSURL(string: item.preview)!), loadingAssets: true)
-            }
+            }            
         } else {
             var jukeboxItems = Array<JukeboxItem>()
             for item in items {

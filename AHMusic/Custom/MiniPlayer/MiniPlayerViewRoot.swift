@@ -44,7 +44,7 @@ class MiniPlayerViewRoot: PlayerView {
         self.items = items
         
         player.setTrackers(items)
-        player.playPauseAtIndex(index)
+        player.jukebox.playAtIndex(index)
     }
 
     // MARK:- Actions -
@@ -61,8 +61,6 @@ class MiniPlayerViewRoot: PlayerView {
     }
     
     func playPauseAction() {
-        player.playPause()
-        
         index = player.jukebox.playIndex
         player.playPauseAtIndex(index)
     }

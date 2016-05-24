@@ -238,6 +238,7 @@
 		52FAA73B1CF3ADE20003D92A /* FavoriteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA73A1CF3ADE20003D92A /* FavoriteProtocol.swift */; };
 		52FAA73E1CF3ADEC0003D92A /* DownloadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA73D1CF3ADEC0003D92A /* DownloadProtocol.swift */; };
 		52FAA7401CF4D3980003D92A /* AddOrDeleteFavoriteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA73F1CF4D3980003D92A /* AddOrDeleteFavoriteProtocol.swift */; };
+		52FAA7421CF4F38A0003D92A /* MiniPlayerPlayProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7411CF4F38A0003D92A /* MiniPlayerPlayProtocol.swift */; };
 		772D4AE2EF9CEF224BD8E5CD /* Pods_AHMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAE2358404452FDCC25542C /* Pods_AHMusicTests.framework */; };
 		A11ABB151CF33DCD000BC69F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11ABB121CF33DCD000BC69F /* SignUpView.swift */; };
 		A11ABB161CF33DCD000BC69F /* SUFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11ABB131CF33DCD000BC69F /* SUFooterView.swift */; };
@@ -497,6 +498,7 @@
 		52FAA73A1CF3ADE20003D92A /* FavoriteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteProtocol.swift; sourceTree = "<group>"; };
 		52FAA73D1CF3ADEC0003D92A /* DownloadProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadProtocol.swift; sourceTree = "<group>"; };
 		52FAA73F1CF4D3980003D92A /* AddOrDeleteFavoriteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrDeleteFavoriteProtocol.swift; sourceTree = "<group>"; };
+		52FAA7411CF4F38A0003D92A /* MiniPlayerPlayProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayerPlayProtocol.swift; sourceTree = "<group>"; };
 		69267D2B6C9683DEF7073F77 /* Pods-AHMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests.release.xcconfig"; sourceTree = "<group>"; };
 		A11ABB121CF33DCD000BC69F /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A11ABB131CF33DCD000BC69F /* SUFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUFooterView.swift; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 				52701D781CF1B90600E81763 /* PlayerActionProtocol.swift */,
 				52701D791CF1B90600E81763 /* PlayerOutputProtocol.swift */,
 				52701D7A1CF1B90600E81763 /* RemoteControlReceivedProtocol.swift */,
+				52FAA7411CF4F38A0003D92A /* MiniPlayerPlayProtocol.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -2318,6 +2321,7 @@
 				52701E921CF1B90600E81763 /* UIHelper.swift in Sources */,
 				527021911CF1BD8F00E81763 /* DownloadViewOutput.swift in Sources */,
 				527021F91CF1BD8F00E81763 /* LeftMenuInteractorOutput.swift in Sources */,
+				52FAA7421CF4F38A0003D92A /* MiniPlayerPlayProtocol.swift in Sources */,
 				527021F11CF1BD8F00E81763 /* TrackDetailViewOutput.swift in Sources */,
 				527021F41CF1BD8F00E81763 /* TrackDetailView.swift in Sources */,
 				527021A71CF1BD8F00E81763 /* ArtistConfigurator.swift in Sources */,

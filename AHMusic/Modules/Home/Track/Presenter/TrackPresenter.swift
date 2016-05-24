@@ -34,11 +34,15 @@ extension TrackPresenter: TrackViewOutput {
         interactor.searchTrack(keyword)
     }
     
+//    func playTrack(index: Int, tracks: Array<Track>) {
+//        let vc = MiniPlayerViewController(index: index, items: tracks, output: view)
+//        vc.modalPresentationStyle = .OverCurrentContext
+//        vc.modalTransitionStyle = .CrossDissolve
+//        UIHelper.root().presentViewController(vc, animated: true, completion: nil)
+//    }
+    
     func playTrack(index: Int, tracks: Array<Track>) {
-        let vc = MiniPlayerViewController(index: index, items: tracks, output: view)
-        vc.modalPresentationStyle = .OverCurrentContext
-        vc.modalTransitionStyle = .CrossDissolve
-        UIHelper.root().presentViewController(vc, animated: true, completion: nil)
+        UIHelper.showMiniPlayer(index, tracks: tracks)
     }
     
     func openLink(track: Track) {
