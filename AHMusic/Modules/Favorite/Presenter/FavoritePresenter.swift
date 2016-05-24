@@ -37,16 +37,17 @@ extension FavoritePresenter: FavoriteViewOutput {
         UIHelper.root().presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
     
-    func openDetail(album: Album) {
-        interactor.getAlbum("\(album.id)")
-    }
-    
-    func openDetail(artist: Artist) {
-        interactor.getArtist("\(artist.id)")
-    }
-    
     func openTrackDetail(track: Track, items: Array<Track>) {
         interactor.getTrack("\(track.id)", tracks: items)
+    }
+    
+    func favoriteTrack(state: Bool, track: Track) {
+        track.favorite = state
+        dbHelper.addStoreAndDeleteTrack(track, state: state)
+    }
+    
+    func downloadTrack(state: Bool, track: Track) {
+        
     }
 }
 

@@ -34,16 +34,31 @@ extension DetailPresenter: DetailViewOutput {
         interactor.getTrack("\(track.id)", tracks: items)
     }
     
-    func playTrack(index: Int, tracks: Array<Track>) {        
-        let vc = MiniPlayerViewController(index: index, items: tracks, output: view)
-        vc.modalPresentationStyle = .OverCurrentContext
-        vc.modalTransitionStyle = .CrossDissolve
-        UIHelper.root().presentViewController(vc, animated: true, completion: nil)
+//    func playTrack(index: Int, tracks: Array<Track>) {        
+//        let vc = MiniPlayerViewController(index: index, items: tracks, output: view)
+//        vc.modalPresentationStyle = .OverCurrentContext
+//        vc.modalTransitionStyle = .CrossDissolve
+//        UIHelper.root().presentViewController(vc, animated: true, completion: nil)
+//    }
+    
+    func playTrack(index: Int, tracks: Array<Track>) {
+        if let miniPlayerView = appDelegate.miniPlayerView {
+            miniPlayerView.setTrackers(index, items: tracks)
+        } else {
+            let view = MiniPlayerViewRoot(index: index, items: tracks)
+            appDelegate.miniPlayerView = view
+            
+            appDelegate.window!.addSubview(view)
+            view.autoPinEdgeToSuperviewEdge(.Left)
+            view.autoPinEdgeToSuperviewEdge(.Right)
+            view.autoPinEdgeToSuperviewEdge(.Bottom)
+            view.autoSetDimension(.Height, toSize: TD_BTN_SIZE*1.5)
+        }
     }
     
     func favoriteTrack(state: Bool, track: Track) {
         track.favorite = state
-        dbHelper.storeTrack(track)
+        dbHelper.addStoreAndDeleteTrack(track, state: state)
     }
     
     func downloadTrack(state: Bool, track: Track) {

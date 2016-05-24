@@ -10,6 +10,7 @@
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var miniPlayerView: MiniPlayerViewRoot!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         startApplication()

@@ -29,7 +29,7 @@ class FavoriteViewController: UIViewController {
         
         favoriteView.tableView.dataSource = self
         favoriteView.tableView.delegate = self
-        favoriteView.tableView.registerClass(TrackCell.self, forCellReuseIdentifier: cellIdentifire)
+        favoriteView.tableView.registerClass(TrackShortCell.self, forCellReuseIdentifier: cellIdentifire)
         favoriteView.refresh.addTarget(self, action: #selector(TrackViewController.refresh), forControlEvents: .ValueChanged)
     }
     
@@ -46,19 +46,18 @@ extension FavoriteViewController: FavoriteViewInput {
         self.items = items
         
         favoriteView.refresh.endRefreshing()
-
         favoriteView.tableView.reloadData()
     }
     
     func stopPlayer(index: Int) {
         let indexPath = NSIndexPath(forRow: index, inSection: 0)
-        let cell = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackCell
+        let cell = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
         cell.cellContentView.playButton.selected = false
     }
     
     func playPauseTrack(index: Int) {
         let indexPath = NSIndexPath(forRow: index, inSection: 0)
-        let cell = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackCell
+        let cell = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
         cell.cellContentView.playButton.selected = !cell.cellContentView.playButton.selected
     }
     
@@ -72,7 +71,7 @@ extension FavoriteViewController: FavoriteViewInput {
     func prevTrack(index: Int) {
         let indexPath = NSIndexPath(forRow: index + 1, inSection: 0)
         let indexPathPrev = NSIndexPath(forRow: index, inSection: 0)
-
+        
         changeButtonState(indexPath, indexPathTwo: indexPathPrev)
     }
     
@@ -92,47 +91,67 @@ extension FavoriteViewController: FavoriteViewInput {
     
     // MARK: - Private Method -
     private func changeButtonState(indexPathOne: NSIndexPath, indexPathTwo: NSIndexPath) {
-        let cellOne = favoriteView.tableView.cellForRowAtIndexPath(indexPathOne) as? TrackCell
-        let cellTwo = favoriteView.tableView.cellForRowAtIndexPath(indexPathTwo) as? TrackCell
+        let cellOne = favoriteView.tableView.cellForRowAtIndexPath(indexPathOne) as? TrackShortCell
+        let cellTwo = favoriteView.tableView.cellForRowAtIndexPath(indexPathTwo) as? TrackShortCell
         if items.count > 1 {
             if let _ = cellTwo {
                 cellOne!.cellContentView.playButton.selected = false
                 cellTwo!.cellContentView.playButton.selected = true
+                
+                cellOne!.cellContentView.backgroundColor = CLEAR
+                cellTwo!.cellContentView.backgroundColor = BLUE_LIGHT1
+                
             } else {
                 favoriteView.tableView.scrollToRowAtIndexPath(indexPathTwo, atScrollPosition: .Middle, animated: false)
-                let cOne = favoriteView.tableView.cellForRowAtIndexPath(indexPathOne) as! TrackCell
-                let cTwo = favoriteView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackCell
+                let cOne = favoriteView.tableView.cellForRowAtIndexPath(indexPathOne) as! TrackShortCell
+                let cTwo = favoriteView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackShortCell
                 cOne.cellContentView.playButton.selected = false
                 cTwo.cellContentView.playButton.selected = true
+                
+                cOne.cellContentView.backgroundColor = CLEAR
+                cTwo.cellContentView.backgroundColor = BLUE_LIGHT1
             }
         }
     }
     
     private func changeButtonState(indexPath: NSIndexPath, indexPathNext: NSIndexPath, indexPathPrev: NSIndexPath) {
-        let cell = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as? TrackCell
-        let cellNext = favoriteView.tableView.cellForRowAtIndexPath(indexPathNext) as? TrackCell
-        let cellPrev = favoriteView.tableView.cellForRowAtIndexPath(indexPathPrev) as? TrackCell
+        let cell = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as? TrackShortCell
+        let cellNext = favoriteView.tableView.cellForRowAtIndexPath(indexPathNext) as? TrackShortCell
+        let cellPrev = favoriteView.tableView.cellForRowAtIndexPath(indexPathPrev) as? TrackShortCell
         
         if cellNext != nil && cellPrev != nil {
             cell!.cellContentView.playButton.selected = true
             cellNext!.cellContentView.playButton.selected = false
             cellPrev!.cellContentView.playButton.selected = false
+            
+            cell!.cellContentView.backgroundColor = BLUE_LIGHT1
+            cellNext!.cellContentView.backgroundColor = CLEAR
+            cellPrev!.cellContentView.backgroundColor = CLEAR
+            
         } else if cellNext != nil {
             favoriteView.tableView.scrollToRowAtIndexPath(indexPathNext, atScrollPosition: .Middle, animated: false)
-            let c = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackCell
-            let cNext = favoriteView.tableView.cellForRowAtIndexPath(indexPathNext) as! TrackCell
-            let cPrev = favoriteView.tableView.cellForRowAtIndexPath(indexPathPrev) as! TrackCell
+            let c = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
+            let cNext = favoriteView.tableView.cellForRowAtIndexPath(indexPathNext) as! TrackShortCell
+            let cPrev = favoriteView.tableView.cellForRowAtIndexPath(indexPathPrev) as! TrackShortCell
             c.cellContentView.playButton.selected = true
             cNext.cellContentView.playButton.selected = false
             cPrev.cellContentView.playButton.selected = false
+            
+            c.cellContentView.backgroundColor = BLUE_LIGHT1
+            cNext.cellContentView.backgroundColor = CLEAR
+            cPrev.cellContentView.backgroundColor = CLEAR
         } else if cellPrev != nil {
             favoriteView.tableView.scrollToRowAtIndexPath(indexPathPrev, atScrollPosition: .Middle, animated: false)
-            let c = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackCell
-            let cNext = favoriteView.tableView.cellForRowAtIndexPath(indexPathNext) as! TrackCell
-            let cPrev = favoriteView.tableView.cellForRowAtIndexPath(indexPathPrev) as! TrackCell
+            let c = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
+            let cNext = favoriteView.tableView.cellForRowAtIndexPath(indexPathNext) as! TrackShortCell
+            let cPrev = favoriteView.tableView.cellForRowAtIndexPath(indexPathPrev) as! TrackShortCell
             c.cellContentView.playButton.selected = true
             cNext.cellContentView.playButton.selected = false
             cPrev.cellContentView.playButton.selected = false
+            
+            c.cellContentView.backgroundColor = BLUE_LIGHT1
+            cNext.cellContentView.backgroundColor = CLEAR
+            cPrev.cellContentView.backgroundColor = CLEAR
         }
     }
 }
@@ -144,21 +163,20 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         
         return items.count
     }
-
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire) as! TrackCell
-        
-        cell.cellContentView.playButton.addTarget(self, action: #selector(FavoriteViewController.playTrack(_:)), forControlEvents: .TouchUpInside)
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire) as! TrackShortCell
+        cell.cellContentView.playButton.addTarget(self, action: #selector(DetailViewController.playTrack(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.playButton.indexPath = indexPath
         
-        cell.cellContentView.linkButton.addTarget(self, action: #selector(FavoriteViewController.openLink(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.linkButton.addTarget(self, action: #selector(DetailViewController.openLink(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.linkButton.indexPath = indexPath
         
-        cell.cellContentView.albumButton.addTarget(self, action: #selector(FavoriteViewController.openDeatilFromAlbum(_:)), forControlEvents: .TouchUpInside)
-        cell.cellContentView.albumButton.indexPath = indexPath
+        cell.cellContentView.favoriteButton.addTarget(self, action: #selector(DetailViewController.favoriteAction(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.favoriteButton.indexPath = indexPath
         
-        cell.cellContentView.artistButton.addTarget(self, action: #selector(FavoriteViewController.opendetailFromArtist(_:)), forControlEvents: .TouchUpInside)
-        cell.cellContentView.artistButton.indexPath = indexPath
+        cell.cellContentView.downloadButton.addTarget(self, action: #selector(DetailViewController.downloadAction(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.downloadButton.indexPath = indexPath
         
         let track = items[indexPath.row]
         cell.setValues(track)
@@ -168,7 +186,7 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        return TR_CELL_HEIGHT
+        return DE_CELL_HEIGHT
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -186,13 +204,17 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         output.openLink(track)
     }
     
-    func openDeatilFromAlbum(sender: AHButton) {
+    func favoriteAction(sender: AHButton) {
+        sender.selected = !sender.selected
+        
         let track = items[sender.indexPath.row]
-        output.openDetail(track.album)
+        output.favoriteTrack(sender.selected, track: track)
     }
     
-    func opendetailFromArtist(sender: AHButton) {
+    func downloadAction(sender: AHButton) {
+        sender.selected = !sender.selected
+        
         let track = items[sender.indexPath.row]
-        output.openDetail(track.artist)
+        output.downloadTrack(sender.selected, track: track)
     }
 }

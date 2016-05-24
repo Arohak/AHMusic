@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol FavoriteViewOutput: OpenDetailFromAlbumProtocol, OpenDetailFromArtistProtocol, OpenTrackDetailProtocol {
+protocol FavoriteViewOutput: OpenTrackDetailProtocol, FavoriteProtocol, DownloadProtocol {
 
     func viewIsReady()
     func playTrack(index: Int, tracks: Array<Track>)

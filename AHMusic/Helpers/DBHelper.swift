@@ -24,7 +24,7 @@ class DBHelper {
         return tracks
     }
     
-    func storeTrack(track: Track) {
+    func addStoreAndDeleteTrack(track: Track, state: Bool) {
         try! realm.write {
             let item = realm.create(Track.self, value: track, update: true)
             realm.add(item)
