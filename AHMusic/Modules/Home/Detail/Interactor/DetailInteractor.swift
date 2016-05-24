@@ -23,4 +23,9 @@ extension DetailInteractor: DetailInteractorInput {
                 self.output.getTrackResultIsReady(track, tracks: tracks)
             })
     }
+    
+    func addOrDeleteTrack(state: Bool, track: Track) {
+        track.favorite = state
+        dbHelper.addOrDeleteTrack(track, state: state)
+    }
 }

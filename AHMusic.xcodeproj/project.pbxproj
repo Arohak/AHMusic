@@ -237,6 +237,7 @@
 		52FAA7381CF3A5820003D92A /* BaseInteratosOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7371CF3A5820003D92A /* BaseInteratosOutput.swift */; };
 		52FAA73B1CF3ADE20003D92A /* FavoriteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA73A1CF3ADE20003D92A /* FavoriteProtocol.swift */; };
 		52FAA73E1CF3ADEC0003D92A /* DownloadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA73D1CF3ADEC0003D92A /* DownloadProtocol.swift */; };
+		52FAA7401CF4D3980003D92A /* AddOrDeleteFavoriteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA73F1CF4D3980003D92A /* AddOrDeleteFavoriteProtocol.swift */; };
 		772D4AE2EF9CEF224BD8E5CD /* Pods_AHMusicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCAE2358404452FDCC25542C /* Pods_AHMusicTests.framework */; };
 		A11ABB151CF33DCD000BC69F /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11ABB121CF33DCD000BC69F /* SignUpView.swift */; };
 		A11ABB161CF33DCD000BC69F /* SUFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11ABB131CF33DCD000BC69F /* SUFooterView.swift */; };
@@ -495,6 +496,7 @@
 		52FAA7371CF3A5820003D92A /* BaseInteratosOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInteratosOutput.swift; sourceTree = "<group>"; };
 		52FAA73A1CF3ADE20003D92A /* FavoriteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteProtocol.swift; sourceTree = "<group>"; };
 		52FAA73D1CF3ADEC0003D92A /* DownloadProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadProtocol.swift; sourceTree = "<group>"; };
+		52FAA73F1CF4D3980003D92A /* AddOrDeleteFavoriteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrDeleteFavoriteProtocol.swift; sourceTree = "<group>"; };
 		69267D2B6C9683DEF7073F77 /* Pods-AHMusicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusicTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests.release.xcconfig"; sourceTree = "<group>"; };
 		A11ABB121CF33DCD000BC69F /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A11ABB131CF33DCD000BC69F /* SUFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUFooterView.swift; sourceTree = "<group>"; };
@@ -1811,6 +1813,7 @@
 			isa = PBXGroup;
 			children = (
 				52FAA73A1CF3ADE20003D92A /* FavoriteProtocol.swift */,
+				52FAA73F1CF4D3980003D92A /* AddOrDeleteFavoriteProtocol.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -2277,6 +2280,7 @@
 				527021871CF1BD8F00E81763 /* SignUpViewOutput.swift in Sources */,
 				527021811CF1BD8F00E81763 /* SignUpInteractorInput.swift in Sources */,
 				52701E891CF1B90600E81763 /* ActionSheetPickerViewController.swift in Sources */,
+				52FAA7401CF4D3980003D92A /* AddOrDeleteFavoriteProtocol.swift in Sources */,
 				527022021CF1BD8F00E81763 /* ProfileInitializer.swift in Sources */,
 				527021BF1CF1BD8F00E81763 /* DetailInteractor.swift in Sources */,
 				527021C61CF1BD8F00E81763 /* DetailViewOutput.swift in Sources */,

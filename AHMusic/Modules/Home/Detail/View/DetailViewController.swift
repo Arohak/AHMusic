@@ -14,6 +14,7 @@ class DetailViewController: UIViewController {
     var detail: Detail!
     var headerHeight: CGFloat!
     var items = Array<Track>()
+    
     let cellIdentifire = "detailCell"
     
     lazy var detailView: DetailView = {
@@ -204,6 +205,11 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         let track = items[indexPath.row]
         cell.setValues(track)
         
+        let storedFavoriteTrackers = Array(dbHelper.getFavoriteTracks())
+        let tr = storedFavoriteTrackers.filter() { $0.id == track.id }.first
+        let state = tr == nil ? false : true
+        cell.cellContentView.favoriteButton.selected = state
+        
         return cell
     }
     
@@ -240,6 +246,8 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         let track = items[sender.indexPath.row]
         output.downloadTrack(sender.selected, track: track)
     }
+    
+    // MARK: - Priavte Method -
 }
 
 //MARK: - extension for UIScrollView -

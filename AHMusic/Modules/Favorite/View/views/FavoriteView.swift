@@ -15,13 +15,6 @@ class FavoriteView: BaseView {
         return view
     }()
     
-    lazy var refresh: CarbonSwipeRefresh = {
-        let view = CarbonSwipeRefresh(scrollView: self.tableView)
-        view.colors = RCOLORS
-        
-        return view
-    }()
-    
     //MARK: - Initialize -
     override init() {
         super.init()
@@ -36,7 +29,6 @@ class FavoriteView: BaseView {
     //MARK: - Private Methods -
     private func addAllUIElements() {
         addSubview(tableView)
-        addSubview(refresh)
 
         setConstraints()
     }
@@ -44,7 +36,6 @@ class FavoriteView: BaseView {
     //MARK: - Constraints -
     func setConstraints() {
         tableView.autoPinEdgesToSuperviewEdges()
-        refresh.setMarginTop(0)
     }
 }
 

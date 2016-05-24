@@ -55,4 +55,8 @@ extension FavoriteInteractor: FavoriteInteractorInput {
                 self.output.getTrackResultIsReady(track, tracks: tracks)
             })
     }
+    
+    func addOrDeleteTrack(state: Bool, track: Track) {
+        dbHelper.addOrDeleteTrack(track, state: state)
+    }
 }

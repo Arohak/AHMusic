@@ -42,8 +42,7 @@ extension FavoritePresenter: FavoriteViewOutput {
     }
     
     func favoriteTrack(state: Bool, track: Track) {
-        track.favorite = state
-        dbHelper.addStoreAndDeleteTrack(track, state: state)
+        interactor.addOrDeleteTrack(state, track: track)
     }
     
     func downloadTrack(state: Bool, track: Track) {

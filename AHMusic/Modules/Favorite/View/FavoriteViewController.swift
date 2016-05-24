@@ -30,12 +30,6 @@ class FavoriteViewController: UIViewController {
         favoriteView.tableView.dataSource = self
         favoriteView.tableView.delegate = self
         favoriteView.tableView.registerClass(TrackShortCell.self, forCellReuseIdentifier: cellIdentifire)
-        favoriteView.refresh.addTarget(self, action: #selector(TrackViewController.refresh), forControlEvents: .ValueChanged)
-    }
-    
-    // MARK: - Actions -
-    func refresh() {
-        output.viewIsReady()
     }
 }
 
@@ -43,9 +37,8 @@ class FavoriteViewController: UIViewController {
 extension FavoriteViewController: FavoriteViewInput {
     
     func setupInitialState(items: Array<Track>) {
-        self.items = items
+        self.items = items.reverse()
         
-        favoriteView.refresh.endRefreshing()
         favoriteView.tableView.reloadData()
     }
     
@@ -166,16 +159,16 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire) as! TrackShortCell
-        cell.cellContentView.playButton.addTarget(self, action: #selector(DetailViewController.playTrack(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.playButton.addTarget(self, action: #selector(FavoriteViewController.playTrack(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.playButton.indexPath = indexPath
         
-        cell.cellContentView.linkButton.addTarget(self, action: #selector(DetailViewController.openLink(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.linkButton.addTarget(self, action: #selector(FavoriteViewController.openLink(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.linkButton.indexPath = indexPath
         
-        cell.cellContentView.favoriteButton.addTarget(self, action: #selector(DetailViewController.favoriteAction(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.favoriteButton.addTarget(self, action: #selector(FavoriteViewController.favoriteAction(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.favoriteButton.indexPath = indexPath
         
-        cell.cellContentView.downloadButton.addTarget(self, action: #selector(DetailViewController.downloadAction(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.downloadButton.addTarget(self, action: #selector(FavoriteViewController.downloadAction(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.downloadButton.indexPath = indexPath
         
         let track = items[indexPath.row]
@@ -206,8 +199,9 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     
     func favoriteAction(sender: AHButton) {
         sender.selected = !sender.selected
-        
         let track = items[sender.indexPath.row]
+
+        deleteFavoriteTrack(sender)
         output.favoriteTrack(sender.selected, track: track)
     }
     
@@ -216,5 +210,18 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         
         let track = items[sender.indexPath.row]
         output.downloadTrack(sender.selected, track: track)
+    }
+    
+    // MARK: - Priavte Method -
+    private func deleteFavoriteTrack(sender: AHButton) {
+        let track = items[sender.indexPath.row]
+        let index = items.indexOf() {$0.id == track.id}
+        items.removeAtIndex(index!)
+        
+        favoriteView.tableView.beginUpdates()
+        favoriteView.tableView.deleteRowsAtIndexPaths([sender.indexPath], withRowAnimation: .None)
+        favoriteView.tableView.endUpdates()
+        
+        favoriteView.tableView.reloadData()
     }
 }

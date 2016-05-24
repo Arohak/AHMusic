@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol FavoriteInteractorInput: GetAlbumProtocol, GetArtistProtocol, GetTrackProtocol {
+protocol FavoriteInteractorInput: GetAlbumProtocol, GetArtistProtocol, GetTrackProtocol, AddOrDeleteFavoriteProtocol {
 
     func getTrackDB()
 }
