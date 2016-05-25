@@ -17,12 +17,19 @@ class DBHelper {
     private init() {
         realmFavorite = try! Realm()
         realmDownload = try! Realm()
+//        realmDownload = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "RealmDownloadIdentifier"))
+    }
+    
+    private func setDefaultRealmForUser(username: String) {
+        var config = Realm.Configuration()
+        config.fileURL = config.fileURL!.URLByDeletingLastPathComponent?.URLByAppendingPathComponent("\(username).realm")
+        Realm.Configuration.defaultConfiguration = config
     }
     
     //MARK: - Track Favorite -
     func getFavoriteTracks() -> Results<Track> {
         let tracks = realmFavorite.objects(Track.self).filter("favorite == true")
-        
+
         return tracks
     }
 
@@ -42,6 +49,9 @@ class DBHelper {
                 realmFavorite.delete(item)
             }
         }
+        
+        print("Favorite")
+        print(getFavoriteTracks().count)
     }
     
     func searchFavoriteTracks(keyword: String) -> Results<Track> {
@@ -54,7 +64,6 @@ class DBHelper {
     //MARK: - Track Download -
     func getDownloadedTracks() -> Results<Track> {
         let tracks = realmDownload.objects(Track.self).filter("download == true")
-        print(tracks.count)
         
         return tracks
     }
@@ -75,6 +84,9 @@ class DBHelper {
                 realmDownload.delete(item)
             }
         }
+        
+        print("Downloaded")
+        print(getDownloadedTracks().count)
     }
     
     func searchDownloadTracks(keyword: String) -> Results<Track> {

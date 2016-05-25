@@ -65,12 +65,11 @@ extension DownloadViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.cellContentView.downloadButton.addTarget(self, action: #selector(DownloadViewController.downloadAction(_:)), forControlEvents: .TouchUpInside)
         cell.cellContentView.downloadButton.indexPath = indexPath
-        
+        cell.cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_delete"), forState: .Selected)
+
         let track = items[indexPath.row]
         cell.setValues(track)
         
-        cell.cellContentView.favoriteButton.selected = Utils.favoriteState(track)
-
         return cell
     }
     

@@ -204,9 +204,6 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
         
         let track = items[indexPath.row]
         cell.setValues(track)
-        
-        cell.cellContentView.favoriteButton.selected = Utils.favoriteState(track)
-        cell.cellContentView.downloadButton.selected = Utils.downloadState(track)
 
         return cell
     }
@@ -243,9 +240,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
 
         let track = items[sender.indexPath.row]
         output.downloadTrack(sender.selected, track: track)
-    }
-    
-    // MARK: - Priavte Method -
+    }    
 }
 
 //MARK: - extension for UIScrollView -
