@@ -8,5 +8,5 @@
 
 protocol AddOrDeleteFavoriteProtocol {
     
-    func addOrDeleteTrack(state: Bool, track: Track)
+    func addOrDeleteFavoriteTrack(state: Bool, track: Track)
 }

@@ -24,8 +24,11 @@ extension DetailInteractor: DetailInteractorInput {
             })
     }
     
-    func addOrDeleteTrack(state: Bool, track: Track) {
-        track.favorite = state
-        dbHelper.addOrDeleteTrack(track, state: state)
+    func addOrDeleteFavoriteTrack(state: Bool, track: Track) {
+        dbHelper.addOrDeleteFavoriteTrack(state, track: track)
+    }
+    
+    func addOrDeleteDownloadTrack(state: Bool, track: Track) {
+        dbHelper.addOrDeleteDownloadTrack(state, track: track)
     }
 }

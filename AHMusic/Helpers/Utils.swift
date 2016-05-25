@@ -46,5 +46,21 @@ struct Utils {
 
         return num == nil ? "" : formatter.stringFromNumber(num!)!
     }
+    
+    static func favoriteState(track: Track) -> Bool {
+        let storedFavoriteTrackers = Array(dbHelper.getFavoriteTracks())
+        let tr = storedFavoriteTrackers.filter() { $0.id == track.id }.first
+        let state = tr == nil ? false : true
+        
+        return state
+    }
+    
+    static func downloadState(track: Track) -> Bool {
+        let storedDownloadTrackers = Array(dbHelper.getDownloadedTracks())
+        let tr = storedDownloadTrackers.filter() { $0.id == track.id }.first
+        let state = tr == nil ? false : true
+        
+        return state
+    }
 }
 

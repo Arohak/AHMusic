@@ -6,6 +6,6 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol DetailInteractorInput: GetTrackProtocol, AddOrDeleteFavoriteProtocol {
+protocol DetailInteractorInput: GetTrackProtocol, AddOrDeleteFavoriteProtocol, AddOrDeleteDownloadProtocol {
 
 }

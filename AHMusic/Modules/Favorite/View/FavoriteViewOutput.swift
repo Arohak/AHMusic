@@ -6,8 +6,6 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol FavoriteViewOutput: OpenTrackDetailProtocol, FavoriteProtocol, DownloadProtocol, MiniPlayerPlayProtocol {
+protocol FavoriteViewOutput: BaseViewOutput, OpenTrackLinkProtocol, OpenTrackDetailProtocol, FavoriteProtocol, DownloadProtocol, MiniPlayerPlayProtocol, SearchTrackProtocol {
 
-    func viewIsReady()
-    func openLink(track: Track)
 }

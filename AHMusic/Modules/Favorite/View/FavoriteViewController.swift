@@ -174,6 +174,8 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         let track = items[indexPath.row]
         cell.setValues(track)
         
+        cell.cellContentView.downloadButton.selected = Utils.downloadState(track)
+        
         return cell
     }
     

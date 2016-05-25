@@ -134,6 +134,23 @@ extension SlideViewController: UITextFieldDelegate {
         if textField.text!.characters.count < 3 {
             UIHelper.showHUD("search text min 3 simbol")
         } else {
+            
+            if let slide = UIHelper.root().visibleViewController as? SlideViewController where slide.mainViewController is FavoriteViewController {
+                let favorite = slide.mainViewController as! FavoriteViewController
+                favorite.output.search(textField.text!)
+                textFieldAnimation()
+
+                return true
+            }
+            
+            if let slide = UIHelper.root().visibleViewController as? SlideViewController where slide.mainViewController is DownloadViewController {
+                let download = slide.mainViewController as! DownloadViewController
+                download.output.search(textField.text!)
+                textFieldAnimation()
+                
+                return true
+            }
+            
             if let tab = tab where !(tab.selectedPresenter is StationPresenter) {
                 let presenter = tab.selectedPresenter
                 presenter.keyword = textField.text!

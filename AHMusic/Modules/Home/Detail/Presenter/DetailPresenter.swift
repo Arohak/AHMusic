@@ -46,11 +46,11 @@ extension DetailPresenter: DetailViewOutput {
     }
     
     func favoriteTrack(state: Bool, track: Track) {
-        interactor.addOrDeleteTrack(state, track: track)
+        interactor.addOrDeleteFavoriteTrack(state, track: track)
     }
     
     func downloadTrack(state: Bool, track: Track) {
-        
+        interactor.addOrDeleteDownloadTrack(state, track: track)
     }
 }
 

@@ -40,13 +40,19 @@ extension LeftMenuPresenter: LeftMenuViewOutput {
         _ = FavoriteModuleInitializer(presentor: favorite)
         let vc = favorite.view as! UIViewController
         
-        if let slide = UIHelper.root().viewControllers[0] as? SlideViewController {
+        if let slide = UIHelper.root().visibleViewController as? SlideViewController {
             slide.changeMainViewController(vc,  close: true)
         }
     }
     
     func download() {
+        let download = DownloadPresenter()
+        _ = DownloadModuleInitializer(presentor: download)
+        let vc = download.view as! UIViewController
         
+        if let slide = UIHelper.root().visibleViewController as? SlideViewController {
+            slide.changeMainViewController(vc,  close: true)
+        }
     }
     
     func settings() {
@@ -59,7 +65,7 @@ extension LeftMenuPresenter: LeftMenuViewOutput {
         let vc = welcome.view as! UIViewController
         let nav = UINavigationController(rootViewController: vc)
         
-        UIView.transitionWithView(appDelegate.window!, duration: 0.8, options: .TransitionFlipFromRight, animations: { _ in
+        UIView.transitionWithView(appDelegate.window!, duration: 0.4, options: .TransitionFlipFromRight, animations: { _ in
             appDelegate.window!.rootViewController! = nav
             }, completion: nil)
     }

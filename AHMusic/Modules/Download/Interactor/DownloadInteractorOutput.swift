@@ -8,4 +8,6 @@
 
 protocol DownloadInteractorOutput: class {
 
+    func dbResultIsReady(items: Array<Track>)
+    func getTrackResultIsReady(track: Track, tracks: Array<Track>)
 }
