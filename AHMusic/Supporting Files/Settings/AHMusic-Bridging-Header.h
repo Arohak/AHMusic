@@ -8,7 +8,7 @@
 @import UIKit;
 @import Foundation;
 @import PureLayout;
-//@import EventCenter;
+@import EventCenter;
 @import RealmSwift;
 @import Typhoon;
 @import SwiftyJSON;

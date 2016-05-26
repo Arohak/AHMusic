@@ -84,8 +84,9 @@ class TrackShortCell: BaseTableViewCell {
     func setValues(item: Track) {
         cellContentView.titleLabel.text = item.title
         cellContentView.linkButton.setTitle(item.link, forState: .Normal)
+        cellContentView.playButton.selected = item.played
         cellContentView.favoriteButton.selected = Utils.favoriteState(item)
-        cellContentView.downloadButton.selected = Utils.downloadState(item)
+        cellContentView.downloadButton.selected = Utils.downloadState(item)        
     }
     
     required init(coder aDecoder: NSCoder) {

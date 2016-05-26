@@ -31,6 +31,7 @@ class Track : Object {
     
     dynamic var download = false
     dynamic var favorite = false
+    dynamic var played = false
 
     convenience init(data: JSON) {
         self.init()

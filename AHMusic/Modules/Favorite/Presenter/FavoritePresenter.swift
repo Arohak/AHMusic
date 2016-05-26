@@ -11,6 +11,10 @@ class FavoritePresenter: BasePresenter {
 
     var view: FavoriteViewInput!
     var interactor: FavoriteInteractorInput!
+    
+    deinit {
+        EventCenter.defaultCenter.unregister(self)
+    }
 }
 
 //MARK: - extension for FavoriteModuleInput -
@@ -22,6 +26,8 @@ extension FavoritePresenter: FavoriteModuleInput {
 extension FavoritePresenter: FavoriteViewOutput {
     
     func viewIsReady() {
+        EventCenter.defaultCenter.register(self, handler: onEvent)
+
         interactor.getTrackDB()
     }
     
@@ -48,6 +54,11 @@ extension FavoritePresenter: FavoriteViewOutput {
     
     func downloadTrack(state: Bool, track: Track) {
         interactor.addOrDeleteDownloadTrack(state, track: track)
+    }
+    
+    //MARK: - Events -
+    func onEvent(data: TrackEvent) {
+        view.playCorrectTrack(data.result)
     }
 }
 

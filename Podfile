@@ -7,7 +7,7 @@ target 'AHMusic' do
     pod 'Typhoon'
     pod 'RxAlamofire'
     pod 'RealmSwift'
-#    pod 'EventCenter'
+    pod 'EventCenter'
     pod 'PureLayout'
     pod 'SwiftLoader'
     pod 'Kingfisher'

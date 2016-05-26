@@ -42,6 +42,23 @@ extension FavoriteViewController: FavoriteViewInput {
         favoriteView.tableView.reloadData()
     }
     
+    func playCorrectTrack(track: Track) {
+        for item in items {
+            try! dbHelper.realm.write  { item.played = false }
+        }
+        
+        favoriteView.tableView.reloadData()
+        
+        let index = items.indexOf() { $0.id == track.id }
+        if let index = index {
+            try! dbHelper.realm.write  { items[index].played = true }
+            
+            let indexPath = NSIndexPath(forRow: index, inSection: 0)
+            favoriteView.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .None, animated: false)
+            favoriteView.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+        }
+    }
+    
     func stopPlayer(index: Int) {
         let indexPath = NSIndexPath(forRow: index, inSection: 0)
         let cell = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
@@ -52,100 +69,6 @@ extension FavoriteViewController: FavoriteViewInput {
         let indexPath = NSIndexPath(forRow: index, inSection: 0)
         let cell = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
         cell.cellContentView.playButton.selected = !cell.cellContentView.playButton.selected
-    }
-    
-    func nextTrack(index: Int) {
-        let indexPath = NSIndexPath(forRow: index - 1, inSection: 0)
-        let indexPathNext = NSIndexPath(forRow: index, inSection: 0)
-        
-        changeButtonState(indexPath, indexPathTwo: indexPathNext)
-    }
-    
-    func prevTrack(index: Int) {
-        let indexPath = NSIndexPath(forRow: index + 1, inSection: 0)
-        let indexPathPrev = NSIndexPath(forRow: index, inSection: 0)
-        
-        changeButtonState(indexPath, indexPathTwo: indexPathPrev)
-    }
-    
-    func changeTrack(index: Int) {
-        if index == 0 {
-            prevTrack(index)
-        } else if index == items.count - 1 {
-            nextTrack(index)
-        } else {
-            let indexPath = NSIndexPath(forRow: index, inSection: 0)
-            let indexPathNext = NSIndexPath(forRow: index + 1, inSection: 0)
-            let indexPathPrev = NSIndexPath(forRow: index - 1, inSection: 0)
-            
-            changeButtonState(indexPath, indexPathNext: indexPathNext, indexPathPrev: indexPathPrev)
-        }
-    }
-    
-    // MARK: - Private Method -
-    private func changeButtonState(indexPathOne: NSIndexPath, indexPathTwo: NSIndexPath) {
-        let cellOne = favoriteView.tableView.cellForRowAtIndexPath(indexPathOne) as? TrackShortCell
-        let cellTwo = favoriteView.tableView.cellForRowAtIndexPath(indexPathTwo) as? TrackShortCell
-        if items.count > 1 {
-            if let _ = cellTwo {
-                cellOne!.cellContentView.playButton.selected = false
-                cellTwo!.cellContentView.playButton.selected = true
-                
-                cellOne!.cellContentView.backgroundColor = CLEAR
-                cellTwo!.cellContentView.backgroundColor = BLUE_LIGHT1
-                
-            } else {
-                favoriteView.tableView.scrollToRowAtIndexPath(indexPathTwo, atScrollPosition: .Middle, animated: false)
-                let cOne = favoriteView.tableView.cellForRowAtIndexPath(indexPathOne) as! TrackShortCell
-                let cTwo = favoriteView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackShortCell
-                cOne.cellContentView.playButton.selected = false
-                cTwo.cellContentView.playButton.selected = true
-                
-                cOne.cellContentView.backgroundColor = CLEAR
-                cTwo.cellContentView.backgroundColor = BLUE_LIGHT1
-            }
-        }
-    }
-    
-    private func changeButtonState(indexPath: NSIndexPath, indexPathNext: NSIndexPath, indexPathPrev: NSIndexPath) {
-        let cell = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as? TrackShortCell
-        let cellNext = favoriteView.tableView.cellForRowAtIndexPath(indexPathNext) as? TrackShortCell
-        let cellPrev = favoriteView.tableView.cellForRowAtIndexPath(indexPathPrev) as? TrackShortCell
-        
-        if cellNext != nil && cellPrev != nil {
-            cell!.cellContentView.playButton.selected = true
-            cellNext!.cellContentView.playButton.selected = false
-            cellPrev!.cellContentView.playButton.selected = false
-            
-            cell!.cellContentView.backgroundColor = BLUE_LIGHT1
-            cellNext!.cellContentView.backgroundColor = CLEAR
-            cellPrev!.cellContentView.backgroundColor = CLEAR
-            
-        } else if cellNext != nil {
-            favoriteView.tableView.scrollToRowAtIndexPath(indexPathNext, atScrollPosition: .Middle, animated: false)
-            let c = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
-            let cNext = favoriteView.tableView.cellForRowAtIndexPath(indexPathNext) as! TrackShortCell
-            let cPrev = favoriteView.tableView.cellForRowAtIndexPath(indexPathPrev) as! TrackShortCell
-            c.cellContentView.playButton.selected = true
-            cNext.cellContentView.playButton.selected = false
-            cPrev.cellContentView.playButton.selected = false
-            
-            c.cellContentView.backgroundColor = BLUE_LIGHT1
-            cNext.cellContentView.backgroundColor = CLEAR
-            cPrev.cellContentView.backgroundColor = CLEAR
-        } else if cellPrev != nil {
-            favoriteView.tableView.scrollToRowAtIndexPath(indexPathPrev, atScrollPosition: .Middle, animated: false)
-            let c = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
-            let cNext = favoriteView.tableView.cellForRowAtIndexPath(indexPathNext) as! TrackShortCell
-            let cPrev = favoriteView.tableView.cellForRowAtIndexPath(indexPathPrev) as! TrackShortCell
-            c.cellContentView.playButton.selected = true
-            cNext.cellContentView.playButton.selected = false
-            cPrev.cellContentView.playButton.selected = false
-            
-            c.cellContentView.backgroundColor = BLUE_LIGHT1
-            cNext.cellContentView.backgroundColor = CLEAR
-            cPrev.cellContentView.backgroundColor = CLEAR
-        }
     }
 }
 

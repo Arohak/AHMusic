@@ -51,7 +51,6 @@ class DBHelper {
                 tr!.favorite = state
             }
         }
-        
 //        print("Favorite")
 //        print(getFavoriteTracks().count)
     }
@@ -90,7 +89,6 @@ class DBHelper {
                 tr!.download = state
             }
         }
-        
 //        print("Download")
 //        print(getDownloadedTracks().count)
     }

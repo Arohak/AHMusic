@@ -80,6 +80,8 @@ extension MiniPlayerViewRoot: PlayerOutputProtocol {
     func didLoadItem(jukebox: Jukebox, item: JukeboxItem) {
         index = player.jukebox.playIndex
         titleLabel.text = items[index].title
+        
+        EventCenter.defaultCenter.post(TrackEvent(result: items[index]))
     }
     
     func playback(currentTime: Double, duration: Double) {

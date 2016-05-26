@@ -14,3 +14,8 @@ protocol MiniPlayerProtocol {
     func prevTrack(index: Int)
     func changeTrack(index: Int)
 }
+
+protocol MPPlayProtocol {
+
+    func playCorrectTrack(track: Track)
+}
