@@ -11,12 +11,10 @@ let dbHelper = DBHelper.sharedInstance
 class DBHelper {
     
     static let sharedInstance = DBHelper()
-    var realmFavorite: Realm!
-    var realmDownload: Realm!
+    var realm: Realm!
 
     private init() {
-        realmFavorite = try! Realm()
-        realmDownload = try! Realm()
+        realm = try! Realm()
 //        realmDownload = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "RealmDownloadIdentifier"))
     }
     
@@ -28,70 +26,78 @@ class DBHelper {
     
     //MARK: - Track Favorite -
     func getFavoriteTracks() -> Results<Track> {
-        let tracks = realmFavorite.objects(Track.self).filter("favorite == true")
+        let tracks = realm.objects(Track.self).filter("favorite == true")
 
         return tracks
     }
-
+    
     func addOrDeleteFavoriteTrack(state: Bool, track: Track) {
+        let predicate = NSPredicate(format: "id = %i", track.id)
+        let tr = realm.objects(Track.self).filter(predicate).first
+        
         if state {
-            try! realmFavorite.write {
-                let item = realmFavorite.create(Track.self, value: track, update: true)
-                
-                item.favorite = true
-                realmFavorite.add(item)
+            try! realm.write {
+                if tr == nil {
+                    let item = realm.create(Track.self, value: track, update: true)
+                    
+                    item.favorite = state
+                    realm.add(item, update: true)
+                } else {
+                    tr!.favorite = state
+                }
             }
         } else {
-            try! realmFavorite.write {
-                let item = realmFavorite.create(Track.self, value: track, update: true)
-
-                item.favorite = false
-                realmFavorite.delete(item)
+            try! realm.write {
+                tr!.favorite = state
             }
         }
         
-        print("Favorite")
-        print(getFavoriteTracks().count)
+//        print("Favorite")
+//        print(getFavoriteTracks().count)
     }
     
     func searchFavoriteTracks(keyword: String) -> Results<Track> {
         let predicate = NSPredicate(format: "title contains[c] %@", keyword)
-        let tracks = realmFavorite.objects(Track.self).filter(predicate)
+        let tracks = realm.objects(Track.self).filter(predicate)
         
         return tracks
     }
     
     //MARK: - Track Download -
     func getDownloadedTracks() -> Results<Track> {
-        let tracks = realmDownload.objects(Track.self).filter("download == true")
+        let tracks = realm.objects(Track.self).filter("download == true")
         
         return tracks
     }
     
     func addOrDeleteDownloadTrack(state: Bool, track: Track) {
+        let predicate = NSPredicate(format: "id = %i", track.id)
+        let tr = realm.objects(Track.self).filter(predicate).first
+        
         if state {
-            try! realmDownload.write {
-                let item = realmDownload.create(Track.self, value: track, update: true)
-                
-                item.download = true
-                realmDownload.add(item)
+            try! realm.write {
+                if tr == nil {
+                    let item = realm.create(Track.self, value: track, update: true)
+                    
+                    item.download = state
+                    realm.add(item, update: true)
+                } else {
+                    tr!.download = state
+                }
             }
         } else {
-            try! realmDownload.write {
-                let item = realmDownload.create(Track.self, value: track, update: true)
-                
-                item.download = false
-                realmDownload.delete(item)
+            try! realm.write {
+                tr!.download = state
             }
         }
         
-        print("Downloaded")
-        print(getDownloadedTracks().count)
+//        print("Download")
+//        print(getDownloadedTracks().count)
     }
     
     func searchDownloadTracks(keyword: String) -> Results<Track> {
         let predicate = NSPredicate(format: "title contains[c] %@", keyword)
-        let tracks = realmDownload.objects(Track.self).filter(predicate)
+        let tracks = realm.objects(Track.self).filter(predicate)
         
         return tracks
     }

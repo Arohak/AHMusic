@@ -43,6 +43,8 @@ class WebViewController: UIViewController {
         
         self.navigationItem.title = resourceName
         self.navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(WebViewController.close)), animated: true)
+        
+        UIHelper.showSpinner()
         browser.loadRequest(NSURLRequest(URL: url))
     }
     
@@ -57,7 +59,6 @@ class WebViewController: UIViewController {
 extension WebViewController: UIWebViewDelegate {
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
-        UIHelper.showSpinner()
         
         return true
     }
