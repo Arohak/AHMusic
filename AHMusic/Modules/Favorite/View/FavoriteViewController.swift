@@ -7,129 +7,20 @@
 //
 
 //MARK: - class FavoriteViewController -
-class FavoriteViewController: UIViewController {
+class FavoriteViewController: BaseEventViewController {
 
-    var output: FavoriteViewOutput!
-    
-    let favoriteView = FavoriteView()
-    var items = Array<Track>()
-    let cellIdentifire = "trackCell"
+    //MARK: - Actions -
+    override func favoriteAction(sender: AHButton) {
+        super.favoriteAction(sender)
 
-    // MARK: - Life cycle -
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        baseConfig()
-        output.viewIsReady()
-    }
-    
-    // MARK: - Private Method -
-    private func baseConfig() {
-        self.view = favoriteView
-        
-        favoriteView.tableView.dataSource = self
-        favoriteView.tableView.delegate = self
-        favoriteView.tableView.registerClass(TrackShortCell.self, forCellReuseIdentifier: cellIdentifire)
-    }
-}
-
-//MARK: - extension for FavoriteViewInput -
-extension FavoriteViewController: FavoriteViewInput {
-    
-    func setupInitialState(items: Array<Track>) {
-        self.items = items.reverse()
-        
-        favoriteView.tableView.reloadData()
-    }
-    
-    func playCorrectTrack(track: Track) {
-        for item in items {
-            try! dbHelper.realm.write  { item.played = false }
-        }
-        
-        favoriteView.tableView.reloadData()
-        
-        let index = items.indexOf() { $0.id == track.id }
-        if let index = index {
-            try! dbHelper.realm.write  { items[index].played = true }
-            
-            let indexPath = NSIndexPath(forRow: index, inSection: 0)
-            favoriteView.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .None, animated: false)
-            favoriteView.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
-        }
-    }
-    
-    func stopPlayer(index: Int) {
-        let indexPath = NSIndexPath(forRow: index, inSection: 0)
-        let cell = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
-        cell.cellContentView.playButton.selected = false
-    }
-    
-    func playPauseTrack(index: Int) {
-        let indexPath = NSIndexPath(forRow: index, inSection: 0)
-        let cell = favoriteView.tableView.cellForRowAtIndexPath(indexPath) as! TrackShortCell
-        cell.cellContentView.playButton.selected = !cell.cellContentView.playButton.selected
-    }
-}
-
-//MARK: - extension for UITableView -
-extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return items.count
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire) as! TrackShortCell
-        cell.cellContentView.playButton.addTarget(self, action: #selector(FavoriteViewController.playTrack(_:)), forControlEvents: .TouchUpInside)
-        cell.cellContentView.playButton.indexPath = indexPath
-        
-        cell.cellContentView.linkButton.addTarget(self, action: #selector(FavoriteViewController.openLink(_:)), forControlEvents: .TouchUpInside)
-        cell.cellContentView.linkButton.indexPath = indexPath
-        
-        cell.cellContentView.favoriteButton.addTarget(self, action: #selector(FavoriteViewController.favoriteAction(_:)), forControlEvents: .TouchUpInside)
-        cell.cellContentView.favoriteButton.indexPath = indexPath
-        
-        cell.cellContentView.downloadButton.addTarget(self, action: #selector(FavoriteViewController.downloadAction(_:)), forControlEvents: .TouchUpInside)
-        cell.cellContentView.downloadButton.indexPath = indexPath
-        
-        let track = items[indexPath.row]
-        cell.setValues(track)
-            
-        return cell
-    }
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-        return DE_CELL_HEIGHT
-    }
-    
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let track = items[indexPath.row]
-        output.openTrackDetail(track, items: items)
-    }
-    
-    // MARK: - Actions -
-    func playTrack(sender: AHButton) {
-        output.playTrack(sender.indexPath.row, tracks: items)
-    }
-    
-    func openLink(sender: AHButton) {
         let track = items[sender.indexPath.row]
-        output.openLink(track)
-    }
-    
-    func favoriteAction(sender: AHButton) {
-        sender.selected = !sender.selected
-        let track = items[sender.indexPath.row]
-
         deleteFavoriteTrack(sender)
         output.favoriteTrack(sender.selected, track: track)
+
     }
     
-    func downloadAction(sender: AHButton) {
-        sender.selected = !sender.selected
+    override func downloadAction(sender: AHButton) {
+        super.downloadAction(sender)
         
         let track = items[sender.indexPath.row]
         output.downloadTrack(sender.selected, track: track)
@@ -141,10 +32,10 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         let index = items.indexOf() {$0.id == track.id}
         items.removeAtIndex(index!)
         
-        favoriteView.tableView.beginUpdates()
-        favoriteView.tableView.deleteRowsAtIndexPaths([sender.indexPath], withRowAnimation: .None)
-        favoriteView.tableView.endUpdates()
+        baseEventView.tableView.beginUpdates()
+        baseEventView.tableView.deleteRowsAtIndexPaths([sender.indexPath], withRowAnimation: .None)
+        baseEventView.tableView.endUpdates()
         
-        favoriteView.tableView.reloadData()
+        baseEventView.tableView.reloadData()
     }
 }

@@ -9,7 +9,7 @@
 //MARK: - class DetailPresenter -
 class DetailPresenter {
 
-    var view: DetailViewInput!
+    var view: BaseEventViewInput!
     var interactor: DetailInteractorInput!
 }
 
@@ -34,13 +34,6 @@ extension DetailPresenter: DetailViewOutput {
         interactor.getTrack("\(track.id)", tracks: items)
     }
     
-//    func playTrack(index: Int, tracks: Array<Track>) {        
-//        let vc = MiniPlayerViewController(index: index, items: tracks, output: view)
-//        vc.modalPresentationStyle = .OverCurrentContext
-//        vc.modalTransitionStyle = .CrossDissolve
-//        UIHelper.root().presentViewController(vc, animated: true, completion: nil)
-//    }
-    
     func playTrack(index: Int, tracks: Array<Track>) {
         UIHelper.showMiniPlayer(index, tracks: tracks)
     }
@@ -51,6 +44,10 @@ extension DetailPresenter: DetailViewOutput {
     
     func downloadTrack(state: Bool, track: Track) {
         interactor.addOrDeleteDownloadTrack(state, track: track)
+    }
+    
+    func search(keyword: String) {
+        
     }
 }
 

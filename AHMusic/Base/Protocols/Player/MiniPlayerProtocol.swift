@@ -17,5 +17,7 @@ protocol MiniPlayerProtocol {
 
 protocol MPPlayProtocol {
 
+    func changeCorrectTrack(track: Track)
     func playCorrectTrack(track: Track)
+    func pauseCorrectTrack(track: Track)
 }

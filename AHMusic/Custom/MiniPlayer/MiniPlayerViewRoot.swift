@@ -81,7 +81,7 @@ extension MiniPlayerViewRoot: PlayerOutputProtocol {
         index = player.jukebox.playIndex
         titleLabel.text = items[index].title
         
-        EventCenter.defaultCenter.post(TrackEvent(result: items[index]))
+        EventCenter.defaultCenter.post(MiniPlayerEvent(result: items[index], state: .Change))
     }
     
     func playback(currentTime: Double, duration: Double) {
@@ -100,6 +100,18 @@ extension MiniPlayerViewRoot: PlayerOutputProtocol {
            playPauseButton.setBackgroundImage(UIImage(named: "img_pl_pause"), forState: .Normal)
         } else {
             playPauseButton.setBackgroundImage(UIImage(named: jukebox.state == .Paused ? "img_pl_play" : "img_pl_pause"), forState: .Normal)
+        }
+        
+        
+        switch jukebox.state {
+        case .Playing:
+            EventCenter.defaultCenter.post(MiniPlayerEvent(result: items[index], state: .Play))
+            
+        case .Paused:
+            EventCenter.defaultCenter.post(MiniPlayerEvent(result: items[index], state: .Pause))
+
+        default:
+            EventCenter.defaultCenter.post(MiniPlayerEvent(result: items[index], state: .Stop))
         }
     }
 }

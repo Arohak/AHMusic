@@ -246,6 +246,8 @@
 		A11ABB1A1CF491CC000BC69F /* MiniPlayerViewRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11ABB191CF491CC000BC69F /* MiniPlayerViewRoot.swift */; };
 		A14836DF1CDB75CA0043036B /* AHMusicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836DE1CDB75CA0043036B /* AHMusicTests.swift */; };
 		A14836EA1CDB75CA0043036B /* AHMusicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14836E91CDB75CA0043036B /* AHMusicUITests.swift */; };
+		A168A2BA1CF8841500224699 /* BaseEventViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A168A2B91CF8841500224699 /* BaseEventViewOutput.swift */; };
+		A168A2BC1CF884B100224699 /* BaseEventViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A168A2BB1CF884B100224699 /* BaseEventViewInput.swift */; };
 		A16F2BB61CF5CD8400F58B62 /* DownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F2BB51CF5CD8400F58B62 /* DownloadView.swift */; };
 		A16F2BB91CF5CEE400F58B62 /* OpenTrackLinkProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F2BB81CF5CEE400F58B62 /* OpenTrackLinkProtocol.swift */; };
 		A16F2BBC1CF5CF8100F58B62 /* SearchTrackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F2BBB1CF5CF8100F58B62 /* SearchTrackProtocol.swift */; };
@@ -517,6 +519,8 @@
 		A14836E51CDB75CA0043036B /* AHMusicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AHMusicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A14836E91CDB75CA0043036B /* AHMusicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AHMusicUITests.swift; sourceTree = "<group>"; };
 		A14836EB1CDB75CA0043036B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A168A2B91CF8841500224699 /* BaseEventViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEventViewOutput.swift; sourceTree = "<group>"; };
+		A168A2BB1CF884B100224699 /* BaseEventViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEventViewInput.swift; sourceTree = "<group>"; };
 		A16F2BB51CF5CD8400F58B62 /* DownloadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadView.swift; sourceTree = "<group>"; };
 		A16F2BB81CF5CEE400F58B62 /* OpenTrackLinkProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTrackLinkProtocol.swift; sourceTree = "<group>"; };
 		A16F2BBB1CF5CF8100F58B62 /* SearchTrackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTrackProtocol.swift; sourceTree = "<group>"; };
@@ -667,6 +671,8 @@
 				52701D711CF1B90600E81763 /* BaseViewInput.swift */,
 				52701D721CF1B90600E81763 /* BaseViewOutput.swift */,
 				52FAA7371CF3A5820003D92A /* BaseInteratosOutput.swift */,
+				A168A2BB1CF884B100224699 /* BaseEventViewInput.swift */,
+				A168A2B91CF8841500224699 /* BaseEventViewOutput.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -2302,6 +2308,7 @@
 				5270220B1CF1BD8F00E81763 /* SettingsConfigurator.swift in Sources */,
 				5270217F1CF1BD8F00E81763 /* SignUpInitializer.swift in Sources */,
 				527021FF1CF1BD8F00E81763 /* LeftMenuView.swift in Sources */,
+				A168A2BC1CF884B100224699 /* BaseEventViewInput.swift in Sources */,
 				52701E941CF1B90600E81763 /* Album.swift in Sources */,
 				52701E8D1CF1B90600E81763 /* WebViewController.swift in Sources */,
 				527021CD1CF1BD8F00E81763 /* PlaylistModuleInput.swift in Sources */,
@@ -2344,6 +2351,7 @@
 				527021CA1CF1BD8F00E81763 /* PlaylistInteractor.swift in Sources */,
 				52FAA7321CF24BBF0003D92A /* WelcomeViewOutput.swift in Sources */,
 				5270218E1CF1BD8F00E81763 /* DownloadPresenter.swift in Sources */,
+				A168A2BA1CF8841500224699 /* BaseEventViewOutput.swift in Sources */,
 				527021A51CF1BD8F00E81763 /* AlbumViewOutput.swift in Sources */,
 				5270217B1CF1BD8F00E81763 /* SignInViewController.swift in Sources */,
 				527021EB1CF1BD8F00E81763 /* TrackDetailInteractorInput.swift in Sources */,

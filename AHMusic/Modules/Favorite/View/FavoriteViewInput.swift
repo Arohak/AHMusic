@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol FavoriteViewInput: MPPlayProtocol {
+protocol FavoriteViewInput: BaseEventViewInput {
 
-    func setupInitialState(items: Array<Track>)
 }
+

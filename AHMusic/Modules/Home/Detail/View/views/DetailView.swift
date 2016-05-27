@@ -7,16 +7,9 @@
 //
 
 //MARK: - DetailView -
-class DetailView: BaseView {
+class DetailView: BaseEventView {
     
     var headerView: ParallaxHeaderView!
-    
-    lazy var tableView: BaseTableView = {
-        let view = BaseTableView.newAutoLayoutView()
-        view.tableHeaderView = self.headerView
-        
-        return view
-    }()
     
     //MARK: - Initialize -
     override init() {
@@ -27,7 +20,7 @@ class DetailView: BaseView {
         self.init()
         
         headerView = ParallaxHeaderView(imageURL: detail.imageURL, frame: headerRect)
-        addAllUIElements()
+        tableView.tableHeaderView = headerView
         addHeaderUIElements(detail)
     }
     
@@ -36,11 +29,6 @@ class DetailView: BaseView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
-        addSubview(tableView)
-        tableView.autoPinEdgesToSuperviewEdges()
-    }
-    
     private func addHeaderUIElements(detail: Detail) {
         var bgView: UIView!
         var infoLabel: UILabel!

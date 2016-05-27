@@ -6,7 +6,6 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol DownloadViewInput: class {
+protocol DownloadViewInput: BaseEventViewInput {
 
-    func setupInitialState(items: Array<Track>)
 }

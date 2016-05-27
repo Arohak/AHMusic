@@ -6,6 +6,6 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol FavoriteViewOutput: BaseViewOutput, OpenTrackLinkProtocol, OpenTrackDetailProtocol, FavoriteProtocol, DownloadProtocol, MiniPlayerPlayProtocol, SearchTrackProtocol {
+protocol FavoriteViewOutput: BaseEventViewOutput, SearchTrackProtocol {
 
 }

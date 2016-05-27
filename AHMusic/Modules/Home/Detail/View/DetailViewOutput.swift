@@ -6,8 +6,6 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol DetailViewOutput: OpenTrackDetailProtocol, FavoriteProtocol, DownloadProtocol, MiniPlayerPlayProtocol {
+protocol DetailViewOutput: BaseEventViewOutput {
 
-    func viewIsReady()
-    func openLink(track: Track)
 }

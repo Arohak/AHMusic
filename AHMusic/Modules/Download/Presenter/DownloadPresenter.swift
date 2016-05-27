@@ -9,7 +9,7 @@
 //MARK: - class DownloadPresenter -
 class DownloadPresenter {
 
-    var view: DownloadViewInput!
+    var view: BaseEventViewInput!
     var interactor: DownloadInteractorInput!
 }
 
@@ -19,7 +19,7 @@ extension DownloadPresenter: DownloadModuleInput {
 }
 
 //MARK: - extension for DownloadViewOutput -
-extension DownloadPresenter: DownloadViewOutput {
+extension DownloadPresenter: BaseEventViewOutput {
     
     func viewIsReady() {
         interactor.getTrackDB()
