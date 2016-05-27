@@ -82,7 +82,13 @@ class TrackDetailViewController: UIViewController {
         trackDetailView.actionView.nextButton.addTarget(self, action: #selector(TrackDetailViewController.nextAction), forControlEvents: .TouchUpInside)
         trackDetailView.actionView.replayButton.addTarget(self, action: #selector(TrackDetailViewController.replayAction), forControlEvents: .TouchUpInside)
         trackDetailView.actionView.trackListButton.addTarget(self, action: #selector(TrackDetailViewController.openActionSheet), forControlEvents: .TouchUpInside)
-
+        trackDetailView.headerView.favoriteButton.addTarget(self, action: #selector(TrackDetailViewController.favoriteAction), forControlEvents: .TouchUpInside)
+        trackDetailView.headerView.downloadButton.addTarget(self, action: #selector(TrackDetailViewController.downloadAction), forControlEvents: .TouchUpInside)
+        
+        trackDetailView.headerView.favoriteButton.selected = Utils.favoriteState(track)
+        let dState = Utils.downloadState(track)
+        trackDetailView.headerView.downloadButton.selected = dState
+        trackDetailView.headerView.downloadButton.enabled = !dState
 }
 
     private func configureNavigationBar() {
@@ -133,6 +139,19 @@ class TrackDetailViewController: UIViewController {
     func shareTrack(sender: AHButton) {
         output.shareTrack(sender, items: tracks)
     }
+    
+    func favoriteAction(sender: AHButton) {
+        sender.selected = !sender.selected
+        
+        output.favoriteTrack(sender.selected, track: track)
+    }
+    
+    func downloadAction(sender: AHButton) {
+        sender.selected = !sender.selected
+        sender.enabled = !sender.selected
+
+        output.downloadTrack(sender.selected, track: track)
+    }
 }
 
 //MARK: - extension for TrackDetailViewInput -
@@ -143,8 +162,6 @@ extension TrackDetailViewController: TrackDetailViewInput {
     }
     
     func didLoadItem(jukebox: Jukebox, item: JukeboxItem) {
-//        print("Jukebox did load: \(item.URL.lastPathComponent)")
-        
         updateUIFromChangeTrack(tracks[jukebox.playIndex])
     }
     

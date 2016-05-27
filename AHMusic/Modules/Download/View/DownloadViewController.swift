@@ -8,7 +8,16 @@
 
 //MARK: - class DownloadViewController -
 class DownloadViewController: BaseEventViewController {
-
+    
+    //MARK: - Initilize -
+    init() {
+        super.init(vcType: .Download)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - Actions -
     override func favoriteAction(sender: AHButton) {
         super.favoriteAction(sender)

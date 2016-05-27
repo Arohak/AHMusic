@@ -32,6 +32,7 @@ extension LeftMenuPresenter: LeftMenuViewOutput {
         
         if let slide = UIHelper.root().viewControllers[0] as? SlideViewController {
             slide.changeMainViewController(vc,  close: true)
+            slide.title = "Home"
         }
     }
     
@@ -42,6 +43,7 @@ extension LeftMenuPresenter: LeftMenuViewOutput {
         
         if let slide = UIHelper.root().visibleViewController as? SlideViewController {
             slide.changeMainViewController(vc,  close: true)
+            slide.title = "Favorites"
         }
     }
     
@@ -52,11 +54,15 @@ extension LeftMenuPresenter: LeftMenuViewOutput {
         
         if let slide = UIHelper.root().visibleViewController as? SlideViewController {
             slide.changeMainViewController(vc,  close: true)
+            slide.title = "Downloads"
         }
     }
     
     func settings() {
-        
+       
+        if let slide = UIHelper.root().visibleViewController as? SlideViewController {
+            slide.title = "Settings"
+        }
     }
     
     func logout() {

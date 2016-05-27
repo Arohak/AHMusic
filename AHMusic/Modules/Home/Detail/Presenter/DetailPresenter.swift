@@ -24,6 +24,10 @@ extension DetailPresenter: DetailViewOutput {
     func viewIsReady() {
         
     }
+        
+    func search(keyword: String) {
+        
+    }
     
     func openLink(track: Track) {
         let vc = WebViewController(resourceName: track.title, url: NSURL(string: track.link)!)
@@ -44,10 +48,6 @@ extension DetailPresenter: DetailViewOutput {
     
     func downloadTrack(state: Bool, track: Track) {
         interactor.addOrDeleteDownloadTrack(state, track: track)
-    }
-    
-    func search(keyword: String) {
-        
     }
 }
 

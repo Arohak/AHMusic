@@ -9,6 +9,15 @@
 //MARK: - class FavoriteViewController -
 class FavoriteViewController: BaseEventViewController {
 
+    //MARK: - Initilize -
+    init() {
+        super.init(vcType: .Favorite)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     //MARK: - Actions -
     override func favoriteAction(sender: AHButton) {
         super.favoriteAction(sender)
@@ -24,6 +33,8 @@ class FavoriteViewController: BaseEventViewController {
         
         let track = items[sender.indexPath.row]
         output.downloadTrack(sender.selected, track: track)
+        
+        sender.enabled = !sender.selected
     }
     
     // MARK: - Priavte Method -

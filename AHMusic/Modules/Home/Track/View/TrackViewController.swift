@@ -23,6 +23,19 @@ class TrackViewController: UIViewController {
         output.viewIsReady()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        EventCenter.defaultCenter.register(self, handler: onEvent)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        EventCenter.defaultCenter.unregister(self)
+        resetTrackersState()
+    }
+    
     // MARK: - Private Method -
     private func baseConfig() {
         self.view = trackView
@@ -31,6 +44,39 @@ class TrackViewController: UIViewController {
         trackView.tableView.delegate = self
         trackView.tableView.registerClass(TrackCell.self, forCellReuseIdentifier: cellIdentifire)
         trackView.refresh.addTarget(self, action: #selector(TrackViewController.refresh), forControlEvents: .ValueChanged)
+    }
+    
+    private func resetTrackersState() {
+        for item in items {
+            try! dbHelper.realm.write  { item.played = false }
+        }
+        trackView.tableView.reloadData()
+    }
+    
+    private func changeTrackState(track: Track, state: Bool) {
+        let index = items.indexOf() { $0.id == track.id }
+        if let index = index {
+            try! dbHelper.realm.write  { items[index].played = state }
+            
+            let indexPath = NSIndexPath(forRow: index, inSection: 0)
+            trackView.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .None, animated: false)
+            trackView.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+        }
+    }
+    
+    //MARK: - Events -
+    func onEvent(data: MiniPlayerEvent) {
+        switch data.state {
+        case .Change:
+            resetTrackersState()
+            changeTrackState(data.result, state: true)
+            
+        case .Play:
+            changeTrackState(data.result, state: true)
+            
+        default:
+            changeTrackState(data.result, state: false)
+        }
     }
     
     // MARK: - Actions -
@@ -46,94 +92,7 @@ extension TrackViewController: TrackViewInput {
         self.items = items
         
         trackView.refresh.endRefreshing()
-
         trackView.tableView.reloadData()
-    }
-    
-    func stopPlayer(index: Int) {
-        let indexPath = NSIndexPath(forRow: index, inSection: 0)
-        let cell = trackView.tableView.cellForRowAtIndexPath(indexPath) as! TrackCell
-        cell.cellContentView.playButton.selected = false
-    }
-    
-    func playPauseTrack(index: Int) {
-        let indexPath = NSIndexPath(forRow: index, inSection: 0)
-        let cell = trackView.tableView.cellForRowAtIndexPath(indexPath) as! TrackCell
-        cell.cellContentView.playButton.selected = !cell.cellContentView.playButton.selected
-    }
-    
-    func nextTrack(index: Int) {
-        let indexPath = NSIndexPath(forRow: index - 1, inSection: 0)
-        let indexPathNext = NSIndexPath(forRow: index, inSection: 0)
-        
-        changeButtonState(indexPath, indexPathTwo: indexPathNext)
-    }
-    
-    func prevTrack(index: Int) {
-        let indexPath = NSIndexPath(forRow: index + 1, inSection: 0)
-        let indexPathPrev = NSIndexPath(forRow: index, inSection: 0)
-
-        changeButtonState(indexPath, indexPathTwo: indexPathPrev)
-    }
-    
-    func changeTrack(index: Int) {
-        if index == 0 {
-            prevTrack(index)
-        } else if index == items.count - 1 {
-            nextTrack(index)
-        } else {
-            let indexPath = NSIndexPath(forRow: index, inSection: 0)
-            let indexPathNext = NSIndexPath(forRow: index + 1, inSection: 0)
-            let indexPathPrev = NSIndexPath(forRow: index - 1, inSection: 0)
-            
-            changeButtonState(indexPath, indexPathNext: indexPathNext, indexPathPrev: indexPathPrev)
-        }
-    }
-    
-    // MARK: - Private Method -
-    private func changeButtonState(indexPathOne: NSIndexPath, indexPathTwo: NSIndexPath) {
-        let cellOne = trackView.tableView.cellForRowAtIndexPath(indexPathOne) as? TrackCell
-        let cellTwo = trackView.tableView.cellForRowAtIndexPath(indexPathTwo) as? TrackCell
-        if items.count > 1 {
-            if let _ = cellTwo {
-                cellOne!.cellContentView.playButton.selected = false
-                cellTwo!.cellContentView.playButton.selected = true
-            } else {
-                trackView.tableView.scrollToRowAtIndexPath(indexPathTwo, atScrollPosition: .Middle, animated: false)
-                let cOne = trackView.tableView.cellForRowAtIndexPath(indexPathOne) as! TrackCell
-                let cTwo = trackView.tableView.cellForRowAtIndexPath(indexPathTwo) as! TrackCell
-                cOne.cellContentView.playButton.selected = false
-                cTwo.cellContentView.playButton.selected = true
-            }
-        }
-    }
-    
-    private func changeButtonState(indexPath: NSIndexPath, indexPathNext: NSIndexPath, indexPathPrev: NSIndexPath) {
-        let cell = trackView.tableView.cellForRowAtIndexPath(indexPath) as? TrackCell
-        let cellNext = trackView.tableView.cellForRowAtIndexPath(indexPathNext) as? TrackCell
-        let cellPrev = trackView.tableView.cellForRowAtIndexPath(indexPathPrev) as? TrackCell
-        
-        if cellNext != nil && cellPrev != nil {
-            cell!.cellContentView.playButton.selected = true
-            cellNext!.cellContentView.playButton.selected = false
-            cellPrev!.cellContentView.playButton.selected = false
-        } else if cellNext != nil {
-            trackView.tableView.scrollToRowAtIndexPath(indexPathNext, atScrollPosition: .Middle, animated: false)
-            let c = trackView.tableView.cellForRowAtIndexPath(indexPath) as! TrackCell
-            let cNext = trackView.tableView.cellForRowAtIndexPath(indexPathNext) as! TrackCell
-            let cPrev = trackView.tableView.cellForRowAtIndexPath(indexPathPrev) as! TrackCell
-            c.cellContentView.playButton.selected = true
-            cNext.cellContentView.playButton.selected = false
-            cPrev.cellContentView.playButton.selected = false
-        } else if cellPrev != nil {
-            trackView.tableView.scrollToRowAtIndexPath(indexPathPrev, atScrollPosition: .Middle, animated: false)
-            let c = trackView.tableView.cellForRowAtIndexPath(indexPath) as! TrackCell
-            let cNext = trackView.tableView.cellForRowAtIndexPath(indexPathNext) as! TrackCell
-            let cPrev = trackView.tableView.cellForRowAtIndexPath(indexPathPrev) as! TrackCell
-            c.cellContentView.playButton.selected = true
-            cNext.cellContentView.playButton.selected = false
-            cPrev.cellContentView.playButton.selected = false
-        }
     }
 }
 

@@ -69,12 +69,24 @@ class TrackShortCell: BaseTableViewCell {
         cellContentView.autoPinEdgesToSuperviewEdges()
     }
     
-    func setValues(item: Track) {
+    func setValues(item: Track, type: BaseVC) {
         cellContentView.titleLabel.text = item.title
         cellContentView.linkButton.setTitle(item.link, forState: .Normal)
         cellContentView.playButton.selected = item.played
-        cellContentView.favoriteButton.selected = Utils.favoriteState(item)
-        cellContentView.downloadButton.selected = Utils.downloadState(item)        
+        let fState = Utils.favoriteState(item)
+        let dState = Utils.downloadState(item)
+        cellContentView.favoriteButton.selected = fState
+        cellContentView.downloadButton.selected = dState
+        
+        switch type {
+        case .Favorite, .Detail:
+            cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Selected)
+            cellContentView.downloadButton.enabled = !dState
+
+        case .Download:
+            cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_delete"), forState: .Selected)
+
+        }
     }
     
     required init(coder aDecoder: NSCoder) {

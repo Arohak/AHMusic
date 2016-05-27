@@ -109,6 +109,14 @@ extension TrackDetailPresenter: TrackDetailViewOutput {
         
         UIHelper.root().presentViewController(activityVC, animated: true, completion: nil)
     }
+    
+    func favoriteTrack(state: Bool, track: Track) {
+        interactor.addOrDeleteFavoriteTrack(state, track: track)
+    }
+    
+    func downloadTrack(state: Bool, track: Track) {
+        interactor.addOrDeleteDownloadTrack(state, track: track)
+    }
 }
 
 //MARK: - extension for TrackDetailInteractorOutput -

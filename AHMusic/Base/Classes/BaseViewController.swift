@@ -6,26 +6,35 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
+//MARK: - enum BaseVC -
+enum BaseVC {
+    case Favorite
+    case Download
+    case Detail
+}
+
 //MARK: - class BaseEventViewController -
 class BaseEventViewController: UIViewController {
     
     var output: BaseEventViewOutput!
 
+    var vcType = BaseVC.Detail
     var baseEventView: BaseEventView!
     var items = Array<Track>()
     let cellIdentifire = "trackCell"
     
     //MARK: - Initilize -
-    init() {
-        super.init(nibName: nil, bundle: nil)
-        
-        baseEventView = BaseEventView()
-    }
-    
     init(title: String) {
         super.init(nibName: nil, bundle: nil)
 
         self.title = title
+    }
+    
+    init(vcType: BaseVC) {
+        super.init(nibName: nil, bundle: nil)
+        
+        self.vcType = vcType
+        baseEventView = BaseEventView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -100,7 +109,7 @@ extension BaseEventViewController: BaseEventViewInput {
     
     func setupInitialState(items: Array<Track>) {
         self.items = items.reverse()
-        
+
         baseEventView.tableView.reloadData()
     }
 }
@@ -128,7 +137,7 @@ extension BaseEventViewController: UITableViewDataSource, UITableViewDelegate {
         cell.cellContentView.downloadButton.indexPath = indexPath
         
         let track = items[indexPath.row]
-        cell.setValues(track)
+        cell.setValues(track, type: vcType)
         
         return cell
     }

@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol TrackViewInput: MiniPlayerProtocol {
+protocol TrackViewInput {
 
     func setupInitialState(items: Array<Track>)
 }
