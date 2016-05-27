@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2D9A946C7A9A45B55DFD0972 /* Pods_AHMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC79167B04BFE68239C240B3 /* Pods_AHMusic.framework */; };
+		520816891CF80B7F000FD806 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520816881CF80B7F000FD806 /* FileManager.swift */; };
+		5208168C1CF80F37000FD806 /* DownloadProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208168B1CF80F37000FD806 /* DownloadProgress.swift */; };
 		52701E711CF1B90600E81763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D621CF1B90600E81763 /* AppDelegate.swift */; };
 		52701E721CF1B90600E81763 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D631CF1B90600E81763 /* ApplicationAssembly.swift */; };
 		52701E731CF1B90600E81763 /* BasePresenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D661CF1B90600E81763 /* BasePresenters.swift */; };
@@ -273,6 +275,8 @@
 
 /* Begin PBXFileReference section */
 		2267ECF5F1F39946A1C7CAA3 /* Pods-AHMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic.debug.xcconfig"; sourceTree = "<group>"; };
+		520816881CF80B7F000FD806 /* FileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		5208168B1CF80F37000FD806 /* DownloadProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadProgress.swift; sourceTree = "<group>"; };
 		52701D621CF1B90600E81763 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52701D631CF1B90600E81763 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
 		52701D661CF1B90600E81763 /* BasePresenters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenters.swift; sourceTree = "<group>"; };
@@ -576,6 +580,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5208168A1CF80F12000FD806 /* DownloadProgress */ = {
+			isa = PBXGroup;
+			children = (
+				5208168B1CF80F37000FD806 /* DownloadProgress.swift */,
+			);
+			path = DownloadProgress;
+			sourceTree = "<group>";
+		};
 		52701D601CF1B90600E81763 /* AHMusic */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +730,7 @@
 				52701D821CF1B90600E81763 /* MiniPlayer */,
 				52701D851CF1B90600E81763 /* Parallax */,
 				52701D891CF1B90600E81763 /* PickerView */,
+				5208168A1CF80F12000FD806 /* DownloadProgress */,
 				52701D901CF1B90600E81763 /* WebBrowser */,
 			);
 			path = Custom;
@@ -793,6 +806,7 @@
 				52701D981CF1B90600E81763 /* Utils.swift */,
 				52701D951CF1B90600E81763 /* Events.swift */,
 				52701D961CF1B90600E81763 /* LocationHelper.swift */,
+				520816881CF80B7F000FD806 /* FileManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2192,6 +2206,7 @@
 				527021F21CF1BD8F00E81763 /* TDActionView.swift in Sources */,
 				527021771CF1BD8F00E81763 /* SignInInteractorInput.swift in Sources */,
 				52701E8A1CF1B90600E81763 /* AHPickerView.swift in Sources */,
+				520816891CF80B7F000FD806 /* FileManager.swift in Sources */,
 				5270219C1CF1BD8F00E81763 /* AlbumConfigurator.swift in Sources */,
 				527021E81CF1BD8F00E81763 /* TrackDetailConfigurator.swift in Sources */,
 				527021A01CF1BD8F00E81763 /* AlbumInteractorOutput.swift in Sources */,
@@ -2223,6 +2238,7 @@
 				52FAA7141CF1C04A0003D92A /* SignInView.swift in Sources */,
 				527021CF1CF1BD8F00E81763 /* PlaylistViewController.swift in Sources */,
 				527021841CF1BD8F00E81763 /* SignUpPresenter.swift in Sources */,
+				5208168C1CF80F37000FD806 /* DownloadProgress.swift in Sources */,
 				5270217D1CF1BD8F00E81763 /* SignInViewOutput.swift in Sources */,
 				527021751CF1BD8F00E81763 /* SignInInitializer.swift in Sources */,
 				527021831CF1BD8F00E81763 /* SignUpModuleInput.swift in Sources */,

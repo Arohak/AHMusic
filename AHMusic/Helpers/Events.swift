@@ -13,4 +13,12 @@ struct TrackEvent {
     init(result: Track) {
         self.result = result
     }
+    
+    struct DealRunID {
+        var dealRunID: String
+        
+        init(dealRunID: String) {
+            self.dealRunID = dealRunID
+        }
+    }
 }
