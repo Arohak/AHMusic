@@ -12,16 +12,18 @@ class AHPlayer {
     var jukebox : Jukebox!
     var playerOutput: PlayerOutputProtocol!
     var tracks: Array<Track>!
-    
+    var isOffline = false
+
     //MARK: - Initilize -
     init() {
         
     }
     
-    init(items: Array<Track>, playerOutput: PlayerOutputProtocol) {
+    init(items: Array<Track>, playerOutput: PlayerOutputProtocol, isOffline: Bool = false) {
         self.playerOutput = playerOutput
         self.tracks = items
-        
+        self.isOffline = isOffline
+
         self.setTrackers(items)
     }
     
@@ -31,12 +33,31 @@ class AHPlayer {
             jukebox.removeAllItems()
             
             for item in items {
-                jukebox.appendItem(JukeboxItem(URL: NSURL(string: item.preview)!), loadingAssets: true)
-            }            
+                if isOffline {
+                    let name = item.preview.componentsSeparatedByString("/").last!
+                    let path = Utils.getDocumentsFolderPath() + "/" + name
+                    let url = NSURL(fileURLWithPath: path)
+                    jukebox.appendItem(JukeboxItem(URL: url), loadingAssets: false)
+                    
+                } else {
+                    let url = NSURL(string: item.preview)!
+                    jukebox.appendItem(JukeboxItem(URL: url), loadingAssets: true)
+                }
+            }
         } else {
             var jukeboxItems = Array<JukeboxItem>()
+            
             for item in items {
-                jukeboxItems.append(JukeboxItem(URL: NSURL(string: item.preview)!))
+                if isOffline {
+                    let name = item.preview.componentsSeparatedByString("/").last!
+                    let path = Utils.getDocumentsFolderPath() + "/" + name
+                    let url = NSURL(fileURLWithPath: path)
+                    jukeboxItems.append(JukeboxItem(URL: url))
+                    
+                } else {
+                    let url = NSURL(string: item.preview)!
+                    jukeboxItems.append(JukeboxItem(URL: url))
+                }
             }
             self.jukebox = Jukebox(delegate: self, items: jukeboxItems)
         }

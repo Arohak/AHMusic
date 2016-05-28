@@ -39,7 +39,7 @@ extension DownloadPresenter: BaseEventViewOutput {
     }
     
     func playTrack(index: Int, tracks: Array<Track>) {
-        UIHelper.showMiniPlayer(index, tracks: tracks)
+        UIHelper.showMiniPlayer(index, tracks: tracks, isOffline: true)
     }
     
     func favoriteTrack(state: Bool, track: Track) {

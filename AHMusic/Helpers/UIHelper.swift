@@ -66,7 +66,23 @@ struct UIHelper {
         return appDelegate.window!.rootViewController as! UINavigationController
     }
     
-    static func showMiniPlayer(index: Int, tracks: Array<Track>) {
+    static func showMiniPlayer(index: Int, tracks: Array<Track>, isOffline: Bool = false) {
+        if let miniPlayerView = appDelegate.miniPlayerView {
+            miniPlayerView.player.isOffline = isOffline
+            miniPlayerView.setTrackers(index, items: tracks)
+        } else {
+            let view = MiniPlayerViewRoot(index: index, items: tracks, isOffline: isOffline)
+            appDelegate.miniPlayerView = view
+
+            appDelegate.window!.addSubview(view)
+            view.autoPinEdgeToSuperviewEdge(.Left)
+            view.autoPinEdgeToSuperviewEdge(.Right)
+            view.autoPinEdgeToSuperviewEdge(.Bottom)
+            view.autoSetDimension(.Height, toSize: TD_BTN_SIZE*1.5)
+        }
+    }
+    
+    static func showMiniPlayer1(index: Int, tracks: Array<Track>) {
         if let miniPlayerView = appDelegate.miniPlayerView {
             miniPlayerView.setTrackers(index, items: tracks)
         } else {

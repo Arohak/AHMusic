@@ -80,7 +80,11 @@ class TrackShortCell: BaseTableViewCell {
         
         switch type {
         case .Favorite, .Detail:
-            cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Selected)
+            if dState {
+                cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
+            } else{
+                cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download"), forState: .Normal)
+            }
             cellContentView.downloadButton.enabled = !dState
 
         case .Download:
@@ -96,6 +100,8 @@ class TrackShortCell: BaseTableViewCell {
 
 //MARK: - TrackShortCellContentView -
 class TrackShortCellContentView: UIView {
+    
+    let shapeLayer = ShapeLayer(center: TR_ICON_SIZE)
     
     //MARK: - Create UIElements
     lazy var playButton: AHButton = {
@@ -154,6 +160,8 @@ class TrackShortCellContentView: UIView {
         addSubview(playButton)
         addSubview(favoriteButton)
         addSubview(downloadButton)
+        
+        downloadButton.layer.addSublayer(shapeLayer.gradientMaskLayer)
 
         setConstraints()
     }

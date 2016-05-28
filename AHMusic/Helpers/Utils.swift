@@ -66,5 +66,24 @@ struct Utils {
             return false
         }
     }
+    
+    static func getDocumentsFolderPath() -> String {
+        return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
+    }
+    
+    static func writeToSelectedTrack(path: String, trackID: String) {
+        let destinationPath = self.getDocumentsFolderPath() + "/" + trackID
+        if let data = NSData(contentsOfURL: NSURL(string: path)!) {
+            try! data.writeToFile(destinationPath, options: .DataWritingWithoutOverwriting)
+        }
+    }
+    
+    static func removeTrackIfExist(track: Track) {
+        let name = track.preview.componentsSeparatedByString("/").last!
+        let destinationPath = self.getDocumentsFolderPath() + "/" + name
+        if NSFileManager.defaultManager().fileExistsAtPath(destinationPath) {
+            try!  NSFileManager.defaultManager().removeItemAtPath(destinationPath)
+        }
+    }
 }
 

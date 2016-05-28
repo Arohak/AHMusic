@@ -33,6 +33,8 @@ class Track : Object {
     dynamic var favorite = false
     dynamic var played = false
 
+    var request: Alamofire.Request!
+
     convenience init(data: JSON) {
         self.init()
         
@@ -62,36 +64,3 @@ class Track : Object {
         return "id"
     }
 }
-
-//class FileInfo {
-//    
-//    var dealId: String
-//    var date: String
-//    var name: String
-//    var size: Int
-//    var uploaded: String
-//    var typeIcon: String
-//    var type: String
-//    var request: Alamofire.Request!
-//    var index: Int = 0
-//    
-//    init(value: File, info: JSON) {
-//        self.dealId = value.dealId
-//        self.date = value.asOfDate
-//        self.name = info["filePath"].stringValue
-//        self.size = info["fileSize"].intValue
-//        self.uploaded = info["uploadedTs"].stringValue
-//        self.typeIcon = self.name.substringFromIndex(self.name.endIndex.advancedBy(-3))
-//        self.type = info["type"].stringValue
-//    }
-//    
-//    init(info: FileDownloaded) {
-//        self.dealId = info.dealId
-//        self.date = info.date
-//        self.name = info.name
-//        self.typeIcon = info.typeIcon
-//        self.type = info.type
-//        self.size = Int(info.size)!
-//        self.uploaded = info.uploaded
-//    }
-//}

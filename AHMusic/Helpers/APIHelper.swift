@@ -85,6 +85,20 @@ class APIHelper {
         }
     }
     
+    //MARK: - Download
+    func downloadProgress(track: Track, progress: (Int64, Int64, Int64)->(), state: (NSError?)->()) {
+        let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory, domain: .UserDomainMask)
+        track.request = download(.GET, track.preview, destination: destination)
+            .progress { bytesRead, totalBytesRead, totalBytesExpectedToRead in
+                dispatch_async(dispatch_get_main_queue()) {
+                   progress(bytesRead, totalBytesRead, totalBytesExpectedToRead)
+                }
+            }
+            .response { request, response, _ , error in
+                state(error)
+            }
+    }
+    
     //MARK: - Categories
     func rx_GetCategories() -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + ROUTERS.GET_GENRE

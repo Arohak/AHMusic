@@ -42,10 +42,6 @@ class DetailViewController: BaseEventViewController {
     
     override func downloadAction(sender: AHButton) {
         super.downloadAction(sender)
-        sender.enabled = !sender.selected
-
-        let track = items[sender.indexPath.row]
-        output.downloadTrack(sender.selected, track: track)
     }
 }
 

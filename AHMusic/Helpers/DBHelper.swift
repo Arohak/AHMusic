@@ -51,8 +51,6 @@ class DBHelper {
                 tr!.favorite = state
             }
         }
-//        print("Favorite")
-//        print(getFavoriteTracks().count)
     }
     
     func searchFavoriteTracks(keyword: String) -> Results<Track> {
@@ -86,11 +84,12 @@ class DBHelper {
             }
         } else {
             try! realm.write {
-                tr!.download = state
+                if let tr = tr {
+                    tr.download = state
+                    Utils.removeTrackIfExist(tr)
+                }
             }
         }
-//        print("Download")
-//        print(getDownloadedTracks().count)
     }
     
     func searchDownloadTracks(keyword: String) -> Results<Track> {

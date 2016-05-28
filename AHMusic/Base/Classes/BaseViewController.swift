@@ -23,6 +23,9 @@ class BaseEventViewController: UIViewController {
     var items = Array<Track>()
     let cellIdentifire = "trackCell"
     
+    var totalValue : Float = 0.0
+    var startValue : Float = 0.0
+    
     //MARK: - Initilize -
     init(title: String) {
         super.init(nibName: nil, bundle: nil)
@@ -170,5 +173,35 @@ extension BaseEventViewController: UITableViewDataSource, UITableViewDelegate {
     
     func downloadAction(sender: AHButton) {
         sender.selected = !sender.selected
+        
+        switch vcType {
+        case .Favorite, .Detail:
+            sender.enabled = !sender.selected
+            downloadProgress(sender)
+        default:
+            break
+        }
+    }
+    
+    // MARK: - Private Method -
+    private func downloadProgress(sender: AHButton) {
+        let track = items[sender.indexPath.row]
+        let cell = baseEventView.tableView.cellForRowAtIndexPath(sender.indexPath) as! TrackShortCell
+        cell.cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_bg_transparent"), forState: .Normal)
+        
+        apiHelper.downloadProgress(track, progress: { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
+            self.totalValue = (Float(totalBytesRead) / Float(totalBytesExpectedToRead))
+            cell.cellContentView.shapeLayer.animateProgressView(self.startValue, toV: self.totalValue, dur: 0.0001)
+            self.startValue = self.totalValue
+        }) { error in
+            self.startValue = 0.0
+            self.totalValue = 0.0
+            
+            if error == nil {
+                cell.cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
+                cell.cellContentView.shapeLayer.hideProgressView()
+                self.output.downloadTrack(sender.selected, track: track)
+            }
+        }
     }
 }

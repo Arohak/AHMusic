@@ -18,13 +18,13 @@ class MiniPlayerViewRoot: PlayerView {
         super.init()
     }
     
-    convenience init(index: Int, items: Array<Track>) {
+    convenience init(index: Int, items: Array<Track>, isOffline: Bool = false) {
         self.init()
         
         self.index = index
         self.items = items
         
-        player = AHPlayer(items: self.items, playerOutput: self)
+        player = AHPlayer(items: self.items, playerOutput: self, isOffline: isOffline)
         player.playPauseAtIndex(index)
         
         titleLabel.text = items[index].title

@@ -18,6 +18,10 @@ class TrackDetailViewController: UIViewController {
     var tracks: Array<Track>!
     var track: Track!
     
+    let shapeLayer = ShapeLayer(center: TD_BBTN_SIZE)
+    var totalValue : Float = 0.0
+    var startValue : Float = 0.0
+    
     lazy var rightItem: UIBarButtonItem = {
         let shareButton = AHButton(frame: CGRect(x: 0, y: 0, width: 22, height: 30))
         shareButton.setBackgroundImage(UIImage(named:"img_share"), forState: .Normal)
@@ -85,10 +89,19 @@ class TrackDetailViewController: UIViewController {
         trackDetailView.headerView.favoriteButton.addTarget(self, action: #selector(TrackDetailViewController.favoriteAction), forControlEvents: .TouchUpInside)
         trackDetailView.headerView.downloadButton.addTarget(self, action: #selector(TrackDetailViewController.downloadAction), forControlEvents: .TouchUpInside)
         
+        //shapeLayer
+        trackDetailView.headerView.downloadButton.layer.addSublayer(shapeLayer.gradientMaskLayer)
+        
         trackDetailView.headerView.favoriteButton.selected = Utils.favoriteState(track)
+        
         let dState = Utils.downloadState(track)
         trackDetailView.headerView.downloadButton.selected = dState
         trackDetailView.headerView.downloadButton.enabled = !dState
+        if dState {
+            trackDetailView.headerView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
+        } else{
+            trackDetailView.headerView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download"), forState: .Normal)
+        }
 }
 
     private func configureNavigationBar() {
@@ -150,7 +163,27 @@ class TrackDetailViewController: UIViewController {
         sender.selected = !sender.selected
         sender.enabled = !sender.selected
 
-        output.downloadTrack(sender.selected, track: track)
+        downloadProgress(sender)
+    }
+    
+    // MARK: - Private Method -
+    private func downloadProgress(sender: AHButton) {
+        sender.setBackgroundImage(UIImage(named: "img_bg_transparent"), forState: .Normal)
+        
+        apiHelper.downloadProgress(track, progress: { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
+            self.totalValue = (Float(totalBytesRead) / Float(totalBytesExpectedToRead))
+            self.shapeLayer.animateProgressView(self.startValue, toV: self.totalValue, dur: 0.0001)
+            self.startValue = self.totalValue
+        }) { error in
+            self.startValue = 0.0
+            self.totalValue = 0.0
+            
+            if error == nil {
+                sender.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
+                self.shapeLayer.hideProgressView()
+                self.output.downloadTrack(sender.selected, track: self.track)
+            }
+        }
     }
 }
 
