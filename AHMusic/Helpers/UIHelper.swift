@@ -82,18 +82,11 @@ struct UIHelper {
         }
     }
     
-    static func showMiniPlayer1(index: Int, tracks: Array<Track>) {
+    static func closeMiniPlayer() {
         if let miniPlayerView = appDelegate.miniPlayerView {
-            miniPlayerView.setTrackers(index, items: tracks)
-        } else {
-            let view = MiniPlayerViewRoot(index: index, items: tracks)
-            appDelegate.miniPlayerView = view
-            
-            appDelegate.window!.addSubview(view)
-            view.autoPinEdgeToSuperviewEdge(.Left)
-            view.autoPinEdgeToSuperviewEdge(.Right)
-            view.autoPinEdgeToSuperviewEdge(.Bottom)
-            view.autoSetDimension(.Height, toSize: TD_BTN_SIZE*1.5)
+            miniPlayerView.removeFromSuperview()
+            miniPlayerView.player.stop()
+            appDelegate.miniPlayerView = nil
         }
     }
 //

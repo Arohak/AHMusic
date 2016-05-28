@@ -42,7 +42,6 @@
 		52701E8E1CF1B90600E81763 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D931CF1B90600E81763 /* APIHelper.swift */; };
 		52701E8F1CF1B90600E81763 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D941CF1B90600E81763 /* DBHelper.swift */; };
 		52701E901CF1B90600E81763 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D951CF1B90600E81763 /* Events.swift */; };
-		52701E911CF1B90600E81763 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D961CF1B90600E81763 /* LocationHelper.swift */; };
 		52701E921CF1B90600E81763 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D971CF1B90600E81763 /* UIHelper.swift */; };
 		52701E931CF1B90600E81763 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D981CF1B90600E81763 /* Utils.swift */; };
 		52701E941CF1B90600E81763 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D9A1CF1B90600E81763 /* Album.swift */; };
@@ -311,7 +310,6 @@
 		52701D931CF1B90600E81763 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
 		52701D941CF1B90600E81763 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		52701D951CF1B90600E81763 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
-		52701D961CF1B90600E81763 /* LocationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		52701D971CF1B90600E81763 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		52701D981CF1B90600E81763 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		52701D9A1CF1B90600E81763 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -811,7 +809,6 @@
 				52701D941CF1B90600E81763 /* DBHelper.swift */,
 				52701D981CF1B90600E81763 /* Utils.swift */,
 				52701D951CF1B90600E81763 /* Events.swift */,
-				52701D961CF1B90600E81763 /* LocationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -2237,7 +2234,6 @@
 				52701E7B1CF1B90600E81763 /* OpenDetailFromAlbumProtocol.swift in Sources */,
 				527021CB1CF1BD8F00E81763 /* PlaylistInteractorInput.swift in Sources */,
 				5270218C1CF1BD8F00E81763 /* DownloadInteractorOutput.swift in Sources */,
-				52701E911CF1B90600E81763 /* LocationHelper.swift in Sources */,
 				527021A61CF1BD8F00E81763 /* AlbumView.swift in Sources */,
 				527022011CF1BD8F00E81763 /* ProfileConfigurator.swift in Sources */,
 				52701E8C1CF1B90600E81763 /* TabViewController.swift in Sources */,

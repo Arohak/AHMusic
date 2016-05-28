@@ -70,9 +70,11 @@ class APIHelper {
                     onError: {
                         observer.onError($0)
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-//                        if showProgress { UIHelper.hideProgressHUD() }
+                        let error = $0 as NSError
+                        UIHelper.showHUD(error.localizedDescription)
                         if showProgress { UIHelper.hideSpinner() }
-                        UIHelper.showHUD("error")
+//                        if showProgress { UIHelper.hideProgressHUD() }
+//                        UIHelper.showHUD("No Internet Connection")
                     },
                     onCompleted: {
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false

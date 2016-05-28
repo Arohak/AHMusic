@@ -13,7 +13,7 @@ class MiniPlayerView: UIView {
     lazy var bgView: UIView = {
         let view = UIView.newAutoLayoutView()
         view.backgroundColor = BLACK
-        view.alpha = 0.2
+        view.alpha = 0.1
             
         return view
     }()
@@ -61,7 +61,7 @@ class PlayerView: UIView {
     lazy var bgImageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
         view.backgroundColor = BLACK
-        view.alpha = 0.7
+        view.alpha = 0.6
 
         return view
     }()
@@ -96,6 +96,13 @@ class PlayerView: UIView {
         return view
     }()
     
+    lazy var closeButton: AHButton = {
+        let view = AHButton.newAutoLayoutView()
+        view.setBackgroundImage(UIImage(named: "img_pl_close"), forState: .Normal)
+        
+        return view
+    }()
+    
     lazy var titleLabel: AHLabel = {
         let view = AHLabel.newAutoLayoutView()
         view.font = TD_TIME_FONT
@@ -124,6 +131,7 @@ class PlayerView: UIView {
         addSubview(playPauseButton)
         addSubview(prevButton)
         addSubview(nextButton)
+        addSubview(closeButton)
 
         setConstraints()
     }
@@ -138,7 +146,7 @@ class PlayerView: UIView {
         
         titleLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: playPauseButton)
         titleLabel.autoPinEdge(.Left, toEdge: .Right, ofView: nextButton, withOffset: TD_OFFSET)
-        titleLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: TD_OFFSET)
+        titleLabel.autoPinEdge(.Right, toEdge: .Left, ofView: closeButton, withOffset: -TD_OFFSET)
         
         prevButton.autoAlignAxis(.Horizontal, toSameAxisOfView: playPauseButton)
         prevButton.autoPinEdgeToSuperviewEdge(.Left, withInset: TD_OFFSET)
@@ -151,5 +159,9 @@ class PlayerView: UIView {
         nextButton.autoAlignAxis(.Horizontal, toSameAxisOfView: playPauseButton)
         nextButton.autoPinEdge(.Left, toEdge: .Right, ofView: playPauseButton, withOffset: TD_OFFSET)
         nextButton.autoSetDimensionsToSize(CGSize(width: TD_BTN_SIZE*0.7, height: TD_BTN_SIZE*0.7))
+        
+        closeButton.autoAlignAxis(.Horizontal, toSameAxisOfView: playPauseButton)
+        closeButton.autoPinEdgeToSuperviewEdge(.Right, withInset: TD_OFFSET)
+        closeButton.autoSetDimensionsToSize(CGSize(width: TD_BTN_SIZE*0.7, height: TD_BTN_SIZE*0.7))
     }
 }

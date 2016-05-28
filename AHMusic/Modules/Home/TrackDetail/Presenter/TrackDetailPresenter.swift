@@ -24,11 +24,7 @@ extension TrackDetailPresenter: TrackDetailModuleInput {
 extension TrackDetailPresenter: TrackDetailViewOutput {
     
     func viewIsReady(items: Array<Track>) {
-        if let miniPlayerView = appDelegate.miniPlayerView {
-            miniPlayerView.removeFromSuperview()
-            miniPlayerView.player.stop()
-            appDelegate.miniPlayerView = nil
-        }
+        UIHelper.closeMiniPlayer()
         
         player = AHPlayer(items: items, playerOutput: view)
     }

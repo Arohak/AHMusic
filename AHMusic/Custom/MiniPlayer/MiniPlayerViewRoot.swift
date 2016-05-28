@@ -32,6 +32,7 @@ class MiniPlayerViewRoot: PlayerView {
         playPauseButton.addTarget(self, action: #selector(MiniPlayerViewRoot.playPauseAction), forControlEvents: .TouchUpInside)
         prevButton.addTarget(self, action: #selector(MiniPlayerViewRoot.prevAction), forControlEvents: .TouchUpInside)
         nextButton.addTarget(self, action: #selector(MiniPlayerViewRoot.nextAction), forControlEvents: .TouchUpInside)
+        closeButton.addTarget(self, action: #selector(MiniPlayerViewRoot.closeAction), forControlEvents: .TouchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,8 +66,10 @@ class MiniPlayerViewRoot: PlayerView {
         player.playPauseAtIndex(index)
     }
     
-    func close() {
+    func closeAction() {
+        EventCenter.defaultCenter.post(MiniPlayerEvent(result: items[index], state: .Stop))
 
+        UIHelper.closeMiniPlayer()
     }
 }
 
