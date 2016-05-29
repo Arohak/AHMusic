@@ -46,7 +46,6 @@ extension AlbumViewController: AlbumViewInput {
         self.items = items
         
         albumView.refresh.endRefreshing()
-
         albumView.tableView.reloadData()
     }
 }

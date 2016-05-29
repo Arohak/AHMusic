@@ -72,6 +72,7 @@ class BaseEventViewController: UIViewController {
         baseEventView.tableView.dataSource = self
         baseEventView.tableView.delegate = self
         baseEventView.tableView.registerClass(TrackShortCell.self, forCellReuseIdentifier: cellIdentifire)
+        baseEventView.refresh.addTarget(self, action: #selector(BaseEventViewController.refresh), forControlEvents: .ValueChanged)
     }
     
     private func resetTrackersState() {
@@ -106,6 +107,17 @@ class BaseEventViewController: UIViewController {
             changeTrackState(data.result, state: false)
         }
     }
+    
+    // MARK: - Actions -
+    func refresh() {
+        switch vcType {
+        case .Download, .Favorite:
+            output.viewIsReady()
+
+        case .Detail:
+            baseEventView.refresh.endRefreshing()
+        }
+    }
 }
 
 extension BaseEventViewController: BaseEventViewInput {
@@ -113,6 +125,7 @@ extension BaseEventViewController: BaseEventViewInput {
     func setupInitialState(items: Array<Track>) {
         self.items = items.reverse()
 
+        baseEventView.refresh.endRefreshing()
         baseEventView.tableView.reloadData()
     }
 }
@@ -176,7 +189,6 @@ extension BaseEventViewController: UITableViewDataSource, UITableViewDelegate {
         
         switch vcType {
         case .Favorite, .Detail:
-            sender.enabled = !sender.selected
             downloadProgress(sender)
         default:
             break
@@ -185,12 +197,14 @@ extension BaseEventViewController: UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Private Method -
     private func downloadProgress(sender: AHButton) {
+        sender.enabled = !sender.selected
+        sender.setBackgroundImage(UIImage(named: "img_bg_transparent"), forState: .Normal)
+
         let track = items[sender.indexPath.row]
         let cell = baseEventView.tableView.cellForRowAtIndexPath(sender.indexPath) as! TrackShortCell
-        cell.cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_bg_transparent"), forState: .Normal)
         
         apiHelper.downloadProgress(track, progress: { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
-            self.totalValue = (Float(totalBytesRead) / Float(totalBytesExpectedToRead))
+            self.totalValue = Float(totalBytesRead) / Float(totalBytesExpectedToRead)
             cell.cellContentView.shapeLayer.animateProgressView(self.startValue, toV: self.totalValue, dur: 0.0001)
             self.startValue = self.totalValue
         }) { error in
@@ -198,8 +212,9 @@ extension BaseEventViewController: UITableViewDataSource, UITableViewDelegate {
             self.totalValue = 0.0
             
             if error == nil {
-                cell.cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
+                sender.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
                 cell.cellContentView.shapeLayer.hideProgressView()
+                
                 self.output.downloadTrack(sender.selected, track: track)
             }
         }

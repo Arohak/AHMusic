@@ -14,7 +14,6 @@
 		52701E721CF1B90600E81763 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D631CF1B90600E81763 /* ApplicationAssembly.swift */; };
 		52701E731CF1B90600E81763 /* BasePresenters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D661CF1B90600E81763 /* BasePresenters.swift */; };
 		52701E741CF1B90600E81763 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D671CF1B90600E81763 /* BaseView.swift */; };
-		52701E751CF1B90600E81763 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D681CF1B90600E81763 /* BaseViewController.swift */; };
 		52701E761CF1B90600E81763 /* OpenActionSheetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D6B1CF1B90600E81763 /* OpenActionSheetProtocol.swift */; };
 		52701E771CF1B90600E81763 /* GetAlbumProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D6D1CF1B90600E81763 /* GetAlbumProtocol.swift */; };
 		52701E781CF1B90600E81763 /* GetArtistProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D6F1CF1B90600E81763 /* GetArtistProtocol.swift */; };
@@ -220,6 +219,8 @@
 		527022121CF1BD8F00E81763 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527021701CF1BD8F00E81763 /* SettingsViewController.swift */; };
 		527022131CF1BD8F00E81763 /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527021711CF1BD8F00E81763 /* SettingsViewInput.swift */; };
 		527022141CF1BD8F00E81763 /* SettingsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527021721CF1BD8F00E81763 /* SettingsViewOutput.swift */; };
+		527695831CFA40E80044916E /* BaseEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527695811CFA40E80044916E /* BaseEventView.swift */; };
+		527695841CFA40E80044916E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527695821CFA40E80044916E /* BaseViewController.swift */; };
 		52FAA7141CF1C04A0003D92A /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7131CF1C04A0003D92A /* SignInView.swift */; };
 		52FAA7161CF1C8DC0003D92A /* SIHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7151CF1C8DC0003D92A /* SIHeaderView.swift */; };
 		52FAA7181CF1C8F40003D92A /* SIFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7171CF1C8F40003D92A /* SIFooterView.swift */; };
@@ -282,7 +283,6 @@
 		52701D631CF1B90600E81763 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
 		52701D661CF1B90600E81763 /* BasePresenters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenters.swift; sourceTree = "<group>"; };
 		52701D671CF1B90600E81763 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		52701D681CF1B90600E81763 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		52701D6B1CF1B90600E81763 /* OpenActionSheetProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenActionSheetProtocol.swift; sourceTree = "<group>"; };
 		52701D6D1CF1B90600E81763 /* GetAlbumProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAlbumProtocol.swift; sourceTree = "<group>"; };
 		52701D6F1CF1B90600E81763 /* GetArtistProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetArtistProtocol.swift; sourceTree = "<group>"; };
@@ -489,6 +489,8 @@
 		527021701CF1BD8F00E81763 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		527021711CF1BD8F00E81763 /* SettingsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
 		527021721CF1BD8F00E81763 /* SettingsViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewOutput.swift; sourceTree = "<group>"; };
+		527695811CFA40E80044916E /* BaseEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEventView.swift; sourceTree = "<group>"; };
+		527695821CFA40E80044916E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		52FAA7131CF1C04A0003D92A /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		52FAA7151CF1C8DC0003D92A /* SIHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIHeaderView.swift; sourceTree = "<group>"; };
 		52FAA7171CF1C8F40003D92A /* SIFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SIFooterView.swift; sourceTree = "<group>"; };
@@ -627,7 +629,6 @@
 			children = (
 				52701D661CF1B90600E81763 /* BasePresenters.swift */,
 				52701D671CF1B90600E81763 /* BaseView.swift */,
-				52701D681CF1B90600E81763 /* BaseViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -728,6 +729,7 @@
 		52701D7F1CF1B90600E81763 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				527695801CFA40E80044916E /* EventController */,
 				52701D8C1CF1B90600E81763 /* Slide */,
 				52701D8E1CF1B90600E81763 /* Tab */,
 				52701D801CF1B90600E81763 /* AHPlayer */,
@@ -1779,6 +1781,15 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		527695801CFA40E80044916E /* EventController */ = {
+			isa = PBXGroup;
+			children = (
+				527695821CFA40E80044916E /* BaseViewController.swift */,
+				527695811CFA40E80044916E /* BaseEventView.swift */,
+			);
+			path = EventController;
+			sourceTree = "<group>";
+		};
 		52FAA7191CF24BBF0003D92A /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -2181,7 +2192,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				527021B41CF1BD8F00E81763 /* CategoryInteractor.swift in Sources */,
-				52701E751CF1B90600E81763 /* BaseViewController.swift in Sources */,
 				527021BB1CF1BD8F00E81763 /* CategoryViewOutput.swift in Sources */,
 				527022101CF1BD8F00E81763 /* SettingsModuleInput.swift in Sources */,
 				52701E731CF1B90600E81763 /* BasePresenters.swift in Sources */,
@@ -2283,6 +2293,7 @@
 				A16F2BB61CF5CD8400F58B62 /* DownloadView.swift in Sources */,
 				527021DF1CF1BD8F00E81763 /* TrackInteractor.swift in Sources */,
 				52FAA73B1CF3ADE20003D92A /* FavoriteProtocol.swift in Sources */,
+				527695841CFA40E80044916E /* BaseViewController.swift in Sources */,
 				527021DD1CF1BD8F00E81763 /* TrackConfigurator.swift in Sources */,
 				527021E91CF1BD8F00E81763 /* TrackDetailInitializer.swift in Sources */,
 				5270218D1CF1BD8F00E81763 /* DownloadModuleInput.swift in Sources */,
@@ -2363,6 +2374,7 @@
 				527021CA1CF1BD8F00E81763 /* PlaylistInteractor.swift in Sources */,
 				52FAA7321CF24BBF0003D92A /* WelcomeViewOutput.swift in Sources */,
 				5270218E1CF1BD8F00E81763 /* DownloadPresenter.swift in Sources */,
+				527695831CFA40E80044916E /* BaseEventView.swift in Sources */,
 				A168A2BA1CF8841500224699 /* BaseEventViewOutput.swift in Sources */,
 				527021A51CF1BD8F00E81763 /* AlbumViewOutput.swift in Sources */,
 				5270217B1CF1BD8F00E81763 /* SignInViewController.swift in Sources */,

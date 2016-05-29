@@ -21,15 +21,24 @@ class BaseEventView: UIView {
         return view
     }()
     
+    lazy var refresh: CarbonSwipeRefresh = {
+        let view = CarbonSwipeRefresh(scrollView: self.tableView)
+        view.colors = RCOLORS
+        
+        return view
+    }()
+    
     //MARK: - Initialize -
     init() {
         super.init(frame: CGRectZero)
         
         addSubview(bgImageView)
         addSubview(tableView)
+        addSubview(refresh)
 
         bgImageView.autoPinEdgesToSuperviewEdges()
         tableView.autoPinEdgesToSuperviewEdges()
+        refresh.setMarginTop(0)
     }
     
     required init?(coder aDecoder: NSCoder) {

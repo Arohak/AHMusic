@@ -160,14 +160,13 @@ class TrackDetailViewController: UIViewController {
     }
     
     func downloadAction(sender: AHButton) {
-        sender.selected = !sender.selected
-        sender.enabled = !sender.selected
-
         downloadProgress(sender)
     }
     
     // MARK: - Private Method -
     private func downloadProgress(sender: AHButton) {
+        sender.selected = !sender.selected
+        sender.enabled = !sender.selected
         sender.setBackgroundImage(UIImage(named: "img_bg_transparent"), forState: .Normal)
         
         apiHelper.downloadProgress(track, progress: { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
@@ -181,6 +180,7 @@ class TrackDetailViewController: UIViewController {
             if error == nil {
                 sender.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
                 self.shapeLayer.hideProgressView()
+                
                 self.output.downloadTrack(sender.selected, track: self.track)
             }
         }
@@ -207,7 +207,6 @@ extension TrackDetailViewController: TrackDetailViewInput {
     
     func stateDidChange(jukebox: Jukebox) {
         UIView.animateWithDuration(0.3, animations: { () -> Void in
-//            self.trackDetailView.actionView.playPauseButton.alpha = jukebox.state == .Loading ? 0 : 1
             self.trackDetailView.actionView.playPauseButton.enabled = jukebox.state == .Loading ? false : true
         })
         
@@ -218,9 +217,7 @@ extension TrackDetailViewController: TrackDetailViewInput {
         } else {
             trackDetailView.actionView.volumeSlider.value = jukebox.volume
             trackDetailView.actionView.playPauseButton.setBackgroundImage(UIImage(named: jukebox.state == .Paused ? "img_max_pl_play" : "img_max_pl_pause"), forState: .Normal)
-        }
-        
-        print("Jukebox state changed to \(jukebox.state)")
+        }        
     }
     
     // MARK: - Private Method -

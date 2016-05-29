@@ -80,7 +80,7 @@ class SignInViewController: UIViewController {
     }
     
     private func isValidInputParams() -> Bool {
-        var isValid = true
+//        var isValid = true
 //        if !Utils.isValidTextField(cells[0].cellContentView.authTextField) {
 //            isValid = false
 //        }
@@ -88,7 +88,7 @@ class SignInViewController: UIViewController {
 //            isValid = false
 //        }
         
-        return isValid
+        return true
     }
     
     //MARK: - Actions -
