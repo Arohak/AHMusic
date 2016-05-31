@@ -9,7 +9,7 @@
 //MARK: - class FavoriteInteractor -
 class FavoriteInteractor {
 
-    var output: FavoriteInteractorOutput!
+    weak var output: FavoriteInteractorOutput!
 }
 
 //MARK: - extension for FavoriteInteractorInput -

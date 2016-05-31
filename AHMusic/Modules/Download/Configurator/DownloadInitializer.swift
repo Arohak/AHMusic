@@ -6,12 +6,10 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class DownloadModuleInitializer: NSObject {
+class DownloadModuleInitializer {
 
-    init(presentor: AnyObject) {
-        super.init()
-        
+    init(viewController: AnyObject) {
         let configurator = DownloadModuleConfigurator()
-        configurator.configureModuleForPresenter(presentor)
+        configurator.configureModuleForController(viewController)
     }
 }

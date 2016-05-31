@@ -6,12 +6,10 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class ProfileModuleInitializer: NSObject {
+class ProfileModuleInitializer {
 
-    init(presentor: AnyObject) {
-        super.init()
-        
+    init(viewController: AnyObject) {
         let configurator = ProfileModuleConfigurator()
-        configurator.configureModuleForPresenter(presentor)
+        configurator.configureModuleForController(viewController)
     }
 }

@@ -6,7 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-protocol BaseEventViewInput {
+protocol BaseEventViewInput: class {
     
     func setupInitialState(items: Array<Track>)
 }

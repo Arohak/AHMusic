@@ -8,16 +8,16 @@
 
 class ProfileModuleConfigurator {
 
-    func configureModuleForPresenter(presenter: AnyObject) {
+    func configureModuleForController(viewController: AnyObject) {
         
-        if let presenter = presenter as? ProfilePresenter {
-            configure(presenter)
+        if let viewController = viewController as? ProfileViewController {
+            configure(viewController)
         }
     }
-
-    private func configure(presenter: ProfilePresenter) {
+    
+    private func configure(viewController: ProfileViewController) {
         
-        let viewController = ProfileViewController()
+        let presenter = ProfilePresenter()
         let interactor = ProfileInteractor()
         
         presenter.view = viewController

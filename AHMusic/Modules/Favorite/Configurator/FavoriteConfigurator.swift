@@ -7,17 +7,17 @@
 //
 
 class FavoriteModuleConfigurator {
-
-    func configureModuleForPresenter(presenter: AnyObject) {
+    
+    func configureModuleForController(viewController: AnyObject) {
         
-        if let presenter = presenter as? FavoritePresenter {
-            configure(presenter)
+        if let viewController = viewController as? FavoriteViewController {
+            configure(viewController)
         }
     }
-
-    private func configure(presenter: FavoritePresenter) {
+    
+    private func configure(viewController: FavoriteViewController) {
         
-        let viewController = FavoriteViewController()
+        let presenter = FavoritePresenter()
         let interactor = FavoriteInteractor()
         
         presenter.view = viewController

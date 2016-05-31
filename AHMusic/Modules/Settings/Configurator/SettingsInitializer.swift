@@ -6,12 +6,10 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class SettingsModuleInitializer: NSObject {
-
-    init(presentor: AnyObject) {
-        super.init()
-        
+class SettingsModuleInitializer {
+    
+    init(viewController: AnyObject) {
         let configurator = SettingsModuleConfigurator()
-        configurator.configureModuleForPresenter(presentor)
+        configurator.configureModuleForController(viewController)
     }
 }

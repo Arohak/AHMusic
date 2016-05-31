@@ -9,10 +9,14 @@
 //MARK: - class CategoryPresenter -
 class CategoryPresenter  {
 
-    var view: CategoryViewInput!
+    weak var view: CategoryViewInput!
     var interactor: CategoryInteractorInput!
     
     var keyword: String!
+    
+    deinit{
+        print("deinit CategoryPresenter")
+    }
 }
 
 //MARK: - extension for CategoryModuleInput -

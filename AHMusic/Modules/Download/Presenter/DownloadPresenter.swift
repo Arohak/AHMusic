@@ -9,7 +9,7 @@
 //MARK: - class DownloadPresenter -
 class DownloadPresenter {
 
-    var view: BaseEventViewInput!
+    weak var view: BaseEventViewInput!
     var interactor: DownloadInteractorInput!
 }
 

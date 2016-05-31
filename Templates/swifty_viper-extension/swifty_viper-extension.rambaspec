@@ -22,6 +22,10 @@ code_files:
 - {name: Interactor/InteractorOutput.swift, path: Code/Interactor/interactor_output.swift.liquid}
 - {name: Interactor/Interactor.swift, path: Code/Interactor/interactor.swift.liquid}
 
+# Router layer
+- {name: Router/RouterInput.swift, path: Code/Router/router_input.swift.liquid}
+- {name: Router/Router.swift, path: Code/Router/router.swift.liquid}
+
 # Configurator
 - {name: Configurator/Configurator.swift, path: Code/Configurator/configurator.swift.liquid}
 - {name: Configurator/Initializer.swift, path: Code/Configurator/initializer.swift.liquid}
@@ -40,3 +44,6 @@ test_files:
 
 # Presenter tests
 - {name: Presenter/PresenterTests.swift, path: Tests/Presenter/presenter_tests.swift.liquid}
+
+# Router tests
+- {name: Router/RouterTests.swift, path: Tests/Router/router_tests.swift.liquid}

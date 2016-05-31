@@ -15,4 +15,7 @@ class SettingsInteractor {
 //MARK: - extension for SettingsInteractorInput -
 extension SettingsInteractor: SettingsInteractorInput {
     
+    func showAlert() {
+        output.showAlertIsReady()
+    }
 }

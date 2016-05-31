@@ -8,16 +8,16 @@
 
 class DownloadModuleConfigurator {
 
-    func configureModuleForPresenter(presenter: AnyObject) {
+    func configureModuleForController(viewController: AnyObject) {
         
-        if let presenter = presenter as? DownloadPresenter {
-            configure(presenter)
+        if let viewController = viewController as? DownloadViewController {
+            configure(viewController)
         }
     }
-
-    private func configure(presenter: DownloadPresenter) {
+    
+    private func configure(viewController: DownloadViewController) {
         
-        let viewController = DownloadViewController()
+        let presenter = DownloadPresenter()
         let interactor = DownloadInteractor()
         
         presenter.view = viewController

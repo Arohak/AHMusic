@@ -9,7 +9,7 @@
 //MARK: - class ProfilePresenter -
 class ProfilePresenter {
 
-    var view: ProfileViewInput!
+    weak var view: ProfileViewInput!
     var interactor: ProfileInteractorInput!
 }
 

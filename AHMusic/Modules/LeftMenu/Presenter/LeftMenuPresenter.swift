@@ -9,7 +9,7 @@
 //MARK: - class LeftMenuPresenter -
 class LeftMenuPresenter {
 
-    var view: LeftMenuViewInput!
+    weak var view: LeftMenuViewInput!
     var interactor: LeftMenuInteractorInput!
 }
 
@@ -26,20 +26,18 @@ extension LeftMenuPresenter: LeftMenuViewOutput {
     }
     
     func home() {
-        let category = CategoryPresenter()
-        _ = CategoryModuleInitializer(presentor: category)
-        let vc = category.view as! UIViewController
+        let vc = CategoryViewController()
+        _ = CategoryModuleInitializer(viewController: vc)
         
-        if let slide = UIHelper.root().viewControllers[0] as? SlideViewController {
+        if let slide = UIHelper.root().visibleViewController as? SlideViewController {
             slide.changeMainViewController(vc,  close: true)
             slide.title = "Home"
         }
     }
     
-    func favorite() {
-        let favorite = FavoritePresenter()
-        _ = FavoriteModuleInitializer(presentor: favorite)
-        let vc = favorite.view as! UIViewController
+    func favorite() {        
+        let vc = FavoriteViewController()
+        _ = FavoriteModuleInitializer(viewController: vc)
         
         if let slide = UIHelper.root().visibleViewController as? SlideViewController {
             slide.changeMainViewController(vc,  close: true)
@@ -48,9 +46,8 @@ extension LeftMenuPresenter: LeftMenuViewOutput {
     }
     
     func download() {
-        let download = DownloadPresenter()
-        _ = DownloadModuleInitializer(presentor: download)
-        let vc = download.view as! UIViewController
+        let vc = DownloadViewController()
+        _ = DownloadModuleInitializer(viewController: vc)
         
         if let slide = UIHelper.root().visibleViewController as? SlideViewController {
             slide.changeMainViewController(vc,  close: true)
@@ -59,8 +56,11 @@ extension LeftMenuPresenter: LeftMenuViewOutput {
     }
     
     func settings() {
-       
+        let vc = SettingsViewController()
+        _ = SettingsModuleInitializer(viewController: vc)
+        
         if let slide = UIHelper.root().visibleViewController as? SlideViewController {
+            slide.changeMainViewController(vc,  close: true)
             slide.title = "Settings"
         }
     }

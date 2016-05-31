@@ -8,4 +8,5 @@
 
 protocol SettingsInteractorOutput: class {
 
+    func showAlertIsReady()
 }

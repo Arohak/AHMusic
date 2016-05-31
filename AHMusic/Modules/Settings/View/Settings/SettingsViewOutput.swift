@@ -9,4 +9,5 @@
 protocol SettingsViewOutput {
 
     func viewIsReady()
+    func detail()
 }

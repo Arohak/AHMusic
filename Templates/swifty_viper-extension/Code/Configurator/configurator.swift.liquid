@@ -8,22 +8,25 @@
 
 class {{ module_info.name }}ModuleConfigurator {
 
-    func configureModuleForPresenter(presenter: AnyObject) {
-        
-        if let presenter = presenter as? {{ module_info.name }}Presenter {
-            configure(presenter)
+    func configureModuleForController<UIViewController>(viewInput: UIViewController) {
+
+        if let viewController = viewInput as? {{ module_info.name }}ViewController {
+            configure(viewController)
         }
     }
 
-    private func configure(presenter: {{ module_info.name }}Presenter) {
-        
-        let viewController = {{ module_info.name }}ViewController()
+    private func configure(viewController: {{ module_info.name }}ViewController) {
+
+        let presenter = {{ module_info.name }}Presenter()
         let interactor = {{ module_info.name }}Interactor()
-        
+        let router = {{ module_info.name }}Router()
+
         presenter.view = viewController
         presenter.interactor = interactor
-        
+        presenter.router = router
+
         interactor.output = presenter
         viewController.output = presenter
     }
+
 }

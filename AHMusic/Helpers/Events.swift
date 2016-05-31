@@ -22,12 +22,4 @@ struct MiniPlayerEvent {
         self.result = result
         self.state = state
     }
-    
-    struct DealRunID {
-        var dealRunID: String
-        
-        init(dealRunID: String) {
-            self.dealRunID = dealRunID
-        }
-    }
 }

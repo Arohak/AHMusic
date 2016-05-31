@@ -8,8 +8,8 @@
 
 class CategoryModuleInitializer {
 
-    init(presentor: AnyObject) {        
+    init(viewController: AnyObject) {
         let configurator = CategoryModuleConfigurator()
-        configurator.configureModuleForPresenter(presentor)
+        configurator.configureModuleForController(viewController)
     }
 }

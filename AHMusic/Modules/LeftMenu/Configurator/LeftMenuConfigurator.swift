@@ -8,16 +8,16 @@
 
 class LeftMenuModuleConfigurator {
 
-    func configureModuleForPresenter(presenter: AnyObject) {
+    func configureModuleForController(viewController: AnyObject) {
         
-        if let presenter = presenter as? LeftMenuPresenter {
-            configure(presenter)
+        if let viewController = viewController as? LeftMenuViewController {
+            configure(viewController)
         }
     }
-
-    private func configure(presenter: LeftMenuPresenter) {
+    
+    private func configure(viewController: LeftMenuViewController) {
         
-        let viewController = LeftMenuViewController()
+        let presenter = LeftMenuPresenter()
         let interactor = LeftMenuInteractor()
         
         presenter.view = viewController

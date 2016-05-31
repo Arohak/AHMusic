@@ -9,7 +9,7 @@
 //MARK: - class FavoritePresenter -
 class FavoritePresenter: BasePresenter {
 
-    var view: BaseEventViewInput!
+    weak var view: BaseEventViewInput!
     var interactor: FavoriteInteractorInput!
 }
 

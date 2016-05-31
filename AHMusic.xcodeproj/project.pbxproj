@@ -216,9 +216,6 @@
 		5270220F1CF1BD8F00E81763 /* SettingsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270216B1CF1BD8F00E81763 /* SettingsInteractorOutput.swift */; };
 		527022101CF1BD8F00E81763 /* SettingsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270216D1CF1BD8F00E81763 /* SettingsModuleInput.swift */; };
 		527022111CF1BD8F00E81763 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5270216E1CF1BD8F00E81763 /* SettingsPresenter.swift */; };
-		527022121CF1BD8F00E81763 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527021701CF1BD8F00E81763 /* SettingsViewController.swift */; };
-		527022131CF1BD8F00E81763 /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527021711CF1BD8F00E81763 /* SettingsViewInput.swift */; };
-		527022141CF1BD8F00E81763 /* SettingsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527021721CF1BD8F00E81763 /* SettingsViewOutput.swift */; };
 		527695831CFA40E80044916E /* BaseEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527695811CFA40E80044916E /* BaseEventView.swift */; };
 		527695841CFA40E80044916E /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527695821CFA40E80044916E /* BaseViewController.swift */; };
 		52FAA7141CF1C04A0003D92A /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FAA7131CF1C04A0003D92A /* SignInView.swift */; };
@@ -256,6 +253,14 @@
 		A16F2BBE1CF5D20800F58B62 /* AddOrDeleteDownloadProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F2BBD1CF5D20800F58B62 /* AddOrDeleteDownloadProtocol.swift */; };
 		A16F2BC01CF5D2A600F58B62 /* SearchTrackFromDBProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F2BBF1CF5D2A600F58B62 /* SearchTrackFromDBProtocol.swift */; };
 		A16F2BC21CF5D30600F58B62 /* GetTrackDBProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16F2BC11CF5D30600F58B62 /* GetTrackDBProtocol.swift */; };
+		A1EEBD931CFD7766000390FC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEBD8A1CFD7766000390FC /* SettingsViewController.swift */; };
+		A1EEBD941CFD7766000390FC /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEBD8B1CFD7766000390FC /* SettingsViewInput.swift */; };
+		A1EEBD951CFD7766000390FC /* SettingsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEBD8C1CFD7766000390FC /* SettingsViewOutput.swift */; };
+		A1EEBD961CFD7766000390FC /* SettingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEBD8F1CFD7766000390FC /* SettingsDetailViewController.swift */; };
+		A1EEBD971CFD7766000390FC /* SettingsDetailViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEBD901CFD7766000390FC /* SettingsDetailViewInput.swift */; };
+		A1EEBD981CFD7766000390FC /* SettingsDetailViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEBD911CFD7766000390FC /* SettingsDetailViewOutput.swift */; };
+		A1EEBD9A1CFD7A29000390FC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEBD991CFD7A29000390FC /* SettingsView.swift */; };
+		A1EEBD9C1CFD7A31000390FC /* SettingsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EEBD9B1CFD7A31000390FC /* SettingsDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -486,9 +491,6 @@
 		5270216B1CF1BD8F00E81763 /* SettingsInteractorOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsInteractorOutput.swift; sourceTree = "<group>"; };
 		5270216D1CF1BD8F00E81763 /* SettingsModuleInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModuleInput.swift; sourceTree = "<group>"; };
 		5270216E1CF1BD8F00E81763 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
-		527021701CF1BD8F00E81763 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		527021711CF1BD8F00E81763 /* SettingsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
-		527021721CF1BD8F00E81763 /* SettingsViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewOutput.swift; sourceTree = "<group>"; };
 		527695811CFA40E80044916E /* BaseEventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseEventView.swift; sourceTree = "<group>"; };
 		527695821CFA40E80044916E /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		52FAA7131CF1C04A0003D92A /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -531,6 +533,14 @@
 		A16F2BBD1CF5D20800F58B62 /* AddOrDeleteDownloadProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrDeleteDownloadProtocol.swift; sourceTree = "<group>"; };
 		A16F2BBF1CF5D2A600F58B62 /* SearchTrackFromDBProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTrackFromDBProtocol.swift; sourceTree = "<group>"; };
 		A16F2BC11CF5D30600F58B62 /* GetTrackDBProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTrackDBProtocol.swift; sourceTree = "<group>"; };
+		A1EEBD8A1CFD7766000390FC /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		A1EEBD8B1CFD7766000390FC /* SettingsViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
+		A1EEBD8C1CFD7766000390FC /* SettingsViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewOutput.swift; sourceTree = "<group>"; };
+		A1EEBD8F1CFD7766000390FC /* SettingsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailViewController.swift; sourceTree = "<group>"; };
+		A1EEBD901CFD7766000390FC /* SettingsDetailViewInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailViewInput.swift; sourceTree = "<group>"; };
+		A1EEBD911CFD7766000390FC /* SettingsDetailViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailViewOutput.swift; sourceTree = "<group>"; };
+		A1EEBD991CFD7A29000390FC /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A1EEBD9B1CFD7A31000390FC /* SettingsDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDetailView.swift; sourceTree = "<group>"; };
 		A7BC5B1A5FB496C4C4B278CC /* Pods-AHMusic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusic.release.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusic/Pods-AHMusic.release.xcconfig"; sourceTree = "<group>"; };
 		AC79167B04BFE68239C240B3 /* Pods_AHMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AHMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71C000EB432D6B53AD5EDE9 /* Pods-AHMusicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AHMusicTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AHMusicTests/Pods-AHMusicTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1766,19 +1776,10 @@
 		5270216F1CF1BD8F00E81763 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				527021701CF1BD8F00E81763 /* SettingsViewController.swift */,
-				527021711CF1BD8F00E81763 /* SettingsViewInput.swift */,
-				527021721CF1BD8F00E81763 /* SettingsViewOutput.swift */,
-				527021731CF1BD8F00E81763 /* views */,
+				A1EEBD891CFD7766000390FC /* Settings */,
+				A1EEBD8E1CFD7766000390FC /* SettingsDetail */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		527021731CF1BD8F00E81763 /* views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = views;
 			sourceTree = "<group>";
 		};
 		527695801CFA40E80044916E /* EventController */ = {
@@ -1939,6 +1940,44 @@
 				A16F2BBF1CF5D2A600F58B62 /* SearchTrackFromDBProtocol.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		A1EEBD891CFD7766000390FC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				A1EEBD8A1CFD7766000390FC /* SettingsViewController.swift */,
+				A1EEBD8B1CFD7766000390FC /* SettingsViewInput.swift */,
+				A1EEBD8C1CFD7766000390FC /* SettingsViewOutput.swift */,
+				A1EEBD8D1CFD7766000390FC /* views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A1EEBD8D1CFD7766000390FC /* views */ = {
+			isa = PBXGroup;
+			children = (
+				A1EEBD991CFD7A29000390FC /* SettingsView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		A1EEBD8E1CFD7766000390FC /* SettingsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A1EEBD8F1CFD7766000390FC /* SettingsDetailViewController.swift */,
+				A1EEBD901CFD7766000390FC /* SettingsDetailViewInput.swift */,
+				A1EEBD911CFD7766000390FC /* SettingsDetailViewOutput.swift */,
+				A1EEBD921CFD7766000390FC /* views */,
+			);
+			path = SettingsDetail;
+			sourceTree = "<group>";
+		};
+		A1EEBD921CFD7766000390FC /* views */ = {
+			isa = PBXGroup;
+			children = (
+				A1EEBD9B1CFD7A31000390FC /* SettingsDetailView.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2199,7 +2238,9 @@
 				52701E821CF1B90600E81763 /* OpenTrackDetailProtocol.swift in Sources */,
 				527022081CF1BD8F00E81763 /* ProfileViewController.swift in Sources */,
 				527021B21CF1BD8F00E81763 /* CategoryConfigurator.swift in Sources */,
+				A1EEBD961CFD7766000390FC /* SettingsDetailViewController.swift in Sources */,
 				52FAA72F1CF24BBF0003D92A /* WelcomePresenter.swift in Sources */,
+				A1EEBD951CFD7766000390FC /* SettingsViewOutput.swift in Sources */,
 				52FAA72B1CF24BBF0003D92A /* WelcomeInteractor.swift in Sources */,
 				527021ED1CF1BD8F00E81763 /* TrackDetailModuleInput.swift in Sources */,
 				52701E811CF1B90600E81763 /* GetTrackProtocol.swift in Sources */,
@@ -2233,7 +2274,6 @@
 				527021B51CF1BD8F00E81763 /* CategoryInteractorInput.swift in Sources */,
 				5270220A1CF1BD8F00E81763 /* ProfileViewOutput.swift in Sources */,
 				527021EA1CF1BD8F00E81763 /* TrackDetailInteractor.swift in Sources */,
-				527022131CF1BD8F00E81763 /* SettingsViewInput.swift in Sources */,
 				527021AD1CF1BD8F00E81763 /* ArtistPresenter.swift in Sources */,
 				5270219E1CF1BD8F00E81763 /* AlbumInteractor.swift in Sources */,
 				527021AB1CF1BD8F00E81763 /* ArtistInteractorOutput.swift in Sources */,
@@ -2265,13 +2305,12 @@
 				527021C01CF1BD8F00E81763 /* DetailInteractorInput.swift in Sources */,
 				52701E841CF1B90600E81763 /* MiniPlayerView.swift in Sources */,
 				527021E51CF1BD8F00E81763 /* TrackViewInput.swift in Sources */,
+				A1EEBD931CFD7766000390FC /* SettingsViewController.swift in Sources */,
 				527021B61CF1BD8F00E81763 /* CategoryInteractorOutput.swift in Sources */,
 				52701E7A1CF1B90600E81763 /* BaseViewOutput.swift in Sources */,
 				527021D21CF1BD8F00E81763 /* PlaylistView.swift in Sources */,
 				52701E711CF1B90600E81763 /* AppDelegate.swift in Sources */,
 				52701E861CF1B90600E81763 /* ParallaxHeaderView.swift in Sources */,
-				527022141CF1BD8F00E81763 /* SettingsViewOutput.swift in Sources */,
-				527022121CF1BD8F00E81763 /* SettingsViewController.swift in Sources */,
 				527022111CF1BD8F00E81763 /* SettingsPresenter.swift in Sources */,
 				527022041CF1BD8F00E81763 /* ProfileInteractorInput.swift in Sources */,
 				527021891CF1BD8F00E81763 /* DownloadInitializer.swift in Sources */,
@@ -2296,6 +2335,7 @@
 				527695841CFA40E80044916E /* BaseViewController.swift in Sources */,
 				527021DD1CF1BD8F00E81763 /* TrackConfigurator.swift in Sources */,
 				527021E91CF1BD8F00E81763 /* TrackDetailInitializer.swift in Sources */,
+				A1EEBD981CFD7766000390FC /* SettingsDetailViewOutput.swift in Sources */,
 				5270218D1CF1BD8F00E81763 /* DownloadModuleInput.swift in Sources */,
 				527021BE1CF1BD8F00E81763 /* DetailInitializer.swift in Sources */,
 				527021D91CF1BD8F00E81763 /* StationPresenter.swift in Sources */,
@@ -2311,6 +2351,7 @@
 				527021C31CF1BD8F00E81763 /* DetailPresenter.swift in Sources */,
 				527022051CF1BD8F00E81763 /* ProfileInteractorOutput.swift in Sources */,
 				527021B31CF1BD8F00E81763 /* CategoryInitializer.swift in Sources */,
+				A1EEBD941CFD7766000390FC /* SettingsViewInput.swift in Sources */,
 				A11ABB161CF33DCD000BC69F /* SUFooterView.swift in Sources */,
 				527021D81CF1BD8F00E81763 /* StationModuleInput.swift in Sources */,
 				A16F2BC21CF5D30600F58B62 /* GetTrackDBProtocol.swift in Sources */,
@@ -2339,6 +2380,7 @@
 				5270217A1CF1BD8F00E81763 /* SignInPresenter.swift in Sources */,
 				52701E871CF1B90600E81763 /* ParallaxViewController.swift in Sources */,
 				527021DE1CF1BD8F00E81763 /* TrackInitializer.swift in Sources */,
+				A1EEBD9C1CFD7A31000390FC /* SettingsDetailView.swift in Sources */,
 				527021E41CF1BD8F00E81763 /* TrackViewController.swift in Sources */,
 				52FAA73E1CF3ADEC0003D92A /* DownloadProtocol.swift in Sources */,
 				527021931CF1BD8F00E81763 /* FavoriteInitializer.swift in Sources */,
@@ -2363,6 +2405,7 @@
 				527021D11CF1BD8F00E81763 /* PlaylistViewOutput.swift in Sources */,
 				527021C21CF1BD8F00E81763 /* DetailModuleInput.swift in Sources */,
 				52701E761CF1B90600E81763 /* OpenActionSheetProtocol.swift in Sources */,
+				A1EEBD971CFD7766000390FC /* SettingsDetailViewInput.swift in Sources */,
 				5270219B1CF1BD8F00E81763 /* FavoriteViewOutput.swift in Sources */,
 				A11ABB151CF33DCD000BC69F /* SignUpView.swift in Sources */,
 				527022071CF1BD8F00E81763 /* ProfilePresenter.swift in Sources */,
@@ -2400,6 +2443,7 @@
 				527021FD1CF1BD8F00E81763 /* LeftMenuViewInput.swift in Sources */,
 				527021901CF1BD8F00E81763 /* DownloadViewInput.swift in Sources */,
 				527021FA1CF1BD8F00E81763 /* LeftMenuModuleInput.swift in Sources */,
+				A1EEBD9A1CFD7A29000390FC /* SettingsView.swift in Sources */,
 				527021951CF1BD8F00E81763 /* FavoriteInteractorInput.swift in Sources */,
 				527021FE1CF1BD8F00E81763 /* LeftMenuViewOutput.swift in Sources */,
 				527021F51CF1BD8F00E81763 /* LeftMenuConfigurator.swift in Sources */,

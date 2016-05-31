@@ -43,14 +43,12 @@ extension WelcomePresenter: WelcomeViewOutput {
     
     func guest() {
         //main
-        let category = CategoryPresenter()
-        _ = CategoryModuleInitializer(presentor: category)
-        let main = category.view as! UIViewController
+        let main = CategoryViewController()
+        _ = CategoryModuleInitializer(viewController: main)
         
         //left
-        let leftMenu = LeftMenuPresenter()
-        _ = LeftMenuModuleInitializer(presentor: leftMenu)
-        let left = leftMenu.view as! UIViewController
+        let left = LeftMenuViewController()
+        _ = LeftMenuModuleInitializer(viewController: left)
         let slide = SlideViewController(mainViewController: main, leftMenuViewController: left)
         
         let nav = UINavigationController(rootViewController: slide)

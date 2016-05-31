@@ -6,12 +6,10 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-class FavoriteModuleInitializer: NSObject {
+class FavoriteModuleInitializer {
 
-    init(presentor: AnyObject) {
-        super.init()
-        
+    init(viewController: AnyObject) {
         let configurator = FavoriteModuleConfigurator()
-        configurator.configureModuleForPresenter(presentor)
+        configurator.configureModuleForController(viewController)
     }
 }

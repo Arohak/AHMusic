@@ -8,4 +8,5 @@
 
 protocol SettingsInteractorInput {
 
+    func showAlert()
 }
