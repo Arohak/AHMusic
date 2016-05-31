@@ -13,11 +13,6 @@ class FavoritePresenter: BasePresenter {
     var interactor: FavoriteInteractorInput!
 }
 
-//MARK: - extension for FavoriteModuleInput -
-extension FavoritePresenter: FavoriteModuleInput {
-
-}
-
 //MARK: - extension for FavoriteViewOutput -
 extension FavoritePresenter: FavoriteViewOutput {
     
@@ -60,7 +55,7 @@ extension FavoritePresenter: FavoriteInteractorOutput {
     
     func getTrackResultIsReady(track: Track, tracks: Array<Track>) {
         let vc = TrackDetailViewController(title: "Track", items: tracks, track: track)
-        _ = TrackDetailModuleInitializer(vc: vc)
+        _ = TrackDetailModuleInitializer(viewController: vc)
         UIHelper.root().pushViewController(vc, animated: true)
     }
 }

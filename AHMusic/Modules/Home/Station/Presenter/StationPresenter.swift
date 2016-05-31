@@ -7,21 +7,16 @@
 //
 
 //MARK: - class StationPresenter -
-class StationPresenter: BasePresenter {
+class StationPresenter {
 
-    var view: StationViewInput!
+    weak var view: StationViewInput!
     var interactor: StationInteractorInput!
-}
-
-//MARK: - extension for StationModuleInput -
-extension StationPresenter: StationModuleInput {
-
 }
 
 //MARK: - extension for StationViewOutput -
 extension StationPresenter: StationViewOutput {
     
-    func viewIsReady() {
+    func viewIsReady(keyword: String) {
 
     }
 }

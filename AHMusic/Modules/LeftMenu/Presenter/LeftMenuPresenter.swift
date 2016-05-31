@@ -13,11 +13,6 @@ class LeftMenuPresenter {
     var interactor: LeftMenuInteractorInput!
 }
 
-//MARK: - extension for LeftMenuModuleInput -
-extension LeftMenuPresenter: LeftMenuModuleInput {
-
-}
-
 //MARK: - extension for LeftMenuViewOutput -
 extension LeftMenuPresenter: LeftMenuViewOutput {
     

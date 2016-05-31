@@ -7,33 +7,19 @@
 //
 
 //MARK: - class AlbumPresenter -
-class AlbumPresenter: BasePresenter {
+class AlbumPresenter {
 
-    var view: AlbumViewInput!
+    weak var view: AlbumViewInput!
     var interactor: AlbumInteractorInput!
-    
-    //MARK: - Initilize -
-    override init(name: String) {
-        super.init(name: name)
-    }
-}
-
-//MARK: - extension for AlbumModuleInput -
-extension AlbumPresenter: AlbumModuleInput {
-
 }
 
 //MARK: - extension for AlbumViewOutput -
 extension AlbumPresenter: AlbumViewOutput {
     
-    func viewIsReady() {
+    func viewIsReady(keyword: String) {
         interactor.searchAlbum(keyword)
     }
-    
-    func pullToRefresh() {
-        interactor.searchAlbum(keyword)
-    }
-    
+
     func openLink(album: Album) {
         let vc = WebViewController(resourceName: album.title, url: NSURL(string: album.link)!)
         UIHelper.root().presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
@@ -56,7 +42,7 @@ extension AlbumPresenter: AlbumInteractorOutput {
         let detail = Detail(data: json)
         
         let vc = DetailViewController(title: "Album", detail: detail)
-        _ = DetailModuleInitializer(vc: vc)
+        _ = DetailModuleInitializer(viewController: vc)
         UIHelper.root().pushViewController(vc, animated: true)
     }
 }

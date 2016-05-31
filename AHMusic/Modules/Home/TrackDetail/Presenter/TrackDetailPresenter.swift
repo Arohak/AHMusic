@@ -15,11 +15,6 @@ class TrackDetailPresenter {
     var player: AHPlayer!
 }
 
-//MARK: - extension for TrackDetailModuleInput -
-extension TrackDetailPresenter: TrackDetailModuleInput {
-
-}
-
 //MARK: - extension for TrackDetailViewOutput -
 extension TrackDetailPresenter: TrackDetailViewOutput {
     

@@ -13,18 +13,13 @@ class DetailPresenter {
     var interactor: DetailInteractorInput!
 }
 
-//MARK: - extension for DetailModuleInput -
-extension DetailPresenter: DetailModuleInput {
-
-}
-
 //MARK: - extension for DetailViewOutput -
 extension DetailPresenter: DetailViewOutput {
     
     func viewIsReady() {
         
     }
-        
+    
     func search(keyword: String) {
         
     }
@@ -56,7 +51,7 @@ extension DetailPresenter: DetailInteractorOutput {
  
     func getTrackResultIsReady(track: Track, tracks: Array<Track>) {
         let vc = TrackDetailViewController(title: "Track", items: tracks, track: track)
-        _ = TrackDetailModuleInitializer(vc: vc)
+        _ = TrackDetailModuleInitializer(viewController: vc)
         UIHelper.root().pushViewController(vc, animated: true)
     }
 }

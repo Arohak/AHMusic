@@ -13,11 +13,6 @@ class WelcomePresenter {
     var interactor: WelcomeInteractorInput!
 }
 
-//MARK: - extension for WelcomeModuleInput -
-extension WelcomePresenter: WelcomeModuleInput {
-
-}
-
 //MARK: - extension for WelcomeViewOutput -
 extension WelcomePresenter: WelcomeViewOutput {
     

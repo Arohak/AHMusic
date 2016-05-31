@@ -8,8 +8,8 @@
 
 class ArtistModuleInitializer {
 
-    init(presentor: AnyObject) {        
+    init(viewController: AnyObject) {
         let configurator = ArtistModuleConfigurator()
-        configurator.configureModuleForPresenter(presentor)
+        configurator.configureModuleForController(viewController)
     }
 }

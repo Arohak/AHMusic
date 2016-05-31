@@ -8,16 +8,16 @@
 
 class ArtistModuleConfigurator {
 
-    func configureModuleForPresenter(presenter: AnyObject) {
+    func configureModuleForController(viewController: AnyObject) {
         
-        if let presenter = presenter as? ArtistPresenter {
-            configure(presenter)
+        if let viewController = viewController as? ArtistViewController {
+            configure(viewController)
         }
     }
-
-    private func configure(presenter: ArtistPresenter) {
+    
+    private func configure(viewController: ArtistViewController) {
         
-        let viewController = ArtistViewController()
+        let presenter = ArtistPresenter()
         let interactor = ArtistInteractor()
         
         presenter.view = viewController

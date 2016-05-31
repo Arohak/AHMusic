@@ -7,30 +7,16 @@
 //
 
 //MARK: - class PlaylistPresenter -
-class PlaylistPresenter: BasePresenter {
+class PlaylistPresenter {
 
-    var view: PlaylistViewInput!
+    weak var view: PlaylistViewInput!
     var interactor: PlaylistInteractorInput!
-    
-    //MARK: - Initilize -
-    override init(name: String) {
-        super.init(name: name)
-    }
-}
-
-//MARK: - extension for PlaylistModuleInput -
-extension PlaylistPresenter: PlaylistModuleInput {
-
 }
 
 //MARK: - extension for PlaylistViewOutput -
 extension PlaylistPresenter: PlaylistViewOutput {
     
-    func viewIsReady() {
-        interactor.searchPlaylist(keyword)
-    }
-    
-    func pullToRefresh() {
+    func viewIsReady(keyword: String) {
         interactor.searchPlaylist(keyword)
     }
     
@@ -57,7 +43,7 @@ extension PlaylistPresenter: PlaylistInteractorOutput {
         let detail = Detail(data: json)
         
         let vc = DetailViewController(title: "Playlist", detail: detail)
-        _ = DetailModuleInitializer(vc: vc)
+        _ = DetailModuleInitializer(viewController: vc)
         
         UIHelper.root().pushViewController(vc, animated: true)
     }

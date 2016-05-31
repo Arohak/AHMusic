@@ -13,11 +13,6 @@ class SignInPresenter {
     var interactor: SignInInteractorInput!
 }
 
-//MARK: - extension for SignInModuleInput -
-extension SignInPresenter: SignInModuleInput {
-
-}
-
 //MARK: - extension for SignInViewOutput -
 extension SignInPresenter: SignInViewOutput {
     

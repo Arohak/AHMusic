@@ -7,17 +7,17 @@
 //
 
 class PlaylistModuleConfigurator {
-
-    func configureModuleForPresenter(presenter: AnyObject) {
+    
+    func configureModuleForController(viewController: AnyObject) {
         
-        if let presenter = presenter as? PlaylistPresenter {
-            configure(presenter)
+        if let viewController = viewController as? PlaylistViewController {
+            configure(viewController)
         }
     }
-
-    private func configure(presenter: PlaylistPresenter) {
+    
+    private func configure(viewController: PlaylistViewController) {
         
-        let viewController = PlaylistViewController()
+        let presenter = PlaylistPresenter()
         let interactor = PlaylistInteractor()
         
         presenter.view = viewController

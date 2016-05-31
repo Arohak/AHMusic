@@ -14,11 +14,6 @@ class SettingsPresenter {
     var interactor: SettingsInteractorInput!
 }
 
-//MARK: - extension for SettingsModuleInput -
-extension SettingsPresenter: SettingsModuleInput {
-
-}
-
 //MARK: - extension for SettingsViewOutput -
 extension SettingsPresenter: SettingsViewOutput {
     

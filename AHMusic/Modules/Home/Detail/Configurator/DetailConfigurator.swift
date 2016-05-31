@@ -8,10 +8,10 @@
 
 class DetailModuleConfigurator {
     
-    func configureModuleForViewController(vc: AnyObject) {
+    func configureModuleForViewController(viewController: AnyObject) {
         
-        if let vc = vc as? DetailViewController {
-            configure(vc)
+        if let viewController = viewController as? DetailViewController {
+            configure(viewController)
         }
     }
     

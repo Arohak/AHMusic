@@ -8,4 +8,5 @@
 
 protocol FavoriteViewOutput: BaseEventViewOutput, SearchTrackProtocol {
 
+    func viewIsReady()
 }

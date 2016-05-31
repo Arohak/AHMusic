@@ -8,16 +8,16 @@
 
 class AlbumModuleConfigurator {
 
-    func configureModuleForPresenter(presenter: AnyObject) {
+    func configureModuleForController(viewController: AnyObject) {
         
-        if let presenter = presenter as? AlbumPresenter {
-            configure(presenter)
+        if let viewController = viewController as? AlbumViewController {
+            configure(viewController)
         }
     }
-
-    private func configure(presenter: AlbumPresenter) {
+    
+    private func configure(viewController: AlbumViewController) {
         
-        let viewController = AlbumViewController()
+        let presenter = AlbumPresenter()
         let interactor = AlbumInteractor()
         
         presenter.view = viewController

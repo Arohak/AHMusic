@@ -7,7 +7,7 @@
 //
 
 //MARK: - class AlbumViewController -
-class AlbumViewController: UIViewController {
+class AlbumViewController: BaseViewController {
 
     var output: AlbumViewOutput!
 
@@ -20,7 +20,7 @@ class AlbumViewController: UIViewController {
         super.viewDidLoad()
         
         baseConfig()
-        output.viewIsReady()
+        output.viewIsReady(keyword)
     }
     
     // MARK: - Private Method -
@@ -34,8 +34,10 @@ class AlbumViewController: UIViewController {
     }
     
     // MARK: - Actions -
-    func refresh() {
-        output.viewIsReady()
+    override func refresh() {
+        super.refresh()
+        
+        output.viewIsReady(keyword)
     }
 }
 

@@ -13,11 +13,6 @@ class DownloadPresenter {
     var interactor: DownloadInteractorInput!
 }
 
-//MARK: - extension for DownloadModuleInput -
-extension DownloadPresenter: DownloadModuleInput {
-
-}
-
 //MARK: - extension for DownloadViewOutput -
 extension DownloadPresenter: BaseEventViewOutput {
     
@@ -60,7 +55,7 @@ extension DownloadPresenter: DownloadInteractorOutput {
     
     func getTrackResultIsReady(track: Track, tracks: Array<Track>) {
         let vc = TrackDetailViewController(title: "Track", items: tracks, track: track)
-        _ = TrackDetailModuleInitializer(vc: vc)
+        _ = TrackDetailModuleInitializer(viewController: vc)
         UIHelper.root().pushViewController(vc, animated: true)
     }
 }

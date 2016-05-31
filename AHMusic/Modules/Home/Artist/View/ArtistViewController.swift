@@ -7,7 +7,7 @@
 //
 
 //MARK: - class ArtistViewController -
-class ArtistViewController: UIViewController {
+class ArtistViewController: BaseViewController {
 
     var output: ArtistViewOutput!
     
@@ -20,7 +20,7 @@ class ArtistViewController: UIViewController {
         super.viewDidLoad()
         
         baseConfig()
-        output.viewIsReady()
+        output.viewIsReady(keyword)
     }
     
     // MARK: - Private Method -
@@ -34,8 +34,10 @@ class ArtistViewController: UIViewController {
     }
     
     // MARK: - Actions -
-    func refresh() {
-        output.viewIsReady()
+    override func refresh() {
+        super.refresh()
+        
+        output.viewIsReady(keyword)
     }
 }
 
@@ -46,11 +48,7 @@ extension ArtistViewController: ArtistViewInput {
         self.items = items
         
         artistView.refresh.endRefreshing()
-
         artistView.collection.reloadData()
-    }
-    
-    func pullToRefreshReady() {
     }
 }
 

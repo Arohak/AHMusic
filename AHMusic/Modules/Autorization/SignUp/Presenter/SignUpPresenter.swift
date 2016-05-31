@@ -13,11 +13,6 @@ class SignUpPresenter {
     var interactor: SignUpInteractorInput!
 }
 
-//MARK: - extension for SignUpModuleInput -
-extension SignUpPresenter: SignUpModuleInput {
-
-}
-
 //MARK: - extension for SignUpViewOutput -
 extension SignUpPresenter: SignUpViewOutput {
     

@@ -7,7 +7,7 @@
 //
 
 //MARK: - class TrackViewController -
-class TrackViewController: UIViewController {
+class TrackViewController: BaseViewController {
 
     var output: TrackViewOutput!
     
@@ -20,7 +20,7 @@ class TrackViewController: UIViewController {
         super.viewDidLoad()
 
         baseConfig()
-        output.viewIsReady()
+        output.viewIsReady(keyword)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -80,8 +80,10 @@ class TrackViewController: UIViewController {
     }
     
     // MARK: - Actions -
-    func refresh() {
-        output.viewIsReady()
+    override func refresh() {
+        super.refresh()
+        
+        output.viewIsReady(keyword)
     }
 }
 

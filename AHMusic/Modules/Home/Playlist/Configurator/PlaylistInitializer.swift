@@ -8,8 +8,8 @@
 
 class PlaylistModuleInitializer {
 
-    init(presentor: AnyObject) {
+    init(viewController: AnyObject) {
         let configurator = PlaylistModuleConfigurator()
-        configurator.configureModuleForPresenter(presentor)
+        configurator.configureModuleForController(viewController)
     }
 }

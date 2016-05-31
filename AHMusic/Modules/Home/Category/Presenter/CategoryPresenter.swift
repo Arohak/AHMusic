@@ -19,11 +19,6 @@ class CategoryPresenter  {
     }
 }
 
-//MARK: - extension for CategoryModuleInput -
-extension CategoryPresenter: CategoryModuleInput {
-
-}
-
 //MARK: - extension for CategoryViewOutput -
 extension CategoryPresenter: CategoryViewOutput {
     

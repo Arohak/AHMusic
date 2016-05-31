@@ -1,5 +1,5 @@
 //
-//  BaseViewController.swift
+//  BaseEventViewController.swift
 //  AHMusic
 //
 //  Created by Ara Hakobyan on 06/05/2016.

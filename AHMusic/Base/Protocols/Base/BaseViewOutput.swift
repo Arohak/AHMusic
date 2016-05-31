@@ -8,5 +8,5 @@
 
 protocol BaseViewOutput {
     
-    func viewIsReady()
+    func viewIsReady(keyword: String)
 }

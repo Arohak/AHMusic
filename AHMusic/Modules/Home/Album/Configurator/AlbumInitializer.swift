@@ -8,8 +8,8 @@
 
 class AlbumModuleInitializer {
 
-    init(presentor: AnyObject) {        
+    init(viewController: AnyObject) {
         let configurator = AlbumModuleConfigurator()
-        configurator.configureModuleForPresenter(presentor)
+        configurator.configureModuleForController(viewController)
     }
 }

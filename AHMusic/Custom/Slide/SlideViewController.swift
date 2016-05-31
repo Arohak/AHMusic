@@ -151,11 +151,10 @@ extension SlideViewController: UITextFieldDelegate {
                 return true
             }
             
-            if let tab = tab where !(tab.selectedPresenter is StationPresenter) {
-                let presenter = tab.selectedPresenter
-                presenter.keyword = textField.text!
-                let output = tab.selectedPresenter as! BaseViewOutput
-                output.viewIsReady()
+            if let tab = tab where !(tab.selectedViewController is StationViewController) {
+                let vc = tab.selectedViewController
+                vc.keyword = textField.text!
+                vc.refresh()
             } else {
                 let item = Category(data: JSON(["name" : textField.text!]))
                 output.viewIsSelectItem(item)

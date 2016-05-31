@@ -7,7 +7,7 @@
 //
 
 //MARK: - class PlaylistViewController -
-class PlaylistViewController: UIViewController {
+class PlaylistViewController: BaseViewController {
 
     var output: PlaylistViewOutput!
 
@@ -20,7 +20,7 @@ class PlaylistViewController: UIViewController {
         super.viewDidLoad()
         
         baseConfig()
-        output.viewIsReady()
+        output.viewIsReady(keyword)
     }
     
     // MARK: - Private Method -
@@ -34,8 +34,10 @@ class PlaylistViewController: UIViewController {
     }
     
     // MARK: - Actions -
-    func refresh() {
-        output.viewIsReady()
+    override func refresh() {
+        super.refresh()
+        
+        output.viewIsReady(keyword)
     }
 }
 
@@ -46,7 +48,6 @@ extension PlaylistViewController: PlaylistViewInput {
         self.items = items
         
         playlistView.refresh.endRefreshing()
-
         playlistView.tableView.reloadData()
     }
 }

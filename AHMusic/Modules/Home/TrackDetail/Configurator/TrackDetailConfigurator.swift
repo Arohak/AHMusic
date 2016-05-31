@@ -7,30 +7,11 @@
 //
 
 class TrackDetailModuleConfigurator {
-
-    func configureModuleForPresenter(presenter: AnyObject) {
-        
-        if let presenter = presenter as? TrackDetailPresenter {
-            configure(presenter)
-        }
-    }
-
-    private func configure(presenter: TrackDetailPresenter) {
-        
-        let viewController = TrackDetailViewController()
-        let interactor = TrackDetailInteractor()
-        
-        presenter.view = viewController
-        presenter.interactor = interactor
-        
-        interactor.output = presenter
-        viewController.output = presenter
-    }
     
-    func configureModuleForViewController(vc: AnyObject) {
+    func configureModuleForViewController(viewController: AnyObject) {
         
-        if let vc = vc as? TrackDetailViewController {
-            configure(vc)
+        if let viewController = viewController as? TrackDetailViewController {
+            configure(viewController)
         }
     }
     

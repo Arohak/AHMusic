@@ -8,8 +8,8 @@
 
 class StationModuleInitializer {
 
-    init(presentor: AnyObject) {        
+    init(viewController: AnyObject) {
         let configurator = StationModuleConfigurator()
-        configurator.configureModuleForPresenter(presentor)
+        configurator.configureModuleForController(viewController)
     }
 }

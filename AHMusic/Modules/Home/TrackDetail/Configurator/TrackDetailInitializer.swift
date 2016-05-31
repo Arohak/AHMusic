@@ -7,16 +7,9 @@
 //
 
 class TrackDetailModuleInitializer: NSObject {
-
-    init(presentor: AnyObject) {
-        super.init()
-        
-        let configurator = TrackDetailModuleConfigurator()
-        configurator.configureModuleForPresenter(presentor)
-    }
     
-    init(vc: AnyObject) {
+    init(viewController: AnyObject) {
         let configurator = TrackDetailModuleConfigurator()
-        configurator.configureModuleForViewController(vc)
+        configurator.configureModuleForViewController(viewController)
     }
 }

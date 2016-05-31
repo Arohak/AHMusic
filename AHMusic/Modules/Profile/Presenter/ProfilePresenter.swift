@@ -13,11 +13,6 @@ class ProfilePresenter {
     var interactor: ProfileInteractorInput!
 }
 
-//MARK: - extension for ProfileModuleInput -
-extension ProfilePresenter: ProfileModuleInput {
-
-}
-
 //MARK: - extension for ProfileViewOutput -
 extension ProfilePresenter: ProfileViewOutput {
     

@@ -7,30 +7,16 @@
 //
 
 //MARK: - class ArtistPresenter -
-class ArtistPresenter: BasePresenter {
+class ArtistPresenter {
 
-    var view: ArtistViewInput!
+    weak var view: ArtistViewInput!
     var interactor: ArtistInteractorInput!
-    
-    //MARK: - Initilize -
-    override init(name: String) {
-        super.init(name: name)
-    }
-}
-
-//MARK: - extension for ArtistModuleInput -
-extension ArtistPresenter: ArtistModuleInput {
-
 }
 
 //MARK: - extension for ArtistViewOutput -
 extension ArtistPresenter: ArtistViewOutput {
     
-    func viewIsReady() {
-        interactor.searchArtist(keyword)
-    }
-    
-    func pullToRefresh() {
+    func viewIsReady(keyword: String) {
         interactor.searchArtist(keyword)
     }
     
@@ -51,7 +37,7 @@ extension ArtistPresenter: ArtistInteractorOutput {
         let detail = Detail(data: json)
         
         let vc = DetailViewController(title: "Artist", detail: detail)
-        _ = DetailModuleInitializer(vc: vc)
+        _ = DetailModuleInitializer(viewController: vc)
         UIHelper.root().pushViewController(vc, animated: true)
     }
 }

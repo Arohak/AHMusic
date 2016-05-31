@@ -8,8 +8,9 @@
 
 class TrackModuleInitializer {
 
-    init(presentor: AnyObject) {        
+    init(viewController: AnyObject) {
         let configurator = TrackModuleConfigurator()
-        configurator.configureModuleForPresenter(presentor)
+        configurator.configureModuleForController(viewController)
     }
+
 }

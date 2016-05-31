@@ -8,16 +8,16 @@
 
 class TrackModuleConfigurator {
 
-    func configureModuleForPresenter(presenter: AnyObject) {
+    func configureModuleForController(viewController: AnyObject) {
         
-        if let presenter = presenter as? TrackPresenter {
-            configure(presenter)
+        if let viewController = viewController as? TrackViewController {
+            configure(viewController)
         }
     }
-
-    private func configure(presenter: TrackPresenter) {
+    
+    private func configure(viewController: TrackViewController) {
         
-        let viewController = TrackViewController()
+        let presenter = TrackPresenter()
         let interactor = TrackInteractor()
         
         presenter.view = viewController

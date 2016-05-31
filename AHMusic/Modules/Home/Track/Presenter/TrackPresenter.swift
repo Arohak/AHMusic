@@ -7,30 +7,16 @@
 //
 
 //MARK: - class TrackPresenter -
-class TrackPresenter: BasePresenter {
+class TrackPresenter {
 
-    var view: TrackViewInput!
+    weak var view: TrackViewInput!
     var interactor: TrackInteractorInput!
-        
-    //MARK: - Initilize -
-    override init(name: String) {
-        super.init(name: name)
-    }
-}
-
-//MARK: - extension for TrackModuleInput -
-extension TrackPresenter: TrackModuleInput {
-
 }
 
 //MARK: - extension for TrackViewOutput -
 extension TrackPresenter: TrackViewOutput {
     
-    func viewIsReady() {
-        interactor.searchTrack(keyword)
-    }
-    
-    func pullToRefresh() {
+    func viewIsReady(keyword: String) {
         interactor.searchTrack(keyword)
     }
 
@@ -68,7 +54,7 @@ extension TrackPresenter: TrackInteractorOutput {
         let detail = Detail(data: json)
         
         let vc = DetailViewController(title: "Album", detail: detail)
-        _ = DetailModuleInitializer(vc: vc)
+        _ = DetailModuleInitializer(viewController: vc)
         UIHelper.root().pushViewController(vc, animated: true)
     }
     
@@ -77,13 +63,13 @@ extension TrackPresenter: TrackInteractorOutput {
         let detail = Detail(data: json)
         
         let vc = DetailViewController(title: "Artist", detail: detail)
-        _ = DetailModuleInitializer(vc: vc)
+        _ = DetailModuleInitializer(viewController: vc)
         UIHelper.root().pushViewController(vc, animated: true)
     }
     
     func getTrackResultIsReady(track: Track, tracks: Array<Track>) {
         let vc = TrackDetailViewController(title: "Track", items: tracks, track: track)
-        _ = TrackDetailModuleInitializer(vc: vc)
+        _ = TrackDetailModuleInitializer(viewController: vc)
         UIHelper.root().pushViewController(vc, animated: true)
     }
 }

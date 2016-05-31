@@ -8,8 +8,8 @@
 
 class DetailModuleInitializer {
 
-    init(vc: AnyObject) {
+    init(viewController: AnyObject) {
         let configurator = DetailModuleConfigurator()
-        configurator.configureModuleForViewController(vc)
+        configurator.configureModuleForViewController(viewController)
     }
 }
