@@ -13,10 +13,6 @@ class CategoryPresenter  {
     var interactor: CategoryInteractorInput!
     
     var keyword: String!
-    
-    deinit{
-        print("deinit CategoryPresenter")
-    }
 }
 
 //MARK: - extension for CategoryViewOutput -

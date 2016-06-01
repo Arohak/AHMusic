@@ -123,8 +123,8 @@ extension AHPlayer: PlayerActionProtocol {
     }
     
     func replay() {
+        self.jukebox.pause()
         self.jukebox.replay()
-        playerOutput.reset()
     }
 }
 

@@ -17,7 +17,8 @@ class TrackDetailViewController: UIViewController {
     var output: TrackDetailViewOutput!
     var tracks: Array<Track>!
     var track: Track!
-    
+    var selectedTrack: Track!
+
     let shapeLayer = ShapeLayer(center: TD_BBTN_SIZE)
     var totalValue : Float = 0.0
     var startValue : Float = 0.0
@@ -92,16 +93,8 @@ class TrackDetailViewController: UIViewController {
         //shapeLayer
         trackDetailView.headerView.downloadButton.layer.addSublayer(shapeLayer.gradientMaskLayer)
         
-        trackDetailView.headerView.favoriteButton.selected = Utils.favoriteState(track)
-        
-        let dState = Utils.downloadState(track)
-        trackDetailView.headerView.downloadButton.selected = dState
-        trackDetailView.headerView.downloadButton.enabled = !dState
-        if dState {
-            trackDetailView.headerView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
-        } else{
-            trackDetailView.headerView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download"), forState: .Normal)
-        }
+        //state
+        setFavoriteAndDownloadButtonState(track)
 }
 
     private func configureNavigationBar() {
@@ -112,6 +105,19 @@ class TrackDetailViewController: UIViewController {
         let index = tracks.indexOf {$0.id == track.id}
         if let index = index {
             output.playPauseAtIndex(index)
+        }
+    }
+    
+    private func setFavoriteAndDownloadButtonState(track: Track) {
+        trackDetailView.headerView.favoriteButton.selected = Utils.favoriteState(track)
+        
+        let dState = Utils.downloadState(track)
+        trackDetailView.headerView.downloadButton.selected = dState
+        trackDetailView.headerView.downloadButton.enabled = !dState
+        if dState {
+            trackDetailView.headerView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
+        } else{
+            trackDetailView.headerView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download"), forState: .Normal)
         }
     }
     
@@ -156,7 +162,7 @@ class TrackDetailViewController: UIViewController {
     func favoriteAction(sender: AHButton) {
         sender.selected = !sender.selected
         
-        output.favoriteTrack(sender.selected, track: track)
+        output.favoriteTrack(sender.selected, track: selectedTrack)
     }
     
     func downloadAction(sender: AHButton) {
@@ -169,19 +175,21 @@ class TrackDetailViewController: UIViewController {
         sender.enabled = !sender.selected
         sender.setBackgroundImage(UIImage(named: "img_bg_transparent"), forState: .Normal)
         
-        apiHelper.downloadProgress(track, progress: { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
+        apiHelper.downloadProgress(selectedTrack, progress: { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
             self.totalValue = (Float(totalBytesRead) / Float(totalBytesExpectedToRead))
             self.shapeLayer.animateProgressView(self.startValue, toV: self.totalValue, dur: 0.0001)
             self.startValue = self.totalValue
         }) { error in
             self.startValue = 0.0
             self.totalValue = 0.0
-            
+
             if error == nil {
                 sender.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
                 self.shapeLayer.hideProgressView()
+
+                self.output.downloadTrack(sender.selected, track: self.selectedTrack)
                 
-                self.output.downloadTrack(sender.selected, track: self.track)
+                self.setFavoriteAndDownloadButtonState(self.selectedTrack)
             }
         }
     }
@@ -217,7 +225,9 @@ extension TrackDetailViewController: TrackDetailViewInput {
         } else {
             trackDetailView.actionView.volumeSlider.value = jukebox.volume
             trackDetailView.actionView.playPauseButton.setBackgroundImage(UIImage(named: jukebox.state == .Paused ? "img_max_pl_play" : "img_max_pl_pause"), forState: .Normal)
-        }        
+        }
+        
+        updateUIFromChangeTrack(tracks[jukebox.playIndex])
     }
     
     // MARK: - Private Method -
@@ -235,6 +245,9 @@ extension TrackDetailViewController: TrackDetailViewInput {
     }
     
     private func updateUIFromChangeTrack(track: Track) {
+        selectedTrack = track
+        setFavoriteAndDownloadButtonState(track)
+        
         if !track.artist.pictureBig.isEmpty {
             trackDetailView.headerView.imageView.kf_setImageWithURL(NSURL(string: track.artist.pictureBig)!, placeholderImage: Image(named: "img_placeholder"))
             trackDetailView.headerView.titleLabel.text = track.title + "\nby " + track.artist.name

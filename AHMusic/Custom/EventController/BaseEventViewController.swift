@@ -56,6 +56,7 @@ class BaseEventViewController: UIViewController {
         super.viewWillAppear(animated)
         
         EventCenter.defaultCenter.register(self, handler: onEvent)
+        resetTrackersState()
     }
     
     override func viewDidDisappear(animated: Bool) {
