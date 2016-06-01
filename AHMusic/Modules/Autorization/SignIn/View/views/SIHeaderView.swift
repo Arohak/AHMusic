@@ -12,14 +12,14 @@ class SIHeaderView: UIView {
     //MARK: - Create UIElements -
     let logoImageView: UIImageView = {
         let view = UIImageView.newAutoLayoutView()
-        view.image = UIImage(named: "img_wl_logo")
+        view.image = UIImage(named: "img_si_logo")
         
         return view
     }()
     
     let titleLabel: AHLabel = {
         let view = AHLabel.newAutoLayoutView()
-        view.text = "AAA BBB CCC"
+        view.text = ""
         view.textAlignment = .Center
         
         return view

@@ -61,6 +61,8 @@ extension LeftMenuPresenter: LeftMenuViewOutput {
     }
     
     func logout() {
+        UIHelper.closeMiniPlayer()
+        
         let welcome = WelcomePresenter()
         _ = WelcomeModuleInitializer(presentor: welcome)
         let vc = welcome.view as! UIViewController
