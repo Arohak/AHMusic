@@ -15,4 +15,15 @@ class SignUpInteractor {
 //MARK: - extension for SignUpInteractorInput -
 extension SignUpInteractor: SignUpInteractorInput {
     
+    func signup(json: JSON) {
+        _ = apiHelper.rx_SignUp(json)
+            .subscribeNext { result in
+                let status = result["data"]["status"].stringValue
+                if status == "success" {
+                    self.output.signupIsReady()
+                } else {
+                    UIHelper.showHUD(status)
+                }
+        }
+    }
 }

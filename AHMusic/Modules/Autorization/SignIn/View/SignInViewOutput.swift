@@ -9,4 +9,5 @@
 protocol SignInViewOutput {
 
     func viewIsReady()
+    func signinButtonClicked(json: JSON)
 }

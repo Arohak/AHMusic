@@ -16,18 +16,11 @@ class APIHelper {
     //MARK: - API Routers
     private struct ROUTERS
     {
-        //http://www.last.fm/api
-//        static let ROOT_URL                = "http://ws.audioscrobbler.com/2.0/"
-//        static let API_VALUE               = "5c1a64ac9d59273b95165bd369b15fdb"
-//        static let GET_TOP_TAGS            = "chart.getTopTags"
-//        static let GET_TOP_ALBUMS          = "artist.getTopAlbums"
-//        static let GET_TOP_ARTISTS         = "tag.getTopArtists"
-//        static let GET_TRACKS              = "album.getInfo"
+        static let MY_URL                   = "http://ahmusic.herokuapp.com/api/v1/"
+        static let SIGNIN                   = "profiles/signin?email=%@&password=%@"
+        static let SIGNUP                   = "profiles/signup?name=%@&email=%@&password=%@&password_confirmation=%@"
         
-        //https://market.mashape.com/deezerdevs/deezer#-search
-//        static let ROOT_URL                 = "https://deezerdevs-deezer.p.mashape.com/"
         static let ROOT_URL                 = "http://api.deezer.com/"
-        static let HEADER                   = ["":""] //["X-Mashape-Key": "4LayNni55YmshxhVWWnUNiryZGFPp1ULxlEjsnxLhL7PonxZ1M", "Accept": "text/plain"]
         static let GET_GENRE                = "genre"
         static let GET_ALBUM                = "album/%@"
         static let GET_ARTIST               = "artist/%@"
@@ -57,8 +50,7 @@ class APIHelper {
             if showProgress { UIHelper.showSpinner() }
 
             let URL = url.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
-            let header = isHeader ? ROUTERS.HEADER : [:]
-            _ = self.manager.rx_request(method, URL, parameters: parameters, encoding: .URL, headers: header)
+            _ = self.manager.rx_request(method, URL, parameters: parameters, encoding: .URL)
                 .observeOn(MainScheduler.instance)
                 .flatMap {
                     $0.rx_JSON()
@@ -99,6 +91,25 @@ class APIHelper {
             .response { request, response, _ , error in
                 state(error)
             }
+    }
+    
+    //MARK: - Autorization
+    func rx_SignIn(json: JSON) -> Observable<JSON> {
+        let url = ROUTERS.MY_URL + String(format: ROUTERS.SIGNIN,
+                                          json["email"].stringValue,
+                                          json["password"].stringValue)
+        
+        return rx_Request(.GET, url: url)
+    }
+    
+    func rx_SignUp(json: JSON) -> Observable<JSON> {
+        let url = ROUTERS.MY_URL + String(format: ROUTERS.SIGNUP,
+                                          json["name"].stringValue,
+                                          json["email"].stringValue,
+                                          json["password"].stringValue,
+                                          json["password_c"].stringValue)
+        
+        return rx_Request(.GET, url: url)
     }
     
     //MARK: - Categories

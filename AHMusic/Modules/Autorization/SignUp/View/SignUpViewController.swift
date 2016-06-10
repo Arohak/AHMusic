@@ -80,13 +80,30 @@ class SignUpViewController: UIViewController {
     }
     
     private func isValidInputParams() -> Bool {
+        var isValid = true
+        if !UIHelper.isValidTextField(cells[0].cellContentView.authTextField) {
+            isValid = false
+        }
+        if !UIHelper.isValidEmail(cells[1].cellContentView.authTextField) {
+            isValid = false
+        }
+        if !UIHelper.isValidPasswordsEqual(cells[2].cellContentView.authTextField, fieldTwo: cells[3].cellContentView.authTextField) {
+            isValid = false
+        }
         
-        return true
+        return isValid
     }
     
     //MARK: - Actions -
     func signUp() {
-
+        if isValidInputParams() {
+            let name = cells[0].cellContentView.authTextField.text!
+            let email = cells[1].cellContentView.authTextField.text!
+            let password = cells[2].cellContentView.authTextField.text!
+            let json = JSON(["name" : name, "email" : email, "password" : password, "password_c" : password])
+            
+            output.signupButtonClicked(json)
+        }
     }
     
     //MARK: - Keyboard notifications -

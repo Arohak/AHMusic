@@ -89,21 +89,59 @@ struct UIHelper {
             appDelegate.miniPlayerView = nil
         }
     }
-//
-//    class func shakeWithView(view: UIView) {
-//        let shake = CABasicAnimation(keyPath: "position")
-//        shake.duration = 0.1
-//        shake.repeatCount = 2
-//        shake.autoreverses = true
-//        
-//        let from_point = CGPointMake(view.center.x - 5, view.center.y)
-//        let from_value = NSValue(CGPoint: from_point)
-//        
-//        let to_point = CGPointMake(view.center.x + 5, view.center.y)
-//        let to_value = NSValue(CGPoint: to_point)
-//        
-//        shake.fromValue = from_value
-//        shake.toValue = to_value
-//        view.layer.addAnimation(shake, forKey: "position")
-//    }
+    static func isValidTextField(field: UITextField) -> Bool {
+        var isValid = false
+        let kText = field.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        !(kText == "") ? isValid = true : shakeWithView(field)
+        
+        return isValid;
+    }
+    
+    static func isValidEmail(field: UITextField) -> Bool {
+        var isValid = false
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
+        let email = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        email.evaluateWithObject(field.text) ? isValid = true : shakeWithView(field)
+        
+        return isValid
+    }
+    
+    static func isValidPassword(field: UITextField) -> Bool {
+        var isValid = false
+        let kText = field.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        (kText.characters.count >= 2 && kText != "") ? isValid = true : shakeWithView(field)
+
+        return isValid
+    }
+    
+    static func isValidPasswordsEqual(fieldOne: UITextField, fieldTwo: UITextField) -> Bool {
+        var isValid = false
+        let kPassword = fieldOne.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let kConfirmPassword = fieldTwo.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        if kPassword == kConfirmPassword && kPassword != "" && kConfirmPassword != "" && kPassword.characters.count > 0 && kConfirmPassword.characters.count > 0 {
+            isValid = true
+        } else {
+            shakeWithView(fieldOne)
+            shakeWithView(fieldTwo)
+        }
+        
+        return isValid
+    }
+
+    static func shakeWithView(view: UIView) {
+        let shake = CABasicAnimation(keyPath: "position")
+        shake.duration = 0.1
+        shake.repeatCount = 2
+        shake.autoreverses = true
+        
+        let from_point = CGPointMake(view.center.x - 5, view.center.y)
+        let from_value = NSValue(CGPoint: from_point)
+        
+        let to_point = CGPointMake(view.center.x + 5, view.center.y)
+        let to_value = NSValue(CGPoint: to_point)
+        
+        shake.fromValue = from_value
+        shake.toValue = to_value
+        view.layer.addAnimation(shake, forKey: "position")
+    }
 }

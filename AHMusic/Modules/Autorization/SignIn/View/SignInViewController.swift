@@ -58,7 +58,7 @@ class SignInViewController: UIViewController {
     }
     
     private func configurateTableViewCells() {
-        let placeholders = ["User Name", "Password"]
+        let placeholders = ["Email", "Password"]
         let keyTypes = [UIReturnKeyType.Next, UIReturnKeyType.Go]
         let keyboardTypes = [UIKeyboardType.EmailAddress, UIKeyboardType.Default]
         let capitalizationTypes = [UITextAutocapitalizationType.None, UITextAutocapitalizationType.None]
@@ -80,30 +80,26 @@ class SignInViewController: UIViewController {
     }
     
     private func isValidInputParams() -> Bool {
-//        var isValid = true
-//        if !Utils.isValidTextField(cells[0].cellContentView.authTextField) {
-//            isValid = false
-//        }
-//        if !Utils.isValidTextField(cells[1].cellContentView.authTextField) {
-//            isValid = false
-//        }
+        var isValid = true
+        if !UIHelper.isValidEmail(cells[0].cellContentView.authTextField) {
+            isValid = false
+        }
+        if !UIHelper.isValidPassword(cells[1].cellContentView.authTextField) {
+            isValid = false
+        }
         
-        return true
+        return isValid
     }
     
     //MARK: - Actions -
     func signIn() {
-//        let username = cells[0].cellContentView.authTextField.text
-//        let password = cells[1].cellContentView.authTextField.text
-//        
-//        cells[0].cellContentView.authTextField.text = username
-//        cells[1].cellContentView.authTextField.text = password
-//        
-//        let params = ["userName" : username, "password" : password, "mandate" : mandate]
-//        
-//        if isValidInputParams() {
-//
-//        }
+        if isValidInputParams() {
+            let email = cells[0].cellContentView.authTextField.text!
+            let password = cells[1].cellContentView.authTextField.text!
+            let json = JSON(["email" : email, "password" : password])
+
+            output.signinButtonClicked(json)
+        }
     }
     
     //MARK: - Keyboard notifications -

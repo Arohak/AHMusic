@@ -8,4 +8,5 @@
 
 protocol SignUpInteractorOutput: class {
 
+    func signupIsReady()
 }

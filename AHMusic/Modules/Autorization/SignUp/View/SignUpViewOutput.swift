@@ -9,4 +9,5 @@
 protocol SignUpViewOutput {
 
     func viewIsReady()
+    func signupButtonClicked(json: JSON)
 }

@@ -19,9 +19,27 @@ extension SignInPresenter: SignInViewOutput {
     func viewIsReady() {
 
     }
+    
+    func signinButtonClicked(json: JSON) {
+        interactor.signin(json)
+    }
 }
 
 //MARK: - extension for SignInInteractorOutput -
 extension SignInPresenter: SignInInteractorOutput {
  
+    func signinIsReady() {
+        let main = CategoryViewController()
+        _ = CategoryModuleInitializer(viewController: main)
+        
+        //left
+        let left = LeftMenuViewController()
+        _ = LeftMenuModuleInitializer(viewController: left)
+        let slide = SlideViewController(mainViewController: main, leftMenuViewController: left)
+        
+        let nav = UINavigationController(rootViewController: slide)
+        UIView.transitionWithView(appDelegate.window!, duration: 0.4, options: .TransitionFlipFromLeft, animations: { _ in
+            appDelegate.window!.rootViewController! = nav
+            }, completion: nil)
+    }
 }
