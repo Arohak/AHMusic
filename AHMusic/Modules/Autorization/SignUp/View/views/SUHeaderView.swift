@@ -6,7 +6,6 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-
 class SUHeaderView: UIView {
     
     //MARK: - Create UIElements -
@@ -46,8 +45,9 @@ class SUHeaderView: UIView {
     
     //MARK: - Constraints -
     func setConstraints() {
-        logoImageView.autoAlignAxis(.Horizontal, toSameAxisOfView: self, withOffset: -SI_OFFSET*2)
-        logoImageView.autoAlignAxisToSuperviewAxis(.Vertical)
+//        logoImageView.autoAlignAxis(.Horizontal, toSameAxisOfView: self, withOffset: -SI_OFFSET*2)
+//        logoImageView.autoAlignAxisToSuperviewAxis(.Vertical)
+        logoImageView.autoCenterInSuperview()
         logoImageView.autoSetDimensionsToSize(CGSizeMake(SI_LOGO_SIZE, SI_LOGO_SIZE))
         
         titleLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: logoImageView, withOffset: SI_OFFSET)

@@ -13,28 +13,26 @@ class APIHelper {
     static let sharedInstance = APIHelper()
     let manager = Manager.sharedInstance
     
-    //MARK: - API Routers
-    private struct ROUTERS
-    {
-        static let MY_URL                   = "http://ahmusic.herokuapp.com/api/v1/"
+    //MARK: - API Routers -
+    private struct ROUTERS {
+        
+        static let ROOT_URL                 = "http://ahmusic.herokuapp.com/api/v1/"
         static let SIGNIN                   = "profiles/signin?email=%@&password=%@"
         static let SIGNUP                   = "profiles/signup?name=%@&email=%@&password=%@&password_confirmation=%@"
         
-        static let ROOT_URL                 = "http://api.deezer.com/"
-        static let GET_GENRE                = "genre"
-        static let GET_ALBUM                = "album/%@"
-        static let GET_ARTIST               = "artist/%@"
-        static let GET_PLAYLIST             = "playlist/%@"
-        static let GET_TRACK                = "track/%@"
+        static let GET_GENRE                = "genres"
+        static let GET_ALBUM                = "albums/%@"
+        static let GET_ARTIST               = "artists/%@"
+        static let GET_PLAYLIST             = "playlists/%@"
+        static let GET_TRACK                = "tracks/%@"
         
         static let SEARCH                   = "search?q=%@"
         static let SEARCH_ALBUM             = "search/album?q=%@"
         static let SEARCH_ARTIST            = "search/artist?q=%@"
         static let SEARCH_PLAYLIST          = "search/playlist?q=%@"
         static let SEARCH_TRACK             = "search/track?q=%@"
-
-        static let GET_ARTIST_TRACKS        = "artist/%@/top?limit=%@"
-        static let GET_ALBUM_TRACKS         = "album/%@/tracks"
+        
+        static let GET_ARTIST_TRACKS        = "artistst?id=%@&limit=%@"
     }
     
     private func rx_Request(method: Alamofire.Method,
@@ -66,7 +64,7 @@ class APIHelper {
                         UIHelper.showHUD(error.localizedDescription)
                         if showProgress { UIHelper.hideSpinner() }
 //                        if showProgress { UIHelper.hideProgressHUD() }
-//                        UIHelper.showHUD("No Internet Connection")
+                        UIHelper.showHUD("No Internet Connection")
                     },
                     onCompleted: {
                         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -79,7 +77,7 @@ class APIHelper {
         }
     }
     
-    //MARK: - Download
+    //MARK: - Download -
     func downloadProgress(track: Track, progress: (Int64, Int64, Int64)->(), state: (NSError?)->()) {
         let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory, domain: .UserDomainMask)
         track.request = download(.GET, track.preview, destination: destination)
@@ -93,9 +91,9 @@ class APIHelper {
             }
     }
     
-    //MARK: - Autorization
+    //MARK: - Autorization -
     func rx_SignIn(json: JSON) -> Observable<JSON> {
-        let url = ROUTERS.MY_URL + String(format: ROUTERS.SIGNIN,
+        let url = ROUTERS.ROOT_URL + String(format: ROUTERS.SIGNIN,
                                           json["email"].stringValue,
                                           json["password"].stringValue)
         
@@ -103,7 +101,7 @@ class APIHelper {
     }
     
     func rx_SignUp(json: JSON) -> Observable<JSON> {
-        let url = ROUTERS.MY_URL + String(format: ROUTERS.SIGNUP,
+        let url = ROUTERS.ROOT_URL + String(format: ROUTERS.SIGNUP,
                                           json["name"].stringValue,
                                           json["email"].stringValue,
                                           json["password"].stringValue,
@@ -112,13 +110,13 @@ class APIHelper {
         return rx_Request(.GET, url: url)
     }
     
-    //MARK: - Categories
+    //MARK: - Categories -
     func rx_GetCategories() -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + ROUTERS.GET_GENRE
         return rx_Request(.GET, url: url)
     }
     
-    //MARK: - Search for Name
+    //MARK: - Search for Name -
     func rx_SearchAlbum(name: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.SEARCH_ALBUM, name)
         return rx_Request(.GET, url: url)
@@ -144,7 +142,7 @@ class APIHelper {
         return rx_Request(.GET, url: url)
     }
     
-    //MARK: - GET for ID
+    //MARK: - GET for ID -
     func rx_GetAlbum(id: String) -> Observable<JSON> {
         let url = ROUTERS.ROOT_URL + String(format: ROUTERS.GET_ALBUM, id)
         return rx_Request(.GET, url: url)

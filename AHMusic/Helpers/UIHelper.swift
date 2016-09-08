@@ -42,7 +42,7 @@ struct UIHelper {
         PKHUD.sharedHUD.contentView = PKHUDTextView(text: message)
         PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
         PKHUD.sharedHUD.show()
-        PKHUD.sharedHUD.hide(afterDelay: 2.0);
+        PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
     static func showAlert(message: String) {
@@ -94,7 +94,7 @@ struct UIHelper {
         let kText = field.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         !(kText == "") ? isValid = true : shakeWithView(field)
         
-        return isValid;
+        return isValid
     }
     
     static func isValidEmail(field: UITextField) -> Bool {
