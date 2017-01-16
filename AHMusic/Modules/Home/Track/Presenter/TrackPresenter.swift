@@ -16,28 +16,28 @@ class TrackPresenter {
 //MARK: - extension for TrackViewOutput -
 extension TrackPresenter: TrackViewOutput {
     
-    func viewIsReady(keyword: String) {
+    func viewIsReady(_ keyword: String) {
         interactor.searchTrack(keyword)
     }
 
-    func playTrack(index: Int, tracks: Array<Track>) {
+    func playTrack(_ index: Int, tracks: Array<Track>) {
         UIHelper.showMiniPlayer(index, tracks: tracks)
     }
     
-    func openLink(track: Track) {
+    func openLink(_ track: Track) {
         let vc = WebViewController(resourceName: track.title, url: NSURL(string: track.link)!)
-        UIHelper.root().presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+        UIHelper.root().present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
     
-    func openDetail(album: Album) {
+    func openDetail(_ album: Album) {
         interactor.getAlbum("\(album.id)")
     }
     
-    func openDetail(artist: Artist) {
+    func openDetail(_ artist: Artist) {
         interactor.getArtist("\(artist.id)")
     }
     
-    func openTrackDetail(track: Track, items: Array<Track>) {
+    func openTrackDetail(_ track: Track, items: Array<Track>) {
         interactor.getTrack("\(track.id)", tracks: items)
     }
 }
@@ -45,11 +45,11 @@ extension TrackPresenter: TrackViewOutput {
 //MARK: - extension for TrackInteractorOutput -
 extension TrackPresenter: TrackInteractorOutput {
  
-    func searchResultIsReady(items: Array<Track>) {
+    func searchResultIsReady(_ items: Array<Track>) {
         view.setupInitialState(items)
     }
     
-    func getAlbumResultIsReady(album: Album) {
+    func getAlbumResultIsReady(_ album: Album) {
         let json = JSON(["imageURL" : album.coverBig, "tracks" : Array(album.tracks), "info" : "Name:\t\(album.title)\nTracks:\t\(album.nbTracks)\nFans:\t\(album.fans)"])
         let detail = Detail(data: json)
         
@@ -58,7 +58,7 @@ extension TrackPresenter: TrackInteractorOutput {
         UIHelper.root().pushViewController(vc, animated: true)
     }
     
-    func getArtistResultIsReady(artist: Artist, tracks: Array<Track>) {
+    func getArtistResultIsReady(_ artist: Artist, tracks: Array<Track>) {
         let json = JSON(["imageURL" : artist.pictureBig, "tracks" : tracks, "info" : "Name:\t\(artist.name)\nAlbums:\t\(artist.nbAlbum)\nFans:\t\(artist.nbFan)"])
         let detail = Detail(data: json)
         
@@ -67,7 +67,7 @@ extension TrackPresenter: TrackInteractorOutput {
         UIHelper.root().pushViewController(vc, animated: true)
     }
     
-    func getTrackResultIsReady(track: Track, tracks: Array<Track>) {
+    func getTrackResultIsReady(_ track: Track, tracks: Array<Track>) {
         let vc = TrackDetailViewController(title: "Track", items: tracks, track: track)
         _ = TrackDetailModuleInitializer(viewController: vc)
         UIHelper.root().pushViewController(vc, animated: true)

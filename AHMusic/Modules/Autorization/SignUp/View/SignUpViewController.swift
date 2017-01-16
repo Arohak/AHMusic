@@ -41,34 +41,34 @@ class SignUpViewController: UIViewController {
         baseConfig()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: - Private Methods -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = signUpView
         
         self.title = "Sign Up"
         configurateTableViewCells()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignUpViewController.keyboardWillChangeFrame(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SignUpViewController.keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
-    private func configurateTableViewCells() {
+    fileprivate func configurateTableViewCells() {
         let placeholders = ["Full Name", "Email", "Password", "Confirm Password"]
-        let keyTypes = [UIReturnKeyType.Next, UIReturnKeyType.Next, UIReturnKeyType.Next, UIReturnKeyType.Go]
-        let keyboardTypes = [UIKeyboardType.Default, UIKeyboardType.EmailAddress, UIKeyboardType.Default, UIKeyboardType.Default]
-        let capitalizationTypes = [UITextAutocapitalizationType.Words, UITextAutocapitalizationType.None, UITextAutocapitalizationType.None, UITextAutocapitalizationType.None]
+        let keyTypes = [UIReturnKeyType.next, UIReturnKeyType.next, UIReturnKeyType.next, UIReturnKeyType.go]
+        let keyboardTypes = [UIKeyboardType.default, UIKeyboardType.emailAddress, UIKeyboardType.default, UIKeyboardType.default]
+        let capitalizationTypes = [UITextAutocapitalizationType.words, UITextAutocapitalizationType.none, UITextAutocapitalizationType.none, UITextAutocapitalizationType.none]
         let secureTextEntrys = [false, false, true, true]
         
         for i in 0..<placeholders.count {
             let signInCell = FieldCell()
-            signInCell.selectionStyle = .None
+            signInCell.selectionStyle = .none
             signInCell.cellContentView.authTextField.autocapitalizationType = capitalizationTypes[i]
-            signInCell.cellContentView.authTextField.secureTextEntry = secureTextEntrys[i]
+            signInCell.cellContentView.authTextField.isSecureTextEntry = secureTextEntrys[i]
             signInCell.cellContentView.authTextField.keyboardType = keyboardTypes[i]
             signInCell.cellContentView.authTextField.placeholder = placeholders[i]
             signInCell.cellContentView.authTextField.returnKeyType = keyTypes[i]
@@ -79,15 +79,15 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    private func isValidInputParams() -> Bool {
+    fileprivate func isValidInputParams() -> Bool {
         var isValid = true
-        if !UIHelper.isValidTextField(cells[0].cellContentView.authTextField) {
+        if !UIHelper.isValidTextField(field: cells[0].cellContentView.authTextField) {
             isValid = false
         }
-        if !UIHelper.isValidEmail(cells[1].cellContentView.authTextField) {
+        if !UIHelper.isValidEmail(field: cells[1].cellContentView.authTextField) {
             isValid = false
         }
-        if !UIHelper.isValidPasswordsEqual(cells[2].cellContentView.authTextField, fieldTwo: cells[3].cellContentView.authTextField) {
+        if !UIHelper.isValidPasswordsEqual(passwordField: cells[2].cellContentView.authTextField, confirmPasswordField: cells[3].cellContentView.authTextField) {
             isValid = false
         }
         
@@ -107,13 +107,13 @@ class SignUpViewController: UIViewController {
     }
     
     //MARK: - Keyboard notifications -
-    func keyboardWillChangeFrame(notification: NSNotification) {
-        if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() {
-            let animationDuration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber) as! NSTimeInterval
+    func keyboardWillChangeFrame(_ notification: NSNotification) {
+        if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let animationDuration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber) as! TimeInterval
             let height = keyboardFrame.origin.y
             
             self.view.layoutIfNeeded()
-            UIView.animateWithDuration(animationDuration, animations: { _ in
+            UIView.animate(withDuration: animationDuration, animations: { _ in
                 self.signUpView.heighTBLConstraint.constant = height - NAV_HEIGHT
                 self.view.layoutIfNeeded()
             })
@@ -132,38 +132,38 @@ extension SignUpViewController: SignUpViewInput {
 //MARK: - extension for UITableView -
 extension SignUpViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return cells.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return cells[indexPath.row]
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return AU_CELL_HEIGHT
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return SI_LOGO_SIZE*1.5
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         return AU_BTN_HEIGHT*1.5
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         return headerView
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        footerView.button.addTarget(self, action: #selector(SignUpViewController.signUp), forControlEvents: UIControlEvents.TouchUpInside)
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        footerView.button.addTarget(self, action: #selector(SignUpViewController.signUp), for: UIControlEvents.touchUpInside)
         
         return footerView
     }
@@ -172,11 +172,11 @@ extension SignUpViewController: UITableViewDataSource, UITableViewDelegate {
 //MARK: - extension for UITextField -
 extension SignUpViewController: UITextFieldDelegate {
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag != cells.count - 1 {
             let indexNext = textField.tag + 1
             cells[indexNext].cellContentView.authTextField.becomeFirstResponder()
-            signUpView.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: indexNext, inSection: 0), atScrollPosition: .None, animated: true)
+            signUpView.tableView.scrollToRow(at: NSIndexPath(row: indexNext, section: 0) as IndexPath, at: .none, animated: true)
         } else {
             textField.resignFirstResponder()
             signUp()

@@ -8,5 +8,5 @@
 
 protocol DownloadProtocol {
     
-    func downloadTrack(state: Bool, track: Track)
+    func downloadTrack(_ state: Bool, track: Track)
 }

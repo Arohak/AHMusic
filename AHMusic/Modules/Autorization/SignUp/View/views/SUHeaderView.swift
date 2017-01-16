@@ -10,16 +10,16 @@ class SUHeaderView: UIView {
     
     //MARK: - Create UIElements -
     let logoImageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
+        let view = UIImageView.newAutoLayout()
         view.image = UIImage(named: "img_si_logo")
         
         return view
     }()
     
     let titleLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
+        let view = AHLabel.newAutoLayout()
         view.text = ""
-        view.textAlignment = .Center
+        view.textAlignment = .center
         
         return view
     }()
@@ -36,7 +36,7 @@ class SUHeaderView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         self.addSubview(logoImageView)
         self.addSubview(titleLabel)
         
@@ -48,10 +48,10 @@ class SUHeaderView: UIView {
 //        logoImageView.autoAlignAxis(.Horizontal, toSameAxisOfView: self, withOffset: -SI_OFFSET*2)
 //        logoImageView.autoAlignAxisToSuperviewAxis(.Vertical)
         logoImageView.autoCenterInSuperview()
-        logoImageView.autoSetDimensionsToSize(CGSizeMake(SI_LOGO_SIZE, SI_LOGO_SIZE))
+        logoImageView.autoSetDimensions(to: CGSize(width: SI_LOGO_SIZE, height: SI_LOGO_SIZE))
         
-        titleLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: logoImageView, withOffset: SI_OFFSET)
-        titleLabel.autoAlignAxisToSuperviewAxis(.Vertical)
-        titleLabel.autoMatchDimension(.Width, toDimension: .Width, ofView: logoImageView, withMultiplier: 1.5)
+        titleLabel.autoPinEdge(.top, to: .bottom, of: logoImageView, withOffset: SI_OFFSET)
+        titleLabel.autoAlignAxis(toSuperviewAxis: .vertical)
+        titleLabel.autoMatch(.width, to: .width, of: logoImageView, withMultiplier: 1.5)
     }
 }

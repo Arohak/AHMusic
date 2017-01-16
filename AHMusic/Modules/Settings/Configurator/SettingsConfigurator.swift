@@ -8,14 +8,14 @@
 
 class SettingsModuleConfigurator {
 
-    func configureModuleForController(viewController: AnyObject) {
+    func configureModuleForController(_ viewController: AnyObject) {
         
         if let viewController = viewController as? SettingsViewController {
             configure(viewController)
         }
     }
     
-    private func configure(viewController: SettingsViewController) {
+    fileprivate func configure(_ viewController: SettingsViewController) {
         
         let presenter = SettingsPresenter()
         let interactor = SettingsInteractor()

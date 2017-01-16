@@ -11,7 +11,7 @@ class DownloadViewController: BaseEventViewController {
     
     //MARK: - Initilize -
     init() {
-        super.init(vcType: .Download)
+        super.init(vcType: .download)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -19,14 +19,14 @@ class DownloadViewController: BaseEventViewController {
     }
     
     //MARK: - Actions -
-    override func favoriteAction(sender: AHButton) {
+    override func favoriteAction(_ sender: AHButton) {
         super.favoriteAction(sender)
         
         let track = items[sender.indexPath.row]
-        output.favoriteTrack(sender.selected, track: track)
+        output.favoriteTrack(sender.isSelected, track: track)
     }
     
-    override func downloadAction(sender: AHButton) {
+    override func downloadAction(_ sender: AHButton) {
         super.downloadAction(sender)
 
         let track = items[sender.indexPath.row]
@@ -35,13 +35,13 @@ class DownloadViewController: BaseEventViewController {
     }
     
     // MARK: - Priavte Method -
-    private func deleteDownloadTrack(sender: AHButton) {
+    fileprivate func deleteDownloadTrack(_ sender: AHButton) {
         let track = items[sender.indexPath.row]
-        let index = items.indexOf() {$0.id == track.id}
-        items.removeAtIndex(index!)
+        let index = items.index() {$0.id == track.id}
+        items.remove(at: index!)
         
         baseEventView.tableView.beginUpdates()
-        baseEventView.tableView.deleteRowsAtIndexPaths([sender.indexPath], withRowAnimation: .None)
+        baseEventView.tableView.deleteRows(at: [sender.indexPath], with: .none)
         baseEventView.tableView.endUpdates()
         
         baseEventView.tableView.reloadData()

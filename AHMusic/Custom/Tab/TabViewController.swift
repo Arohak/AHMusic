@@ -37,25 +37,26 @@ class TabViewController: UIViewController  {
     }
 
     //MARK: -  Private Methods -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         addViewControllers()
 
-        let items = ["Albums", "Artists", "Playlists", "Tracks", "Stations"]
+//        let items = ["Albums", "Artists", "Playlists", "Tracks", "Stations"]
+        let items = ["Albums", "Artists", "Playlists", "Tracks"]
         tabNavigation = CarbonTabSwipeNavigation(items: items as [AnyObject], delegate: self)
-        tabNavigation.insertIntoRootViewController(self)
+        tabNavigation.insert(intoRootViewController: self)
         
         styleTab()
     }
     
-    private func styleTab() {
+    fileprivate func styleTab() {
         tabNavigation.setIndicatorColor(RED)
-        tabNavigation.toolbar.translucent = false
+        tabNavigation.toolbar.isTranslucent = false
         tabNavigation.setTabExtraWidth(40)
-        tabNavigation.setNormalColor(BLACK.colorWithAlphaComponent(0.6))
-        tabNavigation.setSelectedColor(RED, font: UIFont.boldSystemFontOfSize(14))
+        tabNavigation.setNormalColor(BLACK.withAlphaComponent(0.6))
+        tabNavigation.setSelectedColor(RED, font: UIFont.boldSystemFont(ofSize: 14))
     }
     
-    private func addViewControllers() {
+    fileprivate func addViewControllers() {
         let album = AlbumViewController(title: "Albums", keyword: keyword)
         _ = AlbumModuleInitializer(viewController: album)
         viewControllers.append(album)
@@ -72,21 +73,21 @@ class TabViewController: UIViewController  {
         _ = TrackModuleInitializer(viewController: track)
         viewControllers.append(track)
         
-        let station = StationViewController(title: "Stations", keyword: keyword)
-        _ = StationModuleInitializer(viewController: station)
-        viewControllers.append(station)
+//        let station = StationViewController(title: "Stations", keyword: keyword)
+//        _ = StationModuleInitializer(viewController: station)
+//        viewControllers.append(station)
     }
 }
 
 //MARK: - extension for CarbonTabSwipeNavigationDelegate -
 extension TabViewController: CarbonTabSwipeNavigationDelegate {
     
-    func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAtIndex index: UInt) -> UIViewController {
+    func carbonTabSwipeNavigation(_ carbonTabSwipeNavigation: CarbonTabSwipeNavigation, viewControllerAt index: UInt) -> UIViewController {
         
         return viewControllers[Int(index)]
     }
     
-    func carbonTabSwipeNavigation(carbonTabSwipeNavigation: CarbonTabSwipeNavigation, didMoveAtIndex index: UInt) {
+    func carbonTabSwipeNavigation(_ carbonTabSwipeNavigation: CarbonTabSwipeNavigation, didMoveAt index: UInt) {
         
         selectedViewController = viewControllers[Int(index)]
     }

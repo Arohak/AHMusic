@@ -8,5 +8,5 @@
 
 protocol AlbumViewInput: class {
 
-    func setupInitialState(items: Array<Album>)
+    func setupInitialState(_ items: Array<Album>)
 }

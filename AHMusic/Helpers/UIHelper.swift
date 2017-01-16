@@ -13,12 +13,11 @@ import ALThreeCircleSpinner
 struct UIHelper {
     
     static func configurateApplicationApperance() {
-        UIApplication.sharedApplication().statusBarHidden = false
-        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        UIApplication.shared.statusBarStyle = .lightContent
         
         let navBarAppearance = UINavigationBar.appearance()
-        navBarAppearance.translucent = false
-        navBarAppearance.barStyle = .BlackTranslucent
+        navBarAppearance.isTranslucent = false
+        navBarAppearance.barStyle = .blackTranslucent
         navBarAppearance.barTintColor = BLACK_59
         navBarAppearance.tintColor = WHITE
         navBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName: WHITE, NSFontAttributeName : FONT_NAVBAR]
@@ -30,7 +29,7 @@ struct UIHelper {
         config.spinnerColor = WHITE
         config.backgroundColor = GRAY_164
         config.foregroundAlpha = 0.3
-        SwiftLoader.setConfig(config)
+        SwiftLoader.setConfig(config: config)
         SwiftLoader.show(animated: true)
     }
     
@@ -38,23 +37,22 @@ struct UIHelper {
         SwiftLoader.hide()
     }
 
-    static func showHUD(message: String) {
+    static func showHUD(_ message: String) {
         PKHUD.sharedHUD.contentView = PKHUDTextView(text: message)
         PKHUD.sharedHUD.userInteractionOnUnderlyingViewsEnabled = true
         PKHUD.sharedHUD.show()
         PKHUD.sharedHUD.hide(afterDelay: 2.0)
     }
     
-    static func showAlert(message: String) {
-        let alertController = UIAlertController(title: "AHMusic", message: message, preferredStyle: .Alert)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+    static func showAlert(_ message: String) {
+        let alertController = UIAlertController(title: "AHMusic", message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         let vc = appDelegate.window!.rootViewController
-        vc!.presentViewController(alertController, animated: true, completion: nil)
+        vc!.present(alertController, animated: true, completion: nil)
     }
     
     static func showSpinner() {
-        ALThreeCircleSpinner.config()
-        ALThreeCircleSpinner.show()
+        ALThreeCircleSpinner.show(color: RED)
     }
     
     static func hideSpinner() {
@@ -62,11 +60,10 @@ struct UIHelper {
     }
     
     static func root() -> UINavigationController {
-//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         return appDelegate.window!.rootViewController as! UINavigationController
     }
     
-    static func showMiniPlayer(index: Int, tracks: Array<Track>, isOffline: Bool = false) {
+    static func showMiniPlayer(_ index: Int, tracks: Array<Track>, isOffline: Bool = false) {
         if let miniPlayerView = appDelegate.miniPlayerView {
             miniPlayerView.player.isOffline = isOffline
             miniPlayerView.setTrackers(index, items: tracks)
@@ -75,10 +72,10 @@ struct UIHelper {
             appDelegate.miniPlayerView = view
 
             appDelegate.window!.addSubview(view)
-            view.autoPinEdgeToSuperviewEdge(.Left)
-            view.autoPinEdgeToSuperviewEdge(.Right)
-            view.autoPinEdgeToSuperviewEdge(.Bottom)
-            view.autoSetDimension(.Height, toSize: TD_BTN_SIZE*1.5)
+            view.autoPinEdge(toSuperviewEdge: .left)
+            view.autoPinEdge(toSuperviewEdge: .right)
+            view.autoPinEdge(toSuperviewEdge: .bottom)
+            view.autoSetDimension(.height, toSize: TD_BTN_SIZE*1.5)
         }
     }
     
@@ -91,8 +88,8 @@ struct UIHelper {
     }
     static func isValidTextField(field: UITextField) -> Bool {
         var isValid = false
-        let kText = field.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        !(kText == "") ? isValid = true : shakeWithView(field)
+        let kText = field.text?.trimmingCharacters(in: .whitespaces)
+        !(kText == "") ? isValid = true : shakeWithView(view: field)
         
         return isValid
     }
@@ -101,28 +98,28 @@ struct UIHelper {
         var isValid = false
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}"
         let email = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
-        email.evaluateWithObject(field.text) ? isValid = true : shakeWithView(field)
+        email.evaluate(with: field.text) ? isValid = true : shakeWithView(view: field)
         
         return isValid
     }
     
     static func isValidPassword(field: UITextField) -> Bool {
         var isValid = false
-        let kText = field.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        (kText.characters.count >= 2 && kText != "") ? isValid = true : shakeWithView(field)
+        let kText = field.text?.trimmingCharacters(in: .whitespaces)
+        (kText!.characters.count >= 2 && kText != "") ? isValid = true : shakeWithView(view: field)
 
         return isValid
     }
     
-    static func isValidPasswordsEqual(fieldOne: UITextField, fieldTwo: UITextField) -> Bool {
+    static func isValidPasswordsEqual(passwordField: UITextField, confirmPasswordField: UITextField) -> Bool {
         var isValid = false
-        let kPassword = fieldOne.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        let kConfirmPassword = fieldTwo.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        if kPassword == kConfirmPassword && kPassword != "" && kConfirmPassword != "" && kPassword.characters.count > 0 && kConfirmPassword.characters.count > 0 {
+        let kPassword = passwordField.text!.trimmingCharacters(in: .whitespaces)
+        let kConfirmPassword = confirmPasswordField.text!.trimmingCharacters(in: .whitespaces)
+        if kPassword == kConfirmPassword && kPassword != "" && kConfirmPassword != "" && kPassword.characters.count > 3 && kConfirmPassword.characters.count > 3 {
             isValid = true
         } else {
-            shakeWithView(fieldOne)
-            shakeWithView(fieldTwo)
+            shakeWithView(view: passwordField)
+            shakeWithView(view: confirmPasswordField)
         }
         
         return isValid
@@ -134,14 +131,14 @@ struct UIHelper {
         shake.repeatCount = 2
         shake.autoreverses = true
         
-        let from_point = CGPointMake(view.center.x - 5, view.center.y)
-        let from_value = NSValue(CGPoint: from_point)
+        let from_point = CGPoint(x: view.center.x - 5, y: view.center.y)
+        let from_value = NSValue(cgPoint: from_point)
         
-        let to_point = CGPointMake(view.center.x + 5, view.center.y)
-        let to_value = NSValue(CGPoint: to_point)
+        let to_point = CGPoint(x: view.center.x + 5, y: view.center.y)
+        let to_value = NSValue(cgPoint: to_point)
         
         shake.fromValue = from_value
         shake.toValue = to_value
-        view.layer.addAnimation(shake, forKey: "position")
+        view.layer.add(shake, forKey: "position")
     }
 }

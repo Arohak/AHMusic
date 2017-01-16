@@ -12,7 +12,7 @@ class SignUpView : BaseView {
     
     //MARK: - Create UIElements -
     let tableView: BaseTableView = {
-        let view = BaseTableView(frame: CGRectZero, style: .Grouped)
+        let view = BaseTableView(frame: CGRect.zero, style: .grouped)
 
         return view
     }()
@@ -30,16 +30,16 @@ class SignUpView : BaseView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(tableView)
         setConstraints()
     }
     
     //MARK: - Constraints -
     func setConstraints() {
-        tableView.autoPinEdgeToSuperviewEdge(.Top)
-        tableView.autoPinEdgeToSuperviewEdge(.Left)
-        tableView.autoPinEdgeToSuperviewEdge(.Right)
-        heighTBLConstraint = tableView.autoSetDimension(.Height, toSize: ScreenSize.HEIGHT - 64)
+        tableView.autoPinEdge(toSuperviewEdge: .top)
+        tableView.autoPinEdge(toSuperviewEdge: .left)
+        tableView.autoPinEdge(toSuperviewEdge: .right)
+        heighTBLConstraint = tableView.autoSetDimension(.height, toSize: ScreenSize.HEIGHT - 64)
     }
 }

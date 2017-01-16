@@ -8,5 +8,5 @@
 
 protocol RemoteControlReceivedProtocol {
 
-    func remoteControlReceivedWithEvent(event: UIEvent?)
+    func remoteControlReceivedWithEvent(_ event: UIEvent?)
 }

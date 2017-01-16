@@ -6,7 +6,9 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-public class ApplicationAssembly: TyphoonAssembly {
+//import Typhoon
+//
+//public class ApplicationAssembly: TyphoonAssembly {
 //
 //    //Application
 //    public dynamic func appDelegate() -> AnyObject {
@@ -39,4 +41,4 @@ public class ApplicationAssembly: TyphoonAssembly {
 //    public dynamic func landingRouter() -> AnyObject {
 //        return TyphoonDefinition.withClass(LandingRouter.self)
 //    }
-}
+//}

@@ -8,5 +8,5 @@
 
 protocol MiniPlayerPlayProtocol {
 
-    func playTrack(index: Int, tracks: Array<Track>)
+    func playTrack(_ index: Int, tracks: Array<Track>)
 }

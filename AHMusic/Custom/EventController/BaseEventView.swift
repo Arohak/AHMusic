@@ -9,28 +9,28 @@
 class BaseEventView: UIView {
     
     lazy var bgImageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
+        let view = UIImageView.newAutoLayout()
         view.image = UIImage(named: "bg")
         
         return view
     }()
     
     lazy var tableView: BaseTableView = {
-        let view = BaseTableView.newAutoLayoutView()
+        let view = BaseTableView.newAutoLayout()
         
         return view
     }()
     
     lazy var refresh: CarbonSwipeRefresh = {
         let view = CarbonSwipeRefresh(scrollView: self.tableView)
-        view.colors = RCOLORS
+        view?.colors = RCOLORS
         
-        return view
+        return view!
     }()
     
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         addSubview(bgImageView)
         addSubview(tableView)

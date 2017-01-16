@@ -21,14 +21,14 @@ class SettingsDetailViewController: UIViewController {
     }
     
     // MARK: - Private Methods -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = settingsDetailView
         
-        settingsDetailView.profile.button.addTarget(self, action: #selector(SettingsDetailViewController.profileAction(_:)), forControlEvents: .TouchUpInside)
+        settingsDetailView.profile.button.addTarget(self, action: #selector(SettingsDetailViewController.profileAction(_:)), for: .touchUpInside)
     }
     
     // MARK: - Actions -
-    func profileAction(sender: AHButton) {
+    func profileAction(_ sender: AHButton) {
         output.alert()
     }
 }
@@ -36,7 +36,7 @@ class SettingsDetailViewController: UIViewController {
 //MARK: - extension for SettingsViewInput -
 extension SettingsDetailViewController: SettingsDetailViewInput {
     
-    func setupInitialState(title: String) {
+    func setupInitialState(_ title: String) {
         settingsDetailView.profile.label.text = title
     }
 }

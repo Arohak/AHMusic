@@ -24,13 +24,13 @@ class PlaylistViewController: BaseViewController {
     }
     
     // MARK: - Private Method -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = playlistView
         
         playlistView.tableView.dataSource = self
         playlistView.tableView.delegate = self
-        playlistView.tableView.registerClass(PlaylistCell.self, forCellReuseIdentifier: cellIdentifire)
-        playlistView.refresh.addTarget(self, action: #selector(PlaylistViewController.refresh), forControlEvents: .ValueChanged)
+        playlistView.tableView.register(PlaylistCell.self, forCellReuseIdentifier: cellIdentifire)
+        playlistView.refresh.addTarget(self, action: #selector(PlaylistViewController.refresh), for: .valueChanged)
     }
     
     // MARK: - Actions -
@@ -44,7 +44,7 @@ class PlaylistViewController: BaseViewController {
 //MARK: - extension for PlaylistViewInput -
 extension PlaylistViewController: PlaylistViewInput {
     
-    func setupInitialState(items: Array<Playlist>) {
+    func setupInitialState(_ items: Array<Playlist>) {
         self.items = items
         
         playlistView.refresh.endRefreshing()
@@ -55,15 +55,15 @@ extension PlaylistViewController: PlaylistViewInput {
 //MARK: - extension for UITableView -
 extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return items.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire) as! PlaylistCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifire) as! PlaylistCell
         
-        cell.cellContentView.linkButton.addTarget(self, action: #selector(PlaylistViewController.openLink(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.linkButton.addTarget(self, action: #selector(PlaylistViewController.openLink(_:)), for: .touchUpInside)
         cell.cellContentView.linkButton.indexPath = indexPath
         
         let playlist = items[indexPath.row]
@@ -72,18 +72,18 @@ extension PlaylistViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return PL_CELL_HEIGHT
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let playlist = items[indexPath.row]
         output.openDetail(playlist)
     }
     
     // MARK: - Actions -
-    func openLink(sender: AHButton) {
+    func openLink(_ sender: AHButton) {
         let playlist = items[sender.indexPath.row]
         output.openLink(playlist)
     }

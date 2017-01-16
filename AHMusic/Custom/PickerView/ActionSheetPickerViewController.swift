@@ -10,12 +10,12 @@ class ActionSheetPickerViewController: UIAlertController {
     
     var pickerView: AHPickerView!
     
-    init(values: Array<String>, callback: PickerCallback) {
+    init(values: Array<String>, callback: @escaping PickerCallback) {
         super.init(nibName: nil, bundle: nil)
         
         title = nil
         message = "\n\n\n\n\n\n"
-        addAction(UIAlertAction(title: "Close", style: .Cancel) { _ in })
+        addAction(UIAlertAction(title: "Close", style: .cancel) { _ in })
         
         pickerView = AHPickerView(values: values, callback: callback)
     }
@@ -28,9 +28,9 @@ class ActionSheetPickerViewController: UIAlertController {
         super.viewDidLoad()
         
         self.view.addSubview(pickerView)
-        pickerView.autoPinEdgeToSuperviewEdge(ALEdge.Top)
-        pickerView.autoPinEdgeToSuperviewEdge(ALEdge.Bottom, withInset: 60)
-        pickerView.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
-        pickerView.autoSetDimension(.Height, toSize: ScreenSize.HEIGHT*0.25)
+        pickerView.autoPinEdge(toSuperviewEdge: .top)
+        pickerView.autoPinEdge(toSuperviewEdge: .bottom, withInset: 60)
+        pickerView.autoAlignAxis(toSuperviewAxis: .vertical)
+        pickerView.autoSetDimension(.height, toSize: ScreenSize.HEIGHT*0.25)
     }
 }

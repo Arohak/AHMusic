@@ -21,13 +21,13 @@ class WelcomeViewController: UIViewController {
     }
     
     // MARK: - Private Methods -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = welcomeView
         
         self.title = "Welcome"
-        welcomeView.signInButton.addTarget(self, action: #selector(WelcomeViewController.signInAction), forControlEvents: .TouchUpInside)
-        welcomeView.signUpButton.addTarget(self, action: #selector(WelcomeViewController.signUpAction), forControlEvents: .TouchUpInside)
-        welcomeView.guestButton.addTarget(self, action: #selector(WelcomeViewController.guestAction), forControlEvents: .TouchUpInside)
+        welcomeView.signInButton.addTarget(self, action: #selector(WelcomeViewController.signInAction), for: .touchUpInside)
+        welcomeView.signUpButton.addTarget(self, action: #selector(WelcomeViewController.signUpAction), for: .touchUpInside)
+        welcomeView.guestButton.addTarget(self, action: #selector(WelcomeViewController.guestAction), for: .touchUpInside)
     }
     
     // MARK: - Actions -

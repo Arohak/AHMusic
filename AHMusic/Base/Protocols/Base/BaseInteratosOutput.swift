@@ -8,7 +8,7 @@
 
 protocol BaseInteratosOutput {
     
-    func getAlbumResultIsReady(album: Album)
-    func getArtistResultIsReady(artist: Artist, tracks: Array<Track>)
-    func getTrackResultIsReady(track: Track, tracks: Array<Track>)
+    func getAlbumResultIsReady(_ album: Album)
+    func getArtistResultIsReady(_ artist: Artist, tracks: Array<Track>)
+    func getTrackResultIsReady(_ track: Track, tracks: Array<Track>)
 }

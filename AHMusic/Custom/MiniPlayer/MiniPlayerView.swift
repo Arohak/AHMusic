@@ -11,7 +11,7 @@ class MiniPlayerView: UIView {
     
     //MARK: - Create UIElements -
     lazy var bgView: UIView = {
-        let view = UIView.newAutoLayoutView()
+        let view = UIView.newAutoLayout()
         view.backgroundColor = BLACK
         view.alpha = 0.1
             
@@ -19,14 +19,14 @@ class MiniPlayerView: UIView {
     }()
     
     lazy var player: PlayerView = {
-        let view = PlayerView.newAutoLayoutView()
+        let view = PlayerView.newAutoLayout()
         
         return view
     }()
 
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         addAllUIElements()
     }
@@ -36,7 +36,7 @@ class MiniPlayerView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(bgView)
         addSubview(player)
         
@@ -47,10 +47,10 @@ class MiniPlayerView: UIView {
     func setConstraints() {
         bgView.autoPinEdgesToSuperviewEdges()
         
-        player.autoPinEdgeToSuperviewEdge(.Left)
-        player.autoPinEdgeToSuperviewEdge(.Right)
-        player.autoPinEdgeToSuperviewEdge(.Bottom)
-        player.autoSetDimension(.Height, toSize: TD_BTN_SIZE*1.5)
+        player.autoPinEdge(toSuperviewEdge: .left)
+        player.autoPinEdge(toSuperviewEdge: .right)
+        player.autoPinEdge(toSuperviewEdge: .bottom)
+        player.autoSetDimension(.height, toSize: TD_BTN_SIZE*1.5)
     }
 }
 
@@ -59,7 +59,7 @@ class PlayerView: UIView {
     
     //MARK: - Create UIElements -
     lazy var bgImageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
+        let view = UIImageView.newAutoLayout()
         view.backgroundColor = BLACK
         view.alpha = 0.6
 
@@ -67,44 +67,44 @@ class PlayerView: UIView {
     }()
 
     lazy var slider: UISlider = {
-        let view = UISlider.newAutoLayoutView()
+        let view = UISlider.newAutoLayout()
         view.minimumTrackTintColor = BLUE_LIGHT
-        view.setThumbImage(UIImage(named: "img_pl_slider")!, forState: .Normal)
+        view.setThumbImage(UIImage(named: "img_pl_slider")!, for: .normal)
         
         return view
     }()
     
     lazy var playPauseButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_pl_play"), forState: .Normal)
-        view.setBackgroundImage(UIImage(named: "img_pl_pause"), forState: .Selected)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_pl_play"), for: .normal)
+        view.setBackgroundImage(UIImage(named: "img_pl_pause"), for: .selected)
 
         return view
     }()
     
     lazy var prevButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_pl_prev"), forState: .Normal)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_pl_prev"), for: .normal)
 
         return view
     }()
     
     lazy var nextButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_pl_next"), forState: .Normal)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_pl_next"), for: .normal)
 
         return view
     }()
     
     lazy var closeButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_pl_close"), forState: .Normal)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_pl_close"), for: .normal)
         
         return view
     }()
     
     lazy var titleLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
+        let view = AHLabel.newAutoLayout()
         view.font = TD_TIME_FONT
         view.numberOfLines = 0
 
@@ -114,7 +114,7 @@ class PlayerView: UIView {
     
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
 
         addAllUIElements()
     }
@@ -124,7 +124,7 @@ class PlayerView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(bgImageView)
         addSubview(slider)
         addSubview(titleLabel)
@@ -140,28 +140,28 @@ class PlayerView: UIView {
     func setConstraints() {
         bgImageView.autoPinEdgesToSuperviewEdges()
         
-        slider.autoPinEdgeToSuperviewEdge(.Top, withInset: 0)
-        slider.autoPinEdgeToSuperviewEdge(.Left, withInset: 0)
-        slider.autoPinEdgeToSuperviewEdge(.Right, withInset: 0)
+        slider.autoPinEdge(toSuperviewEdge: .top, withInset: 0)
+        slider.autoPinEdge(toSuperviewEdge: .left, withInset: 0)
+        slider.autoPinEdge(toSuperviewEdge: .right, withInset: 0)
         
-        titleLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: playPauseButton)
-        titleLabel.autoPinEdge(.Left, toEdge: .Right, ofView: nextButton, withOffset: TD_OFFSET)
-        titleLabel.autoPinEdge(.Right, toEdge: .Left, ofView: closeButton, withOffset: -TD_OFFSET)
+        titleLabel.autoAlignAxis(.horizontal, toSameAxisOf: playPauseButton)
+        titleLabel.autoPinEdge(.left, to: .right, of: nextButton, withOffset: TD_OFFSET)
+        titleLabel.autoPinEdge(.right, to: .left, of: closeButton, withOffset: -TD_OFFSET)
         
-        prevButton.autoAlignAxis(.Horizontal, toSameAxisOfView: playPauseButton)
-        prevButton.autoPinEdgeToSuperviewEdge(.Left, withInset: TD_OFFSET)
-        prevButton.autoSetDimensionsToSize(CGSize(width: TD_BTN_SIZE*0.7, height: TD_BTN_SIZE*0.7))
+        prevButton.autoAlignAxis(.horizontal, toSameAxisOf: playPauseButton)
+        prevButton.autoPinEdge(toSuperviewEdge: .left, withInset: TD_OFFSET)
+        prevButton.autoSetDimensions(to: CGSize(width: TD_BTN_SIZE*0.7, height: TD_BTN_SIZE*0.7))
         
-        playPauseButton.autoAlignAxisToSuperviewAxis(.Horizontal)
-        playPauseButton.autoPinEdge(.Left, toEdge: .Right, ofView: prevButton, withOffset: TD_OFFSET)
-        playPauseButton.autoSetDimensionsToSize(CGSize(width: TD_BTN_SIZE, height: TD_BTN_SIZE))
+        playPauseButton.autoAlignAxis(toSuperviewAxis: .horizontal)
+        playPauseButton.autoPinEdge(.left, to: .right, of: prevButton, withOffset: TD_OFFSET)
+        playPauseButton.autoSetDimensions(to: CGSize(width: TD_BTN_SIZE, height: TD_BTN_SIZE))
         
-        nextButton.autoAlignAxis(.Horizontal, toSameAxisOfView: playPauseButton)
-        nextButton.autoPinEdge(.Left, toEdge: .Right, ofView: playPauseButton, withOffset: TD_OFFSET)
-        nextButton.autoSetDimensionsToSize(CGSize(width: TD_BTN_SIZE*0.7, height: TD_BTN_SIZE*0.7))
+        nextButton.autoAlignAxis(.horizontal, toSameAxisOf: playPauseButton)
+        nextButton.autoPinEdge(.left, to: .right, of: playPauseButton, withOffset: TD_OFFSET)
+        nextButton.autoSetDimensions(to: CGSize(width: TD_BTN_SIZE*0.7, height: TD_BTN_SIZE*0.7))
         
-        closeButton.autoAlignAxis(.Horizontal, toSameAxisOfView: playPauseButton)
-        closeButton.autoPinEdgeToSuperviewEdge(.Right, withInset: TD_OFFSET)
-        closeButton.autoSetDimensionsToSize(CGSize(width: TD_BTN_SIZE*0.7, height: TD_BTN_SIZE*0.7))
+        closeButton.autoAlignAxis(.horizontal, toSameAxisOf: playPauseButton)
+        closeButton.autoPinEdge(toSuperviewEdge: .right, withInset: TD_OFFSET)
+        closeButton.autoSetDimensions(to: CGSize(width: TD_BTN_SIZE*0.7, height: TD_BTN_SIZE*0.7))
     }
 }

@@ -8,14 +8,14 @@
 
 class PlaylistModuleConfigurator {
     
-    func configureModuleForController(viewController: AnyObject) {
+    func configureModuleForController(_ viewController: AnyObject) {
         
         if let viewController = viewController as? PlaylistViewController {
             configure(viewController)
         }
     }
     
-    private func configure(viewController: PlaylistViewController) {
+    fileprivate func configure(_ viewController: PlaylistViewController) {
         
         let presenter = PlaylistPresenter()
         let interactor = PlaylistInteractor()

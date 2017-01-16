@@ -8,5 +8,5 @@
 
 protocol TrackInteractorOutput: BaseInteratosOutput {
 
-    func searchResultIsReady(items: Array<Track>)
+    func searchResultIsReady(_ items: Array<Track>)
 }

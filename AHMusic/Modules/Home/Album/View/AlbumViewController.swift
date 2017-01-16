@@ -24,13 +24,13 @@ class AlbumViewController: BaseViewController {
     }
     
     // MARK: - Private Method -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = albumView
         
         albumView.tableView.dataSource = self
         albumView.tableView.delegate = self
-        albumView.tableView.registerClass(AlbumCell.self, forCellReuseIdentifier: cellIdentifire)
-        albumView.refresh.addTarget(self, action: #selector(AlbumViewController.refresh), forControlEvents: .ValueChanged)
+        albumView.tableView.register(AlbumCell.self, forCellReuseIdentifier: cellIdentifire)
+        albumView.refresh.addTarget(self, action: #selector(AlbumViewController.refresh), for: .valueChanged)
     }
     
     // MARK: - Actions -
@@ -44,7 +44,7 @@ class AlbumViewController: BaseViewController {
 //MARK: - extension for AlbumViewInput -
 extension AlbumViewController: AlbumViewInput {
     
-    func setupInitialState(items: Array<Album>) {
+    func setupInitialState(_ items: Array<Album>) {
         self.items = items
         
         albumView.refresh.endRefreshing()
@@ -55,15 +55,15 @@ extension AlbumViewController: AlbumViewInput {
 //MARK: - extension for UITableView -
 extension AlbumViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return items.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire) as! AlbumCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifire) as! AlbumCell
         
-        cell.cellContentView.linkButton.addTarget(self, action: #selector(AlbumViewController.openLink(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.linkButton.addTarget(self, action: #selector(AlbumViewController.openLink(_:)), for: .touchUpInside)
         cell.cellContentView.linkButton.indexPath = indexPath
         
         let album = items[indexPath.row]
@@ -72,18 +72,18 @@ extension AlbumViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return AL_CELL_HEIGHT
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let album = items[indexPath.row]
         output.openDetail(album)
     }
     
     // MARK: - Actions -
-    func openLink(sender: AHButton) {
+    func openLink(_ sender: AHButton) {
         let album = items[sender.indexPath.row]
         output.openLink(album)
     }

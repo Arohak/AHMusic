@@ -8,5 +8,5 @@
 
 protocol ArtistViewOutput: BaseViewOutput {
 
-    func openDetail(artist: Artist)
+    func openDetail(_ artist: Artist)
 }

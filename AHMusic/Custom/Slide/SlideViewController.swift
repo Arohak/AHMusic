@@ -15,7 +15,7 @@ class SlideViewController: SlideMenuController {
     lazy var textField: AHTextField = {
         let view = AHTextField(frame: CGRect(x: 0, y: 0, width: ScreenSize.WIDTH - 2*CA_ICON_SIZE, height: 25))
         view.backgroundColor = WHITE
-        view.returnKeyType = .Search
+        view.returnKeyType = .search
         view.alpha = 0
         view.delegate = self
         
@@ -23,9 +23,9 @@ class SlideViewController: SlideMenuController {
     }()
     
     lazy var searchBar: UISearchBar = {
-        let view = UISearchBar(frame: CGRectZero)
+        let view = UISearchBar(frame: CGRect.zero)
         view.backgroundColor = WHITE
-        view.hidden = true
+        view.isHidden = true
         view.alpha = 0
         
         return view
@@ -33,10 +33,10 @@ class SlideViewController: SlideMenuController {
     
     lazy var leftItem: UIBarButtonItem = {
         let menuButton = AHButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        menuButton.setImage(UIImage(named:"img_slide_menu"), forState: .Normal)
-        menuButton.setImage(UIImage(named: "img_slide_back"), forState: .Selected)
-        menuButton.imageEdgeInsets = UIEdgeInsetsZero
-        menuButton.addTarget(self, action: #selector(SlideViewController.openMenu), forControlEvents: .TouchUpInside)
+        menuButton.setImage(UIImage(named:"img_slide_menu"), for: .normal)
+        menuButton.setImage(UIImage(named: "img_slide_back"), for: .selected)
+        menuButton.imageEdgeInsets = UIEdgeInsets.zero
+        menuButton.addTarget(self, action: #selector(SlideViewController.openMenu), for: .touchUpInside)
         let item = UIBarButtonItem(customView: menuButton)
         
         return item
@@ -44,9 +44,9 @@ class SlideViewController: SlideMenuController {
     
     lazy var rightItem: UIBarButtonItem = {
         let searchButton = AHButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-        searchButton.setImage(UIImage(named:"img_slide_search"), forState: .Normal)
-        searchButton.imageEdgeInsets = UIEdgeInsetsZero
-        searchButton.addTarget(self, action: #selector(SlideViewController.openSearch), forControlEvents: .TouchUpInside)
+        searchButton.setImage(UIImage(named:"img_slide_search"), for: .normal)
+        searchButton.imageEdgeInsets = UIEdgeInsets.zero
+        searchButton.addTarget(self, action: #selector(SlideViewController.openSearch), for: .touchUpInside)
         let item = UIBarButtonItem(customView: searchButton)
         
         return item
@@ -60,7 +60,7 @@ class SlideViewController: SlideMenuController {
     }
 
     //MARK: -  Private Methods -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         configureNavigationBar()
         
         self.view.backgroundColor = BLACK_59
@@ -72,10 +72,10 @@ class SlideViewController: SlideMenuController {
         self.output = main.output as! CategoryPresenter
     }
     
-    private func configureNavigationBar() {
+    fileprivate func configureNavigationBar() {
         navigationItem.title = "AHMusic"
-        navigationItem.setLeftBarButtonItem(leftItem, animated: false)
-        navigationItem.setRightBarButtonItem(rightItem, animated: false)
+        navigationItem.setLeftBarButton(leftItem, animated: false)
+        navigationItem.setRightBarButton(rightItem, animated: false)
     }
     
     //MARK: -  Actions -
@@ -90,7 +90,7 @@ class SlideViewController: SlideMenuController {
     //MARK: -  Animation -
     func textFieldAnimation() {
         if isAnimation {
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
                 self.navigationItem.titleView = self.textField
                 self.textField.becomeFirstResponder()
                 self.textField.alpha = 1
@@ -100,7 +100,7 @@ class SlideViewController: SlideMenuController {
                     self.isAnimation = !self.isAnimation
             })
         } else {
-            UIView.animateWithDuration(0.5, animations: {
+            UIView.animate(withDuration: 0.5, animations: {
                 self.textField.resignFirstResponder()
                 self.textField.alpha = 0
 
@@ -117,25 +117,25 @@ extension SlideViewController: SlideMenuControllerDelegate {
 
     func leftWillOpen() {
         let menuButton = navigationItem.leftBarButtonItem?.customView as! UIButton
-        menuButton.selected = true
+        menuButton.isSelected = true
     }
     
     func leftWillClose() {
         let menuButton = navigationItem.leftBarButtonItem?.customView as! UIButton
-        menuButton.selected = false
+        menuButton.isSelected = false
     }
 }
 
 //MARK: - extension for UITextFieldDelegate -
 extension SlideViewController: UITextFieldDelegate {
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if textField.text!.characters.count < 3 {
             UIHelper.showHUD("search text min 3 simbol")
         } else {
             
-            if let slide = UIHelper.root().visibleViewController as? SlideViewController where slide.mainViewController is FavoriteViewController {
+            if let slide = UIHelper.root().visibleViewController as? SlideViewController, slide.mainViewController is FavoriteViewController {
                 let favorite = slide.mainViewController as! FavoriteViewController
                 favorite.output.search(textField.text!)
                 textFieldAnimation()
@@ -143,7 +143,7 @@ extension SlideViewController: UITextFieldDelegate {
                 return true
             }
             
-            if let slide = UIHelper.root().visibleViewController as? SlideViewController where slide.mainViewController is DownloadViewController {
+            if let slide = UIHelper.root().visibleViewController as? SlideViewController, slide.mainViewController is DownloadViewController {
                 let download = slide.mainViewController as! DownloadViewController
                 download.output.search(textField.text!)
                 textFieldAnimation()
@@ -151,10 +151,10 @@ extension SlideViewController: UITextFieldDelegate {
                 return true
             }
             
-            if let tab = tab where !(tab.selectedViewController is StationViewController) {
+            if let tab = tab, !(tab.selectedViewController is StationViewController) {
                 let vc = tab.selectedViewController
-                vc.keyword = textField.text!
-                vc.refresh()
+                vc?.keyword = textField.text!
+                vc?.refresh()
             } else {
                 let item = Category(data: JSON(["name" : textField.text!]))
                 output.viewIsSelectItem(item)

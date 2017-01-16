@@ -24,13 +24,13 @@ class ArtistViewController: BaseViewController {
     }
     
     // MARK: - Private Method -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = artistView
         
         artistView.collection.dataSource = self
         artistView.collection.delegate = self
-        artistView.collection.registerClass(ArtistCell.self, forCellWithReuseIdentifier: collectionCellIdentifire)
-        artistView.refresh.addTarget(self, action: #selector(ArtistViewController.refresh), forControlEvents: .ValueChanged)
+        artistView.collection.register(ArtistCell.self, forCellWithReuseIdentifier: collectionCellIdentifire)
+        artistView.refresh.addTarget(self, action: #selector(ArtistViewController.refresh), for: .valueChanged)
     }
     
     // MARK: - Actions -
@@ -44,7 +44,7 @@ class ArtistViewController: BaseViewController {
 //MARK: - extension for ArtistViewInput -
 extension ArtistViewController: ArtistViewInput {
     
-    func setupInitialState(items: Array<Artist>) {
+    func setupInitialState(_ items: Array<Artist>) {
         self.items = items
         
         artistView.refresh.endRefreshing()
@@ -55,31 +55,31 @@ extension ArtistViewController: ArtistViewInput {
 //MARK: - extension for UICollectionView -
 extension ArtistViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return items.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(collectionCellIdentifire, forIndexPath: indexPath) as! ArtistCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellIdentifire, for: indexPath) as! ArtistCell
         let item = items[indexPath.row]
         cell.setValues(item)
         
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let artist = items[indexPath.row]
         output.openDetail(artist)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: AR_CELL_WIDTH, height: AR_CELL_WIDTH*1.2)
         
         return size
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         return UIEdgeInsets(top: AR_INSET, left: AR_INSET, bottom: AR_INSET, right: AR_INSET)
     }

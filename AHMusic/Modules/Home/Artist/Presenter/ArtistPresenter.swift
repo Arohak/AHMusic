@@ -16,11 +16,11 @@ class ArtistPresenter {
 //MARK: - extension for ArtistViewOutput -
 extension ArtistPresenter: ArtistViewOutput {
     
-    func viewIsReady(keyword: String) {
+    func viewIsReady(_ keyword: String) {
         interactor.searchArtist(keyword)
     }
     
-    func openDetail(artist: Artist) {
+    func openDetail(_ artist: Artist) {
         interactor.getArtist("\(artist.id)")
     }
 }
@@ -28,11 +28,11 @@ extension ArtistPresenter: ArtistViewOutput {
 //MARK: - extension for ArtistInteractorOutput -
 extension ArtistPresenter: ArtistInteractorOutput {
  
-    func searchResultIsReady(items: Array<Artist>) {
+    func searchResultIsReady(_ items: Array<Artist>) {
         view.setupInitialState(items)
     }
     
-    func getResultIsReady(artist: Artist, tracks: Array<Track>) {
+    func getResultIsReady(_ artist: Artist, tracks: Array<Track>) {
         let json = JSON(["imageURL" : artist.pictureBig, "tracks" : tracks, "info" : "Name:\t\(artist.name)\nAlbums:\t\(artist.nbAlbum)\nFans:\t\(artist.nbFan)"])
         let detail = Detail(data: json)
         

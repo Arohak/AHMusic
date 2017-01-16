@@ -8,14 +8,14 @@
 
 class ArtistModuleConfigurator {
 
-    func configureModuleForController(viewController: AnyObject) {
+    func configureModuleForController(_ viewController: AnyObject) {
         
         if let viewController = viewController as? ArtistViewController {
             configure(viewController)
         }
     }
     
-    private func configure(viewController: ArtistViewController) {
+    fileprivate func configure(_ viewController: ArtistViewController) {
         
         let presenter = ArtistPresenter()
         let interactor = ArtistInteractor()

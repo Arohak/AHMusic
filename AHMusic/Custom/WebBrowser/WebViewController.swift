@@ -12,7 +12,7 @@ class WebViewController: UIViewController {
     var url: NSURL!
     
     lazy var browser: UIWebView = {
-        let view = UIWebView.newAutoLayoutView()
+        let view = UIWebView.newAutoLayout()
         view.delegate = self
         
         return view
@@ -42,32 +42,32 @@ class WebViewController: UIViewController {
         browser.autoPinEdgesToSuperviewEdges()
         
         self.navigationItem.title = resourceName
-        self.navigationItem.setRightBarButtonItem(UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: #selector(WebViewController.close)), animated: true)
+        self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(WebViewController.close)), animated: true)
         
         UIHelper.showSpinner()
-        browser.loadRequest(NSURLRequest(URL: url))
+        browser.loadRequest(URLRequest(url: url as URL) as URLRequest)
     }
     
     //MARK: - Actions -
     func close() {
         UIHelper.hideSpinner()
-        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.dismiss(animated: true, completion: nil)
     }
 }
 
 //MARK: - extension for UIWebViewDelegate -
 extension WebViewController: UIWebViewDelegate {
     
-    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         
         return true
     }
     
-    func webViewDidFinishLoad(webView: UIWebView) {
+    func webViewDidFinishLoad(_ webView: UIWebView) {
        UIHelper.hideSpinner()
     }
     
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         UIHelper.hideSpinner()
     }
 }

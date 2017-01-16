@@ -10,72 +10,72 @@ class TDActionView: UIView {
     
     //MARK: - Create UIElements -
     lazy var bgImageView: UIView = {
-        let view = UIImageView.newAutoLayoutView()
+        let view = UIImageView.newAutoLayout()
 
         return view
     }()
 
     lazy var slider: UISlider = {
-        let view = UISlider.newAutoLayoutView()
-        view.setThumbImage(UIImage(named: "img_max_pl_slider")!, forState: .Normal)
+        let view = UISlider.newAutoLayout()
+        view.setThumbImage(UIImage(named: "img_max_pl_slider")!, for: .normal)
         view.tintColor = RED_LIGHT
         
         return view
     }()
     
     lazy var volumeImageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
+        let view = UIImageView.newAutoLayout()
         view.image = UIImage(named: "img_max_pl_sound")
         
         return view
     }()
     
     lazy var volumeSlider: UISlider = {
-        let view = UISlider.newAutoLayoutView()
-        view.setThumbImage(UIImage(named: "img_max_pl_slider")!, forState: .Normal)
+        let view = UISlider.newAutoLayout()
+        view.setThumbImage(UIImage(named: "img_max_pl_slider")!, for: .normal)
         view.tintColor = RED_LIGHT
         
         return view
     }()
     
     lazy var playPauseButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_max_pl_play"), forState: .Normal)
-        view.setBackgroundImage(UIImage(named: "img_max_pl_pause"), forState: .Selected)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_max_pl_play"), for: .normal)
+        view.setBackgroundImage(UIImage(named: "img_max_pl_pause"), for: .selected)
 
         return view
     }()
     
     lazy var prevButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_max_pl_prev"), forState: .Normal)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_max_pl_prev"), for: .normal)
 
         return view
     }()
     
     lazy var nextButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_max_pl_next"), forState: .Normal)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_max_pl_next"), for: .normal)
 
         return view
     }()
     
     lazy var replayButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_max_pl_reset"), forState: .Normal)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_max_pl_reset"), for: .normal)
 
         return view
     }()
     
     lazy var stopButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_max_pl_stop"), forState: .Normal)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_max_pl_stop"), for: .normal)
 
         return view
     }()
     
     lazy var currentTimeLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
+        let view = AHLabel.newAutoLayout()
         view.textColor = RED_LIGHT
         view.font = TD_TIME_FONT
         view.text = "00:00"
@@ -84,7 +84,7 @@ class TDActionView: UIView {
     }()
     
     lazy var durationLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
+        let view = AHLabel.newAutoLayout()
         view.textColor = RED_LIGHT
         view.font = TD_TIME_FONT
         view.text = "03:00"
@@ -93,15 +93,15 @@ class TDActionView: UIView {
     }()
     
     lazy var trackListButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_max_pl_list"), forState: .Normal)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_max_pl_list"), for: .normal)
 
         return view
     }()
     
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         addAllUIElements()
     }
@@ -111,7 +111,7 @@ class TDActionView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(bgImageView)
         addSubview(slider)
         addSubview(volumeImageView)
@@ -132,47 +132,47 @@ class TDActionView: UIView {
     func setConstraints() {
         bgImageView.autoPinEdgesToSuperviewEdges()
         
-        slider.autoPinEdge(.Bottom, toEdge: .Top, ofView: playPauseButton, withOffset: -TD_INSET)
-        slider.autoPinEdge(.Left, toEdge: .Right, ofView: currentTimeLabel, withOffset: TD_INSET)
-        slider.autoPinEdge(.Right, toEdge: .Left, ofView: durationLabel, withOffset: -TD_INSET)
+        slider.autoPinEdge(.bottom, to: .top, of: playPauseButton, withOffset: -TD_INSET)
+        slider.autoPinEdge(.left, to: .right, of: currentTimeLabel, withOffset: TD_INSET)
+        slider.autoPinEdge(.right, to: .left, of: durationLabel, withOffset: -TD_INSET)
         
-        volumeImageView.autoAlignAxis(.Horizontal, toSameAxisOfView: volumeSlider)
-        volumeImageView.autoPinEdge(.Right, toEdge: .Left, ofView: volumeSlider, withOffset: -TD_INSET)
-        volumeImageView.autoSetDimensionsToSize(CGSize(width: TD_BTN_SIZE*0.4, height: TD_BTN_SIZE*0.4))
+        volumeImageView.autoAlignAxis(.horizontal, toSameAxisOf: volumeSlider)
+        volumeImageView.autoPinEdge(.right, to: .left, of: volumeSlider, withOffset: -TD_INSET)
+        volumeImageView.autoSetDimensions(to: CGSize(width: TD_BTN_SIZE*0.4, height: TD_BTN_SIZE*0.4))
         
-        volumeSlider.autoPinEdge(.Top, toEdge: .Bottom, ofView: playPauseButton, withOffset: TD_OFFSET)
-        volumeSlider.autoPinEdge(.Left, toEdge: .Right, ofView: currentTimeLabel, withOffset: TD_INSET)
-        volumeSlider.autoMatchDimension(.Width, toDimension: .Width, ofView: slider, withMultiplier: 0.3)
+        volumeSlider.autoPinEdge(.top, to: .bottom, of: playPauseButton, withOffset: TD_OFFSET)
+        volumeSlider.autoPinEdge(.left, to: .right, of: currentTimeLabel, withOffset: TD_INSET)
+        volumeSlider.autoMatch(.width, to: .width, of: slider, withMultiplier: 0.3)
 
-        currentTimeLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: slider)
-        currentTimeLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: TD_OFFSET)
-        currentTimeLabel.autoSetDimension(.Width, toSize: TD_OFFSET*2)
+        currentTimeLabel.autoAlignAxis(.horizontal, toSameAxisOf: slider)
+        currentTimeLabel.autoPinEdge(toSuperviewEdge: .left, withInset: TD_OFFSET)
+        currentTimeLabel.autoSetDimension(.width, toSize: TD_OFFSET*2)
         
-        durationLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: slider)
-        durationLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: TD_OFFSET)
-        durationLabel.autoSetDimension(.Width, toSize: TD_OFFSET*2)
+        durationLabel.autoAlignAxis(.horizontal, toSameAxisOf: slider)
+        durationLabel.autoPinEdge(toSuperviewEdge: .right, withInset: TD_OFFSET)
+        durationLabel.autoSetDimension(.width, toSize: TD_OFFSET*2)
 
-        trackListButton.autoAlignAxis(.Horizontal, toSameAxisOfView: volumeSlider)
-        trackListButton.autoPinEdgeToSuperviewEdge(.Right, withInset: TD_INSET)
-        trackListButton.autoSetDimensionsToSize(CGSize(width: TD_BBTN_SIZE, height: TD_BBTN_SIZE))
+        trackListButton.autoAlignAxis(.horizontal, toSameAxisOf: volumeSlider)
+        trackListButton.autoPinEdge(toSuperviewEdge: .right, withInset: TD_INSET)
+        trackListButton.autoSetDimensions(to: CGSize(width: TD_BBTN_SIZE, height: TD_BBTN_SIZE))
         
         let items = [playPauseButton, stopButton, prevButton, nextButton, replayButton]
         
-        for (index, item) in items.enumerate() {
+        for (index, item) in items.enumerated() {
             switch index {
             case 0, 1:
-                item.autoSetDimensionsToSize(CGSize(width: TD_BBTN_SIZE, height: TD_BBTN_SIZE))
+                item.autoSetDimensions(to: CGSize(width: TD_BBTN_SIZE, height: TD_BBTN_SIZE))
             default:
-                item.autoSetDimensionsToSize(CGSize(width: TD_BBTN_SIZE*0.8, height: TD_BBTN_SIZE*0.8))
+                item.autoSetDimensions(to: CGSize(width: TD_BBTN_SIZE*0.8, height: TD_BBTN_SIZE*0.8))
             }
         }
         
-        items.first!.autoPinEdge(.Left, toEdge: .Left, ofView: slider)
-        items.first!.autoAlignAxisToSuperviewAxis(.Horizontal)
-        for  (index, item) in items.enumerate() {
+        items.first!.autoPinEdge(.left, to: .left, of: slider)
+        items.first!.autoAlignAxis(toSuperviewAxis: .horizontal)
+        for  (index, item) in items.enumerated() {
             if index != 0 {
-                item.autoAlignAxisToSuperviewAxis(.Horizontal)
-                item.autoPinEdge(.Left, toEdge: .Right, ofView: items[index - 1], withOffset: TD_INSET/2)
+                item.autoAlignAxis(toSuperviewAxis: .horizontal)
+                item.autoPinEdge(.left, to: .right, of: items[index - 1], withOffset: TD_INSET/2)
             }
         }
         

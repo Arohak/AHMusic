@@ -15,9 +15,9 @@ class ArtistInteractor {
 //MARK: - extension for ArtistInteractorInput -
 extension ArtistInteractor: ArtistInteractorInput {
     
-    func searchArtist(name: String) {
-        _ = apiHelper.rx_SearchArtist(name)
-            .subscribeNext({ result in
+    func searchArtist(_ name: String) {
+        _ = apiHelper.rx_SearchArtist(name: name)
+            .subscribe(onNext: { result in
                 var temp = Array<Artist>()
                 for item in result["data"].arrayValue {
                     let artist = Artist(data: item)
@@ -28,13 +28,13 @@ extension ArtistInteractor: ArtistInteractorInput {
             })
     }
     
-    func getArtist(id: String) {
-        _ = apiHelper.rx_GetArtist(id)
-            .subscribeNext({ result in
+    func getArtist(_ id: String) {
+        _ = apiHelper.rx_GetArtist(id: id)
+            .subscribe(onNext: { result in
                 let artist = Artist(data: result)
                 
-                _ = apiHelper.rx_GetArtistTracks(id, limit: "20")
-                    .subscribeNext({ result in
+                _ = apiHelper.rx_GetArtistTracks(id: id, limit: "20")
+                    .subscribe(onNext: { result in
                         var tracks = Array<Track>()
                         for item in result["data"].arrayValue {
                             let track = Track(data: item)

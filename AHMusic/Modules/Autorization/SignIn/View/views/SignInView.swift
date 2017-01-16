@@ -12,7 +12,7 @@ class SignInView : BaseView {
     
     //MARK: - Create UIElements -
     let tableView: BaseTableView = {
-        let view = BaseTableView(frame: CGRectZero, style: UITableViewStyle.Grouped)
+        let view = BaseTableView(frame: CGRect.zero, style: UITableViewStyle.grouped)
 
         return view
     }()
@@ -30,17 +30,17 @@ class SignInView : BaseView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(tableView)
         setConstraints()
     }
     
     //MARK: - Constraints -
     func setConstraints() {
-        tableView.autoPinEdgeToSuperviewEdge(.Top)
-        tableView.autoPinEdgeToSuperviewEdge(.Left)
-        tableView.autoPinEdgeToSuperviewEdge(.Right)
-        heighTBLConstraint = tableView.autoSetDimension(.Height, toSize: ScreenSize.HEIGHT - NAV_HEIGHT)
+        tableView.autoPinEdge(toSuperviewEdge: .top)
+        tableView.autoPinEdge(toSuperviewEdge: .left)
+        tableView.autoPinEdge(toSuperviewEdge: .right)
+        heighTBLConstraint = tableView.autoSetDimension(.height, toSize: ScreenSize.HEIGHT - NAV_HEIGHT)
     }
 }
 
@@ -65,7 +65,7 @@ class FieldCell : BaseTableViewCell {
 class SICellContentView: UIView {
     
     let authTextField: AUTHTextField = {
-        let view = AUTHTextField.newAutoLayoutView()
+        let view = AUTHTextField.newAutoLayout()
         
         return view
     }()
@@ -82,7 +82,7 @@ class SICellContentView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(authTextField)
         
         setConstraints()
@@ -90,8 +90,8 @@ class SICellContentView: UIView {
     
     //MARK: - Constraints -
     func setConstraints() {
-        authTextField.autoPinEdgeToSuperviewEdge(.Top)
-        authTextField.autoAlignAxisToSuperviewAxis(.Vertical)
-        authTextField.autoSetDimensionsToSize(CGSize(width: AU_FIELD_WIDTH, height: AU_FIELD_HEIGHT))
+        authTextField.autoPinEdge(toSuperviewEdge: .top)
+        authTextField.autoAlignAxis(toSuperviewAxis: .vertical)
+        authTextField.autoSetDimensions(to: CGSize(width: AU_FIELD_WIDTH, height: AU_FIELD_HEIGHT))
     }
 }

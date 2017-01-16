@@ -8,5 +8,5 @@
 
 protocol OpenTrackLinkProtocol {
     
-    func openLink(track: Track)
+    func openLink(_ track: Track)
 }

@@ -10,16 +10,16 @@
 class AlbumView: BaseView {
     
     lazy var tableView: BaseTableView = {
-        let view = BaseTableView.newAutoLayoutView()
+        let view = BaseTableView.newAutoLayout()
         
         return view
     }()
     
     lazy var refresh: CarbonSwipeRefresh = {
         let view = CarbonSwipeRefresh(scrollView: self.tableView)
-        view.colors = RCOLORS
+        view?.colors = RCOLORS
         
-        return view
+        return view!
     }()
     
     //MARK: - Initialize
@@ -34,7 +34,7 @@ class AlbumView: BaseView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(tableView)
         addSubview(refresh)
 
@@ -61,10 +61,10 @@ class AlbumCell: BaseTableViewCell {
         cellContentView.autoPinEdgesToSuperviewEdges()
     }
     
-    func setValues(item: Album) {
-        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.cover)!, placeholderImage: Image(named: "img_placeholder"))
+    func setValues(_ item: Album) {
+        cellContentView.imageView.kf.setImage(with: URL(string: item.cover), placeholder: Image(named: "img_placeholder"))
         cellContentView.titleLabel.text = item.title
-        cellContentView.linkButton.setTitle(item.link, forState: .Normal)
+//        cellContentView.linkButton.setTitle(item.link, for: .normal)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -77,7 +77,7 @@ class AlbumCellContentView: UIView {
     
     //MARK: - Create UIElements
     lazy var imageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
+        let view = UIImageView.newAutoLayout()
         view.layer.cornerRadius = AL_CELL_HEIGHT*0.8/2
         view.clipsToBounds = true
         
@@ -85,15 +85,15 @@ class AlbumCellContentView: UIView {
     }()
     
     lazy var titleLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
+        let view = AHLabel.newAutoLayout()
         view.font = AL_TITLE_FONT
-        view.numberOfLines = 0
+        view.numberOfLines = 4
         
         return view
     }()
     
     lazy var linkButton: LinkButton = {
-        let view = LinkButton.newAutoLayoutView()
+        let view = LinkButton.newAutoLayout()
 
         
         return view
@@ -101,7 +101,7 @@ class AlbumCellContentView: UIView {
     
     //MARK: - Initialize
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         addAllUIElements()
     }
@@ -114,24 +114,24 @@ class AlbumCellContentView: UIView {
     func addAllUIElements() {
         addSubview(imageView)
         addSubview(titleLabel)
-        addSubview(linkButton)
+//        addSubview(linkButton)
 
         setConstraints()
     }
     
     //MARK: - Constraints
     func setConstraints() {
-        imageView.autoPinEdgeToSuperviewEdge(.Top, withInset: 2)
-        imageView.autoPinEdgeToSuperviewEdge(.Left, withInset: AL_OFFSET)
-        imageView.autoSetDimensionsToSize(CGSize(width: AL_CELL_HEIGHT*0.8, height: AL_CELL_HEIGHT*0.8))
+        imageView.autoPinEdge(toSuperviewEdge: .top, withInset: 2)
+        imageView.autoPinEdge(toSuperviewEdge: .left, withInset: AL_OFFSET)
+        imageView.autoSetDimensions(to: CGSize(width: AL_CELL_HEIGHT*0.8, height: AL_CELL_HEIGHT*0.8))
         
-        titleLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: imageView)
-        titleLabel.autoPinEdge(.Left, toEdge: .Right, ofView: imageView, withOffset: AL_OFFSET)
-        titleLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: AL_OFFSET)
+        titleLabel.autoAlignAxis(.horizontal, toSameAxisOf: imageView)
+        titleLabel.autoPinEdge(.left, to: .right, of: imageView, withOffset: AL_OFFSET)
+        titleLabel.autoPinEdge(toSuperviewEdge: .right, withInset: AL_OFFSET)
         
-        linkButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 0)
-        linkButton.autoPinEdgeToSuperviewEdge(.Left, withInset: AL_OFFSET)
-        linkButton.autoPinEdgeToSuperviewEdge(.Right, withInset: AL_OFFSET)
+//        linkButton.autoPinEdge(toSuperviewEdge: .bottom, withInset: 0)
+//        linkButton.autoPinEdge(toSuperviewEdge: .left, withInset: AL_OFFSET)
+//        linkButton.autoPinEdge(toSuperviewEdge: .right, withInset: AL_OFFSET)
     }
 }
 

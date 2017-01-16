@@ -11,30 +11,30 @@ class SIFooterView: UIView {
     
     //MARK: - Create UIElements -
     let signInButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
+        let view = AHButton.newAutoLayout()
         view.backgroundColor = RED_LIGHT
-        view.setTitle("Sign In", forState: .Normal)
-        view.setTitleColor(WHITE, forState: .Normal)
+        view.setTitle("Sign In", for: .normal)
+        view.setTitleColor(WHITE, for: .normal)
         view.layer.cornerRadius = SI_OFFSET
 
         return view
     }()
     
     let facebookButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
+        let view = AHButton.newAutoLayout()
         view.backgroundColor = BLUE
-        view.setTitle("Facebook", forState: .Normal)
-        view.setTitleColor(WHITE, forState: .Normal)
+        view.setTitle("Facebook", for: .normal)
+        view.setTitleColor(WHITE, for: .normal)
         view.layer.cornerRadius = SI_OFFSET
         
         return view
     }()
     
     let googleButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
+        let view = AHButton.newAutoLayout()
         view.backgroundColor = RED
-        view.setTitle("Google +", forState: .Normal)
-        view.setTitleColor(WHITE, forState: .Normal)
+        view.setTitle("Google +", for: .normal)
+        view.setTitleColor(WHITE, for: .normal)
         view.layer.cornerRadius = SI_OFFSET
         
         return view
@@ -52,7 +52,7 @@ class SIFooterView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(signInButton)
         addSubview(facebookButton)
         addSubview(googleButton)
@@ -62,16 +62,16 @@ class SIFooterView: UIView {
     
     //MARK: - Set Constraints -
     func setConstraints() {
-        signInButton.autoPinEdge(.Bottom, toEdge: .Top, ofView: facebookButton, withOffset: -SI_OFFSET)
-        signInButton.autoAlignAxisToSuperviewAxis(.Vertical)
-        signInButton.autoSetDimensionsToSize(CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
+        signInButton.autoPinEdge(.bottom, to: .top, of: facebookButton, withOffset: -SI_OFFSET)
+        signInButton.autoAlignAxis(toSuperviewAxis: .vertical)
+        signInButton.autoSetDimensions(to: CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
         
-        facebookButton.autoPinEdge(.Bottom, toEdge: .Top, ofView: googleButton, withOffset: -SI_OFFSET)
-        facebookButton.autoAlignAxisToSuperviewAxis(.Vertical)
-        facebookButton.autoSetDimensionsToSize(CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
+        facebookButton.autoPinEdge(.bottom, to: .top, of: googleButton, withOffset: -SI_OFFSET)
+        facebookButton.autoAlignAxis(toSuperviewAxis: .vertical)
+        facebookButton.autoSetDimensions(to: CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
         
-        googleButton.autoPinEdgeToSuperviewEdge(.Bottom)
-        googleButton.autoAlignAxisToSuperviewAxis(.Vertical)
-        googleButton.autoSetDimensionsToSize(CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
+        googleButton.autoPinEdge(toSuperviewEdge: .bottom)
+        googleButton.autoAlignAxis(toSuperviewAxis: .vertical)
+        googleButton.autoSetDimensions(to: CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
     }
 }

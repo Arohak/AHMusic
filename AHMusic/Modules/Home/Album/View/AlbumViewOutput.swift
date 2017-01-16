@@ -8,5 +8,5 @@
 
 protocol AlbumViewOutput: BaseViewOutput, OpenDetailFromAlbumProtocol {
 
-    func openLink(album: Album)
+    func openLink(_ album: Album)
 }

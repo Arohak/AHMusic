@@ -15,9 +15,9 @@ class AlbumInteractor {
 //MARK: - extension for AlbumInteractorInput -
 extension AlbumInteractor: AlbumInteractorInput {
     
-    func searchAlbum(name: String) {
-        _ = apiHelper.rx_SearchAlbum(name)
-        .subscribeNext({ result in
+    func searchAlbum(_ name: String) {
+        _ = apiHelper.rx_SearchAlbum(name: name)
+            .subscribe(onNext: { result in
             var temp = Array<Album>()
             for item in result["data"].arrayValue {
                 let album = Album(data: item)
@@ -28,9 +28,9 @@ extension AlbumInteractor: AlbumInteractorInput {
         })
     }
     
-    func getAlbum(id: String) {
-        _ = apiHelper.rx_GetAlbum(id)
-            .subscribeNext({ result in
+    func getAlbum(_ id: String) {
+        _ = apiHelper.rx_GetAlbum(id: id)
+            .subscribe(onNext: { result in
                 let album = Album(data: result)
                 
                 self.output.getResultIsReady(album)

@@ -8,5 +8,5 @@
 
 protocol GetTrackProtocol {
     
-    func getTrack(id: String, tracks: Array<Track>)
+    func getTrack(_ id: String, tracks: Array<Track>)
 }

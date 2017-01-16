@@ -47,7 +47,7 @@ extension WelcomePresenter: WelcomeViewOutput {
         let slide = SlideViewController(mainViewController: main, leftMenuViewController: left)
         
         let nav = UINavigationController(rootViewController: slide)
-        UIView.transitionWithView(appDelegate.window!, duration: 0.4, options: .TransitionFlipFromLeft, animations: { _ in
+        UIView.transition(with: appDelegate.window!, duration: 0.4, options: .transitionFlipFromLeft, animations: { _ in
             appDelegate.window!.rootViewController! = nav
             }, completion: nil)
     }

@@ -9,5 +9,5 @@
 protocol CategoryInteractorInput {
 
     func getCategoryItems()
-    func searchItems(name: String)
+    func searchItems(_ name: String)
 }

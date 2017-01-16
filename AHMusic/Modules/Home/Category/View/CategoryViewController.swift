@@ -24,19 +24,19 @@ class CategoryViewController: UIViewController {
     }
     
     // MARK: - Private Methods -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = categoryView
         
         categoryView.collection.dataSource = self
         categoryView.collection.delegate = self
-        categoryView.collection.registerClass(CategoryCell.self, forCellWithReuseIdentifier: collectionCellIdentifire)
+        categoryView.collection.register(CategoryCell.self, forCellWithReuseIdentifier: collectionCellIdentifire)
     }
 }
 
 //MARK: - extension for CategoryViewInput -
 extension CategoryViewController: CategoryViewInput {
     
-    func categoryDataIsReady(items: Array<Category>) {
+    func categoryDataIsReady(_ items: Array<Category>) {
         self.items = items
         
         categoryView.collection.reloadData()
@@ -46,31 +46,31 @@ extension CategoryViewController: CategoryViewInput {
 //MARK: - extension for UICollectionView -
 extension CategoryViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return items.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(collectionCellIdentifire, forIndexPath: indexPath) as! CategoryCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCellIdentifire, for: indexPath) as! CategoryCell
         let item = items[indexPath.row]
         cell.setValues(item)
         
         return cell
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = items[indexPath.row]
        output.viewIsSelectItem(item)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size = CGSize(width: CA_CELL_WIDTH, height: CA_CELL_WIDTH*1.2)
         
         return size
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
         return UIEdgeInsets(top: CA_INSET, left: CA_INSET, bottom: CA_INSET, right: CA_INSET)
     }

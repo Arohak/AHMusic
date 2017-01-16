@@ -8,5 +8,5 @@
 
 protocol OpenDetailFromAlbumProtocol {
     
-    func openDetail(album: Album)
+    func openDetail(_ album: Album)
 }

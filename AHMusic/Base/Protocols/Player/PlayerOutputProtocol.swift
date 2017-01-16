@@ -10,7 +10,7 @@ protocol PlayerOutputProtocol {
     
     func reset()
     
-    func didLoadItem(jukebox: Jukebox, item: JukeboxItem)
-    func playback(currentTime: Double, duration: Double)
-    func stateDidChange(jukebox: Jukebox)
+    func didLoadItem(_ jukebox: Jukebox, item: JukeboxItem)
+    func playback(_ currentTime: Double, duration: Double)
+    func stateDidChange(_ jukebox: Jukebox)
 }

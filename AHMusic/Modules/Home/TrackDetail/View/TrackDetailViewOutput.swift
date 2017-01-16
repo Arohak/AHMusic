@@ -8,6 +8,6 @@
 
 protocol TrackDetailViewOutput: PlayerActionProtocol, RemoteControlReceivedProtocol, OpenActionSheetProtocol, FavoriteProtocol, DownloadProtocol {
 
-    func viewIsReady(items: Array<Track>)
-    func shareTrack(sourceView: UIView, items: Array<Track>)
+    func viewIsReady(_ items: Array<Track>)
+    func shareTrack(_ sourceView: UIView, items: Array<Track>)
 }

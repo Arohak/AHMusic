@@ -8,5 +8,5 @@
 
 protocol SearchTrackProtocol {
     
-    func search(keyword: String)
+    func search(_ keyword: String)
 }

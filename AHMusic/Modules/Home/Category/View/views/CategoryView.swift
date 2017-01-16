@@ -10,7 +10,7 @@
 class CategoryView: BaseView {
     
     lazy var collection: BaseCollectionView = {
-        let view = BaseCollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
+        let view = BaseCollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
         
         return view
     }()
@@ -28,7 +28,7 @@ class CategoryView: BaseView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(collection)
 
         setConstraints()
@@ -53,8 +53,8 @@ class CategoryCell: UICollectionViewCell {
         cellContentView.autoPinEdgesToSuperviewEdges()
     }
     
-    func setValues(item: Category) {
-        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.picture)!, placeholderImage: Image(named: "img_placeholder"))
+    func setValues(_ item: Category) {
+        cellContentView.imageView.kf.setImage(with: URL(string: item.picture)!, placeholder: Image(named: "img_placeholder"))
         cellContentView.nameLabel.text = item.name
     }
     
@@ -68,7 +68,7 @@ class CategoryCellContentView: UIView {
     
     //MARK: - Create UIElements -
     lazy var imageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
+        let view = UIImageView.newAutoLayout()
         view.layer.cornerRadius = CA_INSET
         view.clipsToBounds = true
         
@@ -76,14 +76,14 @@ class CategoryCellContentView: UIView {
     }()
     
     lazy var iconImageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
+        let view = UIImageView.newAutoLayout()
         view.image = UIImage(named: "img_ca_sound")
         
         return view
     }()
     
     lazy var nameLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
+        let view = AHLabel.newAutoLayout()
         view.font = CA_TITLE_FONT
         view.textColor = WHITE
         
@@ -92,7 +92,7 @@ class CategoryCellContentView: UIView {
     
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         addAllUIElements()
     }
@@ -102,7 +102,7 @@ class CategoryCellContentView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(imageView)
         imageView.addSubview(iconImageView)
         addSubview(nameLabel)
@@ -112,15 +112,15 @@ class CategoryCellContentView: UIView {
     
     //MARK: - Constraints -
     func setConstraints() {
-        imageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: CA_OFFSET*1.5)
-        imageView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), excludingEdge: .Bottom)
+        imageView.autoPinEdge(toSuperviewEdge: .bottom, withInset: CA_OFFSET*1.5)
+        imageView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), excludingEdge: .bottom)
         
-        iconImageView.autoPinEdgeToSuperviewEdge(.Left, withInset: 0)
-        iconImageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 0)
-        iconImageView.autoSetDimensionsToSize(CGSize(width: CA_ICON_SIZE, height: CA_ICON_SIZE))
+        iconImageView.autoPinEdge(toSuperviewEdge: .left, withInset: 0)
+        iconImageView.autoPinEdge(toSuperviewEdge: .bottom, withInset: 0)
+        iconImageView.autoSetDimensions(to: CGSize(width: CA_ICON_SIZE, height: CA_ICON_SIZE))
         
-        nameLabel.autoPinEdgeToSuperviewEdge(.Bottom)
-        nameLabel.autoAlignAxisToSuperviewAxis(.Vertical)
+        nameLabel.autoPinEdge(toSuperviewEdge: .bottom)
+        nameLabel.autoAlignAxis(toSuperviewAxis: .vertical)
     }
 }
 

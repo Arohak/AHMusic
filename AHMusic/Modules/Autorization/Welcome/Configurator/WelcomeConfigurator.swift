@@ -8,14 +8,14 @@
 
 class WelcomeModuleConfigurator {
 
-    func configureModuleForPresenter(presenter: AnyObject) {
+    func configureModuleForPresenter(_ presenter: AnyObject) {
         
         if let presenter = presenter as? WelcomePresenter {
             configure(presenter)
         }
     }
 
-    private func configure(presenter: WelcomePresenter) {
+    fileprivate func configure(_ presenter: WelcomePresenter) {
         
         let viewController = WelcomeViewController()
         let interactor = WelcomeInteractor()

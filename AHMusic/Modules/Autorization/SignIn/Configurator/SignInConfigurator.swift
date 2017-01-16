@@ -8,14 +8,14 @@
 
 class SignInModuleConfigurator {
 
-    func configureModuleForPresenter(presenter: AnyObject) {
+    func configureModuleForPresenter(_ presenter: AnyObject) {
         
         if let presenter = presenter as? SignInPresenter {
             configure(presenter)
         }
     }
 
-    private func configure(presenter: SignInPresenter) {
+    fileprivate func configure(_ presenter: SignInPresenter) {
         
         let viewController = SignInViewController()
         let interactor = SignInInteractor()

@@ -15,11 +15,11 @@ class TrackDetailInteractor {
 //MARK: - extension for TrackDetailInteractorInput -
 extension TrackDetailInteractor: TrackDetailInteractorInput {
     
-    func addOrDeleteFavoriteTrack(state: Bool, track: Track) {
+    func addOrDeleteFavoriteTrack(_ state: Bool, track: Track) {
         dbHelper.addOrDeleteFavoriteTrack(state, track: track)
     }
     
-    func addOrDeleteDownloadTrack(state: Bool, track: Track) {
+    func addOrDeleteDownloadTrack(_ state: Bool, track: Track) {
         dbHelper.addOrDeleteDownloadTrack(state, track: track)
     }
 }

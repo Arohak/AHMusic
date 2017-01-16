@@ -10,16 +10,16 @@
 class ArtistView: BaseView {
     
     lazy var collection: BaseCollectionView = {
-        let view = BaseCollectionView(frame: CGRectZero, collectionViewLayout: UICollectionViewFlowLayout())
+        let view = BaseCollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
         
         return view
     }()
     
     lazy var refresh: CarbonSwipeRefresh = {
         let view = CarbonSwipeRefresh(scrollView: self.collection)
-        view.colors = RCOLORS
+        view?.colors = RCOLORS
         
-        return view
+        return view!
     }()
     
     //MARK: - Initialize -
@@ -61,8 +61,8 @@ class ArtistCell: UICollectionViewCell {
         cellContentView.autoPinEdgesToSuperviewEdges()
     }
     
-    func setValues(item: Artist) {
-        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.picture)!, placeholderImage: Image(named: "img_placeholder"))
+    func setValues(_ item: Artist) {
+        cellContentView.imageView.kf.setImage(with: URL(string: item.picture), placeholder: Image(named: "img_placeholder"))
         cellContentView.nameLabel.text = item.name
     }
     
@@ -76,23 +76,25 @@ class ArtistCellContentView: UIView {
     
     //MARK: - Create UIElements -
     lazy var imageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
+        let view = UIImageView.newAutoLayout()
+        view.layer.cornerRadius = TR_INSET
+        view.clipsToBounds = true
         
         return view
     }()
     
     lazy var nameLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
+        let view = AHLabel.newAutoLayout()
         view.font = AR_TITLE_FONT
         view.numberOfLines = 2
-        view.textAlignment = .Center
+        view.textAlignment = .center
         
         return view
     }()
     
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         addAllUIElements()
     }
@@ -111,12 +113,12 @@ class ArtistCellContentView: UIView {
     
     //MARK: - Constraints
     func setConstraints() {
-        imageView.autoPinEdge(.Bottom, toEdge: .Top, ofView: nameLabel)
-        imageView.autoPinEdgesToSuperviewEdgesWithInsets(UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), excludingEdge: .Bottom)
+        imageView.autoPinEdge(.bottom, to: .top, of: nameLabel)
+        imageView.autoPinEdgesToSuperviewEdges(with: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0), excludingEdge: .bottom)
         
-        nameLabel.autoPinEdgeToSuperviewEdge(.Bottom)
-        nameLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: AR_INSET)
-        nameLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: AR_INSET)
+        nameLabel.autoPinEdge(toSuperviewEdge: .bottom)
+        nameLabel.autoPinEdge(toSuperviewEdge: .left, withInset: AR_INSET)
+        nameLabel.autoPinEdge(toSuperviewEdge: .right, withInset: AR_INSET)
     }
 }
 

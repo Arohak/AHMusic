@@ -8,5 +8,5 @@
 
 protocol TrackViewOutput: BaseViewOutput, OpenDetailFromAlbumProtocol, OpenDetailFromArtistProtocol, OpenTrackDetailProtocol, MiniPlayerPlayProtocol {
    
-    func openLink(track: Track)
+    func openLink(_ track: Track)
 }

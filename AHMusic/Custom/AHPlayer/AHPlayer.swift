@@ -28,20 +28,20 @@ class AHPlayer {
     }
     
     //MARK: - Public Method -
-    func setTrackers(items: Array<Track>) {
+    func setTrackers(_ items: Array<Track>) {
         if let jukebox = jukebox {
             jukebox.removeAllItems()
             
             for item in items {
                 if isOffline {
-                    let name = item.preview.componentsSeparatedByString("/").last!
+                    let name = item.preview.components(separatedBy: "/").last!
                     let path = Utils.getDocumentsFolderPath() + "/" + name
-                    let url = NSURL(fileURLWithPath: path)
-                    jukebox.appendItem(JukeboxItem(URL: url), loadingAssets: false)
+                    let url = URL(fileURLWithPath: path)
+                    jukebox.append(item: JukeboxItem(URL: url), loadingAssets: false)
                     
                 } else {
-                    let url = NSURL(string: item.preview)!
-                    jukebox.appendItem(JukeboxItem(URL: url), loadingAssets: true)
+                    let url = URL(string: item.preview)!
+                    jukebox.append(item: JukeboxItem(URL: url), loadingAssets: true)
                 }
             }
         } else {
@@ -49,13 +49,13 @@ class AHPlayer {
             
             for item in items {
                 if isOffline {
-                    let name = item.preview.componentsSeparatedByString("/").last!
+                    let name = item.preview.components(separatedBy: "/").last!
                     let path = Utils.getDocumentsFolderPath() + "/" + name
-                    let url = NSURL(fileURLWithPath: path)
+                    let url = URL(fileURLWithPath: path)
                     jukeboxItems.append(JukeboxItem(URL: url))
                     
                 } else {
-                    let url = NSURL(string: item.preview)!
+                    let url = URL(string: item.preview)!
                     jukeboxItems.append(JukeboxItem(URL: url))
                 }
             }
@@ -67,38 +67,38 @@ class AHPlayer {
 // MARK:- extension for PlayerActionProtocol -
 extension AHPlayer: PlayerActionProtocol {
     
-    func volumeSliderValue(value: Float) {
+    func volumeSliderValue(_ value: Float) {
         if let jk = self.jukebox {
             jk.volume = value
         }
     }
     
-    func progressSliderValue(value: Float) {
-        if let duration = self.jukebox.currentItem?.duration {
-            self.jukebox.seekToSecond(Int(Double(value) * duration))
+    func progressSliderValue(_ value: Float) {
+        if let duration = self.jukebox.currentItem?.meta.duration {
+            self.jukebox.seek(toSecond: Int(Double(value) * duration))
         }
     }
     
     func playPause() {
         switch self.jukebox.state {
-        case .Ready :
-            self.jukebox.playAtIndex(0)
-        case .Playing :
+        case .ready :
+            self.jukebox.play(atIndex: 0)
+        case .playing :
             self.jukebox.pause()
-        case .Paused :
+        case .paused :
             self.jukebox.play()
         default:
             self.jukebox.stop()
         }
     }
     
-    func playPauseAtIndex(index: Int) {
+    func playPauseAtIndex(_ index: Int) {
         switch self.jukebox.state {
-        case .Ready :
-            self.jukebox.playAtIndex(index)
-        case .Playing :
+        case .ready :
+            self.jukebox.play(atIndex: index)
+        case .playing :
             self.jukebox.pause()
-        case .Paused :
+        case .paused :
             self.jukebox.play()
         default:
             self.jukebox.stop()
@@ -106,7 +106,7 @@ extension AHPlayer: PlayerActionProtocol {
     }
     
     func prev() {
-        if self.jukebox.currentItem?.currentTime > 5 || self.jukebox.playIndex == 0 {
+        if Int((self.jukebox.currentItem?.currentTime)!) > 5 || self.jukebox.playIndex == 0 {
             self.jukebox.replayCurrentItem()
         } else {
             self.jukebox.playPrevious()
@@ -131,17 +131,22 @@ extension AHPlayer: PlayerActionProtocol {
 // MARK:- extension for JukeboxDelegate -
 extension AHPlayer: JukeboxDelegate {
     
-    func jukeboxDidLoadItem(jukebox: Jukebox, item: JukeboxItem) {
+    public func jukeboxDidUpdateMetadata(_ jukebox: Jukebox, forItem: JukeboxItem) {
+        
+    }
+
+    
+    func jukeboxDidLoadItem(_ jukebox: Jukebox, item: JukeboxItem) {
         playerOutput.didLoadItem(jukebox, item: item)
     }
     
-    func jukeboxPlaybackProgressDidChange(jukebox: Jukebox) {
-        if let currentTime = jukebox.currentItem?.currentTime, let duration = jukebox.currentItem?.duration  {
+    func jukeboxPlaybackProgressDidChange(_ jukebox: Jukebox) {
+        if let currentTime = jukebox.currentItem?.currentTime, let duration = jukebox.currentItem?.meta.duration  {
             playerOutput.playback(currentTime, duration: duration)
         }
     }
     
-    func jukeboxStateDidChange(jukebox: Jukebox) {
+    func jukeboxStateDidChange(_ jukebox: Jukebox) {
         playerOutput.stateDidChange(jukebox)
     }
 }

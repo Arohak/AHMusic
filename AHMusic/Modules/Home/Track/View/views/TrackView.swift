@@ -10,16 +10,16 @@
 class TrackView: BaseView {
     
     lazy var tableView: BaseTableView = {
-        let view = BaseTableView.newAutoLayoutView()
+        let view = BaseTableView.newAutoLayout()
         
         return view
     }()
     
     lazy var refresh: CarbonSwipeRefresh = {
         let view = CarbonSwipeRefresh(scrollView: self.tableView)
-        view.colors = RCOLORS
+        view?.colors = RCOLORS
         
-        return view
+        return view!
     }()
     
     //MARK: - Initialize -
@@ -34,7 +34,7 @@ class TrackView: BaseView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(tableView)
         addSubview(refresh)
 
@@ -61,13 +61,13 @@ class TrackCell: BaseTableViewCell {
         cellContentView.autoPinEdgesToSuperviewEdges()
     }
     
-    func setValues(item: Track) {
-        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.album.cover)!, placeholderImage: Image(named: "img_placeholder"))
+    func setValues(_ item: Track) {
+        cellContentView.imageView.kf.setImage(with: URL(string: item.album.cover)!, placeholder: Image(named: "img_placeholder"))
         cellContentView.titleLabel.text = item.title
-        cellContentView.playButton.selected = item.played
-        cellContentView.albumButton.setTitle("Album:  " + item.album.title, forState: .Normal)
-        cellContentView.artistButton.setTitle("Artist:  " + item.artist.name, forState: .Normal)
-        cellContentView.linkButton.setTitle(item.link, forState: .Normal)
+        cellContentView.playButton.isSelected = item.played
+        cellContentView.albumButton.setTitle("Album:  " + item.album.title, for: .normal)
+        cellContentView.artistButton.setTitle("Artist:  " + item.artist.name, for: .normal)
+//        cellContentView.linkButton.setTitle(item.link, for: .normal)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -80,8 +80,8 @@ class TrackCellContentView: UIView {
     
     //MARK: - Create UIElements -
     lazy var imageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
-        view.userInteractionEnabled = true
+        let view = UIImageView.newAutoLayout()
+        view.isUserInteractionEnabled = true
         view.layer.cornerRadius = TR_INSET
         view.clipsToBounds = true
 
@@ -89,43 +89,44 @@ class TrackCellContentView: UIView {
     }()
     
     lazy var playButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_tr_play"), forState: .Normal)
-        view.setBackgroundImage(UIImage(named: "img_tr_pause"), forState: .Selected)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_tr_play"), for: .normal)
+        view.setBackgroundImage(UIImage(named: "img_tr_pause"), for: .selected)
 
         return view
     }()
     
     lazy var titleLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
+        let view = AHLabel.newAutoLayout()
         view.font = TR_TITLE_FONT
-        
+        view.numberOfLines = 2
+
         return view
     }()
     
     lazy var albumButton: LinkButton = {
-        let view = LinkButton.newAutoLayoutView()
+        let view = LinkButton.newAutoLayout()
         view.titleLabel!.font = TR_DESC_FONT
         
         return view
     }()
     
     lazy var artistButton: LinkButton = {
-        let view = LinkButton.newAutoLayoutView()
+        let view = LinkButton.newAutoLayout()
         view.titleLabel!.font = TR_DESC_FONT
         
         return view
     }()
     
     lazy var linkButton: LinkButton = {
-        let view = LinkButton.newAutoLayoutView()
+        let view = LinkButton.newAutoLayout()
         
         return view
     }()
     
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         addAllUIElements()
     }
@@ -135,43 +136,43 @@ class TrackCellContentView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(imageView)
         imageView.addSubview(playButton)
         addSubview(titleLabel)
         addSubview(albumButton)
         addSubview(artistButton)
-        addSubview(linkButton)
+//        addSubview(linkButton)
 
         setConstraints()
     }
     
     //MARK: - Constraints -
     func setConstraints() {
-        imageView.autoPinEdgeToSuperviewEdge(.Right, withInset: TR_OFFSET)
-        imageView.autoPinEdgeToSuperviewEdge(.Top, withInset: 2)
-        imageView.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 2)
-        imageView.autoSetDimension(.Width, toSize: TR_IMG_WIDTH)
+        imageView.autoPinEdge(toSuperviewEdge: .right, withInset: TR_OFFSET)
+        imageView.autoPinEdge(toSuperviewEdge: .top, withInset: 2)
+        imageView.autoPinEdge(toSuperviewEdge: .bottom, withInset: 2)
+        imageView.autoSetDimension(.width, toSize: TR_IMG_WIDTH)
         
-        playButton.autoPinEdgeToSuperviewEdge(.Bottom)
-        playButton.autoPinEdgeToSuperviewEdge(.Left)
-        playButton.autoSetDimensionsToSize(CGSize(width: TR_ICON_SIZE, height: TR_ICON_SIZE))
+        playButton.autoPinEdge(toSuperviewEdge: .bottom)
+        playButton.autoPinEdge(toSuperviewEdge: .left)
+        playButton.autoSetDimensions(to: CGSize(width: TR_ICON_SIZE, height: TR_ICON_SIZE))
         
-        titleLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: TR_OFFSET)
-        titleLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
-        titleLabel.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -TR_OFFSET)
+        titleLabel.autoPinEdge(toSuperviewEdge: .top, withInset: TR_OFFSET)
+        titleLabel.autoPinEdge(toSuperviewEdge: .left, withInset: TR_OFFSET)
+        titleLabel.autoPinEdge(.right, to: .left, of: imageView, withOffset: -TR_OFFSET)
         
-        albumButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: titleLabel, withOffset: TR_INSET)
-        albumButton.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
-        albumButton.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -TR_OFFSET)
+        albumButton.autoPinEdge(.top, to: .bottom, of: titleLabel, withOffset: TR_INSET)
+        albumButton.autoPinEdge(toSuperviewEdge: .left, withInset: TR_OFFSET)
+        albumButton.autoPinEdge(.right, to: .left, of: imageView, withOffset: -TR_OFFSET)
         
-        artistButton.autoPinEdge(.Top, toEdge: .Bottom, ofView: albumButton, withOffset: -TR_INSET)
-        artistButton.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
-        artistButton.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -TR_OFFSET)
+        artistButton.autoPinEdge(.top, to: .bottom, of: albumButton, withOffset: -TR_INSET)
+        artistButton.autoPinEdge(toSuperviewEdge: .left, withInset: TR_OFFSET)
+        artistButton.autoPinEdge(.right, to: .left, of: imageView, withOffset: -TR_OFFSET)
         
-        linkButton.autoPinEdgeToSuperviewEdge(.Bottom)
-        linkButton.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
-        linkButton.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -TR_OFFSET)
+//        linkButton.autoPinEdge(toSuperviewEdge: .bottom)
+//        linkButton.autoPinEdge(toSuperviewEdge: .left, withInset: TR_OFFSET)
+//        linkButton.autoPinEdge(.right, to: .left, of: imageView, withOffset: -TR_OFFSET)
     }
 }
 

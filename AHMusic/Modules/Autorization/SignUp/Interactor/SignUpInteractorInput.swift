@@ -8,5 +8,5 @@
 
 protocol SignUpInteractorInput {
 
-    func signup(json: JSON)
+    func signup(_ json: JSON)
 }

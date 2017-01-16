@@ -13,15 +13,9 @@ class DBHelper {
     static let sharedInstance = DBHelper()
     var realm: Realm!
 
-    private init() {
+    fileprivate init() {
         realm = try! Realm()
 //        realmDownload = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "RealmDownloadIdentifier"))
-    }
-    
-    private func setDefaultRealmForUser(username: String) {
-        var config = Realm.Configuration()
-        config.fileURL = config.fileURL!.URLByDeletingLastPathComponent?.URLByAppendingPathComponent("\(username).realm")
-        Realm.Configuration.defaultConfiguration = config
     }
     
     //MARK: - Track Favorite -
@@ -31,7 +25,7 @@ class DBHelper {
         return tracks
     }
     
-    func addOrDeleteFavoriteTrack(state: Bool, track: Track) {
+    func addOrDeleteFavoriteTrack(_ state: Bool, track: Track) {
         let predicate = NSPredicate(format: "id = %i", track.id)
         let tr = realm.objects(Track.self).filter(predicate).first
         
@@ -53,7 +47,7 @@ class DBHelper {
         }
     }
     
-    func searchFavoriteTracks(keyword: String) -> Results<Track> {
+    func searchFavoriteTracks(_ keyword: String) -> Results<Track> {
         let predicate = NSPredicate(format: "title contains[c] %@", keyword)
         let tracks = realm.objects(Track.self).filter(predicate)
         
@@ -67,7 +61,7 @@ class DBHelper {
         return tracks
     }
     
-    func addOrDeleteDownloadTrack(state: Bool, track: Track) {
+    func addOrDeleteDownloadTrack(_ state: Bool, track: Track) {
         let predicate = NSPredicate(format: "id = %i", track.id)
         let tr = realm.objects(Track.self).filter(predicate).first
         
@@ -92,7 +86,7 @@ class DBHelper {
         }
     }
     
-    func searchDownloadTracks(keyword: String) -> Results<Track> {
+    func searchDownloadTracks(_ keyword: String) -> Results<Track> {
         let predicate = NSPredicate(format: "title contains[c] %@", keyword)
         let tracks = realm.objects(Track.self).filter(predicate)
         

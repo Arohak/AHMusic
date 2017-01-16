@@ -68,7 +68,7 @@ extension LeftMenuPresenter: LeftMenuViewOutput {
         let vc = welcome.view as! UIViewController
         let nav = UINavigationController(rootViewController: vc)
         
-        UIView.transitionWithView(appDelegate.window!, duration: 0.4, options: .TransitionFlipFromRight, animations: { _ in
+        UIView.transition(with: appDelegate.window!, duration: 0.4, options: .transitionFlipFromRight, animations: { _ in
             appDelegate.window!.rootViewController! = nav
             }, completion: nil)
     }

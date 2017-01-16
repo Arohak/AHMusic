@@ -12,11 +12,11 @@ class SettingsView: UIView {
     
     //MARK: - Create UIElements -
     lazy var home: LMGroupView = {
-        let view = LMGroupView.newAutoLayoutView()
+        let view = LMGroupView.newAutoLayout()
         view.widthConstraints.constant = self.minWidth
-        view.button.setBackgroundImage(UIImage(named: "img_lm_home"), forState: .Normal)
-        view.button.setBackgroundImage(UIImage(named: "img_lm_home_select"), forState: .Selected)
-        view.button.selected = true
+        view.button.setBackgroundImage(UIImage(named: "img_lm_home"), for: .normal)
+        view.button.setBackgroundImage(UIImage(named: "img_lm_home_select"), for: .selected)
+        view.button.isSelected = true
         view.label.text = "Home"
         
         return view
@@ -24,7 +24,7 @@ class SettingsView: UIView {
     
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         backgroundColor = BLACK_59
         addAllUIElements()
@@ -35,7 +35,7 @@ class SettingsView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(home)
 
         setConstraints()
@@ -44,9 +44,9 @@ class SettingsView: UIView {
     //MARK: - Constraints -
     func setConstraints() {
         
-        home.autoPinEdgeToSuperviewEdge(.Top)
-        home.autoPinEdgeToSuperviewEdge(.Left)
-        home.autoPinEdgeToSuperviewEdge(.Right)
-        home.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: home.label)
+        home.autoPinEdge(toSuperviewEdge: .top)
+        home.autoPinEdge(toSuperviewEdge: .left)
+        home.autoPinEdge(toSuperviewEdge: .right)
+        home.autoPinEdge(.bottom, to: .bottom, of: home.label)
     }
 }

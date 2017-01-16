@@ -25,8 +25,8 @@ class TrackDetailViewController: UIViewController {
     
     lazy var rightItem: UIBarButtonItem = {
         let shareButton = AHButton(frame: CGRect(x: 0, y: 0, width: 22, height: 30))
-        shareButton.setBackgroundImage(UIImage(named:"img_share"), forState: .Normal)
-        shareButton.addTarget(self, action: #selector(TrackDetailViewController.shareTrack(_:)), forControlEvents: .TouchUpInside)
+        shareButton.setBackgroundImage(UIImage(named:"img_share"), for: .normal)
+        shareButton.addTarget(self, action: #selector(TrackDetailViewController.shareTrack(_:)), for: .touchUpInside)
         let item = UIBarButtonItem(customView: shareButton)
         
         return item
@@ -58,37 +58,37 @@ class TrackDetailViewController: UIViewController {
         playTrackInStart()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         output.stop()
     }
     
-    override func remoteControlReceivedWithEvent(event: UIEvent?) {
+    override func remoteControlReceived(with event: UIEvent?) {
         output.remoteControlReceivedWithEvent(event)
     }
     
     // MARK: - Private Method -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = trackDetailView
         
-        configureNavigationBar()
+//        configureNavigationBar()
         
         resetUI()
         
-        trackDetailView.headerView.imageView.kf_setImageWithURL(NSURL(string: self.track.album.coverBig)!, placeholderImage: Image(named: "img_placeholder"))
+        trackDetailView.headerView.imageView.kf.setImage(with: URL(string: self.track.album.coverBig)!, placeholder: Image(named: "img_placeholder"))
         trackDetailView.headerView.titleLabel.text = self.track.title
     
-        trackDetailView.actionView.volumeSlider.addTarget(self, action: #selector(TrackDetailViewController.volumeSliderValueChanged(_:)), forControlEvents: .ValueChanged)
-        trackDetailView.actionView.slider.addTarget(self, action: #selector(TrackDetailViewController.progressSliderValueChanged(_:)), forControlEvents: .ValueChanged)
-        trackDetailView.actionView.playPauseButton.addTarget(self, action: #selector(TrackDetailViewController.playPauseAction), forControlEvents: .TouchUpInside)
-        trackDetailView.actionView.stopButton.addTarget(self, action: #selector(TrackDetailViewController.stopAction), forControlEvents: .TouchUpInside)
-        trackDetailView.actionView.prevButton.addTarget(self, action: #selector(TrackDetailViewController.prevAction), forControlEvents: .TouchUpInside)
-        trackDetailView.actionView.nextButton.addTarget(self, action: #selector(TrackDetailViewController.nextAction), forControlEvents: .TouchUpInside)
-        trackDetailView.actionView.replayButton.addTarget(self, action: #selector(TrackDetailViewController.replayAction), forControlEvents: .TouchUpInside)
-        trackDetailView.actionView.trackListButton.addTarget(self, action: #selector(TrackDetailViewController.openActionSheet), forControlEvents: .TouchUpInside)
-        trackDetailView.headerView.favoriteButton.addTarget(self, action: #selector(TrackDetailViewController.favoriteAction), forControlEvents: .TouchUpInside)
-        trackDetailView.headerView.downloadButton.addTarget(self, action: #selector(TrackDetailViewController.downloadAction), forControlEvents: .TouchUpInside)
+        trackDetailView.actionView.volumeSlider.addTarget(self, action: #selector(TrackDetailViewController.volumeSliderValueChanged(_:)), for: .valueChanged)
+        trackDetailView.actionView.slider.addTarget(self, action: #selector(TrackDetailViewController.progressSliderValueChanged(_:)), for: .valueChanged)
+        trackDetailView.actionView.playPauseButton.addTarget(self, action: #selector(TrackDetailViewController.playPauseAction), for: .touchUpInside)
+        trackDetailView.actionView.stopButton.addTarget(self, action: #selector(TrackDetailViewController.stopAction), for: .touchUpInside)
+        trackDetailView.actionView.prevButton.addTarget(self, action: #selector(TrackDetailViewController.prevAction), for: .touchUpInside)
+        trackDetailView.actionView.nextButton.addTarget(self, action: #selector(TrackDetailViewController.nextAction), for: .touchUpInside)
+        trackDetailView.actionView.replayButton.addTarget(self, action: #selector(TrackDetailViewController.replayAction), for: .touchUpInside)
+        trackDetailView.actionView.trackListButton.addTarget(self, action: #selector(TrackDetailViewController.openActionSheet), for: .touchUpInside)
+        trackDetailView.headerView.favoriteButton.addTarget(self, action: #selector(TrackDetailViewController.favoriteAction), for: .touchUpInside)
+        trackDetailView.headerView.downloadButton.addTarget(self, action: #selector(TrackDetailViewController.downloadAction), for: .touchUpInside)
         
         //shapeLayer
         trackDetailView.headerView.downloadButton.layer.addSublayer(shapeLayer.gradientMaskLayer)
@@ -97,36 +97,36 @@ class TrackDetailViewController: UIViewController {
         setFavoriteAndDownloadButtonState(track)
 }
 
-    private func configureNavigationBar() {
-        navigationItem.setRightBarButtonItem(rightItem, animated: false)
+    fileprivate func configureNavigationBar() {
+        navigationItem.setRightBarButton(rightItem, animated: false)
     }
 
-    private func playTrackInStart() {
-        let index = tracks.indexOf {$0.id == track.id}
+    fileprivate func playTrackInStart() {
+        let index = tracks.index {$0.id == track.id}
         if let index = index {
             output.playPauseAtIndex(index)
         }
     }
     
-    private func setFavoriteAndDownloadButtonState(track: Track) {
-        trackDetailView.headerView.favoriteButton.selected = Utils.favoriteState(track)
+    fileprivate func setFavoriteAndDownloadButtonState(_ track: Track) {
+        trackDetailView.headerView.favoriteButton.isSelected = Utils.favoriteState(track)
         
         let dState = Utils.downloadState(track)
-        trackDetailView.headerView.downloadButton.selected = dState
-        trackDetailView.headerView.downloadButton.enabled = !dState
+        trackDetailView.headerView.downloadButton.isSelected = dState
+        trackDetailView.headerView.downloadButton.isEnabled = !dState
         if dState {
-            trackDetailView.headerView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
+            trackDetailView.headerView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_select"), for: .normal)
         } else{
-            trackDetailView.headerView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download"), forState: .Normal)
+            trackDetailView.headerView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download"), for: .normal)
         }
     }
     
     // MARK:- Actions -
-    func volumeSliderValueChanged(sender: UISlider) {
+    func volumeSliderValueChanged(_ sender: UISlider) {
         output.volumeSliderValue(sender.value)
     }
     
-    func progressSliderValueChanged(sender: UISlider) {
+    func progressSliderValueChanged(_ sender: UISlider) {
         output.progressSliderValue(sender.value)
     }
     
@@ -155,39 +155,38 @@ class TrackDetailViewController: UIViewController {
         output.openActionSheet(tracks)
     }
     
-    func shareTrack(sender: AHButton) {
+    func shareTrack(_ sender: AHButton) {
         output.shareTrack(sender, items: tracks)
     }
     
-    func favoriteAction(sender: AHButton) {
-        sender.selected = !sender.selected
+    func favoriteAction(_ sender: AHButton) {
+        sender.isSelected = !sender.isSelected
         
-        output.favoriteTrack(sender.selected, track: selectedTrack)
+        output.favoriteTrack(sender.isSelected, track: selectedTrack)
     }
     
-    func downloadAction(sender: AHButton) {
+    func downloadAction(_ sender: AHButton) {
         downloadProgress(sender)
     }
     
     // MARK: - Private Method -
-    private func downloadProgress(sender: AHButton) {
-        sender.selected = !sender.selected
-        sender.enabled = !sender.selected
-        sender.setBackgroundImage(UIImage(named: "img_bg_transparent"), forState: .Normal)
-        
-        apiHelper.downloadProgress(selectedTrack, progress: { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
-            self.totalValue = (Float(totalBytesRead) / Float(totalBytesExpectedToRead))
+    fileprivate func downloadProgress(_ sender: AHButton) {
+        sender.isSelected = !sender.isSelected
+        sender.isEnabled = !sender.isSelected
+        sender.setBackgroundImage(UIImage(named: "img_bg_transparent"), for: .normal)
+       
+        apiHelper.download(track: selectedTrack, inProgress: { value in
+            self.totalValue = Float(value)
             self.shapeLayer.animateProgressView(self.startValue, toV: self.totalValue, dur: 0.0001)
             self.startValue = self.totalValue
-        }) { error in
+        }) { state in
             self.startValue = 0.0
             self.totalValue = 0.0
-
-            if error == nil {
-                sender.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
+            if state {
+                sender.setBackgroundImage(UIImage(named: "img_tr_download_select"), for: .normal)
                 self.shapeLayer.hideProgressView()
-
-                self.output.downloadTrack(sender.selected, track: self.selectedTrack)
+                
+                self.output.downloadTrack(sender.isSelected, track: self.selectedTrack)
                 
                 self.setFavoriteAndDownloadButtonState(self.selectedTrack)
             }
@@ -202,54 +201,54 @@ extension TrackDetailViewController: TrackDetailViewInput {
         resetUI()
     }
     
-    func didLoadItem(jukebox: Jukebox, item: JukeboxItem) {
+    func didLoadItem(_ jukebox: Jukebox, item: JukeboxItem) {
         updateUIFromChangeTrack(tracks[jukebox.playIndex])
     }
     
-    func playback(currentTime: Double, duration: Double) {
+    func playback(_ currentTime: Double, duration: Double) {
         let value = Float(currentTime / duration)
         trackDetailView.actionView.slider.value = value
         self.populateLabelWithTime(trackDetailView.actionView.currentTimeLabel, time: currentTime)
         self.populateLabelWithTime(trackDetailView.actionView.durationLabel, time: duration)
     }
     
-    func stateDidChange(jukebox: Jukebox) {
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
-            self.trackDetailView.actionView.playPauseButton.enabled = jukebox.state == .Loading ? false : true
+    func stateDidChange(_ jukebox: Jukebox) {
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.trackDetailView.actionView.playPauseButton.isEnabled = jukebox.state == .loading ? false : true
         })
         
-        if jukebox.state == .Ready {
-            trackDetailView.actionView.playPauseButton.setBackgroundImage(UIImage(named: "img_max_pl_play"), forState: .Normal)
-        } else if jukebox.state == .Loading  {
-            trackDetailView.actionView.playPauseButton.setBackgroundImage(UIImage(named: "img_max_pl_pause"), forState: .Normal)
+        if jukebox.state == .ready {
+            trackDetailView.actionView.playPauseButton.setBackgroundImage(UIImage(named: "img_max_pl_play"), for: .normal)
+        } else if jukebox.state == .loading  {
+            trackDetailView.actionView.playPauseButton.setBackgroundImage(UIImage(named: "img_max_pl_pause"), for: .normal)
         } else {
             trackDetailView.actionView.volumeSlider.value = jukebox.volume
-            trackDetailView.actionView.playPauseButton.setBackgroundImage(UIImage(named: jukebox.state == .Paused ? "img_max_pl_play" : "img_max_pl_pause"), forState: .Normal)
+            trackDetailView.actionView.playPauseButton.setBackgroundImage(UIImage(named: jukebox.state == .paused ? "img_max_pl_play" : "img_max_pl_pause"), for: .normal)
         }
         
         updateUIFromChangeTrack(tracks[jukebox.playIndex])
     }
     
     // MARK: - Private Method -
-    private func populateLabelWithTime(label : UILabel, time: Double) {
+    fileprivate func populateLabelWithTime(_ label : UILabel, time: Double) {
         let minutes = Int(time / 60)
         let seconds = Int(time) - minutes * 60
         
         label.text = String(format: "%02d", minutes) + ":" + String(format: "%02d", seconds)
     }
     
-    private func resetUI() {
+    fileprivate func resetUI() {
         trackDetailView.actionView.durationLabel.text = "00:00"
         trackDetailView.actionView.currentTimeLabel.text = "00:00"
         trackDetailView.actionView.slider.value = 0
     }
     
-    private func updateUIFromChangeTrack(track: Track) {
+    fileprivate func updateUIFromChangeTrack(_ track: Track) {
         selectedTrack = track
         setFavoriteAndDownloadButtonState(track)
         
         if !track.artist.pictureBig.isEmpty {
-            trackDetailView.headerView.imageView.kf_setImageWithURL(NSURL(string: track.artist.pictureBig)!, placeholderImage: Image(named: "img_placeholder"))
+            trackDetailView.headerView.imageView.kf.setImage(with: URL(string: track.artist.pictureBig), placeholder: Image(named: "img_placeholder"))
             trackDetailView.headerView.titleLabel.text = track.title + "\nby " + track.artist.name
 
         } else {

@@ -8,5 +8,5 @@
 
 protocol FavoriteProtocol {
     
-    func favoriteTrack(state: Bool, track: Track)
+    func favoriteTrack(_ state: Bool, track: Track)
 }

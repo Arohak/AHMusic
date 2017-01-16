@@ -7,16 +7,16 @@
 //
 
 enum MPState {
-    case Play
-    case Pause
-    case Stop
-    case Change
+    case play
+    case pause
+    case stop
+    case change
 }
 
 struct MiniPlayerEvent {
     
     var result: Track!
-    var state: MPState = .Pause
+    var state: MPState = .pause
     
     init(result: Track, state: MPState) {
         self.result = result

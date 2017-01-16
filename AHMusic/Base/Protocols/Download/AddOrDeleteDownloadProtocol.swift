@@ -8,5 +8,5 @@
 
 protocol AddOrDeleteDownloadProtocol {
     
-    func addOrDeleteDownloadTrack(state: Bool, track: Track)
+    func addOrDeleteDownloadTrack(_ state: Bool, track: Track)
 }

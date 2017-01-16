@@ -8,5 +8,5 @@
 
 protocol GetArtistProtocol {
     
-    func getArtist(id: String)
+    func getArtist(_ id: String)
 }

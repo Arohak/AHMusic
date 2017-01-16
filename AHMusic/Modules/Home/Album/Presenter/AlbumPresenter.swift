@@ -16,16 +16,16 @@ class AlbumPresenter {
 //MARK: - extension for AlbumViewOutput -
 extension AlbumPresenter: AlbumViewOutput {
     
-    func viewIsReady(keyword: String) {
+    func viewIsReady(_ keyword: String) {
         interactor.searchAlbum(keyword)
     }
 
-    func openLink(album: Album) {
+    func openLink(_ album: Album) {
         let vc = WebViewController(resourceName: album.title, url: NSURL(string: album.link)!)
-        UIHelper.root().presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+        UIHelper.root().present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
     
-    func openDetail(album: Album) {
+    func openDetail(_ album: Album) {
         interactor.getAlbum("\(album.id)")
     }
 }
@@ -33,11 +33,11 @@ extension AlbumPresenter: AlbumViewOutput {
 //MARK: - extension for AlbumInteractorOutput -
 extension AlbumPresenter: AlbumInteractorOutput {
  
-    func searchResultIsReady(items: Array<Album>) {
+    func searchResultIsReady(_ items: Array<Album>) {
         view.setupInitialState(items)
     }
     
-    func getResultIsReady(album: Album) {
+    func getResultIsReady(_ album: Album) {
         let json = JSON(["imageURL" : album.coverBig, "tracks" : Array(album.tracks), "info" : "Name:\t\(album.title)\nTracks:\t\(album.nbTracks)\nFans:\t\(album.fans)"])
         let detail = Detail(data: json)
         

@@ -8,5 +8,5 @@
 
 protocol BaseEventViewInput: class {
     
-    func setupInitialState(items: Array<Track>)
+    func setupInitialState(_ items: Array<Track>)
 }

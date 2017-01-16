@@ -8,5 +8,5 @@
 
 protocol SignInInteractorInput {
 
-    func signin(json: JSON)
+    func signin(_ json: JSON)
 }

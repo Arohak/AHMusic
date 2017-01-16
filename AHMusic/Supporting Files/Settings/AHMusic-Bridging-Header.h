@@ -8,9 +8,8 @@
 @import UIKit;
 @import Foundation;
 @import PureLayout;
-@import EventCenter;
+@import SwiftEventBus;
 @import RealmSwift;
-@import Typhoon;
 @import SwiftyJSON;
 @import Alamofire;
 @import RxAlamofire;

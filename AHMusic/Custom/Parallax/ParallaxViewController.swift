@@ -11,11 +11,11 @@ class ParallaxViewController: UIViewController {
     var headerView: ParallaxHeaderView!
 
     lazy var tableView: UITableView = {
-        let view = UITableView.newAutoLayoutView()
+        let view = UITableView.newAutoLayout()
         view.backgroundColor = WHITE
         view.dataSource = self
         view.delegate = self
-        view.registerClass(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifire)
+        view.register(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifire)
         view.tableHeaderView = self.headerView
         
         return view
@@ -48,14 +48,14 @@ class ParallaxViewController: UIViewController {
         baseConfig()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         headerView.refreshBlurViewForNewImage()
     }
     
     // MARK: - Private Method
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view.addSubview(tableView)
         tableView.autoPinEdgesToSuperviewEdges()
     }
@@ -64,20 +64,20 @@ class ParallaxViewController: UIViewController {
 //MARK: - extension for UITableView
 extension ParallaxViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return items.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifire)
         let item = items[indexPath.row]
         cell!.textLabel?.text = item
         
         return cell!
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return 50
     }
@@ -86,7 +86,7 @@ extension ParallaxViewController: UITableViewDataSource, UITableViewDelegate {
 //MARK: - extension for UIScrollView
 extension ParallaxViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == tableView {
             headerView.headerViewForScrollViewOffset(scrollView.contentOffset)
         }

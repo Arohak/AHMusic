@@ -16,7 +16,7 @@ class StationPresenter {
 //MARK: - extension for StationViewOutput -
 extension StationPresenter: StationViewOutput {
     
-    func viewIsReady(keyword: String) {
+    func viewIsReady(_ keyword: String) {
 
     }
 }

@@ -15,15 +15,15 @@ class SignInInteractor {
 //MARK: - extension for SignInInteractorInput -
 extension SignInInteractor: SignInInteractorInput {
     
-    func signin(json: JSON) {
-        _ = apiHelper.rx_SignIn(json)
-            .subscribeNext { result in
+    func signin(_ json: JSON) {
+        _ = apiHelper.rx_SignIn(json: json)
+            .subscribe(onNext: { result in
                 let status = result["data"]["status"].stringValue
                 if status == "success" {
                     self.output.signinIsReady()
                 } else {
                     UIHelper.showHUD(status)
                 }
-        }
+        })
     }
 }

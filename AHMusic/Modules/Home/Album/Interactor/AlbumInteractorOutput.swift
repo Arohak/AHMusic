@@ -8,6 +8,6 @@
 
 protocol AlbumInteractorOutput: class {
 
-    func searchResultIsReady(items: Array<Album>)
-    func getResultIsReady(album: Album)
+    func searchResultIsReady(_ items: Array<Album>)
+    func getResultIsReady(_ album: Album)
 }

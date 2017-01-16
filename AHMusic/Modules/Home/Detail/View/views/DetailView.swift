@@ -29,29 +29,29 @@ class DetailView: BaseEventView {
     }
     
     //MARK: - Private Methods -
-    private func addHeaderUIElements(detail: Detail) {
+    fileprivate func addHeaderUIElements(_ detail: Detail) {
         var bgView: UIView!
         var infoLabel: UILabel!
         
         if let info = detail.info {
-            infoLabel = AHLabel.newAutoLayoutView()
+            infoLabel = AHLabel.newAutoLayout()
             infoLabel.text = info
             infoLabel.font = DE_INFO_FONT
             infoLabel.numberOfLines = 0
-            bgView = UIView.newAutoLayoutView()
+            bgView = UIView.newAutoLayout()
             bgView.backgroundColor = BLUE_LIGHT
             bgView.layer.cornerRadius = 5
             bgView.alpha = 0.5
             headerView.addSubview(bgView)
             headerView.addSubview(infoLabel)
             
-            infoLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
-            infoLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: TR_OFFSET)
-            infoLabel.autoPinEdgeToSuperviewEdge(.Bottom, withInset: TR_OFFSET)
-            bgView.autoPinEdge(.Top, toEdge: .Top, ofView: infoLabel, withOffset: -TR_OFFSET/2)
-            bgView.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: infoLabel, withOffset: TR_OFFSET/2)
-            bgView.autoPinEdge(.Left, toEdge: .Left, ofView: infoLabel, withOffset: -TR_OFFSET/2)
-            bgView.autoPinEdge(.Right, toEdge: .Right, ofView: infoLabel, withOffset: TR_OFFSET/2)
+            infoLabel.autoPinEdge(toSuperviewEdge: .left, withInset: TR_OFFSET)
+            infoLabel.autoPinEdge(toSuperviewEdge: .right, withInset: TR_OFFSET)
+            infoLabel.autoPinEdge(toSuperviewEdge: .bottom, withInset: TR_OFFSET)
+            bgView.autoPinEdge(.top, to: .top, of: infoLabel, withOffset: -TR_OFFSET/2)
+            bgView.autoPinEdge(.bottom, to: .bottom, of: infoLabel, withOffset: TR_OFFSET/2)
+            bgView.autoPinEdge(.left, to: .left, of: infoLabel, withOffset: -TR_OFFSET/2)
+            bgView.autoPinEdge(.right, to: .right, of: infoLabel, withOffset: TR_OFFSET/2)
         }
     }
 }
@@ -69,27 +69,26 @@ class TrackShortCell: BaseTableViewCell {
         cellContentView.autoPinEdgesToSuperviewEdges()
     }
     
-    func setValues(item: Track, type: BaseVC) {
+    func setValues(_ item: Track, type: BaseVC) {
         cellContentView.titleLabel.text = item.title
-        cellContentView.linkButton.setTitle(item.link, forState: .Normal)
-        cellContentView.playButton.selected = item.played
+        cellContentView.linkButton.setTitle(item.link, for: .normal)
+        cellContentView.playButton.isSelected = item.played
         let fState = Utils.favoriteState(item)
         let dState = Utils.downloadState(item)
-        cellContentView.favoriteButton.selected = fState
-        cellContentView.downloadButton.selected = dState
+        cellContentView.favoriteButton.isSelected = fState
+        cellContentView.downloadButton.isSelected = dState
         
         switch type {
-        case .Favorite, .Detail:
+        case .favorite, .detail:
             if dState {
-                cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
+                cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_select"), for: .normal)
             } else{
-                cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download"), forState: .Normal)
+                cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download"), for: .normal)
             }
-            cellContentView.downloadButton.enabled = !dState
+            cellContentView.downloadButton.isEnabled = !dState
 
-        case .Download:
-            cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_delete"), forState: .Selected)
-
+        case .download:
+            cellContentView.downloadButton.setBackgroundImage(UIImage(named: "img_tr_download_delete"), for: .selected)
         }
     }
     
@@ -105,31 +104,31 @@ class TrackShortCellContentView: UIView {
     
     //MARK: - Create UIElements
     lazy var playButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_tr_play"), forState: .Normal)
-        view.setBackgroundImage(UIImage(named: "img_tr_pause"), forState: .Selected)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_tr_play"), for: .normal)
+        view.setBackgroundImage(UIImage(named: "img_tr_pause"), for: .selected)
         
         return view
     }()
     
     lazy var favoriteButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_tr_favorite"), forState: .Normal)
-        view.setBackgroundImage(UIImage(named: "img_tr_favorite_select"), forState: .Selected)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_tr_favorite"), for: .normal)
+        view.setBackgroundImage(UIImage(named: "img_tr_favorite_select"), for: .selected)
         
         return view
     }()
     
     lazy var downloadButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_tr_download"), forState: .Normal)
-        view.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Selected)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_tr_download"), for: .normal)
+        view.setBackgroundImage(UIImage(named: "img_tr_download_select"), for: .selected)
         
         return view
     }()
     
     lazy var titleLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
+        let view = AHLabel.newAutoLayout()
         view.font = TR_TITLE_FONT
         view.numberOfLines = 2
         
@@ -137,14 +136,14 @@ class TrackShortCellContentView: UIView {
     }()
     
     lazy var linkButton: LinkButton = {
-        let view = LinkButton.newAutoLayoutView()
+        let view = LinkButton.newAutoLayout()
         
         return view
     }()
     
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         addAllUIElements()
     }
@@ -154,12 +153,12 @@ class TrackShortCellContentView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(titleLabel)
-        addSubview(linkButton)
         addSubview(playButton)
         addSubview(favoriteButton)
-        addSubview(downloadButton)
+//        addSubview(linkButton)
+//        addSubview(downloadButton)
         
         downloadButton.layer.addSublayer(shapeLayer.gradientMaskLayer)
 
@@ -168,23 +167,25 @@ class TrackShortCellContentView: UIView {
     
     //MARK: - Constraints -
     func setConstraints() {
-        downloadButton.autoPinEdgeToSuperviewEdge(.Top)
-        downloadButton.autoPinEdgeToSuperviewEdge(.Right, withInset: TR_INSET)
-        downloadButton.autoSetDimensionsToSize(CGSize(width: TR_ICON_SIZE, height: TR_ICON_SIZE))
+//        favoriteButton.autoAlignAxis(.horizontal, toSameAxisOf: downloadButton)
+//        favoriteButton.autoPinEdge(.right, to: .left, of: downloadButton, withOffset: 0)
+        favoriteButton.autoAlignAxis(toSuperviewAxis: .horizontal)
+        favoriteButton.autoPinEdge(toSuperviewEdge: .right, withInset: TR_INSET)
+        favoriteButton.autoSetDimensions(to: CGSize(width: TR_ICON_SIZE, height: TR_ICON_SIZE))
         
-        favoriteButton.autoAlignAxis(.Horizontal, toSameAxisOfView: downloadButton)
-        favoriteButton.autoPinEdge(.Right, toEdge: .Left, ofView: downloadButton, withOffset: 0)
-        favoriteButton.autoSetDimensionsToSize(CGSize(width: TR_ICON_SIZE, height: TR_ICON_SIZE))
+        playButton.autoAlignAxis(.horizontal, toSameAxisOf: favoriteButton)
+        playButton.autoPinEdge(toSuperviewEdge: .left, withInset: TR_INSET)
+        playButton.autoSetDimensions(to: CGSize(width: TR_ICON_SIZE, height: TR_ICON_SIZE))
         
-        playButton.autoAlignAxis(.Horizontal, toSameAxisOfView: downloadButton)
-        playButton.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_INSET)
-        playButton.autoSetDimensionsToSize(CGSize(width: TR_ICON_SIZE, height: TR_ICON_SIZE))
+        titleLabel.autoAlignAxis(.horizontal, toSameAxisOf: favoriteButton)
+        titleLabel.autoPinEdge(.left, to: .right, of: playButton, withOffset: TR_INSET)
+        titleLabel.autoPinEdge(.right, to: .left, of: favoriteButton, withOffset: -TR_OFFSET)
         
-        titleLabel.autoAlignAxis(.Horizontal, toSameAxisOfView: downloadButton)
-        titleLabel.autoPinEdge(.Left, toEdge: .Right, ofView: playButton, withOffset: TR_INSET)
-        titleLabel.autoPinEdge(.Right, toEdge: .Left, ofView: favoriteButton, withOffset: -TR_OFFSET)
+//        linkButton.autoPinEdge(toSuperviewEdge: .bottom)
+//        linkButton.autoPinEdge(toSuperviewEdge: .left, withInset: TR_OFFSET)
         
-        linkButton.autoPinEdgeToSuperviewEdge(.Bottom)
-        linkButton.autoPinEdgeToSuperviewEdge(.Left, withInset: TR_OFFSET)
+//        downloadButton.autoPinEdge(toSuperviewEdge: .top)
+//        downloadButton.autoPinEdge(toSuperviewEdge: .right, withInset: TR_INSET)
+//        downloadButton.autoSetDimensions(to: CGSize(width: TR_ICON_SIZE, height: TR_ICON_SIZE))
     }
 }

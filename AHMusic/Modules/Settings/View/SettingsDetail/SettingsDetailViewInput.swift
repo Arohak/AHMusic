@@ -8,5 +8,5 @@
 
 protocol SettingsDetailViewInput: class {
 
-    func setupInitialState(title: String)
+    func setupInitialState(_ title: String)
 }

@@ -9,5 +9,5 @@
 protocol CategoryViewOutput {
 
     func viewIsReady()
-    func viewIsSelectItem(item: Category)
+    func viewIsSelectItem(_ item: Category)
 }

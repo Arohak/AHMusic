@@ -8,14 +8,14 @@
 
 class StationModuleConfigurator {
 
-    func configureModuleForController(viewController: AnyObject) {
+    func configureModuleForController(_ viewController: AnyObject) {
         
         if let viewController = viewController as? StationViewController {
             configure(viewController)
         }
     }
     
-    private func configure(viewController: StationViewController) {
+    fileprivate func configure(_ viewController: StationViewController) {
         
         let presenter = StationPresenter()
         let interactor = StationInteractor()

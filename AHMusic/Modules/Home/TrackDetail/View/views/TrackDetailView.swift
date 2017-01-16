@@ -10,13 +10,13 @@ class TrackDetailView: BaseView {
     
     //MARK: - Create UIElements -
     lazy var headerView: TDHeaderView = {
-        let view = TDHeaderView.newAutoLayoutView()
+        let view = TDHeaderView.newAutoLayout()
         
         return view
     }()
     
     lazy var actionView: TDActionView = {
-        let view = TDActionView.newAutoLayoutView()
+        let view = TDActionView.newAutoLayout()
         
         return view
     }()
@@ -34,7 +34,7 @@ class TrackDetailView: BaseView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(headerView)
         addSubview(actionView)
         
@@ -43,14 +43,14 @@ class TrackDetailView: BaseView {
     
     //MARK: - Constraints -
     func setConstraints() {
-        headerView.autoPinEdgeToSuperviewEdge(.Top)
-        headerView.autoPinEdgeToSuperviewEdge(.Left)
-        headerView.autoPinEdgeToSuperviewEdge(.Right)
-        headerView.autoPinEdge(.Bottom, toEdge: .Top, ofView: actionView)
+        headerView.autoPinEdge(toSuperviewEdge: .top)
+        headerView.autoPinEdge(toSuperviewEdge: .left)
+        headerView.autoPinEdge(toSuperviewEdge: .right)
+        headerView.autoPinEdge(.bottom, to: .top, of: actionView)
         
-        actionView.autoPinEdgeToSuperviewEdge(.Bottom)
-        actionView.autoPinEdgeToSuperviewEdge(.Left)
-        actionView.autoPinEdgeToSuperviewEdge(.Right)
-        actionView.autoSetDimension(.Height, toSize: TD_HEIGHT)
+        actionView.autoPinEdge(toSuperviewEdge: .bottom)
+        actionView.autoPinEdge(toSuperviewEdge: .left)
+        actionView.autoPinEdge(toSuperviewEdge: .right)
+        actionView.autoSetDimension(.height, toSize: TD_HEIGHT)
     }
 }

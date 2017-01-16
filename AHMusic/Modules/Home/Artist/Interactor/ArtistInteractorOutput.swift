@@ -8,6 +8,6 @@
 
 protocol ArtistInteractorOutput: class {
 
-    func searchResultIsReady(items: Array<Artist>)
-    func getResultIsReady(artist: Artist, tracks: Array<Track>)
+    func searchResultIsReady(_ items: Array<Artist>)
+    func getResultIsReady(_ artist: Artist, tracks: Array<Track>)
 }

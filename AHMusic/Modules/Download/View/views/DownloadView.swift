@@ -10,7 +10,7 @@
 class DownloadView: BaseView {
     
     lazy var tableView: BaseTableView = {
-        let view = BaseTableView.newAutoLayoutView()
+        let view = BaseTableView.newAutoLayout()
         
         return view
     }()
@@ -27,7 +27,7 @@ class DownloadView: BaseView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(tableView)
 
         setConstraints()

@@ -22,7 +22,7 @@ extension CategoryPresenter: CategoryViewOutput {
         interactor.getCategoryItems()
     }
     
-    func viewIsSelectItem(item: Category) {
+    func viewIsSelectItem(_ item: Category) {
         keyword = item.name
         interactor.searchItems(item.name)
     }
@@ -31,11 +31,11 @@ extension CategoryPresenter: CategoryViewOutput {
 //MARK: - extension for CategoryInteractorOutput -
 extension CategoryPresenter: CategoryInteractorOutput {
  
-    func dataIsReady(items: Array<Category>) {
+    func dataIsReady(_ items: Array<Category>) {
         view.categoryDataIsReady(items)
     }
     
-    func searchDataIsReady(items: Array<Result>) {
+    func searchDataIsReady(_ items: Array<Result>) {
         if let slide = UIHelper.root().viewControllers[0] as? SlideViewController {
             let tab = TabViewController(keyword: keyword)
             slide.changeMainViewController(tab,  close: true)

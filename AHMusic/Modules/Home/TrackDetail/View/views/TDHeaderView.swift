@@ -12,41 +12,41 @@ class TDHeaderView: UIView {
     
     //MARK: - Create UIElements -
     lazy var gifImageView: UIImageView = {
-        let gif = UIImage.gifWithName("gif_sound1")
+        let gif = UIImage.gif(name: "gif_sound1")
         let view = UIImageView(image: gif)
 
         return view
     }()
     
     lazy var imageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
-        view.userInteractionEnabled = true
+        let view = UIImageView.newAutoLayout()
+        view.isUserInteractionEnabled = true
         view.layer.cornerRadius = TD_INSET
         view.clipsToBounds = true
-        view.contentMode = .ScaleAspectFill
+        view.contentMode = .scaleAspectFill
 
         return view
     }()
     
     lazy var favoriteButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_tr_favorite"), forState: .Normal)
-        view.setBackgroundImage(UIImage(named: "img_tr_favorite_select"), forState: .Selected)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_tr_favorite"), for: .normal)
+        view.setBackgroundImage(UIImage(named: "img_tr_favorite_select"), for: .selected)
 
         return view
     }()
     
     lazy var downloadButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setBackgroundImage(UIImage(named: "img_tr_download"), forState: .Normal)
-        view.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Selected)
+        let view = AHButton.newAutoLayout()
+        view.setBackgroundImage(UIImage(named: "img_tr_download"), for: .normal)
+        view.setBackgroundImage(UIImage(named: "img_tr_download_select"), for: .selected)
         
         return view
     }()
     
     lazy var titleLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
-        view.textAlignment = .Center
+        let view = AHLabel.newAutoLayout()
+        view.textAlignment = .center
         view.numberOfLines = 0
         
         return view
@@ -54,7 +54,7 @@ class TDHeaderView: UIView {
     
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         addAllUIElements()
     }
@@ -64,11 +64,11 @@ class TDHeaderView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(gifImageView)
         addSubview(imageView)
         imageView.addSubview(favoriteButton)
-        imageView.addSubview(downloadButton)
+//        imageView.addSubview(downloadButton)
         addSubview(titleLabel)
         
         setConstraints()
@@ -76,27 +76,27 @@ class TDHeaderView: UIView {
     
     //MARK: - Constraints -
     func setConstraints() {
-        gifImageView.autoPinEdgeToSuperviewEdge(.Top)
-        gifImageView.autoPinEdgeToSuperviewEdge(.Left)
-        gifImageView.autoPinEdgeToSuperviewEdge(.Right)
-        gifImageView.autoSetDimension(.Height, toSize: TD_HEIGHT*0.35)
+        gifImageView.autoPinEdge(toSuperviewEdge: .top)
+        gifImageView.autoPinEdge(toSuperviewEdge: .left)
+        gifImageView.autoPinEdge(toSuperviewEdge: .right)
+        gifImageView.autoSetDimension(.height, toSize: TD_HEIGHT*0.35)
         
-        favoriteButton.autoPinEdgeToSuperviewEdge(.Left)
-        favoriteButton.autoPinEdgeToSuperviewEdge(.Bottom)
-        favoriteButton.autoSetDimensionsToSize(CGSize(width: TD_BBTN_SIZE, height: TD_BBTN_SIZE))
+        favoriteButton.autoPinEdge(toSuperviewEdge: .left)
+        favoriteButton.autoPinEdge(toSuperviewEdge: .bottom)
+        favoriteButton.autoSetDimensions(to: CGSize(width: TD_BBTN_SIZE, height: TD_BBTN_SIZE))
 
-        downloadButton.autoPinEdgeToSuperviewEdge(.Right)
-        downloadButton.autoPinEdgeToSuperviewEdge(.Bottom)
-        downloadButton.autoSetDimensionsToSize(CGSize(width: TD_BBTN_SIZE, height: TD_BBTN_SIZE))
+//        downloadButton.autoPinEdge(toSuperviewEdge: .right)
+//        downloadButton.autoPinEdge(toSuperviewEdge: .bottom)
+//        downloadButton.autoSetDimensions(to: CGSize(width: TD_BBTN_SIZE, height: TD_BBTN_SIZE))
         
-        imageView.autoPinEdge(.Top, toEdge: .Bottom, ofView: gifImageView)
-        imageView.autoPinEdgeToSuperviewEdge(.Left, withInset: TD_OFFSET)
-        imageView.autoPinEdgeToSuperviewEdge(.Right, withInset: TD_OFFSET)
-        imageView.autoPinEdge(.Bottom, toEdge: .Top, ofView: titleLabel, withOffset: -TD_INSET)
+        imageView.autoPinEdge(.top, to: .bottom, of: gifImageView)
+        imageView.autoPinEdge(toSuperviewEdge: .left, withInset: TD_OFFSET)
+        imageView.autoPinEdge(toSuperviewEdge: .right, withInset: TD_OFFSET)
+        imageView.autoPinEdge(.bottom, to: .top, of: titleLabel, withOffset: -TD_INSET)
         
-        titleLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: imageView, withOffset: TD_INSET)
-        titleLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: TD_OFFSET)
-        titleLabel.autoPinEdgeToSuperviewEdge(.Right, withInset: TD_OFFSET)
-        titleLabel.autoPinEdgeToSuperviewEdge(.Bottom)
+        titleLabel.autoPinEdge(.top, to: .bottom, of: imageView, withOffset: TD_INSET)
+        titleLabel.autoPinEdge(toSuperviewEdge: .left, withInset: TD_OFFSET)
+        titleLabel.autoPinEdge(toSuperviewEdge: .right, withInset: TD_OFFSET)
+        titleLabel.autoPinEdge(toSuperviewEdge: .bottom)
     }
 }

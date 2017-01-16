@@ -11,10 +11,10 @@ class SUFooterView: UIView {
     
     //MARK: - Create UIElements -
     let button: AHButton = {
-        let view = AHButton.newAutoLayoutView()
+        let view = AHButton.newAutoLayout()
         view.backgroundColor = RED_LIGHT
-        view.setTitle("Sign Up", forState: .Normal)
-        view.setTitleColor(WHITE, forState: .Normal)
+        view.setTitle("Sign Up", for: .normal)
+        view.setTitleColor(WHITE, for: .normal)
         view.layer.cornerRadius = SI_OFFSET
 
         return view
@@ -32,7 +32,7 @@ class SUFooterView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(button)
         
         setConstraints()
@@ -40,8 +40,8 @@ class SUFooterView: UIView {
     
     //MARK: - Set Constraints -
     func setConstraints() {
-        button.autoPinEdgeToSuperviewEdge(.Bottom)
-        button.autoAlignAxisToSuperviewAxis(.Vertical)
-        button.autoSetDimensionsToSize(CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
+        button.autoPinEdge(toSuperviewEdge: .bottom)
+        button.autoAlignAxis(toSuperviewAxis: .vertical)
+        button.autoSetDimensions(to: CGSize(width: AU_FIELD_WIDTH, height: AU_BTN_HEIGHT))
     }
 }

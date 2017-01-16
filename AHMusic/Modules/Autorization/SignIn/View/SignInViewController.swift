@@ -41,34 +41,34 @@ class SignInViewController: UIViewController {
         baseConfig()
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     //MARK: - Private Methods -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = signInView
         
         self.title = "Sign In"
         configurateTableViewCells()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SignInViewController.keyboardWillChangeFrame(_:)), name: UIKeyboardWillChangeFrameNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SignInViewController.keyboardWillChangeFrame(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
     
-    private func configurateTableViewCells() {
+    fileprivate func configurateTableViewCells() {
         let placeholders = ["Email", "Password"]
-        let keyTypes = [UIReturnKeyType.Next, UIReturnKeyType.Go]
-        let keyboardTypes = [UIKeyboardType.EmailAddress, UIKeyboardType.Default]
-        let capitalizationTypes = [UITextAutocapitalizationType.None, UITextAutocapitalizationType.None]
+        let keyTypes = [UIReturnKeyType.next, UIReturnKeyType.go]
+        let keyboardTypes = [UIKeyboardType.emailAddress, UIKeyboardType.default]
+        let capitalizationTypes = [UITextAutocapitalizationType.none, UITextAutocapitalizationType.none]
         let secureTextEntrys = [false, true]
         
         for i in 0..<placeholders.count {
             let signInCell = FieldCell()
-            signInCell.selectionStyle = .None
+            signInCell.selectionStyle = .none
             signInCell.cellContentView.authTextField.autocapitalizationType = capitalizationTypes[i]
-            signInCell.cellContentView.authTextField.secureTextEntry = secureTextEntrys[i]
+            signInCell.cellContentView.authTextField.isSecureTextEntry = secureTextEntrys[i]
             signInCell.cellContentView.authTextField.keyboardType = keyboardTypes[i]
             signInCell.cellContentView.authTextField.placeholder = placeholders[i]
             signInCell.cellContentView.authTextField.returnKeyType = keyTypes[i]
@@ -79,12 +79,12 @@ class SignInViewController: UIViewController {
         }
     }
     
-    private func isValidInputParams() -> Bool {
+    fileprivate func isValidInputParams() -> Bool {
         var isValid = true
-        if !UIHelper.isValidEmail(cells[0].cellContentView.authTextField) {
+        if !UIHelper.isValidEmail(field: cells[0].cellContentView.authTextField) {
             isValid = false
         }
-        if !UIHelper.isValidPassword(cells[1].cellContentView.authTextField) {
+        if !UIHelper.isValidPassword(field: cells[1].cellContentView.authTextField) {
             isValid = false
         }
         
@@ -103,13 +103,13 @@ class SignInViewController: UIViewController {
     }
     
     //MARK: - Keyboard notifications -
-    func keyboardWillChangeFrame(notification: NSNotification) {
-        if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.CGRectValue() {
-            let animationDuration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber) as! NSTimeInterval
+    func keyboardWillChangeFrame(_ notification: NSNotification) {
+        if let keyboardFrame = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            let animationDuration = (notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber) as! TimeInterval
             let height = keyboardFrame.origin.y
             
             self.view.layoutIfNeeded()
-            UIView.animateWithDuration(animationDuration, animations: { _ in
+            UIView.animate(withDuration: animationDuration, animations: { _ in
                 self.signInView.heighTBLConstraint.constant = height - NAV_HEIGHT
                 self.view.layoutIfNeeded()
             })
@@ -128,40 +128,40 @@ extension SignInViewController: SignInViewInput {
 //MARK: - extension for UITableView -
 extension SignInViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return cells.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         return cells[indexPath.row]
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return AU_CELL_HEIGHT
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         return SI_LOGO_SIZE*1.5
     }
     
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         
         return (AU_BTN_HEIGHT + SI_OFFSET)*3 + SI_OFFSET*2
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         return headerView
     }
     
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        footerView.signInButton.addTarget(self, action: #selector(SignInViewController.signIn), forControlEvents: UIControlEvents.TouchUpInside)
-        footerView.facebookButton.addTarget(self, action: #selector(SignInViewController.signIn), forControlEvents: UIControlEvents.TouchUpInside)
-        footerView.googleButton.addTarget(self, action: #selector(SignInViewController.signIn), forControlEvents: UIControlEvents.TouchUpInside)
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        footerView.signInButton.addTarget(self, action: #selector(SignInViewController.signIn), for: UIControlEvents.touchUpInside)
+        footerView.facebookButton.addTarget(self, action: #selector(SignInViewController.signIn), for: UIControlEvents.touchUpInside)
+        footerView.googleButton.addTarget(self, action: #selector(SignInViewController.signIn), for: UIControlEvents.touchUpInside)
 
         return footerView
     }
@@ -170,10 +170,10 @@ extension SignInViewController: UITableViewDataSource, UITableViewDelegate {
 //MARK: - extension for UITextField -
 extension SignInViewController: UITextFieldDelegate {
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.tag == 0 {
             cells[1].cellContentView.authTextField.becomeFirstResponder()
-            signInView.tableView.scrollToRowAtIndexPath(NSIndexPath(forRow: 1, inSection: 0), atScrollPosition: .None, animated: true)
+            signInView.tableView.scrollToRow(at: IndexPath(row: 1, section: 0), at: .none, animated: true)
         } else {
             textField.resignFirstResponder()
             signIn()

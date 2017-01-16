@@ -8,5 +8,5 @@
 
 protocol OpenDetailFromArtistProtocol {
     
-    func openDetail(artist: Artist)
+    func openDetail(_ artist: Artist)
 }

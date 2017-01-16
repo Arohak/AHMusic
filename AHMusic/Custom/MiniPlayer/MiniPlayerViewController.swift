@@ -45,21 +45,21 @@ class MiniPlayerViewController: UIViewController {
         output.playPauseTrack(index)
     }
     
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = miniPlayerView
         
         miniPlayerView.player.titleLabel.text = items[index].title
         
-        miniPlayerView.player.slider.addTarget(self, action: #selector(MiniPlayerViewController.progressSliderValueChanged(_:)), forControlEvents: .ValueChanged)
-        miniPlayerView.player.playPauseButton.addTarget(self, action: #selector(MiniPlayerViewController.playPauseAction), forControlEvents: .TouchUpInside)
-        miniPlayerView.player.prevButton.addTarget(self, action: #selector(MiniPlayerViewController.prevAction), forControlEvents: .TouchUpInside)
-        miniPlayerView.player.nextButton.addTarget(self, action: #selector(MiniPlayerViewController.nextAction), forControlEvents: .TouchUpInside)
+        miniPlayerView.player.slider.addTarget(self, action: #selector(MiniPlayerViewController.progressSliderValueChanged(_:)), for: .valueChanged)
+        miniPlayerView.player.playPauseButton.addTarget(self, action: #selector(MiniPlayerViewController.playPauseAction), for: .touchUpInside)
+        miniPlayerView.player.prevButton.addTarget(self, action: #selector(MiniPlayerViewController.prevAction), for: .touchUpInside)
+        miniPlayerView.player.nextButton.addTarget(self, action: #selector(MiniPlayerViewController.nextAction), for: .touchUpInside)
         
         miniPlayerView.bgView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(MiniPlayerViewController.close)))
     }
     
     // MARK:- Actions -
-    func progressSliderValueChanged(sender: UISlider) {
+    func progressSliderValueChanged(_ sender: UISlider) {
         player.progressSliderValue(sender.value)
     }
     
@@ -79,7 +79,7 @@ class MiniPlayerViewController: UIViewController {
     }
     
     func close() {
-        self.dismissViewControllerAnimated(true) {
+        self.dismiss(animated: true) {
             self.output.stopPlayer(self.index)
             self.player.stop()
         }
@@ -93,7 +93,7 @@ extension MiniPlayerViewController: PlayerOutputProtocol {
         
     }
     
-    func didLoadItem(jukebox: Jukebox, item: JukeboxItem) {
+    func didLoadItem(_ jukebox: Jukebox, item: JukeboxItem) {
 //        print("Jukebox did load: \(item.URL.lastPathComponent)")
 
         index = player.jukebox.playIndex
@@ -102,23 +102,22 @@ extension MiniPlayerViewController: PlayerOutputProtocol {
         miniPlayerView.player.titleLabel.text = items[index].title
     }
     
-    func playback(currentTime: Double, duration: Double) {
+    func playback(_ currentTime: Double, duration: Double) {
         let value = Float(currentTime / duration)
         miniPlayerView.player.slider.value = value
     }
     
-    func stateDidChange(jukebox: Jukebox) {
-        UIView.animateWithDuration(0.3, animations: { () -> Void in
-//            self.miniPlayerView.player.playPauseButton.alpha = jukebox.state == .Loading ? 0 : 1
-            self.miniPlayerView.player.playPauseButton.enabled = jukebox.state == .Loading ? false : true
+    func stateDidChange(_ jukebox: Jukebox) {
+        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+            self.miniPlayerView.player.playPauseButton.isEnabled = jukebox.state == .loading ? false : true
         })
         
-        if jukebox.state == .Ready {
-            miniPlayerView.player.playPauseButton.setBackgroundImage(UIImage(named: "img_pl_play"), forState: .Normal)
-        } else if jukebox.state == .Loading  {
-            miniPlayerView.player.playPauseButton.setBackgroundImage(UIImage(named: "img_pl_pause"), forState: .Normal)
+        if jukebox.state == .ready {
+            miniPlayerView.player.playPauseButton.setBackgroundImage(UIImage(named: "img_pl_play"), for: .normal)
+        } else if jukebox.state == .loading  {
+            miniPlayerView.player.playPauseButton.setBackgroundImage(UIImage(named: "img_pl_pause"), for: .normal)
         } else {
-            miniPlayerView.player.playPauseButton.setBackgroundImage(UIImage(named: jukebox.state == .Paused ? "img_pl_play" : "img_pl_pause"), forState: .Normal)
+            miniPlayerView.player.playPauseButton.setBackgroundImage(UIImage(named: jukebox.state == .paused ? "img_pl_play" : "img_pl_pause"), for: .normal)
         }
         
 //        print("Jukebox state changed to \(jukebox.state)")

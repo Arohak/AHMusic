@@ -16,16 +16,16 @@ class PlaylistPresenter {
 //MARK: - extension for PlaylistViewOutput -
 extension PlaylistPresenter: PlaylistViewOutput {
     
-    func viewIsReady(keyword: String) {
+    func viewIsReady(_ keyword: String) {
         interactor.searchPlaylist(keyword)
     }
     
-    func openLink(playlist: Playlist) {
+    func openLink(_ playlist: Playlist) {
         let vc = WebViewController(resourceName: playlist.title, url: NSURL(string: playlist.link)!)
-        UIHelper.root().presentViewController(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+        UIHelper.root().present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
     }
     
-    func openDetail(playlist: Playlist) {
+    func openDetail(_ playlist: Playlist) {
         interactor.getPlaylist("\(playlist.id)")
     }
 }
@@ -33,11 +33,11 @@ extension PlaylistPresenter: PlaylistViewOutput {
 //MARK: - extension for PlaylistInteractorOutput -
 extension PlaylistPresenter: PlaylistInteractorOutput {
  
-    func searchResultIsReady(items: Array<Playlist>) {
+    func searchResultIsReady(_ items: Array<Playlist>) {
         view.setupInitialState(items)
     }
     
-    func getResultIsReady(playlist: Playlist) {
+    func getResultIsReady(_ playlist: Playlist) {
         let json = JSON(["imageURL" : playlist.pictureBig, "tracks" : Array(playlist.tracks),
             "info" : "Name:\t\(playlist.title)\nTracks:\t\(playlist.nbTracks)\nFans:\t\(playlist.fans)\nRatings:\t\(playlist.rating)"])
         let detail = Detail(data: json)

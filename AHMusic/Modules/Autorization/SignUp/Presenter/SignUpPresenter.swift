@@ -20,7 +20,7 @@ extension SignUpPresenter: SignUpViewOutput {
 
     }
     
-    func signupButtonClicked(json: JSON) {
+    func signupButtonClicked(_ json: JSON) {
         interactor.signup(json)
     }
 }

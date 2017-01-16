@@ -8,5 +8,5 @@
 
 protocol PlaylistViewInput: class {
 
-    func setupInitialState(items: Array<Playlist>)
+    func setupInitialState(_ items: Array<Playlist>)
 }

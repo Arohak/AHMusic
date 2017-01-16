@@ -23,38 +23,38 @@ class LeftMenuViewController: UIViewController {
     }
     
     // MARK: - Private Methods -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = leftMenuView
         
         buttons  = [leftMenuView.home.button, leftMenuView.favorite.button, leftMenuView.download.button, leftMenuView.settings.button]
         
-        leftMenuView.home.button.addTarget(self, action: #selector(LeftMenuViewController.homeAction(_:)), forControlEvents: .TouchUpInside)
-        leftMenuView.favorite.button.addTarget(self, action: #selector(LeftMenuViewController.favoriteAction(_:)), forControlEvents: .TouchUpInside)
-        leftMenuView.download.button.addTarget(self, action: #selector(LeftMenuViewController.downloadAction(_:)), forControlEvents: .TouchUpInside)
-        leftMenuView.settings.button.addTarget(self, action: #selector(LeftMenuViewController.settingsAction(_:)), forControlEvents: .TouchUpInside)
-        leftMenuView.logout.button.addTarget(self, action: #selector(LeftMenuViewController.logoutAction), forControlEvents: .TouchUpInside)
+        leftMenuView.home.button.addTarget(self, action: #selector(LeftMenuViewController.homeAction(_:)), for: .touchUpInside)
+        leftMenuView.favorite.button.addTarget(self, action: #selector(LeftMenuViewController.favoriteAction(_:)), for: .touchUpInside)
+        leftMenuView.download.button.addTarget(self, action: #selector(LeftMenuViewController.downloadAction(_:)), for: .touchUpInside)
+        leftMenuView.settings.button.addTarget(self, action: #selector(LeftMenuViewController.settingsAction(_:)), for: .touchUpInside)
+        leftMenuView.logout.button.addTarget(self, action: #selector(LeftMenuViewController.logoutAction), for: .touchUpInside)
     }
     
     // MARK: - Actions -
-    func homeAction(sender: AHButton) {
+    func homeAction(_ sender: AHButton) {
         if selectCorrectButton(sender) {
             output.home()
         }
     }
     
-    func favoriteAction(sender: AHButton) {
+    func favoriteAction(_ sender: AHButton) {
         if selectCorrectButton(sender) {
             output.favorite()
         }
     }
     
-    func downloadAction(sender: AHButton) {
+    func downloadAction(_ sender: AHButton) {
         if selectCorrectButton(sender) {
             output.download()
         }
     }
     
-    func settingsAction(sender: AHButton) {
+    func settingsAction(_ sender: AHButton) {
         if selectCorrectButton(sender) {
             output.settings()
         }
@@ -65,18 +65,18 @@ class LeftMenuViewController: UIViewController {
     }
     
     // MARK: - Private Actions -
-    private func selectCorrectButton(sender: AHButton) -> Bool {
-        let state = sender.selected
+    fileprivate func selectCorrectButton(_ sender: AHButton) -> Bool {
+        let state = sender.isSelected
 
         if !state {
             for button in buttons {
                 if state {
-                    button.selected = true
+                    button.isSelected = true
                 } else {
-                    button.selected = false
+                    button.isSelected = false
                 }
             }
-            sender.selected = !sender.selected
+            sender.isSelected = !sender.isSelected
         }
         
         return !state

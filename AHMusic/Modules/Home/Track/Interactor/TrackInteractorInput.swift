@@ -8,5 +8,5 @@
 
 protocol TrackInteractorInput: GetAlbumProtocol, GetArtistProtocol, GetTrackProtocol {
 
-    func searchTrack(name: String)
+    func searchTrack(_ name: String)
 }

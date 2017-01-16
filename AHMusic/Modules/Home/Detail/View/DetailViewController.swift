@@ -24,7 +24,7 @@ class DetailViewController: BaseEventViewController {
     }
     
     // MARK: - Life cycle -
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         let headerView = baseEventView.tableView.tableHeaderView as! ParallaxHeaderView
@@ -32,15 +32,15 @@ class DetailViewController: BaseEventViewController {
     }
     
     //MARK: - Actions -
-    override func favoriteAction(sender: AHButton) {
+    override func favoriteAction(_ sender: AHButton) {
         super.favoriteAction(sender)
         
         let track = items[sender.indexPath.row]
-        output.favoriteTrack(sender.selected, track: track)
+        output.favoriteTrack(sender.isSelected, track: track)
         
     }
     
-    override func downloadAction(sender: AHButton) {
+    override func downloadAction(_ sender: AHButton) {
         super.downloadAction(sender)
     }
 }
@@ -48,7 +48,7 @@ class DetailViewController: BaseEventViewController {
 //MARK: - extension for UIScrollView -
 extension BaseEventViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == baseEventView.tableView {
             if let parallaxHeaderView = baseEventView.tableView.tableHeaderView as? ParallaxHeaderView {
                 parallaxHeaderView.headerViewForScrollViewOffset(scrollView.contentOffset)

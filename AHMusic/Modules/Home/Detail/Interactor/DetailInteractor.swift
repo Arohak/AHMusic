@@ -15,20 +15,20 @@ class DetailInteractor {
 //MARK: - extension for DetailInteractorInput -
 extension DetailInteractor: DetailInteractorInput {
     
-    func getTrack(id: String, tracks: Array<Track>) {
-        _ = apiHelper.rx_GetTrack(id)
-            .subscribeNext({ result in
+    func getTrack(_ id: String, tracks: Array<Track>) {
+        _ = apiHelper.rx_GetTrack(id: id)
+            .subscribe(onNext: { result in
                 let track = Track(data: result)
                 
                 self.output.getTrackResultIsReady(track, tracks: tracks)
             })
     }
     
-    func addOrDeleteFavoriteTrack(state: Bool, track: Track) {
+    func addOrDeleteFavoriteTrack(_ state: Bool, track: Track) {
         dbHelper.addOrDeleteFavoriteTrack(state, track: track)
     }
     
-    func addOrDeleteDownloadTrack(state: Bool, track: Track) {
+    func addOrDeleteDownloadTrack(_ state: Bool, track: Track) {
         dbHelper.addOrDeleteDownloadTrack(state, track: track)
     }
 }

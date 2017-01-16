@@ -19,35 +19,35 @@ class ParallaxHeaderView: UIView {
 
     //MARK: - Create UIElements -
     lazy var scrollView: UIScrollView = {
-        let view = UIScrollView.newAutoLayoutView()
+        let view = UIScrollView.newAutoLayout()
         
         return view
     }()
     
     lazy var imageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
-        view.contentMode = .ScaleAspectFill
+        let view = UIImageView.newAutoLayout()
+        view.contentMode = .scaleAspectFill
         
         if let imageStr = self.imageStr {
             view.image = UIImage(named: imageStr)
         }
         
         if let url = self.imageURL {
-            view.kf_setImageWithURL(NSURL(string: url)!, placeholderImage: Image(named: "img_placeholder"))
+            view.kf.setImage(with: URL(string: url)!, placeholder: Image(named: "img_placeholder"))
         }
         
         return view
     }()
     
     lazy var bluredImageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
+        let view = UIImageView.newAutoLayout()
         view.alpha = 0
         
         return view
     }()
     
     lazy var subView: UIView = {
-        let view = UIView.newAutoLayoutView()
+        let view = UIView.newAutoLayout()
         
         return view
     }()
@@ -84,69 +84,69 @@ class ParallaxHeaderView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addDefaultUIElements() {
+    fileprivate func addDefaultUIElements() {
         self.addSubview(scrollView)
         scrollView.addSubview(imageView)
         scrollView.addSubview(bluredImageView)
        
-        topHeaderConstraints = scrollView.autoPinEdgeToSuperviewEdge(.Top)
-        heightHeaderConstraints = scrollView.autoMatchDimension(.Height, toDimension: .Height, ofView: self)
-        scrollView.autoMatchDimension(.Width, toDimension: .Width, ofView: self)
-        scrollView.autoPinEdgeToSuperviewEdge(.Left)
+        topHeaderConstraints = scrollView.autoPinEdge(toSuperviewEdge: .top)
+        heightHeaderConstraints = scrollView.autoMatch(.height, to: .height, of: self)
+        scrollView.autoMatch(.width, to: .width, of: self)
+        scrollView.autoPinEdge(toSuperviewEdge: .left)
         
-        imageView.autoPinEdgeToSuperviewEdge(.Top)
-        heightImageConstraints = imageView.autoMatchDimension(.Height, toDimension: .Height, ofView: self)
-        imageView.autoMatchDimension(.Width, toDimension: .Width, ofView: self)
-        imageView.autoPinEdgeToSuperviewEdge(.Left)
+        imageView.autoPinEdge(toSuperviewEdge: .top)
+        heightImageConstraints = imageView.autoMatch(.height, to: .height, of: self)
+        imageView.autoMatch(.width, to: .width, of: self)
+        imageView.autoPinEdge(toSuperviewEdge: .left)
         
-        bluredImageView.autoPinEdgeToSuperviewEdge(.Top)
-        heightBluredImageConstraints = bluredImageView.autoMatchDimension(.Height, toDimension: .Height, ofView: self)
-        bluredImageView.autoMatchDimension(.Width, toDimension: .Width, ofView: self)
-        bluredImageView.autoPinEdgeToSuperviewEdge(.Left)
+        bluredImageView.autoPinEdge(toSuperviewEdge: .top)
+        heightBluredImageConstraints = bluredImageView.autoMatch(.height, to: .height, of: self)
+        bluredImageView.autoMatch(.width, to: .width, of: self)
+        bluredImageView.autoPinEdge(toSuperviewEdge: .left)
         
         refreshBlurViewForNewImage()
     }
     
-    private func addUIElements(subView: UIView) {
+    fileprivate func addUIElements(_ subView: UIView) {
         self.addSubview(scrollView)
         scrollView.addSubview(subView)
         scrollView.addSubview(bluredImageView)
         
-        topHeaderConstraints = scrollView.autoPinEdgeToSuperviewEdge(.Top)
-        heightHeaderConstraints = scrollView.autoMatchDimension(.Height, toDimension: .Height, ofView: self)
-        scrollView.autoMatchDimension(.Width, toDimension: .Width, ofView: self)
-        scrollView.autoPinEdgeToSuperviewEdge(.Left)
+        topHeaderConstraints = scrollView.autoPinEdge(toSuperviewEdge: .top)
+        heightHeaderConstraints = scrollView.autoMatch(.height, to: .height, of: self)
+        scrollView.autoMatch(.width, to: .width, of: self)
+        scrollView.autoPinEdge(toSuperviewEdge: .left)
         
-        subView.autoPinEdgeToSuperviewEdge(.Top)
-        heightImageConstraints = subView.autoMatchDimension(.Height, toDimension: .Height, ofView: self)
-        subView.autoMatchDimension(.Width, toDimension: .Width, ofView: self)
-        subView.autoPinEdgeToSuperviewEdge(.Left)
+        subView.autoPinEdge(toSuperviewEdge: .top)
+        heightImageConstraints = subView.autoMatch(.height, to: .height, of: self)
+        subView.autoMatch(.width, to: .width, of: self)
+        subView.autoPinEdge(toSuperviewEdge: .left)
         
-        bluredImageView.autoPinEdgeToSuperviewEdge(.Top)
-        heightBluredImageConstraints = bluredImageView.autoMatchDimension(.Height, toDimension: .Height, ofView: self)
-        bluredImageView.autoMatchDimension(.Width, toDimension: .Width, ofView: self)
-        bluredImageView.autoPinEdgeToSuperviewEdge(.Left)
+        bluredImageView.autoPinEdge(toSuperviewEdge: .top)
+        heightBluredImageConstraints = bluredImageView.autoMatch(.height, to: .height, of: self)
+        bluredImageView.autoMatch(.width, to: .width, of: self)
+        bluredImageView.autoPinEdge(toSuperviewEdge: .left)
         
         refreshBlurViewForNewImage()
     }
     
-    private func screenShotOfView() -> UIImage {
+    fileprivate func screenShotOfView() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(kFrame.size, true, 0.0)
-        self.drawViewHierarchyInRect(kFrame, afterScreenUpdates: false)
+        self.drawHierarchy(in: kFrame, afterScreenUpdates: false)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        return image!
     }
     
     //MARK: - Public Methods -
     func refreshBlurViewForNewImage() {
         var screenShot = screenShotOfView()
-        screenShot = screenShot.applyBlurWithRadius(5, tintColor: UIColor(white: 0.6, alpha: 0.2), saturationDeltaFactor: 1.0)!
+        screenShot = screenShot.applyBlurWithRadius(blurRadius: 5, tintColor: UIColor(white: 0.6, alpha: 0.2), saturationDeltaFactor: 1.0)!
         bluredImageView.image = screenShot
     }
     
-    func headerViewForScrollViewOffset(offset: CGPoint) {
+    func headerViewForScrollViewOffset(_ offset: CGPoint) {
         if offset.y > 0 {
             let Y = max(offset.y * 0.3, 0)
             topHeaderConstraints.constant = Y

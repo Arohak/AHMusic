@@ -12,9 +12,9 @@ class SettingsDetailView: UIView {
     
     //MARK: - Create UIElements -
     lazy var profile: LMGroupView = {
-        let view = LMGroupView.newAutoLayoutView()
+        let view = LMGroupView.newAutoLayout()
         view.widthConstraints.constant = self.maxWidth
-        view.button.setBackgroundImage(UIImage(named: "img_lm_profile"), forState: .Normal)
+        view.button.setBackgroundImage(UIImage(named: "img_lm_profile"), for: .normal)
         view.label.text = "Profile"
         
         return view
@@ -22,7 +22,7 @@ class SettingsDetailView: UIView {
     
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         backgroundColor = BLACK_59
         addAllUIElements()
@@ -33,7 +33,7 @@ class SettingsDetailView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(profile)
 
         setConstraints()
@@ -41,10 +41,10 @@ class SettingsDetailView: UIView {
     
     //MARK: - Constraints -
     func setConstraints() {
-        profile.autoPinEdgeToSuperviewEdge(.Top, withInset: LM_INSET)
-        profile.autoPinEdgeToSuperviewEdge(.Left)
-        profile.autoPinEdgeToSuperviewEdge(.Right)
-        profile.autoPinEdge(.Bottom, toEdge: .Bottom, ofView: profile.label)
+        profile.autoPinEdge(toSuperviewEdge: .top, withInset: LM_INSET)
+        profile.autoPinEdge(toSuperviewEdge: .left)
+        profile.autoPinEdge(toSuperviewEdge: .right)
+        profile.autoPinEdge(.bottom, to: .bottom, of: profile.label)
 
     }
 }

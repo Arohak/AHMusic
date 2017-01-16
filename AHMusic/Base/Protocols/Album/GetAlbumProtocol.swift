@@ -8,5 +8,5 @@
 
 protocol GetAlbumProtocol {
     
-    func getAlbum(id: String)
+    func getAlbum(_ id: String)
 }

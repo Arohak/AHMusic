@@ -8,15 +8,15 @@
 
 class AHPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    private var callback: PickerCallback?
+    fileprivate var callback: PickerCallback?
     
-    var closeTimer = NSTimer()
+    var closeTimer = Timer()
     var values = Array<String>()
     var indexPath: NSIndexPath!
     
     //MARK: - Initilize -
-    init(values: Array<String>, callback: PickerCallback) {
-        super.init(frame: CGRectZero)
+    init(values: Array<String>, callback: @escaping PickerCallback) {
+        super.init(frame: CGRect.zero)
         
         delegate = self
         dataSource = self
@@ -35,32 +35,32 @@ class AHPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
     func closePopUp() {
         let nav = appDelegate.window!.rootViewController! as! UINavigationController
         if let vc = nav.presentedViewController {
-            vc.dismissViewControllerAnimated(true, completion: nil)
+            vc.dismiss(animated: true, completion: nil)
         }
         closeTimer.invalidate()
     }
     
     //MARK: - UIPickerViewDataSource
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         return values.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         return values[row]
     }
     
     //MARK: - UIPickerViewDelegate
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        callback?(value: values[row])
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        callback?(values[row])
         
         closeTimer.invalidate()
-        closeTimer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(closePopUp), userInfo: AnyObject?(), repeats: true)
+        closeTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(closePopUp), userInfo: nil, repeats: true)
     }
 }

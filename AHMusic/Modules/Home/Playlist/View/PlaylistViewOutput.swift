@@ -8,6 +8,6 @@
 
 protocol PlaylistViewOutput: BaseViewOutput {
 
-    func openLink(playlist: Playlist)
-    func openDetail(playlist: Playlist)
+    func openLink(_ playlist: Playlist)
+    func openDetail(_ playlist: Playlist)
 }

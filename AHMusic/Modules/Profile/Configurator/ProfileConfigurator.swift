@@ -8,14 +8,14 @@
 
 class ProfileModuleConfigurator {
 
-    func configureModuleForController(viewController: AnyObject) {
+    func configureModuleForController(_ viewController: AnyObject) {
         
         if let viewController = viewController as? ProfileViewController {
             configure(viewController)
         }
     }
     
-    private func configure(viewController: ProfileViewController) {
+    fileprivate func configure(_ viewController: ProfileViewController) {
         
         let presenter = ProfilePresenter()
         let interactor = ProfileInteractor()

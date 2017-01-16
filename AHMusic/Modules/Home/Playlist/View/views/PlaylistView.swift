@@ -10,16 +10,16 @@
 class PlaylistView: BaseView {
     
     lazy var tableView: BaseTableView = {
-        let view = BaseTableView.newAutoLayoutView()
+        let view = BaseTableView.newAutoLayout()
         
         return view
     }()
     
     lazy var refresh: CarbonSwipeRefresh = {
         let view = CarbonSwipeRefresh(scrollView: self.tableView)
-        view.colors = RCOLORS
+        view?.colors = RCOLORS
         
-        return view
+        return view!
     }()
     
     //MARK: - Initialize -
@@ -34,7 +34,7 @@ class PlaylistView: BaseView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(tableView)
         addSubview(refresh)
 
@@ -61,11 +61,11 @@ class PlaylistCell: BaseTableViewCell {
         cellContentView.autoPinEdgesToSuperviewEdges()
     }
     
-    func setValues(item: Playlist) {
-        cellContentView.imageView.kf_setImageWithURL(NSURL(string: item.picture)!, placeholderImage: Image(named: "img_placeholder"))
+    func setValues(_ item: Playlist) {
+        cellContentView.imageView.kf.setImage(with: URL(string: item.picture), placeholder: Image(named: "img_placeholder"))
         cellContentView.titleLabel.text = item.title
         cellContentView.creationDateLabel.text = Utils.stringFromDateString(item.creationDate)
-        cellContentView.linkButton.setTitle(item.link, forState: .Normal)
+//        cellContentView.linkButton.setTitle(item.link, for: .normal)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -78,7 +78,7 @@ class PlaylistCellContentView: UIView {
     
     //MARK: - Create UIElements -
     lazy var imageView: UIImageView = {
-        let view = UIImageView.newAutoLayoutView()
+        let view = UIImageView.newAutoLayout()
         view.layer.cornerRadius = PL_CELL_HEIGHT*0.95/2
         view.clipsToBounds = true
         
@@ -86,7 +86,7 @@ class PlaylistCellContentView: UIView {
     }()
     
     lazy var titleLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
+        let view = AHLabel.newAutoLayout()
         view.font = PL_TITLE_FONT
         view.numberOfLines = 2
 
@@ -94,21 +94,21 @@ class PlaylistCellContentView: UIView {
     }()
     
     lazy var creationDateLabel: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
+        let view = AHLabel.newAutoLayout()
         view.font = LINK_FONT
         
         return view
     }()
     
     lazy var linkButton: LinkButton = {
-        let view = LinkButton.newAutoLayoutView()
+        let view = LinkButton.newAutoLayout()
         
         return view
     }()
     
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         addAllUIElements()
     }
@@ -118,32 +118,33 @@ class PlaylistCellContentView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(creationDateLabel)
-        addSubview(linkButton)
+//        addSubview(linkButton)
         
         setConstraints()
     }
     
     //MARK: - Constraints -
     func setConstraints() {
-        imageView.autoPinEdgeToSuperviewEdge(.Right, withInset: PL_OFFSET)
-        imageView.autoPinEdgeToSuperviewEdge(.Top, withInset: 2)
-        imageView.autoSetDimensionsToSize(CGSize(width: PL_CELL_HEIGHT*0.95, height: PL_CELL_HEIGHT*0.95))
+        imageView.autoPinEdge(toSuperviewEdge: .right, withInset: PL_OFFSET)
+        imageView.autoPinEdge(toSuperviewEdge: .top, withInset: 2)
+        imageView.autoSetDimensions(to: CGSize(width: PL_CELL_HEIGHT*0.95, height: PL_CELL_HEIGHT*0.95))
         
-        titleLabel.autoPinEdgeToSuperviewEdge(.Top, withInset: PL_OFFSET)
-        titleLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: PL_OFFSET)
-        titleLabel.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -PL_OFFSET)
+//        titleLabel.autoPinEdge(toSuperviewEdge: .top, withInset: PL_OFFSET)
+        titleLabel.autoAlignAxis(toSuperviewAxis: .horizontal)
+        titleLabel.autoPinEdge(toSuperviewEdge: .left, withInset: PL_OFFSET)
+        titleLabel.autoPinEdge(.right, to: .left, of: imageView, withOffset: -PL_OFFSET)
         
-        creationDateLabel.autoPinEdge(.Top, toEdge: .Bottom, ofView: titleLabel, withOffset: 0)
-        creationDateLabel.autoPinEdgeToSuperviewEdge(.Left, withInset: PL_OFFSET)
-        creationDateLabel.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -PL_OFFSET)
+        creationDateLabel.autoPinEdge(.top, to: .bottom, of: titleLabel, withOffset: 0)
+        creationDateLabel.autoPinEdge(toSuperviewEdge: .left, withInset: PL_OFFSET)
+        creationDateLabel.autoPinEdge(.right, to: .left, of: imageView, withOffset: -PL_OFFSET)
         
-        linkButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: 0)
-        linkButton.autoPinEdgeToSuperviewEdge(.Left, withInset: PL_OFFSET)
-        linkButton.autoPinEdge(.Right, toEdge: .Left, ofView: imageView, withOffset: -TR_OFFSET)
+//        linkButton.autoPinEdge(toSuperviewEdge: .bottom, withInset: 0)
+//        linkButton.autoPinEdge(toSuperviewEdge: .left, withInset: PL_OFFSET)
+//        linkButton.autoPinEdge(.right, to: .left, of: imageView, withOffset: -TR_OFFSET)
     }
 }
 

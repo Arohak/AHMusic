@@ -8,9 +8,9 @@
 
 //MARK: - enum BaseVC -
 enum BaseVC {
-    case Favorite
-    case Download
-    case Detail
+    case favorite
+    case download
+    case detail
 }
 
 //MARK: - class BaseEventViewController -
@@ -18,7 +18,7 @@ class BaseEventViewController: UIViewController {
     
     var output: BaseEventViewOutput!
 
-    var vcType = BaseVC.Detail
+    var vcType = BaseVC.detail
     var baseEventView: BaseEventView!
     var items = Array<Track>()
     let cellIdentifire = "trackCell"
@@ -52,70 +52,75 @@ class BaseEventViewController: UIViewController {
         output.viewIsReady()
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        EventCenter.defaultCenter.register(self, handler: onEvent)
+
+        onEvent();
         resetTrackersState()
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        EventCenter.defaultCenter.unregister(self)
+        SwiftEventBus.unregister(self)
         resetTrackersState()
     }
     
     // MARK: - Private Method -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = baseEventView
         
         baseEventView.tableView.dataSource = self
         baseEventView.tableView.delegate = self
-        baseEventView.tableView.registerClass(TrackShortCell.self, forCellReuseIdentifier: cellIdentifire)
-        baseEventView.refresh.addTarget(self, action: #selector(BaseEventViewController.refresh), forControlEvents: .ValueChanged)
+        baseEventView.tableView.register(TrackShortCell.self, forCellReuseIdentifier: cellIdentifire)
+        baseEventView.refresh.addTarget(self, action: #selector(BaseEventViewController.refresh), for: .valueChanged)
     }
     
-    private func resetTrackersState() {
+    fileprivate func resetTrackersState() {
         for item in items {
             try! dbHelper.realm.write  { item.played = false }
         }
         baseEventView.tableView.reloadData()
     }
     
-    private func changeTrackState(track: Track, state: Bool) {
-        let index = items.indexOf() { $0.id == track.id }
+    fileprivate func changeTrackState(_ track: Track, state: Bool) {
+        let index = items.index() { $0.id == track.id }
         if let index = index {
             try! dbHelper.realm.write  { items[index].played = state }
             
-            let indexPath = NSIndexPath(forRow: index, inSection: 0)
-            baseEventView.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .None, animated: false)
-            baseEventView.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+            let indexPath = IndexPath(row: index, section: 0)
+            baseEventView.tableView.scrollToRow(at: indexPath, at: .none, animated: false)
+            baseEventView.tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
     
-    //MARK: - Events -
-    func onEvent(data: MiniPlayerEvent) {
-        switch data.state {
-        case .Change:
-            resetTrackersState()
-            changeTrackState(data.result, state: true)
-            
-        case .Play:
-            changeTrackState(data.result, state: true)
-            
-        default:
-            changeTrackState(data.result, state: false)
+    //MARK: - SwiftEventBus -
+    func onEvent() {
+        SwiftEventBus.onMainThread(self, name: kEvantMiniPlayer) { result in
+            let evant = result.userInfo?["info"] as? MiniPlayerEvent
+            if let data = evant {
+                switch data.state {
+                case .change:
+                    self.resetTrackersState()
+                    self.changeTrackState(data.result, state: true)
+                    
+                case .play:
+                    self.changeTrackState(data.result, state: true)
+                    
+                default:
+                    self.changeTrackState(data.result, state: false)
+                }
+            }
         }
     }
     
     // MARK: - Actions -
     func refresh() {
         switch vcType {
-        case .Download, .Favorite:
+        case .download, .favorite:
             output.viewIsReady()
 
-        case .Detail:
+        case .detail:
             baseEventView.refresh.endRefreshing()
         }
     }
@@ -123,8 +128,8 @@ class BaseEventViewController: UIViewController {
 
 extension BaseEventViewController: BaseEventViewInput {
     
-    func setupInitialState(items: Array<Track>) {
-        self.items = items.reverse()
+    func setupInitialState(_ items: Array<Track>) {
+        self.items = items.reversed()
 
         baseEventView.refresh.endRefreshing()
         baseEventView.tableView.reloadData()
@@ -134,23 +139,23 @@ extension BaseEventViewController: BaseEventViewInput {
 //MARK: - extension for UITableView -
 extension BaseEventViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return items.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire) as! TrackShortCell
-        cell.cellContentView.playButton.addTarget(self, action: #selector(BaseEventViewController.playTrack(_:)), forControlEvents: .TouchUpInside)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifire) as! TrackShortCell
+        cell.cellContentView.playButton.addTarget(self, action: #selector(BaseEventViewController.playTrack(_:)), for: .touchUpInside)
         cell.cellContentView.playButton.indexPath = indexPath
         
-        cell.cellContentView.linkButton.addTarget(self, action: #selector(BaseEventViewController.openLink(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.linkButton.addTarget(self, action: #selector(BaseEventViewController.openLink(_:)), for: .touchUpInside)
         cell.cellContentView.linkButton.indexPath = indexPath
         
-        cell.cellContentView.favoriteButton.addTarget(self, action: #selector(BaseEventViewController.favoriteAction(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.favoriteButton.addTarget(self, action: #selector(BaseEventViewController.favoriteAction(_:)), for: .touchUpInside)
         cell.cellContentView.favoriteButton.indexPath = indexPath
         
-        cell.cellContentView.downloadButton.addTarget(self, action: #selector(BaseEventViewController.downloadAction(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.downloadButton.addTarget(self, action: #selector(BaseEventViewController.downloadAction(_:)), for: .touchUpInside)
         cell.cellContentView.downloadButton.indexPath = indexPath
         
         let track = items[indexPath.row]
@@ -159,37 +164,37 @@ extension BaseEventViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return DE_CELL_HEIGHT
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let track = items[indexPath.row]
         
         output.openTrackDetail(track, items: items)
     }
     
     // MARK: - Actions -
-    func playTrack(sender: AHButton) {
+    func playTrack(_ sender: AHButton) {
         output.playTrack(sender.indexPath.row, tracks: items)
     }
     
-    func openLink(sender: AHButton) {
+    func openLink(_ sender: AHButton) {
         let track = items[sender.indexPath.row]
         
         output.openLink(track)
     }
     
-    func favoriteAction(sender: AHButton) {
-        sender.selected = !sender.selected
+    func favoriteAction(_ sender: AHButton) {
+        sender.isSelected = !sender.isSelected
     }
     
-    func downloadAction(sender: AHButton) {
-        sender.selected = !sender.selected
+    func downloadAction(_ sender: AHButton) {
+        sender.isSelected = !sender.isSelected
         
         switch vcType {
-        case .Favorite, .Detail:
+        case .favorite, .detail:
             downloadProgress(sender)
         default:
             break
@@ -197,26 +202,25 @@ extension BaseEventViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     // MARK: - Private Method -
-    private func downloadProgress(sender: AHButton) {
-        sender.enabled = !sender.selected
-        sender.setBackgroundImage(UIImage(named: "img_bg_transparent"), forState: .Normal)
+    fileprivate func downloadProgress(_ sender: AHButton) {
+        sender.isEnabled = !sender.isSelected
+        sender.setBackgroundImage(UIImage(named: "img_bg_transparent"), for: .normal)
 
         let track = items[sender.indexPath.row]
-        let cell = baseEventView.tableView.cellForRowAtIndexPath(sender.indexPath) as! TrackShortCell
+        let cell = baseEventView.tableView.cellForRow(at: sender.indexPath) as! TrackShortCell
         
-        apiHelper.downloadProgress(track, progress: { (bytesRead, totalBytesRead, totalBytesExpectedToRead) in
-            self.totalValue = Float(totalBytesRead) / Float(totalBytesExpectedToRead)
+        apiHelper.download(track: track, inProgress: { value in
+            self.totalValue = Float(value)
             cell.cellContentView.shapeLayer.animateProgressView(self.startValue, toV: self.totalValue, dur: 0.0001)
             self.startValue = self.totalValue
-        }) { error in
+        }) { state in
             self.startValue = 0.0
             self.totalValue = 0.0
-            
-            if error == nil {
-                sender.setBackgroundImage(UIImage(named: "img_tr_download_select"), forState: .Normal)
+            if state {
+                sender.setBackgroundImage(UIImage(named: "img_tr_download_select"), for: .normal)
                 cell.cellContentView.shapeLayer.hideProgressView()
                 
-                self.output.downloadTrack(sender.selected, track: track)
+                self.output.downloadTrack(sender.isSelected, track: track)
             }
         }
     }

@@ -8,16 +8,16 @@
 
 protocol MiniPlayerProtocol {
     
-    func stopPlayer(index: Int)
-    func playPauseTrack(index: Int)
-    func nextTrack(index: Int)
-    func prevTrack(index: Int)
-    func changeTrack(index: Int)
+    func stopPlayer(_ index: Int)
+    func playPauseTrack(_ index: Int)
+    func nextTrack(_ index: Int)
+    func prevTrack(_ index: Int)
+    func changeTrack(_ index: Int)
 }
 
 protocol MPPlayProtocol {
 
-    func changeCorrectTrack(track: Track)
-    func playCorrectTrack(track: Track)
-    func pauseCorrectTrack(track: Track)
+    func changeCorrectTrack(_ track: Track)
+    func playCorrectTrack(_ track: Track)
+    func pauseCorrectTrack(_ track: Track)
 }

@@ -23,59 +23,64 @@ class TrackViewController: BaseViewController {
         output.viewIsReady(keyword)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        EventCenter.defaultCenter.register(self, handler: onEvent)
+        onEvent()
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
-        EventCenter.defaultCenter.unregister(self)
+        SwiftEventBus.unregister(self)
         resetTrackersState()
     }
     
     // MARK: - Private Method -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = trackView
         
         trackView.tableView.dataSource = self
         trackView.tableView.delegate = self
-        trackView.tableView.registerClass(TrackCell.self, forCellReuseIdentifier: cellIdentifire)
-        trackView.refresh.addTarget(self, action: #selector(TrackViewController.refresh), forControlEvents: .ValueChanged)
+        trackView.tableView.register(TrackCell.self, forCellReuseIdentifier: cellIdentifire)
+        trackView.refresh.addTarget(self, action: #selector(TrackViewController.refresh), for: .valueChanged)
     }
     
-    private func resetTrackersState() {
+    fileprivate func resetTrackersState() {
         for item in items {
             try! dbHelper.realm.write  { item.played = false }
         }
         trackView.tableView.reloadData()
     }
     
-    private func changeTrackState(track: Track, state: Bool) {
-        let index = items.indexOf() { $0.id == track.id }
+    fileprivate func changeTrackState(_ track: Track, state: Bool) {
+        let index = items.index() { $0.id == track.id }
         if let index = index {
             try! dbHelper.realm.write  { items[index].played = state }
             
-            let indexPath = NSIndexPath(forRow: index, inSection: 0)
-            trackView.tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .None, animated: false)
-            trackView.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .None)
+            let indexPath = IndexPath(row: index, section: 0)
+            trackView.tableView.scrollToRow(at: indexPath, at: .none, animated: false)
+            trackView.tableView.reloadRows(at: [indexPath], with: .none)
         }
     }
     
-    //MARK: - Events -
-    func onEvent(data: MiniPlayerEvent) {
-        switch data.state {
-        case .Change:
-            resetTrackersState()
-            changeTrackState(data.result, state: true)
-            
-        case .Play:
-            changeTrackState(data.result, state: true)
-            
-        default:
-            changeTrackState(data.result, state: false)
+    //MARK: - SwiftEventBus -
+    func onEvent() {
+        SwiftEventBus.onMainThread(self, name: kEvantMiniPlayer) { result in
+            let evant = result.userInfo?["info"] as? MiniPlayerEvent
+            if let data = evant {
+                switch data.state {
+                case .change:
+                    self.resetTrackersState()
+                    self.changeTrackState(data.result, state: true)
+                    
+                case .play:
+                    self.changeTrackState(data.result, state: true)
+                    
+                default:
+                    self.changeTrackState(data.result, state: false)
+                }
+            }
         }
     }
     
@@ -90,7 +95,7 @@ class TrackViewController: BaseViewController {
 //MARK: - extension for TrackViewInput -
 extension TrackViewController: TrackViewInput {
     
-    func setupInitialState(items: Array<Track>) {
+    func setupInitialState(_ items: Array<Track>) {
         self.items = items
         
         trackView.refresh.endRefreshing()
@@ -101,24 +106,24 @@ extension TrackViewController: TrackViewInput {
 //MARK: - extension for UITableView -
 extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return items.count
     }
 
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifire) as! TrackCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifire) as! TrackCell
         
-        cell.cellContentView.playButton.addTarget(self, action: #selector(TrackViewController.playTrack(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.playButton.addTarget(self, action: #selector(TrackViewController.playTrack(_:)), for: .touchUpInside)
         cell.cellContentView.playButton.indexPath = indexPath
         
-        cell.cellContentView.linkButton.addTarget(self, action: #selector(TrackViewController.openLink(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.linkButton.addTarget(self, action: #selector(TrackViewController.openLink(_:)), for: .touchUpInside)
         cell.cellContentView.linkButton.indexPath = indexPath
         
-        cell.cellContentView.albumButton.addTarget(self, action: #selector(TrackViewController.openDeatilFromAlbum(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.albumButton.addTarget(self, action: #selector(TrackViewController.openDeatilFromAlbum(_:)), for: .touchUpInside)
         cell.cellContentView.albumButton.indexPath = indexPath
         
-        cell.cellContentView.artistButton.addTarget(self, action: #selector(TrackViewController.opendetailFromArtist(_:)), forControlEvents: .TouchUpInside)
+        cell.cellContentView.artistButton.addTarget(self, action: #selector(TrackViewController.opendetailFromArtist(_:)), for: .touchUpInside)
         cell.cellContentView.artistButton.indexPath = indexPath
         
         let track = items[indexPath.row]
@@ -127,32 +132,32 @@ extension TrackViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         return TR_CELL_HEIGHT
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let track = items[indexPath.row]
         output.openTrackDetail(track, items: items)
     }
     
     // MARK: - Actions -
-    func playTrack(sender: AHButton) {
+    func playTrack(_ sender: AHButton) {
         output.playTrack(sender.indexPath.row, tracks: items)
     }
     
-    func openLink(sender: AHButton) {
+    func openLink(_ sender: AHButton) {
         let track = items[sender.indexPath.row]
         output.openLink(track)
     }
     
-    func openDeatilFromAlbum(sender: AHButton) {
+    func openDeatilFromAlbum(_ sender: AHButton) {
         let track = items[sender.indexPath.row]
         output.openDetail(track.album)
     }
     
-    func opendetailFromArtist(sender: AHButton) {
+    func opendetailFromArtist(_ sender: AHButton) {
         let track = items[sender.indexPath.row]
         output.openDetail(track.artist)
     }

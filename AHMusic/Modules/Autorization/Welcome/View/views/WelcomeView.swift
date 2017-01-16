@@ -15,33 +15,33 @@ class WelcomeView: BaseView {
     }()
     
     lazy var signInButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setTitle("Sign In", forState: .Normal)
+        let view = AHButton.newAutoLayout()
+        view.setTitle("Sign In", for: .normal)
         view.titleLabel?.font = AU_BTN_FONT
         view.layer.cornerRadius = WE_INSET/3
-        view.layer.borderColor = WHITE.CGColor
+        view.layer.borderColor = WHITE.cgColor
         view.layer.borderWidth = 1
         
         return view
     }()
     
     lazy var signUpButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setTitle("Sign Up", forState: .Normal)
+        let view = AHButton.newAutoLayout()
+        view.setTitle("Sign Up", for: .normal)
         view.titleLabel?.font = AU_BTN_FONT
         view.layer.cornerRadius = WE_INSET/3
-        view.layer.borderColor = WHITE.CGColor
+        view.layer.borderColor = WHITE.cgColor
         view.layer.borderWidth = 1
         
         return view
     }()
     
     lazy var guestButton: AHButton = {
-        let view = AHButton.newAutoLayoutView()
-        view.setTitle("Guest", forState: .Normal)
+        let view = AHButton.newAutoLayout()
+        view.setTitle("Guest", for: .normal)
         view.titleLabel?.font = AU_BTN_FONT
         view.layer.cornerRadius = WE_INSET/3
-        view.layer.borderColor = WHITE.CGColor
+        view.layer.borderColor = WHITE.cgColor
         view.layer.borderWidth = 1
         
         return view
@@ -60,7 +60,7 @@ class WelcomeView: BaseView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(imageView)
         addSubview(signInButton)
         addSubview(signUpButton)
@@ -71,20 +71,20 @@ class WelcomeView: BaseView {
     
     //MARK: - Constraints -
     func setConstraints() {
-        imageView.autoPinEdgeToSuperviewEdge(.Top, withInset: WE_INSET)
-        imageView.autoAlignAxisToSuperviewAxis(.Vertical)
-        imageView.autoSetDimensionsToSize(CGSize(width: WE_LOGO_SIZE, height: WE_LOGO_SIZE))
+        imageView.autoPinEdge(toSuperviewEdge: .top, withInset: WE_INSET)
+        imageView.autoAlignAxis(toSuperviewAxis: .vertical)
+        imageView.autoSetDimensions(to: CGSize(width: WE_LOGO_SIZE, height: WE_LOGO_SIZE))
         
-        signInButton.autoPinEdge(.Bottom, toEdge: .Top, ofView: signUpButton, withOffset: -WE_OFFSET)
-        signInButton.autoAlignAxisToSuperviewAxis(.Vertical)
-        signInButton.autoSetDimensionsToSize(CGSize(width: WE_LOGO_SIZE*1.5, height: AU_BTN_HEIGHT))
+        signInButton.autoPinEdge(.bottom, to: .top, of: signUpButton, withOffset: -WE_OFFSET)
+        signInButton.autoAlignAxis(toSuperviewAxis: .vertical)
+        signInButton.autoSetDimensions(to: CGSize(width: WE_LOGO_SIZE*1.5, height: AU_BTN_HEIGHT))
         
-        signUpButton.autoPinEdge(.Bottom, toEdge: .Top, ofView: guestButton, withOffset: -WE_OFFSET)
-        signUpButton.autoAlignAxisToSuperviewAxis(.Vertical)
-        signUpButton.autoSetDimensionsToSize(CGSize(width: WE_LOGO_SIZE*1.5, height: AU_BTN_HEIGHT))
+        signUpButton.autoPinEdge(.bottom, to: .top, of: guestButton, withOffset: -WE_OFFSET)
+        signUpButton.autoAlignAxis(toSuperviewAxis: .vertical)
+        signUpButton.autoSetDimensions(to: CGSize(width: WE_LOGO_SIZE*1.5, height: AU_BTN_HEIGHT))
         
-        guestButton.autoPinEdgeToSuperviewEdge(.Bottom, withInset: WE_INSET)
-        guestButton.autoAlignAxisToSuperviewAxis(.Vertical)
-        guestButton.autoSetDimensionsToSize(CGSize(width: WE_LOGO_SIZE*1.5, height: AU_BTN_HEIGHT))
+        guestButton.autoPinEdge(toSuperviewEdge: .bottom, withInset: WE_INSET)
+        guestButton.autoAlignAxis(toSuperviewAxis: .vertical)
+        guestButton.autoSetDimensions(to: CGSize(width: WE_LOGO_SIZE*1.5, height: AU_BTN_HEIGHT))
     }
 }

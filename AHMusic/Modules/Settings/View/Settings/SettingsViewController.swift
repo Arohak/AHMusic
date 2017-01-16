@@ -21,14 +21,14 @@ class SettingsViewController: UIViewController {
     }
     
     // MARK: - Private Methods -
-    private func baseConfig() {
+    fileprivate func baseConfig() {
         self.view = settingsView
         
-        settingsView.home.button.addTarget(self, action: #selector(SettingsViewController.homeAction(_:)), forControlEvents: .TouchUpInside)
+        settingsView.home.button.addTarget(self, action: #selector(SettingsViewController.homeAction(_:)), for: .touchUpInside)
     }
     
     // MARK: - Actions -
-    func homeAction(sender: AHButton) {
+    func homeAction(_ sender: AHButton) {
         output.detail()
     }
 }

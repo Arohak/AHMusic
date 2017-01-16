@@ -8,5 +8,5 @@
 
 protocol OpenTrackDetailProtocol {
     
-    func openTrackDetail(track: Track, items: Array<Track>)
+    func openTrackDetail(_ track: Track, items: Array<Track>)
 }

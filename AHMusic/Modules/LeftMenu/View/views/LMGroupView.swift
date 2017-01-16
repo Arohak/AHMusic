@@ -12,22 +12,22 @@ class LMGroupView: UIView {
     
     //MARK: - Create UIElements -
     lazy var label: AHLabel = {
-        let view = AHLabel.newAutoLayoutView()
+        let view = AHLabel.newAutoLayout()
         view.font = LM_LBL_FONT
-        view.textAlignment = .Center
+        view.textAlignment = .center
         
         return view
     }()
     
     lazy var button: AHButton = {
-        let view = AHButton.newAutoLayoutView()
+        let view = AHButton.newAutoLayout()
 
         return view
     }()
     
     //MARK: - Initialize -
     init() {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         
         addAllUIElements()
     }
@@ -37,7 +37,7 @@ class LMGroupView: UIView {
     }
     
     //MARK: - Private Methods -
-    private func addAllUIElements() {
+    fileprivate func addAllUIElements() {
         addSubview(button)
         addSubview(label)
 
@@ -46,14 +46,14 @@ class LMGroupView: UIView {
     
     //MARK: - Constraints -
     func setConstraints() {
-        button.autoPinEdgeToSuperviewEdge(.Top)
-        button.autoAlignAxisToSuperviewAxis(.Vertical)
-        button.autoMatchDimension(.Height, toDimension: .Width, ofView: button)
-        widthConstraints = button.autoSetDimension(.Width, toSize: WIDTH)
+        button.autoPinEdge(toSuperviewEdge: .top)
+        button.autoAlignAxis(toSuperviewAxis: .vertical)
+        button.autoMatch(.height, to: .width, of: button)
+        widthConstraints = button.autoSetDimension(.width, toSize: WIDTH)
 
-        label.autoPinEdge(.Top, toEdge: .Bottom, ofView: button, withOffset: LM_OFFSET*2)
-        label.autoPinEdgeToSuperviewEdge(.Left)
-        label.autoPinEdgeToSuperviewEdge(.Right)
-        label.autoPinEdgeToSuperviewEdge(.Bottom)
+        label.autoPinEdge(.top, to: .bottom, of: button, withOffset: LM_OFFSET*2)
+        label.autoPinEdge(toSuperviewEdge: .left)
+        label.autoPinEdge(toSuperviewEdge: .right)
+        label.autoPinEdge(toSuperviewEdge: .bottom)
     }
 }

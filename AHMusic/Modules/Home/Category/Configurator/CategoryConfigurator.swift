@@ -8,14 +8,14 @@
 
 class CategoryModuleConfigurator {
 
-    func configureModuleForController(viewController: AnyObject) {
+    func configureModuleForController(_ viewController: AnyObject) {
         
         if let viewController = viewController as? CategoryViewController {
             configure(viewController)
         }
     }
     
-    private func configure(viewController: CategoryViewController) {
+    fileprivate func configure(_ viewController: CategoryViewController) {
         
         let presenter = CategoryPresenter()
         let interactor = CategoryInteractor()

@@ -8,14 +8,14 @@
 
 class FavoriteModuleConfigurator {
     
-    func configureModuleForController(viewController: AnyObject) {
+    func configureModuleForController(_ viewController: AnyObject) {
         
         if let viewController = viewController as? FavoriteViewController {
             configure(viewController)
         }
     }
     
-    private func configure(viewController: FavoriteViewController) {
+    fileprivate func configure(_ viewController: FavoriteViewController) {
         
         let presenter = FavoritePresenter()
         let interactor = FavoriteInteractor()

@@ -8,5 +8,5 @@
 
 protocol SearchTrackFromDBProtocol {
     
-    func searchTrackDB(keyword: String)
+    func searchTrackDB(_ keyword: String)
 }

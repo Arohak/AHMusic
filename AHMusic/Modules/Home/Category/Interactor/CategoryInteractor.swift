@@ -18,7 +18,7 @@ extension CategoryInteractor: CategoryInteractorInput {
     
     func getCategoryItems() {
         _ = apiHelper.rx_GetCategories()
-            .subscribeNext({ result in
+            .subscribe(onNext: { result in
                 var temp = Array<Category>()
                 for item in result["data"].arrayValue {
                     let result = Category(data: item)
@@ -29,9 +29,9 @@ extension CategoryInteractor: CategoryInteractorInput {
             })
     }
     
-    func searchItems(name: String) {
-        _ = apiHelper.rx_Search(name)
-            .subscribeNext({ result in
+    func searchItems(_ name: String) {
+        _ = apiHelper.rx_Search(name: name)
+            .subscribe(onNext: { result in
                 var temp = Array<Result>()
                 for item in result["data"].arrayValue {
                     let result = Result(data: item)

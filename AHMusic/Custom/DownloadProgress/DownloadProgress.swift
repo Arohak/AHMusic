@@ -19,17 +19,17 @@
         fatalError("init(coder:) has not been implemented")
     }
 
-    func createProgressLayer(center: CGFloat) {
+    func createProgressLayer(_ center: CGFloat) {
         let startAngle = CGFloat(M_PI_2)
         let endAngle = CGFloat(M_PI * 2 + M_PI_2)
-        let centerPoint = CGPointMake(center/2, center/2)
+        let centerPoint = CGPoint(x: center/2, y: center/2)
         
         gradientMaskLayer = gradientMask()
         
-        self.path = UIBezierPath(arcCenter:centerPoint, radius: center/3, startAngle:startAngle, endAngle:endAngle, clockwise: true).CGPath
-        self.backgroundColor = UIColor.clearColor().CGColor
+        self.path = UIBezierPath(arcCenter:centerPoint, radius: center/3, startAngle:startAngle, endAngle:endAngle, clockwise: true).cgPath
+        self.backgroundColor = CLEAR.cgColor
         self.fillColor = nil
-        self.strokeColor = UIColor.blackColor().CGColor
+        self.strokeColor = BLACK.cgColor
         self.lineWidth = DeviceType.IS_IPAD ? 3.5 : 3
         self.strokeStart = 0.0
         self.strokeEnd = 0.0
@@ -43,8 +43,8 @@
         
         gradientLayer.locations = [0.0, 1.0]
         
-        let colorTop: AnyObject = UIColor.whiteColor().CGColor
-        let colorBottom: AnyObject = UIColor.whiteColor().CGColor
+        let colorTop: AnyObject = WHITE.cgColor
+        let colorBottom: AnyObject = WHITE.cgColor
         let arrayOfColors: [AnyObject] = [colorTop, colorBottom]
         gradientLayer.colors = arrayOfColors
         
@@ -56,16 +56,16 @@
         self.removeAllAnimations()
     }
     
-    func animateProgressView(fromV: Float, toV: Float, dur: CFTimeInterval) {
+    func animateProgressView(_ fromV: Float, toV: Float, dur: CFTimeInterval) {
         self.strokeEnd = 0.0
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = CGFloat(fromV)
         animation.toValue = CGFloat(toV)
         animation.duration = dur
-        animation.delegate = self
-        animation.removedOnCompletion = false
-        animation.additive = true
+//        animation.delegate = self
+        animation.isRemovedOnCompletion = false
+        animation.isAdditive = true
         animation.fillMode = kCAFillModeForwards
-        self.addAnimation(animation, forKey: "strokeEnd")
+        self.add(animation, forKey: "strokeEnd")
     }
 }

@@ -8,6 +8,6 @@
 
 protocol PlaylistInteractorOutput: class {
     
-    func searchResultIsReady(items: Array<Playlist>)
-    func getResultIsReady(playlist: Playlist)
+    func searchResultIsReady(_ items: Array<Playlist>)
+    func getResultIsReady(_ playlist: Playlist)
 }

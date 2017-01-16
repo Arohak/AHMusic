@@ -12,17 +12,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var miniPlayerView: MiniPlayerViewRoot!
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey : Any]? = nil) -> Bool {
         startApplication()
         
         return true
     }
     
-    private func startApplication() {
+    fileprivate func startApplication() {
         UIHelper.configurateApplicationApperance()
 
         //main
-//        let main = TabViewController()
         let main = CategoryViewController()
         _ = CategoryModuleInitializer(viewController: main)
         
@@ -30,23 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let left = LeftMenuViewController()
         _ = LeftMenuModuleInitializer(viewController: left)
 
-//        let rootController = SlideViewController(mainViewController: main, leftMenuViewController: left)
-//        let nav = UINavigationController(rootViewController: rootController)
+        let rootController = SlideViewController(mainViewController: main, leftMenuViewController: left)
+        let nav = UINavigationController(rootViewController: rootController)
         
-//        let vc = ParallaxViewController(items: ["A", "B", "C", "D", "E", "F", "G", "H", "K", "L"], title: "Test", imageStr: "img_ca_rock")
-//        let nav = UINavigationController(rootViewController: vc)
-        
-//        let signIn = SignInPresenter()
-//        _ = SignInModuleInitializer(presentor: signIn)
-//        let nav = signIn.view as! UIViewController
-//        let nav = UINavigationController(rootViewController: vc)
-
-        let welcome = WelcomePresenter()
-        _ = WelcomeModuleInitializer(presentor: welcome)
-        let vc = welcome.view as! UIViewController
-        let nav = UINavigationController(rootViewController: vc)
-        
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
