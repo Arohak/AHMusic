@@ -86,7 +86,7 @@ class TrackDetailViewController: UIViewController {
         trackDetailView.actionView.prevButton.addTarget(self, action: #selector(TrackDetailViewController.prevAction), for: .touchUpInside)
         trackDetailView.actionView.nextButton.addTarget(self, action: #selector(TrackDetailViewController.nextAction), for: .touchUpInside)
         trackDetailView.actionView.replayButton.addTarget(self, action: #selector(TrackDetailViewController.replayAction), for: .touchUpInside)
-        trackDetailView.actionView.trackListButton.addTarget(self, action: #selector(TrackDetailViewController.openActionSheet), for: .touchUpInside)
+        trackDetailView.actionView.trackListButton.addTarget(self, action: #selector(TrackDetailViewController.openActionSheet(sender:)), for: .touchUpInside)
         trackDetailView.headerView.favoriteButton.addTarget(self, action: #selector(TrackDetailViewController.favoriteAction), for: .touchUpInside)
         trackDetailView.headerView.downloadButton.addTarget(self, action: #selector(TrackDetailViewController.downloadAction), for: .touchUpInside)
         
@@ -151,8 +151,8 @@ class TrackDetailViewController: UIViewController {
         output.stop()
     }
     
-    func openActionSheet() {
-        output.openActionSheet(tracks)
+    func openActionSheet(sender: UIButton) {
+        output.openActionSheet(sender: sender, items: tracks)
     }
     
     func shareTrack(_ sender: AHButton) {

@@ -12,10 +12,10 @@ let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 struct ScreenSize
 {
-    static let WIDTH                = UIScreen.main.bounds.size.width
-    static let HEIGHT               = UIScreen.main.bounds.size.height
-    static let MAX_LENGTH           = max(ScreenSize.WIDTH, ScreenSize.WIDTH)
-    static let MIN_LENGTH           = min(ScreenSize.HEIGHT, ScreenSize.HEIGHT)
+    static let WIDTH                    = UIScreen.main.bounds.size.width
+    static let HEIGHT                   = UIScreen.main.bounds.size.height
+    static let MAX_LENGTH               = max(ScreenSize.WIDTH, ScreenSize.WIDTH)
+    static let MIN_LENGTH               = min(ScreenSize.HEIGHT, ScreenSize.HEIGHT)
 }
 
 //MARK: - DeviceType
@@ -26,7 +26,7 @@ enum DeviceType
     static let IS_IPHONE_5              = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.MAX_LENGTH == 568.0
     static let IS_IPHONE_6              = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.MAX_LENGTH == 667.0
     static let IS_IPHONE_6P             = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.MAX_LENGTH == 736.0
-    static let IS_IPAD                  = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.MAX_LENGTH == 1024.0
+    static let IS_IPAD                  = UIDevice.current.userInterfaceIdiom == .pad
 }
 
 //MARK: - System Version

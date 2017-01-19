@@ -63,4 +63,9 @@ class AHPickerView: UIPickerView, UIPickerViewDelegate, UIPickerViewDataSource {
         closeTimer.invalidate()
         closeTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(closePopUp), userInfo: nil, repeats: true)
     }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        
+        return 40
+    }
 }

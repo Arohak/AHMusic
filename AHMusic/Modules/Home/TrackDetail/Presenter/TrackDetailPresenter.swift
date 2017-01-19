@@ -76,16 +76,26 @@ extension TrackDetailPresenter: TrackDetailViewOutput {
        player.stop()
     }
     
-    func openActionSheet(_ items: Array<Track>) {
+    func openActionSheet(sender: UIButton, items: Array<Track>) {
         var temp = Array<String>()
         for item in items { temp.append(item.title) }
-        let vc = ActionSheetPickerViewController(values: temp) { value in
-            let index = items.index {$0.title == value }
-            self.player.jukebox.play(atIndex: index!)
-        }
-        vc.pickerView.selectRow(player.jukebox.playIndex, inComponent: 0, animated: true)
         
-        UIHelper.root().present(vc, animated: true, completion: nil)
+        if DeviceType.IS_IPAD {
+            let vc = PopupPickerViewController(sender: sender, values: temp) { value in
+                let index = items.index { $0.title == value }
+                self.player.jukebox.play(atIndex: index!)
+            }
+            vc.pickerView.selectRow(player.jukebox.playIndex, inComponent: 0, animated: true)
+            UIHelper.root().present(vc, animated: true, completion: nil)
+            
+        } else {
+            let vc = ActionSheetPickerViewController(values: temp) { value in
+                let index = items.index { $0.title == value }
+                self.player.jukebox.play(atIndex: index!)
+            }
+            vc.pickerView.selectRow(player.jukebox.playIndex, inComponent: 0, animated: true)
+            UIHelper.root().present(vc, animated: true, completion: nil)
+        }
     }
     
     func shareTrack(_ sourceView: UIView, items: Array<Track>) {
