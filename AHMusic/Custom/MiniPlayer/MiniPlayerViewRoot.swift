@@ -9,7 +9,7 @@
 //MARK: - MiniPlayerViewRoot -
 class MiniPlayerViewRoot: PlayerView {
     
-    var items = Array<Track>()
+    var tracks = [Track]()
     var player: AHPlayer!
     var index: Int!
         
@@ -18,16 +18,16 @@ class MiniPlayerViewRoot: PlayerView {
         super.init()
     }
     
-    convenience init(index: Int, items: Array<Track>, isOffline: Bool = false) {
+    convenience init(index: Int, tracks: [Track], isOffline: Bool = false) {
         self.init()
         
         self.index = index
-        self.items = items
+        self.tracks = tracks
         
-        player = AHPlayer(items: self.items, playerOutput: self, isOffline: isOffline)
-        player.playPauseAtIndex(index)
+        player = AHPlayer(tracks: self.tracks, playerOutput: self, isOffline: isOffline)
+        player.playOrPause(atIndex: index)
         
-        titleLabel.text = items[index].title
+        titleLabel.text = tracks[index].title
         slider.addTarget(self, action: #selector(MiniPlayerViewRoot.progressSliderValueChanged(_:)), for: .valueChanged)
         playPauseButton.addTarget(self, action: #selector(MiniPlayerViewRoot.playPauseAction), for: .touchUpInside)
         prevButton.addTarget(self, action: #selector(MiniPlayerViewRoot.prevAction), for: .touchUpInside)
@@ -40,11 +40,11 @@ class MiniPlayerViewRoot: PlayerView {
     }
     
     // MARK:- Public Methods -
-    func setTrackers(_ index: Int, items: Array<Track>) {
+    func setTrackers(_ index: Int, tracks: [Track]) {
         self.index = index
-        self.items = items
+        self.tracks = tracks
         
-        player.setTrackers(items)
+        player.setTrackers(tracks)
         player.jukebox.play(atIndex: index)
     }
 
@@ -63,11 +63,11 @@ class MiniPlayerViewRoot: PlayerView {
     
     func playPauseAction() {
         index = player.jukebox.playIndex
-        player.playPauseAtIndex(index)
+        player.playOrPause(atIndex:index)
     }
     
     func closeAction() {
-        SwiftEventBus.post(kEvantMiniPlayer, userInfo: [ "info" : MiniPlayerEvent(result: items[index], state: .stop)])
+        SwiftEventBus.post(kEvantMiniPlayer, userInfo: [ "info" : MiniPlayerEvent(result: tracks[index], state: .stop)])
         UIHelper.closeMiniPlayer()
     }
 }
@@ -81,9 +81,9 @@ extension MiniPlayerViewRoot: PlayerOutputProtocol {
     
     func didLoadItem(_ jukebox: Jukebox, item: JukeboxItem) {
         index = player.jukebox.playIndex
-        titleLabel.text = items[index].title
+        titleLabel.text = tracks[index].title
         
-        SwiftEventBus.post(kEvantMiniPlayer, userInfo: [ "info" : MiniPlayerEvent(result: items[index], state: .change)])
+        SwiftEventBus.post(kEvantMiniPlayer, userInfo: [ "info" : MiniPlayerEvent(result: tracks[index], state: .change)])
     }
     
     func playback(_ currentTime: Double, duration: Double) {
@@ -97,22 +97,22 @@ extension MiniPlayerViewRoot: PlayerOutputProtocol {
         })
         
         if jukebox.state == .ready {
-            playPauseButton.setBackgroundImage(UIImage(named: "img_pl_play"), for: .normal)
+            playPauseButton.setImage(UIImage(named: "img_pl_play"), for: .normal)
         } else if jukebox.state == .loading  {
-           playPauseButton.setBackgroundImage(UIImage(named: "img_pl_pause"), for: .normal)
+           playPauseButton.setImage(UIImage(named: "img_pl_pause"), for: .normal)
         } else {
-            playPauseButton.setBackgroundImage(UIImage(named: jukebox.state == .paused ? "img_pl_play" : "img_pl_pause"), for: .normal)
+            playPauseButton.setImage(UIImage(named: jukebox.state == .paused ? "img_pl_play" : "img_pl_pause"), for: .normal)
         }
         
         switch jukebox.state {
         case .playing:
-            SwiftEventBus.post(kEvantMiniPlayer, userInfo: [ "info" : MiniPlayerEvent(result: items[index], state: .play)])
+            SwiftEventBus.post(kEvantMiniPlayer, userInfo: [ "info" : MiniPlayerEvent(result: tracks[index], state: .play)])
             
         case .paused:
-            SwiftEventBus.post(kEvantMiniPlayer, userInfo: [ "info" : MiniPlayerEvent(result: items[index], state: .pause)])
+            SwiftEventBus.post(kEvantMiniPlayer, userInfo: [ "info" : MiniPlayerEvent(result: tracks[index], state: .pause)])
 
         default:
-            SwiftEventBus.post(kEvantMiniPlayer, userInfo: [ "info" : MiniPlayerEvent(result: items[index], state: .stop)])
+            SwiftEventBus.post(kEvantMiniPlayer, userInfo: [ "info" : MiniPlayerEvent(result: tracks[index], state: .stop)])
         }
     }
 }

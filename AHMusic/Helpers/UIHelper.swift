@@ -66,16 +66,17 @@ struct UIHelper {
     static func showMiniPlayer(_ index: Int, tracks: Array<Track>, isOffline: Bool = false) {
         if let miniPlayerView = appDelegate.miniPlayerView {
             miniPlayerView.player.isOffline = isOffline
-            miniPlayerView.setTrackers(index, items: tracks)
+            miniPlayerView.setTrackers(index, tracks: tracks)
+
         } else {
-            let view = MiniPlayerViewRoot(index: index, items: tracks, isOffline: isOffline)
+            let view = MiniPlayerViewRoot(index: index, tracks: tracks, isOffline: isOffline)
             appDelegate.miniPlayerView = view
 
             appDelegate.window!.addSubview(view)
             view.autoPinEdge(toSuperviewEdge: .left)
             view.autoPinEdge(toSuperviewEdge: .right)
             view.autoPinEdge(toSuperviewEdge: .bottom)
-            view.autoSetDimension(.height, toSize: TD_BTN_SIZE*1.5)
+            view.autoSetDimension(.height, toSize: PL_HEIGHT)
         }
     }
     

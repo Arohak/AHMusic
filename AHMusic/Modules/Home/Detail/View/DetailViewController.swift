@@ -15,7 +15,7 @@ class DetailViewController: BaseEventViewController {
         
         baseEventView = DetailView(detail: detail, headerRect: CGRect(x: 0, y: 0, width: ScreenSize.WIDTH, height: headerHeight))
         if let tracks = detail.tracks {
-            self.items = tracks
+            self.items = Array(tracks.prefix(10))
         }
     }
     

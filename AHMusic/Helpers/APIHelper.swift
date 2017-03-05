@@ -66,20 +66,6 @@ class APIHelper {
         }
     }
     
-    //MARK: - Download -
-//    func downloadProgress(_ track: Track, progress: @escaping (Int64, Int64, Int64)->(), state: @escaping (NSError?)->()) {
-//        let destination = Alamofire.Request.suggestedDownloadDestination(directory: .DocumentDirectory, domain: .UserDomainMask)
-//        track.request = download(.get, method: track.preview, parameters: destination)
-//            .progress { bytesRead, totalBytesRead, totalBytesExpectedToRead in
-//                dispatch_async(dispatch_get_main_queue()) {
-//                   progress(bytesRead, totalBytesRead, totalBytesExpectedToRead)
-//                }
-//            }
-//            .response { request, response, _ , error in
-//                state(error)
-//            }
-//    }
-    
     func download(track: Track, inProgress: @escaping (Double)->(), state: @escaping (Bool)->()) {
         let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)
         track.request = Alamofire.download(track.preview, to: destination)

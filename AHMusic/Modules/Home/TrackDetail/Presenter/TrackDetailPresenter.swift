@@ -21,7 +21,7 @@ extension TrackDetailPresenter: TrackDetailViewOutput {
     func viewIsReady(_ items: Array<Track>) {
         UIHelper.closeMiniPlayer()
         
-        player = AHPlayer(items: items, playerOutput: view)
+        player = AHPlayer(tracks: items, playerOutput: view)
     }
     
     func remoteControlReceivedWithEvent(_ event: UIEvent?) {
@@ -52,14 +52,14 @@ extension TrackDetailPresenter: TrackDetailViewOutput {
         player.progressSliderValue(value)
     }
     
-    func playPauseAtIndex(_ index: Int) {
-        player.playPauseAtIndex(index)
-    }
-    
     func playPause() {
         player.playPause()
     }
     
+    func playOrPause(atIndex: Int) {
+        player.playOrPause(atIndex: atIndex)
+    }
+
     func prev() {
         player.prev()
     }

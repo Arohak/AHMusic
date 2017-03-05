@@ -18,6 +18,7 @@ target 'AHMusic' do
     pod 'SwiftGifOrigin'
     pod 'Jukebox'
     pod 'ALThreeCircleSpinner'
+    pod 'HockeySDK'
     
 end
 

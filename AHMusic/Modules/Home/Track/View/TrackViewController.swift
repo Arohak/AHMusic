@@ -96,7 +96,7 @@ class TrackViewController: BaseViewController {
 extension TrackViewController: TrackViewInput {
     
     func setupInitialState(_ items: Array<Track>) {
-        self.items = items
+        self.items = Array(items.prefix(10))
         
         trackView.refresh.endRefreshing()
         trackView.tableView.reloadData()

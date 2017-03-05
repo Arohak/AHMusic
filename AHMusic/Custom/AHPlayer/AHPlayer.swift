@@ -11,52 +11,50 @@ class AHPlayer {
     
     var jukebox : Jukebox!
     var playerOutput: PlayerOutputProtocol!
-    var tracks: Array<Track>!
+    var tracks: [Track]!
     var isOffline = false
 
     //MARK: - Initilize -
-    init() {
-        
-    }
-    
-    init(items: Array<Track>, playerOutput: PlayerOutputProtocol, isOffline: Bool = false) {
+    init(tracks: Array<Track>, playerOutput: PlayerOutputProtocol, isOffline: Bool = false) {
+        self.tracks = tracks
         self.playerOutput = playerOutput
-        self.tracks = items
         self.isOffline = isOffline
 
-        self.setTrackers(items)
+        self.setTrackers(tracks)
     }
     
     //MARK: - Public Method -
-    func setTrackers(_ items: Array<Track>) {
+    func setTrackers(_ tracks: Array<Track>) {
         if let jukebox = jukebox {
             jukebox.removeAllItems()
             
-            for item in items {
+            for track in tracks {
                 if isOffline {
-                    let name = item.preview.components(separatedBy: "/").last!
+                    let name = track.preview.components(separatedBy: "/").last!
                     let path = Utils.getDocumentsFolderPath() + "/" + name
                     let url = URL(fileURLWithPath: path)
                     jukebox.append(item: JukeboxItem(URL: url), loadingAssets: false)
                     
                 } else {
-                    let url = URL(string: item.preview)!
-                    jukebox.append(item: JukeboxItem(URL: url), loadingAssets: true)
+                    if let url = URL(string: track.preview) {
+                        jukebox.append(item: JukeboxItem(URL: url), loadingAssets: true)
+                    }
                 }
             }
         } else {
             var jukeboxItems = Array<JukeboxItem>()
             
-            for item in items {
+            for track in tracks {
                 if isOffline {
-                    let name = item.preview.components(separatedBy: "/").last!
+                    let name = track.preview.components(separatedBy: "/").last!
                     let path = Utils.getDocumentsFolderPath() + "/" + name
                     let url = URL(fileURLWithPath: path)
                     jukeboxItems.append(JukeboxItem(URL: url))
                     
                 } else {
-                    let url = URL(string: item.preview)!
-                    jukeboxItems.append(JukeboxItem(URL: url))
+                    if let url = URL(string: track.preview) {
+                        jukeboxItems.append(JukeboxItem(URL: url))
+                    }
                 }
             }
             self.jukebox = Jukebox(delegate: self, items: jukeboxItems)
@@ -92,10 +90,10 @@ extension AHPlayer: PlayerActionProtocol {
         }
     }
     
-    func playPauseAtIndex(_ index: Int) {
+    func playOrPause(atIndex: Int) {
         switch self.jukebox.state {
         case .ready :
-            self.jukebox.play(atIndex: index)
+            self.jukebox.play(atIndex: atIndex)
         case .playing :
             self.jukebox.pause()
         case .paused :

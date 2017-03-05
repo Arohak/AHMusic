@@ -104,7 +104,7 @@ class TrackDetailViewController: UIViewController {
     fileprivate func playTrackInStart() {
         let index = tracks.index {$0.id == track.id}
         if let index = index {
-            output.playPauseAtIndex(index)
+            output.playOrPause(atIndex: index)
         }
     }
     

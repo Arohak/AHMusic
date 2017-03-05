@@ -6,6 +6,8 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
+import HockeySDK
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -18,7 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    fileprivate func startApplication() {
+    private func startApplication() {
+        //HockeyApp
+        configHockeyApp()
+        
+        //Apperance
         UIHelper.configurateApplicationApperance()
 
         //main
@@ -35,6 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
+    }
+    
+    private func configHockeyApp() {
+        BITHockeyManager.shared().configure(withIdentifier: kHockeyApp)
+        BITHockeyManager.shared().start()
+        BITHockeyManager.shared().authenticator.authenticateInstallation()
     }
 }
 

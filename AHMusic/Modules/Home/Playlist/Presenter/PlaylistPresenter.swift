@@ -38,7 +38,8 @@ extension PlaylistPresenter: PlaylistInteractorOutput {
     }
     
     func getResultIsReady(_ playlist: Playlist) {
-        let json = JSON(["imageURL" : playlist.pictureBig, "tracks" : Array(playlist.tracks),
+        let json = JSON(["imageURL" : playlist.pictureBig,
+                         "tracks" : Array(playlist.tracks),
             "info" : "Name:\t\(playlist.title)\nTracks:\t\(playlist.nbTracks)\nFans:\t\(playlist.fans)\nRatings:\t\(playlist.rating)"])
         let detail = Detail(data: json)
         

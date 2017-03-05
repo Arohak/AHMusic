@@ -10,7 +10,7 @@ protocol PlayerActionProtocol {
     
     func volumeSliderValue(_ value: Float)
     func progressSliderValue(_ value: Float)
-    func playPauseAtIndex(_ index: Int)
+    func playOrPause(atIndex: Int)
     func playPause()
     func prev()
     func next()

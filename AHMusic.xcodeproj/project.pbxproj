@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5208168C1CF80F37000FD806 /* DownloadProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5208168B1CF80F37000FD806 /* DownloadProgress.swift */; };
 		520816901CF995C3000FD806 /* img_bg_transparent.png in Resources */ = {isa = PBXBuildFile; fileRef = 5208168F1CF995C3000FD806 /* img_bg_transparent.png */; };
+		523179E91E6C5FC800072E0F /* MiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523179E81E6C5FC800072E0F /* MiniPlayerView.swift */; };
 		525EC1681E2F506F005784F6 /* PopupPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525EC1671E2F506F005784F6 /* PopupPickerViewController.swift */; };
 		52701E711CF1B90600E81763 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D621CF1B90600E81763 /* AppDelegate.swift */; };
 		52701E721CF1B90600E81763 /* ApplicationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D631CF1B90600E81763 /* ApplicationAssembly.swift */; };
@@ -28,8 +29,6 @@
 		52701E811CF1B90600E81763 /* GetTrackProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D7C1CF1B90600E81763 /* GetTrackProtocol.swift */; };
 		52701E821CF1B90600E81763 /* OpenTrackDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D7E1CF1B90600E81763 /* OpenTrackDetailProtocol.swift */; };
 		52701E831CF1B90600E81763 /* AHPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D811CF1B90600E81763 /* AHPlayer.swift */; };
-		52701E841CF1B90600E81763 /* MiniPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D831CF1B90600E81763 /* MiniPlayerView.swift */; };
-		52701E851CF1B90600E81763 /* MiniPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D841CF1B90600E81763 /* MiniPlayerViewController.swift */; };
 		52701E861CF1B90600E81763 /* ParallaxHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D861CF1B90600E81763 /* ParallaxHeaderView.swift */; };
 		52701E871CF1B90600E81763 /* ParallaxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D871CF1B90600E81763 /* ParallaxViewController.swift */; };
 		52701E881CF1B90600E81763 /* UIImageEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52701D881CF1B90600E81763 /* UIImageEffects.swift */; };
@@ -268,6 +267,7 @@
 /* Begin PBXFileReference section */
 		5208168B1CF80F37000FD806 /* DownloadProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadProgress.swift; sourceTree = "<group>"; };
 		5208168F1CF995C3000FD806 /* img_bg_transparent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_bg_transparent.png; sourceTree = "<group>"; };
+		523179E81E6C5FC800072E0F /* MiniPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayerView.swift; sourceTree = "<group>"; };
 		525EC1671E2F506F005784F6 /* PopupPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupPickerViewController.swift; sourceTree = "<group>"; };
 		52701D621CF1B90600E81763 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52701D631CF1B90600E81763 /* ApplicationAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationAssembly.swift; sourceTree = "<group>"; };
@@ -287,8 +287,6 @@
 		52701D7C1CF1B90600E81763 /* GetTrackProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTrackProtocol.swift; sourceTree = "<group>"; };
 		52701D7E1CF1B90600E81763 /* OpenTrackDetailProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenTrackDetailProtocol.swift; sourceTree = "<group>"; };
 		52701D811CF1B90600E81763 /* AHPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AHPlayer.swift; sourceTree = "<group>"; };
-		52701D831CF1B90600E81763 /* MiniPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayerView.swift; sourceTree = "<group>"; };
-		52701D841CF1B90600E81763 /* MiniPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiniPlayerViewController.swift; sourceTree = "<group>"; };
 		52701D861CF1B90600E81763 /* ParallaxHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderView.swift; sourceTree = "<group>"; };
 		52701D871CF1B90600E81763 /* ParallaxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxViewController.swift; sourceTree = "<group>"; };
 		52701D881CF1B90600E81763 /* UIImageEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageEffects.swift; sourceTree = "<group>"; };
@@ -715,9 +713,8 @@
 		52701D821CF1B90600E81763 /* MiniPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				52701D841CF1B90600E81763 /* MiniPlayerViewController.swift */,
-				52701D831CF1B90600E81763 /* MiniPlayerView.swift */,
 				A11ABB191CF491CC000BC69F /* MiniPlayerViewRoot.swift */,
+				523179E81E6C5FC800072E0F /* MiniPlayerView.swift */,
 			);
 			path = MiniPlayer;
 			sourceTree = "<group>";
@@ -2209,7 +2206,6 @@
 				527021C41CF1BD8F00E81763 /* DetailViewController.swift in Sources */,
 				52701F251CF1B90600E81763 /* UISettings.swift in Sources */,
 				527021C71CF1BD8F00E81763 /* DetailView.swift in Sources */,
-				52701E851CF1B90600E81763 /* MiniPlayerViewController.swift in Sources */,
 				527021BC1CF1BD8F00E81763 /* CategoryView.swift in Sources */,
 				52701E781CF1B90600E81763 /* GetArtistProtocol.swift in Sources */,
 				527021B51CF1BD8F00E81763 /* CategoryInteractorInput.swift in Sources */,
@@ -2243,7 +2239,6 @@
 				52FAA7181CF1C8F40003D92A /* SIFooterView.swift in Sources */,
 				A11ABB1A1CF491CC000BC69F /* MiniPlayerViewRoot.swift in Sources */,
 				527021C01CF1BD8F00E81763 /* DetailInteractorInput.swift in Sources */,
-				52701E841CF1B90600E81763 /* MiniPlayerView.swift in Sources */,
 				527021E51CF1BD8F00E81763 /* TrackViewInput.swift in Sources */,
 				A1EEBD931CFD7766000390FC /* SettingsViewController.swift in Sources */,
 				527021B61CF1BD8F00E81763 /* CategoryInteractorOutput.swift in Sources */,
@@ -2294,6 +2289,7 @@
 				A16F2BC21CF5D30600F58B62 /* GetTrackDBProtocol.swift in Sources */,
 				52FAA72D1CF24BBF0003D92A /* WelcomeInteractorOutput.swift in Sources */,
 				527021DA1CF1BD8F00E81763 /* StationViewController.swift in Sources */,
+				523179E91E6C5FC800072E0F /* MiniPlayerView.swift in Sources */,
 				5270217C1CF1BD8F00E81763 /* SignInViewInput.swift in Sources */,
 				52701E961CF1B90600E81763 /* Category.swift in Sources */,
 				A16F2BC01CF5D2A600F58B62 /* SearchTrackFromDBProtocol.swift in Sources */,

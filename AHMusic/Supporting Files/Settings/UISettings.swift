@@ -65,6 +65,7 @@ let CLEAR                               = UIColor.clear
 let RCOLORS                             = [UIColor.blue, UIColor.red, UIColor.orange, UIColor.green]
 
 //MARK: - All Pages
+let kHockeyApp                          = "8c4247eb54c44f6da5d8f640cd93b058"
 let kEvantMiniPlayer                    = "mini_player"
 typealias PickerCallback                = (_ value: String) -> Void
 
@@ -176,4 +177,6 @@ let TD_HEIGHT : CGFloat                 = TD_BBTN_SIZE*3
 let TD_DATE_FONT                        = UIFont.boldSystemFont(ofSize: DeviceType.IS_IPAD ? 14      * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 14     : DeviceType.IS_IPHONE_6 ? 14   * IPHONE_6_SCALE : 14   * IPHONE_5_SCALE)
 let TD_TIME_FONT                        = UIFont.systemFont(ofSize: DeviceType.IS_IPAD ? 14          * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 14     : DeviceType.IS_IPHONE_6 ? 14   * IPHONE_6_SCALE : 14   * IPHONE_5_SCALE)
 
+//MARK: - Miniplayer Constants
 
+let PL_HEIGHT : CGFloat                 = DeviceType.IS_IPAD ? 60     * IPAD_SCALE : DeviceType.IS_IPHONE_6P ? 60     : DeviceType.IS_IPHONE_6 ? 60   * IPHONE_6_SCALE : 60   * IPHONE_5_SCALE
