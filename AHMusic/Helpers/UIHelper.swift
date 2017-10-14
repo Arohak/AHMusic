@@ -6,9 +6,7 @@
 //  Copyright © 2016 AroHak LLC. All rights reserved.
 //
 
-import SwiftLoader
 import PKHUD
-import ALThreeCircleSpinner
 
 struct UIHelper {
     
@@ -24,17 +22,13 @@ struct UIHelper {
     }
 
     static func showProgressHUD() {
-        var config = SwiftLoader.Config()
-        config.size = 100
-        config.spinnerColor = WHITE
-        config.backgroundColor = GRAY_164
-        config.foregroundAlpha = 0.3
-        SwiftLoader.setConfig(config: config)
-        SwiftLoader.show(animated: true)
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        HUD.show(.progress)
     }
     
     static func hideProgressHUD() {
-        SwiftLoader.hide()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        HUD.hide()
     }
 
     static func showHUD(_ message: String) {
@@ -50,15 +44,7 @@ struct UIHelper {
         let vc = appDelegate.window!.rootViewController
         vc!.present(alertController, animated: true, completion: nil)
     }
-    
-    static func showSpinner() {
-        ALThreeCircleSpinner.show(color: RED)
-    }
-    
-    static func hideSpinner() {
-        ALThreeCircleSpinner.hide()
-    }
-    
+
     static func root() -> UINavigationController {
         return appDelegate.window!.rootViewController as! UINavigationController
     }

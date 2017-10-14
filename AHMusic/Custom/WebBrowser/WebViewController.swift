@@ -44,13 +44,13 @@ class WebViewController: UIViewController {
         self.navigationItem.title = resourceName
         self.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(WebViewController.close)), animated: true)
         
-        UIHelper.showSpinner()
+        UIHelper.showProgressHUD()
         browser.loadRequest(URLRequest(url: url as URL) as URLRequest)
     }
     
     //MARK: - Actions -
     func close() {
-        UIHelper.hideSpinner()
+        UIHelper.hideProgressHUD()
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
 }
@@ -64,10 +64,10 @@ extension WebViewController: UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
-       UIHelper.hideSpinner()
+       UIHelper.hideProgressHUD()
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        UIHelper.hideSpinner()
+        UIHelper.hideProgressHUD()
     }
 }

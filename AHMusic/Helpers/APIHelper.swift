@@ -42,8 +42,7 @@ class APIHelper {
                 -> Observable<JSON>
     {
         return Observable.create { observer in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = true
-            if showProgress { UIHelper.showSpinner() }
+            if showProgress { UIHelper.showProgressHUD() }
             
             let URL = ROUTERS.ROOT_URL + url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
             Alamofire.request(URL, method: method,
@@ -58,8 +57,7 @@ class APIHelper {
                         observer.onError(error)
                     }
                     
-                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                    if showProgress { UIHelper.hideSpinner() }
+                    if showProgress { UIHelper.hideProgressHUD() }
             }
             
             return Disposables.create { }

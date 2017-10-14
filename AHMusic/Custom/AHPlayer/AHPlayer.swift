@@ -24,6 +24,15 @@ class AHPlayer {
     }
     
     //MARK: - Public Method -
+//    func setTrackers(_ tracks: Array<Track>) {
+//        let other = "http://megdadhashem.wapego.ru/files/56727/tubidy_mp3_e2afc5.mp3"
+//        let my = "https://demo-api.foneo.com/uploads/voicemail/voice_message_2017-06-07_12-57-42.snd"
+//        if let url = URL(string: my) {
+//            let item = JukeboxItem(URL: url)
+//            self.jukebox = Jukebox(delegate: self, items: [item])
+//        }
+//    }
+    
     func setTrackers(_ tracks: Array<Track>) {
         if let jukebox = jukebox {
             jukebox.removeAllItems()

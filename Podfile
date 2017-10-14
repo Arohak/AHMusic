@@ -5,11 +5,10 @@
 
 target 'AHMusic' do
 #    pod 'Typhoon'
-    pod 'RxAlamofire', '~> 3.0'
+    pod 'RxAlamofire'
     pod 'RealmSwift'
     pod 'SwiftEventBus'
     pod 'PureLayout'
-    pod 'SwiftLoader'
     pod 'Kingfisher'
     pod 'SwiftyJSON'
     pod 'PKHUD'
@@ -17,7 +16,6 @@ target 'AHMusic' do
     pod 'SlideMenuControllerSwift'
     pod 'SwiftGifOrigin'
     pod 'Jukebox'
-    pod 'ALThreeCircleSpinner'
     pod 'HockeySDK'
     
 end
